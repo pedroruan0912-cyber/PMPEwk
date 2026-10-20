@@ -148,6 +148,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
 .sheet .tx.ind{padding-left:40px}
 .sheet .pmark{position:absolute;right:8px;font-family:var(--f-mono);font-size:.68rem}
 @media (max-width:700px){.sheet ol{min-width:0}.sheet .tx{white-space:normal;font-size:.98rem}.sheet .tx.ind{padding-left:28px}}
+.mod-nav{display:flex;gap:8px;align-items:center;margin:14px 0}
+.mod-nav select{flex:1;min-width:0;padding:9px 11px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);font-family:var(--f-display);font-weight:600;font-size:.95rem}
+.mod-nav .icon-btn{font-size:1.2rem;line-height:1;padding:8px 14px}
+.mod-nav .icon-btn:disabled{opacity:.4;cursor:default}
 .sheet-legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.84rem;margin:6px 0 4px}
 .sheet-legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{display:inline-block;width:14px;height:14px;border-radius:3px}
@@ -321,7 +325,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
     <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
     <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
-    <li><div><a href="#modelos">Redações nota 40</a>: vinte textos de 20 linhas com marcação de cada parte.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: 28 textos de 20 linhas com marcação de cada parte.</div></li>
     <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
   </ol>
   <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
@@ -845,9 +849,13 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div class="chap-head">
     <span class="eyebrow">Capítulo 10</span>
     <h2>Redações nota 40</h2>
-    <p>Vinte redações de exatamente 20 linhas, no mapa 4-6-6-4, cobrindo os temas mais prováveis. Ligue as marcações para ver onde está cada peça.</p>
+    <p>Vinte e oito redações de exatamente 20 linhas, no mapa 4-6-6-4, cobrindo os temas mais prováveis. Ligue as marcações para ver onde está cada peça.</p>
   </div>
-  <div class="filters" id="modTabs" role="tablist" aria-label="Escolher redação"></div>
+  <div class="mod-nav">
+    <button class="icon-btn" id="modPrev" type="button" aria-label="Redação anterior">‹</button>
+    <select id="modSel" aria-label="Escolher redação"></select>
+    <button class="icon-btn" id="modNext" type="button" aria-label="Próxima redação">›</button>
+  </div>
   <div id="modBox"></div>
   <p class="small">As linhas foram quebradas como numa folha de prova manuscrita (cerca de 11 palavras por linha). Na sua letra, a quebra pode mudar; o que importa é manter 4-6-6-4.</p>
 </section>
@@ -1736,6 +1744,310 @@ const MODELOS = [
     'O D2 cita um canal real de denúncia (Disque 100) e liga o tema aos golpes digitais.',
     'A proposta aposta em identificação precoce, com assistência social e polícia trabalhando juntas.'
   ]
+},
+{
+  id:'m21', curto:'Crime organizado',
+  tema:'O avanço do crime organizado e das facções criminosas no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O filme "Tropa de Elite" retrata o poder do tráfico e a pressão',
+      'que o crime organizado exerce sobre comunidades e instituições{/}. Essa',
+      'realidade persiste no Brasil, {t}sobretudo pelo controle das facções',
+      'dentro dos presídios e pelo combate insuficiente ao seu dinheiro{/}.'
+    ],[
+      'Em primeiro lugar, os presídios se tornaram centros de comando.',
+      '{r}O Brasil possui uma das maiores populações carcerárias do mundo{/}, e',
+      'a superlotação permite que facções recrutem presos e imponham suas',
+      'regras. Nesse sentido, celulares que entram nas celas permitem que',
+      'líderes ordenem crimes de dentro da prisão, de modo que a pena não',
+      'interrompe a atividade criminosa, mas a fortalece.'
+    ],[
+      'Além disso, o dinheiro do crime circula sem controle. As facções',
+      'lavam recursos do tráfico em empresas de fachada, imóveis e até',
+      'apostas on-line. {r}Segundo Cesare Beccaria, a certeza da punição é',
+      'mais eficaz do que a severidade da pena{/}, e, enquanto as prisões de',
+      'integrantes não atingirem o patrimônio do grupo, novos membros',
+      'ocuparão os lugares vagos e a organização seguirá ativa.'
+    ],[
+      'Portanto, é preciso enfraquecer o crime organizado. Para isso, {p}as',
+      'polícias, a Receita Federal e o Ministério Público devem integrar a',
+      'inteligência financeira e bloquear celulares nos presídios, a fim de',
+      'cortar o comando e o dinheiro das facções{/}.'
+    ]
+  ],
+  notas:[
+    'Não cita nomes de facções: o texto fala do fenômeno, como recomenda o kit do tema.',
+    'O D1 mostra o presídio como causa; o D2, o dinheiro. Cada um vira uma parte da proposta.',
+    'O D2 conecta o tema a outro assunto atual (apostas on-line), o que enriquece a informatividade.',
+    'A proposta é técnica: inteligência financeira e bloqueio de comunicação, sem soluções extremas.'
+  ]
+},
+{
+  id:'m22', curto:'Racismo',
+  tema:'O combate ao racismo na sociedade brasileira',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O Brasil foi o último país das Américas a abolir a escravidão, em',
+      '1888{/}, e a abolição não veio acompanhada de terra, escola ou trabalho.',
+      'Por isso, o racismo persiste, {t}sobretudo pela herança desigual da',
+      'escravidão e pela impunidade dos crimes de discriminação{/}.'
+    ],[
+      'Em primeiro lugar, a desigualdade criada pela escravidão permanece.',
+      'Sem políticas de inclusão após 1888, a população negra foi empurrada',
+      'para as periferias e para os empregos mais precários. {r}O Atlas da',
+      'Violência mostra que a maioria das vítimas de homicídio no país é',
+      'negra{/}, o que revela como essa herança ainda define quem vive e quem',
+      'morre nas cidades brasileiras.'
+    ],[
+      'Além disso, a discriminação ainda é pouco punida. {r}Embora a Lei',
+      '14.532, de 2023, tenha equiparado a injúria racial ao racismo{/}, muitas',
+      'vítimas não denunciam por descrença na justiça, e ofensas são tratadas',
+      'como "brincadeira". Nesse contexto, a impunidade naturaliza o',
+      'preconceito, de modo que ele se repete nas escolas, no trabalho e',
+      'nas redes sociais.'
+    ],[
+      'Portanto, combater o racismo exige ação contínua. Para isso, {p}as',
+      'escolas devem aplicar o ensino da história afro-brasileira, e as',
+      'polícias devem reforçar a formação em direitos humanos, a fim de',
+      'garantir igualdade de tratamento a todos os cidadãos{/}.'
+    ]
+  ],
+  notas:[
+    'Abertura histórica com data precisa (1888), que explica a origem do problema.',
+    'O D1 liga a história a um dado atual; o D2 usa uma lei de 2023 e mostra por que ela não basta.',
+    'O tom é firme e respeitoso, sem acusar instituições inteiras.',
+    'A proposta inclui a própria polícia, o que mostra maturidade para a carreira.'
+  ]
+},
+{
+  id:'m23', curto:'Armas de fogo',
+  tema:'A ampliação do acesso às armas de fogo pela população',
+  tipo:'Tema polêmico → posição contrária, com dados e lei',
+  p:[
+    [
+      '{r}O Estatuto do Desarmamento, de 2003, estabeleceu regras rígidas',
+      'para a posse e o porte de armas de fogo no Brasil{/}. Ampliar o acesso',
+      'a elas, porém, {t}não garante segurança, pois torna fatais conflitos',
+      'banais e favorece o desvio de armas para o crime organizado{/}.'
+    ],[
+      'Em primeiro lugar, a arma em casa transforma brigas em tragédias.',
+      'Discussões de trânsito, desentendimentos entre vizinhos e episódios',
+      'de violência doméstica podem terminar em morte quando há uma arma ao',
+      'alcance. {r}Hobbes já afirmava que, sem o controle do Estado, os',
+      'conflitos tendem à "guerra de todos contra todos"{/}, de modo que mais',
+      'armas nas mãos da população aumentam o risco de mortes evitáveis.'
+    ],[
+      'Além disso, armas legais podem abastecer o crime. Armas roubadas ou',
+      'desviadas de residências e empresas acabam nas mãos de criminosos,',
+      'que as usam em assaltos e ataques. {r}Segundo o Atlas da Violência, a',
+      'maior parte dos homicídios no país é cometida com armas de fogo{/}.',
+      'Nesse sentido, quanto mais armas circulam, maior é a chance de que',
+      'parte delas sirva ao crime organizado.'
+    ],[
+      'Portanto, ampliar o acesso às armas não é a solução. Em vez disso,',
+      '{p}o Governo Federal deve manter o controle rigoroso de registros e',
+      'fortalecer o rastreamento de armas, por meio da integração de dados',
+      'entre as polícias, a fim de tirar armas ilegais de circulação{/}.'
+    ]
+  ],
+  notas:[
+    'Tema polêmico: a tese escolhe um lado e o defende com lei e dado, sem ironizar quem pensa diferente.',
+    'O D1 usa exemplos do cotidiano policial (trânsito, vizinhos, violência doméstica).',
+    'O D2 explica o caminho da arma legal até o crime, ligando o tema à segurança pública.',
+    'A conclusão usa "Em vez disso" para propor uma alternativa concreta.'
+  ]
+},
+{
+  id:'m24', curto:'Violência contra crianças',
+  tema:'A violência contra crianças e adolescentes',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Constituição determina, no artigo 227, que crianças e adolescentes',
+      'devem receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
+      'Na prática, a violência infantil persiste, {t}sobretudo porque ocorre',
+      'dentro de casa e porque a rede de proteção é falha{/}.'
+    ],[
+      'Em primeiro lugar, grande parte das agressões acontece no lar.',
+      'O agressor costuma ser alguém próximo, e a criança, por medo ou',
+      'dependência, não consegue contar o que sofre. {r}Como mostra Gilberto',
+      'Dimenstein em "O Cidadão de Papel", muitos direitos existem só na lei{/}.',
+      'Nesse sentido, sem alguém atento aos sinais, o abuso pode durar anos',
+      'e deixar marcas físicas e emocionais profundas.'
+    ],[
+      'Além disso, a rede de proteção não consegue atender à demanda.',
+      'Conselhos tutelares sobrecarregados e professores sem preparo para',
+      'identificar sinais de abuso atrasam as denúncias. {r}O Estatuto da',
+      'Criança e do Adolescente adota a doutrina da proteção integral{/}, mas, sem',
+      'estrutura, essa garantia não se cumpre, de modo que muitas vítimas',
+      'só recebem ajuda quando a violência já se agravou.'
+    ],[
+      'Portanto, proteger a infância é urgente. Para isso, {p}as escolas devem',
+      'capacitar professores para identificar sinais de violência, e os',
+      'municípios devem fortalecer os conselhos tutelares, a fim de',
+      'garantir a prioridade absoluta prevista na Constituição{/}.'
+    ]
+  ],
+  notas:[
+    'A citação literal ("absoluta prioridade") dá força à introdução.',
+    'O D1 explica por que a violência fica escondida; o D2, por que a ajuda demora.',
+    'O ECA e Dimenstein mostram a distância entre a lei e a realidade, ideia central do texto.',
+    'A conclusão retoma a Constituição da introdução, fechando o texto em círculo.'
+  ]
+},
+{
+  id:'m25', curto:'Assédio no transporte',
+  tema:'O assédio sexual contra mulheres no transporte público',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}Desde 2018, a Lei 13.718 considera crime a importunação sexual{/},',
+      'prática comum em ônibus, metrôs e terminais. Ainda assim, o assédio',
+      'persiste, {t}sobretudo pela cultura que objetifica o corpo feminino e',
+      'pela dificuldade de denunciar no momento do crime{/}.'
+    ],[
+      'Em primeiro lugar, o assédio é naturalizado como algo normal.',
+      '"Cantadas", olhares insistentes e toques indesejados ainda são vistos',
+      'como parte da rotina das mulheres. {r}Segundo Pierre Bourdieu, a',
+      'violência simbólica é a dominação aceita como natural pelos costumes{/}.',
+      'Sob essa ótica, muitas vítimas mudam de horário, de roupa ou de trajeto',
+      'para evitar o abuso, enquanto o agressor segue sem ser incomodado.'
+    ],[
+      'Além disso, denunciar no momento do crime é difícil. Em veículos',
+      'lotados, a vítima sente medo e vergonha, e nem sempre há câmeras,',
+      'agentes ou canais rápidos para pedir ajuda. {r}A Agenda 2030 da ONU,',
+      'em seu Objetivo 5, propõe eliminar a violência contra as mulheres{/}.',
+      'Contudo, sem estrutura para registrar a ocorrência, o agressor desce',
+      'na parada seguinte e o crime fica impune.'
+    ],[
+      'Portanto, é preciso garantir a segurança das mulheres no transporte.',
+      'Para isso, {p}as empresas e as polícias devem instalar câmeras nos',
+      'veículos e criar canais de denúncia por aplicativo, além de campanhas',
+      'educativas, a fim de punir os agressores e proteger as passageiras{/}.'
+    ]
+  ],
+  notas:[
+    'A introdução cita a lei específica e o ano, sem copiar o texto legal.',
+    'O D1 mostra o efeito injusto do assédio: a vítima muda a rotina, o agressor não.',
+    'O D2 descreve a cena concreta (veículo lotado, agressor que desce) para explicar a impunidade.',
+    'A proposta tem tecnologia, denúncia e educação, ligadas aos dois argumentos.'
+  ]
+},
+{
+  id:'m26', curto:'Dependência química',
+  tema:'Os desafios no combate à dependência química',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}A Lei 13.840, de 2019, reforçou o acolhimento e o tratamento dos',
+      'usuários de drogas no país{/}. Mesmo assim, a dependência química segue',
+      'como desafio, {t}sobretudo pelo estigma que recai sobre o usuário e pela',
+      'falta de tratamento acessível na rede pública{/}.'
+    ],[
+      'Em primeiro lugar, o estigma afasta o dependente da ajuda. Muitos',
+      'veem o usuário apenas como criminoso ou como alguém "sem força de',
+      'vontade", e a família esconde o problema por vergonha. {r}A Lei de',
+      'Drogas, de 2006, diferencia o usuário do traficante{/}, mas esse',
+      'preconceito persiste, de modo que o dependente só procura ajuda',
+      'quando já perdeu emprego, laços familiares e saúde.'
+    ],[
+      'Além disso, o tratamento ainda é difícil de acessar. Os Centros de',
+      'Atenção Psicossocial especializados em álcool e drogas são poucos',
+      'diante da demanda, e as filas são longas. {r}A Constituição, no artigo',
+      '196, define a saúde como direito de todos e dever do Estado{/}. Nesse',
+      'contexto, quem não consegue tratamento volta às ruas e, muitas vezes,',
+      'ao ciclo de dívidas com o tráfico, que alimenta a violência.'
+    ],[
+      'Portanto, a dependência química deve ser tratada como questão de',
+      'saúde. Para isso, {p}o Ministério da Saúde deve ampliar os CAPS AD,',
+      'por meio de verbas e equipes especializadas, e as escolas devem',
+      'manter o Proerd, a fim de tratar quem adoeceu e prevenir novos casos{/}.'
+    ]
+  ],
+  notas:[
+    'Separa com clareza o usuário (saúde) do traficante (crime), como faz a Lei de Drogas.',
+    'O D1 trata do preconceito; o D2, da falta de estrutura, cada um com uma base legal.',
+    'O fechamento do D2 liga o tema à segurança pública (dívidas com o tráfico).',
+    'A proposta combina tratamento (CAPS AD) e prevenção (Proerd).'
+  ]
+},
+{
+  id:'m27', curto:'Ética e corrupção',
+  tema:'Ética e corrupção no serviço público',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O artigo 37 da Constituição impõe à administração pública os',
+      'princípios da legalidade, impessoalidade, moralidade, publicidade e',
+      'eficiência{/}. A corrupção, porém, ainda desafia o país, {t}sobretudo',
+      'pela cultura de privilégios e pela impunidade{/}.'
+    ],[
+      'Em primeiro lugar, a cultura de privilégios favorece desvios.',
+      '{r}Em "Raízes do Brasil", Sérgio Buarque de Holanda descreve o "homem',
+      'cordial", que mistura o público e o privado{/}. Sob essa ótica, o',
+      '"jeitinho", o favor ao conhecido e a troca de vantagens são vistos',
+      'como normais, de modo que pequenas desonestidades preparam o terreno',
+      'para esquemas maiores dentro das instituições.'
+    ],[
+      'Além disso, a impunidade estimula novos casos de corrupção.',
+      'Processos longos, recursos sucessivos e penas raramente cumpridas',
+      'passam a mensagem de que o crime compensa. {r}Para Rousseau, o pacto',
+      'social existe para garantir o bem comum{/}, e a corrupção impune rompe',
+      'esse acordo, de modo que a população perde a confiança no Estado e',
+      'nos próprios agentes públicos.'
+    ],[
+      'Portanto, a ética deve guiar o serviço público. Para isso, {p}as',
+      'corregedorias e o Ministério Público devem fortalecer a fiscalização,',
+      'e os cursos de formação devem tratar de ética, a fim de garantir',
+      'servidores, inclusive policiais, comprometidos com o interesse público{/}.'
+    ]
+  ],
+  notas:[
+    'Os cinco princípios do art. 37 (LIMPE) também caem na prova objetiva: vale decorar.',
+    'O D1 usa um clássico da sociologia brasileira para explicar o "jeitinho".',
+    'O D2 mostra a consequência mais grave: a perda de confiança no Estado.',
+    'Não cita políticos nem partidos, e a proposta inclui a própria polícia.'
+  ]
+},
+{
+  id:'m28', curto:'Seca no Sertão',
+  tema:'Os desafios da convivência com a seca no Sertão',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}Em "Vidas Secas", Graciliano Ramos retrata a família de Fabiano,',
+      'obrigada a fugir da seca em busca de sobrevivência{/}. Décadas depois, o',
+      'sertanejo ainda sofre com a estiagem, {t}sobretudo pela má distribuição',
+      'da água e pela falta de políticas permanentes para o semiárido{/}.'
+    ],[
+      'Em primeiro lugar, a água ainda é mal distribuída no semiárido.',
+      'Muitas comunidades rurais dependem de carros-pipa e de açudes que',
+      'secam nos meses mais quentes. {r}A transposição do Rio São Francisco',
+      'levou água a regiões de Pernambuco e de outros estados do Nordeste{/},',
+      'mas os ramais e as adutoras ainda não chegam a muitas localidades, de',
+      'modo que famílias inteiras seguem sem acesso regular à água.'
+    ],[
+      'Além disso, o poder público age mais na emergência do que na',
+      'prevenção. {r}O pernambucano Josué de Castro mostrou que a fome é',
+      'resultado de escolhas sociais, e não da natureza{/}. Sob essa ótica,',
+      'a seca só vira tragédia quando faltam cisternas, apoio técnico ao',
+      'agricultor e crédito para culturas adaptadas, o que mantém o ciclo',
+      'de perdas, endividamento e migração para as grandes cidades.'
+    ],[
+      'Portanto, é preciso conviver com o semiárido de forma permanente.',
+      'Para isso, {p}os governos devem concluir as obras hídricas e ampliar',
+      'o programa de cisternas, por meio de assistência técnica rural, a',
+      'fim de garantir água e dignidade ao povo sertanejo{/}.'
+    ]
+  ],
+  notas:[
+    'Tema de Pernambuco, com dois repertórios nordestinos (Graciliano Ramos e Josué de Castro).',
+    'Usa a expressão "convivência com o semiárido", vocabulário atual sobre o tema.',
+    'O D1 trata da infraestrutura; o D2, da forma como o Estado age.',
+    'A proposta tem obras e apoio ao agricultor, um para cada argumento.'
+  ]
 }
 ];
 
@@ -2113,7 +2425,7 @@ const TEMAS = [
  r:'Câmeras corporais (PM-SP); LGPD; "1984" (Orwell); Max Weber; Juntos pela Segurança.',
  p:'SDS e polícias adotam câmeras e sistemas com protocolos claros, treinamento e controle de dados.',
  x:'Mostre os dois lados e conclua com "uso responsável".'},
-{t:'O combate ao racismo na sociedade brasileira', c:'dh', h:'média',
+{m:'m22', t:'O combate ao racismo na sociedade brasileira', c:'dh', h:'média',
  tese:'O racismo persiste devido à herança escravocrata e à impunidade dos crimes de discriminação.',
  a1:'Herança histórica: abolição sem inclusão; desigualdade de renda, escola e moradia.',
  a2:'Impunidade e naturalização de "piadas" e abordagens discriminatórias.',
@@ -2127,7 +2439,7 @@ const TEMAS = [
  r:'DUDH; Bobbio; Kant; Max Weber (força legítima); Vidas Secas (Soldado Amarelo); art. 5º da CF.',
  p:'Academias de polícia ampliam a formação em direitos humanos e uso progressivo da força; corregedorias fiscalizam.',
  x:'Nunca escreva que direitos humanos "atrapalham a polícia". É o erro mais grave neste tema.'},
-{t:'A violência contra crianças e adolescentes', c:'vul', h:'média',
+{m:'m24', t:'A violência contra crianças e adolescentes', c:'vul', h:'média',
  tese:'A violência infantil persiste porque ocorre, em grande parte, dentro de casa e porque a rede de denúncia é falha.',
  a1:'Violência doméstica: o agressor é muitas vezes alguém próximo; a criança tem medo de contar.',
  a2:'Rede falha: conselhos tutelares sobrecarregados e pouca orientação nas escolas.',
@@ -2155,7 +2467,7 @@ const TEMAS = [
  r:'Art. 205 da CF; Paulo Freire; Mandela; Darcy Ribeiro; Proerd.',
  p:'Estados ampliam escolas em tempo integral e parcerias com a PM em programas como o Proerd.',
  x:'Tema "coringa": a educação aparece como solução em quase todas as redações.'},
-{t:'A posse e o porte de armas pela população', c:'seg', h:'média',
+{m:'m23', t:'A posse e o porte de armas pela população', c:'seg', h:'média',
  tese:'Ampliar o acesso às armas não garante segurança, pois aumenta o risco de mortes em conflitos banais e de desvio para o crime.',
  a1:'Conflitos banais e violência doméstica tornam-se fatais com arma em casa.',
  a2:'Armas legais podem ser roubadas e abastecer o crime organizado.',
@@ -2169,7 +2481,7 @@ const TEMAS = [
  r:'Art. 225 da CF; Lei 9.605/1998; ODS 13 e 15; Policiamento ambiental da PM.',
  p:'Ampliar o policiamento ambiental e o uso de satélites e drones; educação ambiental nas escolas.',
  x:'Cite o policiamento ambiental da PM como parte da solução, sem inventar números.'},
-{t:'Ética e corrupção no serviço público', c:'des', h:'média',
+{m:'m27', t:'Ética e corrupção no serviço público', c:'des', h:'média',
  tese:'A corrupção persiste devido à cultura de privilégios e à impunidade.',
  a1:'Cultura: o "jeitinho" e a confusão entre público e privado.',
  a2:'Impunidade: processos lentos e punições raras.',
@@ -2190,7 +2502,7 @@ const TEMAS = [
  r:'Lei Orgânica das PMs (Lei 14.751/2023); Lei 14.531/2023; art. 144 da CF; Byung-Chul Han.',
  p:'Governo do estado investe em formação continuada, equipamentos, saúde e plano de carreira.',
  x:'Tema "da casa": mostre conhecimento da carreira sem parecer que reclama.'},
-{t:'O crime organizado e as facções criminosas', c:'seg', h:'média',
+{m:'m21', t:'O crime organizado e as facções criminosas', c:'seg', h:'média',
  tese:'O avanço das facções decorre do controle que exercem dentro dos presídios e da lavagem de dinheiro pouco combatida.',
  a1:'Presídios: superlotação favorece o recrutamento e o comando de crimes de dentro das celas.',
  a2:'Dinheiro: sem asfixiar o financiamento, as prisões de integrantes não enfraquecem a facção.',
@@ -2218,7 +2530,7 @@ const TEMAS = [
  r:'Lei 15.100/2025 (restrição de celulares nas escolas); Lei 14.811/2024 (cyberbullying como crime); art. 227 da CF; Byung-Chul Han; O Dilema das Redes.',
  p:'Escolas aplicam a Lei 15.100/2025 e ensinam educação digital; famílias usam controle parental e limites de tempo.',
  x:'Não demonize a tecnologia. Defenda uso responsável e supervisionado.'},
-{t:'O assédio sexual contra mulheres no transporte público', c:'mul', h:'média',
+{m:'m25', t:'O assédio sexual contra mulheres no transporte público', c:'mul', h:'média',
  tese:'O assédio persiste devido à cultura que objetifica o corpo feminino e à dificuldade de denunciar no momento do crime.',
  a1:'Objetificação: "cantadas" e toques tratados como normais.',
  a2:'Denúncia difícil: medo, vergonha, falta de canais rápidos e de testemunhas que ajudem.',
@@ -2239,7 +2551,7 @@ const TEMAS = [
  r:'Lei 13.812/2019 (Política Nacional de Busca de Pessoas Desaparecidas e cadastro nacional); ECA; art. 227 da CF.',
  p:'Governo Federal integra o cadastro nacional a polícias, hospitais e IML; campanhas informam que o registro deve ser imediato.',
  x:'Inclua crianças, idosos com demência e vítimas de tráfico de pessoas como grupos de risco.'},
-{t:'Os desafios no combate à dependência química', c:'dro', h:'média',
+{m:'m26', t:'Os desafios no combate à dependência química', c:'dro', h:'média',
  tese:'O combate à dependência química é dificultado pelo estigma sobre o usuário e pela falta de tratamento acessível.',
  a1:'Estigma: o dependente é visto só como criminoso ou "fraco", e a família esconde o problema.',
  a2:'Tratamento escasso: poucos centros especializados (CAPS AD) e longas filas.',
@@ -2309,7 +2621,7 @@ const TEMAS = [
  r:'Art. 6º da CF (transporte como direito social); Política Nacional de Mobilidade Urbana (Lei 12.587/2012); ODS 11; Milton Santos.',
  p:'Prefeituras e estados investem em faixas exclusivas de ônibus, metrô e ciclovias, com segurança nas paradas.',
  x:'Inclua a segurança dos passageiros (assaltos em ônibus e paradas) para aproximar o tema da atividade policial.'},
-{t:'Os desafios da convivência com a seca no Sertão', c:'amb', h:'média',
+{m:'m28', t:'Os desafios da convivência com a seca no Sertão', c:'amb', h:'média',
  tese:'A seca ainda causa sofrimento devido à má distribuição da água e à falta de políticas permanentes de convivência com o semiárido.',
  a1:'Distribuição: água concentrada e dependência de carros-pipa.',
  a2:'Ações de emergência, e não permanentes: obras inacabadas e pouco apoio ao pequeno agricultor.',
@@ -2562,8 +2874,9 @@ function sheetHTML(paragraphs, annotate){
 }
 let showModelo = () => {};
 (function(){
-  let cur = 0, annot = store.get('annot', true);
-  $('#modTabs').innerHTML = MODELOS.map((m, i) => `<button type="button" role="tab" data-i="${i}" aria-pressed="${i === cur}">${i + 1}. ${esc(m.curto)}</button>`).join('');
+  let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
+  const sel = $('#modSel');
+  sel.innerHTML = MODELOS.map((m, i) => `<option value="${i}">${i + 1}. ${esc(m.curto)}</option>`).join('');
   function render(){
     const m = MODELOS[cur];
     const counts = m.p.map(p => p.length).join(' + ');
@@ -2577,10 +2890,16 @@ let showModelo = () => {};
       <ul>${m.notas.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`;
     $('#annotChk').addEventListener('change', e => { annot = e.target.checked; store.set('annot', annot); $('#modBox .sheet').classList.toggle('annot', annot); });
   }
-  function select(i){ cur = i; $$('#modTabs button').forEach((x, j) => x.setAttribute('aria-pressed', String(j === i))); render(); }
+  function select(i){
+    cur = Math.min(Math.max(i, 0), MODELOS.length - 1);
+    sel.value = String(cur); $('#modPrev').disabled = cur === 0; $('#modNext').disabled = cur === MODELOS.length - 1;
+    store.set('mod', cur); render();
+  }
   showModelo = id => { const i = MODELOS.findIndex(m => m.id === id); if(i >= 0) select(i); };
-  $('#modTabs').addEventListener('click', e => { const b = e.target.closest('button'); if(b) select(+b.dataset.i); });
-  render();
+  sel.addEventListener('change', () => select(+sel.value));
+  $('#modPrev').addEventListener('click', () => select(cur - 1));
+  $('#modNext').addEventListener('click', () => select(cur + 1));
+  select(cur);
 })();
 
 // ---------- contador de 20 linhas ----------
