@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 
 SRC=src
 PARTS=(01-open.html c01-03.html c04-05.html c06.html c07-08.html c09-10.html c11-13.html c14-17.html 90-tools.html)
-SCRIPTS=(flash.js q1.js q2.js q3.js q4.js 99-app.js)
+SCRIPTS=(flash.js q1.js q2.js q3.js q4.js q5.js q6.js 99-app.js)
 
 body() {
   for p in "${PARTS[@]}"; do cat "$SRC/$p"; done
