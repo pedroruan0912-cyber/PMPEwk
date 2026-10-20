@@ -1064,5 +1064,537 @@ const MODELOS = [
     'O D1 trata da infraestrutura; o D2, da forma como o Estado age.',
     'A proposta tem obras e apoio ao agricultor, um para cada argumento.'
   ]
+},
+{
+  id:'m29', curto:'Crimes ambientais',
+  tema:'Os desafios para combater os crimes ambientais',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}O artigo 225 da Constituição garante a todos o direito ao meio',
+      'ambiente ecologicamente equilibrado{/}. Contudo, desmatamentos e',
+      'queimadas ilegais persistem no Brasil, {t}sobretudo pela fiscalização',
+      'insuficiente e pela busca por lucro imediato{/}.'
+    ],[
+      'Em primeiro lugar, a fiscalização não acompanha o tamanho do país.',
+      'Grandes áreas de mata são vigiadas por poucos agentes, e muitas multas',
+      'aplicadas nunca são pagas. {r}A Lei de Crimes Ambientais, de 1998,',
+      'prevê sanções penais e administrativas para essas condutas{/}, mas, sem',
+      'presença do Estado, o infrator aposta na impunidade, de modo que',
+      'florestas e rios continuam sendo destruídos.'
+    ],[
+      'Além disso, o lucro imediato estimula a destruição. Madeira ilegal,',
+      'garimpo e tráfico de animais movimentam muito dinheiro e atraem o',
+      'crime organizado. {r}A Agenda 2030 da ONU, em seu Objetivo 13, pede',
+      'ação urgente contra a mudança do clima{/}. Nesse sentido, cada área',
+      'devastada agrava secas, enchentes e ondas de calor, o que mostra que',
+      'o crime ambiental ameaça também a vida nas cidades.'
+    ],[
+      'Portanto, proteger o meio ambiente é uma questão de segurança. Para',
+      'isso, {p}os governos devem ampliar o policiamento ambiental e o uso de',
+      'satélites e drones, além da educação ambiental nas escolas, a fim de',
+      'punir os infratores e preservar a natureza para as próximas gerações{/}.'
+    ]
+  ],
+  notas:[
+    'Abre com o artigo da Constituição dedicado ao meio ambiente.',
+    'O D1 trata da fiscalização; o D2 liga o tema ao crime organizado e ao clima.',
+    'O fechamento do D2 aproxima o problema do leitor urbano ("a vida nas cidades").',
+    'A proposta inclui o policiamento ambiental, papel da própria PM.'
+  ]
+},
+{
+  id:'m30', curto:'Violência e desigualdade',
+  tema:'A violência urbana e a desigualdade social',
+  tipo:'Tema de relação → duas causas',
+  p:[
+    [
+      '{r}O geógrafo Milton Santos usou a expressão "cidadania mutilada" para',
+      'descrever quem tem direitos apenas no papel{/}. Nas periferias brasileiras,',
+      'essa realidade alimenta a violência, {t}sobretudo pela exclusão dos',
+      'jovens e pela ausência de serviços públicos nesses territórios{/}.'
+    ],[
+      'Em primeiro lugar, a exclusão deixa os jovens sem perspectiva.',
+      'Escolas precárias, falta de emprego e ausência de lazer reduzem as',
+      'oportunidades de quem nasce nas periferias. {r}Segundo o Atlas da',
+      'Violência, a maioria das vítimas de homicídio no país é jovem{/}, o que',
+      'mostra que a desigualdade expõe essa parcela da população tanto ao',
+      'aliciamento do crime quanto ao risco de morte precoce.'
+    ],[
+      'Além disso, a ausência do Estado abre espaço para o crime.',
+      'Em bairros sem saneamento, iluminação e policiamento regular, grupos',
+      'criminosos impõem regras e cobram "taxas" dos moradores. {r}Para Émile',
+      'Durkheim, quando as normas perdem força, instala-se a anomia{/}. Sob',
+      'essa ótica, o vazio deixado pelo poder público é ocupado pela',
+      'violência, de modo que a comunidade vive sob medo constante.'
+    ],[
+      'Portanto, reduzir a desigualdade é também reduzir a violência. Para',
+      'isso, {p}os governos devem levar escolas, empregos e policiamento',
+      'comunitário às periferias, por meio de políticas integradas, a fim de',
+      'devolver a esses territórios a presença do Estado e a cidadania plena{/}.'
+    ]
+  ],
+  notas:[
+    'Não diz que "pobreza gera criminoso": diz que a exclusão aumenta a vulnerabilidade.',
+    'O D1 trata das pessoas (jovens); o D2, do território (bairros sem Estado).',
+    'A conclusão retoma o conceito da introdução ("cidadania plena" × "cidadania mutilada").',
+    'A proposta junta política social e policiamento comunitário.'
+  ]
+},
+{
+  id:'m31', curto:'Violência entre torcidas',
+  tema:'A violência entre torcidas organizadas',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Lei Geral do Esporte, de 2023, manteve como crime promover tumulto',
+      'e praticar violência em eventos esportivos{/}. Ainda assim, confrontos',
+      'entre torcidas persistem, {t}sobretudo pela rivalidade transformada em',
+      'ódio e pela punição insuficiente dos agressores{/}.'
+    ],[
+      'Em primeiro lugar, a rivalidade esportiva vira ódio entre grupos.',
+      'O pertencimento à torcida passa a definir a identidade do jovem, e o',
+      'rival se torna inimigo. {r}Para Thomas Hobbes, sem a força do Estado,',
+      'os homens tendem à "guerra de todos contra todos"{/}, e é o que ocorre',
+      'quando brigas são combinadas pelas redes sociais longe dos estádios,',
+      'atingindo inclusive torcedores comuns e moradores.'
+    ],[
+      'Além disso, os agressores raramente são punidos. Em meio à multidão,',
+      'é difícil identificar quem começou a briga, e muitos banidos voltam',
+      'aos estádios sem fiscalização. {r}Segundo a Teoria das Janelas',
+      'Quebradas, a desordem não corrigida estimula delitos maiores{/}. Logo,',
+      'a tolerância com pequenas agressões abre caminho para confrontos',
+      'graves a cada clássico.'
+    ],[
+      'Portanto, é preciso devolver a paz aos estádios. Para isso, {p}as',
+      'polícias e os clubes devem identificar os torcedores na entrada e',
+      'usar inteligência para impedir brigas combinadas, a fim de punir os',
+      'violentos e proteger quem vai ao estádio para torcer{/}.'
+    ]
+  ],
+  notas:[
+    'Fala da minoria violenta, e não das torcidas em geral.',
+    'O D1 explica a origem do ódio; o D2, por que ele não é contido.',
+    'A Teoria das Janelas Quebradas é usada no contexto certo: pequenas desordens toleradas.',
+    'A proposta é técnica (identificação e inteligência), dentro da atuação policial.'
+  ]
+},
+{
+  id:'m32', curto:'Pessoas desaparecidas',
+  tema:'Os desafios na busca por pessoas desaparecidas',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}A Lei 13.812, de 2019, determina que a busca por pessoas',
+      'desaparecidas seja prioridade com caráter de urgência{/}. Na prática,',
+      'muitas famílias seguem sem respostas, {t}sobretudo pela demora em',
+      'comunicar o desaparecimento e pela falta de integração dos órgãos{/}.'
+    ],[
+      'Em primeiro lugar, ainda há demora no registro da ocorrência.',
+      'Muitas famílias acreditam no mito de que é preciso esperar 24 horas',
+      'para procurar a polícia. {r}O Estatuto da Criança e do Adolescente,',
+      'porém, determina que o desaparecimento seja investigado de imediato{/}.',
+      'Nesse sentido, as primeiras horas são decisivas para localizar',
+      'crianças e idosos, e cada atraso reduz as chances de um reencontro.'
+    ],[
+      'Além disso, os órgãos públicos ainda trabalham de forma isolada.',
+      'Polícias, hospitais, abrigos e institutos de medicina legal nem',
+      'sempre compartilham informações, e uma pessoa pode estar internada',
+      'ou sem identificação em outro município. {r}A mesma lei criou um',
+      'cadastro nacional de desaparecidos{/}, mas, sem alimentação constante,',
+      'ele perde eficácia, de modo que buscas se arrastam por anos.'
+    ],[
+      'Portanto, é preciso agilizar a busca por desaparecidos. Para isso,',
+      '{p}o Governo Federal deve integrar o cadastro nacional a polícias,',
+      'hospitais e IML, além de divulgar que o registro é imediato, a fim',
+      'de devolver respostas e esperança às famílias{/}.'
+    ]
+  ],
+  notas:[
+    'Desfaz um mito comum (esperar 24 horas), o que mostra conhecimento da atividade policial.',
+    'Cada desenvolvimento usa uma base legal diferente: o ECA e o cadastro nacional.',
+    'O D2 descreve um caso concreto (pessoa internada em outro município) para explicar a falta de integração.',
+    'A proposta responde aos dois argumentos: integração de dados e divulgação do registro imediato.'
+  ]
+},
+{
+  id:'m33', curto:'Suicídio entre jovens',
+  tema:'A prevenção ao suicídio entre jovens',
+  tipo:'Tema de prevenção → dois fatores de risco',
+  p:[
+    [
+      '{r}A Lei 13.819, de 2019, criou a Política Nacional de Prevenção da',
+      'Automutilação e do Suicídio{/}. Entre os jovens, essa prevenção exige',
+      'atenção, {t}sobretudo pelo tabu em falar sobre saúde mental e pela',
+      'pressão intensificada pelas redes sociais{/}.'
+    ],[
+      'Em primeiro lugar, o silêncio impede que o sofrimento seja notado.',
+      'Em muitas famílias, tristeza profunda e isolamento são vistos como',
+      '"frescura" ou fase passageira. {r}A campanha Setembro Amarelo mostra',
+      'que falar sobre o tema salva vidas{/}. Nesse sentido, quando pais e',
+      'professores não sabem reconhecer sinais de alerta, o jovem deixa de',
+      'receber ajuda no momento em que mais precisa dela.'
+    ],[
+      'Além disso, as redes sociais ampliam a pressão sobre os jovens.',
+      'A comparação constante com vidas aparentemente perfeitas e os ataques',
+      'virtuais afetam a autoestima. {r}Para o filósofo Byung-Chul Han, a',
+      'sociedade do desempenho produz sujeitos esgotados e deprimidos{/}.',
+      'Sob essa ótica, o adolescente cobrado por padrões inalcançáveis',
+      'sente-se fracassado, o que agrava quadros de ansiedade e depressão.'
+    ],[
+      'Portanto, prevenir o suicídio entre jovens é responsabilidade de',
+      'todos. Para isso, {p}as escolas devem contar com psicólogos e treinar',
+      'professores, além de divulgar o CVV (188), a fim de acolher quem',
+      'sofre e garantir ajuda antes que seja tarde{/}.'
+    ]
+  ],
+  notas:[
+    'Tema sensível: o texto fala de prevenção e acolhimento, sem descrever métodos.',
+    'O D1 trata do ambiente próximo (família e escola); o D2, do ambiente virtual.',
+    'Setembro Amarelo e Byung-Chul Han são usados como prova, com explicação.',
+    'A proposta cita um canal real de ajuda (CVV, 188).'
+  ]
+},
+{
+  id:'m34', curto:'LGBTfobia',
+  tema:'O combate à LGBTfobia no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}Em 2019, o Supremo Tribunal Federal decidiu que a homofobia e a',
+      'transfobia devem ser punidas como crimes de racismo{/}. Mesmo assim,',
+      'a violência contra pessoas LGBTQIA+ persiste, {t}sobretudo pelo',
+      'preconceito naturalizado e pela subnotificação dos crimes{/}.'
+    ],[
+      'Em primeiro lugar, o preconceito ainda é tratado como normal.',
+      'Piadas, exclusão familiar e discursos de ódio nas redes sociais',
+      'reforçam a ideia de que essas pessoas valem menos. {r}A Declaração',
+      'Universal dos Direitos Humanos afirma que todos nascem livres e iguais',
+      'em dignidade e direitos{/}, mas, quando a discriminação é aceita, ela',
+      'abre caminho para agressões físicas e até assassinatos.'
+    ],[
+      'Além disso, muitos crimes nem chegam às estatísticas. Por medo de',
+      'nova violência ou de exposição, vítimas deixam de denunciar, e muitos',
+      'registros não indicam a motivação do crime. {r}Hannah Arendt chamou',
+      'de "banalidade do mal" a naturalização de atos cruéis{/}. Nesse',
+      'sentido, sem dados confiáveis, o problema fica invisível, de modo que',
+      'faltam políticas públicas para enfrentá-lo.'
+    ],[
+      'Portanto, é necessário combater a LGBTfobia. Para isso, {p}as polícias',
+      'devem capacitar agentes para registrar a motivação dos crimes, e as',
+      'escolas devem trabalhar o respeito à diversidade, a fim de garantir',
+      'segurança e dignidade a todos os cidadãos{/}.'
+    ]
+  ],
+  notas:[
+    'Linguagem respeitosa e técnica, sem opinião moral ou religiosa sobre ninguém.',
+    'A introdução usa uma decisão do STF, repertório jurídico forte.',
+    'O D2 explica a subnotificação, ponto que liga o tema ao trabalho policial (registro de ocorrência).',
+    'A proposta envolve a polícia e a escola.'
+  ]
+},
+{
+  id:'m35', curto:'Intolerância religiosa',
+  tema:'O combate à intolerância religiosa',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Constituição garante, no artigo 5º, que é inviolável a liberdade',
+      'de consciência e de crença{/}. Ainda assim, a intolerância religiosa',
+      'persiste no Brasil, {t}sobretudo pelo desconhecimento das outras',
+      'crenças e pela impunidade dos ataques{/}.'
+    ],[
+      'Em primeiro lugar, o desconhecimento alimenta o preconceito.',
+      'Religiões de matriz africana, como o candomblé e a umbanda, são',
+      'frequentemente associadas a estereótipos negativos, o que revela',
+      'também a força do racismo. {r}A Declaração Universal dos Direitos',
+      'Humanos garante a liberdade de manifestar a própria religião{/}, mas',
+      'essa garantia perde força quando o diferente é visto como ameaça.'
+    ],[
+      'Além disso, os ataques raramente são punidos. Terreiros depredados,',
+      'ofensas e agressões muitas vezes não são registrados como crime de',
+      'intolerância. {r}A Lei 7.716, de 1989, pune a discriminação por',
+      'religião{/}, mas a falta de investigação faz com que a lei pareça',
+      'distante, de modo que os agressores se sentem livres para repetir',
+      'os ataques.'
+    ],[
+      'Portanto, a liberdade religiosa precisa ser protegida. Para isso,',
+      '{p}as escolas devem abordar a diversidade de crenças, e as polícias',
+      'devem investigar com prioridade os crimes de intolerância, a fim de',
+      'garantir a todos o direito de professar sua fé em paz{/}.'
+    ]
+  ],
+  notas:[
+    'Não defende nem ataca nenhuma religião: o foco é a liberdade de crença.',
+    'O D1 liga a intolerância ao racismo, mostrando relação entre temas.',
+    'O D2 usa a lei de 1989, que também pune a discriminação por religião.',
+    'A proposta tem prevenção (escola) e repressão (investigação).'
+  ]
+},
+{
+  id:'m36', curto:'Trabalho escravo',
+  tema:'O trabalho análogo à escravidão no Brasil contemporâneo',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Lei Áurea aboliu a escravidão no Brasil em 1888{/}. Mais de um',
+      'século depois, porém, trabalhadores ainda são resgatados em condições',
+      'degradantes, {t}sobretudo pela vulnerabilidade social das vítimas e',
+      'pela busca de lucro sem fiscalização eficiente{/}.'
+    ],[
+      'Em primeiro lugar, a pobreza torna os trabalhadores vulneráveis.',
+      'Pessoas com baixa escolaridade aceitam falsas promessas de emprego e',
+      'acabam presas a dívidas com o patrão. {r}O artigo 149 do Código Penal',
+      'considera crime submeter alguém a jornada exaustiva, condições',
+      'degradantes ou restrição de locomoção por dívida{/}. Assim, a escravidão',
+      'moderna não depende de correntes, mas da falta de alternativas.'
+    ],[
+      'Além disso, a fiscalização não alcança toda a cadeia produtiva.',
+      'Fazendas, carvoarias, oficinas de costura e até trabalhos domésticos',
+      'escondem casos que só são descobertos por denúncias. {r}Para Kant, o',
+      'ser humano deve ser tratado como fim, e nunca apenas como meio{/}.',
+      'Nesse sentido, quem lucra com a exploração trata pessoas como',
+      'mercadoria, e a impunidade estimula a repetição do crime.'
+    ],[
+      'Portanto, é urgente erradicar o trabalho escravo. Para isso, {p}os',
+      'auditores do trabalho, com apoio policial, devem ampliar as',
+      'fiscalizações e divulgar a "Lista Suja" de empregadores, a fim de',
+      'punir os exploradores e libertar os trabalhadores{/}.'
+    ]
+  ],
+  notas:[
+    'A abertura histórica (1888) cria contraste com a realidade atual.',
+    'O D1 explica o que caracteriza a escravidão moderna, segundo o Código Penal.',
+    'O D2 usa Kant para mostrar por que a exploração fere a dignidade.',
+    'A proposta cita um instrumento real de combate (a "Lista Suja").'
+  ]
+},
+{
+  id:'m37', curto:'Trabalho infantil',
+  tema:'O trabalho infantil no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Constituição proíbe qualquer trabalho a menores de 16 anos, salvo',
+      'na condição de aprendiz, a partir dos 14{/}. Ainda assim, o trabalho',
+      'infantil persiste no país, {t}sobretudo pela pobreza das famílias e',
+      'pela ideia de que "trabalhar cedo forma o caráter"{/}.'
+    ],[
+      'Em primeiro lugar, a pobreza empurra crianças para o trabalho.',
+      'Em famílias de baixa renda, o dinheiro ganho por crianças nas ruas,',
+      'nas feiras ou no campo complementa o orçamento doméstico. {r}Em',
+      '"Capitães da Areia", Jorge Amado retrata meninos que sobrevivem sem',
+      'proteção nas ruas de Salvador{/}, e essa realidade se repete quando',
+      'a escola é trocada pelo trabalho, o que perpetua a pobreza.'
+    ],[
+      'Além disso, a cultura brasileira ainda naturaliza essa exploração.',
+      'Muitos adultos acreditam que trabalhar cedo afasta a criança das',
+      'drogas, sem perceber os danos à saúde e aos estudos. {r}O Estatuto da',
+      'Criança e do Adolescente garante o direito de brincar, estudar e se',
+      'desenvolver{/}. Nesse sentido, a exploração rouba a infância e reduz',
+      'as chances de um futuro digno.'
+    ],[
+      'Portanto, é preciso erradicar o trabalho infantil. Para isso, {p}o',
+      'governo deve ampliar a transferência de renda condicionada à',
+      'frequência escolar e a fiscalização do trabalho, a fim de garantir',
+      'que lugar de criança seja na escola{/}.'
+    ]
+  ],
+  notas:[
+    'A introdução diferencia o trabalho infantil (proibido) da aprendizagem legal.',
+    'O D1 trata da causa econômica; o D2, da causa cultural.',
+    'O fechamento do D1 mostra o ciclo: trabalho infantil gera mais pobreza.',
+    'A proposta ataca a causa econômica (renda) e exige frequência escolar.'
+  ]
+},
+{
+  id:'m38', curto:'População de rua',
+  tema:'A população em situação de rua no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Constituição inclui, no artigo 6º, a moradia entre os direitos',
+      'sociais{/}. Contudo, cresce o número de pessoas em situação de rua nas',
+      'grandes cidades, {t}sobretudo pela crise de moradia e renda e pela',
+      'falta de acolhimento contínuo{/}.'
+    ],[
+      'Em primeiro lugar, a falta de renda e moradia leva muitos às ruas.',
+      'Desemprego, aluguéis caros e o rompimento de vínculos familiares',
+      'deixam pessoas sem alternativa. {r}Como mostra Gilberto Dimenstein em',
+      '"O Cidadão de Papel", muitos direitos existem apenas na lei{/}. Sob',
+      'essa ótica, quem dorme nas calçadas é a face mais visível da',
+      'distância entre o que a lei garante e o que o Estado entrega.'
+    ],[
+      'Além disso, o acolhimento oferecido é insuficiente e temporário.',
+      'Faltam vagas em abrigos, e muitos não aceitam animais, casais ou',
+      'pertences, o que afasta quem precisa. {r}Desde 2009, uma política',
+      'nacional prevê saúde, moradia e trabalho para essa população{/}, mas,',
+      'sem tratamento para dependência química e saúde mental, muitas',
+      'pessoas voltam às ruas logo depois de acolhidas.'
+    ],[
+      'Portanto, é preciso garantir dignidade a quem vive nas ruas. Para',
+      'isso, {p}os municípios devem ampliar abrigos e programas de moradia,',
+      'com acompanhamento de saúde e qualificação profissional, a fim de',
+      'oferecer uma saída real das ruas{/}.'
+    ]
+  ],
+  notas:[
+    'Trata o tema como questão social e de direitos, sem associar essas pessoas ao crime.',
+    'O D1 explica como a pessoa chega à rua; o D2, por que ela não consegue sair.',
+    'O D2 traz detalhes concretos dos abrigos (animais, casais, pertences), o que dá informatividade.',
+    'A proposta combina moradia, saúde e trabalho.'
+  ]
+},
+{
+  id:'m39', curto:'Fome',
+  tema:'O combate à fome e à insegurança alimentar no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}Em "Geografia da Fome", o pernambucano Josué de Castro mostrou que',
+      'a fome é produto de escolhas sociais, e não da natureza{/}. Décadas',
+      'depois, ela ainda atinge brasileiros, {t}sobretudo pela desigualdade',
+      'de renda e pelo desperdício de alimentos{/}.'
+    ],[
+      'Em primeiro lugar, a desigualdade impede o acesso à comida.',
+      'O Brasil é um dos maiores produtores de alimentos do mundo, mas',
+      'milhões de famílias não têm renda para comprá-los. {r}O país saiu do',
+      'Mapa da Fome da ONU em 2014 e voltou a ele anos depois{/}, o que mostra',
+      'que, sem emprego e políticas contínuas, a conquista não se sustenta',
+      'e a mesa vazia volta a fazer parte da rotina dos mais pobres.'
+    ],[
+      'Além disso, o desperdício agrava a insegurança alimentar. Muitos',
+      'alimentos se perdem na colheita, no transporte e nos supermercados,',
+      'enquanto pessoas passam fome a poucos metros. {r}A Constituição inclui',
+      'a alimentação entre os direitos sociais, no artigo 6º{/}. Nesse',
+      'sentido, desperdiçar comida em um país com fome é negar esse direito',
+      'a quem mais precisa dele.'
+    ],[
+      'Portanto, acabar com a fome exige ação permanente. Para isso, {p}o',
+      'governo deve manter a transferência de renda e a alimentação escolar',
+      'e apoiar bancos de alimentos, a fim de garantir comida na mesa de',
+      'todos os brasileiros{/}.'
+    ]
+  ],
+  notas:[
+    'Repertório pernambucano clássico, citado com a obra e a ideia central.',
+    'A tese desfaz um senso comum: a fome não é falta de produção.',
+    'O D1 usa um fato histórico recente (Mapa da Fome) para mostrar que a conquista não é permanente.',
+    'A proposta responde aos dois argumentos: renda e combate ao desperdício.'
+  ]
+},
+{
+  id:'m40', curto:'Pessoa com deficiência',
+  tema:'A inclusão da pessoa com deficiência na sociedade brasileira',
+  tipo:'Tema de problema → dois obstáculos',
+  p:[
+    [
+      '{r}O Estatuto da Pessoa com Deficiência, de 2015, assegura direitos',
+      'como acessibilidade, educação inclusiva e trabalho{/}. Na prática, a',
+      'inclusão ainda é limitada, {t}sobretudo pelas barreiras físicas e de',
+      'comunicação e pelo preconceito conhecido como capacitismo{/}.'
+    ],[
+      'Em primeiro lugar, as barreiras impedem o exercício de direitos.',
+      'Calçadas irregulares, ônibus sem elevador e a falta de intérpretes de',
+      'Libras dificultam o acesso à escola, ao trabalho e aos serviços.',
+      '{r}O artigo 5º da Constituição garante a igualdade de todos perante a',
+      'lei{/}, mas, sem acessibilidade, essa igualdade fica no papel, de modo',
+      'que muitas pessoas deixam de sair de casa.'
+    ],[
+      'Além disso, o capacitismo limita oportunidades. Muitos ainda duvidam',
+      'da capacidade da pessoa com deficiência e a tratam com pena ou',
+      'exclusão. {r}A Lei de Cotas, de 1991, obriga empresas com cem ou mais',
+      'empregados a reservar vagas para esses profissionais{/}, mas muitas',
+      'não cumprem a cota, o que reforça a exclusão e reduz a autonomia',
+      'dessas pessoas.'
+    ],[
+      'Portanto, incluir a pessoa com deficiência é dever de todos. Para',
+      'isso, {p}o poder público deve fiscalizar a acessibilidade e o',
+      'cumprimento das cotas, além de capacitar servidores em Libras, a fim',
+      'de garantir autonomia e cidadania a essa população{/}.'
+    ]
+  ],
+  notas:[
+    'Usa os termos corretos: "pessoa com deficiência" e "capacitismo".',
+    'O D1 trata das barreiras físicas; o D2, das barreiras de atitude.',
+    'O D2 cita a Lei de Cotas com a regra exata (empresas com cem ou mais empregados).',
+    'A proposta inclui capacitar servidores em Libras, o que vale também para a polícia.'
+  ]
+},
+{
+  id:'m41', curto:'Mobilidade urbana',
+  tema:'Os desafios da mobilidade urbana nas grandes cidades',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}Desde 2015, a Constituição inclui o transporte entre os direitos',
+      'sociais{/}. Nas grandes cidades, porém, deslocar-se ainda é um desafio,',
+      '{t}sobretudo pela priorização do transporte individual e pela baixa',
+      'qualidade do transporte público{/}.'
+    ],[
+      'Em primeiro lugar, as cidades foram planejadas para o carro.',
+      'O excesso de veículos provoca congestionamentos, poluição e acidentes.',
+      '{r}A Política Nacional de Mobilidade Urbana, de 2012, determina que o',
+      'transporte coletivo tenha prioridade sobre o individual{/}, mas a',
+      'maior parte do espaço das vias ainda é ocupada por automóveis, de',
+      'modo que o trânsito se torna mais lento e mais perigoso.'
+    ],[
+      'Além disso, o transporte público não atende bem à população.',
+      'Ônibus lotados, atrasos e paradas sem iluminação tornam a viagem',
+      'cansativa e insegura, sobretudo à noite. {r}O geógrafo Milton Santos',
+      'mostrou que o acesso à cidade é desigual entre ricos e pobres{/}.',
+      'Nesse sentido, o trabalhador da periferia gasta horas no trajeto e',
+      'fica mais exposto a assaltos, o que reduz sua qualidade de vida.'
+    ],[
+      'Portanto, a mobilidade urbana precisa ser repensada. Para isso, {p}as',
+      'prefeituras devem ampliar faixas exclusivas de ônibus e ciclovias,',
+      'com policiamento e iluminação nas paradas, a fim de garantir',
+      'deslocamentos rápidos e seguros a todos{/}.'
+    ]
+  ],
+  notas:[
+    'A introdução lembra que o transporte é direito social desde 2015.',
+    'O D1 usa a lei de mobilidade para mostrar a distância entre a regra e a rua.',
+    'O D2 aproxima o tema da segurança pública (assaltos e paradas escuras).',
+    'A proposta junta transporte e policiamento, um para cada argumento.'
+  ]
+},
+{
+  id:'m42', curto:'Maus-tratos a animais',
+  tema:'O combate aos maus-tratos e ao abandono de animais',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O filósofo Immanuel Kant afirmou que quem é cruel com os animais',
+      'endurece também no trato com as pessoas{/}. No Brasil, os maus-tratos',
+      'persistem, {t}sobretudo pela visão do animal como objeto e pela',
+      'fiscalização insuficiente{/}.'
+    ],[
+      'Em primeiro lugar, muitos ainda veem o animal como um objeto.',
+      'Cães e gatos são comprados por impulso e abandonados quando adoecem,',
+      'envelhecem ou dão trabalho. {r}A Lei Sansão, de 2020, aumentou a pena',
+      'para maus-tratos a cães e gatos para até cinco anos de reclusão{/}, mas',
+      'a mudança de mentalidade é mais lenta que a da lei, de modo que o',
+      'abandono segue comum nas ruas das cidades.'
+    ],[
+      'Além disso, a fiscalização e as denúncias são insuficientes.',
+      'Muitos casos acontecem dentro de casas e quintais, longe dos olhos',
+      'das autoridades. {r}O artigo 225 da Constituição veda práticas que',
+      'submetam os animais a crueldade{/}. Nesse sentido, sem canais de',
+      'denúncia conhecidos e sem equipes para atender, a lei não chega a',
+      'quem precisa de proteção.'
+    ],[
+      'Portanto, é preciso combater os maus-tratos a animais. Para isso,',
+      '{p}os municípios devem ampliar castração e adoção responsável, e o',
+      'policiamento ambiental deve atender às denúncias, a fim de proteger',
+      'os animais e construir uma sociedade menos violenta{/}.'
+    ]
+  ],
+  notas:[
+    'A citação de Kant liga o tema à violência entre pessoas, aproximando-o da segurança pública.',
+    'O D1 trata da mentalidade; o D2, da fiscalização.',
+    'Usa duas bases legais: a Lei Sansão e o art. 225 da Constituição.',
+    'A conclusão retoma Kant ("uma sociedade menos violenta"), fechando o texto em círculo.'
+  ]
 }
 ];
