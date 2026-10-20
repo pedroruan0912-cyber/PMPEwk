@@ -1,0 +1,1951 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redação Nota 40 PMPE</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Kalam:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sumário fixo à esquerda (gaveta no celular) + coluna de leitura; as redações aparecem numa folha pautada de 20 linhas, com marcas de "caneta do corretor" */
+:root{
+  --paper:#EEF2F1; --surface:#FFFFFF; --ink:#16202E; --muted:#596678; --rule:#D2DAE0;
+  --pen:#2342A6; --pen-ink:#FFFFFF; --pen-soft:#E3E9FA;
+  --red:#C2362B; --red-soft:#FBE9E7;
+  --ok:#1D6B47; --ok-soft:#E1F2E8;
+  --warn:#8A5A00; --warn-soft:#FFF3D6;
+  --sheet:#FFFFFF; --sheet-line:#B9CBE3; --sheet-margin:#E59A93;
+  --hl-tese:#FFE36E; --hl-rep:#BFEBCF; --hl-con:#C9D6FF; --hl-prop:#F5CCE8; --hl-ink:#16202E;
+  --f-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-hand:"Kalam","Comic Neue","Segoe Print",cursive;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1418; --surface:#151D23; --ink:#E3E8EC; --muted:#9BA8B5; --rule:#2A3640;
+  --pen:#8FA8FF; --pen-ink:#0E1418; --pen-soft:#1C2645;
+  --red:#FF8A7D; --red-soft:#3A1C1A;
+  --ok:#74D3A2; --ok-soft:#13301F;
+  --warn:#F2C35B; --warn-soft:#352812;
+  --sheet:#1A242C; --sheet-line:#2F4256; --sheet-margin:#6E3A36;
+  --hl-tese:#6B5A12; --hl-rep:#1D4A31; --hl-con:#25356B; --hl-prop:#5A2449; --hl-ink:#F3F5F7;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0E1418; --surface:#151D23; --ink:#E3E8EC; --muted:#9BA8B5; --rule:#2A3640;
+  --pen:#8FA8FF; --pen-ink:#0E1418; --pen-soft:#1C2645;
+  --red:#FF8A7D; --red-soft:#3A1C1A;
+  --ok:#74D3A2; --ok-soft:#13301F;
+  --warn:#F2C35B; --warn-soft:#352812;
+  --sheet:#1A242C; --sheet-line:#2F4256; --sheet-margin:#6E3A36;
+  --hl-tese:#6B5A12; --hl-rep:#1D4A31; --hl-con:#25356B; --hl-prop:#5A2449; --hl-ink:#F3F5F7;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.62;font-optical-sizing:auto}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}
+a{color:var(--pen)}
+:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+b,strong{font-weight:650}
+
+/* ---------- estrutura ---------- */
+.app{display:grid;grid-template-columns:286px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--surface);border-right:1px solid var(--rule);padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;z-index:30}
+.brand{font-family:var(--f-display);font-weight:800;font-size:1.3rem;line-height:1.08;margin:0 0 18px;letter-spacing:-.01em}
+.brand .n40{display:inline-block;background:var(--red);color:#fff;border-radius:6px;padding:0 .3em;margin-left:.15em;transform:rotate(-3deg)}
+.brand small{display:block;font-family:var(--f-body);font-weight:400;font-size:.8rem;color:var(--muted);margin-top:6px;letter-spacing:0}
+#nav{display:flex;flex-direction:column;gap:2px}
+#nav a{display:grid;grid-template-columns:28px 1fr 16px;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-weight:500;font-size:.94rem;padding:7px 8px;border-radius:8px;line-height:1.25}
+#nav a .num{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+#nav a .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--rule);justify-self:end}
+#nav a.done .dot{background:var(--ok);border-color:var(--ok)}
+#nav a:hover{background:var(--pen-soft)}
+#nav a[aria-current="page"]{background:var(--pen);color:var(--pen-ink)}
+#nav a[aria-current="page"] .num{color:var(--pen-ink)}
+.main{min-width:0;display:flex;flex-direction:column}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:10px;background:var(--surface);border-bottom:1px solid var(--rule);padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.topbar .where{flex:1;min-width:0;font-family:var(--f-display);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.icon-btn{border:1px solid var(--rule);background:var(--surface);border-radius:8px;padding:6px 12px;font-family:var(--f-display);font-weight:600;font-size:.88rem}
+.icon-btn:hover{border-color:var(--pen)}
+.menu-btn{display:none}
+.read-prog{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);white-space:nowrap}
+.content{padding-block:28px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.view{max-width:780px;margin:0 auto}
+.scrim{display:none}
+@media (max-width:900px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:transform .22s ease;padding-top:calc(20px + env(safe-area-inset-top,0px));box-shadow:0 0 40px rgba(0,0,0,.25)}
+  .side.open{transform:none}
+  .scrim.open{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:25}
+  .menu-btn{display:inline-block}
+}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.12;text-wrap:balance;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(2rem,5.2vw,3.1rem);font-weight:800}
+h2{font-size:clamp(1.6rem,3.6vw,2.1rem);font-weight:800;margin-bottom:6px}
+h3{font-size:1.28rem;font-weight:700;margin-top:34px;margin-bottom:8px}
+h4{font-size:1.04rem;font-weight:700;margin-top:18px;margin-bottom:4px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:1.3em}
+li{margin-bottom:5px}
+.eyebrow{display:inline-block;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.lede{font-size:1.14rem;color:var(--muted);max-width:62ch}
+.small{font-size:.88rem;color:var(--muted)}
+.chap-head{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+.chap-head p{margin:8px 0 0;color:var(--muted)}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+.hl{background:var(--hl-tese);color:var(--hl-ink);padding:0 .15em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* ---------- capa ---------- */
+.cover h1 .red{color:var(--red)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:24px 0}
+.fact{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.fact b{display:block;font-family:var(--f-display);font-weight:800;font-size:1.7rem;line-height:1.1}
+.fact span{font-size:.86rem;color:var(--muted)}
+.fact.key{border-color:var(--red);background:var(--red-soft)}
+.fact.key b{color:var(--red)}
+.route{list-style:none;padding:0;margin:18px 0;display:grid;gap:8px;counter-reset:r}
+.route li{counter-increment:r;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;margin:0}
+.route li::before{content:counter(r);font-family:var(--f-mono);font-weight:600;font-size:.82rem;width:28px;height:28px;border-radius:50%;background:var(--pen);color:var(--pen-ink);display:grid;place-items:center;margin-top:1px}
+.route a{font-family:var(--f-display);font-weight:600}
+
+/* ---------- caixas ---------- */
+.box{border-radius:10px;padding:14px 16px;margin:18px 0;border:1px solid var(--rule);background:var(--surface)}
+.box > :last-child{margin-bottom:0}
+.box .tag{display:block;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.box.trap{border-color:var(--red);background:var(--red-soft)} .box.trap .tag{color:var(--red)}
+.box.tip{border-color:var(--ok);background:var(--ok-soft)} .box.tip .tag{color:var(--ok)}
+.box.warn{border-color:var(--warn);background:var(--warn-soft)} .box.warn .tag{color:var(--warn)}
+.box.pen{border-color:var(--pen);background:var(--pen-soft)} .box.pen .tag{color:var(--pen)}
+
+/* ---------- critérios ---------- */
+.crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0}
+.crit{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.crit .pts{font-family:var(--f-mono);font-size:.8rem;color:var(--red);font-weight:600}
+.crit h4{margin:0}
+.crit p{margin:0;font-size:.95rem}
+
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--f-display);font-weight:700;background:var(--pen-soft);font-size:.9rem}
+tr:last-child td{border-bottom:0}
+td.wrong{color:var(--red)} td.right{color:var(--ok)}
+
+/* ---------- folha de redação ---------- */
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;margin:14px 0;overflow-x:auto;position:relative}
+.sheet ol{list-style:none;margin:0;padding:6px 0;counter-reset:ln;min-width:560px}
+.sheet li{counter-increment:ln;display:grid;grid-template-columns:38px 1fr;margin:0;border-bottom:1px solid var(--sheet-line);min-height:36px;align-items:end}
+.sheet li::before{content:counter(ln);font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-align:right;padding-right:8px;border-right:2px solid var(--sheet-margin);align-self:stretch;display:flex;align-items:flex-end;justify-content:flex-end;padding-bottom:6px}
+.sheet .tx{font-family:var(--f-hand);font-size:1.06rem;line-height:1.3;padding:4px 10px 4px 12px;color:var(--pen);white-space:nowrap}
+.sheet .tx.ind{padding-left:40px}
+.sheet .pmark{position:absolute;right:8px;font-family:var(--f-mono);font-size:.68rem}
+@media (max-width:700px){.sheet ol{min-width:0}.sheet .tx{white-space:normal;font-size:.98rem}.sheet .tx.ind{padding-left:28px}}
+.sheet-legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.84rem;margin:6px 0 4px}
+.sheet-legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px}
+.sheet.annot .t-tese{background:var(--hl-tese);color:var(--hl-ink)}
+.sheet.annot .t-rep{background:var(--hl-rep);color:var(--hl-ink)}
+.sheet.annot .t-con{background:var(--hl-con);color:var(--hl-ink)}
+.sheet.annot .t-prop{background:var(--hl-prop);color:var(--hl-ink)}
+.sheet .t-tese,.sheet .t-rep,.sheet .t-con,.sheet .t-prop{border-radius:3px;transition:background .2s}
+
+/* mapa de 20 linhas */
+.map20{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:3px;margin:16px 0 6px}
+.map20 i{height:46px;border-radius:4px;display:grid;place-items:end center;font-style:normal;font-family:var(--f-mono);font-size:.62rem;padding-bottom:3px;color:var(--hl-ink)}
+.map20 .a{background:var(--hl-tese)} .map20 .b{background:var(--hl-con)} .map20 .c{background:var(--hl-rep)} .map20 .d{background:var(--hl-prop)}
+.map-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;font-size:.9rem}
+.map-legend div{display:flex;gap:8px;align-items:flex-start}
+.map-legend .sw{margin-top:5px;flex:none}
+
+/* moldes */
+.mold{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin:14px 0}
+.mold h4{margin-top:0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mold h4 .mono{color:var(--muted);font-weight:400}
+.mold p{margin:0;font-size:1rem}
+.slot{background:var(--pen-soft);color:var(--pen);border-radius:4px;padding:0 .3em;font-family:var(--f-mono);font-size:.84em;white-space:nowrap}
+.fixed{font-weight:600}
+
+/* acordeões (temas, repertórios) */
+.acc{border:1px solid var(--rule);border-radius:10px;background:var(--surface);margin:10px 0;overflow:hidden}
+.acc > summary{list-style:none;cursor:pointer;padding:12px 16px;display:flex;gap:10px;align-items:center;font-family:var(--f-display);font-weight:700;font-size:1.02rem}
+.acc > summary::-webkit-details-marker{display:none}
+.acc > summary::after{content:"+";margin-left:auto;font-family:var(--f-mono);font-size:1.2rem;color:var(--muted)}
+.acc[open] > summary::after{content:"–"}
+.acc > summary .chip{flex:none}
+.acc .acc-body{padding:0 16px 14px;border-top:1px solid var(--rule)}
+.acc .acc-body h4:first-child{margin-top:12px}
+.chip{display:inline-block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;padding:2px 8px;border-radius:99px;background:var(--pen-soft);color:var(--pen);font-weight:600;white-space:nowrap}
+.chip.hot{background:var(--red-soft);color:var(--red)}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.filters button{border:1px solid var(--rule);background:var(--surface);border-radius:99px;padding:5px 12px;font-family:var(--f-display);font-weight:600;font-size:.84rem}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.search{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+.rep-list{display:grid;gap:10px;margin-top:10px}
+.rep{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 16px}
+.rep h4{margin:0 0 2px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.rep .who{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);font-weight:400}
+.rep p{margin:6px 0 0;font-size:.97rem}
+.rep .use{border-left:3px solid var(--ok);padding-left:10px;font-style:italic}
+.rep .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.count-line{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+
+/* conectivos */
+.con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:14px 0}
+.con{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.con h4{margin:0 0 6px;font-size:.98rem}
+.con p{margin:0;font-size:.94rem}
+.con .ex{margin-top:6px;font-size:.88rem;color:var(--muted);font-style:italic}
+
+/* quiz */
+.quiz{display:grid;gap:12px;margin:14px 0}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.q .qn{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.q .qe{margin:4px 0 10px}
+.q .opts{display:flex;flex-wrap:wrap;gap:6px}
+.q .opts button{border:1px solid var(--rule);background:var(--paper);border-radius:8px;padding:6px 12px;font-size:.95rem}
+.q .opts button:hover{border-color:var(--pen)}
+.q .opts button.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);font-weight:650}
+.q .opts button.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through}
+.q .fb{margin-top:10px;font-size:.93rem;border-left:3px solid var(--ok);padding-left:10px}
+.q .fb.bad{border-color:var(--red)}
+.score{font-family:var(--f-display);font-weight:700}
+
+/* ferramentas */
+.tool{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:16px;margin:18px 0}
+.tool h3{margin-top:0}
+.field{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;min-width:0}
+.field label{font-family:var(--f-display);font-weight:600;font-size:.9rem}
+.field .hint{font-size:.8rem;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;padding:9px 11px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);font-size:.98rem}
+.field textarea{min-height:120px;resize:vertical;line-height:1.5;font-family:var(--f-body)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.row > *{flex:1 1 200px}
+.btn{border:0;background:var(--pen);color:var(--pen-ink);border-radius:8px;padding:9px 16px;font-family:var(--f-display);font-weight:700;font-size:.95rem}
+.btn.ghost{background:transparent;color:var(--pen);border:1px solid var(--pen)}
+.btn:hover{filter:brightness(1.08)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.meter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}
+.meter .big{font-family:var(--f-display);font-weight:800;font-size:2.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.meter .big small{font-size:1rem;color:var(--muted);font-weight:600}
+.pill{display:inline-block;padding:4px 10px;border-radius:99px;font-family:var(--f-display);font-weight:700;font-size:.85rem}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.bad{background:var(--red-soft);color:var(--red)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.par-bars{display:grid;gap:6px;margin:10px 0}
+.par-bar{display:grid;grid-template-columns:96px 1fr 70px;gap:8px;align-items:center;font-size:.86rem}
+.par-bar .track{height:12px;background:var(--paper);border-radius:6px;overflow:hidden;border:1px solid var(--rule)}
+.par-bar .track i{display:block;height:100%;background:var(--pen)}
+.par-bar .track i.over{background:var(--red)}
+.par-bar .v{font-family:var(--f-mono);text-align:right}
+.checks{list-style:none;padding:0;margin:8px 0;display:grid;gap:6px}
+.checks li{margin:0}
+.checks label{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start;cursor:pointer}
+.checks input{margin-top:5px;width:16px;height:16px;accent-color:var(--pen)}
+.crit-card{border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin:10px 0;background:var(--paper)}
+.crit-card h4{margin:0;display:flex;justify-content:space-between;gap:8px}
+.crit-card h4 .mono{color:var(--red)}
+.gauge{height:14px;border-radius:7px;background:var(--paper);border:1px solid var(--rule);position:relative;overflow:hidden;margin:8px 0 4px}
+.gauge i{position:absolute;inset:0 auto 0 0;background:var(--pen);transition:width .3s}
+.gauge::after{content:"";position:absolute;top:0;bottom:0;left:30%;border-left:2px dashed var(--red)}
+
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
+.week .acc{margin:0}
+
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);flex-wrap:wrap}
+.pager a{font-family:var(--f-display);font-weight:700;text-decoration:none;border:1px solid var(--rule);background:var(--surface);border-radius:8px;padding:10px 14px;max-width:48%}
+.pager a small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+.pager .next{margin-left:auto;text-align:right}
+.mark-read{margin-top:24px}
+
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:12px 0}
+.vs > div{border-radius:10px;padding:12px 14px;border:1px solid var(--rule);background:var(--surface);min-width:0}
+.vs .no{border-color:var(--red)} .vs .yes{border-color:var(--ok)}
+.vs .no::before{content:"Evite";display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;font-weight:600}
+.vs .yes::before{content:"Prefira";display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--ok);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;font-weight:600}
+.vs p{margin:0}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:10px;margin:14px 0}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 14px 12px 52px;position:relative;margin:0}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-family:var(--f-mono);font-size:.8rem;font-weight:600;display:grid;place-items:center}
+.out{white-space:pre-wrap;background:var(--paper);border:1px dashed var(--rule);border-radius:8px;padding:12px 14px;font-size:.98rem;min-height:60px}
+.timer{font-family:var(--f-mono);font-size:1.6rem;font-weight:600;font-variant-numeric:tabular-nums}
+</style>
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="app">
+<aside class="side" id="side" aria-label="Sumário">
+  <p class="brand">Redação <span class="n40">40</span><br>Soldado PMPE<small>E-book interativo · Instituto AOCP · método das 20 linhas</small></p>
+  <nav id="nav"></nav>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
+    <span class="where" id="where">Início</span>
+    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/12 lidos</span>
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
+  </header>
+  <div class="content">
+
+<!-- ======================= CAPA ======================= -->
+<section class="view cover" id="inicio" data-title="Início">
+  <span class="eyebrow">Soldado PMPE · Prova de Redação · Instituto AOCP</span>
+  <h1>Do zero aos <span class="red">40 pontos</span> em exatas 20 linhas</h1>
+  <p class="lede">Um método passo a passo para quem tem dificuldade com redação: o que a banca corrige, onde colocar cada frase nas 20 linhas, moldes prontos para preencher, teses, conectivos, repertórios, temas prováveis e redações-modelo. No fim, um laboratório para treinar e se autocorrigir.</p>
+
+  <div class="facts">
+    <div class="fact key"><b>40</b><span>pontos valem a redação de Soldado</span></div>
+    <div class="fact"><b>12</b><span>pontos é o mínimo para não ser eliminado</span></div>
+    <div class="fact"><b>15–20</b><span>linhas exigidas pelo edital</span></div>
+    <div class="fact key"><b>20</b><span>linhas é a sua meta: nem mais, nem menos</span></div>
+  </div>
+
+  <div class="box pen">
+    <span class="tag">Por que exatamente 20 linhas</span>
+    <p>O edital aceita de 15 a 20 linhas, e <b>o que passar da linha 20 é desconsiderado</b>. Escrever as 20 linhas usa todo o espaço para argumentar (o que pesa no critério de informatividade) sem o risco de a conclusão ficar fora da folha. Por isso este e-book inteiro trabalha com um <b>mapa fixo de 4 + 6 + 6 + 4 linhas</b>.</p>
+  </div>
+
+  <h3>Como usar este e-book</h3>
+  <ol class="route">
+    <li><div><a href="#edital">A prova e o edital</a> e <a href="#criterios">Como a AOCP corrige</a>: entenda onde estão os 40 pontos.</div></li>
+    <li><div><a href="#linhas">O mapa das 20 linhas</a> e <a href="#estrutura">Estrutura e moldes</a>: decore o esqueleto. É ele que tira você do zero.</div></li>
+    <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
+    <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
+    <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: quatro textos de 20 linhas com marcação de cada parte.</div></li>
+    <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
+  </ol>
+  <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
+</section>
+
+<!-- ======================= 1. EDITAL ======================= -->
+<section class="view" id="edital" data-title="A prova e o edital" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 1</span>
+    <h2>A prova e o edital</h2>
+    <p>O que o Edital nº 001/2026 (PMPE, Instituto AOCP) diz sobre a redação de Soldado.</p>
+  </div>
+
+  <div class="table-wrap"><table>
+    <tr><th>Item</th><th>Soldado (QPMG)</th></tr>
+    <tr><td>Valor da redação</td><td><b>até 40 pontos</b></td></tr>
+    <tr><td>Nota mínima</td><td><b>12 pontos</b> (abaixo disso, eliminado)</td></tr>
+    <tr><td>Tipo de texto</td><td>Dissertativo-argumentativo, em prosa</td></tr>
+    <tr><td>Extensão</td><td>mínimo de <b>15</b> e máximo de <b>20</b> linhas</td></tr>
+    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado</td></tr>
+    <tr><td>Natureza</td><td>eliminatória e classificatória (soma com a objetiva)</td></tr>
+    <tr><td>Quem é corrigido</td><td>só quem é aprovado na objetiva e fica dentro do limite de classificação previsto no edital</td></tr>
+    <tr><td>Data prevista</td><td>mesmo dia da prova objetiva (previsão divulgada: 21/02/2027)</td></tr>
+  </table></div>
+
+  <div class="box warn">
+    <span class="tag">Confira no edital oficial</span>
+    <p>Os números acima são os divulgados para o edital e sua retificação. Antes da prova, leia no PDF oficial do Instituto AOCP o item da <b>Prova de Redação</b>: tabela de critérios, causas de nota zero, tipo de caneta e regras da folha. Se algo mudar em retificação, vale o edital.</p>
+  </div>
+
+  <h3>A redação decide a classificação</h3>
+  <p>Muita gente acerta quase o mesmo número de questões na objetiva. Os 40 pontos da redação são, na prática, o que separa quem entra de quem fica na lista de espera. Se dois candidatos empatam na objetiva e um faz 34 na redação e o outro 22, são 12 pontos de diferença, o equivalente a várias questões.</p>
+  <p>A boa notícia: redação de concurso <b>não exige talento</b>. Exige um esqueleto fixo, repertório decorado, conectivos certos e revisão gramatical. Tudo isso se treina.</p>
+
+  <h3>Como a prova costuma ser apresentada</h3>
+  <p>A AOCP costuma trazer uma <b>proposta</b> com um ou mais <b>textos motivadores</b> (trecho de notícia, dado, artigo de lei, charge) e um comando como:</p>
+  <div class="box pen">
+    <p><i>"A partir da leitura dos textos motivadores e com base em seus conhecimentos, redija um texto dissertativo-argumentativo, em norma-padrão da língua portuguesa, sobre o tema: <b>[tema]</b>. Apresente argumentos que sustentem seu ponto de vista."</i></p>
+  </div>
+  <p>Três palavras desse comando valem pontos:</p>
+  <ul>
+    <li><b>dissertativo-argumentativo</b>: você defende uma opinião (tese) com argumentos. Narrar uma história ou escrever carta zera ou derruba a nota.</li>
+    <li><b>norma-padrão</b>: linguagem formal, sem gírias, sem "a gente", sem abreviações.</li>
+    <li><b>ponto de vista</b>: precisa ter tese clara, não só descrever o problema.</li>
+  </ul>
+
+  <h3>O que pode zerar ou anular a redação</h3>
+  <p>Os editais da AOCP costumam prever nota zero nestes casos. Trate a lista como regra de segurança:</p>
+  <div class="vs">
+    <div class="no"><p><b>Fugir ao tema</b>: falar de outro assunto. Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
+    <div class="no"><p><b>Não seguir o tipo de texto</b>: narração, poema, carta, texto em tópicos.</p></div>
+    <div class="no"><p><b>Identificar-se</b>: nome, assinatura, apelido, rubrica ou qualquer marca fora do espaço permitido.</p></div>
+    <div class="no"><p><b>Ficar abaixo de 15 linhas</b> ou deixar em branco.</p></div>
+    <div class="no"><p><b>Letra ilegível</b>, texto a lápis ou com caneta fora da cor exigida.</p></div>
+    <div class="no"><p><b>Copiar os textos motivadores</b>: trechos copiados não contam e podem reduzir o texto abaixo do mínimo.</p></div>
+  </div>
+  <div class="box trap">
+    <span class="tag">Cuidado</span>
+    <p>Desenho, recado ao corretor ("por favor, me aprove"), oração, número de telefone ou qualquer frase fora do texto pode ser lida como identificação. Na folha definitiva, escreva <b>só a redação</b>.</p>
+  </div>
+
+  <h3>Título</h3>
+  <p>Faça título só se a proposta pedir. Quando a folha não reserva um espaço para ele, um título escrito na primeira linha pode ser contado como linha de texto e desmontar seu mapa de 20 linhas. Na dúvida, leia a instrução da própria folha de resposta no dia da prova.</p>
+
+  <h3>Divisão do tempo</h3>
+  <p>A redação é feita no mesmo período da objetiva. Reserve <b>cerca de 60 minutos</b> para ela e decida antes se vai começar por ela ou pela objetiva. Uma divisão que funciona:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Etapa</th><th>Tempo</th><th>O que fazer</th></tr>
+    <tr><td>Ler e planejar</td><td>10 min</td><td>Circular palavras-chave, escrever a tese e os 2 argumentos no canto do rascunho</td></tr>
+    <tr><td>Rascunho</td><td>25 min</td><td>Escrever seguindo o mapa 4-6-6-4</td></tr>
+    <tr><td>Ajustar para 20 linhas</td><td>5 min</td><td>Contar linhas e esticar ou encolher (capítulo 3)</td></tr>
+    <tr><td>Revisar gramática</td><td>5 min</td><td>Crase, vírgula, concordância, acentos</td></tr>
+    <tr><td>Passar a limpo</td><td>15 min</td><td>Letra legível, margem respeitada, parágrafos com recuo</td></tr>
+  </table></div>
+</section>
+
+<!-- ======================= 2. CRITÉRIOS ======================= -->
+<section class="view" id="criterios" data-title="Como a AOCP corrige" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 2</span>
+    <h2>Como a AOCP corrige</h2>
+    <p>Quatro critérios de 10 pontos cada. Saber o que o corretor procura é metade da nota.</p>
+  </div>
+
+  <div class="crit-grid">
+    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento ao tema, informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão e coerência</h4><p>As ideias se ligam com conectivos corretos? O texto tem lógica, sem contradição, sem repetir palavras?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Estrutura dissertativo-argumentativa e parágrafos</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia e acentuação, concordância, regência, crase e colocação pronominal.</p></div>
+  </div>
+  <p class="small">Distribuição divulgada para Soldado: 10 + 10 + 10 + 10 = 40. Confira a tabela no item da Prova de Redação do edital.</p>
+
+  <h3>Critério 1 · Tema, informatividade e argumentação</h3>
+  <p>É o critério que mais separa notas. O corretor pergunta: <i>este texto informa algo e convence?</i></p>
+  <div class="vs">
+    <div class="no"><p>"A violência é um problema muito grave que afeta todos e precisa ser resolvido urgentemente por todos nós."</p><p class="small">Frase vazia: não diz por que, nem como, nem com base em quê.</p></div>
+    <div class="yes"><p>"Segundo o sociólogo Émile Durkheim, o crime aumenta quando as normas perdem força. Assim, a sensação de impunidade estimula novos delitos."</p><p class="small">Tem repertório, explicação e relação de causa.</p></div>
+  </div>
+  <p><b>Como garantir os 10:</b></p>
+  <ul>
+    <li>Use as <b>palavras-chave do tema</b> na introdução, nos tópicos frasais e na conclusão.</li>
+    <li>Escreva uma <b>tese explícita</b> no fim da introdução.</li>
+    <li>Coloque <b>um repertório por parágrafo de desenvolvimento</b> (lei, autor, dado, fato histórico) e <b>explique</b> como ele prova seu argumento.</li>
+    <li>Mostre <b>causa e consequência</b>. Argumento é "isso acontece porque... e isso gera...".</li>
+  </ul>
+  <div class="box trap">
+    <span class="tag">Tangenciar não é fugir, mas custa caro</span>
+    <p>Tangenciar é falar do assunto geral sem focar no recorte. Tema: "A importância da polícia comunitária". Texto que só fala de violência no Brasil tangencia: não zera, mas perde boa parte do critério 1.</p>
+  </div>
+
+  <h3>Critério 2 · Coesão e coerência</h3>
+  <ul>
+    <li><b>Coesão</b> é a costura: conectivos entre frases e parágrafos, pronomes e sinônimos para não repetir palavras.</li>
+    <li><b>Coerência</b> é a lógica: o argumento prova a tese, a conclusão retoma o que foi dito, nada se contradiz.</li>
+  </ul>
+  <p><b>Como garantir os 10:</b> comece todo parágrafo com conectivo, use pelo menos um conectivo dentro de cada parágrafo e troque palavras repetidas por sinônimos ou pronomes. O capítulo 6 tem a lista completa.</p>
+
+  <h3>Critério 3 · Estrutura</h3>
+  <ul>
+    <li>Quatro parágrafos: introdução, dois de desenvolvimento, conclusão.</li>
+    <li>Recuo visível no início de cada parágrafo (cerca de dois dedos).</li>
+    <li>Parágrafos equilibrados: nenhum com uma linha só, nenhum com dez.</li>
+    <li>Extensão dentro de 15–20 linhas. Com o mapa 4-6-6-4 você fecha exatamente 20.</li>
+  </ul>
+
+  <h3>Critério 4 · Modalidade gramatical</h3>
+  <p>Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
+  <div class="box tip">
+    <span class="tag">Regra de ouro</span>
+    <p>Frases curtas erram menos. Se uma frase passar de duas linhas e meia, divida em duas. Você perde pouco em estilo e ganha muito em correção.</p>
+  </div>
+
+  <h3>Tom: o que um futuro policial deve escrever</h3>
+  <p>O corretor avalia um texto para a carreira policial. Defenda soluções dentro da <b>Constituição</b>, da <b>lei</b> e dos <b>direitos humanos</b>.</p>
+  <div class="vs">
+    <div class="no"><p>"Bandido bom é bandido morto", "a solução é pena de morte", "direitos humanos só defendem criminoso", críticas a partidos e políticos pelo nome.</p></div>
+    <div class="yes"><p>Policiamento eficiente e legal, inteligência, prevenção, educação, valorização do policial, integração entre órgãos, participação da comunidade, cumprimento da lei.</p></div>
+  </div>
+  <div class="vs">
+    <div class="no"><p>1ª pessoa ("eu acho", "na minha opinião"), perguntas retóricas, gírias, "a gente", "tipo", "etc.", exclamações, clichês como "desde os primórdios" e "nos dias de hoje".</p></div>
+    <div class="yes"><p>3ª pessoa e impessoalidade: "Observa-se que...", "É fundamental que...", "Nota-se...". A sua opinião aparece na tese, sem dizer "eu".</p></div>
+  </div>
+  <p>No <a href="#lab">Laboratório</a> há uma <b>autoavaliação</b> com estes quatro critérios para corrigir seus treinos.</p>
+</section>
+<!-- ======================= 3. AS 20 LINHAS ======================= -->
+<section class="view" id="linhas" data-title="O mapa das 20 linhas" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 3</span>
+    <h2>O mapa das 20 linhas</h2>
+    <p>Quatro parágrafos com tamanho fixo. Você nunca mais começa uma redação sem saber onde ela termina.</p>
+  </div>
+
+  <div class="map20" aria-label="Mapa: linhas 1 a 4 introdução, 5 a 10 primeiro desenvolvimento, 11 a 16 segundo desenvolvimento, 17 a 20 conclusão">
+    <i class="a">1</i><i class="a">2</i><i class="a">3</i><i class="a">4</i>
+    <i class="b">5</i><i class="b">6</i><i class="b">7</i><i class="b">8</i><i class="b">9</i><i class="b">10</i>
+    <i class="c">11</i><i class="c">12</i><i class="c">13</i><i class="c">14</i><i class="c">15</i><i class="c">16</i>
+    <i class="d">17</i><i class="d">18</i><i class="d">19</i><i class="d">20</i>
+  </div>
+  <div class="map-legend">
+    <div><span class="sw" style="background:var(--hl-tese)"></span><span><b>Linhas 1–4</b><br>Introdução</span></div>
+    <div><span class="sw" style="background:var(--hl-con)"></span><span><b>Linhas 5–10</b><br>Desenvolvimento 1</span></div>
+    <div><span class="sw" style="background:var(--hl-rep)"></span><span><b>Linhas 11–16</b><br>Desenvolvimento 2</span></div>
+    <div><span class="sw" style="background:var(--hl-prop)"></span><span><b>Linhas 17–20</b><br>Conclusão</span></div>
+  </div>
+
+  <h3>O que vai em cada linha</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Parágrafo</th><th>Linhas</th><th>Conteúdo</th></tr>
+    <tr><td rowspan="3"><b>Introdução</b><br><span class="small">4 linhas</span></td><td>1–2</td><td>Contextualização: um repertório de abertura (lei, autor, fato) ligado ao tema</td></tr>
+    <tr><td>2–3</td><td>Apresentação do problema usando as palavras do tema</td></tr>
+    <tr><td>3–4</td><td><span class="hl">Tese</span> + anúncio dos dois argumentos</td></tr>
+    <tr><td rowspan="4"><b>Desenvolvimento 1</b><br><span class="small">6 linhas</span></td><td>5</td><td>Tópico frasal: conectivo + argumento 1 em uma frase</td></tr>
+    <tr><td>6–7</td><td>Repertório que prova o argumento</td></tr>
+    <tr><td>8–9</td><td>Explicação: por que isso acontece, que consequência gera</td></tr>
+    <tr><td>10</td><td>Fechamento: frase que liga de volta ao tema</td></tr>
+    <tr><td rowspan="4"><b>Desenvolvimento 2</b><br><span class="small">6 linhas</span></td><td>11</td><td>Tópico frasal: conectivo de adição + argumento 2</td></tr>
+    <tr><td>12–13</td><td>Repertório</td></tr>
+    <tr><td>14–15</td><td>Explicação</td></tr>
+    <tr><td>16</td><td>Fechamento</td></tr>
+    <tr><td rowspan="2"><b>Conclusão</b><br><span class="small">4 linhas</span></td><td>17–18</td><td>Conectivo de conclusão + retomada da tese</td></tr>
+    <tr><td>18–20</td><td>Proposta de solução: <b>quem</b> faz, <b>o quê</b>, <b>como</b> e <b>para quê</b></td></tr>
+  </table></div>
+
+  <h3>Calibre a sua letra</h3>
+  <p>O número de palavras por linha depende do tamanho da sua letra. Faça este teste uma vez:</p>
+  <ol class="steps">
+    <li>Copie à mão, numa folha pautada parecida com a de prova, cinco linhas de qualquer texto, ocupando a linha toda.</li>
+    <li>Conte as palavras e divida por 5. Esse é o seu número de <b>palavras por linha</b> (normalmente entre 9 e 13).</li>
+    <li>Multiplique: introdução e conclusão = 4 × esse número; cada desenvolvimento = 6 × esse número.</li>
+  </ol>
+  <div class="table-wrap"><table>
+    <tr><th>Palavras por linha</th><th>Introdução</th><th>Cada desenvolvimento</th><th>Conclusão</th><th>Total</th></tr>
+    <tr><td>9</td><td>≈ 36</td><td>≈ 54</td><td>≈ 36</td><td>≈ 180</td></tr>
+    <tr><td>10</td><td>≈ 40</td><td>≈ 60</td><td>≈ 40</td><td>≈ 200</td></tr>
+    <tr><td>11</td><td>≈ 44</td><td>≈ 66</td><td>≈ 44</td><td>≈ 220</td></tr>
+    <tr><td>12</td><td>≈ 48</td><td>≈ 72</td><td>≈ 48</td><td>≈ 240</td></tr>
+    <tr><td>13</td><td>≈ 52</td><td>≈ 78</td><td>≈ 52</td><td>≈ 260</td></tr>
+  </table></div>
+  <p>No <a href="#lab">Laboratório</a>, o <b>contador de 20 linhas</b> faz essa conta para você: cole seu texto e ele mostra quantas linhas cada parágrafo ocupa.</p>
+
+  <h3>Esticar ou encolher sem estragar o texto</h3>
+  <p>Terminou o rascunho com 18 ou 22 linhas? Não reescreva tudo. Use estas ferramentas, de preferência nos parágrafos de desenvolvimento.</p>
+  <div class="vs">
+    <div class="yes"><p><b>Para ganhar 1 linha</b></p>
+      <ul>
+        <li>Detalhe o repertório: "o sociólogo francês Émile Durkheim, em <i>As Regras do Método Sociológico</i>,"</li>
+        <li>Acrescente uma consequência: "o que gera, consequentemente, ..."</li>
+        <li>Inclua um exemplo: "como ocorre em casos de ..."</li>
+        <li>Na proposta, acrescente o meio ("por meio de campanhas...") ou a finalidade ("a fim de...")</li>
+      </ul></div>
+    <div class="yes"><p><b>Para perder 1 linha</b></p>
+      <ul>
+        <li>Troque conectivos longos: "Diante do exposto, percebe-se que" → "Portanto,"</li>
+        <li>Corte advérbios e adjetivos de enfeite: "extremamente", "muito", "de fato"</li>
+        <li>Junte duas frases curtas com "pois", "já que" ou "o que"</li>
+        <li>Retire o segundo exemplo de um mesmo argumento</li>
+      </ul></div>
+  </div>
+
+  <h3>Regras da folha</h3>
+  <ul>
+    <li><b>Não pule linha</b> entre parágrafos. O recuo já marca o parágrafo, e uma linha em branco pode bagunçar a contagem.</li>
+    <li><b>Respeite as margens</b>. Não escreva na margem nem além da linha.</li>
+    <li><b>Separação de sílabas</b>: se a palavra não couber, separe com hífen no lugar certo (ci-da-da-ni-a) ou leve a palavra inteira para a linha de baixo.</li>
+    <li><b>Erro na folha definitiva</b>: passe um traço simples sobre a palavra e escreva a correta em seguida. Nada de corretivo, parênteses ou rabiscos.</li>
+    <li>A última frase da conclusão deve <b>terminar na linha 20</b>. Pode terminar no meio da linha, sem problema.</li>
+  </ul>
+</section>
+
+<!-- ======================= 4. ESTRUTURA E MOLDES ======================= -->
+<section class="view" id="estrutura" data-title="Estrutura e moldes" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 4</span>
+    <h2>Estrutura e moldes</h2>
+    <p>Moldes são frases prontas com lacunas. As partes em <b>negrito</b> você decora; as partes <span class="slot">assim</span> você troca conforme o tema.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">Por que molde funciona</span>
+    <p>Quem tem dificuldade em redação geralmente trava no "como começo?". Com o molde, 40% do texto já está pronto antes da prova. Você gasta a energia só no conteúdo: tese, argumentos e repertório.</p>
+  </div>
+
+  <h3>Introdução · 4 linhas</h3>
+  <div class="mold"><h4>Molde A · repertório de abertura <span class="mono">mais usado</span></h4>
+    <p><span class="fixed">Segundo</span> <span class="slot">autor/lei/documento</span><span class="fixed">,</span> <span class="slot">ideia do repertório</span><span class="fixed">. No entanto, no Brasil contemporâneo,</span> <span class="slot">problema do tema</span> <span class="fixed">mostra que essa realidade ainda não se concretizou. Esse cenário decorre, sobretudo,</span> <span class="slot">causa 1 (argumento 1)</span> <span class="fixed">e</span> <span class="slot">causa 2 (argumento 2)</span><span class="fixed">.</span></p>
+  </div>
+  <div class="mold"><h4>Molde B · Constituição <span class="mono">serve para quase todo tema</span></h4>
+    <p><span class="fixed">A Constituição Federal de 1988 assegura, em seu artigo</span> <span class="slot">nº</span><span class="fixed">,</span> <span class="slot">direito ligado ao tema</span><span class="fixed">. Entretanto,</span> <span class="slot">problema do tema</span> <span class="fixed">evidencia que essa garantia nem sempre se cumpre na prática. Tal problema está associado</span> <span class="slot">à causa 1</span> <span class="fixed">e</span> <span class="slot">à causa 2</span><span class="fixed">.</span></p>
+  </div>
+  <div class="mold"><h4>Molde C · tema de "importância" <span class="mono">para temas positivos</span></h4>
+    <p><span class="slot">Assunto do tema</span> <span class="fixed">é fundamental para</span> <span class="slot">finalidade</span><span class="fixed">, como prevê</span> <span class="slot">lei/autor</span><span class="fixed">. Nesse sentido, sua relevância se manifesta, principalmente,</span> <span class="slot">benefício 1</span> <span class="fixed">e</span> <span class="slot">benefício 2</span><span class="fixed">.</span></p>
+  </div>
+  <p class="small">A última frase da introdução é a <span class="hl">tese</span>. Ela já anuncia os dois argumentos, um para cada parágrafo de desenvolvimento.</p>
+
+  <h3>Desenvolvimento 1 · 6 linhas</h3>
+  <div class="mold"><h4>Molde · causa + repertório + consequência</h4>
+    <p><span class="fixed">Em primeiro lugar, é importante destacar</span> <span class="slot">argumento 1</span> <span class="fixed">como fator que agrava</span> <span class="slot">problema</span><span class="fixed">. De acordo com</span> <span class="slot">repertório</span><span class="fixed">,</span> <span class="slot">ideia do repertório</span><span class="fixed">. Sob essa ótica, percebe-se que</span> <span class="slot">explicação: por que isso acontece</span><span class="fixed">, o que resulta em</span> <span class="slot">consequência</span><span class="fixed">. Dessa forma,</span> <span class="slot">frase que liga ao tema</span><span class="fixed">.</span></p>
+  </div>
+
+  <h3>Desenvolvimento 2 · 6 linhas</h3>
+  <div class="mold"><h4>Molde · adição + repertório + análise</h4>
+    <p><span class="fixed">Além disso, cabe ressaltar</span> <span class="slot">argumento 2</span><span class="fixed">. Esse fato pode ser observado</span> <span class="slot">repertório (dado, fato, lei, obra)</span><span class="fixed">. Nesse contexto,</span> <span class="slot">explicação</span><span class="fixed">, de modo que</span> <span class="slot">consequência</span><span class="fixed">. Assim, torna-se evidente que</span> <span class="slot">ligação com a tese</span><span class="fixed">.</span></p>
+  </div>
+
+  <h3>Conclusão · 4 linhas</h3>
+  <div class="mold"><h4>Molde · retomada + proposta completa</h4>
+    <p><span class="fixed">Portanto, é necessário enfrentar</span> <span class="slot">problema do tema</span><span class="fixed">. Para isso,</span> <span class="slot">AGENTE</span> <span class="fixed">deve</span> <span class="slot">AÇÃO</span><span class="fixed">, por meio de</span> <span class="slot">MEIO</span><span class="fixed">, a fim de</span> <span class="slot">FINALIDADE</span><span class="fixed">. Somente assim</span> <span class="slot">retomada do repertório da introdução</span><span class="fixed">.</span></p>
+  </div>
+  <div class="box pen">
+    <span class="tag">A proposta em 4 peças</span>
+    <p><b>Agente</b> (quem?) + <b>Ação</b> (faz o quê?) + <b>Meio</b> (como?) + <b>Finalidade</b> (para quê?). A AOCP não exige proposta de intervenção como o ENEM, mas uma conclusão com solução concreta mostra posicionamento e fecha o texto com coerência.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>Agentes que você pode usar</th><th>Ações típicas</th></tr>
+    <tr><td>Governo Federal / Ministério da Justiça e Segurança Pública</td><td>financiar, integrar dados, criar programas nacionais</td></tr>
+    <tr><td>Governo do Estado / Secretaria de Defesa Social (SDS-PE)</td><td>ampliar efetivo, investir em inteligência, policiamento comunitário</td></tr>
+    <tr><td>Polícia Militar</td><td>policiamento ostensivo e preventivo, projetos nas escolas, uso de tecnologia</td></tr>
+    <tr><td>Escolas / Ministério da Educação</td><td>palestras, disciplinas sobre cidadania, educação digital</td></tr>
+    <tr><td>Mídia e redes sociais</td><td>campanhas de conscientização, combate a notícias falsas</td></tr>
+    <tr><td>Congresso Nacional</td><td>aprimorar e endurecer leis específicas</td></tr>
+    <tr><td>Poder Judiciário / Ministério Público</td><td>agilizar processos, fiscalizar o cumprimento da lei</td></tr>
+    <tr><td>Família e sociedade civil / ONGs</td><td>denunciar, acolher vítimas, acompanhar jovens</td></tr>
+  </table></div>
+
+  <h3>Frases coringa por função</h3>
+  <div class="con-grid">
+    <div class="con"><h4>Apresentar o problema</h4><p>"...evidencia que essa garantia não se concretiza plenamente."<br>"...configura um desafio para a sociedade brasileira."</p></div>
+    <div class="con"><h4>Explicar</h4><p>"Isso ocorre porque..."<br>"Sob essa ótica, percebe-se que..."<br>"Nesse sentido, nota-se que..."</p></div>
+    <div class="con"><h4>Mostrar consequência</h4><p>"...o que resulta em..."<br>"...de modo que..."<br>"Como consequência, ..."</p></div>
+    <div class="con"><h4>Fechar parágrafo</h4><p>"Dessa forma, torna-se evidente que..."<br>"Logo, ... contribui para a manutenção do problema."</p></div>
+  </div>
+  <p>No <a href="#lab">Laboratório</a> o <b>montador de redação</b> preenche esses moldes com as suas respostas e já conta as linhas.</p>
+</section>
+
+<!-- ======================= 5. TESE ======================= -->
+<section class="view" id="tese" data-title="Lendo o tema e criando a tese" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 5</span>
+    <h2>Lendo o tema e criando a tese</h2>
+    <p>A fuga ao tema zera. A tese fraca derruba o critério 1. Os dois problemas se resolvem nos primeiros 10 minutos.</p>
+  </div>
+
+  <h3>Leitura do tema em 4 passos</h3>
+  <ol class="steps">
+    <li><b>Circule as palavras-chave</b> da frase-tema. Ex.: "Os <u>desafios</u> para <u>combater</u> a <u>violência contra a mulher</u> no <u>Brasil</u>".</li>
+    <li><b>Ache o recorte</b>: o tema não é "violência", é "violência contra a mulher"; não é "falar dela", é "desafios para combatê-la".</li>
+    <li><b>Transforme o tema em pergunta</b>: "Por que é difícil combater a violência contra a mulher no Brasil?" Sua tese é a resposta.</li>
+    <li><b>Leia os textos motivadores</b> para pegar ideias e dados, mas nunca copie frases deles.</li>
+  </ol>
+
+  <h3>Os tipos de tema e o que cada um pede</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Formato do tema</th><th>Seus 2 argumentos devem ser</th><th>Exemplo</th></tr>
+    <tr><td>"Os desafios de / para..."</td><td>2 obstáculos ou causas</td><td>Desafios para reduzir acidentes de trânsito</td></tr>
+    <tr><td>"A importância de..."</td><td>2 benefícios ou funções</td><td>A importância da polícia comunitária</td></tr>
+    <tr><td>"Os impactos / as consequências de..."</td><td>2 efeitos</td><td>Os impactos das notícias falsas na segurança pública</td></tr>
+    <tr><td>"Caminhos para combater..."</td><td>1 causa + 1 solução, ou 2 causas (soluções na conclusão)</td><td>Caminhos para combater os golpes digitais</td></tr>
+    <tr><td>Tema em forma de pergunta ou polêmica</td><td>2 razões para o seu lado</td><td>A redução da maioridade penal resolve a violência?</td></tr>
+  </table></div>
+
+  <h3>A fórmula da tese</h3>
+  <div class="box pen">
+    <span class="tag">Fórmula</span>
+    <p><span class="slot">Tema</span> <b>persiste / é essencial / representa um desafio</b>, <b>sobretudo em razão de</b> <span class="slot">argumento 1</span> <b>e de</b> <span class="slot">argumento 2</span>.</p>
+  </div>
+  <div class="vs">
+    <div class="no"><p>"A violência contra a mulher é um tema muito importante e polêmico que deve ser debatido por todos."</p><p class="small">Não responde à pergunta. Não anuncia argumentos.</p></div>
+    <div class="yes"><p>"Esse cenário persiste, sobretudo, em razão da cultura machista ainda presente na sociedade e da falta de estrutura para acolher as vítimas."</p><p class="small">Responde "por quê" e anuncia D1 (cultura machista) e D2 (falta de estrutura).</p></div>
+  </div>
+
+  <h3>Banco de argumentos coringa</h3>
+  <p>Quase todo tema social pode ser explicado por pelo menos duas destas seis causas. Escolha as duas que mais combinam com o tema.</p>
+  <div class="con-grid">
+    <div class="con"><h4>1. Omissão ou ineficiência do Estado</h4><p>Falta de investimento, de fiscalização, de efetivo, de políticas públicas.</p><p class="ex">Rep.: art. 144 da CF; Bobbio</p></div>
+    <div class="con"><h4>2. Impunidade e leis pouco aplicadas</h4><p>A lei existe, mas a punição é lenta ou rara.</p><p class="ex">Rep.: Beccaria; Durkheim</p></div>
+    <div class="con"><h4>3. Fator cultural / educacional</h4><p>Comportamento naturalizado, falta de conscientização, educação deficiente.</p><p class="ex">Rep.: Paulo Freire; art. 205 da CF</p></div>
+    <div class="con"><h4>4. Desigualdade social</h4><p>Pobreza, falta de oportunidades, exclusão de jovens periféricos.</p><p class="ex">Rep.: Milton Santos; Josué de Castro</p></div>
+    <div class="con"><h4>5. Tecnologia e redes sociais</h4><p>Velocidade da informação, anonimato, golpes, notícias falsas.</p><p class="ex">Rep.: Bauman; Marco Civil da Internet</p></div>
+    <div class="con"><h4>6. Desconfiança entre população e instituições</h4><p>Pouca denúncia, pouca cooperação com a polícia.</p><p class="ex">Rep.: princípios de Robert Peel; polícia comunitária</p></div>
+  </div>
+
+  <h3>Treino: tese boa ou tese fraca?</h3>
+  <div class="quiz" id="quizTese"></div>
+
+  <h3>Treino: fuga, tangenciamento ou dentro do tema?</h3>
+  <div class="quiz" id="quizFuga"></div>
+</section>
+<!-- ======================= 6. CONECTIVOS ======================= -->
+<section class="view" id="conectivos" data-title="Conectivos" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 6</span>
+    <h2>Conectivos</h2>
+    <p>Conectivo é a ponte entre ideias. Usado certo, vale pontos no critério 2. Usado errado, cria incoerência e tira pontos.</p>
+  </div>
+
+  <h3>Um kit por parágrafo</h3>
+  <p>Decore um conectivo para abrir cada parágrafo e alterne entre as redações de treino.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Posição</th><th>Opções</th></tr>
+    <tr><td><b>Introdução</b> (contraste com o repertório)</td><td>No entanto · Entretanto · Contudo · Todavia · Apesar disso</td></tr>
+    <tr><td><b>Desenvolvimento 1</b></td><td>Em primeiro lugar · Inicialmente · Primeiramente · Em princípio</td></tr>
+    <tr><td><b>Desenvolvimento 2</b></td><td>Além disso · Ademais · Outrossim · Somado a isso · Em segundo lugar</td></tr>
+    <tr><td><b>Conclusão</b></td><td>Portanto · Logo · Dessa forma · Diante do exposto · Em suma</td></tr>
+    <tr><td><b>Dentro dos parágrafos</b></td><td>Nesse sentido · Sob essa ótica · Isso ocorre porque · Desse modo · Por conseguinte</td></tr>
+  </table></div>
+
+  <h3>Conectivos por função</h3>
+  <div class="con-grid">
+    <div class="con"><h4>Adição</h4><p>além disso, ademais, outrossim, também, não só... mas também, somado a isso</p><p class="ex">"Além disso, a falta de efetivo..."</p></div>
+    <div class="con"><h4>Oposição / contraste</h4><p>mas, porém, contudo, todavia, entretanto, no entanto</p><p class="ex">"A lei existe; no entanto, não é cumprida."</p></div>
+    <div class="con"><h4>Concessão</h4><p>embora, ainda que, mesmo que, apesar de, conquanto (+ subjuntivo)</p><p class="ex">"Embora a lei seja rigorosa, os casos aumentam."</p></div>
+    <div class="con"><h4>Causa</h4><p>porque, pois, visto que, já que, uma vez que, em razão de, devido a</p><p class="ex">"...uma vez que a fiscalização é falha."</p></div>
+    <div class="con"><h4>Consequência</h4><p>de modo que, de forma que, por conseguinte, consequentemente, o que resulta em</p><p class="ex">"...de modo que a população perde a confiança."</p></div>
+    <div class="con"><h4>Conclusão</h4><p>portanto, logo, assim, dessa forma, diante do exposto, em suma</p><p class="ex">"Portanto, é necessário..."</p></div>
+    <div class="con"><h4>Finalidade</h4><p>a fim de, para que, com o objetivo de, com o intuito de</p><p class="ex">"...a fim de reduzir os índices de violência."</p></div>
+    <div class="con"><h4>Exemplificação</h4><p>por exemplo, como, a exemplo de, como ocorre em</p><p class="ex">"...como ocorre em bairros sem iluminação."</p></div>
+    <div class="con"><h4>Explicação / reforço</h4><p>isto é, ou seja, nesse sentido, sob essa ótica, com efeito</p><p class="ex">"Nesse sentido, nota-se que..."</p></div>
+    <div class="con"><h4>Conformidade</h4><p>segundo, conforme, de acordo com, consoante</p><p class="ex">"Segundo o Atlas da Violência, ..."</p></div>
+    <div class="con"><h4>Proporção</h4><p>à medida que, à proporção que, quanto mais... mais</p><p class="ex">"À medida que a fiscalização cresce, os acidentes caem."</p></div>
+    <div class="con"><h4>Tempo</h4><p>atualmente, na contemporaneidade, historicamente, desde que, quando</p><p class="ex">"Historicamente, o Brasil..."</p></div>
+  </div>
+
+  <h3>Erros que derrubam a nota</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Errado</th><th>Certo</th><th>Por quê</th></tr>
+    <tr><td class="wrong">Vivemos numa época onde a violência cresce.</td><td class="right">Vivemos numa época em que a violência cresce.</td><td>"Onde" só indica lugar físico.</td></tr>
+    <tr><td class="wrong">A polícia atuou, sendo que o crime diminuiu.</td><td class="right">A polícia atuou, e o crime diminuiu.</td><td>"Sendo que" é vício de linguagem.</td></tr>
+    <tr><td class="wrong">A nível de segurança, o estado avançou.</td><td class="right">Em relação à segurança, o estado avançou.</td><td>"A nível de" é inadequado na norma-padrão.</td></tr>
+    <tr><td class="wrong">O policial chegou e o mesmo prendeu o suspeito.</td><td class="right">O policial chegou e prendeu o suspeito.</td><td>"O mesmo" não substitui pronome.</td></tr>
+    <tr><td class="wrong">A lei é rígida mas não é cumprida.</td><td class="right">A lei é rígida, mas não é cumprida.</td><td>Vírgula antes de "mas" adversativo.</td></tr>
+    <tr><td class="wrong">Embora a lei é rígida, ...</td><td class="right">Embora a lei seja rígida, ...</td><td>Concessivas pedem subjuntivo.</td></tr>
+    <tr><td class="wrong">Afim de reduzir os crimes...</td><td class="right">A fim de reduzir os crimes...</td><td>"A fim de" = finalidade; "afim" = semelhante.</td></tr>
+    <tr><td class="wrong">Ao invés de prevenir, o Estado só pune.</td><td class="right">Em vez de prevenir, o Estado só pune.</td><td>"Ao invés de" só para opostos (subir/descer).</td></tr>
+    <tr><td class="wrong">Na medida que os crimes aumentam...</td><td class="right">À medida que os crimes aumentam...</td><td>Proporção é "à medida que"; causa é "na medida em que".</td></tr>
+    <tr><td class="wrong">Portanto é preciso agir.</td><td class="right">Portanto, é preciso agir.</td><td>Conectivo no início da oração, seguido de vírgula.</td></tr>
+  </table></div>
+  <div class="box trap">
+    <span class="tag">Conectivo errado é incoerência</span>
+    <p>"A polícia aumentou o patrulhamento; <b>portanto</b>, os crimes aumentaram." O "portanto" diz que um causou o outro, o que não faz sentido. Antes de usar um conectivo, pergunte: <i>qual é a relação entre estas duas ideias?</i></p>
+  </div>
+
+  <h3>Treino: escolha o conectivo</h3>
+  <p class="small">Toque na opção que completa a frase com o sentido correto. <span class="score" id="scoreCon"></span></p>
+  <div class="quiz" id="quizCon"></div>
+</section>
+
+<!-- ======================= 7. COESÃO, COERÊNCIA E GRAMÁTICA ======================= -->
+<section class="view" id="gramatica" data-title="Coesão e gramática" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 7</span>
+    <h2>Coesão, coerência e gramática</h2>
+    <p>Os critérios 2 e 4 somam 20 pontos. A maior parte se perde em poucos erros que se repetem.</p>
+  </div>
+
+  <h3>Coesão: não repita palavras</h3>
+  <p>Ao repetir a palavra-chave do tema muitas vezes, o texto fica pobre. Troque por sinônimos, termos mais gerais ou pronomes.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Palavra do tema</th><th>Substitutos</th></tr>
+    <tr><td>violência</td><td>criminalidade, agressões, delitos, essa problemática, tal cenário</td></tr>
+    <tr><td>polícia</td><td>corporação, forças de segurança, agentes públicos, policiais</td></tr>
+    <tr><td>população</td><td>sociedade, cidadãos, comunidade, coletividade</td></tr>
+    <tr><td>Estado</td><td>poder público, governo, autoridades, instituições</td></tr>
+    <tr><td>jovens</td><td>juventude, adolescentes, essa parcela da população</td></tr>
+    <tr><td>mulher</td><td>vítimas, população feminina, elas</td></tr>
+    <tr><td>internet</td><td>ambiente virtual, redes, meio digital, ciberespaço</td></tr>
+    <tr><td>problema</td><td>impasse, desafio, entrave, obstáculo, essa questão</td></tr>
+  </table></div>
+  <p>Retomadas úteis: <i>esse cenário, tal problemática, essa realidade, o primeiro, o último, este (o mais próximo), aquele (o mais distante)</i>.</p>
+
+  <h3>Coerência: três checagens</h3>
+  <ol class="steps">
+    <li><b>Os argumentos respondem à tese?</b> Se a tese diz "cultura machista e falta de estrutura", D1 fala de cultura e D2 de estrutura. Nada de trocar o assunto no meio.</li>
+    <li><b>A conclusão resolve o problema dos desenvolvimentos?</b> Se D2 falou de falta de delegacias especializadas, a proposta deve tratar disso.</li>
+    <li><b>Não há exagero nem contradição?</b> Evite "todos", "nunca", "sempre", "nenhum". Use "muitos", "frequentemente", "parte considerável".</li>
+  </ol>
+
+  <h3>Os 12 erros gramaticais mais comuns</h3>
+  <div class="table-wrap"><table>
+    <tr><th>#</th><th>Erro</th><th>Certo</th><th>Regra</th></tr>
+    <tr><td>1</td><td class="wrong">A população brasileira, sofre com a violência.</td><td class="right">A população brasileira sofre com a violência.</td><td>Nunca separe sujeito e verbo por vírgula.</td></tr>
+    <tr><td>2</td><td class="wrong">Existe muitos problemas.</td><td class="right">Existem muitos problemas.</td><td>"Existir" concorda com o sujeito.</td></tr>
+    <tr><td>3</td><td class="wrong">Haviam muitos casos.</td><td class="right">Havia muitos casos.</td><td>"Haver" (existir) é impessoal: fica no singular.</td></tr>
+    <tr><td>4</td><td class="wrong">Fazem dez anos que a lei existe.</td><td class="right">Faz dez anos que a lei existe.</td><td>"Fazer" (tempo) é impessoal.</td></tr>
+    <tr><td>5</td><td class="wrong">Isso cabe a sociedade.</td><td class="right">Isso cabe à sociedade.</td><td>Crase: cabe <b>a</b> + <b>a</b> sociedade.</td></tr>
+    <tr><td>6</td><td class="wrong">Isso leva à mudanças.</td><td class="right">Isso leva a mudanças.</td><td>Sem crase antes de plural sem artigo, verbo e masculino.</td></tr>
+    <tr><td>7</td><td class="wrong">Os cidadãos assistem o problema.</td><td class="right">Os cidadãos assistem ao problema.</td><td>"Assistir" (ver) pede "a".</td></tr>
+    <tr><td>8</td><td class="wrong">Me parece que...</td><td class="right">Parece-me que...</td><td>Não comece frase com pronome oblíquo.</td></tr>
+    <tr><td>9</td><td class="wrong">A lei visa o bem-estar.</td><td class="right">A lei visa ao bem-estar.</td><td>"Visar" (ter como objetivo) pede "a".</td></tr>
+    <tr><td>10</td><td class="wrong">Mais a lei não é cumprida.</td><td class="right">Mas a lei não é cumprida.</td><td>"Mas" = oposição; "mais" = quantidade.</td></tr>
+    <tr><td>11</td><td class="wrong">É um mau que atinge todos.</td><td class="right">É um mal que atinge todos.</td><td>"Mal" é oposto de bem; "mau" é oposto de bom.</td></tr>
+    <tr><td>12</td><td class="wrong">A muito tempo...</td><td class="right">Há muito tempo...</td><td>Tempo passado = "há"; futuro ou distância = "a".</td></tr>
+  </table></div>
+
+  <h3>Acentos e grafias que mais caem</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Escreva assim</th><th>Observação</th></tr>
+    <tr><td>ideia, assembleia, heroico, plateia</td><td>Sem acento desde o Acordo Ortográfico</td></tr>
+    <tr><td>tem (singular) / têm (plural); vem / vêm</td><td>"Os jovens têm direitos."</td></tr>
+    <tr><td>por que (pergunta) · porque (resposta) · por quê (fim de frase) · o porquê (substantivo)</td><td>Na redação, quase sempre: "porque"</td></tr>
+    <tr><td>a fim de · em vez de · de repente · por isso · a partir de</td><td>Separados</td></tr>
+    <tr><td>concessão, exceção, ascensão, privilégio, beneficente, cidadão/cidadãos</td><td>Grafias que mais erram</td></tr>
+    <tr><td>contemporâneo, polícia, violência, segurança, público, vítima, índice</td><td>Acentue sempre</td></tr>
+  </table></div>
+
+  <h3>Vírgula em 5 regras</h3>
+  <ul>
+    <li><b>Use</b> depois de conectivo no início da frase: "Além disso, ..."</li>
+    <li><b>Use</b> para isolar expressão deslocada: "No Brasil, a violência..."; "A violência, no Brasil, ..."</li>
+    <li><b>Use</b> antes de "mas", "porém", "pois" (explicativo) e "o que".</li>
+    <li><b>Use</b> para isolar o aposto: "Émile Durkheim, sociólogo francês, afirma..."</li>
+    <li><b>Não use</b> entre sujeito e verbo, nem entre verbo e complemento.</li>
+  </ul>
+
+  <h3>Treino: certo ou errado?</h3>
+  <p class="small">Decida se a frase está de acordo com a norma-padrão. <span class="score" id="scoreGram"></span></p>
+  <div class="quiz" id="quizGram"></div>
+</section>
+<!-- ======================= 8. REPERTÓRIOS ======================= -->
+<section class="view" id="repertorios" data-title="Repertórios" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 8</span>
+    <h2>Repertórios</h2>
+    <p>Repertório é a prova do seu argumento: uma lei, um pensador, um dado, uma obra, um fato. Ele vale pontos no critério 1, desde que você explique a ligação com o tema.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">Regra do repertório produtivo</span>
+    <p><b>Cite</b> (quem disse e o quê) + <b>explique</b> (o que isso significa) + <b>ligue</b> ao tema (o que isso prova). Repertório jogado sem explicação vale quase nada.</p>
+  </div>
+  <div class="box warn">
+    <span class="tag">Não invente</span>
+    <p>Se esquecer o número de uma lei ou um dado exato, escreva sem ele: "a legislação brasileira de trânsito", "dados recentes de pesquisas". Número inventado é erro de informação e o corretor pode perceber.</p>
+  </div>
+  <p><b>Estratégia para quem tem dificuldade:</b> decore bem <b>8 repertórios coringa</b> (marque o filtro "Coringa") e mais 2 ou 3 por tema provável. É melhor dominar poucos do que confundir muitos.</p>
+
+  <input class="search" id="repSearch" type="search" placeholder="Buscar: Hobbes, Maria da Penha, trânsito..." aria-label="Buscar repertório">
+  <div class="filters" id="repFilters" role="group" aria-label="Filtrar por tema"></div>
+  <div class="filters" id="repTypes" role="group" aria-label="Filtrar por tipo"></div>
+  <p class="count-line" id="repCount"></p>
+  <div class="rep-list" id="repList"></div>
+</section>
+
+<!-- ======================= 9. TEMAS ======================= -->
+<section class="view" id="temas" data-title="Possíveis temas" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 9</span>
+    <h2>Possíveis temas</h2>
+    <p>Temas com ligação com a atividade policial e com a realidade de Pernambuco. Cada um vem com tese, dois argumentos, repertórios e proposta prontos.</p>
+  </div>
+  <div class="box pen">
+    <span class="tag">Como usar esta lista</span>
+    <p>Não é uma previsão do tema da prova; a banca pode cobrar qualquer assunto social. O objetivo é treinar o raciocínio: depois de montar 8 ou 10 destes kits, você percebe que os argumentos se repetem (Estado, impunidade, educação, desigualdade, tecnologia) e consegue montar o kit de qualquer tema em 10 minutos.</p>
+  </div>
+  <div class="filters" id="temaFilters" role="group" aria-label="Filtrar temas"></div>
+  <p class="count-line" id="temaCount"></p>
+  <div id="temaList"></div>
+</section>
+
+<!-- ======================= 10. MODELOS ======================= -->
+<section class="view" id="modelos" data-title="Redações nota 40" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 10</span>
+    <h2>Redações nota 40</h2>
+    <p>Quatro redações de exatamente 20 linhas, no mapa 4-6-6-4. Ligue as marcações para ver onde está cada peça.</p>
+  </div>
+  <div class="filters" id="modTabs" role="tablist" aria-label="Escolher redação"></div>
+  <div id="modBox"></div>
+  <p class="small">As linhas foram quebradas como numa folha de prova manuscrita (cerca de 11 palavras por linha). Na sua letra, a quebra pode mudar; o que importa é manter 4-6-6-4.</p>
+</section>
+<!-- ======================= 11. LABORATÓRIO ======================= -->
+<section class="view" id="lab" data-title="Laboratório" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 11</span>
+    <h2>Laboratório</h2>
+    <p>Ferramentas para treinar: montar a redação pelos moldes, contar as linhas, cronometrar e se autoavaliar.</p>
+  </div>
+
+  <!-- MONTADOR -->
+  <div class="tool" id="toolMont">
+    <h3>Montador de redação</h3>
+    <p class="small">Preencha cada campo com uma frase curta, sem ponto final. O montador encaixa tudo em versões curtas dos moldes do capítulo 4, já no tamanho de 20 linhas. Depois, reescreva à mão e ajuste o que ficar repetitivo.</p>
+    <div class="btns"><button class="btn ghost" id="mExample" type="button">Carregar exemplo (trânsito)</button><button class="btn ghost" id="mClear" type="button">Limpar campos</button></div>
+    <h4>Introdução</h4>
+    <div class="row">
+      <div class="field"><label for="m_rep0">Repertório de abertura (quem)</label><input id="m_rep0" placeholder="a Organização Mundial da Saúde"></div>
+      <div class="field"><label for="m_rep0i">O que ele diz</label><input id="m_rep0i" placeholder="o trânsito é a principal causa de morte de jovens no mundo"></div>
+    </div>
+    <div class="field"><label for="m_prob">Problema do tema</label><input id="m_prob" placeholder="o número de mortes nas vias brasileiras"></div>
+    <div class="row">
+      <div class="field"><label for="m_a1">Argumento 1 (causa ou benefício)</label><input id="m_a1" placeholder="da imprudência dos condutores"></div>
+      <div class="field"><label for="m_a2">Argumento 2</label><input id="m_a2" placeholder="da fiscalização insuficiente"></div>
+    </div>
+    <h4>Desenvolvimento 1</h4>
+    <div class="field"><label for="m_t1">Tópico frasal: o argumento 1 em forma de frase</label><input id="m_t1" placeholder="a imprudência dos condutores"></div>
+    <div class="row">
+      <div class="field"><label for="m_r1">Repertório (quem)</label><input id="m_r1" placeholder="a Lei Seca, de 2008"></div>
+      <div class="field"><label for="m_r1i">O que ele diz</label><input id="m_r1i" placeholder="há tolerância zero ao álcool na direção"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="m_e1">Explicação</label><input id="m_e1" placeholder="muitos motoristas ainda bebem e dirigem por acreditarem que não serão flagrados"></div>
+      <div class="field"><label for="m_c1">Consequência</label><input id="m_c1" placeholder="acidentes graves e mortes evitáveis"></div>
+    </div>
+    <h4>Desenvolvimento 2</h4>
+    <div class="field"><label for="m_t2">Tópico frasal: o argumento 2 em forma de frase</label><input id="m_t2" placeholder="a fiscalização insuficiente nas rodovias e cidades"></div>
+    <div class="field"><label for="m_r2">Repertório completo (frase)</label><input id="m_r2" placeholder="na baixa quantidade de blitze e radares em muitos municípios"><span class="hint">Completa a frase "Esse fato pode ser observado..."</span></div>
+    <div class="row">
+      <div class="field"><label for="m_e2">Explicação</label><input id="m_e2" placeholder="a sensação de impunidade estimula o excesso de velocidade"></div>
+      <div class="field"><label for="m_c2">Consequência</label><input id="m_c2" placeholder="as infrações se tornam rotina"></div>
+    </div>
+    <h4>Conclusão</h4>
+    <div class="row">
+      <div class="field"><label for="m_ag">Agente</label><input id="m_ag" placeholder="o Detran, em parceria com as polícias,"></div>
+      <div class="field"><label for="m_ac">Ação</label><input id="m_ac" placeholder="ampliar a fiscalização e as campanhas educativas"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="m_me">Meio</label><input id="m_me" placeholder="blitze com bafômetro e palestras em escolas"></div>
+      <div class="field"><label for="m_fi">Finalidade</label><input id="m_fi" placeholder="reduzir as mortes no trânsito"></div>
+    </div>
+    <div class="btns"><button class="btn" id="mBuild" type="button">Montar redação</button><button class="btn ghost" id="mSend" type="button">Mandar para o contador</button></div>
+    <div class="out" id="mOut" aria-live="polite"></div>
+  </div>
+
+  <!-- CONTADOR -->
+  <div class="tool" id="toolCount">
+    <h3>Contador de 20 linhas</h3>
+    <p class="small">Digite ou cole sua redação. Separe os parágrafos com Enter. O contador simula a folha: quebra o texto em linhas com o número de caracteres da <b>sua</b> letra e mostra se você fechou 20.</p>
+    <div class="row">
+      <div class="field"><label for="cpl">Caracteres por linha (sua letra)</label><input id="cpl" type="number" min="40" max="110" value="68"><span class="hint">Conte letras e espaços de uma linha escrita à mão. A maioria fica entre 60 e 75.</span></div>
+      <div class="field"><label for="ind">Recuo do parágrafo (caracteres)</label><input id="ind" type="number" min="0" max="15" value="6"></div>
+    </div>
+    <div class="field"><label for="cText">Sua redação</label><textarea id="cText" rows="12" placeholder="Primeiro parágrafo (introdução)...&#10;Segundo parágrafo...&#10;Terceiro parágrafo...&#10;Conclusão..."></textarea></div>
+    <div class="meter">
+      <div class="big" id="cTotal">0<small> / 20 linhas</small></div>
+      <span class="pill warn" id="cStatus">Comece a escrever</span>
+      <span class="small" id="cWords"></span>
+    </div>
+    <div class="par-bars" id="cBars"></div>
+    <details class="acc"><summary>Ver como fica na folha</summary><div class="acc-body"><div class="sheet" id="cSheet"><ol></ol></div></div></details>
+  </div>
+
+  <!-- CRONÔMETRO -->
+  <div class="tool" id="toolTimer">
+    <h3>Cronômetro de prova</h3>
+    <p class="small">60 minutos divididos nas cinco etapas do capítulo 1. Treine sempre com tempo.</p>
+    <div class="meter"><span class="timer" id="tClock">60:00</span><span class="pill warn" id="tPhase">Parado</span></div>
+    <div class="btns"><button class="btn" id="tStart" type="button">Iniciar</button><button class="btn ghost" id="tPause" type="button">Pausar</button><button class="btn ghost" id="tReset" type="button">Zerar</button></div>
+  </div>
+
+  <!-- AUTOAVALIAÇÃO -->
+  <div class="tool" id="toolSelf">
+    <h3>Autoavaliação pelos 4 critérios</h3>
+    <p class="small">Depois de escrever, marque só o que o seu texto realmente cumpre. Cada item vale 2 pontos. É uma estimativa para treino, não a nota oficial.</p>
+    <div class="meter">
+      <div class="big" id="sTotal">0<small> / 40</small></div>
+      <span class="pill bad" id="sStatus">Abaixo do mínimo</span>
+    </div>
+    <div class="gauge" aria-hidden="true"><i id="sGauge" style="width:0%"></i></div>
+    <p class="small">A linha tracejada marca o mínimo de 12 pontos.</p>
+    <div id="sCrit"></div>
+    <div class="btns"><button class="btn ghost" id="sReset" type="button">Limpar avaliação</button></div>
+  </div>
+</section>
+
+<!-- ======================= 12. PLANO ======================= -->
+<section class="view" id="plano" data-title="Plano de treino" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 12</span>
+    <h2>Plano de treino e dia da prova</h2>
+    <p>Quatro semanas para sair do zero. Marque cada tarefa ao terminar; fica salvo neste navegador.</p>
+  </div>
+  <div class="week" id="weeks"></div>
+
+  <h3>Como corrigir seu próprio texto</h3>
+  <ol class="steps">
+    <li>Deixe o texto descansar algumas horas.</li>
+    <li>Leia em voz alta. Onde você precisa respirar no meio de uma frase longa, divida a frase.</li>
+    <li>Marque com cores: tese (amarelo), repertórios (verde), conectivos (azul), proposta (rosa). Faltou alguma cor? Falta uma peça.</li>
+    <li>Passe o texto pela <a href="#lab">autoavaliação</a> e anote os dois itens que você mais erra. Na próxima redação, foque neles.</li>
+    <li>Reescreva só os parágrafos fracos. Reescrever ensina mais do que escrever um texto novo.</li>
+  </ol>
+
+  <h3>Checklist antes de entregar</h3>
+  <ul class="checks" id="finalChecks"></ul>
+  <div class="box tip">
+    <span class="tag">No dia</span>
+    <p>Leve caneta esferográfica da cor exigida no edital (normalmente preta, de corpo transparente) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
+  </div>
+</section>
+  </div>
+</div>
+</div>
+<script>
+// Redações-modelo: cada uma com exatamente 20 linhas no mapa 4-6-6-4.
+// Marcações: {t}tese{/} · {r}repertório{/} · {p}proposta{/}. Conectivos são destacados automaticamente.
+const MODELOS = [
+{
+  id:'m1',
+  tema:'Os desafios da segurança pública no Brasil contemporâneo',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}Segundo o filósofo Thomas Hobbes, o Estado existe para garantir a',
+      'segurança e evitar a "guerra de todos contra todos"{/}. No entanto, os',
+      'altos índices de violência no Brasil mostram que essa função não se',
+      'cumpre, {t}sobretudo devido à impunidade e à desigualdade social{/}.'
+    ],[
+      'Em primeiro lugar, a sensação de impunidade estimula novos crimes.',
+      '{r}De acordo com o jurista Cesare Beccaria, em "Dos Delitos e das Penas",',
+      'a certeza da punição é mais eficaz do que a severidade da pena{/}. Sob',
+      'essa ótica, quando inquéritos não são concluídos e processos duram',
+      'anos, o infrator acredita que não será punido, o que favorece a',
+      'reincidência e enfraquece a confiança da população nas instituições.'
+    ],[
+      'Além disso, a desigualdade social amplia a vulnerabilidade dos',
+      'jovens das periferias. {r}Conforme o Atlas da Violência, do Ipea, a',
+      'maioria das vítimas de homicídio no país é jovem e negra{/}. Nesse',
+      'contexto, a falta de escola de qualidade, emprego e lazer deixa essa',
+      'parcela da população exposta ao aliciamento do tráfico, de modo que',
+      'a criminalidade se renova a cada geração nas comunidades carentes.'
+    ],[
+      'Portanto, é necessário enfrentar os desafios da segurança pública.',
+      'Para isso, {p}o Governo Federal e os estados devem integrar polícias,',
+      'Judiciário e escolas, por meio do Sistema Único de Segurança Pública,',
+      'a fim de reduzir a impunidade e proteger os jovens vulneráveis{/}.'
+    ]
+  ],
+  notas:[
+    'Repertório de abertura (Hobbes) ligado ao papel do Estado, e não solto.',
+    'A tese anuncia os dois argumentos na ordem dos parágrafos: impunidade (D1) e desigualdade (D2).',
+    'Cada desenvolvimento tem tópico frasal, repertório, explicação e consequência.',
+    'A conclusão retoma o tema e traz agente, ação, meio e finalidade.'
+  ]
+},
+{
+  id:'m2',
+  tema:'Os desafios para combater a violência contra a mulher no Brasil',
+  tipo:'Tema de "desafios" → duas causas',
+  p:[
+    [
+      '{r}A Lei Maria da Penha, de 2006, criou mecanismos para coibir a',
+      'violência doméstica e familiar contra a mulher{/}. Entretanto, os casos',
+      'de agressão e feminicídio ainda são frequentes no Brasil, {t}sobretudo',
+      'devido à cultura machista e à fragilidade da rede de proteção{/}.'
+    ],[
+      'Em primeiro lugar, a cultura machista naturaliza a violência.',
+      '{r}Segundo a filósofa Simone de Beauvoir, "ninguém nasce mulher: torna-se',
+      'mulher"{/}, ou seja, os papéis de gênero são construídos pela sociedade.',
+      'Nesse sentido, a ideia de que o homem tem posse sobre a companheira,',
+      'transmitida por gerações, faz com que agressões sejam vistas como',
+      'assunto privado, o que dificulta a denúncia e perpetua o ciclo.'
+    ],[
+      'Além disso, a rede de proteção às vítimas ainda é insuficiente.',
+      '{r}Embora a lei preveja medidas protetivas de urgência{/}, muitas cidades',
+      'não têm delegacias especializadas nem abrigos para acolher vítimas.',
+      'Desse modo, a mulher que depende financeiramente do agressor teme',
+      'denunciar, pois não sabe para onde ir, de modo que permanece em',
+      'risco e, em muitos casos, torna-se mais uma vítima de feminicídio.'
+    ],[
+      'Portanto, é urgente combater a violência contra a mulher. Para',
+      'isso, {p}o Ministério da Educação deve incluir o tema nas escolas, e os',
+      'estados devem ampliar delegacias e abrigos, por meio de verbas',
+      'federais, a fim de garantir a proteção prevista na Lei Maria da Penha{/}.'
+    ]
+  ],
+  notas:[
+    'Abre com a lei mais importante do tema, citando o ano.',
+    'D1 trata da causa cultural com repertório filosófico; D2 trata da causa estrutural com a própria lei.',
+    '"Embora" + subjuntivo ("preveja") e "têm" no plural: atenção ao critério 4.',
+    'A conclusão tem dois agentes, cada um ligado a um desenvolvimento, e retoma a lei da introdução.'
+  ]
+},
+{
+  id:'m3',
+  tema:'Caminhos para combater os crimes cibernéticos no Brasil',
+  tipo:'Tema de "caminhos" → duas causas + solução na conclusão',
+  p:[
+    [
+      '{r}O Pix, criado pelo Banco Central em 2020, tornou os pagamentos',
+      'instantâneos{/} e facilitou a vida dos brasileiros. No entanto, essa',
+      'agilidade também favoreceu o avanço dos crimes cibernéticos, {t}que',
+      'persistem devido à falta de educação digital e ao anonimato virtual{/}.'
+    ],[
+      'Em primeiro lugar, grande parte da população não sabe se proteger',
+      'no ambiente virtual. {r}Embora a Lei Geral de Proteção de Dados, de 2018,',
+      'regule o uso de informações pessoais{/}, golpes como o do falso parente',
+      'exploram a confiança e a pressa das vítimas, sobretudo dos idosos.',
+      'Nesse sentido, sem orientação sobre senhas, links e dados pessoais,',
+      'o cidadão torna-se alvo fácil e perde economias de toda uma vida.'
+    ],[
+      'Além disso, a sensação de anonimato estimula os criminosos. {r}De',
+      'acordo com o sociólogo Zygmunt Bauman, as relações na modernidade',
+      'líquida são frágeis e distantes{/}, o que facilita enganar estranhos.',
+      'Sob essa ótica, o golpista age de outro estado ou país, usa contas',
+      'de terceiros e acredita que não será identificado, de modo que a',
+      'investigação se torna lenta e muitas vítimas desistem de denunciar.'
+    ],[
+      'Portanto, é necessário enfrentar os crimes cibernéticos. Para isso,',
+      '{p}o Governo Federal deve promover campanhas de educação digital, em',
+      'parceria com bancos e escolas, e ampliar delegacias especializadas,',
+      'a fim de proteger os cidadãos e punir os autores desses golpes{/}.'
+    ]
+  ],
+  notas:[
+    'Abertura com fato concreto e atual (o Pix) que leva ao problema.',
+    'Tese com duas causas claras: falta de educação digital (D1) e anonimato (D2).',
+    'O D1 usa uma lei (LGPD) e um exemplo do cotidiano; o D2 usa um sociólogo.',
+    'A proposta responde às duas causas: educação digital e investigação especializada.'
+  ]
+},
+{
+  id:'m4',
+  tema:'A importância da aproximação entre a polícia e a comunidade',
+  tipo:'Tema de "importância" → dois benefícios',
+  p:[
+    [
+      '{r}Em 1829, o britânico Robert Peel afirmou que "a polícia é o público',
+      'e o público é a polícia"{/}, ideia que inspira o policiamento comunitário.',
+      'Essa aproximação é essencial no Brasil, {t}sobretudo por fortalecer a',
+      'confiança da população e por tornar a prevenção do crime mais eficaz{/}.'
+    ],[
+      'Em primeiro lugar, {r}a Constituição de 1988 define, no artigo 144, a',
+      'segurança pública como "dever do Estado, direito e responsabilidade',
+      'de todos"{/}. Sob essa ótica, quando o mesmo policial atua no bairro',
+      'por longo tempo, moradores e comerciantes passam a vê-lo como aliado',
+      'e colaboram com informações, o que agiliza investigações e reduz o',
+      'espaço para o domínio de grupos criminosos sobre a comunidade.'
+    ],[
+      'Além disso, o policiamento comunitário torna a prevenção eficaz.',
+      '{r}No Japão, os "kobans", pequenos postos policiais de bairro, são',
+      'apontados como um dos fatores dos baixos índices de violência{/} do',
+      'país. Nesse contexto, o policial próximo identifica conflitos, brigas',
+      'e pontos de risco antes que se tornem crimes, de modo que muitas',
+      'ocorrências são evitadas e a sensação de segurança cresce no bairro.'
+    ],[
+      'Portanto, aproximar polícia e comunidade é indispensável. Para isso,',
+      '{p}a Secretaria de Defesa Social de Pernambuco deve ampliar as bases',
+      'comunitárias, por meio de policiais fixos nos bairros e reuniões com',
+      'moradores, a fim de fortalecer a confiança e a segurança de todos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema positivo ("importância"): os argumentos são benefícios, não problemas.',
+    'Citação com autor e data, um repertório clássico da atividade policial.',
+    'O D1 usa a Constituição; o D2 usa um exemplo internacional (Japão).',
+    'A proposta é local (SDS-PE), concreta e detalhada.'
+  ]
+}
+];
+
+// Banco de repertórios. t = temas onde o repertório funciona (ver TAGS).
+const TAGS = {
+  cor:'Coringa', seg:'Segurança pública', mul:'Violência contra a mulher', tra:'Trânsito',
+  dro:'Drogas e juventude', tec:'Tecnologia e internet', edu:'Educação', des:'Desigualdade e cidadania',
+  dh:'Direitos humanos', sm:'Saúde mental', pri:'Sistema prisional', amb:'Meio ambiente e desastres',
+  vul:'Crianças, idosos e vulneráveis', pe:'Pernambuco'
+};
+const REP_TIPOS = ['Constituição','Lei','Pensador','Obra','Dado e fato','Pernambuco'];
+const REPS = [
+// ---------- Constituição ----------
+{n:'Constituição Federal, art. 5º', w:'Constituição', t:['cor','dh','seg'],
+ i:'Todos são iguais perante a lei, garantindo-se a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade.',
+ u:'A Constituição Federal, em seu artigo 5º, garante a todos o direito à vida e à segurança. Entretanto, ...'},
+{n:'Constituição Federal, art. 6º', w:'Constituição', t:['cor','des','edu'],
+ i:'Lista os direitos sociais: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados.',
+ u:'Embora o artigo 6º da Constituição inclua a segurança entre os direitos sociais, ...'},
+{n:'Constituição Federal, art. 144', w:'Constituição', t:['seg','cor'],
+ i:'"A segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida para a preservação da ordem pública e da incolumidade das pessoas e do patrimônio." O § 5º atribui às polícias militares a polícia ostensiva e a preservação da ordem pública.',
+ u:'O artigo 144 da Constituição define a segurança pública como "dever do Estado, direito e responsabilidade de todos", o que mostra que a sociedade também tem papel no combate ao crime.'},
+{n:'Constituição Federal, art. 196', w:'Constituição', t:['sm','vul'],
+ i:'A saúde é direito de todos e dever do Estado, garantida por políticas sociais e econômicas.',
+ u:'Apesar de o artigo 196 da Constituição assegurar a saúde como direito de todos, a saúde mental ainda recebe pouca atenção.'},
+{n:'Constituição Federal, art. 205', w:'Constituição', t:['edu','cor','dro'],
+ i:'A educação é direito de todos e dever do Estado e da família, visando ao pleno desenvolvimento da pessoa, ao preparo para a cidadania e à qualificação para o trabalho.',
+ u:'Segundo o artigo 205 da Constituição, a educação deve preparar o cidadão para o exercício da cidadania. Assim, a escola é peça-chave na prevenção da violência.'},
+{n:'Constituição Federal, art. 225', w:'Constituição', t:['amb'],
+ i:'Todos têm direito ao meio ambiente ecologicamente equilibrado, cabendo ao poder público e à coletividade defendê-lo e preservá-lo para as presentes e futuras gerações.',
+ u:'O artigo 225 da Constituição impõe ao poder público e à coletividade o dever de preservar o meio ambiente para as futuras gerações.'},
+{n:'Constituição Federal, art. 227', w:'Constituição', t:['vul','dro','edu'],
+ i:'É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à educação, à dignidade e à convivência familiar, protegendo-os de toda forma de negligência, violência e exploração.',
+ u:'A Constituição determina, no artigo 227, que crianças e adolescentes têm "absoluta prioridade". Na prática, porém, ...'},
+// ---------- Leis ----------
+{n:'Lei Maria da Penha (Lei 11.340/2006)', w:'Lei', t:['mul'],
+ i:'Cria mecanismos para coibir a violência doméstica e familiar contra a mulher e prevê medidas protetivas de urgência. Define cinco formas de violência: física, psicológica, sexual, patrimonial e moral.',
+ u:'A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência para as vítimas. Contudo, ...'},
+{n:'Feminicídio como crime autônomo (Lei 14.994/2024)', w:'Lei', t:['mul'],
+ i:'O "pacote antifeminicídio" tornou o feminicídio um crime autônomo no Código Penal, com pena de 20 a 40 anos de reclusão. Antes, desde a Lei 13.104/2015, ele era uma qualificadora do homicídio.',
+ u:'Mesmo com a Lei 14.994/2024, que elevou a pena do feminicídio para até 40 anos, os casos continuam frequentes, o que mostra que punir não basta: é preciso prevenir.'},
+{n:'Estatuto da Criança e do Adolescente (Lei 8.069/1990)', w:'Lei', t:['vul','dro','edu'],
+ i:'Adota a doutrina da proteção integral: criança e adolescente são sujeitos de direitos. Prevê medidas socioeducativas para o adolescente que comete ato infracional.',
+ u:'O ECA, de 1990, consagrou a proteção integral de crianças e adolescentes, mas ...'},
+{n:'Código de Trânsito e Lei Seca (Lei 11.705/2008)', w:'Lei', t:['tra'],
+ i:'A Lei Seca estabeleceu tolerância zero ao álcool na direção, com multa, suspensão do direito de dirigir e crime quando a capacidade estiver alterada.',
+ u:'Embora a Lei Seca, de 2008, tenha estabelecido tolerância zero ao álcool ao volante, muitos motoristas ainda bebem e dirigem.'},
+{n:'Estatuto do Desarmamento (Lei 10.826/2003)', w:'Lei', t:['seg'],
+ i:'Regula o registro, a posse, o porte e a comercialização de armas de fogo e munições.',
+ u:'O Estatuto do Desarmamento, de 2003, buscou controlar a circulação de armas de fogo no país.'},
+{n:'Sistema Único de Segurança Pública (Lei 13.675/2018)', w:'Lei', t:['seg','sm','cor'],
+ i:'Cria o SUSP e a Política Nacional de Segurança Pública e Defesa Social, para integrar a atuação de polícias e demais órgãos de segurança da União, dos estados e dos municípios.',
+ u:'Para isso, o Governo Federal deve fortalecer o Sistema Único de Segurança Pública, integrando dados e operações entre as polícias.'},
+{n:'Lei Orgânica Nacional das PMs e CBMs (Lei 14.751/2023)', w:'Lei', t:['seg','sm'],
+ i:'Estabelece normas gerais de organização, efetivos, garantias e direitos das polícias militares e dos corpos de bombeiros militares do país.',
+ u:'A Lei Orgânica Nacional das Polícias Militares, de 2023, reforçou a importância de valorizar os profissionais da corporação.'},
+{n:'Saúde mental do profissional de segurança (Lei 14.531/2023)', w:'Lei', t:['sm','seg'],
+ i:'Alterou a lei do SUSP para incluir diretrizes de promoção da saúde mental e de prevenção do suicídio entre profissionais de segurança pública.',
+ u:'Apesar de a Lei 14.531/2023 prever ações de saúde mental para profissionais de segurança, muitos policiais ainda adoecem em silêncio.'},
+{n:'Lei de Drogas (Lei 11.343/2006)', w:'Lei', t:['dro'],
+ i:'Institui o Sisnad, prevê medidas de prevenção ao uso, de atenção e reinserção social de usuários e de repressão ao tráfico. Diferencia o usuário do traficante.',
+ u:'A Lei de Drogas, de 2006, prevê não só a repressão ao tráfico, mas também a prevenção e a reinserção social dos usuários.'},
+{n:'Marco Civil da Internet (Lei 12.965/2014)', w:'Lei', t:['tec'],
+ i:'Estabelece princípios, garantias, direitos e deveres para o uso da internet no Brasil, como a proteção da privacidade e a liberdade de expressão.',
+ u:'O Marco Civil da Internet, de 2014, garante a liberdade de expressão, mas não autoriza a disseminação de crimes no ambiente virtual.'},
+{n:'Lei Geral de Proteção de Dados (Lei 13.709/2018)', w:'Lei', t:['tec'],
+ i:'Regula o tratamento de dados pessoais por empresas e pelo poder público, para proteger a privacidade dos cidadãos.',
+ u:'Embora a LGPD, de 2018, proteja os dados pessoais, vazamentos de informações alimentam golpes digitais.'},
+{n:'Lei Carolina Dieckmann (Lei 12.737/2012)', w:'Lei', t:['tec'],
+ i:'Tipificou o crime de invasão de dispositivo informático. Recebeu o nome da atriz que teve fotos íntimas divulgadas após invasão de seu computador.',
+ u:'Desde a Lei Carolina Dieckmann, de 2012, invadir dispositivos é crime, mas a punição ainda é rara.'},
+{n:'Lei 14.155/2021 (fraude eletrônica)', w:'Lei', t:['tec'],
+ i:'Aumentou as penas da invasão de dispositivo informático e criou formas mais graves de furto e estelionato praticados por meio eletrônico.',
+ u:'A Lei 14.155/2021 endureceu as penas para golpes eletrônicos, o que mostra a gravidade do problema.'},
+{n:'Bullying e cyberbullying como crime (Lei 14.811/2024)', w:'Lei', t:['edu','tec','vul'],
+ i:'Incluiu no Código Penal o crime de intimidação sistemática (bullying) e sua forma virtual (cyberbullying). Já a Lei 13.185/2015 havia criado o Programa de Combate à Intimidação Sistemática.',
+ u:'Em 2024, a Lei 14.811 transformou o bullying e o cyberbullying em crimes, reconhecendo os danos que causam aos jovens.'},
+{n:'Estatuto da Pessoa Idosa (Lei 10.741/2003)', w:'Lei', t:['vul'],
+ i:'Garante direitos às pessoas com 60 anos ou mais e prevê que nenhuma pessoa idosa será objeto de negligência, discriminação, violência, crueldade ou opressão.',
+ u:'O Estatuto da Pessoa Idosa proíbe qualquer forma de violência contra pessoas com 60 anos ou mais. Entretanto, ...'},
+{n:'Lei de Execução Penal (Lei 7.210/1984)', w:'Lei', t:['pri'],
+ i:'O art. 1º diz que a execução penal deve efetivar a sentença e proporcionar condições para a harmônica integração social do condenado.',
+ u:'Segundo a Lei de Execução Penal, a pena deve proporcionar a reintegração social do condenado, objetivo distante da realidade das prisões superlotadas.'},
+{n:'Crimes de racismo (Lei 7.716/1989 e Lei 14.532/2023)', w:'Lei', t:['dh','des'],
+ i:'A Lei 7.716/1989 define os crimes de preconceito de raça ou de cor. A Lei 14.532/2023 equiparou a injúria racial ao crime de racismo.',
+ u:'Embora a Lei 14.532/2023 tenha equiparado a injúria racial ao racismo, a discriminação ainda marca o cotidiano de muitos brasileiros.'},
+{n:'Lei de Crimes Ambientais (Lei 9.605/1998)', w:'Lei', t:['amb'],
+ i:'Prevê sanções penais e administrativas para condutas lesivas ao meio ambiente, como desmatamento, queimadas e maus-tratos a animais.',
+ u:'A Lei de Crimes Ambientais pune o desmatamento e as queimadas, mas a fiscalização insuficiente favorece a impunidade.'},
+{n:'Declaração Universal dos Direitos Humanos (1948)', w:'Lei', t:['dh','cor','seg'],
+ i:'Art. 1º: "Todos os seres humanos nascem livres e iguais em dignidade e direitos." Art. 3º: todo ser humano tem direito à vida, à liberdade e à segurança pessoal.',
+ u:'A Declaração Universal dos Direitos Humanos, de 1948, garante a todo ser humano o direito à vida e à segurança pessoal.'},
+{n:'Agenda 2030 da ONU (ODS)', w:'Lei', t:['cor','seg','mul','amb','tra','edu'],
+ i:'17 Objetivos de Desenvolvimento Sustentável. ODS 16: paz, justiça e instituições eficazes. ODS 5: igualdade de gênero. ODS 4: educação de qualidade. ODS 13: ação contra a mudança do clima.',
+ u:'O Objetivo 16 da Agenda 2030 da ONU propõe promover sociedades pacíficas e instituições eficazes, meta ainda distante no Brasil.'},
+// ---------- Pensadores ----------
+{n:'Thomas Hobbes', w:'Pensador', t:['seg','cor'],
+ i:'Em "Leviatã" (1651), afirma que, sem um Estado forte, os homens viveriam em uma "guerra de todos contra todos". O Estado nasce para garantir a segurança.',
+ u:'Segundo Thomas Hobbes, o Estado existe para evitar a "guerra de todos contra todos". No entanto, ...'},
+{n:'Jean-Jacques Rousseau', w:'Pensador', t:['cor','des'],
+ i:'Em "Do Contrato Social" (1762), defende que os cidadãos abrem mão de parte da liberdade em troca de um pacto que garanta o bem comum.',
+ u:'Para Rousseau, a sociedade se organiza por um contrato social voltado ao bem comum. Quando o Estado falha, esse pacto se enfraquece.'},
+{n:'Max Weber', w:'Pensador', t:['seg','dh'],
+ i:'Define o Estado como a instituição que detém o monopólio do uso legítimo da força física em um território.',
+ u:'Para Max Weber, o Estado detém o monopólio do uso legítimo da força. Por isso, a atuação policial deve ser sempre legal e proporcional.'},
+{n:'Émile Durkheim', w:'Pensador', t:['seg','cor','dro'],
+ i:'Criou o conceito de anomia: estado em que as normas sociais perdem força, o que favorece o desvio e o crime.',
+ u:'Segundo o sociólogo Émile Durkheim, quando as normas perdem força, instala-se a anomia, o que favorece a criminalidade.'},
+{n:'Cesare Beccaria', w:'Pensador', t:['seg','pri'],
+ i:'Em "Dos Delitos e das Penas" (1764), afirma que a certeza da punição previne mais crimes do que a severidade da pena.',
+ u:'Como defendeu Cesare Beccaria, a certeza da punição é mais eficaz do que a severidade da pena. Assim, a impunidade estimula o crime.'},
+{n:'Norberto Bobbio', w:'Pensador', t:['dh','cor'],
+ i:'Em "A Era dos Direitos", afirma que o problema dos direitos humanos hoje não é justificá-los, mas protegê-los.',
+ u:'Para Norberto Bobbio, o desafio atual não é justificar os direitos, mas protegê-los. É o que ocorre com ...'},
+{n:'Zygmunt Bauman', w:'Pensador', t:['tec','seg','cor'],
+ i:'Descreve a "modernidade líquida": relações frágeis, rápidas e superficiais. Em "Medo Líquido", analisa a insegurança constante da vida moderna.',
+ u:'Segundo Zygmunt Bauman, vivemos uma modernidade líquida, de relações frágeis, o que se intensifica no ambiente virtual.'},
+{n:'Michel Foucault', w:'Pensador', t:['pri','dh'],
+ i:'Em "Vigiar e Punir" (1975), analisa a prisão como instituição que, em vez de recuperar, muitas vezes reproduz a delinquência.',
+ u:'Michel Foucault, em "Vigiar e Punir", já apontava que a prisão pode produzir mais delinquência em vez de recuperar.'},
+{n:'Hannah Arendt', w:'Pensador', t:['dh','cor'],
+ i:'Criou o conceito de "banalidade do mal": pessoas comuns podem praticar atrocidades quando deixam de refletir e apenas cumprem ordens ou seguem a maioria.',
+ u:'Hannah Arendt chamou de "banalidade do mal" a naturalização de atos cruéis. É o que ocorre quando a sociedade se acostuma com ...'},
+{n:'Immanuel Kant', w:'Pensador', t:['dh'],
+ i:'Defende que o ser humano deve ser tratado sempre como fim, nunca apenas como meio, o que fundamenta a ideia de dignidade.',
+ u:'Para Kant, o ser humano deve ser tratado como fim, e não como meio. Por isso, a dignidade deve ser respeitada mesmo na abordagem de suspeitos.'},
+{n:'Aristóteles', w:'Pensador', t:['cor','des'],
+ i:'Afirma que o ser humano é um "animal político", que só se realiza vivendo em comunidade, e que a política deve buscar o bem comum.',
+ u:'Segundo Aristóteles, o homem é um animal político, que depende da vida em comunidade. Assim, ...'},
+{n:'Simone de Beauvoir', w:'Pensador', t:['mul'],
+ i:'Em "O Segundo Sexo" (1949): "Ninguém nasce mulher: torna-se mulher." Os papéis de gênero são construídos socialmente.',
+ u:'Segundo Simone de Beauvoir, "ninguém nasce mulher: torna-se mulher", o que mostra que o machismo é uma construção social e pode ser combatido.'},
+{n:'Pierre Bourdieu', w:'Pensador', t:['mul','des','edu'],
+ i:'Criou o conceito de "violência simbólica": dominação invisível, exercida por meio da cultura, da linguagem e dos costumes, que a própria vítima tende a aceitar como natural.',
+ u:'O sociólogo Pierre Bourdieu chamou de violência simbólica a dominação naturalizada pelos costumes, como ocorre com o machismo.'},
+{n:'Byung-Chul Han', w:'Pensador', t:['sm','tec'],
+ i:'Em "Sociedade do Cansaço" (2010), afirma que a cobrança excessiva por desempenho gera esgotamento, depressão e síndrome de burnout.',
+ u:'Para o filósofo Byung-Chul Han, a sociedade do desempenho produz sujeitos esgotados. Isso se agrava em profissões de alto risco, como a policial.'},
+{n:'Nelson Mandela', w:'Pensador', t:['edu','cor'],
+ i:'"A educação é a arma mais poderosa que você pode usar para mudar o mundo."',
+ u:'Como afirmou Nelson Mandela, a educação é a arma mais poderosa para mudar o mundo. Por isso, a prevenção da violência começa na escola.'},
+{n:'Teoria das Janelas Quebradas', w:'Pensador', t:['seg'],
+ i:'Proposta por James Q. Wilson e George Kelling (1982): sinais de desordem e abandono, como uma janela quebrada não consertada, estimulam delitos maiores.',
+ u:'Segundo a Teoria das Janelas Quebradas, a desordem não corrigida estimula crimes mais graves. Assim, cuidar do espaço público é prevenir a violência.'},
+{n:'Robert Peel', w:'Pensador', t:['seg'],
+ i:'Criador da polícia moderna de Londres (1829). Seus princípios dizem que "a polícia é o público e o público é a polícia" e que a eficiência policial se mede pela ausência de crime, e não pela ação visível da polícia.',
+ u:'Já em 1829, Robert Peel defendia que a eficiência da polícia se mede pela ausência de crimes, o que reforça a importância da prevenção.'},
+{n:'George Orwell, "1984"', w:'Obra', t:['tec','dh'],
+ i:'Romance (1949) sobre uma sociedade de vigilância total, controlada pelo "Grande Irmão".',
+ u:'Na obra "1984", George Orwell retrata uma sociedade de vigilância total. Por isso, o uso de reconhecimento facial deve respeitar limites legais.'},
+// ---------- Pensadores e obras brasileiros ----------
+{n:'Paulo Freire', w:'Pensador', t:['edu','cor','pe','dro'],
+ i:'Educador pernambucano: "Educação não transforma o mundo. Educação muda pessoas. Pessoas transformam o mundo."',
+ u:'Como afirmou o educador pernambucano Paulo Freire, a educação muda pessoas, e pessoas transformam o mundo.'},
+{n:'Josué de Castro, "Geografia da Fome"', w:'Pensador', t:['des','pe'],
+ i:'Médico pernambucano. Em "Geografia da Fome" (1946), mostra que a fome é produzida por causas sociais e econômicas, e não pela natureza.',
+ u:'O pernambucano Josué de Castro mostrou, em "Geografia da Fome", que a miséria é fruto de escolhas sociais, e não da natureza.'},
+{n:'Gilberto Freyre, "Casa-Grande & Senzala"', w:'Obra', t:['mul','des','pe'],
+ i:'Sociólogo pernambucano. A obra (1933) descreve a formação da sociedade brasileira a partir do engenho, com forte herança patriarcal e escravocrata.',
+ u:'Em "Casa-Grande & Senzala", o pernambucano Gilberto Freyre descreve uma sociedade patriarcal, herança que ainda alimenta o machismo.'},
+{n:'Sérgio Buarque de Holanda, "Raízes do Brasil"', w:'Obra', t:['cor','des'],
+ i:'Descreve o "homem cordial", que tende a misturar o público e o privado e a agir pela emoção e pelas relações pessoais, e não pelas regras.',
+ u:'O "homem cordial" de Sérgio Buarque de Holanda ajuda a explicar o "jeitinho" que leva muitos brasileiros a desrespeitar regras.'},
+{n:'Milton Santos', w:'Pensador', t:['des','cor'],
+ i:'Geógrafo que usou a expressão "cidadania mutilada" para descrever a condição de brasileiros que têm direitos apenas no papel.',
+ u:'O geógrafo Milton Santos chamou de "cidadania mutilada" a situação de quem tem direitos apenas no papel.'},
+{n:'Gilberto Dimenstein, "O Cidadão de Papel"', w:'Obra', t:['cor','des','vul'],
+ i:'Livro (1993) que mostra como muitos direitos previstos em lei não chegam à vida real da população, sobretudo de crianças e adolescentes.',
+ u:'Como mostra Gilberto Dimenstein em "O Cidadão de Papel", muitos direitos existem apenas na lei.'},
+{n:'Darcy Ribeiro', w:'Pensador', t:['edu','des'],
+ i:'"A crise da educação no Brasil não é uma crise; é um projeto."',
+ u:'Para Darcy Ribeiro, "a crise da educação no Brasil não é uma crise; é um projeto", o que revela a omissão histórica do Estado.'},
+{n:'Graciliano Ramos, "Vidas Secas"', w:'Obra', t:['dh','des','seg'],
+ i:'Romance (1938). Fabiano é preso e agredido injustamente pelo Soldado Amarelo, retrato do abuso de autoridade e da desigualdade no sertão.',
+ u:'Em "Vidas Secas", o Soldado Amarelo abusa do poder contra Fabiano. A obra mostra que a autoridade sem limites gera medo, e não segurança.'},
+{n:'Jorge Amado, "Capitães da Areia"', w:'Obra', t:['vul','dro','des'],
+ i:'Romance (1937) sobre meninos abandonados que vivem de pequenos crimes em Salvador, sem acesso a família, escola e proteção.',
+ u:'Em "Capitães da Areia", Jorge Amado mostra jovens abandonados que entram no crime por falta de proteção.'},
+{n:'Carolina Maria de Jesus, "Quarto de Despejo"', w:'Obra', t:['des','vul'],
+ i:'Diário (1960) de uma mulher negra e catadora de papel na favela do Canindé, em São Paulo, que relata a fome e a exclusão.',
+ u:'Em "Quarto de Despejo", Carolina Maria de Jesus denuncia a fome e a exclusão vividas nas periferias.'},
+{n:'Filme "Tropa de Elite" (2007)', w:'Obra', t:['seg','dro','dh'],
+ i:'Mostra a rotina do Bope no Rio de Janeiro, a pressão sobre os policiais, a corrupção e a relação entre consumo de drogas e financiamento do tráfico.',
+ u:'O filme "Tropa de Elite" retrata a pressão vivida pelos policiais e a ligação entre o consumo de drogas e o tráfico.'},
+{n:'Filme "Cidade de Deus" (2002)', w:'Obra', t:['dro','des','vul'],
+ i:'Mostra como crianças e jovens de uma comunidade carioca são atraídos pelo tráfico diante da falta de oportunidades.',
+ u:'O filme "Cidade de Deus" mostra crianças atraídas pelo tráfico diante da ausência do Estado.'},
+{n:'Documentário "O Dilema das Redes" (2020)', w:'Obra', t:['tec','sm'],
+ i:'Ex-funcionários de grandes empresas de tecnologia explicam como algoritmos manipulam a atenção, polarizam e afetam a saúde mental.',
+ u:'O documentário "O Dilema das Redes" mostra como os algoritmos manipulam a atenção e espalham desinformação.'},
+// ---------- Dados e fatos ----------
+{n:'Atlas da Violência (Ipea e FBSP)', w:'Dado e fato', t:['seg','dro','des','dh'],
+ i:'Publicação periódica que mostra que a maioria das vítimas de homicídio no Brasil é jovem, do sexo masculino e negra.',
+ u:'Segundo o Atlas da Violência, a maioria das vítimas de homicídio no país é jovem e negra.'},
+{n:'Anuário Brasileiro de Segurança Pública (FBSP)', w:'Dado e fato', t:['seg','mul'],
+ i:'Publicação anual do Fórum Brasileiro de Segurança Pública. Registra, por exemplo, mais de mil feminicídios por ano no país.',
+ u:'Dados do Anuário Brasileiro de Segurança Pública revelam que mais de mil mulheres são vítimas de feminicídio por ano no Brasil.'},
+{n:'OMS e trânsito', w:'Dado e fato', t:['tra'],
+ i:'Para a Organização Mundial da Saúde, as lesões de trânsito são a principal causa de morte de crianças e jovens de 5 a 29 anos no mundo. A ONU definiu 2021–2030 como a Década de Ação pela Segurança no Trânsito, com meta de reduzir as mortes pela metade.',
+ u:'Segundo a OMS, os acidentes de trânsito são a principal causa de morte de jovens de 5 a 29 anos no mundo.'},
+{n:'Maio Amarelo e Setembro Amarelo', w:'Dado e fato', t:['tra','sm'],
+ i:'Maio Amarelo: movimento de conscientização sobre segurança no trânsito. Setembro Amarelo: campanha de prevenção ao suicídio.',
+ u:'Campanhas como o Setembro Amarelo mostram a importância de falar sobre saúde mental, inclusive dentro das corporações policiais.'},
+{n:'Pix (Banco Central, 2020)', w:'Dado e fato', t:['tec'],
+ i:'Sistema de pagamentos instantâneos lançado em 2020, que se popularizou rapidamente e também passou a ser usado em golpes, como o do falso parente.',
+ u:'O Pix, lançado em 2020, facilitou os pagamentos, mas também abriu espaço para novos golpes.'},
+{n:'"Pós-verdade" (Oxford, 2016)', w:'Dado e fato', t:['tec'],
+ i:'Eleita palavra do ano pelo Dicionário Oxford em 2016: situação em que apelos à emoção e a crenças pessoais influenciam mais a opinião pública do que os fatos.',
+ u:'Em 2016, o Dicionário Oxford elegeu "pós-verdade" a palavra do ano, o que revela a força das notícias falsas.'},
+{n:'Massacre do Carandiru (1992)', w:'Dado e fato', t:['pri','dh'],
+ i:'Em 1992, 111 presos foram mortos durante uma intervenção policial na Casa de Detenção de São Paulo. O caso se tornou símbolo da crise prisional e dos limites do uso da força.',
+ u:'O Massacre do Carandiru, em 1992, tornou-se símbolo da crise do sistema prisional brasileiro.'},
+{n:'População carcerária brasileira', w:'Dado e fato', t:['pri'],
+ i:'O Brasil tem uma das maiores populações carcerárias do mundo, com presídios superlotados e altos índices de reincidência.',
+ u:'O Brasil possui uma das maiores populações carcerárias do mundo, mas a violência não diminui na mesma proporção.'},
+{n:'Kobans no Japão', w:'Dado e fato', t:['seg'],
+ i:'Pequenos postos policiais de bairro, símbolo do modelo japonês de polícia comunitária, inspiraram programas de policiamento comunitário no Brasil.',
+ u:'No Japão, os "kobans", pequenos postos policiais de bairro, aproximam a polícia da população e ajudam a prevenir crimes.'},
+{n:'Câmeras corporais', w:'Dado e fato', t:['seg','dh','tec'],
+ i:'A adoção de câmeras corporais por polícias militares, como a de São Paulo a partir de 2020, foi associada em estudos à redução de mortes em intervenções policiais e de denúncias contra policiais.',
+ u:'Estudos sobre o uso de câmeras corporais pela PM de São Paulo associaram a tecnologia à redução da letalidade policial, o que protege cidadãos e policiais.'},
+// ---------- Pernambuco ----------
+{n:'Pacto pela Vida (PE, 2007)', w:'Pernambuco', t:['seg','pe'],
+ i:'Política estadual de segurança criada em 2007, com metas de redução dos crimes violentos letais intencionais (CVLI), integração entre polícias, Justiça e Ministério Público e gestão por resultados. Reduziu os homicídios nos primeiros anos.',
+ u:'O Pacto pela Vida, criado em Pernambuco em 2007, mostrou que integração e metas claras podem reduzir homicídios.'},
+{n:'Juntos pela Segurança (PE, 2023)', w:'Pernambuco', t:['seg','pe'],
+ i:'Programa de segurança pública do Governo de Pernambuco lançado em 2023, com investimentos em efetivo policial, tecnologia, inteligência e prevenção.',
+ u:'Programas como o Juntos pela Segurança, em Pernambuco, mostram que segurança exige investimento contínuo em efetivo e tecnologia.'},
+{n:'Chuvas de 2022 em Pernambuco', w:'Pernambuco', t:['amb','pe','vul'],
+ i:'Em maio de 2022, chuvas intensas causaram deslizamentos e enchentes no Recife e na Região Metropolitana, com mais de cem mortes, sobretudo em áreas de morro.',
+ u:'As chuvas de 2022 no Recife, que deixaram mais de cem mortos, mostram como a ocupação irregular de morros expõe os mais pobres aos desastres.'},
+{n:'Revolução Pernambucana (1817)', w:'Pernambuco', t:['cor','pe','des'],
+ i:'Movimento que defendeu ideias de liberdade e de república em Pernambuco, sendo um dos marcos da luta por direitos e participação política no Brasil.',
+ u:'Desde a Revolução Pernambucana de 1817, o estado tem tradição na luta por liberdade e participação política.'}
+];
+
+// Temas prováveis com kit completo. h = chance (alta/média). Os repertórios citados estão no capítulo Repertórios.
+const TEMAS = [
+{t:'Os desafios da segurança pública no Brasil', c:'seg', h:'alta',
+ tese:'A violência persiste sobretudo devido à impunidade e à desigualdade social.',
+ a1:'Impunidade: inquéritos não concluídos e processos lentos estimulam a reincidência.',
+ a2:'Desigualdade: jovens das periferias sem escola, emprego e lazer ficam expostos ao crime.',
+ r:'Hobbes (Leviatã); Beccaria; art. 144 da CF; Atlas da Violência; Pacto pela Vida (PE).',
+ p:'Governo Federal e estados integram polícias, Judiciário e escolas pelo SUSP, investindo em inteligência e programas sociais, para reduzir a impunidade e proteger os jovens.',
+ x:'Não transforme o texto em ataque à polícia ou a governos específicos. Fale de causas estruturais.'},
+{t:'A importância da polícia comunitária / da aproximação entre polícia e sociedade', c:'seg', h:'alta',
+ tese:'A aproximação é essencial por fortalecer a confiança da população e tornar a prevenção mais eficaz.',
+ a1:'Confiança: policial conhecido no bairro recebe mais denúncias e informações.',
+ a2:'Prevenção: identifica conflitos e pontos de risco antes que virem crimes.',
+ r:'Robert Peel ("a polícia é o público..."); art. 144 da CF ("responsabilidade de todos"); kobans do Japão; Janelas Quebradas.',
+ p:'SDS-PE amplia bases comunitárias com policiais fixos e reuniões periódicas com moradores e escolas.',
+ x:'Tema positivo: os argumentos são benefícios. Não escreva só sobre problemas.'},
+{t:'Os desafios para combater a violência contra a mulher no Brasil', c:'mul', h:'alta',
+ tese:'A violência persiste devido à cultura machista e à fragilidade da rede de proteção às vítimas.',
+ a1:'Cultura machista: posse sobre a companheira, agressão vista como "assunto de casal".',
+ a2:'Rede de proteção frágil: poucas delegacias especializadas e abrigos; dependência financeira.',
+ r:'Lei Maria da Penha; Lei 14.994/2024 (feminicídio até 40 anos); Simone de Beauvoir; Bourdieu (violência simbólica); Anuário do FBSP; ODS 5.',
+ p:'MEC inclui o tema nas escolas; estados ampliam delegacias da mulher, patrulhas e abrigos, com verba federal.',
+ x:'Não culpe a vítima ("ela não denuncia porque não quer"). Explique os motivos estruturais.'},
+{t:'Violência no trânsito e a combinação de álcool e direção', c:'tra', h:'alta',
+ tese:'As mortes no trânsito persistem devido à imprudência dos condutores e à fiscalização insuficiente.',
+ a1:'Imprudência: álcool, excesso de velocidade, celular ao volante; sensação de "comigo não acontece".',
+ a2:'Fiscalização: poucas blitze e radares; punição lenta.',
+ r:'Lei Seca (2008); Código de Trânsito; OMS (principal causa de morte de 5 a 29 anos); Década de Ação da ONU; Maio Amarelo.',
+ p:'Detran e polícias ampliam blitze educativas e fiscalização; escolas trabalham educação para o trânsito.',
+ x:'Inclua motociclistas: no Nordeste, são grande parte das vítimas.'},
+{t:'Caminhos para combater os crimes cibernéticos e os golpes digitais', c:'tec', h:'alta',
+ tese:'Os golpes crescem devido à falta de educação digital da população e à sensação de anonimato dos criminosos.',
+ a1:'Falta de educação digital: idosos e pessoas com pouco contato com tecnologia são alvos fáceis.',
+ a2:'Anonimato: contas de terceiros ("laranjas"), atuação à distância, investigação lenta.',
+ r:'Pix (2020); LGPD; Lei Carolina Dieckmann; Lei 14.155/2021; Marco Civil; Bauman.',
+ p:'Governo Federal, bancos e escolas fazem campanhas de educação digital; estados criam delegacias de crimes cibernéticos.',
+ x:'Não fique só no "golpe do Pix". Fale de crimes cibernéticos em geral e use o Pix como exemplo.'},
+{t:'Os impactos das notícias falsas (fake news) na sociedade', c:'tec', h:'média',
+ tese:'As notícias falsas ameaçam a sociedade ao gerar pânico e linchamentos e ao enfraquecer a confiança nas instituições.',
+ a1:'Pânico e violência: boatos de crimes geram linchamentos e ataques a inocentes.',
+ a2:'Descrédito das instituições: desinformação sobre polícia, vacinas e eleições.',
+ r:'"Pós-verdade" (Oxford, 2016); O Dilema das Redes; Marco Civil; Bauman.',
+ p:'Escolas ensinam checagem de fatos; plataformas e agências de checagem identificam conteúdos falsos; campanhas da mídia.',
+ x:'Não defenda censura. Fale em responsabilização e educação.'},
+{t:'A saúde mental dos profissionais de segurança pública', c:'sm', h:'alta',
+ tese:'O adoecimento mental dos policiais decorre da rotina de alto risco e estresse e do estigma em buscar ajuda.',
+ a1:'Rotina de risco: confrontos, escalas exaustivas, cobrança por resultados.',
+ a2:'Estigma: medo de parecer fraco ou de perder a arma e a função; pouco acesso a psicólogos.',
+ r:'Lei 14.531/2023 (saúde mental e prevenção ao suicídio); art. 196 da CF; Byung-Chul Han; Setembro Amarelo.',
+ p:'Corporações garantem atendimento psicológico periódico e sigiloso, programas de prevenção e escalas adequadas.',
+ x:'Tema muito provável em concurso policial. Mostre que cuidar do policial é cuidar da sociedade.'},
+{t:'O aliciamento de jovens pelo tráfico de drogas', c:'dro', h:'alta',
+ tese:'O aliciamento ocorre devido à falta de oportunidades nas periferias e à ausência do Estado nessas comunidades.',
+ a1:'Falta de oportunidades: evasão escolar, desemprego, promessa de dinheiro rápido.',
+ a2:'Ausência do Estado: o tráfico ocupa o espaço com "regras" próprias e falsa proteção.',
+ r:'Art. 227 da CF; ECA; Lei de Drogas; Cidade de Deus; Capitães da Areia; Durkheim; Paulo Freire.',
+ p:'Estados e municípios ampliam escolas em tempo integral, esporte e cursos profissionalizantes; polícia mantém programas como o Proerd.',
+ x:'Separe usuário de traficante, como faz a Lei de Drogas.'},
+{t:'A violência nas escolas e o bullying', c:'edu', h:'média',
+ tese:'A violência escolar persiste devido à intolerância nas relações e à falta de acompanhamento psicológico dos alunos.',
+ a1:'Intolerância e bullying presencial e virtual naturalizados como "brincadeira".',
+ a2:'Pouco apoio psicológico e pouca integração entre escola, família e rede de proteção.',
+ r:'Lei 14.811/2024 (bullying como crime); Lei 13.185/2015; art. 205 da CF; Mandela; Paulo Freire.',
+ p:'MEC e secretarias contratam psicólogos e assistentes sociais nas escolas; ronda escolar preventiva.',
+ x:'Não proponha "polícia armada em toda sala". Equilibre prevenção e segurança.'},
+{t:'O sistema prisional e a ressocialização', c:'pri', h:'média',
+ tese:'O sistema prisional falha em ressocializar devido à superlotação e à falta de trabalho e estudo para os presos.',
+ a1:'Superlotação: condições precárias e domínio de facções dentro dos presídios.',
+ a2:'Falta de trabalho e estudo: o egresso sai sem qualificação e volta ao crime.',
+ r:'Lei de Execução Penal (art. 1º); Foucault (Vigiar e Punir); Carandiru; população carcerária.',
+ p:'Estados ampliam vagas e oferecem estudo e trabalho no cárcere; parcerias com empresas para contratar egressos.',
+ x:'Defender ressocialização não é defender o crime. Mostre que reduzir a reincidência aumenta a segurança.'},
+{t:'A redução da maioridade penal', c:'dro', h:'média',
+ tese:'A redução não resolve a violência, pois não ataca suas causas sociais e levaria jovens a um sistema prisional que não ressocializa.',
+ a1:'Causas sociais: o jovem infrator é, antes, vítima de abandono, evasão escolar e aliciamento.',
+ a2:'Sistema prisional falho: misturar adolescentes a facções aumentaria a reincidência.',
+ r:'Art. 228 da CF (inimputabilidade do menor de 18); ECA; art. 227; Capitães da Areia; Foucault.',
+ p:'Aplicar com rigor as medidas socioeducativas do ECA e investir em educação integral e prevenção.',
+ x:'Tema polêmico: o lado mais seguro é o constitucional, mas reconheça a preocupação legítima com a violência.'},
+{t:'O uso de tecnologia na segurança pública (câmeras corporais, reconhecimento facial)', c:'tec', h:'alta',
+ tese:'A tecnologia é aliada da segurança, desde que usada com transparência e respeito aos direitos dos cidadãos.',
+ a1:'Benefícios: provas, transparência, proteção do policial e do cidadão, inteligência.',
+ a2:'Riscos: erros de reconhecimento facial, vigilância excessiva, uso indevido de dados.',
+ r:'Câmeras corporais (PM-SP); LGPD; "1984" (Orwell); Max Weber; Juntos pela Segurança.',
+ p:'SDS e polícias adotam câmeras e sistemas com protocolos claros, treinamento e controle de dados.',
+ x:'Mostre os dois lados e conclua com "uso responsável".'},
+{t:'O combate ao racismo na sociedade brasileira', c:'dh', h:'média',
+ tese:'O racismo persiste devido à herança escravocrata e à impunidade dos crimes de discriminação.',
+ a1:'Herança histórica: abolição sem inclusão; desigualdade de renda, escola e moradia.',
+ a2:'Impunidade e naturalização de "piadas" e abordagens discriminatórias.',
+ r:'Lei 7.716/1989; Lei 14.532/2023; art. 5º da CF; Atlas da Violência; DUDH (1948); Milton Santos.',
+ p:'Escolas aplicam o ensino de história afro-brasileira; polícias reforçam formação em direitos humanos e abordagem técnica.',
+ x:'Se o tema for "abordagem policial", defenda a abordagem técnica e legal, baseada em fundada suspeita, sem atacar a corporação.'},
+{t:'Direitos humanos e atividade policial', c:'dh', h:'média',
+ tese:'Respeitar os direitos humanos fortalece a atividade policial, pois dá legitimidade à polícia e protege também o policial.',
+ a1:'Legitimidade: atuação legal gera confiança e cooperação da população.',
+ a2:'Direitos humanos também protegem o policial: vida, saúde, condições de trabalho.',
+ r:'DUDH; Bobbio; Kant; Max Weber (força legítima); Vidas Secas (Soldado Amarelo); art. 5º da CF.',
+ p:'Academias de polícia ampliam a formação em direitos humanos e uso progressivo da força; corregedorias fiscalizam.',
+ x:'Nunca escreva que direitos humanos "atrapalham a polícia". É o erro mais grave neste tema.'},
+{t:'A violência contra crianças e adolescentes', c:'vul', h:'média',
+ tese:'A violência infantil persiste porque ocorre, em grande parte, dentro de casa e porque a rede de denúncia é falha.',
+ a1:'Violência doméstica: o agressor é muitas vezes alguém próximo; a criança tem medo de contar.',
+ a2:'Rede falha: conselhos tutelares sobrecarregados e pouca orientação nas escolas.',
+ r:'Art. 227 da CF; ECA; Disque 100; Capitães da Areia; Dimenstein (O Cidadão de Papel).',
+ p:'Escolas capacitam professores para identificar sinais; municípios fortalecem conselhos tutelares.',
+ x:'Inclua o ambiente virtual (aliciamento on-line) para mostrar atualidade.'},
+{t:'A violência contra a pessoa idosa', c:'vul', h:'média',
+ tese:'A violência contra idosos persiste devido à dependência deles em relação aos familiares e à falta de fiscalização.',
+ a1:'Dependência: maus-tratos e abuso financeiro ocorrem dentro da família.',
+ a2:'Pouca fiscalização e desconhecimento dos canais de denúncia.',
+ r:'Estatuto da Pessoa Idosa; art. 230 da CF; golpes digitais contra idosos; Disque 100.',
+ p:'Municípios ampliam centros de convivência e visitas da assistência social; campanhas sobre denúncia.',
+ x:'Pode se cruzar com golpes digitais: idosos são alvo frequente.'},
+{t:'Os desafios para prevenir desastres causados pelas chuvas', c:'amb', h:'média',
+ tese:'As tragédias se repetem devido à ocupação irregular de áreas de risco e à falta de planejamento urbano.',
+ a1:'Ocupação de morros e margens de rios pela população pobre, sem alternativa de moradia.',
+ a2:'Falta de planejamento: drenagem precária, ausência de alertas e de obras de contenção.',
+ r:'Chuvas de 2022 no Recife; art. 225 da CF; ODS 13; Josué de Castro; Milton Santos.',
+ p:'Prefeituras e governo do estado fazem obras de contenção, sistemas de alerta por SMS e programas de moradia.',
+ x:'Lembre o papel da PM e do Corpo de Bombeiros no socorro, sem fugir do tema.'},
+{t:'A educação como ferramenta de prevenção da violência', c:'edu', h:'alta',
+ tese:'A educação previne a violência por ampliar as oportunidades dos jovens e por formar cidadãos conscientes de direitos e deveres.',
+ a1:'Oportunidades: escola e qualificação afastam o jovem do crime.',
+ a2:'Cidadania: valores de respeito, diálogo e tolerância.',
+ r:'Art. 205 da CF; Paulo Freire; Mandela; Darcy Ribeiro; Proerd.',
+ p:'Estados ampliam escolas em tempo integral e parcerias com a PM em programas como o Proerd.',
+ x:'Tema "coringa": a educação aparece como solução em quase todas as redações.'},
+{t:'A posse e o porte de armas pela população', c:'seg', h:'média',
+ tese:'Ampliar o acesso às armas não garante segurança, pois aumenta o risco de mortes em conflitos banais e de desvio para o crime.',
+ a1:'Conflitos banais e violência doméstica tornam-se fatais com arma em casa.',
+ a2:'Armas legais podem ser roubadas e abastecer o crime organizado.',
+ r:'Estatuto do Desarmamento; Max Weber (monopólio da força); Hobbes; Atlas da Violência.',
+ p:'Manter controle rigoroso de registro e porte, fortalecer a fiscalização e o rastreamento de armas.',
+ x:'Polêmico: argumente com dados e lei, sem ironizar quem pensa diferente.'},
+{t:'Os desafios para combater os crimes ambientais', c:'amb', h:'média',
+ tese:'Os crimes ambientais persistem devido à fiscalização insuficiente e à busca por lucro imediato.',
+ a1:'Fiscalização: grandes áreas e poucos agentes; multas não pagas.',
+ a2:'Lucro imediato: desmatamento, queimadas, tráfico de animais.',
+ r:'Art. 225 da CF; Lei 9.605/1998; ODS 13 e 15; Policiamento ambiental da PM.',
+ p:'Ampliar o policiamento ambiental e o uso de satélites e drones; educação ambiental nas escolas.',
+ x:'Cite o policiamento ambiental da PM como parte da solução, sem inventar números.'},
+{t:'Ética e corrupção no serviço público', c:'des', h:'média',
+ tese:'A corrupção persiste devido à cultura de privilégios e à impunidade.',
+ a1:'Cultura: o "jeitinho" e a confusão entre público e privado.',
+ a2:'Impunidade: processos lentos e punições raras.',
+ r:'Sérgio Buarque (homem cordial); Beccaria; Rousseau; art. 37 da CF (legalidade, impessoalidade, moralidade, publicidade, eficiência).',
+ p:'Corregedorias e Ministério Público fortalecem a fiscalização; formação ética nos cursos de formação.',
+ x:'Não cite nomes de políticos ou partidos.'},
+{t:'A violência urbana e a desigualdade social', c:'des', h:'média',
+ tese:'A desigualdade alimenta a violência ao excluir jovens das oportunidades e ao concentrar a ausência do Estado nas periferias.',
+ a1:'Exclusão: falta de escola, renda e lazer.',
+ a2:'Ausência do Estado: serviços públicos precários e domínio de facções.',
+ r:'Milton Santos; Josué de Castro; Quarto de Despejo; Durkheim; Atlas da Violência; art. 6º da CF.',
+ p:'Políticas integradas de segurança e assistência social nos territórios mais vulneráveis.',
+ x:'Não diga que "pobreza gera criminoso". Diga que a exclusão aumenta a vulnerabilidade.'},
+{t:'A valorização do profissional de segurança pública', c:'sm', h:'alta',
+ tese:'Valorizar o policial é essencial porque melhora o serviço prestado e protege a saúde de quem protege a sociedade.',
+ a1:'Serviço melhor: formação, equipamentos e salário digno aumentam a eficiência.',
+ a2:'Saúde: escalas adequadas e apoio psicológico reduzem adoecimento e suicídio.',
+ r:'Lei Orgânica das PMs (Lei 14.751/2023); Lei 14.531/2023; art. 144 da CF; Byung-Chul Han.',
+ p:'Governo do estado investe em formação continuada, equipamentos, saúde e plano de carreira.',
+ x:'Tema "da casa": mostre conhecimento da carreira sem parecer que reclama.'},
+{t:'O crime organizado e as facções criminosas', c:'seg', h:'média',
+ tese:'O avanço das facções decorre do controle que exercem dentro dos presídios e da lavagem de dinheiro pouco combatida.',
+ a1:'Presídios: superlotação favorece o recrutamento e o comando de crimes de dentro das celas.',
+ a2:'Dinheiro: sem asfixiar o financiamento, as prisões de integrantes não enfraquecem a facção.',
+ r:'Lei de Execução Penal; Foucault; SUSP; Tropa de Elite; Durkheim.',
+ p:'Integração de inteligência entre polícias, Receita e Ministério Público; controle de comunicação nos presídios.',
+ x:'Não cite o nome de facções. Fale de forma genérica.'}
+];
+const TEMA_CATS = {seg:'Segurança pública', mul:'Mulher', tra:'Trânsito', tec:'Tecnologia', sm:'Saúde e carreira', dro:'Juventude e drogas', edu:'Educação', pri:'Sistema prisional', dh:'Direitos humanos', vul:'Vulneráveis', amb:'Meio ambiente', des:'Desigualdade e ética'};
+
+// Exercícios. e = enunciado, o = opções, a = índice da correta, x = comentário.
+const QUIZ = {
+tese:[
+ {e:'Tema: "Os desafios para reduzir os acidentes de trânsito no Brasil". Tese: "O trânsito brasileiro é um assunto muito importante que merece a atenção de todos."',
+  o:['Tese boa','Tese fraca'], a:1, x:'Não responde por que é difícil reduzir os acidentes e não anuncia argumentos. É só uma frase genérica.'},
+ {e:'Mesmo tema. Tese: "Esse cenário persiste, sobretudo, devido à imprudência dos condutores e à fiscalização insuficiente."',
+  o:['Tese boa','Tese fraca'], a:0, x:'Responde ao "por quê" e já anuncia D1 (imprudência) e D2 (fiscalização).'},
+ {e:'Tema: "A importância da saúde mental dos policiais". Tese: "Cuidar da saúde mental dos policiais é essencial, pois melhora o serviço prestado à população e reduz o adoecimento e o suicídio na corporação."',
+  o:['Tese boa','Tese fraca'], a:0, x:'Tema de "importância": a tese traz dois benefícios claros.'},
+ {e:'Tema: "Caminhos para combater os golpes digitais". Tese: "Na minha opinião, os golpes são terríveis e eu acho que o governo deveria fazer alguma coisa."',
+  o:['Tese boa','Tese fraca'], a:1, x:'Primeira pessoa, linguagem informal e nenhum argumento. Troque por: "Os golpes avançam devido à falta de educação digital e ao anonimato dos criminosos."'},
+ {e:'Tema: "Os impactos das notícias falsas na segurança pública". Tese: "As notícias falsas comprometem a segurança pública ao provocar pânico e linchamentos e ao enfraquecer a confiança nas instituições."',
+  o:['Tese boa','Tese fraca'], a:0, x:'Tema de "impactos": a tese aponta dois efeitos e liga ao recorte (segurança pública).'}
+],
+fuga:[
+ {e:'Tema: "A violência contra a pessoa idosa". O texto fala sobre a violência urbana em geral e o aumento de assaltos nas cidades.',
+  o:['Fuga','Tangenciamento','Dentro do tema'], a:1, x:'Fala de violência, mas não do recorte (pessoa idosa). Não zera, mas perde muitos pontos.'},
+ {e:'Tema: "Os desafios da mobilidade urbana". O texto fala sobre a importância da reciclagem do lixo.',
+  o:['Fuga','Tangenciamento','Dentro do tema'], a:0, x:'Assunto totalmente diferente: fuga ao tema, nota zero.'},
+ {e:'Tema: "A importância da polícia comunitária". O texto defende que a aproximação entre policiais e moradores aumenta a confiança e a prevenção.',
+  o:['Fuga','Tangenciamento','Dentro do tema'], a:2, x:'Responde exatamente ao recorte "importância" + "polícia comunitária".'},
+ {e:'Tema: "Caminhos para combater o feminicídio". O texto descreve os tipos de violência doméstica, mas não fala em mortes de mulheres nem em soluções.',
+  o:['Fuga','Tangenciamento','Dentro do tema'], a:1, x:'Fica no assunto geral (violência doméstica) e ignora o recorte (feminicídio) e o comando (caminhos para combater).'}
+],
+con:[
+ {e:'A Lei Seca é rigorosa; ___, muitos motoristas ainda dirigem embriagados.', o:['portanto','no entanto','além disso'], a:1, x:'Há oposição entre a lei rigorosa e o desrespeito: "no entanto".'},
+ {e:'___ a polícia aumente o patrulhamento, a participação da comunidade continua essencial.', o:['Embora','Porque','Logo'], a:0, x:'Concessão: "embora" + subjuntivo ("aumente").'},
+ {e:'Muitas vítimas não denunciam, ___ temem represálias do agressor.', o:['pois','contudo','a fim de'], a:0, x:'Causa/explicação: "pois".'},
+ {e:'O efetivo policial é insuficiente. ___, faltam equipamentos e viaturas.', o:['Entretanto','Além disso','Portanto'], a:1, x:'Acréscimo de um novo problema: "Além disso".'},
+ {e:'A fiscalização foi ampliada, ___ os acidentes diminuíram.', o:['de modo que','embora','ao passo que'], a:0, x:'Consequência: "de modo que".'},
+ {e:'O Estado deve investir em educação, ___ afastar os jovens do crime.', o:['a fim de','visto que','todavia'], a:0, x:'Finalidade: "a fim de".'},
+ {e:'___ a impunidade aumenta, a confiança da população diminui.', o:['À medida que','Na medida que','Ao invés de'], a:0, x:'Proporção: "à medida que" (com crase). "Na medida que" não existe.'},
+ {e:'___, conclui-se que a violência contra a mulher exige ações em várias frentes.', o:['Diante do exposto','Em primeiro lugar','Por exemplo'], a:0, x:'Abertura de conclusão: "Diante do exposto".'},
+ {e:'A desigualdade social expõe os jovens ao tráfico, ___ os torna vulneráveis ao aliciamento.', o:['o que','onde','sendo que'], a:0, x:'"O que" retoma a ideia anterior. "Onde" é só para lugar e "sendo que" é vício.'},
+ {e:'Os golpes digitais exploram a confiança das vítimas, ___ dos idosos.', o:['sobretudo','contudo','logo'], a:0, x:'Destaque/inclusão: "sobretudo".'},
+ {e:'A prisão deveria ressocializar; ___, muitas vezes devolve à sociedade alguém mais violento.', o:['todavia','assim','por isso'], a:0, x:'Oposição entre o que deveria acontecer e o que acontece: "todavia".'},
+ {e:'___ prevenir, o poder público tem apostado apenas na repressão.', o:['Em vez de','Ao invés de','Afim de'], a:0, x:'Substituição de uma coisa por outra: "em vez de". "Ao invés de" é para opostos.'}
+],
+gram:[
+ {e:'"A população pernambucana, sofre com a violência urbana."', o:['Certo','Errado'], a:1, x:'Vírgula entre sujeito e verbo. Correto: "A população pernambucana sofre..."'},
+ {e:'"Haviam muitos casos de feminicídio no estado."', o:['Certo','Errado'], a:1, x:'"Haver" no sentido de existir é impessoal: "Havia muitos casos".'},
+ {e:'"Existem muitos desafios para a segurança pública."', o:['Certo','Errado'], a:0, x:'"Existir" concorda com o sujeito "desafios".'},
+ {e:'"Cabe à sociedade denunciar os casos de violência."', o:['Certo','Errado'], a:0, x:'Cabe a + a sociedade = "à sociedade".'},
+ {e:'"A Lei Maria da Penha visa à proteção das mulheres."', o:['Certo','Errado'], a:0, x:'"Visar" (ter como objetivo) pede "a": visa à proteção.'},
+ {e:'"Me parece que a fiscalização é insuficiente."', o:['Certo','Errado'], a:1, x:'Não se inicia frase com pronome oblíquo na norma-padrão: "Parece-me que...".'},
+ {e:'"Os jovens tem direito à educação de qualidade."', o:['Certo','Errado'], a:1, x:'Plural de "ter" leva acento: "Os jovens têm direito...".'},
+ {e:'"Isso leva à mudanças no comportamento dos motoristas."', o:['Certo','Errado'], a:1, x:'Não há crase antes de palavra no plural sem artigo: "leva a mudanças".'},
+ {e:'"Faz muitos anos que o Estatuto do Desarmamento foi criado."', o:['Certo','Errado'], a:0, x:'"Fazer" indicando tempo é impessoal: fica no singular.'},
+ {e:'"A violência é um mau que atinge toda a sociedade."', o:['Certo','Errado'], a:1, x:'Substantivo oposto de "bem" é "mal": "um mal que atinge...".'},
+ {e:'"É preciso combater o problema, mas a falta de verbas dificulta as ações."', o:['Certo','Errado'], a:0, x:'Vírgula antes de "mas" e uso correto de "mas" (oposição).'},
+ {e:'"Vivemos em uma sociedade onde a informação circula rapidamente."', o:['Certo','Errado'], a:1, x:'Sociedade não é lugar físico: "em que a informação circula".'},
+ {e:'"Essa ideia é defendida por muitos especialistas."', o:['Certo','Errado'], a:0, x:'"Ideia" não tem acento desde o Acordo Ortográfico.'},
+ {e:'"A muito tempo o Brasil enfrenta esse problema."', o:['Certo','Errado'], a:1, x:'Tempo passado se indica com "há": "Há muito tempo...".'},
+ {e:'"Portanto, é necessário que o Estado invista em educação."', o:['Certo','Errado'], a:0, x:'Conectivo seguido de vírgula e subjuntivo "invista" depois de "é necessário que".'},
+ {e:'"Embora a lei existe, ela não é cumprida."', o:['Certo','Errado'], a:1, x:'"Embora" pede subjuntivo: "Embora a lei exista...".'}
+]
+};
+
+// ---------- armazenamento local (pode falhar em janela privada) ----------
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('red40:'+k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('red40:'+k, JSON.stringify(v)); }catch(e){} }
+};
+const $ = (s, el) => (el || document).querySelector(s);
+const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ---------- navegação ----------
+const views = $$('.view');
+const chapters = views.filter(v => v.id !== 'inicio');
+let read = store.get('read', {});
+
+function buildNav(){
+  $('#nav').innerHTML = views.map((v, i) =>
+    `<a href="#${v.id}" data-v="${v.id}" class="${read[v.id] ? 'done' : ''}"><span class="num">${i === 0 ? '··' : String(i).padStart(2, '0')}</span><span>${esc(v.dataset.title)}</span>${i === 0 ? '<span></span>' : '<span class="dot" aria-hidden="true"></span>'}</a>`
+  ).join('');
+  $('#readProg').textContent = `${chapters.filter(v => read[v.id]).length}/${chapters.length} lidos`;
+}
+function addPagers(){
+  views.forEach((v, i) => {
+    const prev = views[i - 1], next = views[i + 1];
+    let html = '';
+    if(v.id !== 'inicio') html += `<div class="mark-read"><button class="btn ghost" type="button" data-read="${v.id}"></button></div>`;
+    html += '<nav class="pager" aria-label="Capítulos">';
+    if(prev) html += `<a href="#${prev.id}"><small>Anterior</small>${esc(prev.dataset.title)}</a>`;
+    if(next) html += `<a class="next" href="#${next.id}"><small>Próximo</small>${esc(next.dataset.title)}</a>`;
+    html += '</nav>';
+    v.insertAdjacentHTML('beforeend', html);
+  });
+  $$('[data-read]').forEach(b => b.addEventListener('click', () => {
+    const id = b.dataset.read; read[id] = !read[id]; store.set('read', read); paintRead(); buildNav(); markCurrent();
+  }));
+  paintRead();
+}
+function paintRead(){
+  $$('[data-read]').forEach(b => { b.textContent = read[b.dataset.read] ? '✓ Capítulo lido (desmarcar)' : 'Marcar capítulo como lido'; });
+}
+function markCurrent(){
+  const id = current();
+  $$('#nav a').forEach(a => a.dataset.v === id ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+}
+function current(){
+  const h = location.hash.slice(1);
+  return views.some(v => v.id === h) ? h : 'inicio';
+}
+function show(){
+  const id = current();
+  views.forEach(v => { v.hidden = v.id !== id; });
+  const v = views.find(x => x.id === id);
+  $('#where').textContent = v.dataset.title;
+  markCurrent();
+  closeMenu();
+  window.scrollTo({top: 0, behavior: 'instant'});
+  store.set('last', id);
+}
+window.addEventListener('hashchange', show);
+
+// gaveta do sumário (celular)
+const side = $('#side'), scrim = $('#scrim'), menuBtn = $('#menuBtn');
+function closeMenu(){ side.classList.remove('open'); scrim.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+menuBtn.addEventListener('click', () => {
+  const open = !side.classList.contains('open');
+  side.classList.toggle('open', open); scrim.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open));
+});
+scrim.addEventListener('click', closeMenu);
+
+// tema claro/escuro
+(function(){
+  const saved = store.get('theme', null);
+  if(saved) document.documentElement.setAttribute('data-theme', saved);
+  $('#themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const nxt = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nxt); store.set('theme', nxt);
+  });
+})();
+
+// ---------- exercícios ----------
+let answers = store.get('quiz', {});
+function renderQuiz(boxId, key, items, scoreId){
+  const box = document.getElementById(boxId); if(!box) return;
+  box.innerHTML = items.map((q, i) =>
+    `<div class="q" data-i="${i}"><span class="qn">${i + 1} de ${items.length}</span><p class="qe">${esc(q.e)}</p><div class="opts">${q.o.map((o, j) => `<button type="button" data-j="${j}">${esc(o)}</button>`).join('')}</div><div class="fb" hidden></div></div>`
+  ).join('');
+  const paint = () => {
+    let ok = 0, done = 0;
+    $$('.q', box).forEach(el => {
+      const i = +el.dataset.i, q = items[i], a = answers[key + i];
+      const fb = $('.fb', el);
+      $$('button', el).forEach(b => b.classList.remove('right', 'wrong'));
+      if(a === undefined){ fb.hidden = true; return; }
+      done++; if(a === q.a) ok++;
+      $$('button', el)[q.a].classList.add('right');
+      if(a !== q.a) $$('button', el)[a].classList.add('wrong');
+      fb.hidden = false; fb.classList.toggle('bad', a !== q.a);
+      fb.innerHTML = `<b>${a === q.a ? 'Correto.' : 'Errado.'}</b> ${esc(q.x)}`;
+    });
+    if(scoreId){ const s = document.getElementById(scoreId); if(s) s.textContent = done ? `Acertos: ${ok}/${done}` : ''; }
+  };
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button[data-j]'); if(!b) return;
+    const i = +b.closest('.q').dataset.i;
+    answers[key + i] = +b.dataset.j; store.set('quiz', answers); paint();
+  });
+  paint();
+}
+
+// ---------- repertórios ----------
+(function(){
+  let tag = 'todos', tipo = 'todos', q = '';
+  const tags = ['todos', ...Object.keys(TAGS)];
+  $('#repFilters').innerHTML = tags.map(t => `<button type="button" data-t="${t}" aria-pressed="${t === tag}">${t === 'todos' ? 'Todos os temas' : esc(TAGS[t])}</button>`).join('');
+  $('#repTypes').innerHTML = ['todos', ...REP_TIPOS].map(t => `<button type="button" data-k="${esc(t)}" aria-pressed="${t === tipo}">${t === 'todos' ? 'Todos os tipos' : esc(t)}</button>`).join('');
+  const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  function render(){
+    const list = REPS.filter(r => (tag === 'todos' || r.t.includes(tag)) && (tipo === 'todos' || r.w === tipo) && (!q || norm(r.n + ' ' + r.i + ' ' + r.u).includes(norm(q))));
+    $('#repCount').textContent = `${list.length} de ${REPS.length} repertórios`;
+    $('#repList').innerHTML = list.map(r =>
+      `<article class="rep"><h4>${esc(r.n)} <span class="who">${esc(r.w)}</span>${r.t.includes('cor') ? '<span class="chip hot">Coringa</span>' : ''}</h4><p>${esc(r.i)}</p><p class="use">${esc(r.u)}</p><div class="tags">${r.t.filter(t => t !== 'cor').map(t => `<span class="chip">${esc(TAGS[t])}</span>`).join('')}</div></article>`
+    ).join('') || '<p class="small">Nenhum repertório encontrado. Tente outra palavra ou limpe os filtros.</p>';
+  }
+  $('#repFilters').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; tag = b.dataset.t; $$('#repFilters button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  $('#repTypes').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; tipo = b.dataset.k; $$('#repTypes button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  $('#repSearch').addEventListener('input', e => { q = e.target.value.trim(); render(); });
+  render();
+})();
+
+// ---------- temas ----------
+(function(){
+  let cat = 'todos';
+  $('#temaFilters').innerHTML = ['todos', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${c === 'todos' ? 'Todos' : esc(TEMA_CATS[c])}</button>`).join('');
+  function render(){
+    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat);
+    $('#temaCount').textContent = `${list.length} temas`;
+    $('#temaList').innerHTML = list.map(t =>
+      `<details class="acc"><summary><span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span><span>${esc(t.t)}</span></summary><div class="acc-body">
+        <h4>Tese</h4><p><span class="hl">${esc(t.tese)}</span></p>
+        <h4>Argumento 1 · Desenvolvimento 1</h4><p>${esc(t.a1)}</p>
+        <h4>Argumento 2 · Desenvolvimento 2</h4><p>${esc(t.a2)}</p>
+        <h4>Repertórios</h4><p>${esc(t.r)}</p>
+        <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
+        <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
+      </div></details>`
+    ).join('');
+  }
+  $('#temaFilters').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; cat = b.dataset.c; $$('#temaFilters button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  render();
+})();
+
+// ---------- redações-modelo ----------
+const CONECTIVOS = ['No entanto','Entretanto','Contudo','Todavia','Em primeiro lugar','Além disso','Portanto','Para isso','Sob essa ótica','Nesse sentido','Nesse contexto','Dessa forma','Desse modo','de modo que','a fim de','ou seja','pois','Embora','o que'];
+const conRe = new RegExp('(?<![\\p{L}])(' + CONECTIVOS.map(c => c.replace(/ /g, '\\s')).join('|') + ')(?![\\p{L}])', 'gu');
+function lineHTML(raw, state){
+  // state.cls: classe aberta vinda da linha anterior
+  let out = state.cls ? `<span class="t-${state.cls}">` : '';
+  const parts = raw.split(/(\{[trp]\}|\{\/\})/);
+  for(const part of parts){
+    if(part === '{/}'){ out += '</span>'; state.cls = null; continue; }
+    const m = part.match(/^\{([trp])\}$/);
+    if(m){ const c = {t:'tese', r:'rep', p:'prop'}[m[1]]; out += `<span class="t-${c}">`; state.cls = c; continue; }
+    const txt = esc(part);
+    out += state.cls ? txt : txt.replace(conRe, '<span class="t-con">$1</span>');
+  }
+  if(state.cls) out += '</span>';
+  return out;
+}
+function sheetHTML(paragraphs, annotate){
+  const state = {cls:null};
+  let n = 0;
+  const lis = paragraphs.map((p, pi) => p.map((l, li) => { n++; return `<li class="p${pi + 1}"><span class="tx${li === 0 ? ' ind' : ''}">${lineHTML(l, state)}</span></li>`; }).join('')).join('');
+  return `<div class="sheet${annotate ? ' annot' : ''}"><ol>${lis}</ol></div>`;
+}
+(function(){
+  let cur = 0, annot = store.get('annot', true);
+  $('#modTabs').innerHTML = MODELOS.map((m, i) => `<button type="button" role="tab" data-i="${i}" aria-pressed="${i === cur}">Redação ${i + 1}</button>`).join('');
+  function render(){
+    const m = MODELOS[cur];
+    const counts = m.p.map(p => p.length).join(' + ');
+    $('#modBox').innerHTML = `
+      <h3>${esc(m.tema)}</h3>
+      <p class="small">${esc(m.tipo)} · ${counts} = ${m.p.flat().length} linhas</p>
+      <label class="small" style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="annotChk" ${annot ? 'checked' : ''}> Mostrar marcações</label>
+      <div class="sheet-legend"><span><i class="sw" style="background:var(--hl-tese)"></i>Tese</span><span><i class="sw" style="background:var(--hl-rep)"></i>Repertório</span><span><i class="sw" style="background:var(--hl-con)"></i>Conectivo</span><span><i class="sw" style="background:var(--hl-prop)"></i>Proposta</span></div>
+      ${sheetHTML(m.p, annot)}
+      <h4>Por que esta redação pontua alto</h4>
+      <ul>${m.notas.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`;
+    $('#annotChk').addEventListener('change', e => { annot = e.target.checked; store.set('annot', annot); $('#modBox .sheet').classList.toggle('annot', annot); });
+  }
+  $('#modTabs').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; cur = +b.dataset.i; $$('#modTabs button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  render();
+})();
+
+// ---------- contador de 20 linhas ----------
+const cText = $('#cText'), cpl = $('#cpl'), ind = $('#ind');
+function wrap(par, width, indent){
+  const words = par.split(/\s+/).filter(Boolean);
+  const lines = []; let line = '', cap = width - indent;
+  for(const w of words){
+    if(!line){ line = w; continue; }
+    if(line.length + 1 + w.length <= cap){ line += ' ' + w; }
+    else { lines.push(line); line = w; cap = width; }
+  }
+  if(line) lines.push(line);
+  return lines;
+}
+function count(){
+  const W = Math.max(40, Math.min(110, +cpl.value || 68)), I = Math.max(0, Math.min(15, +ind.value || 0));
+  const pars = cText.value.split(/\n+/).map(s => s.trim()).filter(Boolean);
+  const wrapped = pars.map(p => wrap(p, W, I));
+  const total = wrapped.reduce((s, l) => s + l.length, 0);
+  const words = pars.join(' ').split(/\s+/).filter(Boolean).length;
+  $('#cTotal').innerHTML = `${total}<small> / 20 linhas</small>`;
+  $('#cWords').textContent = `${words} palavras · ${pars.length} parágrafo${pars.length === 1 ? '' : 's'}`;
+  const st = $('#cStatus');
+  let cls = 'warn', msg = 'Comece a escrever';
+  if(total === 20) { cls = 'ok'; msg = 'Exatamente 20 linhas'; }
+  else if(total > 20) { cls = 'bad'; msg = `${total - 20} linha${total - 20 > 1 ? 's' : ''} além da 20ª seria${total - 20 > 1 ? 'm' : ''} desconsiderada${total - 20 > 1 ? 's' : ''}`; }
+  else if(total >= 15) { msg = `Dentro do edital, mas faltam ${20 - total} para 20`; }
+  else if(total > 0) { cls = 'bad'; msg = `Abaixo de 15 linhas: risco de nota zero`; }
+  if(total > 0 && pars.length !== 4) { msg += ` · use 4 parágrafos (você tem ${pars.length})`; if(cls === 'ok') cls = 'warn'; }
+  st.className = 'pill ' + cls; st.textContent = msg;
+  const target = [4, 6, 6, 4], names = ['Introdução', 'Desenv. 1', 'Desenv. 2', 'Conclusão'];
+  $('#cBars').innerHTML = wrapped.map((l, i) => {
+    const t = pars.length === 4 ? target[i] : null;
+    const pct = Math.min(100, l.length / (t || 8) * 100);
+    return `<div class="par-bar"><span>${pars.length === 4 ? names[i] : 'Parágrafo ' + (i + 1)}</span><span class="track"><i class="${t && l.length > t ? 'over' : ''}" style="width:${pct}%"></i></span><span class="v">${l.length}${t ? ' / ' + t : ''}</span></div>`;
+  }).join('');
+  let n = 0, lis = '';
+  wrapped.forEach(ls => ls.forEach((l, j) => { n++; lis += `<li><span class="tx${j === 0 ? ' ind' : ''}"${n > 20 ? ' style="color:var(--red);text-decoration:line-through"' : ''}>${esc(l)}</span></li>`; }));
+  for(; n < 20; n++) lis += '<li><span class="tx"></span></li>';
+  $('#cSheet ol').innerHTML = lis;
+  store.set('draft', {t: cText.value, w: cpl.value, i: ind.value});
+}
+(function(){
+  const d = store.get('draft', null);
+  if(d){ cText.value = d.t || ''; cpl.value = d.w || 68; ind.value = d.i || 6; }
+  [cText, cpl, ind].forEach(el => el.addEventListener('input', count));
+  count();
+})();
+
+// ---------- montador ----------
+(function(){
+  const ids = ['rep0','rep0i','prob','a1','a2','t1','r1','r1i','e1','c1','t2','r2','e2','c2','ag','ac','me','fi'];
+  const ex = {
+    rep0:'a Organização Mundial da Saúde', rep0i:'o trânsito é a principal causa de morte de jovens no mundo',
+    prob:'o número de mortes nas vias brasileiras', a1:'da imprudência dos condutores', a2:'da fiscalização insuficiente',
+    t1:'a imprudência dos condutores', r1:'a Lei Seca, de 2008', r1i:'há tolerância zero ao álcool na direção',
+    e1:'muitos motoristas ainda bebem e dirigem por acreditarem que não serão flagrados', c1:'acidentes graves e mortes evitáveis',
+    t2:'a fiscalização insuficiente nas rodovias e cidades', r2:'na baixa quantidade de blitze e radares em muitos municípios',
+    e2:'a sensação de impunidade estimula o excesso de velocidade', c2:'as infrações se tornam rotina',
+    ag:'o Detran, em parceria com as polícias,', ac:'ampliar a fiscalização e as campanhas educativas', me:'blitze com bafômetro e palestras em escolas', fi:'reduzir as mortes no trânsito'
+  };
+  const f = id => document.getElementById('m_' + id);
+  const saved = store.get('mont', null);
+  ids.forEach(id => { if(saved && saved[id]) f(id).value = saved[id]; f(id).addEventListener('input', save); });
+  function save(){ const o = {}; ids.forEach(id => o[id] = f(id).value); store.set('mont', o); }
+  const v = id => f(id).value.trim().replace(/[.\s]+$/, '') || `[${f(id).previousElementSibling.textContent.toLowerCase()}]`;
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  function build(){
+    const p1 = `Segundo ${v('rep0')}, ${v('rep0i')}. No entanto, ${v('prob')} ainda preocupa o país, sobretudo em razão ${v('a1')} e ${v('a2')}.`;
+    const p2 = `Em primeiro lugar, destaca-se ${v('t1')} como fator que agrava o problema. De acordo com ${v('r1')}, ${v('r1i')}. Sob essa ótica, ${v('e1')}, o que resulta em ${v('c1')}. Dessa forma, o problema se mantém.`;
+    const p3 = `Além disso, cabe ressaltar ${v('t2')}. Esse fato pode ser observado ${v('r2')}. Nesse contexto, ${v('e2')}, de modo que ${v('c2')}. Assim, torna-se evidente a necessidade de mudança.`;
+    const p4 = `Portanto, é necessário enfrentar esse problema. Para isso, ${v('ag')} deve ${v('ac')}, por meio de ${v('me')}, a fim de ${v('fi')}.`;
+    return [p1, p2, p3, p4].map(cap).join('\n');
+  }
+  $('#mBuild').addEventListener('click', () => { $('#mOut').textContent = build(); });
+  $('#mSend').addEventListener('click', () => { const t = build(); $('#mOut').textContent = t; cText.value = t; count(); $('#toolCount').scrollIntoView({behavior:'smooth'}); });
+  $('#mExample').addEventListener('click', () => { ids.forEach(id => f(id).value = ex[id]); save(); $('#mOut').textContent = build(); });
+  $('#mClear').addEventListener('click', () => { ids.forEach(id => f(id).value = ''); save(); $('#mOut').textContent = ''; });
+  if(saved) $('#mOut').textContent = build();
+})();
+
+// ---------- cronômetro ----------
+(function(){
+  const total = 60 * 60;
+  const phases = [[10, 'Ler e planejar'], [25, 'Rascunho'], [5, 'Ajustar para 20 linhas'], [5, 'Revisar gramática'], [15, 'Passar a limpo']];
+  let left = total, timer = null;
+  function phase(){
+    let el = (total - left) / 60, acc = 0;
+    for(const [m, n] of phases){ acc += m; if(el < acc) return n; }
+    return 'Tempo esgotado';
+  }
+  function paint(){
+    const m = Math.floor(left / 60), s = left % 60;
+    $('#tClock').textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    const p = $('#tPhase');
+    p.textContent = timer ? phase() : (left === total ? 'Parado' : left === 0 ? 'Tempo esgotado' : 'Pausado · ' + phase());
+    p.className = 'pill ' + (left === 0 ? 'bad' : timer ? 'ok' : 'warn');
+  }
+  $('#tStart').addEventListener('click', () => { if(timer || left === 0) return; timer = setInterval(() => { left--; if(left <= 0){ left = 0; clearInterval(timer); timer = null; } paint(); }, 1000); paint(); });
+  $('#tPause').addEventListener('click', () => { clearInterval(timer); timer = null; paint(); });
+  $('#tReset').addEventListener('click', () => { clearInterval(timer); timer = null; left = total; paint(); });
+  paint();
+})();
+
+// ---------- autoavaliação ----------
+(function(){
+  const C = [
+    ['Critério 1 · Tema, informatividade e argumentação', ['Usei as palavras-chave do tema na introdução e na conclusão','A tese está explícita no fim da introdução e anuncia 2 argumentos','Cada desenvolvimento tem um repertório (lei, autor, dado, obra ou fato)','Expliquei cada repertório e mostrei o que ele prova','A conclusão traz proposta com agente, ação, meio e finalidade']],
+    ['Critério 2 · Coesão e coerência', ['Todos os parágrafos começam com conectivo adequado','Usei conectivos dentro dos parágrafos com o sentido certo','Não repeti as mesmas palavras; usei sinônimos e pronomes','Os desenvolvimentos tratam exatamente dos argumentos da tese','Não há contradição nem generalização ("todos", "nunca")']],
+    ['Critério 3 · Estrutura e parágrafos', ['Tem 4 parágrafos: introdução, 2 desenvolvimentos e conclusão','Parágrafos com recuo e tamanho equilibrado (4-6-6-4)','Escrevi entre 15 e 20 linhas (meta: exatamente 20)','Texto dissertativo-argumentativo, em 3ª pessoa, sem narrar','Não pulei linhas nem escrevi fora das margens']],
+    ['Critério 4 · Modalidade gramatical', ['Nenhuma vírgula entre sujeito e verbo','Concordância certa (haver, existir, tem/têm)','Crases revisadas','Acentos e grafia revisados (ideia, porque, mas/mais, mal/mau)','Linguagem formal, sem gírias, "a gente" ou abreviações']]
+  ];
+  let s = store.get('self', {});
+  $('#sCrit').innerHTML = C.map(([t, items], ci) =>
+    `<div class="crit-card"><h4><span>${esc(t)}</span><span class="mono" id="sc${ci}">0/10</span></h4><ul class="checks">${items.map((it, ii) => `<li><label><input type="checkbox" id="s_${ci}_${ii}" data-k="${ci}_${ii}"><span>${esc(it)}</span></label></li>`).join('')}</ul></div>`
+  ).join('');
+  function paint(){
+    let tot = 0;
+    C.forEach((c, ci) => { let n = 0; c[1].forEach((_, ii) => { const on = !!s[ci + '_' + ii]; document.getElementById(`s_${ci}_${ii}`).checked = on; if(on) n += 2; }); tot += n; $('#sc' + ci).textContent = `${n}/10`; });
+    $('#sTotal').innerHTML = `${tot}<small> / 40</small>`;
+    $('#sGauge').style.width = (tot / 40 * 100) + '%';
+    const st = $('#sStatus');
+    if(tot < 12){ st.className = 'pill bad'; st.textContent = 'Abaixo do mínimo de 12'; }
+    else if(tot < 30){ st.className = 'pill warn'; st.textContent = 'Aprovado na redação · dá para subir'; }
+    else if(tot < 40){ st.className = 'pill ok'; st.textContent = 'Nota competitiva'; }
+    else { st.className = 'pill ok'; st.textContent = 'Todos os itens cumpridos'; }
+  }
+  $('#sCrit').addEventListener('change', e => { const k = e.target.dataset.k; if(!k) return; s[k] = e.target.checked; store.set('self', s); paint(); });
+  $('#sReset').addEventListener('click', () => { s = {}; store.set('self', s); paint(); });
+  paint();
+})();
+
+// ---------- plano e checklist ----------
+(function(){
+  const W = [
+    ['Semana 1 · Base', ['Ler os capítulos 1 a 4','Calibrar a letra (capítulo 3)','Decorar os moldes de introdução e conclusão','Montar 1 redação no montador (tema: segurança pública)','Reescrever essa redação à mão em 20 linhas']],
+    ['Semana 2 · Argumentação', ['Ler os capítulos 5 e 8','Decorar 8 repertórios coringa','Montar o kit de 3 temas (tese, 2 argumentos, repertórios)','Escrever 2 redações com cronômetro de 60 min','Fazer a autoavaliação das 2']],
+    ['Semana 3 · Coesão e gramática', ['Fazer os exercícios dos capítulos 6 e 7','Escrever 2 redações sem o montador','Anotar os 5 erros que você mais repete','Reescrever o pior parágrafo da semana']],
+    ['Semana 4 · Simulado', ['Copiar à mão uma redação-modelo','Escrever 3 redações em condição de prova (rascunho + definitiva)','Revisar os kits de todos os temas','Ler o checklist do dia da prova']]
+  ];
+  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, com a caneta exigida','Transcrevi tudo para a folha definitiva'];
+  let p = store.get('plan', {});
+  $('#weeks').innerHTML = W.map(([t, items], wi) =>
+    `<details class="acc" open><summary>${esc(t)}</summary><div class="acc-body"><ul class="checks">${items.map((it, ii) => `<li><label><input type="checkbox" id="w_${wi}_${ii}" data-k="w${wi}_${ii}"><span>${esc(it)}</span></label></li>`).join('')}</ul></div></details>`
+  ).join('');
+  $('#finalChecks').innerHTML = F.map((it, i) => `<li><label><input type="checkbox" id="f_${i}" data-k="f${i}"><span>${esc(it)}</span></label></li>`).join('');
+  $$('#weeks input, #finalChecks input').forEach(el => { el.checked = !!p[el.dataset.k]; el.addEventListener('change', () => { p[el.dataset.k] = el.checked; store.set('plan', p); }); });
+})();
+
+// ---------- início ----------
+renderQuiz('quizTese', 'tese', QUIZ.tese);
+renderQuiz('quizFuga', 'fuga', QUIZ.fuga);
+renderQuiz('quizCon', 'con', QUIZ.con, 'scoreCon');
+renderQuiz('quizGram', 'gram', QUIZ.gram, 'scoreGram');
+buildNav();
+addPagers();
+show();
+
+</script>
+</body>
+</html>

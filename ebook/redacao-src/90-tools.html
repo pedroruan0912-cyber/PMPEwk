@@ -1,0 +1,119 @@
+<!-- ======================= 11. LABORATÓRIO ======================= -->
+<section class="view" id="lab" data-title="Laboratório" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 11</span>
+    <h2>Laboratório</h2>
+    <p>Ferramentas para treinar: montar a redação pelos moldes, contar as linhas, cronometrar e se autoavaliar.</p>
+  </div>
+
+  <!-- MONTADOR -->
+  <div class="tool" id="toolMont">
+    <h3>Montador de redação</h3>
+    <p class="small">Preencha cada campo com uma frase curta, sem ponto final. O montador encaixa tudo em versões curtas dos moldes do capítulo 4, já no tamanho de 20 linhas. Depois, reescreva à mão e ajuste o que ficar repetitivo.</p>
+    <div class="btns"><button class="btn ghost" id="mExample" type="button">Carregar exemplo (trânsito)</button><button class="btn ghost" id="mClear" type="button">Limpar campos</button></div>
+    <h4>Introdução</h4>
+    <div class="row">
+      <div class="field"><label for="m_rep0">Repertório de abertura (quem)</label><input id="m_rep0" placeholder="a Organização Mundial da Saúde"></div>
+      <div class="field"><label for="m_rep0i">O que ele diz</label><input id="m_rep0i" placeholder="o trânsito é a principal causa de morte de jovens no mundo"></div>
+    </div>
+    <div class="field"><label for="m_prob">Problema do tema</label><input id="m_prob" placeholder="o número de mortes nas vias brasileiras"></div>
+    <div class="row">
+      <div class="field"><label for="m_a1">Argumento 1 (causa ou benefício)</label><input id="m_a1" placeholder="da imprudência dos condutores"></div>
+      <div class="field"><label for="m_a2">Argumento 2</label><input id="m_a2" placeholder="da fiscalização insuficiente"></div>
+    </div>
+    <h4>Desenvolvimento 1</h4>
+    <div class="field"><label for="m_t1">Tópico frasal: o argumento 1 em forma de frase</label><input id="m_t1" placeholder="a imprudência dos condutores"></div>
+    <div class="row">
+      <div class="field"><label for="m_r1">Repertório (quem)</label><input id="m_r1" placeholder="a Lei Seca, de 2008"></div>
+      <div class="field"><label for="m_r1i">O que ele diz</label><input id="m_r1i" placeholder="há tolerância zero ao álcool na direção"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="m_e1">Explicação</label><input id="m_e1" placeholder="muitos motoristas ainda bebem e dirigem por acreditarem que não serão flagrados"></div>
+      <div class="field"><label for="m_c1">Consequência</label><input id="m_c1" placeholder="acidentes graves e mortes evitáveis"></div>
+    </div>
+    <h4>Desenvolvimento 2</h4>
+    <div class="field"><label for="m_t2">Tópico frasal: o argumento 2 em forma de frase</label><input id="m_t2" placeholder="a fiscalização insuficiente nas rodovias e cidades"></div>
+    <div class="field"><label for="m_r2">Repertório completo (frase)</label><input id="m_r2" placeholder="na baixa quantidade de blitze e radares em muitos municípios"><span class="hint">Completa a frase "Esse fato pode ser observado..."</span></div>
+    <div class="row">
+      <div class="field"><label for="m_e2">Explicação</label><input id="m_e2" placeholder="a sensação de impunidade estimula o excesso de velocidade"></div>
+      <div class="field"><label for="m_c2">Consequência</label><input id="m_c2" placeholder="as infrações se tornam rotina"></div>
+    </div>
+    <h4>Conclusão</h4>
+    <div class="row">
+      <div class="field"><label for="m_ag">Agente</label><input id="m_ag" placeholder="o Detran, em parceria com as polícias,"></div>
+      <div class="field"><label for="m_ac">Ação</label><input id="m_ac" placeholder="ampliar a fiscalização e as campanhas educativas"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="m_me">Meio</label><input id="m_me" placeholder="blitze com bafômetro e palestras em escolas"></div>
+      <div class="field"><label for="m_fi">Finalidade</label><input id="m_fi" placeholder="reduzir as mortes no trânsito"></div>
+    </div>
+    <div class="btns"><button class="btn" id="mBuild" type="button">Montar redação</button><button class="btn ghost" id="mSend" type="button">Mandar para o contador</button></div>
+    <div class="out" id="mOut" aria-live="polite"></div>
+  </div>
+
+  <!-- CONTADOR -->
+  <div class="tool" id="toolCount">
+    <h3>Contador de 20 linhas</h3>
+    <p class="small">Digite ou cole sua redação. Separe os parágrafos com Enter. O contador simula a folha: quebra o texto em linhas com o número de caracteres da <b>sua</b> letra e mostra se você fechou 20.</p>
+    <div class="row">
+      <div class="field"><label for="cpl">Caracteres por linha (sua letra)</label><input id="cpl" type="number" min="40" max="110" value="68"><span class="hint">Conte letras e espaços de uma linha escrita à mão. A maioria fica entre 60 e 75.</span></div>
+      <div class="field"><label for="ind">Recuo do parágrafo (caracteres)</label><input id="ind" type="number" min="0" max="15" value="6"></div>
+    </div>
+    <div class="field"><label for="cText">Sua redação</label><textarea id="cText" rows="12" placeholder="Primeiro parágrafo (introdução)...&#10;Segundo parágrafo...&#10;Terceiro parágrafo...&#10;Conclusão..."></textarea></div>
+    <div class="meter">
+      <div class="big" id="cTotal">0<small> / 20 linhas</small></div>
+      <span class="pill warn" id="cStatus">Comece a escrever</span>
+      <span class="small" id="cWords"></span>
+    </div>
+    <div class="par-bars" id="cBars"></div>
+    <details class="acc"><summary>Ver como fica na folha</summary><div class="acc-body"><div class="sheet" id="cSheet"><ol></ol></div></div></details>
+  </div>
+
+  <!-- CRONÔMETRO -->
+  <div class="tool" id="toolTimer">
+    <h3>Cronômetro de prova</h3>
+    <p class="small">60 minutos divididos nas cinco etapas do capítulo 1. Treine sempre com tempo.</p>
+    <div class="meter"><span class="timer" id="tClock">60:00</span><span class="pill warn" id="tPhase">Parado</span></div>
+    <div class="btns"><button class="btn" id="tStart" type="button">Iniciar</button><button class="btn ghost" id="tPause" type="button">Pausar</button><button class="btn ghost" id="tReset" type="button">Zerar</button></div>
+  </div>
+
+  <!-- AUTOAVALIAÇÃO -->
+  <div class="tool" id="toolSelf">
+    <h3>Autoavaliação pelos 4 critérios</h3>
+    <p class="small">Depois de escrever, marque só o que o seu texto realmente cumpre. Cada item vale 2 pontos. É uma estimativa para treino, não a nota oficial.</p>
+    <div class="meter">
+      <div class="big" id="sTotal">0<small> / 40</small></div>
+      <span class="pill bad" id="sStatus">Abaixo do mínimo</span>
+    </div>
+    <div class="gauge" aria-hidden="true"><i id="sGauge" style="width:0%"></i></div>
+    <p class="small">A linha tracejada marca o mínimo de 12 pontos.</p>
+    <div id="sCrit"></div>
+    <div class="btns"><button class="btn ghost" id="sReset" type="button">Limpar avaliação</button></div>
+  </div>
+</section>
+
+<!-- ======================= 12. PLANO ======================= -->
+<section class="view" id="plano" data-title="Plano de treino" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 12</span>
+    <h2>Plano de treino e dia da prova</h2>
+    <p>Quatro semanas para sair do zero. Marque cada tarefa ao terminar; fica salvo neste navegador.</p>
+  </div>
+  <div class="week" id="weeks"></div>
+
+  <h3>Como corrigir seu próprio texto</h3>
+  <ol class="steps">
+    <li>Deixe o texto descansar algumas horas.</li>
+    <li>Leia em voz alta. Onde você precisa respirar no meio de uma frase longa, divida a frase.</li>
+    <li>Marque com cores: tese (amarelo), repertórios (verde), conectivos (azul), proposta (rosa). Faltou alguma cor? Falta uma peça.</li>
+    <li>Passe o texto pela <a href="#lab">autoavaliação</a> e anote os dois itens que você mais erra. Na próxima redação, foque neles.</li>
+    <li>Reescreva só os parágrafos fracos. Reescrever ensina mais do que escrever um texto novo.</li>
+  </ol>
+
+  <h3>Checklist antes de entregar</h3>
+  <ul class="checks" id="finalChecks"></ul>
+  <div class="box tip">
+    <span class="tag">No dia</span>
+    <p>Leve caneta esferográfica da cor exigida no edital (normalmente preta, de corpo transparente) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
+  </div>
+</section>

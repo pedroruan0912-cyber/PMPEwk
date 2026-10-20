@@ -37,3 +37,38 @@ Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q6.
 ```
 
 Cada questão segue o formato `{c:'c6', b:'FCC', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
+
+---
+
+# E-book interativo – Redação Nota 40 (Soldado PMPE · Instituto AOCP)
+
+Método para a redação de Soldado PMPE (Edital 001/2026, banca Instituto AOCP): 40 pontos, mínimo de 12, texto dissertativo-argumentativo de 15 a 20 linhas. O e-book trabalha com a meta de **exatamente 20 linhas** no mapa 4 + 6 + 6 + 4.
+
+**Abrir:** baixe `ebook/redacao-pmpe-aocp.html` e abra no navegador (funciona offline).
+
+## Conteúdo
+
+1. A prova e o edital (pontuação, nota zero, título, divisão do tempo)
+2. Como a AOCP corrige (os 4 critérios de 10 pontos e o tom adequado)
+3. O mapa das 20 linhas (o que vai em cada linha, calibrar a letra, esticar e encolher)
+4. Estrutura e moldes (introdução, desenvolvimentos e conclusão com lacunas)
+5. Lendo o tema e criando a tese (tipos de tema, fórmula da tese, argumentos coringa)
+6. Conectivos (por parágrafo e por função, erros comuns)
+7. Coesão, coerência e gramática (os erros que mais derrubam a nota)
+8. Repertórios (72, com filtro por tema e tipo, e frase pronta de uso)
+9. Possíveis temas (24 kits com tese, argumentos, repertórios e proposta)
+10. Redações nota 40 (4 redações de 20 linhas com marcações)
+11. Laboratório (montador de redação, contador de 20 linhas, cronômetro, autoavaliação)
+12. Plano de treino de 4 semanas e checklist do dia da prova
+
+Exercícios: teses, fuga ao tema, conectivos e gramática. Progresso, rascunhos e respostas ficam salvos no navegador.
+
+## Editar e gerar de novo
+
+Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.js`, `repertorios.js`, `temas.js`, `quiz.js`; lógica em `99-app.js`). Depois de editar:
+
+```bash
+./ebook/build-redacao.sh
+```
+
+Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
