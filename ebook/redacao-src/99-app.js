@@ -132,7 +132,7 @@ function renderQuiz(boxId, key, items, scoreId){
   let cat = 'todos';
   $('#temaFilters').innerHTML = ['todos', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${c === 'todos' ? 'Todos' : esc(TEMA_CATS[c])}</button>`).join('');
   function render(){
-    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat);
+    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat).sort((x, y) => (y.h === 'alta') - (x.h === 'alta'));
     $('#temaCount').textContent = `${list.length} temas`;
     $('#temaList').innerHTML = list.map(t =>
       `<details class="acc"><summary><span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span><span>${esc(t.t)}</span></summary><div class="acc-body">
