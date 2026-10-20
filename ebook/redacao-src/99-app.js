@@ -142,9 +142,11 @@ function renderQuiz(boxId, key, items, scoreId){
         <h4>Repertórios</h4><p>${esc(t.r)}</p>
         <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
         <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
+        ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a></p>` : ''}
       </div></details>`
     ).join('');
   }
+  $('#temaList').addEventListener('click', e => { const a = e.target.closest('[data-mod]'); if(a) showModelo(a.dataset.mod); });
   $('#temaFilters').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; cat = b.dataset.c; $$('#temaFilters button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
   render();
 })();
@@ -172,9 +174,10 @@ function sheetHTML(paragraphs, annotate){
   const lis = paragraphs.map((p, pi) => p.map((l, li) => { n++; return `<li class="p${pi + 1}"><span class="tx${li === 0 ? ' ind' : ''}">${lineHTML(l, state)}</span></li>`; }).join('')).join('');
   return `<div class="sheet${annotate ? ' annot' : ''}"><ol>${lis}</ol></div>`;
 }
+let showModelo = () => {};
 (function(){
   let cur = 0, annot = store.get('annot', true);
-  $('#modTabs').innerHTML = MODELOS.map((m, i) => `<button type="button" role="tab" data-i="${i}" aria-pressed="${i === cur}">Redação ${i + 1}</button>`).join('');
+  $('#modTabs').innerHTML = MODELOS.map((m, i) => `<button type="button" role="tab" data-i="${i}" aria-pressed="${i === cur}">${i + 1}. ${esc(m.curto)}</button>`).join('');
   function render(){
     const m = MODELOS[cur];
     const counts = m.p.map(p => p.length).join(' + ');
@@ -188,7 +191,9 @@ function sheetHTML(paragraphs, annotate){
       <ul>${m.notas.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`;
     $('#annotChk').addEventListener('change', e => { annot = e.target.checked; store.set('annot', annot); $('#modBox .sheet').classList.toggle('annot', annot); });
   }
-  $('#modTabs').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; cur = +b.dataset.i; $$('#modTabs button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  function select(i){ cur = i; $$('#modTabs button').forEach((x, j) => x.setAttribute('aria-pressed', String(j === i))); render(); }
+  showModelo = id => { const i = MODELOS.findIndex(m => m.id === id); if(i >= 0) select(i); };
+  $('#modTabs').addEventListener('click', e => { const b = e.target.closest('button'); if(b) select(+b.dataset.i); });
   render();
 })();
 
