@@ -76,7 +76,7 @@ b,strong{font-weight:650}
 .menu-btn{display:none}
 .read-prog{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);white-space:nowrap}
 .content{padding-block:28px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.view{max-width:780px;margin:0 auto}
+.view{max-width:780px;margin:0 auto;scroll-margin-top:72px}
 .scrim{display:none}
 @media (max-width:900px){
   .app{grid-template-columns:minmax(0,1fr)}
@@ -321,7 +321,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
     <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
     <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
-    <li><div><a href="#modelos">Redações nota 40</a>: doze textos de 20 linhas com marcação de cada parte.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: vinte textos de 20 linhas com marcação de cada parte.</div></li>
     <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
   </ol>
   <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
@@ -845,7 +845,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div class="chap-head">
     <span class="eyebrow">Capítulo 10</span>
     <h2>Redações nota 40</h2>
-    <p>Doze redações de exatamente 20 linhas, no mapa 4-6-6-4, cobrindo os temas mais prováveis. Ligue as marcações para ver onde está cada peça.</p>
+    <p>Vinte redações de exatamente 20 linhas, no mapa 4-6-6-4, cobrindo os temas mais prováveis. Ligue as marcações para ver onde está cada peça.</p>
   </div>
   <div class="filters" id="modTabs" role="tablist" aria-label="Escolher redação"></div>
   <div id="modBox"></div>
@@ -1432,6 +1432,310 @@ const MODELOS = [
     'Os dois argumentos atacam a eficácia da medida, sem minimizar a violência.',
     'A proposta não é "não fazer nada": defende responsabilizar o infrator pelo ECA.'
   ]
+},
+{
+  id:'m13', curto:'Apostas on-line',
+  tema:'Os impactos das apostas on-line na sociedade brasileira',
+  tipo:'Tema de "impactos" → duas consequências',
+  p:[
+    [
+      '{r}A Lei 14.790, de 2023, regulamentou as apostas de quota fixa, as',
+      'chamadas "bets"{/}, que se popularizaram com a promessa de lucro fácil.',
+      'Esse crescimento preocupa, {t}pois as apostas provocam endividamento',
+      'e vício e podem ser usadas pelo crime para lavar dinheiro{/}.'
+    ],[
+      'Em primeiro lugar, as apostas levam famílias ao endividamento.',
+      'A publicidade constante, inclusive com celebridades, vende a ideia de',
+      'que é possível enriquecer com poucos cliques. {r}Para o filósofo',
+      'Byung-Chul Han, a sociedade do desempenho produz sujeitos ansiosos e',
+      'esgotados{/}, o que torna o apostador vulnerável à compulsão, de modo',
+      'que salários e até benefícios sociais são consumidos pelo jogo.'
+    ],[
+      'Além disso, as plataformas podem servir ao crime organizado. Sites',
+      'sem autorização movimentam dinheiro sem controle, o que facilita a',
+      'lavagem de recursos do tráfico e de golpes. {r}Segundo Émile Durkheim,',
+      'quando as normas perdem força, instala-se a anomia{/}, e o ambiente',
+      'virtual pouco fiscalizado favorece fraudes, como a manipulação de',
+      'resultados esportivos, que prejudica apostadores e o próprio esporte.'
+    ],[
+      'Portanto, é preciso conter os danos das apostas on-line. Para isso,',
+      '{p}o Ministério da Fazenda deve bloquear os sites ilegais e limitar a',
+      'publicidade, em parceria com as polícias, a fim de proteger as',
+      'famílias e impedir que o setor seja usado para lavar dinheiro{/}.'
+    ]
+  ],
+  notas:[
+    'Tema atual: a introdução já apresenta a lei que regulamentou o setor.',
+    'O D1 trata do dano social (dívidas e vício); o D2 liga o tema à segurança pública (lavagem de dinheiro).',
+    'Os repertórios filosóficos são explicados e aplicados ao apostador e ao ambiente virtual.',
+    'A proposta tem dois focos, um para cada argumento: proteger as famílias e asfixiar o crime.'
+  ]
+},
+{
+  id:'m14', curto:'Inteligência artificial',
+  tema:'Os riscos da inteligência artificial para a segurança e a privacidade',
+  tipo:'Tema de "riscos" → duas ameaças',
+  p:[
+    [
+      '{r}No romance "1984", George Orwell descreve uma sociedade vigiada o',
+      'tempo todo pelo "Grande Irmão"{/}. Com a inteligência artificial, parte',
+      'dessa ficção se aproxima da realidade, {t}sobretudo pela facilidade de',
+      'criar fraudes digitais e pela ameaça à privacidade dos cidadãos{/}.'
+    ],[
+      'Em primeiro lugar, a IA facilita a criação de fraudes convincentes.',
+      'Vídeos e áudios falsos, os chamados "deepfakes", imitam a voz e o',
+      'rosto de pessoas reais e já são usados em golpes e extorsões. {r}Embora',
+      'a Lei 14.155, de 2021, tenha endurecido as penas das fraudes eletrônicas{/},',
+      'a vítima dificilmente percebe a farsa, e a investigação depende de',
+      'perícia especializada, o que torna a punição lenta e rara.'
+    ],[
+      'Além disso, a coleta massiva de dados ameaça a privacidade. Sistemas',
+      'de IA dependem de grandes volumes de informações pessoais, muitas',
+      'vezes coletadas sem que o usuário saiba. {r}A Lei Geral de Proteção de',
+      'Dados, de 2018, exige transparência no uso dessas informações{/}, mas',
+      'a fiscalização ainda é limitada, de modo que dados vazados alimentam',
+      'golpes e expõem a intimidade de milhões de brasileiros.'
+    ],[
+      'Portanto, a inteligência artificial requer cautela. Para isso,',
+      '{p}o Congresso Nacional deve regulamentar a tecnologia e responsabilizar',
+      'as plataformas, e as polícias devem investir em perícia digital, a',
+      'fim de proteger os cidadãos sem impedir o avanço tecnológico{/}.'
+    ]
+  ],
+  notas:[
+    'Abertura com obra literária clássica ligada à ideia de vigilância.',
+    'O D1 explica o que é deepfake antes de usar o termo, como deve ser feito com palavras técnicas.',
+    'Os dois desenvolvimentos usam leis brasileiras recentes, sem números inventados.',
+    'A conclusão reconhece o valor da tecnologia ("sem impedir o avanço"), o que mostra equilíbrio.'
+  ]
+},
+{
+  id:'m15', curto:'Telas na infância',
+  tema:'O uso excessivo de celulares e telas por crianças e adolescentes',
+  tipo:'Tema de problema → duas consequências',
+  p:[
+    [
+      '{r}Em 2025, a Lei 15.100 restringiu o uso de celulares nas escolas de',
+      'educação básica{/}, reconhecendo um problema que vai além da sala de aula.',
+      'O uso excessivo de telas {t}prejudica a saúde mental e o aprendizado',
+      'dos jovens e os expõe a riscos no ambiente virtual{/}.'
+    ],[
+      'Em primeiro lugar, o excesso de telas afeta a mente e os estudos.',
+      'Horas diante do celular reduzem o sono, a concentração e o convívio',
+      'com a família. {r}Para o filósofo Byung-Chul Han, o excesso de',
+      'estímulos gera uma atenção dispersa e cansada{/}. Nesse sentido, a',
+      'criança troca a leitura e as brincadeiras pela rolagem infinita, o',
+      'que compromete o aprendizado e favorece a ansiedade.'
+    ],[
+      'Além disso, a internet sem supervisão expõe os jovens a perigos.',
+      'Crianças e adolescentes acessam conteúdos violentos, sofrem ataques',
+      'de colegas e podem ser abordados por criminosos que se passam por',
+      'amigos. {r}Desde 2024, a Lei 14.811 tipifica o cyberbullying como',
+      'crime{/}, mas muitos pais desconhecem o que os filhos fazem on-line, de',
+      'modo que os casos só são descobertos quando o dano já ocorreu.'
+    ],[
+      'Portanto, o uso das telas na infância precisa de limites. Para isso,',
+      '{p}as escolas devem oferecer educação digital, e as famílias devem',
+      'usar controle parental e horários definidos, por meio de orientação',
+      'das próprias escolas, a fim de garantir uma infância saudável e segura{/}.'
+    ]
+  ],
+  notas:[
+    'A introdução usa uma lei de 2025, mostrando que o candidato acompanha o noticiário.',
+    'O D1 trata da saúde e do aprendizado; o D2, da segurança no ambiente virtual.',
+    'O D2 descreve riscos concretos antes de citar a lei, o que deixa o argumento claro.',
+    'A proposta divide responsabilidades entre escola e família, sem demonizar a tecnologia.'
+  ]
+},
+{
+  id:'m16', curto:'Valorização do policial',
+  tema:'A valorização do profissional de segurança pública',
+  tipo:'Tema de "importância" → dois benefícios',
+  p:[
+    [
+      '{r}O artigo 144 da Constituição define a segurança pública como',
+      '"dever do Estado, direito e responsabilidade de todos"{/}. Para cumprir',
+      'esse dever, {t}valorizar o policial é essencial, pois melhora o serviço',
+      'prestado e protege a saúde de quem protege a sociedade{/}.'
+    ],[
+      'Em primeiro lugar, a valorização torna o serviço mais eficiente.',
+      'Formação continuada, equipamentos modernos e salário digno permitem',
+      'que o policial atue com técnica e segurança. {r}A Lei Orgânica Nacional',
+      'das Polícias Militares, de 2023, reforçou a importância de garantir',
+      'direitos e condições de trabalho a esses profissionais{/}, de modo que',
+      'a qualidade do atendimento ao cidadão depende desse investimento.'
+    ],[
+      'Além disso, valorizar o policial é cuidar de quem arrisca a vida.',
+      'Escalas exaustivas e a exposição constante à violência adoecem muitos',
+      'agentes. {r}Embora a Lei 14.531, de 2023, preveja ações de saúde mental',
+      'para esses profissionais{/}, o atendimento ainda é insuficiente. Nesse',
+      'contexto, cresce o número de afastamentos, o que reduz o efetivo nas',
+      'ruas e prejudica a segurança de toda a sociedade.'
+    ],[
+      'Portanto, valorizar o policial é investir em segurança. Para isso,',
+      '{p}o Governo do Estado deve garantir formação, equipamentos, salário',
+      'digno e apoio psicológico, por meio de um plano de carreira claro,',
+      'a fim de oferecer à população um serviço policial eficiente e humano{/}.'
+    ]
+  ],
+  notas:[
+    'Tema "da casa": mostra conhecimento da carreira sem soar como reclamação.',
+    'A tese liga o policial ao cidadão: valorizar o agente melhora o serviço para todos.',
+    'Os dois desenvolvimentos usam leis de 2023 sobre a carreira e a saúde do profissional.',
+    'O fechamento do D2 transforma o problema individual (afastamentos) em problema coletivo (menos efetivo).'
+  ]
+},
+{
+  id:'m17', curto:'Violência nas escolas',
+  tema:'A violência nas escolas e o bullying',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}Segundo o educador Paulo Freire, a educação muda pessoas, e pessoas',
+      'transformam o mundo{/}. No entanto, a violência nas escolas brasileiras',
+      'compromete essa missão, {t}sobretudo pela intolerância naturalizada',
+      'entre os alunos e pela falta de apoio psicológico nas instituições{/}.'
+    ],[
+      'Em primeiro lugar, a intolerância é tratada como brincadeira.',
+      'Apelidos ofensivos, exclusão e humilhações, presenciais ou virtuais,',
+      'muitas vezes são ignorados por colegas e adultos. {r}Desde 2024, a',
+      'Lei 14.811 tipifica o bullying e o cyberbullying como crimes{/}, o que',
+      'mostra a gravidade do problema, já que a vítima pode adoecer ou',
+      'reagir com violência, ampliando o ciclo de agressões na escola.'
+    ],[
+      'Além disso, faltam profissionais para acolher os estudantes. Muitas',
+      'escolas não contam com psicólogos nem assistentes sociais, embora',
+      '{r}a Lei 13.935, de 2019, preveja esses serviços na rede pública{/}.',
+      'Nesse sentido, sinais de sofrimento passam despercebidos, de modo que',
+      'conflitos simples evoluem para agressões e, em casos extremos, para',
+      'ataques que chocam o país.'
+    ],[
+      'Portanto, é urgente combater a violência nas escolas. Para isso, {p}as',
+      'secretarias de educação devem contratar psicólogos e assistentes',
+      'sociais e promover rodas de diálogo, com apoio da ronda escolar, a',
+      'fim de transformar a escola em um espaço seguro e acolhedor{/}.'
+    ]
+  ],
+  notas:[
+    'Abertura com o educador pernambucano, ligada ao papel da escola.',
+    'D1 (causa cultural) e D2 (causa estrutural) seguem a ordem anunciada na tese.',
+    'O D2 cita uma lei pouco conhecida (13.935/2019), o que impressiona o corretor se usada com precisão.',
+    'A proposta combina acolhimento (psicólogos) e segurança (ronda escolar), sem exageros.'
+  ]
+},
+{
+  id:'m18', curto:'Direitos humanos',
+  tema:'Direitos humanos e atividade policial',
+  tipo:'Tema de relação → dois motivos para conciliar',
+  p:[
+    [
+      '{r}Segundo Norberto Bobbio, o desafio atual dos direitos humanos não é',
+      'justificá-los, mas protegê-los{/}. Nesse cenário, a polícia ocupa papel',
+      'central, e {t}respeitar esses direitos fortalece a atividade policial,',
+      'pois garante legitimidade à corporação e protege o próprio policial{/}.'
+    ],[
+      'Em primeiro lugar, a atuação legal gera confiança da população.',
+      '{r}Max Weber afirma que o Estado detém o monopólio do uso legítimo',
+      'da força{/}, ou seja, a força só é aceita quando segue a lei. Desse modo,',
+      'abordagens técnicas e proporcionais aproximam o cidadão da polícia, o',
+      'que aumenta as denúncias e a colaboração, enquanto abusos afastam a',
+      'comunidade e favorecem o domínio de criminosos sobre os bairros.'
+    ],[
+      'Além disso, os direitos humanos também protegem quem veste a farda.',
+      '{r}A Declaração Universal dos Direitos Humanos, de 1948, garante a todo',
+      'ser humano o direito à vida e à segurança pessoal{/}, inclusive aos',
+      'policiais. Nesse sentido, condições dignas de trabalho, equipamentos',
+      'de proteção e atenção à saúde mental são direitos desses agentes, de',
+      'modo que a defesa dos direitos humanos não se opõe à polícia.'
+    ],[
+      'Portanto, direitos humanos e polícia caminham juntos. Para isso,',
+      '{p}as academias de polícia devem reforçar a formação em uso progressivo',
+      'da força e direitos humanos, por meio de cursos contínuos, a fim de',
+      'garantir uma atuação legal, eficiente e segura{/}.'
+    ]
+  ],
+  notas:[
+    'O tema mais delicado para um futuro policial: a tese mostra que direitos humanos fortalecem a polícia.',
+    'O D1 usa Weber para explicar por que a força precisa ser legal para ser aceita.',
+    'O D2 vira o jogo: os direitos humanos também protegem o próprio policial.',
+    'A proposta fala em uso progressivo da força, termo técnico da formação policial.'
+  ]
+},
+{
+  id:'m19', curto:'Chuvas e desastres',
+  tema:'Os desafios para prevenir desastres causados pelas chuvas',
+  tipo:'Tema de "desafios" → duas causas',
+  p:[
+    [
+      '{r}Em maio de 2022, chuvas intensas causaram deslizamentos no Recife e',
+      'na Região Metropolitana, com mais de cem mortes{/}. Tragédias como essa',
+      'se repetem no Brasil, {t}sobretudo pela ocupação irregular de áreas de',
+      'risco e pela falta de planejamento urbano nas cidades{/}.'
+    ],[
+      'Em primeiro lugar, a falta de moradia empurra famílias para o risco.',
+      'Sem renda para pagar aluguel em áreas seguras, muitas pessoas ocupam',
+      'morros e margens de rios. {r}O geógrafo Milton Santos chamou de',
+      '"cidadania mutilada" a condição de quem tem direitos só no papel{/}.',
+      'Sob essa ótica, o direito à moradia, previsto na Constituição, não',
+      'chega a essas famílias, que ficam expostas a deslizamentos e enchentes.'
+    ],[
+      'Além disso, o poder público investe pouco em prevenção. Drenagem',
+      'precária, obras de contenção inacabadas e sistemas de alerta pouco',
+      'conhecidos agravam os efeitos das chuvas. {r}O artigo 225 da Constituição',
+      'impõe ao poder público o dever de preservar o meio ambiente{/}, e o',
+      'desmatamento das encostas aumenta o risco, de modo que cada temporal',
+      'se transforma em uma ameaça à vida da população.'
+    ],[
+      'Portanto, é preciso agir antes das chuvas. Para isso, {p}as prefeituras',
+      'e o governo do estado devem fazer obras de contenção e ampliar os',
+      'alertas por SMS, por meio da Defesa Civil, e criar programas de',
+      'moradia, a fim de retirar famílias das áreas de risco com dignidade{/}.'
+    ]
+  ],
+  notas:[
+    'Repertório local e recente (Recife, 2022): mostra que o candidato conhece a realidade de Pernambuco.',
+    'O D1 trata da causa social (moradia); o D2, da causa estrutural (falta de prevenção).',
+    'Milton Santos e a Constituição dão base aos dois argumentos.',
+    'A proposta tem medidas imediatas (alertas, contenção) e de longo prazo (moradia).'
+  ]
+},
+{
+  id:'m20', curto:'Pessoa idosa',
+  tema:'A violência contra a pessoa idosa',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O Estatuto da Pessoa Idosa, de 2003, determina que nenhuma pessoa',
+      'idosa será objeto de negligência, violência ou opressão{/}. Entretanto,',
+      'essa garantia é desrespeitada no Brasil, {t}sobretudo pela dependência',
+      'dos idosos em relação aos familiares e pela falta de fiscalização{/}.'
+    ],[
+      'Em primeiro lugar, grande parte das agressões ocorre dentro de casa.',
+      'Muitos idosos dependem dos filhos ou netos para cuidados e renda e,',
+      'por isso, sofrem maus-tratos, abandono e abuso financeiro em silêncio.',
+      '{r}Hannah Arendt chamou de "banalidade do mal" a naturalização de atos',
+      'cruéis{/}, e é o que ocorre quando a família trata a violência como',
+      'assunto privado, o que dificulta a denúncia e prolonga o sofrimento.'
+    ],[
+      'Além disso, a fiscalização e os canais de denúncia são falhos.',
+      'Vizinhos, médicos e bancos nem sempre sabem como agir ao perceber',
+      'sinais de abuso, e muitos idosos desconhecem o Disque 100. {r}Golpes',
+      'digitais, como o do falso parente, também exploram essa população{/},',
+      'de modo que a violência ganha novas formas e a proteção prevista em',
+      'lei não alcança quem mais precisa dela.'
+    ],[
+      'Portanto, é necessário proteger a pessoa idosa. Para isso, {p}os',
+      'municípios devem ampliar visitas da assistência social e centros de',
+      'convivência, por meio de parcerias com as polícias, a fim de identificar',
+      'os abusos cedo e garantir um envelhecimento digno{/}.'
+    ]
+  ],
+  notas:[
+    'Abre com a lei específica do tema, com o ano.',
+    'O D1 usa um conceito filosófico (banalidade do mal) para explicar o silêncio da família.',
+    'O D2 cita um canal real de denúncia (Disque 100) e liga o tema aos golpes digitais.',
+    'A proposta aposta em identificação precoce, com assistência social e polícia trabalhando juntas.'
+  ]
 }
 ];
 
@@ -1712,6 +2016,9 @@ const REPS = [
 {n:'Apostas on-line (Lei 14.790/2023)', w:'Lei', t:['tec','des'],
  i:'Regulamentou as apostas de quota fixa (bets), que passaram a depender de autorização e fiscalização do Ministério da Fazenda.',
  u:'Embora a Lei 14.790/2023 tenha regulamentado as apostas on-line, o vício e o endividamento das famílias seguem preocupando.'},
+{n:'Psicólogos e assistentes sociais nas escolas (Lei 13.935/2019)', w:'Lei', t:['edu','sm','vul'],
+ i:'Determina que as redes públicas de educação básica contem com serviços de psicologia e de serviço social para atender aos estudantes.',
+ u:'Embora a Lei 13.935/2019 preveja psicólogos e assistentes sociais nas escolas públicas, muitas unidades ainda não contam com esses profissionais.'},
 {n:'Celulares nas escolas (Lei 15.100/2025)', w:'Lei', t:['edu','tec','vul'],
  i:'Proíbe o uso de celulares e outros aparelhos eletrônicos portáteis por estudantes nas escolas de educação básica, inclusive no recreio, com exceções para fins pedagógicos, acessibilidade, saúde e situações de perigo.',
  u:'A Lei 15.100/2025, que restringiu o uso de celulares nas escolas, reconhece os prejuízos do uso excessivo de telas para o aprendizado.'},
@@ -1778,11 +2085,11 @@ const TEMAS = [
  r:'Art. 227 da CF; ECA; Lei de Drogas; Cidade de Deus; Capitães da Areia; Durkheim; Paulo Freire.',
  p:'Estados e municípios ampliam escolas em tempo integral, esporte e cursos profissionalizantes; polícia mantém programas como o Proerd.',
  x:'Separe usuário de traficante, como faz a Lei de Drogas.'},
-{t:'A violência nas escolas e o bullying', c:'edu', h:'média',
+{m:'m17', t:'A violência nas escolas e o bullying', c:'edu', h:'média',
  tese:'A violência escolar persiste devido à intolerância nas relações e à falta de acompanhamento psicológico dos alunos.',
  a1:'Intolerância e bullying presencial e virtual naturalizados como "brincadeira".',
  a2:'Pouco apoio psicológico e pouca integração entre escola, família e rede de proteção.',
- r:'Lei 14.811/2024 (bullying como crime); Lei 13.185/2015; art. 205 da CF; Mandela; Paulo Freire.',
+ r:'Lei 14.811/2024 (bullying como crime); Lei 13.185/2015; Lei 13.935/2019 (psicólogos nas escolas); art. 205 da CF; Mandela; Paulo Freire.',
  p:'MEC e secretarias contratam psicólogos e assistentes sociais nas escolas; ronda escolar preventiva.',
  x:'Não proponha "polícia armada em toda sala". Equilibre prevenção e segurança.'},
 {m:'m10', t:'O sistema prisional e a ressocialização', c:'pri', h:'média',
@@ -1813,7 +2120,7 @@ const TEMAS = [
  r:'Lei 7.716/1989; Lei 14.532/2023; art. 5º da CF; Atlas da Violência; DUDH (1948); Milton Santos.',
  p:'Escolas aplicam o ensino de história afro-brasileira; polícias reforçam formação em direitos humanos e abordagem técnica.',
  x:'Se o tema for "abordagem policial", defenda a abordagem técnica e legal, baseada em fundada suspeita, sem atacar a corporação.'},
-{t:'Direitos humanos e atividade policial', c:'dh', h:'média',
+{m:'m18', t:'Direitos humanos e atividade policial', c:'dh', h:'média',
  tese:'Respeitar os direitos humanos fortalece a atividade policial, pois dá legitimidade à polícia e protege também o policial.',
  a1:'Legitimidade: atuação legal gera confiança e cooperação da população.',
  a2:'Direitos humanos também protegem o policial: vida, saúde, condições de trabalho.',
@@ -1827,14 +2134,14 @@ const TEMAS = [
  r:'Art. 227 da CF; ECA; Disque 100; Capitães da Areia; Dimenstein (O Cidadão de Papel).',
  p:'Escolas capacitam professores para identificar sinais; municípios fortalecem conselhos tutelares.',
  x:'Inclua o ambiente virtual (aliciamento on-line) para mostrar atualidade.'},
-{t:'A violência contra a pessoa idosa', c:'vul', h:'média',
+{m:'m20', t:'A violência contra a pessoa idosa', c:'vul', h:'média',
  tese:'A violência contra idosos persiste devido à dependência deles em relação aos familiares e à falta de fiscalização.',
  a1:'Dependência: maus-tratos e abuso financeiro ocorrem dentro da família.',
  a2:'Pouca fiscalização e desconhecimento dos canais de denúncia.',
  r:'Estatuto da Pessoa Idosa; art. 230 da CF; golpes digitais contra idosos; Disque 100.',
  p:'Municípios ampliam centros de convivência e visitas da assistência social; campanhas sobre denúncia.',
  x:'Pode se cruzar com golpes digitais: idosos são alvo frequente.'},
-{t:'Os desafios para prevenir desastres causados pelas chuvas', c:'amb', h:'média',
+{m:'m19', t:'Os desafios para prevenir desastres causados pelas chuvas', c:'amb', h:'média',
  tese:'As tragédias se repetem devido à ocupação irregular de áreas de risco e à falta de planejamento urbano.',
  a1:'Ocupação de morros e margens de rios pela população pobre, sem alternativa de moradia.',
  a2:'Falta de planejamento: drenagem precária, ausência de alertas e de obras de contenção.',
@@ -1876,7 +2183,7 @@ const TEMAS = [
  r:'Milton Santos; Josué de Castro; Quarto de Despejo; Durkheim; Atlas da Violência; art. 6º da CF.',
  p:'Políticas integradas de segurança e assistência social nos territórios mais vulneráveis.',
  x:'Não diga que "pobreza gera criminoso". Diga que a exclusão aumenta a vulnerabilidade.'},
-{t:'A valorização do profissional de segurança pública', c:'sm', h:'alta',
+{m:'m16', t:'A valorização do profissional de segurança pública', c:'sm', h:'alta',
  tese:'Valorizar o policial é essencial porque melhora o serviço prestado e protege a saúde de quem protege a sociedade.',
  a1:'Serviço melhor: formação, equipamentos e salário digno aumentam a eficiência.',
  a2:'Saúde: escalas adequadas e apoio psicológico reduzem adoecimento e suicídio.',
@@ -1890,21 +2197,21 @@ const TEMAS = [
  r:'Lei de Execução Penal; Foucault; SUSP; Tropa de Elite; Durkheim.',
  p:'Integração de inteligência entre polícias, Receita e Ministério Público; controle de comunicação nos presídios.',
  x:'Não cite o nome de facções. Fale de forma genérica.'},
-{t:'Os impactos das apostas on-line (bets) na sociedade brasileira', c:'des', h:'alta',
+{m:'m13', t:'Os impactos das apostas on-line (bets) na sociedade brasileira', c:'des', h:'alta',
  tese:'As apostas on-line preocupam por provocarem endividamento e vício e por poderem ser usadas pelo crime para lavar dinheiro.',
  a1:'Endividamento e vício: promessa de dinheiro fácil, publicidade agressiva, famílias endividadas.',
  a2:'Crime: lavagem de dinheiro, plataformas ilegais, golpes e manipulação de resultados.',
  r:'Lei 14.790/2023 (regulamentou as apostas de quota fixa); art. 196 da CF; Byung-Chul Han; Bauman.',
  p:'Ministério da Fazenda fiscaliza e bloqueia sites ilegais; restrição à publicidade; campanhas sobre o vício em jogos.',
  x:'Tema atual e muito provável. Ligue à segurança pública pelo lado da lavagem de dinheiro e dos golpes.'},
-{t:'Os riscos da inteligência artificial para a segurança e a privacidade', c:'tec', h:'alta',
+{m:'m14', t:'Os riscos da inteligência artificial para a segurança e a privacidade', c:'tec', h:'alta',
  tese:'A inteligência artificial traz riscos por facilitar fraudes com vídeos e áudios falsos e por ameaçar a privacidade dos cidadãos.',
  a1:'Fraudes: deepfakes usados em golpes, extorsões e notícias falsas.',
  a2:'Privacidade: coleta massiva de dados e vigilância sem transparência.',
  r:'LGPD (Lei 13.709/2018); Marco Civil da Internet; "1984" (Orwell); O Dilema das Redes; Bauman.',
  p:'Regulamentar o uso da IA com responsabilização das plataformas; perícia digital especializada nas polícias; educação digital.',
  x:'Reconheça os benefícios da IA, inclusive para a polícia. A tese é sobre uso responsável, não sobre proibir.'},
-{t:'O uso excessivo de celulares e telas por crianças e adolescentes', c:'tec', h:'alta',
+{m:'m15', t:'O uso excessivo de celulares e telas por crianças e adolescentes', c:'tec', h:'alta',
  tese:'O uso excessivo de telas prejudica crianças e adolescentes ao afetar a saúde mental e o aprendizado e ao expô-los a riscos on-line.',
  a1:'Saúde mental e aprendizado: ansiedade, sono ruim, queda de concentração.',
  a2:'Riscos on-line: cyberbullying, aliciamento, conteúdo violento.',
