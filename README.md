@@ -26,11 +26,11 @@ E-book em HTML para a prova de Soldado PMPE (bancas FCC e Vunesp), com teoria, q
 16. Estatuto da Juventude (Lei 12.852/2013)
 17. Súmulas e jurisprudência dos Tribunais Superiores
 
-Recursos: 309 questões comentadas (estilos FCC e Vunesp), simulado com correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 484 questões comentadas (estilos FCC e Vunesp), simulado com correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 ## Editar e gerar de novo
 
-Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q4.js`, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
+Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q6.js`, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
 
 ```bash
 ./ebook/build.sh
