@@ -176,8 +176,9 @@ function sheetHTML(paragraphs, annotate){
 }
 let showModelo = () => {};
 (function(){
-  let cur = 0, annot = store.get('annot', true);
-  $('#modTabs').innerHTML = MODELOS.map((m, i) => `<button type="button" role="tab" data-i="${i}" aria-pressed="${i === cur}">${i + 1}. ${esc(m.curto)}</button>`).join('');
+  let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
+  const sel = $('#modSel');
+  sel.innerHTML = MODELOS.map((m, i) => `<option value="${i}">${i + 1}. ${esc(m.curto)}</option>`).join('');
   function render(){
     const m = MODELOS[cur];
     const counts = m.p.map(p => p.length).join(' + ');
@@ -191,10 +192,16 @@ let showModelo = () => {};
       <ul>${m.notas.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`;
     $('#annotChk').addEventListener('change', e => { annot = e.target.checked; store.set('annot', annot); $('#modBox .sheet').classList.toggle('annot', annot); });
   }
-  function select(i){ cur = i; $$('#modTabs button').forEach((x, j) => x.setAttribute('aria-pressed', String(j === i))); render(); }
+  function select(i){
+    cur = Math.min(Math.max(i, 0), MODELOS.length - 1);
+    sel.value = String(cur); $('#modPrev').disabled = cur === 0; $('#modNext').disabled = cur === MODELOS.length - 1;
+    store.set('mod', cur); render();
+  }
   showModelo = id => { const i = MODELOS.findIndex(m => m.id === id); if(i >= 0) select(i); };
-  $('#modTabs').addEventListener('click', e => { const b = e.target.closest('button'); if(b) select(+b.dataset.i); });
-  render();
+  sel.addEventListener('change', () => select(+sel.value));
+  $('#modPrev').addEventListener('click', () => select(cur - 1));
+  $('#modNext').addEventListener('click', () => select(cur + 1));
+  select(cur);
 })();
 
 // ---------- contador de 20 linhas ----------

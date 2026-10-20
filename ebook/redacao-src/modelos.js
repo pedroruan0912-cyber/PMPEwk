@@ -760,5 +760,309 @@ const MODELOS = [
     'O D2 cita um canal real de denúncia (Disque 100) e liga o tema aos golpes digitais.',
     'A proposta aposta em identificação precoce, com assistência social e polícia trabalhando juntas.'
   ]
+},
+{
+  id:'m21', curto:'Crime organizado',
+  tema:'O avanço do crime organizado e das facções criminosas no Brasil',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O filme "Tropa de Elite" retrata o poder do tráfico e a pressão',
+      'que o crime organizado exerce sobre comunidades e instituições{/}. Essa',
+      'realidade persiste no Brasil, {t}sobretudo pelo controle das facções',
+      'dentro dos presídios e pelo combate insuficiente ao seu dinheiro{/}.'
+    ],[
+      'Em primeiro lugar, os presídios se tornaram centros de comando.',
+      '{r}O Brasil possui uma das maiores populações carcerárias do mundo{/}, e',
+      'a superlotação permite que facções recrutem presos e imponham suas',
+      'regras. Nesse sentido, celulares que entram nas celas permitem que',
+      'líderes ordenem crimes de dentro da prisão, de modo que a pena não',
+      'interrompe a atividade criminosa, mas a fortalece.'
+    ],[
+      'Além disso, o dinheiro do crime circula sem controle. As facções',
+      'lavam recursos do tráfico em empresas de fachada, imóveis e até',
+      'apostas on-line. {r}Segundo Cesare Beccaria, a certeza da punição é',
+      'mais eficaz do que a severidade da pena{/}, e, enquanto as prisões de',
+      'integrantes não atingirem o patrimônio do grupo, novos membros',
+      'ocuparão os lugares vagos e a organização seguirá ativa.'
+    ],[
+      'Portanto, é preciso enfraquecer o crime organizado. Para isso, {p}as',
+      'polícias, a Receita Federal e o Ministério Público devem integrar a',
+      'inteligência financeira e bloquear celulares nos presídios, a fim de',
+      'cortar o comando e o dinheiro das facções{/}.'
+    ]
+  ],
+  notas:[
+    'Não cita nomes de facções: o texto fala do fenômeno, como recomenda o kit do tema.',
+    'O D1 mostra o presídio como causa; o D2, o dinheiro. Cada um vira uma parte da proposta.',
+    'O D2 conecta o tema a outro assunto atual (apostas on-line), o que enriquece a informatividade.',
+    'A proposta é técnica: inteligência financeira e bloqueio de comunicação, sem soluções extremas.'
+  ]
+},
+{
+  id:'m22', curto:'Racismo',
+  tema:'O combate ao racismo na sociedade brasileira',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O Brasil foi o último país das Américas a abolir a escravidão, em',
+      '1888{/}, e a abolição não veio acompanhada de terra, escola ou trabalho.',
+      'Por isso, o racismo persiste, {t}sobretudo pela herança desigual da',
+      'escravidão e pela impunidade dos crimes de discriminação{/}.'
+    ],[
+      'Em primeiro lugar, a desigualdade criada pela escravidão permanece.',
+      'Sem políticas de inclusão após 1888, a população negra foi empurrada',
+      'para as periferias e para os empregos mais precários. {r}O Atlas da',
+      'Violência mostra que a maioria das vítimas de homicídio no país é',
+      'negra{/}, o que revela como essa herança ainda define quem vive e quem',
+      'morre nas cidades brasileiras.'
+    ],[
+      'Além disso, a discriminação ainda é pouco punida. {r}Embora a Lei',
+      '14.532, de 2023, tenha equiparado a injúria racial ao racismo{/}, muitas',
+      'vítimas não denunciam por descrença na justiça, e ofensas são tratadas',
+      'como "brincadeira". Nesse contexto, a impunidade naturaliza o',
+      'preconceito, de modo que ele se repete nas escolas, no trabalho e',
+      'nas redes sociais.'
+    ],[
+      'Portanto, combater o racismo exige ação contínua. Para isso, {p}as',
+      'escolas devem aplicar o ensino da história afro-brasileira, e as',
+      'polícias devem reforçar a formação em direitos humanos, a fim de',
+      'garantir igualdade de tratamento a todos os cidadãos{/}.'
+    ]
+  ],
+  notas:[
+    'Abertura histórica com data precisa (1888), que explica a origem do problema.',
+    'O D1 liga a história a um dado atual; o D2 usa uma lei de 2023 e mostra por que ela não basta.',
+    'O tom é firme e respeitoso, sem acusar instituições inteiras.',
+    'A proposta inclui a própria polícia, o que mostra maturidade para a carreira.'
+  ]
+},
+{
+  id:'m23', curto:'Armas de fogo',
+  tema:'A ampliação do acesso às armas de fogo pela população',
+  tipo:'Tema polêmico → posição contrária, com dados e lei',
+  p:[
+    [
+      '{r}O Estatuto do Desarmamento, de 2003, estabeleceu regras rígidas',
+      'para a posse e o porte de armas de fogo no Brasil{/}. Ampliar o acesso',
+      'a elas, porém, {t}não garante segurança, pois torna fatais conflitos',
+      'banais e favorece o desvio de armas para o crime organizado{/}.'
+    ],[
+      'Em primeiro lugar, a arma em casa transforma brigas em tragédias.',
+      'Discussões de trânsito, desentendimentos entre vizinhos e episódios',
+      'de violência doméstica podem terminar em morte quando há uma arma ao',
+      'alcance. {r}Hobbes já afirmava que, sem o controle do Estado, os',
+      'conflitos tendem à "guerra de todos contra todos"{/}, de modo que mais',
+      'armas nas mãos da população aumentam o risco de mortes evitáveis.'
+    ],[
+      'Além disso, armas legais podem abastecer o crime. Armas roubadas ou',
+      'desviadas de residências e empresas acabam nas mãos de criminosos,',
+      'que as usam em assaltos e ataques. {r}Segundo o Atlas da Violência, a',
+      'maior parte dos homicídios no país é cometida com armas de fogo{/}.',
+      'Nesse sentido, quanto mais armas circulam, maior é a chance de que',
+      'parte delas sirva ao crime organizado.'
+    ],[
+      'Portanto, ampliar o acesso às armas não é a solução. Em vez disso,',
+      '{p}o Governo Federal deve manter o controle rigoroso de registros e',
+      'fortalecer o rastreamento de armas, por meio da integração de dados',
+      'entre as polícias, a fim de tirar armas ilegais de circulação{/}.'
+    ]
+  ],
+  notas:[
+    'Tema polêmico: a tese escolhe um lado e o defende com lei e dado, sem ironizar quem pensa diferente.',
+    'O D1 usa exemplos do cotidiano policial (trânsito, vizinhos, violência doméstica).',
+    'O D2 explica o caminho da arma legal até o crime, ligando o tema à segurança pública.',
+    'A conclusão usa "Em vez disso" para propor uma alternativa concreta.'
+  ]
+},
+{
+  id:'m24', curto:'Violência contra crianças',
+  tema:'A violência contra crianças e adolescentes',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}A Constituição determina, no artigo 227, que crianças e adolescentes',
+      'devem receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
+      'Na prática, a violência infantil persiste, {t}sobretudo porque ocorre',
+      'dentro de casa e porque a rede de proteção é falha{/}.'
+    ],[
+      'Em primeiro lugar, grande parte das agressões acontece no lar.',
+      'O agressor costuma ser alguém próximo, e a criança, por medo ou',
+      'dependência, não consegue contar o que sofre. {r}Como mostra Gilberto',
+      'Dimenstein em "O Cidadão de Papel", muitos direitos existem só na lei{/}.',
+      'Nesse sentido, sem alguém atento aos sinais, o abuso pode durar anos',
+      'e deixar marcas físicas e emocionais profundas.'
+    ],[
+      'Além disso, a rede de proteção não consegue atender à demanda.',
+      'Conselhos tutelares sobrecarregados e professores sem preparo para',
+      'identificar sinais de abuso atrasam as denúncias. {r}O Estatuto da',
+      'Criança e do Adolescente adota a doutrina da proteção integral{/}, mas, sem',
+      'estrutura, essa garantia não se cumpre, de modo que muitas vítimas',
+      'só recebem ajuda quando a violência já se agravou.'
+    ],[
+      'Portanto, proteger a infância é urgente. Para isso, {p}as escolas devem',
+      'capacitar professores para identificar sinais de violência, e os',
+      'municípios devem fortalecer os conselhos tutelares, a fim de',
+      'garantir a prioridade absoluta prevista na Constituição{/}.'
+    ]
+  ],
+  notas:[
+    'A citação literal ("absoluta prioridade") dá força à introdução.',
+    'O D1 explica por que a violência fica escondida; o D2, por que a ajuda demora.',
+    'O ECA e Dimenstein mostram a distância entre a lei e a realidade, ideia central do texto.',
+    'A conclusão retoma a Constituição da introdução, fechando o texto em círculo.'
+  ]
+},
+{
+  id:'m25', curto:'Assédio no transporte',
+  tema:'O assédio sexual contra mulheres no transporte público',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}Desde 2018, a Lei 13.718 considera crime a importunação sexual{/},',
+      'prática comum em ônibus, metrôs e terminais. Ainda assim, o assédio',
+      'persiste, {t}sobretudo pela cultura que objetifica o corpo feminino e',
+      'pela dificuldade de denunciar no momento do crime{/}.'
+    ],[
+      'Em primeiro lugar, o assédio é naturalizado como algo normal.',
+      '"Cantadas", olhares insistentes e toques indesejados ainda são vistos',
+      'como parte da rotina das mulheres. {r}Segundo Pierre Bourdieu, a',
+      'violência simbólica é a dominação aceita como natural pelos costumes{/}.',
+      'Sob essa ótica, muitas vítimas mudam de horário, de roupa ou de trajeto',
+      'para evitar o abuso, enquanto o agressor segue sem ser incomodado.'
+    ],[
+      'Além disso, denunciar no momento do crime é difícil. Em veículos',
+      'lotados, a vítima sente medo e vergonha, e nem sempre há câmeras,',
+      'agentes ou canais rápidos para pedir ajuda. {r}A Agenda 2030 da ONU,',
+      'em seu Objetivo 5, propõe eliminar a violência contra as mulheres{/}.',
+      'Contudo, sem estrutura para registrar a ocorrência, o agressor desce',
+      'na parada seguinte e o crime fica impune.'
+    ],[
+      'Portanto, é preciso garantir a segurança das mulheres no transporte.',
+      'Para isso, {p}as empresas e as polícias devem instalar câmeras nos',
+      'veículos e criar canais de denúncia por aplicativo, além de campanhas',
+      'educativas, a fim de punir os agressores e proteger as passageiras{/}.'
+    ]
+  ],
+  notas:[
+    'A introdução cita a lei específica e o ano, sem copiar o texto legal.',
+    'O D1 mostra o efeito injusto do assédio: a vítima muda a rotina, o agressor não.',
+    'O D2 descreve a cena concreta (veículo lotado, agressor que desce) para explicar a impunidade.',
+    'A proposta tem tecnologia, denúncia e educação, ligadas aos dois argumentos.'
+  ]
+},
+{
+  id:'m26', curto:'Dependência química',
+  tema:'Os desafios no combate à dependência química',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}A Lei 13.840, de 2019, reforçou o acolhimento e o tratamento dos',
+      'usuários de drogas no país{/}. Mesmo assim, a dependência química segue',
+      'como desafio, {t}sobretudo pelo estigma que recai sobre o usuário e pela',
+      'falta de tratamento acessível na rede pública{/}.'
+    ],[
+      'Em primeiro lugar, o estigma afasta o dependente da ajuda. Muitos',
+      'veem o usuário apenas como criminoso ou como alguém "sem força de',
+      'vontade", e a família esconde o problema por vergonha. {r}A Lei de',
+      'Drogas, de 2006, diferencia o usuário do traficante{/}, mas esse',
+      'preconceito persiste, de modo que o dependente só procura ajuda',
+      'quando já perdeu emprego, laços familiares e saúde.'
+    ],[
+      'Além disso, o tratamento ainda é difícil de acessar. Os Centros de',
+      'Atenção Psicossocial especializados em álcool e drogas são poucos',
+      'diante da demanda, e as filas são longas. {r}A Constituição, no artigo',
+      '196, define a saúde como direito de todos e dever do Estado{/}. Nesse',
+      'contexto, quem não consegue tratamento volta às ruas e, muitas vezes,',
+      'ao ciclo de dívidas com o tráfico, que alimenta a violência.'
+    ],[
+      'Portanto, a dependência química deve ser tratada como questão de',
+      'saúde. Para isso, {p}o Ministério da Saúde deve ampliar os CAPS AD,',
+      'por meio de verbas e equipes especializadas, e as escolas devem',
+      'manter o Proerd, a fim de tratar quem adoeceu e prevenir novos casos{/}.'
+    ]
+  ],
+  notas:[
+    'Separa com clareza o usuário (saúde) do traficante (crime), como faz a Lei de Drogas.',
+    'O D1 trata do preconceito; o D2, da falta de estrutura, cada um com uma base legal.',
+    'O fechamento do D2 liga o tema à segurança pública (dívidas com o tráfico).',
+    'A proposta combina tratamento (CAPS AD) e prevenção (Proerd).'
+  ]
+},
+{
+  id:'m27', curto:'Ética e corrupção',
+  tema:'Ética e corrupção no serviço público',
+  tipo:'Tema de problema → duas causas',
+  p:[
+    [
+      '{r}O artigo 37 da Constituição impõe à administração pública os',
+      'princípios da legalidade, impessoalidade, moralidade, publicidade e',
+      'eficiência{/}. A corrupção, porém, ainda desafia o país, {t}sobretudo',
+      'pela cultura de privilégios e pela impunidade{/}.'
+    ],[
+      'Em primeiro lugar, a cultura de privilégios favorece desvios.',
+      '{r}Em "Raízes do Brasil", Sérgio Buarque de Holanda descreve o "homem',
+      'cordial", que mistura o público e o privado{/}. Sob essa ótica, o',
+      '"jeitinho", o favor ao conhecido e a troca de vantagens são vistos',
+      'como normais, de modo que pequenas desonestidades preparam o terreno',
+      'para esquemas maiores dentro das instituições.'
+    ],[
+      'Além disso, a impunidade estimula novos casos de corrupção.',
+      'Processos longos, recursos sucessivos e penas raramente cumpridas',
+      'passam a mensagem de que o crime compensa. {r}Para Rousseau, o pacto',
+      'social existe para garantir o bem comum{/}, e a corrupção impune rompe',
+      'esse acordo, de modo que a população perde a confiança no Estado e',
+      'nos próprios agentes públicos.'
+    ],[
+      'Portanto, a ética deve guiar o serviço público. Para isso, {p}as',
+      'corregedorias e o Ministério Público devem fortalecer a fiscalização,',
+      'e os cursos de formação devem tratar de ética, a fim de garantir',
+      'servidores, inclusive policiais, comprometidos com o interesse público{/}.'
+    ]
+  ],
+  notas:[
+    'Os cinco princípios do art. 37 (LIMPE) também caem na prova objetiva: vale decorar.',
+    'O D1 usa um clássico da sociologia brasileira para explicar o "jeitinho".',
+    'O D2 mostra a consequência mais grave: a perda de confiança no Estado.',
+    'Não cita políticos nem partidos, e a proposta inclui a própria polícia.'
+  ]
+},
+{
+  id:'m28', curto:'Seca no Sertão',
+  tema:'Os desafios da convivência com a seca no Sertão',
+  tipo:'Tema de "desafios" → dois obstáculos',
+  p:[
+    [
+      '{r}Em "Vidas Secas", Graciliano Ramos retrata a família de Fabiano,',
+      'obrigada a fugir da seca em busca de sobrevivência{/}. Décadas depois, o',
+      'sertanejo ainda sofre com a estiagem, {t}sobretudo pela má distribuição',
+      'da água e pela falta de políticas permanentes para o semiárido{/}.'
+    ],[
+      'Em primeiro lugar, a água ainda é mal distribuída no semiárido.',
+      'Muitas comunidades rurais dependem de carros-pipa e de açudes que',
+      'secam nos meses mais quentes. {r}A transposição do Rio São Francisco',
+      'levou água a regiões de Pernambuco e de outros estados do Nordeste{/},',
+      'mas os ramais e as adutoras ainda não chegam a muitas localidades, de',
+      'modo que famílias inteiras seguem sem acesso regular à água.'
+    ],[
+      'Além disso, o poder público age mais na emergência do que na',
+      'prevenção. {r}O pernambucano Josué de Castro mostrou que a fome é',
+      'resultado de escolhas sociais, e não da natureza{/}. Sob essa ótica,',
+      'a seca só vira tragédia quando faltam cisternas, apoio técnico ao',
+      'agricultor e crédito para culturas adaptadas, o que mantém o ciclo',
+      'de perdas, endividamento e migração para as grandes cidades.'
+    ],[
+      'Portanto, é preciso conviver com o semiárido de forma permanente.',
+      'Para isso, {p}os governos devem concluir as obras hídricas e ampliar',
+      'o programa de cisternas, por meio de assistência técnica rural, a',
+      'fim de garantir água e dignidade ao povo sertanejo{/}.'
+    ]
+  ],
+  notas:[
+    'Tema de Pernambuco, com dois repertórios nordestinos (Graciliano Ramos e Josué de Castro).',
+    'Usa a expressão "convivência com o semiárido", vocabulário atual sobre o tema.',
+    'O D1 trata da infraestrutura; o D2, da forma como o Estado age.',
+    'A proposta tem obras e apoio ao agricultor, um para cada argumento.'
+  ]
 }
 ];
