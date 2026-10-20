@@ -1,0 +1,72 @@
+<div class="app">
+<aside class="side" id="side" aria-label="Sumário">
+  <p class="brand">Direitos Humanos<br>&amp; Legislação Especial<small>E-book interativo · PMPE · FCC &amp; Vunesp</small></p>
+  <nav id="nav"></nav>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
+    <span class="where" id="where">Início</span>
+    <span class="progress-mini" title="Questões respondidas"><span class="bar"><i id="barFill"></i></span><span id="barTxt">0/0</span></span>
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
+  </header>
+  <div class="content">
+
+<!-- ======================= CAPA ======================= -->
+<section class="view cover" id="inicio">
+  <span class="eyebrow">Soldado PMPE · Direitos Humanos e Legislação Especial</span>
+  <h1>Teoria completa,<br><mark>pegadinhas</mark> e questões</h1>
+  <p class="lede">Todo o conteúdo do edital em 17 capítulos: teoria organizada pela letra da lei, quadros de <b>pegadinhas</b> que FCC e Vunesp repetem e questões comentadas no estilo de cada banca. Suas respostas ficam salvas neste navegador.</p>
+  <div class="stats">
+    <div class="stat"><b>17</b><span>capítulos</span></div>
+    <div class="stat"><b id="statQ">0</b><span>questões comentadas</span></div>
+    <div class="stat"><b id="statFC">0</b><span>flashcards</span></div>
+    <div class="stat"><b id="statAcc">–</b><span>seu aproveitamento</span></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn" href="#c1">Começar pelo capítulo 1</a>
+    <a class="btn ghost" href="#simulado">Montar simulado</a>
+    <a class="btn ghost" href="#flashcards">Revisar pegadinhas</a>
+    <a class="btn ghost" href="#erros">Caderno de erros</a>
+  </div>
+
+  <h2 style="font-size:1.35rem;margin:10px 0 4px">Raio-X das bancas</h2>
+  <div class="banca-grid">
+    <div class="banca">
+      <h3>FCC</h3>
+      <ul>
+        <li>Cobra <b>letra seca da lei</b>: troca um prazo, um número ou um verbo ("poderá" ↔ "deverá").</li>
+        <li>Alternativas longas e parecidas: leia a última palavra de cada uma.</li>
+        <li>Adora <b>"está correto o que se afirma APENAS em"</b> com assertivas I, II, III.</li>
+        <li>Cobra súmulas STF/STJ literalmente e mistura com a lei.</li>
+        <li>Casos curtos com personagens ("Tício, policial militar...").</li>
+      </ul>
+    </div>
+    <div class="banca">
+      <h3>Vunesp</h3>
+      <ul>
+        <li>Enunciados objetivos, muita <b>literalidade</b> e completar lacunas.</li>
+        <li>Situações práticas de policiamento: apreensão de adolescente, flagrante, Maria da Penha, usuário de drogas.</li>
+        <li>Troca de sujeito ("delegado" ↔ "juiz" ↔ "policial") e de faixa etária.</li>
+        <li>Pede "assinale a alternativa correta" e também "<b>incorreta</b>": circule o comando.</li>
+        <li>Penas e prazos aparecem invertidos (detenção ↔ reclusão).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.35rem;margin:10px 0 4px">Sumário</h2>
+  <div class="toc-grid" id="tocGrid"></div>
+
+  <div class="panel">
+    <h3>Seu progresso</h3>
+    <p style="margin:0 0 8px;font-size:.94rem">As respostas ficam guardadas só neste navegador. Para recomeçar do zero:</p>
+    <button class="small-btn" id="resetAll">Apagar todas as respostas</button>
+    <div class="confirm" id="resetConfirm" hidden>
+      <span>Apagar o histórico de todas as questões?</span>
+      <button class="small-btn" id="resetYes">Sim, apagar</button>
+      <button class="small-btn" id="resetNo">Cancelar</button>
+    </div>
+  </div>
+  <p class="footer-note">Material de estudo atualizado com a legislação até 2025 (inclui Lei 14.994/2024 – pacote antifeminicídio, Lei 14.811/2024, Lei 14.532/2023 e o julgamento do STF no RE 635.659 – porte de maconha para consumo). Conteúdos de Estatuto da Juventude e Lei Maria da Penha incluídos conforme a Lei estadual nº 18.926/2025. Sempre confira a redação vigente no Planalto e na ALEPE antes da prova.</p>
+</section>

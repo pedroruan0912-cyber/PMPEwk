@@ -1,0 +1,67 @@
+
+<!-- ======================= SIMULADO ======================= -->
+<section class="view" id="simulado" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Treino</span>
+  <h1>Simulado</h1>
+  <p class="lede">Escolha capítulos, banca e quantidade. As respostas só aparecem quando você entregar, como na prova.</p>
+</header>
+<div id="simSetup" class="panel">
+  <h3>Montar simulado</h3>
+  <div class="form-row">
+    <div class="field"><label for="simBanca">Banca</label>
+      <select id="simBanca"><option value="">FCC + Vunesp</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
+    <div class="field"><label for="simQtd">Questões</label>
+      <select id="simQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="999">Todas</option></select></div>
+    <div class="field"><label for="simOnly">Filtro</label>
+      <select id="simOnly"><option value="all">Todas as questões</option><option value="new">Só as não respondidas</option><option value="wrong">Só as que errei</option></select></div>
+  </div>
+  <div class="field"><label>Capítulos</label></div>
+  <div class="cap-checks" id="simCaps"></div>
+  <div class="form-row">
+    <button class="small-btn" id="simAll" type="button">Marcar todos</button>
+    <button class="small-btn" id="simNone" type="button">Desmarcar todos</button>
+    <button class="btn" id="simStart" type="button">Iniciar simulado</button>
+  </div>
+  <p id="simMsg" class="q-exp" hidden></p>
+</div>
+<div id="simRun" hidden>
+  <div class="sim-sticky"><span id="simCount">0/0 respondidas</span><span id="simTime">00:00</span><span class="grow"></span><button class="small-btn" id="simQuit" type="button">Cancelar</button><button class="btn" id="simEnd" type="button">Entregar</button></div>
+  <div id="simList"></div>
+</div>
+<div id="simResult" hidden></div>
+</section>
+
+<!-- ======================= FLASHCARDS ======================= -->
+<section class="view" id="flashcards" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Revisão</span>
+  <h1>Flashcards de pegadinhas</h1>
+  <p class="lede">Leia a pergunta, responda mentalmente e toque no cartão para conferir.</p>
+</header>
+<div class="form-row">
+  <div class="field"><label for="fcCap">Capítulo</label><select id="fcCap"><option value="">Todos os capítulos</option></select></div>
+  <button class="small-btn" id="fcShuffle" type="button">Embaralhar</button>
+</div>
+<div class="fc-stage"><button class="fc" id="fcCard" type="button" aria-live="polite"><span class="side-lbl" id="fcSide">Pergunta</span><span class="fc-text" id="fcText"></span></button></div>
+<div class="fc-nav">
+  <button class="small-btn" id="fcPrev" type="button">Anterior</button>
+  <button class="small-btn" id="fcFlip" type="button">Virar</button>
+  <button class="small-btn" id="fcNext" type="button">Próximo</button>
+  <span class="count" id="fcCount">0/0</span>
+</div>
+</section>
+
+<!-- ======================= ERROS ======================= -->
+<section class="view" id="erros" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Revisão</span>
+  <h1>Caderno de erros</h1>
+  <p class="lede">Todas as questões que você errou, de todos os capítulos. Refaça até acertar: quando acertar, ela sai daqui.</p>
+</header>
+<div id="errList"></div>
+</section>
+
+  </div>
+</div>
+</div>
