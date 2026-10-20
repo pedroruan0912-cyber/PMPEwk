@@ -105,6 +105,111 @@ x:`Art. 124, § 1º e § 2º. Visitas ao menos semanalmente; assistência religi
 o:[`comete crime punido com reclusão de 2 a 4 anos.`,`comete infração administrativa, sujeita a multa e, em caso de reincidência, ao fechamento do estabelecimento por até 15 dias; comprovada a reincidência em período inferior a 30 dias, o estabelecimento será definitivamente fechado e terá sua licença cassada.`,`não comete qualquer ilícito se o adolescente tiver mais de 16 anos.`,`comete contravenção penal.`,`responde apenas civilmente.`],a:1,
 x:`Art. 250 do ECA (infração administrativa). Se houver exploração sexual, o proprietário responde também pelo crime do art. 244-A, § 1º.`},
 
+/* ----- ECA: bloco extra ----- */
+{c:'c6',b:'FCC',e:`Nos termos do art. 4º, parágrafo único, do ECA, a garantia de prioridade absoluta compreende, entre outras,`,
+o:[`a primazia de receber proteção e socorro em quaisquer circunstâncias e a precedência de atendimento nos serviços públicos ou de relevância pública.`,`a isenção de tributos para famílias com crianças.`,`a preferência na tramitação de processos criminais em que o adolescente seja acusado.`,`a reserva de 10% das vagas em concursos públicos.`,`a gratuidade em transportes interestaduais.`],a:0,
+x:`Art. 4º, parágrafo único: (a) primazia de proteção e socorro em quaisquer circunstâncias; (b) precedência de atendimento nos serviços públicos ou de relevância pública; (c) preferência na formulação e execução das políticas sociais; (d) destinação privilegiada de recursos públicos.`},
+
+{c:'c6',b:'Vunesp',e:`Os casos de suspeita ou confirmação de castigo físico, de tratamento cruel ou degradante e de maus-tratos contra criança ou adolescente serão obrigatoriamente comunicados`,
+o:[`à Defensoria Pública, que decidirá sobre a representação.`,`ao Conselho Tutelar da respectiva localidade, sem prejuízo de outras providências legais.`,`exclusivamente à autoridade policial.`,`à escola, que avaliará a necessidade de comunicar a família.`,`ao Juiz da Infância, que poderá dispensar a comunicação ao Conselho Tutelar.`],a:1,
+x:`Art. 13 do ECA. O médico, professor ou responsável por estabelecimento de saúde ou de ensino que deixa de comunicar comete a infração administrativa do art. 245.`},
+
+{c:'c6',b:'FCC',e:`Segundo o ECA, com a redação da Lei nº 13.010/2014 (Lei Menino Bernardo), a criança e o adolescente têm o direito de ser educados e cuidados sem o uso de castigo físico ou de tratamento cruel ou degradante. Aos pais que descumprirem essa regra`,
+o:[`aplica-se obrigatoriamente a perda do poder familiar.`,`poderão ser aplicadas, conforme a gravidade do caso, medidas como encaminhamento a programa de proteção à família, tratamento psicológico ou psiquiátrico, cursos de orientação e advertência, sem prejuízo de outras sanções cabíveis.`,`aplica-se apenas multa administrativa.`,`aplica-se pena de detenção prevista no próprio art. 18-A.`,`não se aplica nenhuma medida, por se tratar de recomendação.`],a:1,
+x:`Arts. 18-A e 18-B do ECA. As medidas do art. 18-B são aplicadas pelo Conselho Tutelar, sem prejuízo de outras providências legais.`},
+
+{c:'c6',b:'Vunesp',e:`De acordo com o ECA e a Constituição Federal, é proibido qualquer trabalho a menores de`,
+o:[`14 anos, salvo na condição de aprendiz, a partir dos 12 anos.`,`16 anos, salvo na condição de aprendiz, a partir dos 14 anos.`,`18 anos, sem exceções.`,`15 anos, salvo em atividades rurais familiares.`,`16 anos, salvo com autorização do Conselho Tutelar.`],a:1,
+x:`Art. 60 do ECA c/c art. 7º, XXXIII, CF. Ao menor de 18 é proibido o trabalho noturno, perigoso, insalubre ou penoso.`},
+
+{c:'c6',b:'FCC',e:`É proibida a venda à criança ou ao adolescente, nos termos do art. 81 do ECA, de`,
+o:[`bilhetes lotéricos e equivalentes.`,`livros didáticos sem autorização dos pais.`,`medicamentos de uso contínuo, em qualquer hipótese.`,`passagens de ônibus intermunicipais.`,`alimentos industrializados com açúcar.`],a:0,
+x:`Art. 81: armas, munições e explosivos; bebidas alcoólicas; produtos que causem dependência; fogos de estampido e de artifício (salvo os de reduzido potencial); revistas e publicações impróprias; bilhetes lotéricos e equivalentes.`},
+
+{c:'c6',b:'Vunesp',e:`Sem prévia e expressa autorização judicial, nenhuma criança ou adolescente nascido em território nacional poderá sair do País`,
+o:[`desacompanhado de ambos os pais.`,`em companhia de estrangeiro residente ou domiciliado no exterior.`,`em viagem de turismo com duração superior a 30 dias.`,`em companhia de avós maternos.`,`sem passaporte diplomático.`],a:1,
+x:`Art. 85 do ECA. Viajando com um dos pais, basta a autorização expressa do outro em documento com firma reconhecida (art. 84).`},
+
+{c:'c6',b:'FCC',e:`<p>Sobre o acolhimento institucional e familiar, considere:</p><ol type="I"><li>São medidas provisórias e excepcionais, utilizáveis como forma de transição para reintegração familiar ou colocação em família substituta.</li><li>Implicam privação de liberdade da criança ou do adolescente acolhido.</li><li>O afastamento da criança ou do adolescente do convívio familiar é de competência exclusiva da autoridade judiciária, ressalvadas situações emergenciais.</li></ol><p>Está correto o que se afirma APENAS em</p>`,
+o:[`I.`,`I e II.`,`I e III.`,`II e III.`,`III.`],a:2,
+x:`I e III corretas (art. 101, §§ 1º e 2º). II errada: o acolhimento não implica privação de liberdade. Entidades podem acolher em caráter excepcional e de urgência, comunicando o juiz em até 24 horas (art. 93).`},
+
+{c:'c6',b:'Vunesp',e:`Um adolescente pratica ato infracional análogo a roubo um dia antes de completar 18 anos e é identificado somente três meses depois. Nos termos do ECA,`,
+o:[`responderá criminalmente, pois já é maior na data da identificação.`,`ficará sujeito às medidas do ECA, pois deve ser considerada a idade do adolescente à data do fato.`,`não responderá por nada, pois perdeu a condição de adolescente.`,`responderá criminalmente com redução de pena pela menoridade.`,`será encaminhado ao Conselho Tutelar.`],a:1,
+x:`Art. 104, parágrafo único (idade na data do fato). A medida pode ser executada até os 21 anos (art. 2º, parágrafo único; art. 121, § 5º; Súmula 605 STJ).`},
+
+{c:'c6',b:'FCC',e:`Entre as garantias processuais asseguradas ao adolescente pelo art. 111 do ECA, NÃO se inclui`,
+o:[`o pleno e formal conhecimento da atribuição de ato infracional, mediante citação ou meio equivalente.`,`a defesa técnica por advogado.`,`o direito de ser ouvido pessoalmente pela autoridade competente.`,`o direito de solicitar a presença de seus pais ou responsável em qualquer fase do procedimento.`,`o direito de ser julgado por tribunal do júri composto por jovens.`],a:4,
+x:`Art. 111: conhecimento formal da acusação; igualdade na relação processual; defesa técnica por advogado; assistência judiciária gratuita e integral aos necessitados; direito de ser ouvido pessoalmente; direito de solicitar a presença dos pais em qualquer fase. Não há júri no procedimento do ECA.`},
+
+{c:'c6',b:'Vunesp',e:`A medida socioeducativa de advertência`,
+o:[`exige prova cabal de autoria e materialidade, como as demais medidas.`,`consiste em admoestação verbal, que será reduzida a termo e assinada, e poderá ser aplicada sempre que houver prova da materialidade e indícios suficientes da autoria.`,`pode ser aplicada pela autoridade policial no momento da apreensão.`,`é aplicada por escrito, dispensada a presença do adolescente.`,`só pode ser aplicada a crianças.`],a:1,
+x:`Arts. 114, parágrafo único, e 115 do ECA. As medidas da reparação do dano à internação (II a VI) exigem provas suficientes de autoria e materialidade, ressalvada a remissão.`},
+
+{c:'c6',b:'FCC',e:`Sobre o regime de semiliberdade, o ECA estabelece que`,
+o:[`a realização de atividades externas depende sempre de prévia autorização judicial.`,`pode ser determinado desde o início ou como forma de transição para o meio aberto, sendo possível a realização de atividades externas independentemente de autorização judicial e obrigatórias a escolarização e a profissionalização.`,`tem prazo máximo de 6 meses.`,`só pode ser aplicado como transição da internação.`,`é cumprido em estabelecimento prisional, em ala separada.`],a:1,
+x:`Art. 120 do ECA. A semiliberdade não comporta prazo determinado e aplicam-se, no que couber, as regras da internação. Compare: na internação, as atividades externas ficam a critério da equipe técnica, salvo determinação judicial em contrário.`},
+
+{c:'c6',b:'Vunesp',e:`O adolescente que descumpre reiterada e injustificadamente a liberdade assistida pode receber a chamada internação-sanção, cujo prazo`,
+o:[`não poderá ser superior a 45 dias.`,`não poderá ser superior a 3 meses, devendo ser decretada judicialmente após o devido processo legal, com a oitiva do adolescente.`,`é de até 3 anos.`,`é fixado pelo Conselho Tutelar.`,`é de 6 meses, prorrogáveis.`],a:1,
+x:`Art. 122, III e § 1º. Súmula 265 STJ: é necessária a oitiva do adolescente antes de decretar a regressão da medida.`},
+
+{c:'c6',b:'FCC',e:`A internação do adolescente deverá ser cumprida`,
+o:[`em cadeia pública, em cela separada dos adultos.`,`em entidade exclusiva para adolescentes, em local distinto daquele destinado ao abrigo, obedecida rigorosa separação por critérios de idade, compleição física e gravidade da infração.`,`em qualquer estabelecimento estadual, a critério do juiz.`,`em unidade militar, se o ato infracional for grave.`,`na residência do adolescente, sob monitoramento eletrônico.`],a:1,
+x:`Art. 123 do ECA. Durante a internação, inclusive a provisória, são obrigatórias atividades pedagógicas. A internação não pode ser cumprida em estabelecimento prisional (art. 185).`},
+
+{c:'c6',b:'Vunesp',e:`Na comarca em que não há entidade de atendimento, o adolescente com internação decretada que não puder ser transferido de imediato para a localidade mais próxima aguardará sua remoção`,
+o:[`em cela comum de cadeia pública, sem limite de prazo.`,`em repartição policial, desde que em seção isolada dos adultos e com instalações apropriadas, não podendo ultrapassar o prazo máximo de 5 dias, sob pena de responsabilidade.`,`na sede do Conselho Tutelar, por até 10 dias.`,`em sua residência, por até 30 dias.`,`em repartição policial, por até 45 dias.`],a:1,
+x:`Art. 185, §§ 1º e 2º. Descumprir prazo fixado em benefício de adolescente privado de liberdade é crime (art. 235, detenção de 6 meses a 2 anos).`},
+
+{c:'c6',b:'FCC',e:`Um adolescente e um adulto são presos em flagrante, em coautoria, pela prática de furto. Havendo no município repartição policial especializada no atendimento de adolescentes,`,
+o:[`ambos serão encaminhados à delegacia comum, que tem atribuição sobre o adulto.`,`prevalecerá a atribuição da repartição especializada, que, após as providências necessárias e conforme o caso, encaminhará o adulto à repartição policial própria.`,`o adolescente será levado diretamente ao Conselho Tutelar.`,`o adulto será levado à delegacia especializada, e o adolescente, ao juiz.`,`caberá ao Ministério Público definir a delegacia competente.`],a:1,
+x:`Art. 172, parágrafo único, do ECA.`},
+
+{c:'c6',b:'Vunesp',e:`Apresentado o adolescente, o representante do Ministério Público, após proceder à oitiva informal, poderá`,
+o:[`aplicar diretamente a medida de internação.`,`promover o arquivamento dos autos, conceder a remissão ou representar à autoridade judiciária para aplicação de medida socioeducativa.`,`apenas encaminhar o caso ao Conselho Tutelar.`,`condenar o adolescente a prestação de serviços à comunidade.`,`decretar a internação provisória por 45 dias.`],a:1,
+x:`Arts. 179 e 180 do ECA. O MP não aplica medida socioeducativa nem decreta internação; isso cabe ao juiz (Súmula 108 STJ).`},
+
+{c:'c6',b:'FCC',e:`Se, afastada a hipótese de flagrante, houver indícios de participação de adolescente na prática de ato infracional, a autoridade policial`,
+o:[`deverá expedir mandado de busca e apreensão do adolescente.`,`encaminhará ao representante do Ministério Público relatório das investigações e demais documentos.`,`deverá aguardar o adolescente completar 18 anos para indiciá-lo.`,`lavrará auto de apreensão à revelia do adolescente.`,`encaminhará o caso ao Conselho Tutelar, que decidirá sobre a representação.`],a:1,
+x:`Art. 177 do ECA. Sem flagrante, a apreensão depende de ordem escrita e fundamentada do juiz (art. 106).`},
+
+{c:'c6',b:'Vunesp',e:`O processo de escolha dos membros do Conselho Tutelar ocorrerá em data unificada em todo o território nacional a cada 4 anos, no`,
+o:[`primeiro domingo do mês de outubro do ano subsequente ao da eleição presidencial, com posse no dia 10 de janeiro do ano seguinte ao processo de escolha.`,`mesmo dia da eleição municipal, com posse em 1º de janeiro.`,`último domingo de novembro, com posse em 1º de fevereiro.`,`primeiro domingo de outubro do ano da eleição presidencial, com posse em 10 de janeiro.`,`dia 12 de outubro, com posse em 1º de janeiro.`],a:0,
+x:`Art. 139, §§ 1º e 2º. O processo é organizado sob responsabilidade do CMDCA e fiscalizado pelo MP. É vedado ao candidato oferecer ao eleitor qualquer bem ou vantagem, inclusive brindes de pequeno valor (§ 3º).`},
+
+{c:'c6',b:'FCC',e:`Se, no exercício de suas atribuições, o Conselho Tutelar entender necessário o afastamento do convívio familiar, deverá`,
+o:[`determinar de imediato a colocação em família substituta.`,`comunicar incontinenti o fato ao Ministério Público, prestando-lhe informações sobre os motivos do entendimento e as providências tomadas para a orientação, o apoio e a promoção social da família.`,`decretar a perda do poder familiar.`,`requisitar ao delegado a prisão dos pais.`,`aguardar a manifestação do CMDCA.`],a:1,
+x:`Art. 136, parágrafo único, do ECA. O afastamento do convívio familiar é decidido pelo juiz (art. 101, § 2º).`},
+
+{c:'c6',b:'Vunesp',e:`Policial militar que impede ou embaraça a ação de membro do Conselho Tutelar no exercício de função prevista no ECA comete`,
+o:[`apenas infração disciplinar.`,`o crime do art. 236 do ECA, punido com detenção de 6 meses a 2 anos.`,`crime de desobediência do Código Penal, exclusivamente.`,`crime de abuso de autoridade punido com reclusão.`,`fato atípico, pois o Conselho Tutelar não é autoridade.`],a:1,
+x:`Art. 236 do ECA: impedir ou embaraçar a ação de autoridade judiciária, membro do Conselho Tutelar ou representante do MP no exercício de função prevista na lei.`},
+
+{c:'c6',b:'FCC',e:`O agente que submete criança ou adolescente sob sua autoridade, guarda ou vigilância a vexame ou a constrangimento comete crime previsto no ECA, punido com`,
+o:[`reclusão, de 2 a 8 anos.`,`detenção, de 6 meses a 2 anos.`,`detenção, de 1 a 3 meses, ou multa.`,`reclusão, de 1 a 4 anos.`,`multa de 3 a 20 salários de referência.`],a:1,
+x:`Art. 232 do ECA. Se houver intenso sofrimento físico ou mental como castigo, a conduta passa a ser tortura (Lei 9.455/97, art. 1º, II).`},
+
+{c:'c6',b:'Vunesp',e:`O dono de bar que vende, fornece ou entrega arma de fogo ou munição a adolescente comete o crime do art. 242 do ECA, punido com`,
+o:[`detenção, de 2 a 4 anos, e multa.`,`reclusão, de 3 a 6 anos.`,`detenção, de 6 meses a 2 anos.`,`reclusão, de 4 a 10 anos.`,`apenas multa e interdição do estabelecimento.`],a:1,
+x:`Art. 242 do ECA: reclusão de 3 a 6 anos. Bebida alcoólica (art. 243): detenção de 2 a 4 anos. Fogos de artifício (art. 244): detenção de 6 meses a 2 anos.`},
+
+{c:'c6',b:'FCC',e:`Submeter criança ou adolescente à prostituição ou à exploração sexual (art. 244-A do ECA) é crime punido com reclusão de 4 a 10 anos e multa, além da perda de bens e valores. Nos termos da lei,`,
+o:[`só responde quem pratica diretamente o ato sexual.`,`incorrem nas mesmas penas o proprietário, o gerente ou o responsável pelo local em que se verifique a submissão, e constitui efeito obrigatório da condenação a cassação da licença de localização e de funcionamento do estabelecimento.`,`o proprietário do local responde apenas por infração administrativa.`,`a cassação da licença depende de reincidência.`,`a ação penal depende de representação dos pais.`],a:1,
+x:`Art. 244-A, §§ 1º e 2º. Os crimes do ECA são de ação pública incondicionada (art. 227).`},
+
+{c:'c6',b:'Vunesp',e:`Com a Lei nº 14.811/2024, passou a constituir crime previsto no ECA a conduta do pai, da mãe ou do responsável legal que, de forma dolosa,`,
+o:[`deixa de matricular o filho na escola.`,`deixa de comunicar à autoridade pública o desaparecimento de criança ou adolescente.`,`permite que o filho use redes sociais antes dos 13 anos.`,`deixa de vacinar o filho.`,`viaja com o filho sem autorização do outro genitor.`],a:1,
+x:`Art. 244-C do ECA: reclusão de 2 a 4 anos e multa. A mesma lei criou o crime de intimidação sistemática (bullying) no art. 146-A do CP.`},
+
+{c:'c6',b:'FCC',e:`<p>Sobre os crimes envolvendo material pornográfico com crianças e adolescentes, considere:</p><ol type="I"><li>Adquirir, possuir ou armazenar o material configura crime, com pena diminuída de 1 a 2/3 se for de pequena quantidade.</li><li>Não há crime quando a posse ou o armazenamento tiverem a finalidade de comunicar às autoridades competentes, por agente público no exercício de suas funções, mantido o sigilo sobre o material.</li><li>O aliciamento, por qualquer meio de comunicação, com o fim de praticar ato libidinoso, previsto no art. 241-D, tem como vítima tanto a criança quanto o adolescente.</li></ol><p>Está correto o que se afirma APENAS em</p>`,
+o:[`I.`,`I e II.`,`II e III.`,`III.`,`I e III.`],a:1,
+x:`I e II: art. 241-B, §§ 1º e 2º. III errada: o art. 241-D refere-se apenas a criança (menor de 12 anos).`},
+
+{c:'c6',b:'Vunesp',e:`Segundo a Súmula 342 do STJ, no procedimento para aplicação de medida socioeducativa, diante da confissão do adolescente,`,
+o:[`o juiz pode dispensar as demais provas, se houver concordância da defesa.`,`é nula a desistência de outras provas.`,`a medida de internação passa a ser obrigatória.`,`o Ministério Público pode aplicar a medida diretamente.`,`a remissão torna-se obrigatória.`],a:1,
+x:`Súmula 342 do STJ. A confissão isolada não basta: é preciso instruir o processo com outras provas.`},
+
 /* ===== CAP 7 – ABUSO DE AUTORIDADE ===== */
 {c:'c7',b:'FCC',e:`Nos termos da Lei nº 13.869/2019, as condutas nela descritas constituem crime de abuso de autoridade quando praticadas pelo agente com a finalidade específica de`,
 o:[`cumprir ordem superior, ainda que legal.`,`prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou, ainda, por mero capricho ou satisfação pessoal.`,`manter a ordem pública, ainda que sem dolo.`,`interpretar a lei de forma diversa da jurisprudência dominante.`,`obter vantagem econômica, exclusivamente.`],a:1,
