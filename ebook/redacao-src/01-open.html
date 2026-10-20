@@ -1,0 +1,185 @@
+<div class="app">
+<aside class="side" id="side" aria-label="Sumário">
+  <p class="brand">Redação <span class="n40">40</span><br>Soldado PMPE<small>E-book interativo · Instituto AOCP · método das 20 linhas</small></p>
+  <nav id="nav"></nav>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
+    <span class="where" id="where">Início</span>
+    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/12 lidos</span>
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
+  </header>
+  <div class="content">
+
+<!-- ======================= CAPA ======================= -->
+<section class="view cover" id="inicio" data-title="Início">
+  <span class="eyebrow">Soldado PMPE · Prova de Redação · Instituto AOCP</span>
+  <h1>Do zero aos <span class="red">40 pontos</span> em exatas 20 linhas</h1>
+  <p class="lede">Um método passo a passo para quem tem dificuldade com redação: o que a banca corrige, onde colocar cada frase nas 20 linhas, moldes prontos para preencher, teses, conectivos, repertórios, temas prováveis e redações-modelo. No fim, um laboratório para treinar e se autocorrigir.</p>
+
+  <div class="facts">
+    <div class="fact key"><b>40</b><span>pontos valem a redação de Soldado</span></div>
+    <div class="fact"><b>12</b><span>pontos é o mínimo para não ser eliminado</span></div>
+    <div class="fact"><b>15–20</b><span>linhas exigidas pelo edital</span></div>
+    <div class="fact key"><b>20</b><span>linhas é a sua meta: nem mais, nem menos</span></div>
+  </div>
+
+  <div class="box pen">
+    <span class="tag">Por que exatamente 20 linhas</span>
+    <p>O edital aceita de 15 a 20 linhas, e <b>o que passar da linha 20 é desconsiderado</b>. Escrever as 20 linhas usa todo o espaço para argumentar (o que pesa no critério de informatividade) sem o risco de a conclusão ficar fora da folha. Por isso este e-book inteiro trabalha com um <b>mapa fixo de 4 + 6 + 6 + 4 linhas</b>.</p>
+  </div>
+
+  <h3>Como usar este e-book</h3>
+  <ol class="route">
+    <li><div><a href="#edital">A prova e o edital</a> e <a href="#criterios">Como a AOCP corrige</a>: entenda onde estão os 40 pontos.</div></li>
+    <li><div><a href="#linhas">O mapa das 20 linhas</a> e <a href="#estrutura">Estrutura e moldes</a>: decore o esqueleto. É ele que tira você do zero.</div></li>
+    <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
+    <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
+    <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: quatro textos de 20 linhas com marcação de cada parte.</div></li>
+    <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
+  </ol>
+  <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
+</section>
+
+<!-- ======================= 1. EDITAL ======================= -->
+<section class="view" id="edital" data-title="A prova e o edital" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 1</span>
+    <h2>A prova e o edital</h2>
+    <p>O que o Edital nº 001/2026 (PMPE, Instituto AOCP) diz sobre a redação de Soldado.</p>
+  </div>
+
+  <div class="table-wrap"><table>
+    <tr><th>Item</th><th>Soldado (QPMG)</th></tr>
+    <tr><td>Valor da redação</td><td><b>até 40 pontos</b></td></tr>
+    <tr><td>Nota mínima</td><td><b>12 pontos</b> (abaixo disso, eliminado)</td></tr>
+    <tr><td>Tipo de texto</td><td>Dissertativo-argumentativo, em prosa</td></tr>
+    <tr><td>Extensão</td><td>mínimo de <b>15</b> e máximo de <b>20</b> linhas</td></tr>
+    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado</td></tr>
+    <tr><td>Natureza</td><td>eliminatória e classificatória (soma com a objetiva)</td></tr>
+    <tr><td>Quem é corrigido</td><td>só quem é aprovado na objetiva e fica dentro do limite de classificação previsto no edital</td></tr>
+    <tr><td>Data prevista</td><td>mesmo dia da prova objetiva (previsão divulgada: 21/02/2027)</td></tr>
+  </table></div>
+
+  <div class="box warn">
+    <span class="tag">Confira no edital oficial</span>
+    <p>Os números acima são os divulgados para o edital e sua retificação. Antes da prova, leia no PDF oficial do Instituto AOCP o item da <b>Prova de Redação</b>: tabela de critérios, causas de nota zero, tipo de caneta e regras da folha. Se algo mudar em retificação, vale o edital.</p>
+  </div>
+
+  <h3>A redação decide a classificação</h3>
+  <p>Muita gente acerta quase o mesmo número de questões na objetiva. Os 40 pontos da redação são, na prática, o que separa quem entra de quem fica na lista de espera. Se dois candidatos empatam na objetiva e um faz 34 na redação e o outro 22, são 12 pontos de diferença, o equivalente a várias questões.</p>
+  <p>A boa notícia: redação de concurso <b>não exige talento</b>. Exige um esqueleto fixo, repertório decorado, conectivos certos e revisão gramatical. Tudo isso se treina.</p>
+
+  <h3>Como a prova costuma ser apresentada</h3>
+  <p>A AOCP costuma trazer uma <b>proposta</b> com um ou mais <b>textos motivadores</b> (trecho de notícia, dado, artigo de lei, charge) e um comando como:</p>
+  <div class="box pen">
+    <p><i>"A partir da leitura dos textos motivadores e com base em seus conhecimentos, redija um texto dissertativo-argumentativo, em norma-padrão da língua portuguesa, sobre o tema: <b>[tema]</b>. Apresente argumentos que sustentem seu ponto de vista."</i></p>
+  </div>
+  <p>Três palavras desse comando valem pontos:</p>
+  <ul>
+    <li><b>dissertativo-argumentativo</b>: você defende uma opinião (tese) com argumentos. Narrar uma história ou escrever carta zera ou derruba a nota.</li>
+    <li><b>norma-padrão</b>: linguagem formal, sem gírias, sem "a gente", sem abreviações.</li>
+    <li><b>ponto de vista</b>: precisa ter tese clara, não só descrever o problema.</li>
+  </ul>
+
+  <h3>O que pode zerar ou anular a redação</h3>
+  <p>Os editais da AOCP costumam prever nota zero nestes casos. Trate a lista como regra de segurança:</p>
+  <div class="vs">
+    <div class="no"><p><b>Fugir ao tema</b>: falar de outro assunto. Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
+    <div class="no"><p><b>Não seguir o tipo de texto</b>: narração, poema, carta, texto em tópicos.</p></div>
+    <div class="no"><p><b>Identificar-se</b>: nome, assinatura, apelido, rubrica ou qualquer marca fora do espaço permitido.</p></div>
+    <div class="no"><p><b>Ficar abaixo de 15 linhas</b> ou deixar em branco.</p></div>
+    <div class="no"><p><b>Letra ilegível</b>, texto a lápis ou com caneta fora da cor exigida.</p></div>
+    <div class="no"><p><b>Copiar os textos motivadores</b>: trechos copiados não contam e podem reduzir o texto abaixo do mínimo.</p></div>
+  </div>
+  <div class="box trap">
+    <span class="tag">Cuidado</span>
+    <p>Desenho, recado ao corretor ("por favor, me aprove"), oração, número de telefone ou qualquer frase fora do texto pode ser lida como identificação. Na folha definitiva, escreva <b>só a redação</b>.</p>
+  </div>
+
+  <h3>Título</h3>
+  <p>Faça título só se a proposta pedir. Quando a folha não reserva um espaço para ele, um título escrito na primeira linha pode ser contado como linha de texto e desmontar seu mapa de 20 linhas. Na dúvida, leia a instrução da própria folha de resposta no dia da prova.</p>
+
+  <h3>Divisão do tempo</h3>
+  <p>A redação é feita no mesmo período da objetiva. Reserve <b>cerca de 60 minutos</b> para ela e decida antes se vai começar por ela ou pela objetiva. Uma divisão que funciona:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Etapa</th><th>Tempo</th><th>O que fazer</th></tr>
+    <tr><td>Ler e planejar</td><td>10 min</td><td>Circular palavras-chave, escrever a tese e os 2 argumentos no canto do rascunho</td></tr>
+    <tr><td>Rascunho</td><td>25 min</td><td>Escrever seguindo o mapa 4-6-6-4</td></tr>
+    <tr><td>Ajustar para 20 linhas</td><td>5 min</td><td>Contar linhas e esticar ou encolher (capítulo 3)</td></tr>
+    <tr><td>Revisar gramática</td><td>5 min</td><td>Crase, vírgula, concordância, acentos</td></tr>
+    <tr><td>Passar a limpo</td><td>15 min</td><td>Letra legível, margem respeitada, parágrafos com recuo</td></tr>
+  </table></div>
+</section>
+
+<!-- ======================= 2. CRITÉRIOS ======================= -->
+<section class="view" id="criterios" data-title="Como a AOCP corrige" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 2</span>
+    <h2>Como a AOCP corrige</h2>
+    <p>Quatro critérios de 10 pontos cada. Saber o que o corretor procura é metade da nota.</p>
+  </div>
+
+  <div class="crit-grid">
+    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento ao tema, informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão e coerência</h4><p>As ideias se ligam com conectivos corretos? O texto tem lógica, sem contradição, sem repetir palavras?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Estrutura dissertativo-argumentativa e parágrafos</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia e acentuação, concordância, regência, crase e colocação pronominal.</p></div>
+  </div>
+  <p class="small">Distribuição divulgada para Soldado: 10 + 10 + 10 + 10 = 40. Confira a tabela no item da Prova de Redação do edital.</p>
+
+  <h3>Critério 1 · Tema, informatividade e argumentação</h3>
+  <p>É o critério que mais separa notas. O corretor pergunta: <i>este texto informa algo e convence?</i></p>
+  <div class="vs">
+    <div class="no"><p>"A violência é um problema muito grave que afeta todos e precisa ser resolvido urgentemente por todos nós."</p><p class="small">Frase vazia: não diz por que, nem como, nem com base em quê.</p></div>
+    <div class="yes"><p>"Segundo o sociólogo Émile Durkheim, o crime aumenta quando as normas perdem força. Assim, a sensação de impunidade estimula novos delitos."</p><p class="small">Tem repertório, explicação e relação de causa.</p></div>
+  </div>
+  <p><b>Como garantir os 10:</b></p>
+  <ul>
+    <li>Use as <b>palavras-chave do tema</b> na introdução, nos tópicos frasais e na conclusão.</li>
+    <li>Escreva uma <b>tese explícita</b> no fim da introdução.</li>
+    <li>Coloque <b>um repertório por parágrafo de desenvolvimento</b> (lei, autor, dado, fato histórico) e <b>explique</b> como ele prova seu argumento.</li>
+    <li>Mostre <b>causa e consequência</b>. Argumento é "isso acontece porque... e isso gera...".</li>
+  </ul>
+  <div class="box trap">
+    <span class="tag">Tangenciar não é fugir, mas custa caro</span>
+    <p>Tangenciar é falar do assunto geral sem focar no recorte. Tema: "A importância da polícia comunitária". Texto que só fala de violência no Brasil tangencia: não zera, mas perde boa parte do critério 1.</p>
+  </div>
+
+  <h3>Critério 2 · Coesão e coerência</h3>
+  <ul>
+    <li><b>Coesão</b> é a costura: conectivos entre frases e parágrafos, pronomes e sinônimos para não repetir palavras.</li>
+    <li><b>Coerência</b> é a lógica: o argumento prova a tese, a conclusão retoma o que foi dito, nada se contradiz.</li>
+  </ul>
+  <p><b>Como garantir os 10:</b> comece todo parágrafo com conectivo, use pelo menos um conectivo dentro de cada parágrafo e troque palavras repetidas por sinônimos ou pronomes. O capítulo 6 tem a lista completa.</p>
+
+  <h3>Critério 3 · Estrutura</h3>
+  <ul>
+    <li>Quatro parágrafos: introdução, dois de desenvolvimento, conclusão.</li>
+    <li>Recuo visível no início de cada parágrafo (cerca de dois dedos).</li>
+    <li>Parágrafos equilibrados: nenhum com uma linha só, nenhum com dez.</li>
+    <li>Extensão dentro de 15–20 linhas. Com o mapa 4-6-6-4 você fecha exatamente 20.</li>
+  </ul>
+
+  <h3>Critério 4 · Modalidade gramatical</h3>
+  <p>Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
+  <div class="box tip">
+    <span class="tag">Regra de ouro</span>
+    <p>Frases curtas erram menos. Se uma frase passar de duas linhas e meia, divida em duas. Você perde pouco em estilo e ganha muito em correção.</p>
+  </div>
+
+  <h3>Tom: o que um futuro policial deve escrever</h3>
+  <p>O corretor avalia um texto para a carreira policial. Defenda soluções dentro da <b>Constituição</b>, da <b>lei</b> e dos <b>direitos humanos</b>.</p>
+  <div class="vs">
+    <div class="no"><p>"Bandido bom é bandido morto", "a solução é pena de morte", "direitos humanos só defendem criminoso", críticas a partidos e políticos pelo nome.</p></div>
+    <div class="yes"><p>Policiamento eficiente e legal, inteligência, prevenção, educação, valorização do policial, integração entre órgãos, participação da comunidade, cumprimento da lei.</p></div>
+  </div>
+  <div class="vs">
+    <div class="no"><p>1ª pessoa ("eu acho", "na minha opinião"), perguntas retóricas, gírias, "a gente", "tipo", "etc.", exclamações, clichês como "desde os primórdios" e "nos dias de hoje".</p></div>
+    <div class="yes"><p>3ª pessoa e impessoalidade: "Observa-se que...", "É fundamental que...", "Nota-se...". A sua opinião aparece na tese, sem dizer "eu".</p></div>
+  </div>
+  <p>No <a href="#lab">Laboratório</a> há uma <b>autoavaliação</b> com estes quatro critérios para corrigir seus treinos.</p>
+</section>
