@@ -1596,5 +1596,500 @@ const MODELOS = [
     'Usa duas bases legais: a Lei Sansão e o art. 225 da Constituição.',
     'A conclusão retoma Kant ("uma sociedade menos violenta"), fechando o texto em círculo.'
   ]
+},
+// ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------
+{
+  id:'m43', base:'m1', curto:'Segurança pública',
+  tema:'Os desafios da segurança pública no Brasil',
+  tipo:'Versão 2 · outros dois desafios: integração e prevenção',
+  p:[
+    [
+      '{r}O artigo 144 da Constituição define a segurança pública como "dever',
+      'do Estado, direito e responsabilidade de todos"{/}. No Brasil, porém, a',
+      'violência persiste, {t}sobretudo pela falta de integração entre as',
+      'instituições e pelo foco excessivo na repressão, em vez da prevenção{/}.'
+    ],[
+      'Em primeiro lugar, os órgãos de segurança ainda atuam isolados.',
+      'Polícias, Justiça e Ministério Público nem sempre compartilham dados',
+      'e metas. {r}Em Pernambuco, o Pacto pela Vida, criado em 2007, reduziu',
+      'os homicídios nos primeiros anos ao integrar essas instituições{/}.',
+      'Nesse sentido, quando cada órgão trabalha sozinho, informações se',
+      'perdem, investigações atrasam e o criminoso se aproveita das brechas.'
+    ],[
+      'Além disso, o Estado investe mais em reagir do que em prevenir.',
+      '{r}Já em 1829, Robert Peel defendia que a eficiência da polícia se',
+      'mede pela ausência de crimes, e não pela ação visível da polícia{/}.',
+      'Sob essa ótica, sem iluminação, escolas, praças e policiamento',
+      'preventivo, o crime ocorre primeiro e a resposta vem depois, de modo',
+      'que a população vive com medo mesmo após grandes operações.'
+    ],[
+      'Portanto, a segurança pública precisa de integração e prevenção.',
+      'Para isso, {p}o Governo Federal deve fortalecer o Sistema Único de',
+      'Segurança Pública, com metas comuns e dados compartilhados, a fim de',
+      'prevenir crimes antes que eles aconteçam{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: o tema é o mesmo, mas os desafios escolhidos são outros (integração e prevenção, em vez de impunidade e desigualdade).',
+    'O D1 usa um repertório de Pernambuco (Pacto pela Vida) que prova o argumento com resultado concreto.',
+    'O D2 usa Robert Peel, clássico da história da polícia, para defender a prevenção.',
+    'A proposta responde aos dois desafios de uma vez: o SUSP integra os órgãos e organiza a prevenção.'
+  ]
+},
+{
+  id:'m44', base:'m4', curto:'Polícia comunitária',
+  tema:'A importância da aproximação entre a polícia e a comunidade',
+  tipo:'Versão 2 · outros dois benefícios: inteligência e mediação',
+  p:[
+    [
+      '{r}Segundo Aristóteles, o ser humano é um "animal político", que só se',
+      'realiza vivendo em comunidade{/}. Na segurança pública, essa ideia se',
+      'traduz no policiamento comunitário, {t}essencial por fortalecer a',
+      'inteligência policial e por resolver conflitos antes que virem crimes{/}.'
+    ],[
+      'Em primeiro lugar, a proximidade melhora a inteligência policial.',
+      'Moradores que confiam no policial do bairro informam movimentações',
+      'suspeitas, pontos de venda de drogas e veículos estranhos. {r}Para',
+      'Émile Durkheim, laços sociais fortes reduzem o desvio de conduta{/}, e',
+      'essa colaboração transforma a comunidade em parceira, de modo que',
+      'as ações policiais se tornam mais precisas e menos arriscadas.'
+    ],[
+      'Além disso, o policial próximo resolve conflitos antes que cresçam.',
+      'Brigas de vizinhos, som alto e pequenas desordens podem terminar em',
+      'agressões se ninguém intervier. {r}Segundo a Teoria das Janelas',
+      'Quebradas, a desordem não corrigida estimula delitos mais graves{/}.',
+      'Nesse sentido, a mediação feita por quem conhece as partes evita que',
+      'um desentendimento simples se transforme em homicídio.'
+    ],[
+      'Portanto, o policiamento comunitário deve ser ampliado. Para isso,',
+      '{p}a Secretaria de Defesa Social deve criar conselhos comunitários de',
+      'segurança em cada bairro, com policiais fixos e capacitados em mediação',
+      'de conflitos, a fim de construir uma segurança feita com a população{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: os benefícios mudam (inteligência e mediação, em vez de confiança e prevenção).',
+    'Abertura filosófica (Aristóteles) ligada à ideia de comunidade.',
+    'O D2 usa a Teoria das Janelas Quebradas no sentido certo: corrigir pequenas desordens cedo.',
+    'A proposta traz uma medida concreta e local: conselhos comunitários de segurança.'
+  ]
+},
+{
+  id:'m45', base:'m2', curto:'Violência contra a mulher',
+  tema:'Os desafios para combater a violência contra a mulher no Brasil',
+  tipo:'Versão 2 · outras causas: herança patriarcal e dependência financeira',
+  p:[
+    [
+      '{r}Em 2024, a Lei 14.994 tornou o feminicídio crime autônomo, com pena',
+      'de até 40 anos{/}. A medida é importante, mas punir mais não basta, pois',
+      'a violência contra a mulher persiste, {t}sobretudo pela herança',
+      'patriarcal da sociedade e pela dependência financeira das vítimas{/}.'
+    ],[
+      'Em primeiro lugar, a herança patriarcal ainda molda as relações.',
+      '{r}Em "Casa-Grande & Senzala", o pernambucano Gilberto Freyre descreve',
+      'uma sociedade em que o homem detinha poder sobre a família{/}. Essa',
+      'mentalidade sobrevive na ideia de que a mulher deve obediência ao',
+      'companheiro, de modo que o ciúme e o controle são confundidos com amor',
+      'e a agressão passa a ser vista como "correção".'
+    ],[
+      'Além disso, a dependência financeira prende a vítima ao agressor.',
+      'Sem renda própria e muitas vezes com filhos pequenos, a mulher teme',
+      'não ter como se sustentar se denunciar. {r}Dados do Anuário Brasileiro',
+      'de Segurança Pública mostram mais de mil feminicídios por ano{/}, e',
+      'muitos deles ocorrem após anos de agressões silenciadas por essa',
+      'dependência, o que mostra que autonomia também salva vidas.'
+    ],[
+      'Portanto, punir mais não basta: é preciso dar autonomia às vítimas.',
+      'Para isso, {p}estados e municípios devem garantir o auxílio-aluguel',
+      'da Lei Maria da Penha e cursos profissionalizantes, a fim de ajudar as',
+      'mulheres a romper o ciclo de violência{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: a abertura é outra lei (2024) e as causas mudam (patriarcado e dependência financeira).',
+    'A introdução já antecipa a ideia central: aumentar a pena não resolve sozinho.',
+    'O D1 usa um repertório pernambucano (Gilberto Freyre) para explicar a origem histórica do machismo.',
+    'A proposta cita o auxílio-aluguel, medida protetiva incluída na Lei Maria da Penha em 2023.'
+  ]
+},
+{
+  id:'m46', base:'m5', curto:'Trânsito',
+  tema:'Os desafios para reduzir as mortes no trânsito brasileiro',
+  tipo:'Versão 2 · outros obstáculos: educação e infraestrutura',
+  p:[
+    [
+      '{r}O movimento Maio Amarelo lembra todos os anos que a maioria dos',
+      'acidentes de trânsito poderia ser evitada{/}. Ainda assim, as mortes',
+      'nas vias persistem no Brasil, {t}sobretudo pela educação para o trânsito',
+      'insuficiente e pela precariedade da infraestrutura das vias{/}.'
+    ],[
+      'Em primeiro lugar, a educação para o trânsito é deixada de lado.',
+      '{r}O Código de Trânsito Brasileiro prevê, no artigo 76, a educação para',
+      'o trânsito nas escolas{/}, mas o tema raramente faz parte das aulas.',
+      'Nesse sentido, muitos jovens aprendem a dirigir e a pilotar motos sem',
+      'compreender os riscos, de modo que excesso de velocidade, ausência de',
+      'capacete e celular ao volante parecem atitudes sem consequências.'
+    ],[
+      'Além disso, a infraestrutura precária aumenta o risco de acidentes.',
+      'Buracos, sinalização apagada e falta de iluminação transformam',
+      'ruas e estradas em armadilhas, sobretudo para motociclistas e',
+      'pedestres. {r}A Agenda 2030 da ONU, no Objetivo 11, propõe sistemas',
+      'de transporte seguros para todos{/}. Contudo, sem manutenção das vias,',
+      'até o motorista prudente fica exposto ao perigo.'
+    ],[
+      'Portanto, reduzir as mortes no trânsito exige educação e estrutura.',
+      'Para isso, {p}as escolas devem aplicar a educação para o trânsito, e os',
+      'governos devem recuperar e sinalizar as vias, a fim de proteger',
+      'motoristas, motociclistas e pedestres{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: em vez de imprudência e fiscalização, a versão 2 trata de educação e infraestrutura.',
+    'O D1 cita um artigo específico do Código de Trânsito, repertório pouco usado e preciso.',
+    'O D2 mostra que nem todo acidente é culpa do motorista, o que dá equilíbrio ao texto.',
+    'A proposta tem um agente para cada argumento: escolas (educação) e governos (vias).'
+  ]
+},
+{
+  id:'m47', base:'m3', curto:'Crimes cibernéticos',
+  tema:'Caminhos para combater os crimes cibernéticos no Brasil',
+  tipo:'Versão 2 · outras causas: vazamento de dados e investigação lenta',
+  p:[
+    [
+      '{r}O Marco Civil da Internet, de 2014, estabeleceu direitos e deveres',
+      'para o uso da rede no Brasil{/}. Mesmo assim, os crimes cibernéticos',
+      'crescem, {t}sobretudo pelo vazamento de dados pessoais e pela falta de',
+      'estrutura especializada para investigar esses delitos{/}.'
+    ],[
+      'Em primeiro lugar, dados vazados abastecem os golpistas.',
+      'Nome, CPF, endereço e telefone de milhões de brasileiros circulam',
+      'na internet e permitem golpes cada vez mais convincentes. {r}O',
+      'documentário "O Dilema das Redes" mostra que os dados pessoais se',
+      'tornaram mercadoria valiosa{/}. Nesse sentido, quem tem as informações',
+      'da vítima consegue se passar por banco, empresa ou parente.'
+    ],[
+      'Além disso, a investigação desses crimes ainda é lenta. Poucas',
+      'cidades contam com delegacias especializadas em crimes cibernéticos,',
+      'e a perícia digital exige equipamentos e técnicos qualificados.',
+      '{r}A Lei Carolina Dieckmann, de 2012, tornou crime a invasão de',
+      'dispositivos{/}, mas, sem estrutura para identificar os autores, a',
+      'punição é rara e os criminosos se sentem seguros para agir.'
+    ],[
+      'Portanto, combater os crimes cibernéticos exige proteção e',
+      'investigação. Para isso, {p}os estados devem criar delegacias',
+      'especializadas, e a fiscalização da LGPD deve punir empresas que',
+      'vazam dados, a fim de reduzir os golpes e responsabilizar os autores{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: o foco sai da vítima (falta de educação digital) e vai para as empresas e o Estado.',
+    'O D1 explica por que os golpes ficaram convincentes: o golpista já tem os dados da vítima.',
+    'O D2 usa uma lei de 2012 para mostrar que o problema não é falta de lei, e sim de estrutura.',
+    'A proposta responsabiliza quem vaza dados e quem deve investigar.'
+  ]
+},
+{
+  id:'m48', base:'m6', curto:'Saúde mental do policial',
+  tema:'Os desafios para cuidar da saúde mental dos policiais',
+  tipo:'Versão 2 · tema tratado como "desafios": estigma e falta de estrutura',
+  p:[
+    [
+      '{r}A Organização Mundial da Saúde define saúde como um estado de',
+      'completo bem-estar físico, mental e social{/}. Para muitos policiais,',
+      'porém, esse bem-estar é distante, {t}sobretudo pelo estigma dentro',
+      'das corporações e pela falta de estrutura de atendimento psicológico{/}.'
+    ],[
+      'Em primeiro lugar, o estigma impede que o policial peça ajuda.',
+      'Admitir sofrimento ainda é visto por muitos como sinal de fraqueza,',
+      'e há o medo de perder a arma ou a função. {r}O filme "Tropa de Elite"',
+      'mostra o capitão Nascimento sofrendo crises de pânico enquanto',
+      'mantém o comando{/}, retrato de uma cultura em que o agente adoece',
+      'calado, de modo que o problema só aparece quando já é grave.'
+    ],[
+      'Além disso, falta estrutura para cuidar da saúde mental na carreira.',
+      'Em muitas unidades, não há psicólogos suficientes, e o atendimento só',
+      'ocorre depois de uma crise ou de um afastamento. {r}A Lei 14.531, de',
+      '2023, prevê ações de prevenção do suicídio entre esses profissionais{/},',
+      'mas, sem equipes e acompanhamento periódico, a lei não chega a quem',
+      'está na rua todos os dias.'
+    ],[
+      'Portanto, cuidar da mente do policial deve ser parte da rotina. Para',
+      'isso, {p}as corporações devem oferecer atendimento psicológico periódico',
+      'e sigiloso e campanhas internas contra o estigma, a fim de proteger',
+      'quem protege a sociedade{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: lá o tema foi tratado como "importância" (benefícios); aqui, como "desafios" (obstáculos).',
+    'A definição de saúde da OMS é um repertório coringa para qualquer tema de saúde.',
+    'O D1 usa um filme sobre a própria polícia, muito reconhecível pelo corretor.',
+    'A proposta ataca os dois desafios: atendimento (estrutura) e campanhas (estigma).'
+  ]
+},
+{
+  id:'m49', base:'m7', curto:'Tráfico e juventude',
+  tema:'O aliciamento de jovens pelo tráfico de drogas',
+  tipo:'Versão 2 · outras causas: evasão escolar e pressão do consumo',
+  p:[
+    [
+      '{r}Em "Capitães da Areia", Jorge Amado retrata meninos abandonados que',
+      'encontram no crime uma forma de sobreviver{/}. Hoje, o tráfico ainda',
+      'recruta jovens no Brasil, {t}sobretudo pela evasão escolar e pela',
+      'pressão do consumo, que transforma o dinheiro fácil em sonho{/}.'
+    ],[
+      'Em primeiro lugar, o jovem fora da escola fica exposto ao crime.',
+      'Sem aulas, sem acompanhamento e sem perspectiva de emprego, ele passa',
+      'o dia nas ruas, onde o tráfico oferece ocupação e pertencimento.',
+      '{r}Para o educador Paulo Freire, a educação muda pessoas, e pessoas',
+      'transformam o mundo{/}. Nesse sentido, cada aluno que abandona a escola',
+      'perde a chance de construir outro futuro.'
+    ],[
+      'Além disso, a pressão do consumo torna o crime atraente. Roupas de',
+      'marca, celulares caros e festas exibidas nas redes viram símbolo de',
+      'sucesso. {r}Em "Vida para Consumo", Zygmunt Bauman afirma que, na',
+      'sociedade atual, as pessoas passam a ser avaliadas pelo que consomem{/}.',
+      'Sob essa ótica, o jovem pobre vê no tráfico um atalho para ser',
+      'reconhecido, mesmo arriscando a liberdade e a vida.'
+    ],[
+      'Portanto, é preciso disputar os jovens com o tráfico. Para isso, {p}as',
+      'secretarias de educação devem combater a evasão com busca ativa de',
+      'alunos e escolas em tempo integral, a fim de oferecer aos jovens um',
+      'caminho mais atraente do que o crime{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: troca o filme pelo livro e as causas (evasão e consumo, em vez de oportunidades e ausência do Estado).',
+    'O D2 traz uma causa pouco explorada: o desejo de status pelo consumo.',
+    'Bauman é usado com o nome da obra, o que mostra domínio do repertório.',
+    'A proposta cita a "busca ativa", estratégia real das redes de ensino contra a evasão.'
+  ]
+},
+{
+  id:'m50', base:'m9', curto:'Reconhecimento facial',
+  tema:'O uso do reconhecimento facial na segurança pública',
+  tipo:'Versão 2 · outra tecnologia do mesmo tema, com benefícios e limites',
+  p:[
+    [
+      '{r}Programas como o Juntos pela Segurança, lançado em Pernambuco em',
+      '2023, apostam em tecnologia e inteligência{/}. Ferramentas como o',
+      'reconhecimento facial {t}podem ser aliadas da polícia, desde que se',
+      'evitem erros de identificação e o uso indevido de dados{/}.'
+    ],[
+      'Em primeiro lugar, a tecnologia amplia a eficiência policial.',
+      'Câmeras inteligentes ajudam a localizar foragidos, veículos roubados',
+      'e pessoas desaparecidas em poucos minutos. {r}Como defendia Cesare',
+      'Beccaria, a certeza da punição é mais eficaz do que a severidade da',
+      'pena{/}, e a identificação rápida aumenta essa certeza, de modo que o',
+      'criminoso passa a temer ser reconhecido nas ruas.'
+    ],[
+      'Além disso, a ferramenta exige limites para não violar direitos.',
+      'Sistemas de reconhecimento podem errar, sobretudo com pessoas negras,',
+      'e já houve casos de prisões injustas por identificação equivocada.',
+      '{r}A Constituição garante que ninguém será considerado culpado antes',
+      'de condenação definitiva{/}. Por isso, o alerta da máquina deve ser',
+      'apenas o início de uma verificação feita por pessoas.'
+    ],[
+      'Portanto, a tecnologia deve servir à segurança com responsabilidade.',
+      'Para isso, {p}a Secretaria de Defesa Social deve adotar protocolos que',
+      'exijam confirmação humana e cumpram a LGPD, a fim de prender quem deve',
+      'ser preso sem violar os direitos de inocentes{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: o tema de tecnologia agora é abordado pelo reconhecimento facial, e não pelas câmeras corporais.',
+    'A tese é concessiva ("desde que"): defende a ferramenta, mas com condições.',
+    'O D2 usa a presunção de inocência, princípio constitucional que todo policial precisa conhecer.',
+    'A proposta traz a ideia central do texto: a máquina alerta, a pessoa confirma.'
+  ]
+},
+{
+  id:'m51', base:'m11', curto:'Educação e prevenção',
+  tema:'A educação como ferramenta de prevenção da violência',
+  tipo:'Versão 2 · outros benefícios: tempo integral e cultura do diálogo',
+  p:[
+    [
+      '{r}Para Darcy Ribeiro, "a crise da educação no Brasil não é uma crise;',
+      'é um projeto"{/}. Investir na escola é, portanto, decisão política, e',
+      '{t}ela previne a violência ao manter os jovens protegidos em tempo',
+      'integral e ao ensinar a resolver conflitos pelo diálogo{/}.'
+    ],[
+      'Em primeiro lugar, a escola em tempo integral protege os jovens.',
+      'Quando o aluno passa o dia em atividades de estudo, esporte e cultura,',
+      'fica menos exposto à rua e ao aliciamento do tráfico. {r}O artigo 227',
+      'da Constituição exige "absoluta prioridade" para crianças e jovens{/}.',
+      'Nesse sentido, ampliar a jornada escolar é cumprir essa prioridade e',
+      'oferecer um ambiente seguro enquanto as famílias trabalham.'
+    ],[
+      'Além disso, a escola ensina a convivência e o diálogo. {r}Para Émile',
+      'Durkheim, a educação é a socialização das novas gerações, que aprendem',
+      'as regras da vida em sociedade{/}. Sob essa ótica, aulas sobre',
+      'cidadania, mediação de conflitos e respeito às diferenças formam',
+      'pessoas capazes de resolver desentendimentos sem agressão, de modo',
+      'que a violência diminui dentro e fora da escola.'
+    ],[
+      'Portanto, a escola é a primeira barreira contra a violência. Para',
+      'isso, {p}os governos devem ampliar o tempo integral e incluir mediação',
+      'de conflitos no currículo, a fim de formar cidadãos que escolham o',
+      'diálogo em vez da força{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: a abertura é crítica (Darcy Ribeiro) e os benefícios são outros.',
+    'O D1 trata do tempo (escola integral); o D2, do conteúdo (diálogo e cidadania).',
+    'Durkheim aparece com um conceito diferente do usual (educação como socialização), o que mostra repertório variado.',
+    'A proposta é específica: mediação de conflitos no currículo.'
+  ]
+},
+{
+  id:'m52', base:'m16', curto:'Valorização do policial',
+  tema:'A valorização do profissional de segurança pública',
+  tipo:'Versão 2 · outros benefícios: permanência na carreira e confiança social',
+  p:[
+    [
+      '{r}Para Thomas Hobbes, o Estado existe para garantir a segurança dos',
+      'cidadãos{/}, e quem cumpre essa função nas ruas é o profissional de',
+      'segurança pública. Por isso, {t}valorizá-lo é indispensável, pois',
+      'mantém bons profissionais na carreira e fortalece a confiança social{/}.'
+    ],[
+      'Em primeiro lugar, a valorização evita a perda de bons agentes.',
+      'Salários defasados, escalas exaustivas e falta de perspectiva levam',
+      'muitos policiais a abandonar a carreira após anos de formação. {r}Para',
+      'Byung-Chul Han, a cobrança excessiva por desempenho gera esgotamento{/}.',
+      'Nesse sentido, sem plano de carreira e descanso adequado, o Estado',
+      'desperdiça investimento e perde experiência acumulada.'
+    ],[
+      'Além disso, o policial valorizado aproxima a polícia da sociedade.',
+      'Bem treinado e respeitado, ele atua com mais segurança, técnica e',
+      'cordialidade. {r}Robert Peel já afirmava, em 1829, que "a polícia é o',
+      'público e o público é a polícia"{/}. Sob essa ótica, valorizar quem',
+      'veste a farda é valorizar a própria comunidade, de modo que a',
+      'confiança e a colaboração da população tendem a crescer.'
+    ],[
+      'Portanto, a valorização do policial beneficia toda a sociedade.',
+      'Para isso, {p}o Governo do Estado deve garantir salário digno, plano',
+      'de carreira e formação continuada, a fim de manter bons profissionais',
+      'nas ruas e fortalecer a confiança da população{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: em vez de eficiência e saúde, a versão 2 fala de permanência na carreira e confiança da população.',
+    'Hobbes na introdução liga a função do Estado ao trabalho concreto do policial.',
+    'O D1 mostra o custo de perder profissionais já formados, argumento econômico e convincente.',
+    'Robert Peel no D2 transforma a valorização do policial em benefício para a comunidade.'
+  ]
+},
+{
+  id:'m53', base:'m13', curto:'Apostas on-line',
+  tema:'Os impactos das apostas on-line na sociedade brasileira',
+  tipo:'Versão 2 · outras causas: publicidade e falta de educação financeira',
+  p:[
+    [
+      '{r}O documentário "O Dilema das Redes" mostra que aplicativos são',
+      'projetados para prender a atenção do usuário{/}. Nas apostas on-line,',
+      'esse mecanismo preocupa, {t}sobretudo pela publicidade agressiva voltada',
+      'aos jovens e pela falta de educação financeira da população{/}.'
+    ],[
+      'Em primeiro lugar, a publicidade apresenta a aposta como diversão.',
+      'Influenciadores e atletas associam o jogo a sucesso, riqueza e',
+      'emoção, sem mostrar as perdas. {r}Para Zygmunt Bauman, na sociedade',
+      'de consumo, as pessoas passam a ser avaliadas pelo que possuem{/}.',
+      'Sob essa ótica, o jovem vê na aposta um atalho para o status, de',
+      'modo que começa a jogar cedo e corre mais risco de se viciar.'
+    ],[
+      'Além disso, falta educação financeira à maior parte da população.',
+      'Muitos apostadores não entendem que, no longo prazo, as plataformas',
+      'sempre lucram e o jogador tende a perder. {r}A Base Nacional Comum',
+      'Curricular inclui a educação financeira entre os temas das escolas{/},',
+      'mas o conteúdo ainda é pouco trabalhado, de modo que famílias',
+      'comprometem salários e se endividam sem perceber.'
+    ],[
+      'Portanto, é preciso proteger a população das apostas. Para isso, {p}o',
+      'governo deve restringir a publicidade das bets, e as escolas devem',
+      'ensinar educação financeira desde cedo, a fim de evitar o vício e o',
+      'endividamento das famílias{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: o foco sai das consequências (dívidas e lavagem) e vai para as causas (publicidade e falta de educação financeira).',
+    'O D1 mostra quem lucra com a imagem de "diversão": influenciadores e atletas.',
+    'O D2 usa a BNCC, repertório educacional pouco usado e preciso.',
+    'A proposta tem dois agentes, um para cada causa.'
+  ]
+},
+{
+  id:'m54', base:'m14', curto:'Inteligência artificial',
+  tema:'A inteligência artificial na segurança pública',
+  tipo:'Versão 2 · posição equilibrada: benefícios com regras',
+  p:[
+    [
+      '{r}Para Aristóteles, a virtude está no meio-termo entre os excessos{/}.',
+      'Na segurança pública, a inteligência artificial pede esse equilíbrio:',
+      '{t}ela pode tornar a polícia mais eficiente, mas exige regras para',
+      'não reproduzir discriminações{/}.'
+    ],[
+      'Em primeiro lugar, a IA ajuda a usar melhor os dados policiais.',
+      'Sistemas que cruzam registros de ocorrências indicam horários e locais',
+      'com mais crimes, o que orienta o patrulhamento. {r}Em Pernambuco, o',
+      'Pacto pela Vida já mostrou que gestão baseada em dados e metas ajuda',
+      'a reduzir homicídios{/}. Assim, a tecnologia pode ampliar esse',
+      'modelo, de modo que o efetivo seja usado onde é mais necessário.'
+    ],[
+      'Além disso, a IA pode repetir preconceitos se não houver controle.',
+      'Algoritmos aprendem com dados do passado e, se esses dados refletem',
+      'abordagens desiguais, tendem a apontar sempre os mesmos bairros e',
+      'grupos. {r}O artigo 5º da Constituição garante que todos são iguais',
+      'perante a lei{/}. Por isso, decisões automatizadas precisam ser',
+      'auditadas para não transformar preconceito em estatística.'
+    ],[
+      'Portanto, a inteligência artificial deve ser usada com equilíbrio.',
+      'Para isso, {p}o Ministério da Justiça deve criar regras de uso e',
+      'auditoria dos sistemas, com transparência e controle humano, a fim de',
+      'unir eficiência policial e respeito aos direitos{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: lá a tese apontava só riscos; aqui o texto pesa benefícios e riscos.',
+    'Aristóteles (meio-termo) anuncia a estrutura do texto: um parágrafo a favor, outro com cuidados.',
+    'O D1 liga a IA a uma política real de Pernambuco baseada em dados.',
+    'O D2 explica como um algoritmo pode discriminar, sem jargão técnico.'
+  ]
+},
+{
+  id:'m55', base:'m15', curto:'Telas na infância',
+  tema:'O uso excessivo de celulares e telas por crianças e adolescentes',
+  tipo:'Versão 2 · foco nas causas: falta de supervisão e design viciante',
+  p:[
+    [
+      '{r}Para Zygmunt Bauman, a modernidade é "líquida": relações rápidas,',
+      'frágeis e cada vez mais mediadas pela tecnologia{/}. Entre crianças e',
+      'adolescentes, o uso excessivo de telas cresce, {t}sobretudo pela falta',
+      'de supervisão das famílias e pelo design viciante das plataformas{/}.'
+    ],[
+      'Em primeiro lugar, muitas famílias não acompanham o uso das telas.',
+      'Com pais sobrecarregados pelo trabalho, o celular vira babá, e a',
+      'criança passa horas na internet sem limites de tempo ou de conteúdo.',
+      '{r}A Constituição, no artigo 227, atribui também à família o dever de',
+      'proteger crianças e adolescentes{/}. Nesse sentido, a falta de',
+      'supervisão deixa os filhos expostos a riscos que não sabem reconhecer.'
+    ],[
+      'Além disso, as plataformas são projetadas para prender a atenção.',
+      'Rolagem infinita, notificações e vídeos curtos estimulam o uso',
+      'contínuo e dificultam a autorregulação, sobretudo na infância.',
+      '{r}O documentário "O Dilema das Redes" mostra que esses recursos são',
+      'pensados para maximizar o tempo de uso{/}. Sob essa ótica, culpar só',
+      'a criança ignora uma indústria feita para viciar.'
+    ],[
+      'Portanto, a infância digital exige proteção conjunta. Para isso,',
+      '{p}as famílias devem usar controle parental, as escolas devem orientar',
+      'os pais, e o Congresso deve exigir proteções nas plataformas, a fim',
+      'de garantir um uso saudável da tecnologia{/}.'
+    ]
+  ],
+  notas:[
+    'Compare com a versão 1: lá o texto tratava das consequências; aqui trata das causas.',
+    'O D1 responsabiliza a família com base na Constituição, sem culpar os pais de forma agressiva.',
+    'O D2 mostra que o problema também é da indústria, o que deixa a argumentação mais completa.',
+    'A proposta tem três agentes (família, escola e Congresso), cada um com uma ação clara.'
+  ]
 }
 ];
