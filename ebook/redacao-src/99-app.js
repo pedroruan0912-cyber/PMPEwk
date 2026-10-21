@@ -6,6 +6,8 @@ const store = {
 const $ = (s, el) => (el || document).querySelector(s);
 const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// segunda versão de uma redação-modelo (campo base = id da versão 1)
+const v2Of = id => MODELOS.find(m => m.base === id);
 
 // ---------- navegação ----------
 const views = $$('.view');
@@ -142,7 +144,7 @@ function renderQuiz(boxId, key, items, scoreId){
         <h4>Repertórios</h4><p>${esc(t.r)}</p>
         <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
         <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
-        ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a></p>` : ''}
+        ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a>${v2Of(t.m) ? ` · <a href="#modelos" data-mod="${v2Of(t.m).id}">Ver a versão 2 →</a>` : ''}</p>` : ''}
       </div></details>`
     ).join('');
   }
@@ -178,13 +180,16 @@ let showModelo = () => {};
 (function(){
   let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
   const sel = $('#modSel');
-  sel.innerHTML = MODELOS.map((m, i) => `<option value="${i}">${i + 1}. ${esc(m.curto)}</option>`).join('');
+  const opt = (m, label) => `<option value="${MODELOS.indexOf(m)}">${esc(label)}</option>`;
+  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+    + `<optgroup label="Versão 2 · temas de chance alta">${MODELOS.filter(m => m.base).map(m => opt(m, `${m.curto} · versão 2`)).join('')}</optgroup>`;
   function render(){
     const m = MODELOS[cur];
     const counts = m.p.map(p => p.length).join(' + ');
     $('#modBox').innerHTML = `
       <h3>${esc(m.tema)}</h3>
       <p class="small">${esc(m.tipo)} · ${counts} = ${m.p.flat().length} linhas</p>
+      ${m.base ? `<p class="small"><a href="#modelos" data-mod="${m.base}">← Ver a versão 1 deste tema</a></p>` : v2Of(m.id) ? `<p class="small"><a href="#modelos" data-mod="${v2Of(m.id).id}">Ver a versão 2 deste tema, com outra tese →</a></p>` : ''}
       <label class="small" style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="annotChk" ${annot ? 'checked' : ''}> Mostrar marcações</label>
       <div class="sheet-legend"><span><i class="sw" style="background:var(--hl-tese)"></i>Tese</span><span><i class="sw" style="background:var(--hl-rep)"></i>Repertório</span><span><i class="sw" style="background:var(--hl-con)"></i>Conectivo</span><span><i class="sw" style="background:var(--hl-prop)"></i>Proposta</span></div>
       ${sheetHTML(m.p, annot)}
@@ -199,6 +204,7 @@ let showModelo = () => {};
   }
   showModelo = id => { const i = MODELOS.findIndex(m => m.id === id); if(i >= 0) select(i); };
   sel.addEventListener('change', () => select(+sel.value));
+  $('#modBox').addEventListener('click', e => { const a = e.target.closest('[data-mod]'); if(!a) return; e.preventDefault(); showModelo(a.dataset.mod); $('.mod-nav').scrollIntoView({block: 'start'}); });
   $('#modPrev').addEventListener('click', () => select(cur - 1));
   $('#modNext').addEventListener('click', () => select(cur + 1));
   select(cur);
