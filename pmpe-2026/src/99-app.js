@@ -166,14 +166,14 @@
       if (!L.id) L.id = c.id + '-L' + (i + 1);
       var lab = L.querySelector('.art'); if (!lab) return;
       var label = lab.textContent.trim();
-      var src = c.disc === 'dh' ? c.short + ' · ' : '';
+      var src = c.disc === 'dh' && label.indexOf('·') < 0 ? c.short + ' · ' : '';
       SECS.push({ k: 'Artigo · ' + c.label + ' ' + c.short, t: src + label, cap: c, el: L, w: 2.2 });
       var base = (label.match(/Art(?:s)?\.?\s*\d+[º°]?(?:-[A-Z])?/i) || [label])[0];
       var prefix = label.indexOf('·') >= 0 ? label.split('·')[0].trim() + ' · ' : src;
       qsa('p', L).forEach(function (p, j) {
         var tx = p.textContent.trim();
         var m = tx.match(/^([IVXLC]+)\s*[–-]/) || tx.match(/^(§\s*\d+[º°]?(?:-[A-Z])?)/) || tx.match(/^(Parágrafo único)/i) || tx.match(/^(Art\.\s*\d+[º°]?(?:-[A-Z])?)/);
-        if (!m) return;
+        if (!m || (j === 0 && /^Art\./.test(m[1]))) return;
         if (!p.id) p.id = L.id + '-p' + (j + 1);
         var lbl = /^Art\./.test(m[1]) ? m[1] : base + ', ' + m[1];
         SECS.push({ k: 'Dispositivo · ' + c.label + ' ' + c.short, t: prefix + lbl, sub: tx.slice(0, 140), cap: c, el: p, w: 1.6 });
@@ -201,14 +201,35 @@
     // abas
     var tabs = document.createElement('div');
     tabs.className = 'ch-tabs'; tabs.setAttribute('role', 'tablist');
-    tabs.innerHTML = '<button class="ch-tab" role="tab" aria-selected="true" data-t="t">Teoria</button>' +
-      '<button class="ch-tab" role="tab" aria-selected="false" data-t="q">Questões (' + list.length + ')</button>';
+    var isLei = sec.classList.contains('lei-seca');
+    tabs.innerHTML = '<button class="ch-tab" role="tab" aria-selected="true" data-t="t">' + (isLei ? 'Texto integral da lei' : 'Teoria') + '</button>' +
+      (list.length ? '<button class="ch-tab" role="tab" aria-selected="false" data-t="q">Questões (' + list.length + ')</button>' : '');
     head.after(tabs);
     var miniBox = document.createElement('details');
     miniBox.className = 'ch-mini'; miniBox.open = window.innerWidth > 720;
     miniBox.innerHTML = '<summary>Neste capítulo (' + h2s.length + ' seções)</summary><ol>' + mini.join('') + '</ol>' +
       '<div class="read-row" style="padding:0 14px 12px"><button type="button" class="small-btn mark-read"></button><span class="q-exp"></span></div>';
     tabs.after(miniBox);
+    var FULL = { c6: ['dh-eca', 'ECA'], c9: ['dh-mp', 'Lei Maria da Penha'] };
+    if (FULL[c.id]) {
+      var fl = document.createElement('div'); fl.className = 'read-row'; fl.style.padding = '0 14px 12px';
+      fl.innerHTML = '<a class="btn" href="#' + FULL[c.id][0] + '">Ler o texto integral da ' + FULL[c.id][1] + ' →</a>';
+      miniBox.appendChild(fl);
+    }
+    if (isLei) {
+      var jb = document.createElement('div'); jb.className = 'read-row'; jb.style.padding = '0 14px 12px';
+      jb.innerHTML = '<label class="q-exp" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">Ir para o artigo nº <input type="text" class="filter-in art-jump" style="width:110px" placeholder="ex.: 136 ou 12-C" aria-label="Número do artigo"> <button type="button" class="small-btn art-go">Ir</button><span class="art-msg"></span></label>';
+      miniBox.appendChild(jb);
+      var arts = {};
+      qsa('.lei .art', theory).forEach(function (a) { var m = a.textContent.match(/Art\.\s*(\d+)[º°]?(-[A-Z]+)?/); if (m) arts[(m[1] + (m[2] || '')).toUpperCase()] = a.parentNode; });
+      var ji = jb.querySelector('.art-jump'), jm = jb.querySelector('.art-msg');
+      var goArt = function () {
+        var k = ji.value.replace(/[^0-9a-z-]/gi, '').toUpperCase();
+        if (arts[k]) { jm.textContent = ''; show(c.id, true, arts[k]); } else jm.textContent = k ? 'Artigo ' + k + ' não encontrado.' : '';
+      };
+      jb.querySelector('.art-go').addEventListener('click', goArt);
+      ji.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); goArt(); } });
+    }
     var markBtn = miniBox.querySelector('.mark-read');
     function paintRead() { markBtn.textContent = state.r[c.id] ? '✓ Capítulo estudado (desmarcar)' : 'Marcar capítulo como estudado'; }
     paintRead();
@@ -220,7 +241,7 @@
     var cta = document.createElement('div');
     cta.className = 'panel';
     cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo.</p><button type="button" class="btn go-q">Ir para as questões</button>';
-    theory.appendChild(cta);
+    if (list.length) theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';
     var prev = chapters[idx - 1], next = chapters[idx + 1];
@@ -371,7 +392,8 @@
         }
         if (words && words.length) highlight(el, words);
         requestAnimationFrame(function () {
-          el.scrollIntoView({ block: 'center' });
+          var tall = el.getBoundingClientRect().height > window.innerHeight * 0.55;
+          el.scrollIntoView({ block: tall ? 'start' : 'center', behavior: 'instant' });
           el.classList.add('flash-target');
           setTimeout(function () { el.classList.remove('flash-target'); }, 2400);
         });
@@ -634,7 +656,7 @@
     chapters.forEach(function (c) {
       var s = stats(qsOf(c.id));
       qsa('[data-p="' + c.id + '"]').forEach(function (el) {
-        el.innerHTML = (state.r[c.id] ? '<span class="read-ok">✓</span> ' : '') + s.answered + '/' + s.total;
+        el.innerHTML = (state.r[c.id] ? '<span class="read-ok">✓</span> ' : '') + (s.total ? s.answered + '/' + s.total : (c.el.classList.contains('lei-seca') ? 'lei' : ''));
       });
     });
     var errs = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; }).length;
@@ -668,7 +690,7 @@
   // ---------- simulado ----------
   $('simCaps').innerHTML = DISC.map(function (d) {
     return '<div class="field" style="margin-top:8px"><label><span class="disc-dot" style="background:' + d.c + '"></span>' + esc(d.n) + '</label></div><div class="cap-checks">' +
-      chapsOf(d.k).map(function (c) { return '<label><input type="checkbox" value="' + c.id + '" checked> <span>' + c.label + ' · ' + esc(c.short) + '</span></label>'; }).join('') + '</div>';
+      chapsOf(d.k).filter(function (c) { return qsOf(c.id).length; }).map(function (c) { return '<label><input type="checkbox" value="' + c.id + '" checked> <span>' + c.label + ' · ' + esc(c.short) + '</span></label>'; }).join('') + '</div>';
   }).join('');
   function capBoxes() { return qsa('#simCaps input'); }
   $('simAll').addEventListener('click', function () { capBoxes().forEach(function (b) { b.checked = true; }); });

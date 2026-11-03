@@ -13,7 +13,7 @@ Organizado pelo Edital nº 001/2026 (Instituto AOCP, prova em 21/02/2027): 60 qu
 | II | Raciocínio Lógico | Proposições e tabelas-verdade · Equivalências, negações e quantificadores · Argumentação, falácias e diagramas · Contagem e probabilidade |
 | II | Informática | Hardware, Windows e arquivos · Internet, e-mail e nuvem · Segurança da informação · Word/Excel/PowerPoint e LibreOffice |
 | III | Direito Constitucional | Princípios fundamentais (arts. 1º–4º) · Art. 5º integral e remédios · Direitos sociais, nacionalidade e políticos (arts. 6º–17) · Organização do Estado, Adm. Pública e art. 42 · Defesa do Estado e art. 144 integral · Poderes e Justiça Militar |
-| III | Direitos Humanos e Legislação Extravagante | Os 17 capítulos do e-book abaixo |
+| III | Direitos Humanos e Legislação Extravagante | Os 17 capítulos do e-book abaixo + texto integral e atualizado (até 2026, copiado do Planalto) do ECA (Lei 8.069/1990) e da Lei Maria da Penha (Lei 11.340/2006) |
 
 Recursos:
 
