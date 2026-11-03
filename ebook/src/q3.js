@@ -50,7 +50,7 @@ o:[`I.`,`I e II.`,`II e III.`,`III.`,`I e III.`],a:1,
 x:`I e II corretas. III errada: a CF não declara a tortura imprescritível. Diferente da Convenção da ONU, a lei brasileira não exige que o agente seja funcionário público no art. 1º, I.`},
 
 /* ===== CAP 9 – MARIA DA PENHA ===== */
-{c:'c9',b:'Vunesp',e:`Verificada a existência de risco atual ou iminente à vida ou à integridade física ou psicológica da mulher em situação de violência doméstica, o agressor será imediatamente afastado do lar pelo policial, nos termos do art. 12-C da Lei Maria da Penha, quando`,
+{c:'c9',b:'Vunesp',e:`Verificada a existência de risco atual ou iminente à vida ou à integridade física, sexual, psicológica, moral ou patrimonial da mulher em situação de violência doméstica, o agressor será imediatamente afastado do lar pelo policial, nos termos do art. 12-C da Lei Maria da Penha, quando`,
 o:[`a vítima assim solicitar, em qualquer Município.`,`o Município não for sede de comarca e não houver delegado disponível no momento da denúncia.`,`o Município for sede de comarca, mas o juiz estiver ausente.`,`houver autorização verbal do Ministério Público.`,`o agressor for reincidente.`],a:1,
 x:`Ordem do art. 12-C: I – juiz; II – delegado, quando o Município não for sede de comarca; III – policial, quando o Município não for sede de comarca e não houver delegado disponível.`},
 

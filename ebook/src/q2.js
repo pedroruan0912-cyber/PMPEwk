@@ -106,9 +106,9 @@ o:[`comete crime punido com reclusão de 2 a 4 anos.`,`comete infração adminis
 x:`Art. 250 do ECA (infração administrativa). Se houver exploração sexual, o proprietário responde também pelo crime do art. 244-A, § 1º.`},
 
 /* ----- ECA: bloco extra ----- */
-{c:'c6',b:'FCC',e:`Nos termos do art. 4º, parágrafo único, do ECA, a garantia de prioridade absoluta compreende, entre outras,`,
+{c:'c6',b:'FCC',e:`Nos termos do art. 4º, § 1º, do ECA, a garantia de prioridade absoluta compreende, entre outras,`,
 o:[`a primazia de receber proteção e socorro em quaisquer circunstâncias e a precedência de atendimento nos serviços públicos ou de relevância pública.`,`a isenção de tributos para famílias com crianças.`,`a preferência na tramitação de processos criminais em que o adolescente seja acusado.`,`a reserva de 10% das vagas em concursos públicos.`,`a gratuidade em transportes interestaduais.`],a:0,
-x:`Art. 4º, parágrafo único: (a) primazia de proteção e socorro em quaisquer circunstâncias; (b) precedência de atendimento nos serviços públicos ou de relevância pública; (c) preferência na formulação e execução das políticas sociais; (d) destinação privilegiada de recursos públicos.`},
+x:`Art. 4º, § 1º (antigo parágrafo único, renumerado pela Lei 15.240/2025): (a) primazia de proteção e socorro em quaisquer circunstâncias; (b) precedência de atendimento nos serviços públicos ou de relevância pública; (c) preferência na formulação e execução das políticas sociais; (d) destinação privilegiada de recursos públicos.`},
 
 {c:'c6',b:'Vunesp',e:`Os casos de suspeita ou confirmação de castigo físico, de tratamento cruel ou degradante e de maus-tratos contra criança ou adolescente serão obrigatoriamente comunicados`,
 o:[`à Defensoria Pública, que decidirá sobre a representação.`,`ao Conselho Tutelar da respectiva localidade, sem prejuízo de outras providências legais.`,`exclusivamente à autoridade policial.`,`à escola, que avaliará a necessidade de comunicar a família.`,`ao Juiz da Infância, que poderá dispensar a comunicação ao Conselho Tutelar.`],a:1,
@@ -202,9 +202,9 @@ x:`Art. 244-A, §§ 1º e 2º. Os crimes do ECA são de ação pública incondic
 o:[`deixa de matricular o filho na escola.`,`deixa de comunicar à autoridade pública o desaparecimento de criança ou adolescente.`,`permite que o filho use redes sociais antes dos 13 anos.`,`deixa de vacinar o filho.`,`viaja com o filho sem autorização do outro genitor.`],a:1,
 x:`Art. 244-C do ECA: reclusão de 2 a 4 anos e multa. A mesma lei criou o crime de intimidação sistemática (bullying) no art. 146-A do CP.`},
 
-{c:'c6',b:'FCC',e:`<p>Sobre os crimes envolvendo material pornográfico com crianças e adolescentes, considere:</p><ol type="I"><li>Adquirir, possuir ou armazenar o material configura crime, com pena diminuída de 1 a 2/3 se for de pequena quantidade.</li><li>Não há crime quando a posse ou o armazenamento tiverem a finalidade de comunicar às autoridades competentes, por agente público no exercício de suas funções, mantido o sigilo sobre o material.</li><li>O aliciamento, por qualquer meio de comunicação, com o fim de praticar ato libidinoso, previsto no art. 241-D, tem como vítima tanto a criança quanto o adolescente.</li></ol><p>Está correto o que se afirma APENAS em</p>`,
+{c:'c6',b:'FCC',e:`<p>Sobre os crimes envolvendo conteúdo de violência sexual contra crianças e adolescentes, considere:</p><ol type="I"><li>Adquirir, possuir, armazenar ou solicitar o material configura crime, com pena diminuída de 1/6 a 1/3 se for de pequena quantidade.</li><li>Não há crime quando a posse ou o armazenamento tiverem a finalidade de comunicar às autoridades competentes, por agente público no exercício de suas funções, mantido o sigilo sobre o material.</li><li>O aliciamento, por qualquer meio, com o fim de praticar ato libidinoso, previsto no art. 241-D, tem como vítima qualquer pessoa menor de 18 anos.</li></ol><p>Está correto o que se afirma APENAS em</p>`,
 o:[`I.`,`I e II.`,`II e III.`,`III.`,`I e III.`],a:1,
-x:`I e II: art. 241-B, §§ 1º e 2º. III errada: o art. 241-D refere-se apenas a criança (menor de 12 anos).`},
+x:`I e II: art. 241-B, §§ 1º e 2º (redação da Lei 15.487/2026). III errada: o art. 241-D protege o <b>menor de 14 anos</b> (antes da Lei 15.487/2026, só a criança).`},
 
 {c:'c6',b:'Vunesp',e:`Segundo a Súmula 342 do STJ, no procedimento para aplicação de medida socioeducativa, diante da confissão do adolescente,`,
 o:[`o juiz pode dispensar as demais provas, se houver concordância da defesa.`,`é nula a desistência de outras provas.`,`a medida de internação passa a ser obrigatória.`,`o Ministério Público pode aplicar a medida diretamente.`,`a remissão torna-se obrigatória.`],a:1,

@@ -1,0 +1,93 @@
+<div class="app">
+<aside class="side" id="side" aria-label="Sumário">
+  <p class="brand">PMPE Soldado<br>Prova Objetiva<small>Edital nº 001/2026 · Instituto AOCP</small></p>
+  <nav id="nav"></nav>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
+    <span class="where" id="where">Início</span>
+    <span class="progress-mini" title="Questões respondidas"><span class="bar"><i id="barFill"></i></span><span id="barTxt">0/0</span></span>
+    <span class="top-actions">
+      <button class="icon-btn" id="goBtn" title="Ir para assunto, artigo ou capítulo (Ctrl+K)">Ir para…</button>
+      <button class="icon-btn" id="findBtn" title="Pesquisar palavra ou frase em todo o conteúdo (/)">Buscar</button>
+      <button class="icon-btn" id="bizuBtn" aria-pressed="false" title="Mostrar só bizus, macetes e pegadinhas na teoria (B)">Só bizus</button>
+      <button class="icon-btn hide-sm" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
+    </span>
+  </header>
+  <div class="content">
+
+<!-- ======================= CAPA ======================= -->
+<section class="view cover" id="inicio">
+  <span class="eyebrow">Soldado PMPE 2026 · Instituto AOCP · Prova em 21/02/2027</span>
+  <h1>Toda a prova objetiva<br>em <mark>um só arquivo</mark></h1>
+  <p class="lede">As 6 disciplinas do edital: teoria com a letra da lei, fórmulas, linha do tempo de Pernambuco, quadros de <b>bizus</b> e <b>pegadinhas</b>, questões comentadas e simulado no formato da prova (60 questões em 3 blocos). Suas respostas e capítulos lidos ficam salvos neste navegador.</p>
+
+  <div class="count-box" id="countdown" aria-label="Contagem regressiva para a prova">
+    <div><b id="cdD">–</b><span>dias</span></div>
+    <div><b id="cdH">–</b><span>horas</span></div>
+    <div><b id="cdQ">0</b><span>questões</span></div>
+    <div><b id="cdB">0</b><span>bizus</span></div>
+    <div><b id="cdA">–</b><span>acertos</span></div>
+  </div>
+
+  <div class="cta-row">
+    <button class="btn" type="button" data-open="go">Ir para… (assunto, artigo)</button>
+    <button class="btn ghost" type="button" data-open="find">Pesquisar no conteúdo</button>
+    <a class="btn ghost" href="#bizus">Mural de bizus</a>
+    <a class="btn ghost" href="#simulado">Simulado AOCP</a>
+    <a class="btn ghost" href="#erros">Caderno de erros</a>
+  </div>
+
+  <div class="tip"><span class="tip-label">Como navegar rápido</span>
+  <ul>
+    <li><kbd>Ctrl</kbd>+<kbd>K</kbd> ou botão <b>Ir para…</b>: digite o nome de um assunto, capítulo ou artigo (<i>"art 5 LXIII"</i>, <i>"art. 144"</i>, <i>"crase"</i>, <i>"Nassau"</i>, <i>"tabela-verdade"</i>) e pressione <kbd>Enter</kbd>.</li>
+    <li><kbd>/</kbd> ou botão <b>Buscar</b>: pesquisa qualquer palavra ou frase em toda a teoria e mostra cada trecho encontrado, destacado.</li>
+    <li><kbd>B</kbd> ou botão <b>Só bizus</b>: a teoria passa a exibir apenas títulos, bizus, macetes e pegadinhas (revisão relâmpago). O <a href="#bizus">Mural de bizus</a> junta todos em uma página, com filtro.</li>
+    <li>Cada capítulo abre com o quadro <b>"Neste capítulo"</b> (atalho para cada seção) e termina com as questões.</li>
+  </ul></div>
+
+  <h2 style="font-size:1.35rem;margin:10px 0 4px">Raio-X do edital (Soldado QPMG)</h2>
+  <div class="tbl-wrap"><table class="tbl">
+    <tr><th>Bloco</th><th>Disciplinas</th><th>Questões</th><th>Mínimo para não ser eliminado</th></tr>
+    <tr><td>I</td><td>Língua Portuguesa (10) + História de Pernambuco (10)</td><td>20</td><td>30% do bloco = <b>6 acertos</b></td></tr>
+    <tr><td>II</td><td>Raciocínio Lógico (10) + Informática (10)</td><td>20</td><td>30% do bloco = <b>6 acertos</b></td></tr>
+    <tr><td>III</td><td>Direito Constitucional (10) + Direitos Humanos e Legislação Extravagante (10)</td><td>20</td><td>30% do bloco = <b>6 acertos</b></td></tr>
+    <tr><td>Total</td><td>60 questões de 5 alternativas (A a E), 1 ponto cada + Redação (40 pontos), no mesmo dia</td><td>60</td><td>30% da objetiva (18) e <b>nenhuma disciplina zerada</b></td></tr>
+  </table></div>
+  <aside class="bizu"><span class="bizu-label">Bizu estratégico</span>
+  <p>Cada matéria vale o mesmo (10 questões). Uma matéria "pequena" como Informática pesa tanto quanto Português. Zerar qualquer disciplina elimina, mesmo com nota alta nas outras: <b>nunca deixe uma matéria sem estudo</b>.</p>
+  <p>Na nota final, a objetiva soma com a redação. Cada acerto vale 1 ponto, e a classificação para as próximas fases costuma ser decidida por poucos pontos.</p></aside>
+
+  <h2 style="font-size:1.35rem;margin:10px 0 4px">Raio-X da banca: Instituto AOCP</h2>
+  <div class="banca-grid">
+    <div class="banca"><h3>Como pergunta</h3><ul>
+      <li>Comandos "assinale a alternativa <b>correta</b>" e "<b>INCORRETA</b>" alternados: circule o comando.</li>
+      <li>Muita <b>letra de lei</b> em Constitucional e Legislação: troca de prazo, de autoridade, de "poderá" por "deverá".</li>
+      <li>Português com <b>texto-base longo</b>; as perguntas de gramática usam frases do próprio texto (crase, função do "que", reescrita mantendo sentido).</li>
+      <li>Informática prática: atalhos, funções do Excel/Calc, conceitos de segurança e nuvem.</li>
+    </ul></div>
+    <div class="banca"><h3>Como se defender</h3><ul>
+      <li>Em reescrita, cheque <b>sentido + correção gramatical</b>: as duas coisas precisam ficar intactas.</li>
+      <li>Em RLM, monte a tabela ou o diagrama no papel; AOCP repete <b>negação de condicional</b> e <b>equivalências</b>.</li>
+      <li>Em História, guarde <b>ano + líder + motivo</b> de cada revolta pernambucana.</li>
+      <li>Não brigue com a banca: a alternativa "mais literal" costuma ser a certa.</li>
+    </ul></div>
+  </div>
+
+  <h2 style="font-size:1.35rem;margin:10px 0 4px">Conteúdo por disciplina</h2>
+  <div class="disc-grid" id="discGrid"></div>
+
+  <div class="panel">
+    <h3>Seu progresso</h3>
+    <p style="margin:0 0 8px;font-size:.94rem">Respostas e capítulos marcados como lidos ficam só neste navegador. Para recomeçar do zero:</p>
+    <button class="small-btn" id="resetAll">Apagar todas as respostas</button>
+    <div class="confirm" id="resetConfirm" hidden>
+      <span>Apagar o histórico de todas as questões e leituras?</span>
+      <button class="small-btn" id="resetYes">Sim, apagar</button>
+      <button class="small-btn" id="resetNo">Cancelar</button>
+    </div>
+  </div>
+  <p class="footer-note">Conteúdo organizado pelo Anexo II do Edital nº 001/2026 (Portaria Conjunta SAD/SDS, DOE-PE de 29/09/2026), conforme divulgado pelos principais cursos preparatórios. Legislação conferida até as alterações mais recentes conhecidas (inclui EC 131/2023 – perda da nacionalidade, EC 133/2024, Lei 14.994/2024 – pacote antifeminicídio, Lei 14.811/2024 e o julgamento do STF no RE 635.659). Confira sempre o edital e eventuais retificações no site do Instituto AOCP e a redação vigente das leis no Planalto e na ALEPE.</p>
+</section>

@@ -1,0 +1,367 @@
+
+<!-- ======================= INF 1 ======================= -->
+<section class="view chapter" id="inf1" data-disc="inf" data-title="Conceitos de hardware e software, sistema operacional Windows, arquivos, pastas e atalhos" data-short="Hardware, Windows e arquivos" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Informática · Capítulo 1</span>
+  <h1>Hardware, Windows e arquivos</h1>
+  <p class="lede">Conceitos básicos, Windows 10/11, Explorador de Arquivos, extensões e a tabela de atalhos com filtro.</p>
+</header>
+<div class="theory">
+
+<h2>1. Hardware e software</h2>
+<ul>
+<li><b>Hardware</b>: parte física. <b>Software</b>: programas. <b>Firmware</b>: software gravado no hardware (BIOS/UEFI).</li>
+<li><b>CPU</b> (processador): unidade de controle + ULA (unidade lógica e aritmética) + registradores. Núcleos (cores) e frequência (GHz).</li>
+<li><b>Memória RAM</b>: principal, volátil (apaga sem energia), de trabalho. <b>ROM</b>: somente leitura, não volátil. <b>Cache</b>: mais rápida, entre a CPU e a RAM. <b>Memória virtual</b>: usa o disco como extensão da RAM.</li>
+<li><b>Armazenamento</b> (memória secundária, não volátil): HD (magnético), <b>SSD</b> (flash, mais rápido e sem partes móveis), pen drive, cartão SD, DVD.</li>
+<li><b>Periféricos</b>: entrada (teclado, mouse, scanner, microfone, webcam), saída (monitor, impressora, caixa de som), entrada e saída (touchscreen, multifuncional, modem, pen drive/HD externo).</li>
+<li>Unidades: bit (0/1) &lt; byte (8 bits) &lt; KB (1.024 bytes) &lt; MB &lt; GB &lt; TB &lt; PB.</li>
+<li>Software: <b>básico</b> (sistema operacional), <b>aplicativo</b> (Word, navegador), <b>utilitário</b> (antivírus, compactador). Licenças: <b>proprietário</b> (Windows, MS Office), <b>livre</b> (Linux, LibreOffice – liberdade de usar, estudar, modificar e distribuir; GPL), <b>freeware</b> (gratuito, código fechado), <b>shareware/trial</b> (teste).</li>
+</ul>
+
+<h2>2. Windows 10/11</h2>
+<ul>
+<li><b>Área de trabalho</b>, <b>barra de tarefas</b> (no Windows 11, centralizada por padrão), menu <b>Iniciar</b>, <b>Central de Ações/notificações</b>, <b>Configurações</b> (substitui boa parte do Painel de Controle).</li>
+<li><b>Explorador de Arquivos</b> (Win+E): navegação por pastas, Acesso Rápido, Este Computador, OneDrive. Modos de exibição: ícones, lista, detalhes, conteúdo.</li>
+<li><b>Lixeira</b>: arquivos excluídos do disco local vão para a Lixeira e podem ser restaurados. <b>Shift+Delete</b> exclui permanentemente. Arquivos de <b>pen drive e unidades de rede</b> são excluídos sem passar pela Lixeira.</li>
+<li><b>Arrastar com o mouse</b>: na mesma unidade = <b>mover</b>; para outra unidade = <b>copiar</b>. Com <b>Ctrl</b> = copia; com <b>Shift</b> = move; com <b>Alt</b> (ou Ctrl+Shift) = cria atalho.</li>
+<li>Nomes de arquivo não podem conter: <b>\ / : * ? " &lt; &gt; |</b>.</li>
+<li>Ferramentas: Gerenciador de Tarefas (Ctrl+Shift+Esc), Limpeza de Disco, Desfragmentar e Otimizar Unidades, Windows Update, <b>Segurança do Windows/Microsoft Defender</b> (antivírus e firewall nativos), BitLocker (criptografia de disco), Histórico de Arquivos (backup), Ferramenta de Captura (Win+Shift+S), Área de transferência com histórico (Win+V), áreas de trabalho virtuais (Win+Ctrl+D).</li>
+<li>Sistemas de arquivos: <b>NTFS</b> (padrão do Windows, permissões e arquivos grandes), FAT32 (limite de 4 GB por arquivo), exFAT (pen drives).</li>
+</ul>
+<aside class="bizu"><span class="bizu-label">Bizu de prova</span><p>"Excluir arquivo do pen drive com Delete" → <b>não vai para a Lixeira</b>. "Arrastar arquivo do C: para o D:" → <b>copia</b>. "Arrastar dentro do C:" → <b>move</b>.</p></aside>
+
+<h2>3. Extensões de arquivo</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Tipo</th><th>Extensões</th></tr>
+<tr><td>Texto</td><td>.docx/.doc (Word), <b>.odt</b> (Writer), .txt, .rtf, .pdf</td></tr>
+<tr><td>Planilha</td><td>.xlsx/.xls (Excel), <b>.ods</b> (Calc), .csv</td></tr>
+<tr><td>Apresentação</td><td>.pptx/.ppt, <b>.ppsx</b> (abre direto em apresentação), <b>.odp</b> (Impress)</td></tr>
+<tr><td>Imagem</td><td>.jpg/.jpeg, .png (transparência), .gif (animação), .bmp, .svg (vetorial), .webp</td></tr>
+<tr><td>Áudio e vídeo</td><td>.mp3, .wav, .mp4, .avi, .mkv, .mov</td></tr>
+<tr><td>Compactados</td><td>.zip, .rar, .7z</td></tr>
+<tr><td>Executáveis (cuidado!)</td><td>.exe, .msi, .bat, .cmd, .scr, .vbs, .js; documentos com macro .docm/.xlsm</td></tr>
+<tr><td>Web</td><td>.html, .css, .js, .php</td></tr>
+</table></div>
+
+<h2>4. Atalhos de teclado (filtre por programa ou ação)</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Atalho</th><th>Ação</th><th>Onde</th></tr>
+<tr><td>Ctrl+C / Ctrl+X / Ctrl+V</td><td>Copiar / recortar / colar</td><td>Geral</td></tr>
+<tr><td>Ctrl+Z / Ctrl+Y</td><td>Desfazer / refazer</td><td>Geral</td></tr>
+<tr><td>Ctrl+A</td><td>Selecionar tudo (Windows, navegador, Writer, Calc)</td><td>Geral / LibreOffice</td></tr>
+<tr><td>Ctrl+T</td><td>Selecionar tudo no Word/Excel em português (no navegador, Ctrl+T abre nova aba)</td><td>Office PT-BR</td></tr>
+<tr><td>Ctrl+B / F12</td><td>Salvar / Salvar como</td><td>Office PT-BR</td></tr>
+<tr><td>Ctrl+S / Ctrl+Shift+S</td><td>Salvar / Salvar como</td><td>LibreOffice</td></tr>
+<tr><td>Ctrl+O / Ctrl+A</td><td>Novo documento / Abrir</td><td>Office PT-BR</td></tr>
+<tr><td>Ctrl+N / Ctrl+O</td><td>Novo documento / Abrir</td><td>LibreOffice</td></tr>
+<tr><td>Ctrl+P</td><td>Imprimir</td><td>Geral</td></tr>
+<tr><td>Ctrl+W / Ctrl+F4</td><td>Fechar documento</td><td>Office / LibreOffice</td></tr>
+<tr><td>Ctrl+L / Ctrl+U</td><td>Localizar / Substituir</td><td>Office PT-BR</td></tr>
+<tr><td>Ctrl+F / Ctrl+H</td><td>Localizar / Localizar e substituir (Ctrl+F também no navegador)</td><td>LibreOffice / navegador</td></tr>
+<tr><td>Ctrl+N / Ctrl+I / Ctrl+S (Word PT-BR)</td><td>Negrito / itálico / sublinhado no Word em português</td><td>Word PT-BR</td></tr>
+<tr><td>Ctrl+B / Ctrl+I / Ctrl+U</td><td>Negrito / itálico / sublinhado no Writer e no Office em inglês (no Word PT-BR, Ctrl+B = salvar)</td><td>Writer / EN</td></tr>
+<tr><td>Ctrl+E / Ctrl+G / Ctrl+J / Ctrl+Q</td><td>Centralizar / alinhar à direita / justificar / alinhar à esquerda (Word PT-BR)</td><td>Word PT-BR</td></tr>
+<tr><td>Ctrl+E / Ctrl+R / Ctrl+J / Ctrl+L</td><td>Centralizar / direita / justificar / esquerda</td><td>Writer</td></tr>
+<tr><td>Ctrl+Enter</td><td>Quebra de página</td><td>Word / Writer</td></tr>
+<tr><td>Shift+F3</td><td>Alternar maiúsculas/minúsculas</td><td>Word</td></tr>
+<tr><td>F7</td><td>Ortografia e gramática</td><td>Word / Writer</td></tr>
+<tr><td>F2</td><td>Renomear (Windows) / editar célula (Excel)</td><td>Windows / Excel</td></tr>
+<tr><td>F4</td><td>Alternar referência relativa/absoluta ($) ao editar fórmula</td><td>Excel</td></tr>
+<tr><td>Ctrl+; / Ctrl+Shift+;</td><td>Inserir data / hora atual</td><td>Excel</td></tr>
+<tr><td>Alt+= </td><td>AutoSoma</td><td>Excel</td></tr>
+<tr><td>F5 / Shift+F5</td><td>Iniciar apresentação do início / do slide atual</td><td>PowerPoint / Impress</td></tr>
+<tr><td>F5 / Ctrl+R</td><td>Atualizar página</td><td>Navegador / Windows</td></tr>
+<tr><td>Win</td><td>Abrir menu Iniciar</td><td>Windows</td></tr>
+<tr><td>Win+E</td><td>Explorador de Arquivos</td><td>Windows</td></tr>
+<tr><td>Win+D</td><td>Mostrar/ocultar a área de trabalho</td><td>Windows</td></tr>
+<tr><td>Win+L</td><td>Bloquear o computador</td><td>Windows</td></tr>
+<tr><td>Win+R</td><td>Executar</td><td>Windows</td></tr>
+<tr><td>Win+I</td><td>Configurações</td><td>Windows</td></tr>
+<tr><td>Win+V</td><td>Histórico da área de transferência</td><td>Windows</td></tr>
+<tr><td>Win+Shift+S</td><td>Captura de tela (Ferramenta de Captura)</td><td>Windows</td></tr>
+<tr><td>Win+Tab / Alt+Tab</td><td>Visão de tarefas / alternar entre janelas</td><td>Windows</td></tr>
+<tr><td>Win+M</td><td>Minimizar todas as janelas</td><td>Windows</td></tr>
+<tr><td>Win+. (ponto)</td><td>Painel de emojis</td><td>Windows</td></tr>
+<tr><td>Alt+F4</td><td>Fechar janela/programa</td><td>Windows</td></tr>
+<tr><td>Ctrl+Shift+Esc</td><td>Gerenciador de Tarefas</td><td>Windows</td></tr>
+<tr><td>Ctrl+Alt+Del</td><td>Tela de segurança (bloquear, trocar usuário, gerenciador)</td><td>Windows</td></tr>
+<tr><td>Shift+Delete</td><td>Excluir permanentemente (sem Lixeira)</td><td>Windows</td></tr>
+<tr><td>PrtScn / Alt+PrtScn</td><td>Captura da tela inteira / da janela ativa</td><td>Windows</td></tr>
+<tr><td>Ctrl+T / Ctrl+W</td><td>Nova aba / fechar aba</td><td>Navegador</td></tr>
+<tr><td>Ctrl+Shift+T</td><td>Reabrir a última aba fechada</td><td>Navegador</td></tr>
+<tr><td>Ctrl+Shift+N (Chrome/Edge) / Ctrl+Shift+P (Firefox/Edge)</td><td>Janela anônima/InPrivate/privada</td><td>Navegador</td></tr>
+<tr><td>Ctrl+H / Ctrl+J</td><td>Histórico / downloads</td><td>Navegador</td></tr>
+<tr><td>Ctrl+D</td><td>Adicionar aos favoritos</td><td>Navegador</td></tr>
+<tr><td>Ctrl+L / F6 / Alt+D</td><td>Selecionar a barra de endereços</td><td>Navegador</td></tr>
+<tr><td>F11</td><td>Tela cheia</td><td>Navegador</td></tr>
+<tr><td>Ctrl + / Ctrl − / Ctrl+0</td><td>Zoom + / − / 100%</td><td>Navegador / Office</td></tr>
+</table></div>
+<aside class="trap"><span class="trap-label">Pegadinha clássica</span><p>No <b>Word em português</b>: <b>Ctrl+N = negrito</b>, <b>Ctrl+S = sublinhado</b>, <b>Ctrl+B = salvar</b>, <b>Ctrl+O = novo</b>, <b>Ctrl+A = abrir</b>... (cuidado: no Word PT-BR, Ctrl+T seleciona tudo). No <b>Writer</b> (LibreOffice): <b>Ctrl+B = negrito</b>, <b>Ctrl+U = sublinhado</b>, <b>Ctrl+S = salvar</b>, <b>Ctrl+N = novo</b>, <b>Ctrl+O = abrir</b>, <b>Ctrl+A = selecionar tudo</b>. A banca troca esses atalhos de propósito.</p></aside>
+</div>
+</section>
+
+<!-- ======================= INF 2 ======================= -->
+<section class="view chapter" id="inf2" data-disc="inf" data-title="Internet, intranet e extranet: protocolos, navegadores, correio eletrônico, ferramentas de busca e computação em nuvem" data-short="Internet, e-mail e nuvem" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Informática · Capítulo 2</span>
+  <h1>Internet, intranet, e-mail e nuvem</h1>
+  <p class="lede">Conceitos de redes, protocolos que mais caem, recursos dos navegadores, campos do e-mail, operadores de busca e modelos de nuvem.</p>
+</header>
+<div class="theory">
+
+<h2>1. Internet, intranet e extranet</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Rede</th><th>Conceito</th></tr>
+<tr><td>Internet</td><td>Rede <b>mundial e pública</b> de computadores, baseada no conjunto de protocolos <b>TCP/IP</b>.</td></tr>
+<tr><td>Intranet</td><td>Rede <b>privada</b> de uma organização que usa as <b>mesmas tecnologias</b> da internet (TCP/IP, HTTP, navegador). Acesso restrito a funcionários. Pode ser acessada de fora com VPN.</td></tr>
+<tr><td>Extranet</td><td>Parte da intranet aberta a <b>parceiros externos autorizados</b> (fornecedores, clientes) via internet, com autenticação.</td></tr>
+</table></div>
+<aside class="trap"><span class="trap-label">Pegadinha</span><p>Intranet <b>não</b> precisa estar desconectada da internet e <b>usa</b> os mesmos protocolos (TCP/IP). O que a define é o <b>acesso restrito</b>.</p></aside>
+<p>Tipos de rede por alcance: <b>PAN</b> (pessoal, Bluetooth), <b>LAN</b> (local), <b>MAN</b> (metropolitana), <b>WAN</b> (longa distância). Wi-Fi = WLAN (padrão IEEE 802.11).</p>
+
+<h2>2. Protocolos</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Protocolo</th><th>Função</th><th>Porta padrão</th></tr>
+<tr><td>HTTP</td><td>Transferência de páginas web (hipertexto), sem criptografia</td><td>80</td></tr>
+<tr><td>HTTPS</td><td>HTTP com criptografia <b>TLS/SSL</b> (cadeado no navegador)</td><td>443</td></tr>
+<tr><td>FTP</td><td>Transferência de arquivos</td><td>20/21</td></tr>
+<tr><td>SMTP</td><td><b>Envio</b> de e-mails</td><td>25 / 587</td></tr>
+<tr><td>POP3</td><td><b>Recebimento</b> de e-mail: baixa as mensagens para o dispositivo (em regra, apaga do servidor)</td><td>110 / 995</td></tr>
+<tr><td>IMAP</td><td><b>Acesso</b> ao e-mail mantendo as mensagens no servidor (sincroniza em vários dispositivos)</td><td>143 / 993</td></tr>
+<tr><td>DNS</td><td>Traduz nomes de domínio (www.pm.pe.gov.br) em endereços IP</td><td>53</td></tr>
+<tr><td>DHCP</td><td>Atribui endereços IP automaticamente aos dispositivos da rede</td><td>67/68</td></tr>
+<tr><td>TCP</td><td>Transporte <b>confiável</b>, orientado à conexão (garante entrega e ordem)</td><td>—</td></tr>
+<tr><td>UDP</td><td>Transporte <b>rápido</b>, sem garantia de entrega (streaming, jogos, VoIP)</td><td>—</td></tr>
+<tr><td>IP</td><td>Endereçamento e roteamento dos pacotes (IPv4 – 32 bits; IPv6 – 128 bits)</td><td>—</td></tr>
+<tr><td>SSH / Telnet</td><td>Acesso remoto seguro / sem criptografia</td><td>22 / 23</td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Bizu do e-mail</span><p><span class="mnemo">"SMTP: Sua Mensagem Tá Partindo"</span> (envio). <b>POP</b> "puxa" para o computador. <b>IMAP</b> "mantém" no servidor. Webmail (Gmail, Outlook.com) usa o navegador (HTTPS).</p></aside>
+<p><b>URL</b>: protocolo://domínio/caminho → <i>https://www.pm.pe.gov.br/concurso</i>. Domínio <b>.gov.br</b> = governo; <b>.edu.br</b> = ensino; <b>.org</b> = organizações; <b>.br</b> = Brasil (gerido pelo Registro.br/NIC.br).</p>
+
+<h2>3. Navegadores</h2>
+<ul>
+<li>Exemplos: Google Chrome, Microsoft <b>Edge</b> (substituiu o Internet Explorer, descontinuado em 2022), Mozilla Firefox, Safari, Opera, Brave.</li>
+<li><b>Navegação anônima/privada</b> (InPrivate no Edge): <b>não salva histórico, cookies e dados de formulário</b> ao fechar a janela, mas <b>não</b> esconde a navegação do provedor, da empresa ou dos sites, e os <b>downloads e favoritos</b> permanecem.</li>
+<li><b>Cookies</b>: pequenos arquivos que os sites gravam no navegador (sessão, preferências, rastreamento). <b>Cache</b>: cópias locais de páginas/imagens para carregar mais rápido. <b>Histórico</b>: lista das páginas visitadas.</li>
+<li>Outros recursos: favoritos, abas, sincronização de conta, gerenciador de senhas, extensões, bloqueio de pop-ups, modo leitura.</li>
+</ul>
+
+<h2>4. Correio eletrônico</h2>
+<ul>
+<li><b>Para</b>: destinatário principal. <b>Cc</b> (com cópia): todos veem quem recebeu. <b>Cco</b> (com cópia oculta): os destinatários em Cco <b>não são vistos</b> pelos demais.</li>
+<li><b>Responder</b>: só ao remetente (sem anexos). <b>Responder a todos</b>: remetente + todos de Para e Cc (não os de Cco). <b>Encaminhar</b>: envia a mensagem (<b>com anexos</b>) a outra pessoa.</li>
+<li>Endereço: <i>usuario@dominio</i>. Clientes de e-mail: Outlook, Thunderbird; webmail: Gmail, Outlook.com.</li>
+<li><b>Spam</b>: mensagem não solicitada enviada em massa.</li>
+</ul>
+
+<h2>5. Ferramentas de busca (Google)</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Operador</th><th>Efeito</th><th>Exemplo</th></tr>
+<tr><td>"aspas"</td><td>Frase exata</td><td>"polícia militar de pernambuco"</td></tr>
+<tr><td>− (hífen)</td><td>Excluir termo</td><td>concurso pm −oficial</td></tr>
+<tr><td>site:</td><td>Restringir a um site/domínio</td><td>edital site:pe.gov.br</td></tr>
+<tr><td>filetype:</td><td>Tipo de arquivo</td><td>edital filetype:pdf</td></tr>
+<tr><td>OR</td><td>Um termo ou outro</td><td>soldado OR cabo</td></tr>
+<tr><td>* (asterisco)</td><td>Curinga (palavra desconhecida)</td><td>"lei * da penha"</td></tr>
+<tr><td>intitle: / inurl:</td><td>Termo no título / na URL</td><td>intitle:edital</td></tr>
+<tr><td>define:</td><td>Definição</td><td>define:flagrante</td></tr>
+<tr><td>.. (dois pontos)</td><td>Intervalo numérico</td><td>notebook R$2000..R$3000</td></tr>
+</table></div>
+
+<h2>6. Computação em nuvem</h2>
+<ul>
+<li>Uso de recursos (armazenamento, processamento, programas) via internet, sob demanda, pagando pelo uso, com <b>elasticidade</b> e acesso de qualquer lugar.</li>
+<li><b>Modelos de serviço</b>: <b>SaaS</b> (software como serviço – Gmail, Microsoft 365, Google Docs), <b>PaaS</b> (plataforma para desenvolver – Google App Engine, Azure App Service), <b>IaaS</b> (infraestrutura – servidores virtuais: AWS EC2, Azure VMs).</li>
+<li><b>Modelos de implantação</b>: pública, privada, híbrida e comunitária.</li>
+<li>Armazenamento: <b>OneDrive</b> (Microsoft), <b>Google Drive</b>, Dropbox, iCloud. Recurso de <b>sincronização</b> e compartilhamento por link com permissões (visualizar/editar).</li>
+</ul>
+<aside class="bizu"><span class="bizu-label">Bizu SaaS / PaaS / IaaS</span><p>Pense numa pizza: <b>IaaS</b> = alugar a cozinha (você faz tudo); <b>PaaS</b> = pizza pronta para assar em casa (você só cuida da sua aplicação); <b>SaaS</b> = pizza entregue pronta (você só usa).</p></aside>
+</div>
+</section>
+
+<!-- ======================= INF 3 ======================= -->
+<section class="view chapter" id="inf3" data-disc="inf" data-title="Segurança da informação: princípios, malwares, golpes, criptografia, autenticação, backup e boas práticas" data-short="Segurança da informação" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Informática · Capítulo 3</span>
+  <h1>Segurança da informação</h1>
+  <p class="lede">O assunto de Informática mais cobrado em concursos policiais: pilares, pragas virtuais, golpes, ferramentas de defesa e tipos de backup.</p>
+</header>
+<div class="theory">
+
+<h2>1. Pilares (princípios)</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Princípio</th><th>Significado</th><th>Mecanismo típico</th></tr>
+<tr><td>Confidencialidade</td><td>Só pessoas autorizadas acessam a informação</td><td>Criptografia, controle de acesso, senha</td></tr>
+<tr><td>Integridade</td><td>A informação não foi alterada indevidamente</td><td>Hash, assinatura digital</td></tr>
+<tr><td>Disponibilidade</td><td>A informação está acessível quando necessário</td><td>Backup, redundância, nobreak, proteção contra DoS</td></tr>
+<tr><td>Autenticidade</td><td>Garante a identidade do autor/origem</td><td>Assinatura e certificado digital, login</td></tr>
+<tr><td>Irretratabilidade (não repúdio)</td><td>O autor não pode negar a autoria</td><td>Assinatura digital com certificado</td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Macete</span><p><span class="mnemo">CIDA</span> (+ não repúdio): <b>C</b>onfidencialidade, <b>I</b>ntegridade, <b>D</b>isponibilidade, <b>A</b>utenticidade.</p></aside>
+
+<h2>2. Malwares (códigos maliciosos)</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Praga</th><th>Característica marcante</th></tr>
+<tr><td>Vírus</td><td>Infecta arquivos/programas e <b>depende da execução</b> do hospedeiro para se propagar (anexa-se a outro arquivo).</td></tr>
+<tr><td>Worm (verme)</td><td><b>Autorreplicante</b>: propaga-se sozinho pela rede, explorando vulnerabilidades, sem precisar de hospedeiro; consome banda e recursos.</td></tr>
+<tr><td>Cavalo de Troia (trojan)</td><td>Programa aparentemente útil que executa funções maliciosas ocultas; <b>não se replica</b>.</td></tr>
+<tr><td>Spyware</td><td>Espiona e envia informações do usuário. Subtipos: <b>keylogger</b> (captura teclas digitadas), <b>screenlogger</b> (captura a tela/posição do clique – contorna teclado virtual), <b>adware</b> (exibe propaganda).</td></tr>
+<tr><td>Ransomware</td><td><b>Criptografa</b> os dados e exige <b>resgate</b> (geralmente em criptomoeda). Melhor defesa: <b>backup</b> atualizado e desconectado.</td></tr>
+<tr><td>Backdoor</td><td>Abre uma "porta dos fundos" para acesso remoto futuro do invasor.</td></tr>
+<tr><td>Rootkit</td><td>Conjunto de técnicas para <b>esconder</b> a presença do invasor/malware no sistema.</td></tr>
+<tr><td>Bot / botnet</td><td>Computador "zumbi" controlado remotamente; a rede de bots (botnet) é usada em ataques DDoS e envio de spam.</td></tr>
+<tr><td>Exploit</td><td>Código que explora uma vulnerabilidade específica.</td></tr>
+<tr><td>Hijacker</td><td>Sequestra o navegador (altera página inicial, buscador).</td></tr>
+</table></div>
+<aside class="trap"><span class="trap-label">Pegadinha vírus × worm</span><p><b>Vírus</b> precisa de hospedeiro e de execução. <b>Worm</b> é independente e se espalha sozinho pela rede. Se a questão disser "propaga-se automaticamente pelas redes, enviando cópias de si mesmo", é <b>worm</b>.</p></aside>
+
+<h2>3. Golpes e ataques</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Golpe/ataque</th><th>Como funciona</th></tr>
+<tr><td>Phishing</td><td>Mensagem falsa (e-mail, SMS – <b>smishing</b>, voz – <b>vishing</b>, WhatsApp) que imita banco/órgão para "pescar" dados e senhas</td></tr>
+<tr><td>Pharming</td><td>Envenenamento de DNS: o usuário digita o endereço correto e é desviado para um site falso</td></tr>
+<tr><td>Spoofing</td><td>Falsificação de remetente (e-mail), IP ou identidade</td></tr>
+<tr><td>Engenharia social</td><td>Manipulação psicológica para obter informações (falso técnico, falso parente)</td></tr>
+<tr><td>DoS / DDoS</td><td>Sobrecarrega um serviço até ficar indisponível; DDoS usa muitas máquinas (botnet) – ataca a <b>disponibilidade</b></td></tr>
+<tr><td>Força bruta</td><td>Tentativa exaustiva de senhas</td></tr>
+<tr><td>Sniffing</td><td>Interceptação do tráfego da rede</td></tr>
+<tr><td>Man-in-the-middle</td><td>Atacante se coloca entre as partes e intercepta/altera a comunicação</td></tr>
+<tr><td>Defacement</td><td>Pichação/alteração do conteúdo de um site</td></tr>
+<tr><td>Hoax</td><td>Boato, corrente falsa</td></tr>
+<tr><td>SIM swap</td><td>Clonagem do chip do celular para receber códigos de verificação</td></tr>
+</table></div>
+
+<h2>4. Mecanismos de proteção</h2>
+<ul>
+<li><b>Antivírus/antimalware</b>: detecta e remove pragas (assinaturas e análise heurística). Manter atualizado.</li>
+<li><b>Firewall</b>: filtra o tráfego de rede segundo regras (bloqueia acessos não autorizados). <b>Não</b> é antivírus: não remove vírus de arquivos.</li>
+<li><b>Antispam</b>, <b>antispyware</b>, <b>IDS/IPS</b> (detecção/prevenção de intrusão), <b>proxy</b> (intermediário e filtro de acesso).</li>
+<li><b>VPN</b>: túnel criptografado sobre a internet (acesso seguro à intranet de fora).</li>
+<li><b>Atualizações</b> (patches) do sistema e dos programas corrigem vulnerabilidades.</li>
+</ul>
+
+<h2>5. Criptografia, assinatura e certificado digital</h2>
+<div class="cols">
+<div><h4>Simétrica (chave secreta)</h4><p>Uma <b>única chave</b> cifra e decifra. Rápida. Problema: compartilhar a chave com segurança. Ex.: AES, DES, 3DES.</p></div>
+<div><h4>Assimétrica (chave pública)</h4><p>Par de chaves: <b>pública</b> (divulgada) e <b>privada</b> (secreta). Ex.: RSA. Mais lenta, resolve a distribuição de chaves.</p></div>
+</div>
+<ul>
+<li><b>Sigilo</b>: cifra-se com a chave <b>pública do destinatário</b>; só a chave <b>privada do destinatário</b> decifra.</li>
+<li><b>Assinatura digital</b>: o remetente assina com a sua chave <b>privada</b>; qualquer um verifica com a chave <b>pública do remetente</b>. Garante <b>autenticidade, integridade e não repúdio</b> (não garante confidencialidade).</li>
+<li><b>Hash</b>: resumo de tamanho fixo de uma mensagem (SHA-256); qualquer alteração muda o hash → integridade.</li>
+<li><b>Certificado digital</b>: documento eletrônico emitido por uma <b>Autoridade Certificadora (AC)</b> que vincula uma chave pública a uma pessoa/entidade. No Brasil: <b>ICP-Brasil</b> (raiz: ITI). Tipos A1 (arquivo, validade de 1 ano) e A3 (token/cartão).</li>
+</ul>
+<aside class="bizu"><span class="bizu-label">Bizu das chaves</span><p><b>Quero segredo?</b> Uso a chave pública <b>de quem vai receber</b>. <b>Quero provar que fui eu?</b> Uso a <b>minha</b> chave privada (assinatura).</p></aside>
+
+<h2>6. Autenticação</h2>
+<ul>
+<li>Fatores: <b>algo que você sabe</b> (senha, PIN), <b>algo que você tem</b> (token, celular, cartão), <b>algo que você é</b> (biometria: digital, face, íris).</li>
+<li><b>Autenticação de dois fatores / multifator (2FA/MFA)</b>: combina fatores de <b>tipos diferentes</b> (senha + código no celular). Duas senhas não são 2FA.</li>
+<li>Senha forte: longa, com letras maiúsculas e minúsculas, números e símbolos; não reutilizar; usar gerenciador de senhas.</li>
+<li><b>CAPTCHA</b>: teste para distinguir humanos de robôs.</li>
+</ul>
+
+<h2>7. Backup (cópia de segurança)</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Tipo</th><th>O que copia</th><th>Marca o arquivo como copiado?</th><th>Restauração</th></tr>
+<tr><td>Completo (normal/full)</td><td>Todos os arquivos selecionados</td><td>Sim</td><td>Só o último completo</td></tr>
+<tr><td>Incremental</td><td>Só o que mudou desde o <b>último backup (completo ou incremental)</b></td><td>Sim</td><td>Último completo + <b>todos</b> os incrementais seguintes (backup rápido, restauração lenta)</td></tr>
+<tr><td>Diferencial</td><td>Tudo o que mudou desde o <b>último completo</b></td><td>Não</td><td>Último completo + <b>último</b> diferencial (cresce a cada dia)</td></tr>
+<tr><td>Cópia / diário</td><td>Arquivos selecionados / alterados no dia</td><td>Não</td><td>—</td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Regra 3-2-1</span><p><b>3</b> cópias dos dados, em <b>2</b> mídias diferentes, sendo <b>1</b> fora do local (nuvem ou outro prédio). Backup offline é a principal proteção contra <b>ransomware</b>.</p></aside>
+
+<h2>8. LGPD e boas práticas</h2>
+<ul>
+<li><b>Lei Geral de Proteção de Dados (Lei 13.709/2018)</b>: regula o tratamento de dados pessoais; dado <b>sensível</b> = origem racial/étnica, convicção religiosa, opinião política, saúde, vida sexual, dado genético ou biométrico. Fiscalização: <b>ANPD</b>. A proteção de dados pessoais é direito fundamental (CF, art. 5º, LXXIX – EC 115/2022).</li>
+<li>Não clicar em links de mensagens inesperadas; conferir o endereço e o cadeado (HTTPS – que indica conexão criptografada, não que o site é honesto); desconfiar de urgência; bloquear a tela (Win+L); não usar Wi-Fi público para transações sem VPN.</li>
+</ul>
+</div>
+</section>
+
+<!-- ======================= INF 4 ======================= -->
+<section class="view chapter" id="inf4" data-disc="inf" data-title="Editores de texto, planilhas e apresentações: Microsoft Office (Word, Excel, PowerPoint) e LibreOffice (Writer, Calc, Impress)" data-short="Word, Excel e LibreOffice" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Informática · Capítulo 4</span>
+  <h1>Word/Writer, Excel/Calc e PowerPoint/Impress</h1>
+  <p class="lede">Referências de célula, funções que mais caem, mensagens de erro e diferenças entre Microsoft 365 e LibreOffice.</p>
+</header>
+<div class="theory">
+
+<h2>1. Planilhas: fundamentos</h2>
+<ul>
+<li>Célula = coluna + linha (A1). Intervalo: <b>A1:B5</b> ("até", no Calc também). União: <b>A1;C1</b> (no Excel PT-BR o separador de argumentos é <b>;</b>).</li>
+<li>Toda fórmula começa com <b>=</b> (também aceita + ou −). Operadores: + − * / ^ (potência); &amp; (concatenar texto); comparação = &gt; &lt; &gt;= &lt;= &lt;&gt;.</li>
+<li>Precedência: <b>( ) → ^ → * / → + − → &amp; → comparações</b>. Ex.: =2+3*2^2 = 2+3*4 = 14.</li>
+<li>Referência a outra planilha: Excel <b>=Plan1!A1</b>; Calc <b>=Plan1.A1</b> (ou $Plan1.A1).</li>
+</ul>
+
+<h2>2. Referências relativas, absolutas e mistas</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Referência</th><th>Ao copiar a fórmula</th></tr>
+<tr><td>A1 (relativa)</td><td>Coluna e linha se ajustam</td></tr>
+<tr><td>$A$1 (absoluta)</td><td>Nada muda</td></tr>
+<tr><td>$A1 (mista)</td><td>Coluna fixa, linha muda</td></tr>
+<tr><td>A$1 (mista)</td><td>Coluna muda, linha fixa</td></tr>
+</table></div>
+<div class="formula">C1 contém =A1+$B$1. Copiada para D3 (1 coluna à direita, 2 linhas abaixo):
+A1 → B3 (relativa: +1 coluna, +2 linhas);  $B$1 → $B$1 (fixa).   Resultado: =B3+$B$1</div>
+<aside class="bizu"><span class="bizu-label">Bizu do cifrão</span><p>"O <b>$</b> tranca o que está <b>logo depois</b> dele." $A1 tranca a coluna A; A$1 tranca a linha 1. Conte o deslocamento: colunas para a direita somam na letra; linhas para baixo somam no número.</p></aside>
+
+<h2>3. Funções que mais caem</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Função</th><th>O que faz</th><th>Exemplo</th></tr>
+<tr><td>SOMA</td><td>Soma valores</td><td>=SOMA(A1:A5) · =SOMA(A1;A5) (só os dois)</td></tr>
+<tr><td>MÉDIA</td><td>Média aritmética (ignora células vazias e texto)</td><td>=MÉDIA(B1:B10)</td></tr>
+<tr><td>MÁXIMO / MÍNIMO</td><td>Maior / menor valor</td><td>=MÁXIMO(C1:C9)</td></tr>
+<tr><td>MAIOR / MENOR</td><td>k-ésimo maior / menor</td><td>=MAIOR(A1:A10;2) (2º maior)</td></tr>
+<tr><td>CONT.NÚM</td><td>Conta células com <b>números</b></td><td>=CONT.NÚM(A1:A10)</td></tr>
+<tr><td>CONT.VALORES</td><td>Conta células <b>não vazias</b> (qualquer conteúdo)</td><td>=CONT.VALORES(A1:A10)</td></tr>
+<tr><td>CONTAR.VAZIO</td><td>Conta células vazias</td><td>=CONTAR.VAZIO(A1:A10)</td></tr>
+<tr><td>CONT.SE</td><td>Conta células que atendem a um critério</td><td>=CONT.SE(A1:A10;"&gt;=7")</td></tr>
+<tr><td>CONT.SES</td><td>Conta com vários critérios</td><td>=CONT.SES(A:A;"PM";B:B;"&gt;30")</td></tr>
+<tr><td>SOMASE</td><td>Soma com critério</td><td>=SOMASE(A1:A10;"Recife";B1:B10)</td></tr>
+<tr><td>SE</td><td>Teste lógico</td><td>=SE(A1&gt;=6;"Aprovado";"Reprovado")</td></tr>
+<tr><td>E / OU</td><td>Combinam condições</td><td>=SE(E(A1&gt;=6;B1&gt;=6);"OK";"Não")</td></tr>
+<tr><td>PROCV</td><td>Procura um valor na 1ª coluna de uma tabela e retorna a coluna indicada</td><td>=PROCV(123;A2:D50;3;0) (0/FALSO = exato)</td></tr>
+<tr><td>PROCX (Microsoft 365)</td><td>Busca flexível em qualquer direção</td><td>=PROCX(E2;A:A;C:C)</td></tr>
+<tr><td>ARRED / TRUNCAR / INT</td><td>Arredonda / corta casas / parte inteira</td><td>=ARRED(2,567;2) → 2,57 · =TRUNCAR(2,567;1) → 2,5</td></tr>
+<tr><td>CONCATENAR / CONCAT / &amp;</td><td>Junta textos</td><td>=A1&amp;" "&amp;B1</td></tr>
+<tr><td>HOJE / AGORA</td><td>Data atual / data e hora (sem argumentos)</td><td>=HOJE()</td></tr>
+<tr><td>ESQUERDA / DIREITA / EXT.TEXTO / NÚM.CARACT</td><td>Extrair partes do texto / contar caracteres</td><td>=ESQUERDA("PMPE";2) → PM</td></tr>
+<tr><td>MAIÚSCULA / MINÚSCULA / PRI.MAIÚSCULA</td><td>Alterar caixa</td><td>=MAIÚSCULA(A1)</td></tr>
+<tr><td>MED / MODO</td><td>Mediana / valor mais frequente</td><td>=MED(A1:A9)</td></tr>
+</table></div>
+
+<h2>4. Mensagens de erro</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Erro</th><th>Causa</th></tr>
+<tr><td>#DIV/0!</td><td>Divisão por zero ou por célula vazia</td></tr>
+<tr><td>#N/D</td><td>Valor não disponível (PROCV não encontrou)</td></tr>
+<tr><td>#NOME?</td><td>Nome de função ou intervalo não reconhecido (digitado errado)</td></tr>
+<tr><td>#REF!</td><td>Referência inválida (célula excluída)</td></tr>
+<tr><td>#VALOR!</td><td>Tipo de argumento errado (somar texto com número)</td></tr>
+<tr><td>#NÚM!</td><td>Problema numérico (raiz de negativo)</td></tr>
+<tr><td>#####</td><td>Coluna estreita demais para exibir o valor (ou data negativa)</td></tr>
+<tr><td>Referência circular</td><td>A fórmula se refere à própria célula</td></tr>
+</table></div>
+<aside class="trap"><span class="trap-label">Pegadinha</span><p>No Excel PT-BR, "=SOMA(A1:A3)" soma A1, A2 e A3; "=SOMA(A1;A3)" soma <b>só</b> A1 e A3. <b>CONT.NÚM</b> ignora textos; <b>CONT.VALORES</b> conta textos também.</p></aside>
+
+<h2>5. Editores de texto</h2>
+<ul>
+<li>Word (.docx) × Writer (.odt; formato aberto ODF, padrão do LibreOffice). O Writer exporta PDF diretamente; o Word também (Salvar como PDF).</li>
+<li>Recursos: estilos (Título 1, 2...) → <b>sumário automático</b>; cabeçalho e rodapé; quebra de página (Ctrl+Enter) e de seção; colunas; mala direta (correspondência em massa); controle de alterações (revisão); comentários; marca-d'água; <b>pincel de formatação</b> (copia formato).</li>
+<li>Recuo × espaçamento: recuo é a distância da margem; espaçamento é entre linhas/parágrafos (simples, 1,5, duplo).</li>
+<li>Orientação retrato/paisagem; margens; tamanho A4 (padrão no Brasil).</li>
+</ul>
+
+<h2>6. Apresentações</h2>
+<ul>
+<li>PowerPoint (.pptx) × Impress (.odp). <b>F5</b> inicia do primeiro slide; <b>Shift+F5</b> do slide atual. <b>Esc</b> encerra.</li>
+<li>Modos de exibição: Normal, Classificação de slides, Anotações, Leitura, Apresentação de slides. <b>Slide mestre</b> define o padrão visual de todos os slides.</li>
+<li><b>Transição</b> = efeito entre slides; <b>animação</b> = efeito em objetos dentro do slide.</li>
+</ul>
+<aside class="bizu"><span class="bizu-label">Bizu Microsoft 365 × LibreOffice</span><p>Microsoft 365 é <b>proprietário</b> e por assinatura (inclui OneDrive e Teams; coautoria em tempo real na nuvem). LibreOffice é <b>software livre</b> e gratuito (Writer, Calc, Impress, Draw, Base, Math). Ambos abrem os formatos um do outro.</p></aside>
+</div>
+</section>
