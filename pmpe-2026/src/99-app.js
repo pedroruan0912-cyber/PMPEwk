@@ -172,10 +172,10 @@
       var prefix = label.indexOf('·') >= 0 ? label.split('·')[0].trim() + ' · ' : src;
       qsa('p', L).forEach(function (p, j) {
         var tx = p.textContent.trim();
-        var m = tx.match(/^([IVXLC]+)\s*[–-]/) || tx.match(/^(§\s*\d+[º°]?(?:-[A-Z])?)/) || tx.match(/^(Parágrafo único)/i) || tx.match(/^(Art\.\s*\d+[º°]?(?:-[A-Z])?)/);
+        var m = tx.match(/^([IVXLC]+)\s*[–-]/) || tx.match(/^(§\s*\d+[º°]?(?:-[A-Z])?)/) || tx.match(/^(Parágrafo único)/i) || tx.match(/^(Art\.\s*\d+[º°]?(?:-[A-Z])?)/) || tx.match(/^(\d+)\.\s/);
         if (!m || (j === 0 && /^Art\./.test(m[1]))) return;
         if (!p.id) p.id = L.id + '-p' + (j + 1);
-        var lbl = /^Art\./.test(m[1]) ? m[1] : base + ', ' + m[1];
+        var lbl = /^Art\./.test(m[1]) ? m[1] : base + ', ' + (/^\d+$/.test(m[1]) ? 'item ' + m[1] : m[1]);
         SECS.push({ k: 'Dispositivo · ' + c.label + ' ' + c.short, t: prefix + lbl, sub: tx.slice(0, 140), cap: c, el: p, w: 1.6 });
       });
     });
@@ -210,10 +210,10 @@
     miniBox.innerHTML = '<summary>Neste capítulo (' + h2s.length + ' seções)</summary><ol>' + mini.join('') + '</ol>' +
       '<div class="read-row" style="padding:0 14px 12px"><button type="button" class="small-btn mark-read"></button><span class="q-exp"></span></div>';
     tabs.after(miniBox);
-    var FULL = { c6: ['dh-eca', 'ECA'], c9: ['dh-mp', 'Lei Maria da Penha'] };
+    var FULL = { c5: ['dh-sj', 'Convenção (Pacto de San José)'], c6: ['dh-eca', 'Lei (ECA)'], c7: ['dh-abu', 'Lei de Abuso de Autoridade'], c8: ['dh-tor', 'Lei de Tortura'], c9: ['dh-mp', 'Lei Maria da Penha'], c10: ['dh-rac', 'Lei 7.716/1989'], c11: ['dh-amb', 'Lei de Crimes Ambientais'], c12: ['dh-hed', 'Lei de Crimes Hediondos'], c13: ['dh-dro', 'Lei de Drogas'], c15: ['dh-ido', 'Estatuto da Pessoa Idosa'], c16: ['dh-juv', 'Estatuto da Juventude'] };
     if (FULL[c.id]) {
       var fl = document.createElement('div'); fl.className = 'read-row'; fl.style.padding = '0 14px 12px';
-      fl.innerHTML = '<a class="btn" href="#' + FULL[c.id][0] + '">Ler o texto integral da ' + FULL[c.id][1] + ' →</a>';
+      fl.innerHTML = '<a class="btn" href="#' + FULL[c.id][0] + '">Ler o texto integral: ' + FULL[c.id][1] + ' →</a>';
       miniBox.appendChild(fl);
     }
     if (isLei) {
@@ -335,7 +335,11 @@
     var cs = chapsOf(d.k); if (!cs.length) return;
     var open = navOpen[d.k] !== false;
     h += '<button type="button" class="nav-disc" data-d="' + d.k + '" aria-expanded="' + open + '"><span class="disc-dot" style="background:' + d.c + '"></span>' + esc(d.n) + '<span class="cnt">Bloco ' + d.b + '</span></button><div class="nav-sub">';
-    cs.forEach(function (c) { h += navLink(c.id, d.a + ' ' + c.num, c.short); });
+    var leiHead = false;
+    cs.forEach(function (c) {
+      if (!leiHead && c.el.classList.contains('lei-seca')) { leiHead = true; h += '<div class="nav-group" style="margin:10px 0 2px 8px">Lei seca – textos integrais</div>'; }
+      h += navLink(c.id, d.a + ' ' + c.num, c.short);
+    });
     h += '</div>';
   });
   h += '<div class="nav-group">Preferências</div><a class="nav-link" href="#" id="navTheme"><span class="nav-num">◐</span><span>Alternar tema claro/escuro</span><span></span></a>';
@@ -519,6 +523,7 @@
     }
     if (s.ns.indexOf(qn) >= 0) score += 2.5;
     if (s.ns.indexOf(qn) === 0) score += 1;
+    if (qt.length > 1 && s.nt[s.nt.length - 1] === qt[qt.length - 1]) score += 3;
     if (qt.indexOf('art') >= 0 && s.w === 3) score *= 0.5;
     return score * s.w;
   }

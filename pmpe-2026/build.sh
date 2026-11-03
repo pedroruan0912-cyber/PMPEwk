@@ -16,7 +16,9 @@ PARTS=(
   "$SRC/dc1-3.html" "$SRC/dc4-6.html"
   "$DH/c01-03.html" "$DH/c04-05.html" "$DH/c06.html" "$DH/c07-08.html"
   "$DH/c09-10.html" "$DH/c11-13.html" "$DH/c14-17.html"
-  "$SRC/dh-eca-lei.html" "$SRC/dh-mp-lei.html"
+  "$SRC/dh-sj-lei.html" "$SRC/dh-eca-lei.html" "$SRC/dh-abu-lei.html" "$SRC/dh-tor-lei.html" "$SRC/dh-mp-lei.html"
+  "$SRC/dh-rac-lei.html" "$SRC/dh-amb-lei.html" "$SRC/dh-hed-lei.html" "$SRC/dh-dro-lei.html"
+  "$SRC/dh-ido-lei.html" "$SRC/dh-juv-lei.html"
   "$SRC/90-tools.html"
 )
 SCRIPTS=(
