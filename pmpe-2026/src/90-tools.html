@@ -1,0 +1,120 @@
+
+<!-- ======================= MURAL DE BIZUS ======================= -->
+<section class="view" id="bizus" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Revisão relâmpago</span>
+  <h1>Mural de bizus</h1>
+  <p class="lede">Todos os bizus, macetes, pegadinhas e dicas do material em uma página. Filtre por disciplina, tipo ou palavra e clique em "ver no capítulo" para ir direto ao contexto.</p>
+</header>
+<div class="panel">
+  <div class="form-row">
+    <div class="field"><label for="bzDisc">Disciplina</label><select id="bzDisc"><option value="">Todas</option></select></div>
+    <div class="field" style="flex:1;min-width:200px"><label for="bzQ">Filtrar por palavra</label><input id="bzQ" class="filter-in" type="search" placeholder="ex.: crase, 1817, habeas, worm"></div>
+  </div>
+  <div class="chips" id="bzTypes">
+    <button type="button" class="chip-btn" data-t="bizu" aria-pressed="true">Bizus e macetes</button>
+    <button type="button" class="chip-btn" data-t="trap" aria-pressed="true">Pegadinhas</button>
+    <button type="button" class="chip-btn" data-t="tip" aria-pressed="true">Dicas e quadros</button>
+  </div>
+  <p class="q-exp" id="bzCount"></p>
+</div>
+<div id="bzList"></div>
+</section>
+
+<!-- ======================= SIMULADO ======================= -->
+<section class="view" id="simulado" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Treino</span>
+  <h1>Simulado</h1>
+  <p class="lede">Modo <b>Prova PMPE</b>: 60 questões (10 por disciplina), separadas em 3 blocos, com correção pelos critérios do edital. Modo <b>Personalizado</b>: escolha capítulos e quantidade. O gabarito só aparece na entrega.</p>
+</header>
+<div id="simSetup">
+  <div class="panel">
+    <h3>Prova PMPE (formato do edital)</h3>
+    <p style="margin:0 0 10px;font-size:.94rem">60 questões sorteadas: Bloco I (Português + História de PE), Bloco II (RLM + Informática), Bloco III (Constitucional + Direitos Humanos/Legislação). Tempo sugerido: 3h30 (a prova real inclui a redação).</p>
+    <div class="form-row">
+      <div class="field"><label for="simOnlyP">Questões</label>
+        <select id="simOnlyP"><option value="all">Todas</option><option value="new">Priorizar não respondidas</option></select></div>
+      <button class="btn" id="simProva" type="button">Iniciar prova completa</button>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Simulado personalizado</h3>
+    <div class="form-row">
+      <div class="field"><label for="simQtd">Questões</label>
+        <select id="simQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="999">Todas</option></select></div>
+      <div class="field"><label for="simOnly">Filtro</label>
+        <select id="simOnly"><option value="all">Todas as questões</option><option value="new">Só as não respondidas</option><option value="wrong">Só as que errei</option></select></div>
+    </div>
+    <div class="field"><label>Capítulos</label></div>
+    <div id="simCaps"></div>
+    <div class="form-row">
+      <button class="small-btn" id="simAll" type="button">Marcar todos</button>
+      <button class="small-btn" id="simNone" type="button">Desmarcar todos</button>
+      <button class="btn" id="simStart" type="button">Iniciar simulado</button>
+    </div>
+    <p id="simMsg" class="q-exp" hidden></p>
+  </div>
+</div>
+<div id="simRun" hidden>
+  <div class="sim-sticky"><span id="simCount">0/0 respondidas</span><span id="simTime">00:00</span><span class="grow"></span><button class="small-btn" id="simQuit" type="button">Cancelar</button><button class="btn" id="simEnd" type="button">Entregar</button></div>
+  <div id="simList"></div>
+</div>
+<div id="simResult" hidden></div>
+</section>
+
+<!-- ======================= FLASHCARDS ======================= -->
+<section class="view" id="flashcards" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Revisão</span>
+  <h1>Flashcards</h1>
+  <p class="lede">Leia a pergunta, responda mentalmente e toque no cartão para conferir. Setas do teclado ← → navegam.</p>
+</header>
+<div class="form-row">
+  <div class="field"><label for="fcCap">Capítulo</label><select id="fcCap"><option value="">Todos os capítulos</option></select></div>
+  <button class="small-btn" id="fcShuffle" type="button">Embaralhar</button>
+</div>
+<div class="fc-stage"><button class="fc" id="fcCard" type="button" aria-live="polite"><span class="side-lbl" id="fcSide">Pergunta</span><span class="fc-text" id="fcText"></span></button></div>
+<div class="fc-nav">
+  <button class="small-btn" id="fcPrev" type="button">Anterior</button>
+  <button class="small-btn" id="fcFlip" type="button">Virar</button>
+  <button class="small-btn" id="fcNext" type="button">Próximo</button>
+  <span class="count" id="fcCount">0/0</span>
+</div>
+</section>
+
+<!-- ======================= ERROS ======================= -->
+<section class="view" id="erros" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Revisão</span>
+  <h1>Caderno de erros</h1>
+  <p class="lede">Todas as questões que você errou, de todas as disciplinas. Refaça até acertar: quando acertar, ela sai daqui.</p>
+</header>
+<div class="form-row"><div class="field"><label for="errDisc">Disciplina</label><select id="errDisc"><option value="">Todas</option></select></div></div>
+<div id="errList"></div>
+</section>
+
+  </div>
+</div>
+</div>
+
+<div class="fab" aria-label="Atalhos rápidos">
+  <button type="button" data-open="go" title="Ir para… (Ctrl+K)">IR</button>
+  <button type="button" data-open="find" title="Buscar no conteúdo (/)">🔍</button>
+  <button type="button" id="fabTop" title="Voltar ao topo">▲</button>
+</div>
+
+<div class="pal-back" id="pal" hidden>
+  <div class="pal" role="dialog" aria-modal="true" aria-label="Navegação rápida">
+    <div class="pal-tabs" role="tablist">
+      <button type="button" role="tab" data-m="go" aria-selected="true">Ir para (assunto, artigo, capítulo)</button>
+      <button type="button" role="tab" data-m="find" aria-selected="false">Buscar no texto</button>
+    </div>
+    <div class="pal-in">
+      <input id="palIn" type="search" autocomplete="off" spellcheck="false" placeholder="Ex.: art 5 LXI, crase, Nassau, backup, Maria da Penha">
+      <select id="palDisc" aria-label="Filtrar disciplina"><option value="">Todas</option></select>
+    </div>
+    <div class="pal-hint" id="palHint">↑ ↓ para escolher · Enter para abrir · Esc para fechar</div>
+    <div class="pal-list" id="palList"></div>
+  </div>
+</div>

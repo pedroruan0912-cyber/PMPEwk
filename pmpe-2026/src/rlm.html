@@ -1,0 +1,281 @@
+
+<!-- ======================= RLM 1 ======================= -->
+<section class="view chapter" id="rlm1" data-disc="rlm" data-title="Estruturas lógicas: proposições, conectivos, tabelas-verdade, tautologia e contradição" data-short="Proposições e tabelas-verdade" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Raciocínio Lógico · Capítulo 1</span>
+  <h1>Proposições e tabelas-verdade</h1>
+  <p class="lede">A base de tudo: o que é proposição, os cinco conectivos, suas tabelas e a classificação das fórmulas. Inclui gerador automático de tabela-verdade.</p>
+</header>
+<div class="theory">
+
+<h2>1. Proposição</h2>
+<p>Proposição (ou sentença declarativa) é toda oração <b>declarativa</b> que pode ser julgada como <b>verdadeira (V)</b> ou <b>falsa (F)</b>, mas não ambas.</p>
+<div class="cols">
+<div><h4>São proposições</h4><ul>
+<li>"Recife é a capital de Pernambuco." (V)</li>
+<li>"2 + 2 = 5." (F)</li>
+<li>"Todo soldado é cabo." (F)</li>
+</ul></div>
+<div><h4>NÃO são proposições</h4><ul>
+<li><b>Perguntas</b>: "Que horas são?"</li>
+<li><b>Ordens</b>: "Apresente-se!"</li>
+<li><b>Exclamações</b>: "Que calor!"</li>
+<li><b>Sentenças abertas</b> (com variável): "x + 3 = 7"; "Ele é policial."</li>
+<li><b>Paradoxos</b>: "Esta frase é falsa."</li>
+<li>Frases sem verbo: "Bom dia."</li>
+</ul></div>
+</div>
+<p>Princípios: <b>identidade</b> (p é p), <b>não contradição</b> (não pode ser V e F ao mesmo tempo) e <b>terceiro excluído</b> (ou é V ou é F, não há terceira opção).</p>
+<p>Proposição <b>simples</b>: uma só ideia (p, q, r...). <b>Composta</b>: duas ou mais ligadas por conectivos. Número de linhas da tabela-verdade: <b>2<sup>n</sup></b>, em que n = número de proposições simples distintas.</p>
+
+<h2>2. Conectivos e tabelas</h2>
+<div class="tbl-wrap"><table class="tbl" style="text-align:center">
+<tr><th>p</th><th>q</th><th>~p</th><th>p ∧ q<br>(e)</th><th>p ∨ q<br>(ou)</th><th>p ⊻ q<br>(ou... ou)</th><th>p → q<br>(se... então)</th><th>p ↔ q<br>(se e somente se)</th></tr>
+<tr><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td></tr>
+<tr><td>V</td><td>F</td><td>F</td><td>F</td><td>V</td><td>V</td><td><b>F</b></td><td>F</td></tr>
+<tr><td>F</td><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td><td>V</td><td>F</td></tr>
+<tr><td>F</td><td>F</td><td>V</td><td>F</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Macetes das tabelas</span>
+<ul>
+<li><b>E (∧)</b>: "o exigente" – só é V se <b>tudo</b> for V.</li>
+<li><b>OU (∨)</b>: "o tranquilo" – só é F se <b>tudo</b> for F.</li>
+<li><b>OU... OU (⊻)</b>: "o ciumento" – V quando os valores são <b>diferentes</b>.</li>
+<li><b>SE... ENTÃO (→)</b>: <span class="mnemo">"Vera Fischer é Falsa"</span> – só é F quando <b>V → F</b> (antecedente V e consequente F).</li>
+<li><b>SE E SOMENTE SE (↔)</b>: V quando os valores são <b>iguais</b> (é o oposto do ⊻).</li>
+</ul></aside>
+<h3>Leituras equivalentes do condicional p → q</h3>
+<ul>
+<li>Se p, então q · p implica q · <b>Quando</b> p, q · <b>Todo</b> p é q · q, <b>se</b> p · q, <b>desde que</b> p (em alguns contextos) · p <b>somente se</b> q.</li>
+<li><b>p é condição suficiente para q</b>; <b>q é condição necessária para p</b>.</li>
+</ul>
+<aside class="bizu"><span class="bizu-label">Bizu – suficiente × necessária</span><p>A seta aponta do <b>Suficiente</b> para o <b>Necessário</b>: <span class="mnemo">S → N</span> ("SoNy"). "Ser pernambucano é suficiente para ser brasileiro" = "Se é pernambucano, então é brasileiro". "Ser brasileiro é necessário para ser pernambucano" = mesma coisa.</p></aside>
+<aside class="trap"><span class="trap-label">Pegadinha – "somente se" × "se"</span><p>"p <b>somente se</b> q" = p → q. Já "p <b>se</b> q" = q → p. E "p <b>se e somente se</b> q" = p ↔ q. A posição do "se" decide quem é o antecedente.</p></aside>
+<p><b>Ordem de precedência</b> (sem parênteses): 1º ~ (negação), 2º ∧, 3º ∨ e ⊻, 4º →, 5º ↔.</p>
+
+<h2>3. Tautologia, contradição e contingência</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Classe</th><th>Coluna final</th><th>Exemplo</th></tr>
+<tr><td>Tautologia</td><td>Só V</td><td>p ∨ ~p; (p ∧ q) → p; p → (p ∨ q)</td></tr>
+<tr><td>Contradição</td><td>Só F</td><td>p ∧ ~p; ~(p ∨ ~p)</td></tr>
+<tr><td>Contingência</td><td>V e F</td><td>p → q; p ∧ q</td></tr>
+</table></div>
+
+<h2>4. Gerador de tabela-verdade</h2>
+<div class="tool" data-tool="truth"></div>
+
+<h2>5. Descobrir valores lógicos (questões "sabendo que é verdade...")</h2>
+<p>Comece pela proposição que tem <b>uma única forma</b> de ser verdadeira ou falsa:</p>
+<ul>
+<li>Conjunção verdadeira → <b>as duas</b> são V.</li>
+<li>Disjunção falsa → <b>as duas</b> são F.</li>
+<li>Condicional falso → antecedente V e consequente F.</li>
+<li>Proposição simples afirmada como verdade → já é o ponto de partida.</li>
+</ul>
+<div class="formula">Exemplo: São verdadeiras: (1) "Se Ana é soldado, Bruno é cabo"; (2) "Bruno não é cabo".
+De (2): "Bruno é cabo" = F. Em (1), consequente F → antecedente tem de ser F (senão V→F = F).
+Logo: Ana não é soldado.</div>
+</div>
+</section>
+
+<!-- ======================= RLM 2 ======================= -->
+<section class="view chapter" id="rlm2" data-disc="rlm" data-title="Equivalências lógicas, negação de proposições compostas e quantificadores" data-short="Equivalências, negações e quantificadores" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Raciocínio Lógico · Capítulo 2</span>
+  <h1>Equivalências, negações e quantificadores</h1>
+  <p class="lede">O tema mais cobrado pela AOCP em RLM: negar um condicional, aplicar De Morgan, a contrapositiva e negar "todo", "algum" e "nenhum".</p>
+</header>
+<div class="theory">
+
+<h2>1. Equivalências fundamentais</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Nome</th><th>Equivalência</th><th>Exemplo em português</th></tr>
+<tr><td>Contrapositiva</td><td><b>p → q ≡ ~q → ~p</b></td><td>"Se chove, a rua molha" ≡ "Se a rua não molha, não chove"</td></tr>
+<tr><td>Condicional em disjunção (NE-Y-MAR)</td><td><b>p → q ≡ ~p ∨ q</b></td><td>"Se estudo, passo" ≡ "Não estudo ou passo"</td></tr>
+<tr><td>Bicondicional</td><td>p ↔ q ≡ (p → q) ∧ (q → p) ≡ (p ∧ q) ∨ (~p ∧ ~q)</td><td>—</td></tr>
+<tr><td>Dupla negação</td><td>~(~p) ≡ p</td><td>"Não é verdade que não fui" ≡ "Fui"</td></tr>
+<tr><td>Comutativa</td><td>p ∧ q ≡ q ∧ p; p ∨ q ≡ q ∨ p</td><td>(não vale para o →)</td></tr>
+<tr><td>Distributiva</td><td>p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)</td><td>—</td></tr>
+<tr><td>Absorção</td><td>p ∧ (p ∨ q) ≡ p; p ∨ (p ∧ q) ≡ p</td><td>—</td></tr>
+<tr><td>Ou exclusivo</td><td>p ⊻ q ≡ ~(p ↔ q) ≡ p ↔ ~q</td><td>—</td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Macete NE-Y-MAR</span><p>Para trocar o "se... então" por "ou": <b>NE</b>ga a primeira, <b>MA</b>ntém a segunda (com "ou" no meio). p → q ≡ ~p ∨ q. E na contrapositiva: <b>inverte e nega as duas</b>.</p></aside>
+<aside class="trap"><span class="trap-label">Pegadinha – recíproca e inversa NÃO são equivalentes</span><ul>
+<li>Recíproca: q → p (só inverte) ✗</li>
+<li>Inversa (contrária): ~p → ~q (só nega) ✗</li>
+<li>Contrapositiva: ~q → ~p (inverte <b>e</b> nega) ✓</li>
+</ul></aside>
+
+<h2>2. Negações</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Proposição</th><th>Negação</th><th>Macete</th></tr>
+<tr><td>p ∧ q</td><td><b>~p ∨ ~q</b></td><td>De Morgan: nega tudo e troca "e" por "ou"</td></tr>
+<tr><td>p ∨ q</td><td><b>~p ∧ ~q</b></td><td>De Morgan: nega tudo e troca "ou" por "e"</td></tr>
+<tr><td>p → q</td><td><b>p ∧ ~q</b></td><td><span class="mnemo">MA-NÉ</span>: MAntém a 1ª, (E), NEga a 2ª</td></tr>
+<tr><td>p ↔ q</td><td><b>p ⊻ q</b> (ou: (p ∧ ~q) ∨ (q ∧ ~p))</td><td>"ou... ou", ou nega só um dos lados: p ↔ ~q</td></tr>
+<tr><td>p ⊻ q</td><td><b>p ↔ q</b></td><td>—</td></tr>
+</table></div>
+<div class="formula">"Se o soldado é aprovado, então ele é nomeado."
+Negação:  "O soldado é aprovado E não é nomeado."        (MA-NÉ)
+Equivalente: "Se não é nomeado, então não foi aprovado."  (contrapositiva)
+Equivalente: "Não é aprovado OU é nomeado."               (NE-Y-MAR)</div>
+<aside class="trap"><span class="trap-label">Pegadinha nº 1 da banca</span><p>A negação de um condicional <b>nunca</b> é outro condicional. Se todas as alternativas forem "se... então", nenhuma é a negação. A negação de "Se A, então B" <b>não</b> é "Se A, então não B".</p></aside>
+
+<h2>3. Quantificadores</h2>
+<ul>
+<li><b>Universal afirmativo</b>: "Todo A é B" (∀). <b>Universal negativo</b>: "Nenhum A é B".</li>
+<li><b>Existencial afirmativo</b>: "Algum A é B" = "Existe A que é B" = "Pelo menos um A é B" (∃). <b>Existencial negativo</b>: "Algum A não é B".</li>
+</ul>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Proposição</th><th>Negação</th></tr>
+<tr><td>Todo A é B</td><td><b>Algum A não é B</b> (= existe A que não é B; nem todo A é B)</td></tr>
+<tr><td>Algum A é B</td><td><b>Nenhum A é B</b> (= todo A não é B)</td></tr>
+<tr><td>Nenhum A é B</td><td><b>Algum A é B</b></td></tr>
+<tr><td>Algum A não é B</td><td><b>Todo A é B</b></td></tr>
+</table></div>
+<aside class="bizu"><span class="bizu-label">Macete PEA × NO-TE</span><p><span class="mnemo">PEA</span> = <b>P</b>elo menos um, <b>E</b>xiste, <b>A</b>lgum. <span class="mnemo">NO-TE</span> = <b>NO</b>nhum (nenhum) e <b>T</b>odo. Regras: <b>"Todo"</b> se nega com <b>PEA + NÃO</b> ("algum... não"); <b>PEA</b> se nega com <b>"nenhum"</b>; <b>"nenhum"</b> se nega com <b>PEA</b>. <b>Nunca</b> negue "todo" com "nenhum" (isso é a contrária, não a negação).</p></aside>
+<aside class="trap"><span class="trap-label">Pegadinha</span><p>"Todo policial é honesto" – negação: "<b>Algum policial não é honesto</b>". Errado: "Nenhum policial é honesto" e "Todo policial é desonesto".</p></aside>
+</div>
+</section>
+
+<!-- ======================= RLM 3 ======================= -->
+<section class="view chapter" id="rlm3" data-disc="rlm" data-title="Lógica de argumentação: argumentos válidos, inferências, deduções, falácias, diagramas lógicos e conjuntos" data-short="Argumentação e diagramas" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Raciocínio Lógico · Capítulo 3</span>
+  <h1>Argumentação, falácias e diagramas</h1>
+  <p class="lede">Como testar a validade de um argumento em segundos, as regras de inferência, as falácias clássicas e os diagramas de Venn para "todo/algum/nenhum".</p>
+</header>
+<div class="theory">
+
+<h2>1. Argumento</h2>
+<p>Argumento = conjunto de <b>premissas</b> (P1, P2, ...) que sustentam uma <b>conclusão</b> (C). É <b>válido</b> quando, sendo as premissas verdadeiras, a conclusão é <b>necessariamente</b> verdadeira. A validade depende da <b>forma</b>, não do conteúdo.</p>
+<aside class="trap"><span class="trap-label">Pegadinha</span><p>Argumento válido pode ter conclusão falsa (se alguma premissa for falsa) e argumento inválido pode ter conclusão verdadeira "por acaso". <b>Validade ≠ verdade</b>.</p></aside>
+
+<h2>2. Métodos para testar validade</h2>
+<ol>
+<li><b>Premissas verdadeiras</b>: considere todas as premissas V, comece pela mais "fechada" (proposição simples ou conjunção) e descubra os valores; depois veja se a conclusão fica V.</li>
+<li><b>Conclusão falsa</b>: suponha a conclusão F e tente tornar todas as premissas V. Se conseguir → argumento <b>inválido</b>. Se der contradição → <b>válido</b>.</li>
+<li><b>Diagramas</b>: para quantificadores (todo, algum, nenhum).</li>
+</ol>
+
+<h2>3. Regras de inferência (formas válidas)</h2>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Regra</th><th>Forma</th><th>Exemplo</th></tr>
+<tr><td>Modus ponens</td><td>p → q; p ⊢ q</td><td>Se estudo, passo. Estudei. Logo, passo.</td></tr>
+<tr><td>Modus tollens</td><td>p → q; ~q ⊢ ~p</td><td>Se estudo, passo. Não passei. Logo, não estudei.</td></tr>
+<tr><td>Silogismo hipotético</td><td>p → q; q → r ⊢ p → r</td><td>Se treino, fico forte; se fico forte, passo no TAF. Logo, se treino, passo no TAF.</td></tr>
+<tr><td>Silogismo disjuntivo</td><td>p ∨ q; ~p ⊢ q</td><td>Vou de carro ou de ônibus. Não vou de carro. Logo, vou de ônibus.</td></tr>
+<tr><td>Simplificação</td><td>p ∧ q ⊢ p</td><td>—</td></tr>
+<tr><td>Adição</td><td>p ⊢ p ∨ q</td><td>—</td></tr>
+<tr><td>Dilema construtivo</td><td>p → q; r → s; p ∨ r ⊢ q ∨ s</td><td>—</td></tr>
+</table></div>
+<aside class="trap"><span class="trap-label">Formas INVÁLIDAS (falácias formais)</span><ul>
+<li><b>Afirmação do consequente</b>: p → q; q ⊢ p ✗ ("Se chove, molha. Molhou. Logo choveu.")</li>
+<li><b>Negação do antecedente</b>: p → q; ~p ⊢ ~q ✗ ("Se chove, molha. Não choveu. Logo não molhou.")</li>
+</ul></aside>
+
+<h2>4. Falácias não formais (informais)</h2>
+<div class="tbl-wrap"><table class="tbl filterable">
+<tr><th>Falácia</th><th>Descrição</th></tr>
+<tr><td>Ad hominem</td><td>Ataca a pessoa, não o argumento</td></tr>
+<tr><td>Ad verecundiam (apelo à autoridade)</td><td>"É verdade porque um famoso disse"</td></tr>
+<tr><td>Ad populum (apelo ao povo)</td><td>"Todo mundo pensa assim, logo é verdade"</td></tr>
+<tr><td>Ad baculum (apelo à força)</td><td>Ameaça para convencer</td></tr>
+<tr><td>Ad misericordiam</td><td>Apelo à piedade</td></tr>
+<tr><td>Ad ignorantiam</td><td>"Ninguém provou que é falso, então é verdadeiro"</td></tr>
+<tr><td>Petição de princípio (raciocínio circular)</td><td>A conclusão já está na premissa</td></tr>
+<tr><td>Generalização apressada</td><td>Conclusão geral a partir de poucos casos</td></tr>
+<tr><td>Falsa causa (post hoc)</td><td>"Aconteceu depois, logo foi causado por"</td></tr>
+<tr><td>Falso dilema</td><td>Apresenta só duas opções quando há outras</td></tr>
+<tr><td>Espantalho</td><td>Distorce o argumento do outro para atacá-lo</td></tr>
+<tr><td>Ladeira escorregadia</td><td>Uma ação levará inevitavelmente a uma cadeia de desastres</td></tr>
+<tr><td>Tu quoque</td><td>"Você também faz isso"</td></tr>
+</table></div>
+
+<h2>5. Diagramas lógicos (Venn-Euler)</h2>
+<div class="cols">
+<div><h4>Todo A é B</h4><p>A está <b>dentro</b> de B (A ⊂ B). Conclui-se que algum B é A; <b>não</b> se conclui que todo B é A.</p></div>
+<div><h4>Nenhum A é B</h4><p>A e B são <b>disjuntos</b> (sem interseção).</p></div>
+<div><h4>Algum A é B</h4><p>Existe <b>interseção</b> (pelo menos um elemento comum). Equivale a "algum B é A".</p></div>
+<div><h4>Algum A não é B</h4><p>Existe parte de A <b>fora</b> de B.</p></div>
+</div>
+<aside class="bizu"><span class="bizu-label">Bizu de prova</span><p>Desenhe o caso que <b>destrói</b> a alternativa. Se for possível desenhar as premissas verdadeiras com a conclusão falsa, a conclusão <b>não é necessária</b>. Só marque o que é <b>obrigatório</b> em todos os desenhos possíveis.</p></aside>
+
+<h2>6. Conjuntos e princípio da inclusão-exclusão</h2>
+<div class="formula">n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C)
+n(A − B) = n(A) − n(A ∩ B)       Nº de subconjuntos de A = 2^n(A)</div>
+<p>Método prático: preencha o diagrama <b>de dentro para fora</b> (comece pela interseção de todos).</p>
+<div class="formula">Ex.: 50 PMs: 30 fazem curso de tiro, 25 de direção, 10 os dois.
+Só tiro = 30 − 10 = 20; só direção = 25 − 10 = 15; ao menos um = 20 + 15 + 10 = 45; nenhum = 50 − 45 = 5.</div>
+
+<h2>7. Associação lógica (tabela de possibilidades)</h2>
+<p>Questões "três soldados, três batalhões, três cidades...": monte uma <b>tabela de dupla entrada</b>, marque ✓ nas certezas e ✗ nas impossibilidades. Cada linha e cada coluna tem <b>exatamente um ✓</b>. Comece pelas afirmações diretas e use as negativas para eliminar.</p>
+<h3>Verdades e mentiras</h3>
+<p>Quando há pessoas que sempre mentem/sempre dizem a verdade, procure <b>duas afirmações contraditórias</b>: uma delas é verdadeira e a outra falsa. Teste hipóteses e descarte a que gerar contradição.</p>
+</div>
+</section>
+
+<!-- ======================= RLM 4 ======================= -->
+<section class="view chapter" id="rlm4" data-disc="rlm" data-title="Princípios de contagem (PFC, permutação, arranjo, combinação) e probabilidade" data-short="Contagem e probabilidade" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Raciocínio Lógico · Capítulo 4</span>
+  <h1>Contagem e probabilidade</h1>
+  <p class="lede">Fórmulas, quando usar cada uma e a calculadora para conferir os exercícios.</p>
+</header>
+<div class="theory">
+
+<h2>1. Princípio Fundamental da Contagem (PFC)</h2>
+<p>Se um evento ocorre em etapas independentes com n<sub>1</sub>, n<sub>2</sub>, ..., n<sub>k</sub> possibilidades, o total é <b>n<sub>1</sub> × n<sub>2</sub> × ... × n<sub>k</sub></b> (princípio multiplicativo – "E"). Se são casos alternativos e excludentes, <b>soma</b> (princípio aditivo – "OU").</p>
+<div class="formula">Placas: 3 letras (26) e 4 algarismos (10): 26³ × 10⁴ = 175.760.000
+Senhas de 4 dígitos distintos: 10 × 9 × 8 × 7 = 5.040</div>
+
+<h2>2. Fórmulas</h2>
+<div class="formula">Fatorial:          n! = n × (n−1) × ... × 1        0! = 1! = 1
+Permutação simples: Pn = n!
+Permutação c/ repetição: P = n! / (a! × b! × ...)      ex.: ARARA = 5!/(3!·2!) = 10
+Permutação circular:  PCn = (n − 1)!
+Arranjo simples:   A(n,p) = n! / (n − p)!       (ORDEM IMPORTA)
+Combinação simples: C(n,p) = n! / [p! × (n − p)!]  (ORDEM NÃO IMPORTA)
+Arranjo c/ repetição: n^p
+Propriedade:       C(n,p) = C(n, n − p)        C(n,0) = C(n,n) = 1</div>
+<aside class="bizu"><span class="bizu-label">Bizu – arranjo ou combinação?</span><p>Troque a ordem de dois elementos escolhidos: <b>mudou o resultado?</b> Sim → <b>arranjo</b> (pódio, senha, cargos diferentes como comandante e subcomandante). Não → <b>combinação</b> (comissão, equipe, grupo, salada de frutas, aperto de mãos).</p><p>Atalho de combinação: C(n,p) = (n × (n−1) × ... p fatores) / p!. Ex.: C(10,3) = (10·9·8)/(3·2·1) = 120.</p></aside>
+<h3>Casos clássicos</h3>
+<ul>
+<li><b>Anagramas</b>: permutação das letras. "PMPE": 4!/2! = 12 (P repete 2 vezes).</li>
+<li><b>Anagramas que começam por vogal / com letras juntas</b>: fixe a posição ou trate o bloco como uma letra só (e permute dentro do bloco).</li>
+<li><b>Apertos de mão</b> entre n pessoas: C(n,2) = n(n−1)/2. <b>Diagonais</b> de polígono: n(n−3)/2.</li>
+<li><b>Fila com restrição "não ficar juntos"</b>: total − juntos.</li>
+<li><b>"Pelo menos um"</b>: total − nenhum.</li>
+</ul>
+
+<h2>3. Calculadora de contagem</h2>
+<div class="tool" data-tool="comb"></div>
+
+<h2>4. Probabilidade</h2>
+<div class="formula">P(A) = casos favoráveis / casos possíveis          0 ≤ P(A) ≤ 1
+Complementar:     P(não A) = 1 − P(A)
+União:            P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+Mutuamente exclusivos: P(A ∪ B) = P(A) + P(B)
+Independentes:    P(A ∩ B) = P(A) × P(B)
+Condicional:      P(A | B) = P(A ∩ B) / P(B)
+Binomial:         P(k sucessos em n) = C(n,k) · p^k · (1−p)^(n−k)</div>
+<aside class="bizu"><span class="bizu-label">Bizu "E" multiplica, "OU" soma</span><ul>
+<li>"Sair cara <b>e</b> cara" em 2 lançamentos: ½ × ½ = ¼.</li>
+<li>"Pelo menos uma cara" em 3 lançamentos: 1 − P(nenhuma) = 1 − (½)³ = 7/8.</li>
+<li>Sem reposição: o denominador diminui a cada retirada (urna com 5 bolas: 5, depois 4...).</li>
+<li>Com dois dados: 36 resultados; soma 7 é a mais provável (6/36 = 1/6).</li>
+</ul></aside>
+<div class="formula">Ex.: urna com 4 bolas azuis e 6 vermelhas. Retiram-se 2 sem reposição. P(duas azuis)?
+P = 4/10 × 3/9 = 12/90 = 2/15   (ou C(4,2)/C(10,2) = 6/45 = 2/15)</div>
+
+<h2>5. Sequências e problemas aritméticos (apoio)</h2>
+<ul>
+<li><b>PA</b>: a<sub>n</sub> = a<sub>1</sub> + (n−1)·r; soma S<sub>n</sub> = (a<sub>1</sub> + a<sub>n</sub>)·n / 2.</li>
+<li><b>PG</b>: a<sub>n</sub> = a<sub>1</sub>·q<sup>n−1</sup>; S<sub>n</sub> = a<sub>1</sub>(q<sup>n</sup> − 1)/(q − 1).</li>
+<li>Sequências de letras/figuras: procure padrão de soma, multiplicação, posição no alfabeto (sem K, W, Y se a questão disser) ou alternância.</li>
+<li>Porcentagem: aumento de x% → multiplique por (1 + x/100); desconto → (1 − x/100). Aumentos sucessivos <b>multiplicam</b>: +10% e +10% = ×1,21 (21%).</li>
+<li>Regra de três: diretamente proporcional (multiplica cruzado) × inversamente (multiplica em linha). Ex.: mais soldados → menos dias (inversa).</li>
+</ul>
+</div>
+</section>
