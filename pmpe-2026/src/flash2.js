@@ -108,5 +108,16 @@ FLASH.push(
 {c:'dc5',f:'Cabe HC contra punição disciplinar militar?',b:'Não quanto ao mérito (art. 142, § 2º); cabe para examinar a legalidade.'},
 {c:'dc6',f:'PM mata civil dolosamente em serviço: quem julga?',b:'Tribunal do Júri (art. 125, § 4º).'},
 {c:'dc6',f:'Quem exerce o controle externo da atividade policial?',b:'O Ministério Público (art. 129, VII).'},
+{c:'c6',f:'Abandono afetivo no ECA (2025)?',b:'É conduta ilícita sujeita a reparação de danos (art. 5º, parágrafo único – Lei 15.240/2025); pais devem prestar assistência afetiva (art. 4º, §§ 2º e 3º).'},
+{c:'c6',f:'Art. 230 do ECA admite transação penal?',b:'Não. Desde a Lei 15.163/2025, não se aplica a Lei 9.099/95 ao crime de apreensão ilegal (art. 230, § 2º).'},
+{c:'c6',f:'Art. 241-D após 2026: quem é a vítima?',b:'O menor de 14 anos (antes, só a criança). Pena: reclusão de 3 a 5 anos e multa.'},
+{c:'c6',f:'Novas penas dos arts. 240, 241, 241-A, 241-B e 241-C?',b:'240, 241 e 241-A: 4 a 10 anos. 241-B: 3 a 6 anos. 241-C: 3 a 5 anos (Lei 15.487/2026).'},
+{c:'c6',f:'Ronda virtual (art. 190-F) precisa de ordem judicial?',b:'Não. É lícita em ambientes digitais públicos; em flagrante/risco, requisição direta ao provedor com comunicação ao juiz em 48 h.'},
+{c:'c6',f:'Uso de VPN/proxy em crime do ECA?',b:'Aumento de 1/3 a 2/3 (art. 226-A – Lei 15.487/2026).'},
+{c:'c9',f:'O que é violência vicária?',b:'Violência contra filhos, pais, parentes, dependentes ou rede de apoio da mulher, com vistas a atingi-la (art. 7º, VI – Lei 15.384/2026).'},
+{c:'c9',f:'Quem determina monitoração eletrônica imediata (art. 12-D)?',b:'O juiz ou o delegado (município sem comarca). O policial não.'},
+{c:'c9',f:'Prazo decadencial na Maria da Penha (art. 16-A)?',b:'12 meses, contado do dia em que a ofendida soube quem é o autor (Lei 15.438/2026).'},
+{c:'c9',f:'Aumento do 24-A ligado à tornozeleira?',b:'1/3 até a metade se violar áreas de exclusão ou remover/alterar o dispositivo (§ 4º – Lei 15.383/2026).'},
+{c:'c9',f:'Trabalhadora doméstica em condição análoga à de escravo: o que a polícia faz?',b:'Comunica em até 48 h o MTE (unidade regional) e o MPT (art. 11, parágrafo único).'},
 {c:'dc6',f:'Quórum de emenda constitucional?',b:'3/5, em dois turnos, em cada Casa do Congresso.'}
 );

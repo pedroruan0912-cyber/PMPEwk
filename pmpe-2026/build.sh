@@ -21,7 +21,7 @@ PARTS=(
 )
 SCRIPTS=(
   "$DH/flash.js" "$SRC/flash2.js"
-  "$SRC/qn-lp.js" "$SRC/qn-hpe.js" "$SRC/qn-rlm.js" "$SRC/qn-inf.js" "$SRC/qn-dc.js"
+  "$SRC/qn-lp.js" "$SRC/qn-hpe.js" "$SRC/qn-rlm.js" "$SRC/qn-inf.js" "$SRC/qn-dc.js" "$SRC/qn-dh-atual.js"
   "$DH/q1.js" "$DH/q2.js" "$DH/q3.js" "$DH/q4.js" "$DH/q5.js" "$DH/q6.js"
   "$SRC/99-app.js"
 )
