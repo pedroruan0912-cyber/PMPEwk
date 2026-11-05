@@ -26,13 +26,13 @@ E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; ta
 16. Estatuto da Juventude (Lei 12.852/2013)
 17. Súmulas e jurisprudência dos Tribunais Superiores
 
-Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com o formato da prova (10 questões de Direitos Humanos e Legislação Extravagante no Bloco III) e o mapa dos 18 itens do conteúdo programático; em cada capítulo, um quadro "Na prova da AOCP" (o que o edital pede, como a banca cobra, pares para o "relacione as colunas" e foco) e um treino de verdadeiro ou falso (136 afirmações no total); filtro de banca nas questões com AOCP como padrão; e simulado no formato da prova (10 questões AOCP, uma por capítulo sorteado).
+Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com o formato da prova (10 questões de Direitos Humanos e Legislação Extravagante no Bloco III) e o mapa dos 18 itens do conteúdo programático; em cada capítulo, um quadro "Na prova da AOCP" (o que o edital pede, como a banca cobra, pares para o "relacione as colunas" e foco) e um treino de verdadeiro ou falso (138 afirmações no total); filtro de banca nas questões com AOCP como padrão; e simulado no formato da prova (10 questões AOCP, uma por capítulo sorteado).
 
-Recursos: 768 questões comentadas (284 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 796 questões comentadas (312 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 ## Editar e gerar de novo
 
-Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q10.js`, sendo `q7.js` a `q10.js` as do estilo AOCP, flashcards em `flash.js`, quadros AOCP e treino V/F em `aocp.js`, lógica em `99-app.js`). Depois de editar:
+Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11.js`, sendo `q7.js` a `q11.js` as do estilo AOCP, flashcards em `flash.js`, quadros AOCP e treino V/F em `aocp.js`, lógica em `99-app.js`). Depois de editar:
 
 ```bash
 ./ebook/build.sh
