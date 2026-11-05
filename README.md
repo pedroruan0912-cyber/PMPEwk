@@ -1,6 +1,6 @@
 # E-book interativo – Direitos Humanos e Legislação Especial (PMPE)
 
-E-book em HTML para a prova de Soldado PMPE (bancas FCC e Vunesp), com teoria, quadros de pegadinhas e questões comentadas.
+E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; também questões no estilo FCC e Vunesp), com teoria, quadros de pegadinhas e questões comentadas.
 
 **Abrir:** baixe `ebook/direitos-humanos-pmpe.html` e abra no navegador (funciona offline; as fontes carregam do Google Fonts quando há internet).
 
@@ -26,17 +26,17 @@ E-book em HTML para a prova de Soldado PMPE (bancas FCC e Vunesp), com teoria, q
 16. Estatuto da Juventude (Lei 12.852/2013)
 17. Súmulas e jurisprudência dos Tribunais Superiores
 
-Recursos: 484 questões comentadas (estilos FCC e Vunesp), simulado com correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 627 questões comentadas (143 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 ## Editar e gerar de novo
 
-Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q6.js`, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
+Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q8.js`, sendo `q7.js` e `q8.js` as do estilo AOCP, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
 
 ```bash
 ./ebook/build.sh
 ```
 
-Cada questão segue o formato `{c:'c6', b:'FCC', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
+Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
 ---
 
