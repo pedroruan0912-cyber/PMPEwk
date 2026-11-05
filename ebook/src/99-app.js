@@ -13,6 +13,9 @@
     if (raw) { var parsed = JSON.parse(raw); if (parsed && parsed.a) state = parsed; }
   } catch (e) { /* armazenamento indisponível: segue sem salvar */ }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  if (!state.vf) state.vf = {};
+  var bancaPref = 'AOCP';
+  try { var bp = localStorage.getItem('dhpmpe.banca'); if (bp !== null) bancaPref = bp; } catch (e) {}
 
   // ---------- capítulos e ids das questões ----------
   var chapters = Array.prototype.map.call(document.querySelectorAll('section.chapter'), function (s) {
@@ -131,9 +134,64 @@
     quiz.className = 'quiz';
     quiz.hidden = true;
     theory.after(quiz);
+    var cap = (window.AOCP_CAP || {})[c.id];
+    var vfList = (window.VF || []).filter(function (v) { return v.c === c.id; });
+    var vfBox = null;
+    if (vfList.length) {
+      vfBox = document.createElement('section');
+      vfBox.className = 'vf-train';
+      vfBox.setAttribute('aria-label', 'Treino de verdadeiro ou falso');
+      var renderVF = function () {
+        var done = 0, right = 0;
+        vfList.forEach(function (v, i) {
+          var ans = state.vf[c.id + '-' + i];
+          if (ans !== undefined) { done++; if (ans === v.v) right++; }
+        });
+        vfBox.innerHTML = '<h2>Treino V/F no estilo AOCP</h2>' +
+          '<p class="vf-intro">Marque verdadeiro ou falso. Na prova, a AOCP junta quatro itens como estes em uma sequência ("V – F – V – F"): acertando cada item, você acerta a questão.</p>' +
+          '<p class="vf-score">' + done + '/' + vfList.length + ' respondidos · ' + right + ' certos</p>' +
+          '<ol class="vf-list">' + vfList.map(function (v, i) {
+            var ans = state.vf[c.id + '-' + i];
+            var answered = ans !== undefined;
+            var ok = answered && ans === v.v;
+            return '<li class="vf-item' + (answered ? (ok ? ' ok' : ' no') : '') + '"><p class="vf-t">' + v.t + '</p>' +
+              '<div class="vf-btns">' +
+              '<button type="button" data-i="' + i + '" data-v="1"' + (answered ? ' disabled' : '') + (answered && ans === true ? ' class="picked"' : '') + ' aria-label="Verdadeiro">V</button>' +
+              '<button type="button" data-i="' + i + '" data-v="0"' + (answered ? ' disabled' : '') + (answered && ans === false ? ' class="picked"' : '') + ' aria-label="Falso">F</button></div>' +
+              (answered ? '<p class="vf-fb"><b>' + (ok ? 'Certo' : 'Errado') + ': é ' + (v.v ? 'VERDADEIRO' : 'FALSO') + '.</b> ' + v.x + '</p>' : '') + '</li>';
+          }).join('') + '</ol>' +
+          '<div class="q-actions"><button type="button" class="small-btn vf-reset">Refazer o treino</button></div>';
+        vfBox.querySelectorAll('.vf-btns button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            state.vf[c.id + '-' + b.dataset.i] = b.dataset.v === '1';
+            save(); renderVF();
+          });
+        });
+        vfBox.querySelector('.vf-reset').addEventListener('click', function () {
+          vfList.forEach(function (v, i) { delete state.vf[c.id + '-' + i]; });
+          save(); renderVF();
+        });
+      };
+      renderVF();
+      theory.appendChild(vfBox);
+    }
+    if (cap) {
+      var box = document.createElement('aside');
+      box.className = 'aocp-box';
+      box.innerHTML = '<span class="aocp-label">Na prova da AOCP · Edital Soldado PMPE 2026</span>' +
+        '<p class="aocp-item"><b>O que o edital pede:</b> ' + cap.item + '</p>' +
+        '<div class="aocp-cols"><div><h4>Como a AOCP cobra</h4><ul>' + cap.cobra.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>' +
+        '<div><h4>Pares para o "relacione as colunas"</h4><dl class="aocp-pares">' + cap.pares.map(function (p) { return '<dt>' + p[0] + '</dt><dd>' + p[1] + '</dd>'; }).join('') + '</dl></div></div>' +
+        '<p class="aocp-foco"><b>Foco:</b> ' + cap.foco + '</p>' +
+        '<div class="q-actions">' + (vfBox ? '<button type="button" class="small-btn go-vf">Ir ao treino V/F</button>' : '') +
+        '<button type="button" class="small-btn go-aocp">Questões AOCP deste capítulo</button></div>';
+      theory.insertBefore(box, theory.firstChild);
+      if (vfBox) box.querySelector('.go-vf').addEventListener('click', function () { vfBox.scrollIntoView(); });
+    }
+    var nA = list.filter(function (q) { return q.b === 'AOCP'; }).length;
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo AOCP, FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA) + ' no estilo FCC e Vunesp, para treino extra.</p><button type="button" class="btn go-q">Ir para as questões</button>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';
@@ -148,7 +206,12 @@
       var bar = document.createElement('div');
       bar.className = 'quiz-bar';
       var s = stats(list);
-      bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar questões">' +
+      var bancas = [['AOCP', 'AOCP'], ['', 'Todas as bancas'], ['FCC', 'FCC'], ['Vunesp', 'Vunesp']];
+      bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar por banca">' +
+        bancas.map(function (b) {
+          return '<button type="button" data-b="' + b[0] + '" aria-pressed="' + (bancaPref === b[0]) + '">' + b[1] + '</button>';
+        }).join('') + '</div>' +
+        '<div class="seg" role="group" aria-label="Filtrar questões">' +
         ['all:Todas', 'new:Não respondidas', 'wrong:Erradas'].map(function (p) {
           var k = p.split(':');
           return '<button type="button" data-f="' + k[0] + '" aria-pressed="' + (filter === k[0]) + '">' + k[1] + '</button>';
@@ -164,6 +227,13 @@
       bar.querySelectorAll('[data-f]').forEach(function (b) {
         b.addEventListener('click', function () { filter = b.dataset.f; renderQuiz(); });
       });
+      bar.querySelectorAll('[data-b]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          bancaPref = b.dataset.b;
+          try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+          renderQuiz();
+        });
+      });
       bar.querySelector('.reset-cap').addEventListener('click', function () { confirm.hidden = false; });
       confirm.querySelector('.no').addEventListener('click', function () { confirm.hidden = true; });
       confirm.querySelector('.yes').addEventListener('click', function () {
@@ -172,6 +242,7 @@
       });
       var shown = list.filter(function (q) {
         var v = state.a[q.id];
+        if (bancaPref && q.b !== bancaPref) return false;
         if (filter === 'new') return v === undefined;
         if (filter === 'wrong') return v !== undefined && v !== q.a;
         return true;
@@ -179,7 +250,7 @@
       if (!shown.length) {
         var e = document.createElement('p');
         e.className = 'empty';
-        e.textContent = filter === 'wrong' ? 'Nenhum erro neste capítulo.' : filter === 'new' ? 'Você já respondeu todas. Use "Zerar capítulo" para refazer.' : 'Sem questões.';
+        e.textContent = filter === 'wrong' ? 'Nenhum erro neste capítulo' + (bancaPref ? ' nas questões ' + bancaPref : '') + '.' : filter === 'new' ? 'Você já respondeu todas' + (bancaPref ? ' as questões ' + bancaPref : '') + '. Use "Zerar capítulo" para refazer.' : 'Sem questões.';
         quiz.appendChild(e);
       }
       shown.forEach(function (q) {
@@ -200,6 +271,12 @@
       if (b) { setTab(b.dataset.t); window.scrollTo(0, 0); }
     });
     cta.querySelector('.go-q').addEventListener('click', function () { setTab('q'); window.scrollTo(0, 0); });
+    var goA = sec.querySelector('.go-aocp');
+    if (goA) goA.addEventListener('click', function () {
+      bancaPref = 'AOCP';
+      try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+      setTab('q'); window.scrollTo(0, 0);
+    });
     c.setTab = setTab;
   });
 
@@ -324,9 +401,10 @@
     return arr;
   }
   function fmtTime(s) { return pad(Math.floor(s / 60)) + ':' + pad(s % 60); }
-  function startSim(pool) {
-    sim = { list: pool, ans: {}, t0: Date.now() };
+  function startSim(pool, pmpe) {
+    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe };
     $('simSetup').hidden = true; $('simResult').hidden = true; $('simRun').hidden = false;
+    document.querySelector('.sim-pmpe').hidden = true;
     var box = $('simList'); box.innerHTML = '';
     pool.forEach(function (q, k) {
       box.appendChild(qCard(q, { mode: 'exam', label: 'Questão ' + (k + 1) + ' de ' + pool.length, onPick: function (qq, i) { sim.ans[qq.id] = i; updCount(); } }));
@@ -339,6 +417,18 @@
     window.scrollTo(0, 0);
   }
   function updCount() { $('simCount').textContent = Object.keys(sim.ans).length + '/' + sim.list.length + ' respondidas'; }
+  $('simBanca').value = 'AOCP';
+  function startPMPE() {
+    var byCap = {};
+    QS.forEach(function (q) { if (q.b === 'AOCP') (byCap[q.c] = byCap[q.c] || []).push(q); });
+    var picked = shuffle(Object.keys(byCap)).slice(0, 10).sort(function (a, b) { return capById[a].num - capById[b].num; });
+    var pool = picked.map(function (k) { var arr = byCap[k]; return arr[Math.floor(Math.random() * arr.length)]; });
+    $('simMsg').hidden = true;
+    startSim(pool, true);
+  }
+  $('simPMPE').addEventListener('click', startPMPE);
+  var coverPMPE = $('coverPMPE');
+  if (coverPMPE) coverPMPE.addEventListener('click', function () { show('simulado', true); startPMPE(); });
   $('simStart').addEventListener('click', function () {
     var caps = capBoxes().filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
     var banca = $('simBanca').value, only = $('simOnly').value, qtd = +$('simQtd').value;
@@ -359,6 +449,7 @@
     if ($('simQuit').textContent === 'Cancelar') { $('simQuit').textContent = 'Confirmar cancelamento'; return; }
     clearInterval(timer); sim = null;
     $('simRun').hidden = true; $('simSetup').hidden = false;
+    document.querySelector('.sim-pmpe').hidden = false;
   });
   $('simEnd').addEventListener('click', function () {
     if (!sim) return;
@@ -379,13 +470,14 @@
       reveal(art, q, sim.ans[q.id], { mode: 'exam' });
     });
     var pct = Math.round(right / sim.list.length * 100);
+    var pmpeNote = sim.pmpe ? '<p class="score-note">Na prova, estas 10 questões somam com as 10 de Direito Constitucional no Bloco III: são exigidos ao menos 6 acertos em 20 no bloco, sem zerar a disciplina. ' + (right >= 6 ? 'Com ' + right + ' acertos aqui, você já cobriria sozinho o mínimo do bloco.' : right >= 1 ? 'Com ' + right + ' acerto(s), você não zera a disciplina, mas precisaria completar o bloco com Constitucional.' : 'Zerar a disciplina elimina: revise a teoria antes do próximo simulado.') + '</p>' : '';
     var note = pct >= 80 ? 'Nível de aprovação. Revise só os erros.' : pct >= 60 ? 'Bom caminho. Volte à teoria dos capítulos com menor aproveitamento.' : 'Volte à teoria e aos quadros de pegadinhas antes do próximo simulado.';
     var rows = Object.keys(byCap).sort(function (a, b) { return capById[a].num - capById[b].num; }).map(function (k) {
       var c = capById[k], s = byCap[k];
       return '<tr><td>' + pad(c.num) + ' · ' + c.short + '</td><td>' + s.r + '/' + s.t + '</td><td>' + Math.round(s.r / s.t * 100) + '%</td></tr>';
     }).join('');
     var res = $('simResult');
-    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p></div></div>' +
+    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + '</div></div>' +
       '<div class="tbl-wrap"><table class="tbl"><tr><th>Capítulo</th><th>Acertos</th><th>%</th></tr>' + rows + '</table></div>' +
       '<div class="q-actions"><button type="button" class="btn" id="simNew">Novo simulado</button><a class="btn ghost" href="#erros">Ir ao caderno de erros</a></div>' +
       '<p class="q-exp" style="margin-top:10px">O gabarito comentado de cada questão está logo abaixo.</p></div>';
@@ -393,6 +485,7 @@
     $('simRun').querySelector('.sim-sticky').hidden = true;
     $('simNew').addEventListener('click', function () {
       $('simRun').hidden = true; $('simResult').hidden = true; $('simSetup').hidden = false;
+      document.querySelector('.sim-pmpe').hidden = false;
       $('simRun').querySelector('.sim-sticky').hidden = false;
       window.scrollTo(0, 0);
     });

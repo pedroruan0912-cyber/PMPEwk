@@ -236,13 +236,55 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 .fc-nav .count{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
 .confirm{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;font-size:.92rem}
 .footer-note{font-size:.84rem;color:var(--muted);margin-top:30px;border-top:1px solid var(--rule);padding-top:12px}
+
+/* ---------- edital PMPE 2026 / AOCP ---------- */
+.edital{border:1.5px solid var(--aocp);background:var(--surface);border-radius:6px;padding:16px 18px;margin:6px 0 26px}
+.edital h2{font-size:1.35rem;margin:6px 0 10px}
+.edital h3{font-size:1.05rem;margin:16px 0 6px}
+.edital-stats{margin:10px 0 14px}
+.edital-stats .stat b{color:var(--aocp)}
+.edital-list,.edital-plan{margin:0 0 10px;padding-left:1.2em;font-size:.95rem;max-width:72ch}
+.edital-list li,.edital-plan li{margin:4px 0}
+.edital-note{font-size:.85rem;color:var(--muted);margin:6px 0 10px;max-width:72ch}
+.edital-map{padding-left:1.4em;margin:6px 0 0;font-size:.92rem}
+.edital-map li{margin:5px 0}
+.edital-map a{font-family:var(--f-mono);font-size:.78rem;white-space:nowrap;margin-left:6px}
+.banca-sub{display:inline-block;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.sim-pmpe{border-color:var(--aocp);background:var(--aocp-soft)}
+.aocp-box{border:1.5px solid var(--aocp);background:var(--aocp-soft);border-radius:6px;padding:14px 16px;margin:18px 0 8px;max-width:76ch}
+.aocp-label{display:inline-block;font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--aocp);margin-bottom:6px}
+.theory .aocp-item{margin:0 0 10px;font-size:.94rem}
+.aocp-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.aocp-cols>div{min-width:0}
+.aocp-cols h4{font-size:.92rem;margin:0 0 4px}
+.aocp-cols ul{margin:0;padding-left:1.1em;font-size:.9rem}
+.aocp-cols li{margin:3px 0}
+.aocp-pares{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:.88rem}
+.aocp-pares dt{font-family:var(--f-mono);font-size:.8rem;font-weight:600;color:var(--aocp)}
+.aocp-pares dd{margin:0}
+.theory .aocp-foco{margin:10px 0 0;font-size:.92rem}
+.vf-train{border:1px solid var(--rule);background:var(--surface);border-radius:6px;padding:16px 18px;margin:30px 0 10px}
+.vf-train h2{font-size:1.25rem;margin:0 0 6px;padding:0;border:0}
+.theory .vf-intro{font-size:.92rem;margin:0 0 6px}
+.theory .vf-score{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);margin:0 0 8px;font-variant-numeric:tabular-nums}
+.theory .vf-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;max-width:none}
+.theory .vf-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:start;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:10px 12px;margin:0}
+.vf-item.ok{border-color:var(--ok);background:var(--ok-soft)}
+.vf-item.no{border-color:var(--trap);background:var(--trap-soft)}
+.theory .vf-t{margin:0;font-size:.94rem}
+.vf-btns{display:flex;gap:6px}
+.vf-btns button{width:38px;height:34px;border:1px solid var(--rule);background:var(--surface);border-radius:5px;font-family:var(--f-mono);font-weight:600}
+.vf-btns button:hover:not([disabled]){border-color:var(--aocp)}
+.vf-btns button[disabled]{cursor:default;opacity:.55}
+.vf-btns button.picked{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.theory .vf-fb{grid-column:1/-1;margin:2px 0 0;font-size:.9rem}
 </style>
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
 <body>
 <div class="app">
 <aside class="side" id="side" aria-label="Sumário">
-  <p class="brand">Direitos Humanos<br>&amp; Legislação Especial<small>E-book interativo · PMPE · AOCP, FCC &amp; Vunesp</small></p>
+  <p class="brand">Direitos Humanos<br>&amp; Legislação Especial<small>Soldado PMPE 2026 · Instituto AOCP</small></p>
   <nav id="nav"></nav>
 </aside>
 <div class="scrim" id="scrim"></div>
@@ -257,9 +299,9 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 
 <!-- ======================= CAPA ======================= -->
 <section class="view cover" id="inicio">
-  <span class="eyebrow">Soldado PMPE · Direitos Humanos e Legislação Especial</span>
+  <span class="eyebrow">Edital de Soldado PMPE 2026 · Instituto AOCP · Direitos Humanos e Legislação Extravagante</span>
   <h1>Teoria completa,<br><mark>pegadinhas</mark> e questões</h1>
-  <p class="lede">Todo o conteúdo do edital em 17 capítulos: teoria organizada pela letra da lei, quadros de <b>pegadinhas</b> que as bancas repetem e questões comentadas no estilo do Instituto AOCP (banca do edital), da FCC e da Vunesp. Suas respostas ficam salvas neste navegador.</p>
+  <p class="lede">Os 18 itens do conteúdo programático do edital em 17 capítulos, adaptados à forma de cobrar do <b>Instituto AOCP</b>: teoria pela letra da lei, quadros de <b>pegadinhas</b>, um quadro "Na prova da AOCP" em cada capítulo, treino de verdadeiro ou falso e questões comentadas no estilo da banca (com FCC e Vunesp como treino extra). Suas respostas ficam salvas neste navegador.</p>
   <div class="stats">
     <div class="stat"><b>17</b><span>capítulos</span></div>
     <div class="stat"><b id="statQ">0</b><span>questões comentadas</span></div>
@@ -268,10 +310,59 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
   </div>
   <div class="cta-row">
     <a class="btn" href="#c1">Começar pelo capítulo 1</a>
-    <a class="btn ghost" href="#simulado">Montar simulado</a>
+    <button class="btn ghost" id="coverPMPE" type="button">Simulado no formato da prova</button>
     <a class="btn ghost" href="#flashcards">Revisar pegadinhas</a>
     <a class="btn ghost" href="#erros">Caderno de erros</a>
   </div>
+
+  <section class="edital" aria-labelledby="editalTit">
+    <span class="banca-badge">Edital nº 001/2026 · Instituto AOCP</span>
+    <h2 id="editalTit">Como esta disciplina cai na prova de Soldado</h2>
+    <div class="stats edital-stats">
+      <div class="stat"><b>10</b><span>questões de DH e Legislação Extravagante</span></div>
+      <div class="stat"><b>20</b><span>questões no Bloco III, com Direito Constitucional</span></div>
+      <div class="stat"><b>6</b><span>acertos mínimos no Bloco III (30%)</span></div>
+      <div class="stat"><b>18</b><span>acertos mínimos na objetiva (30% de 60)</span></div>
+    </div>
+    <ul class="edital-list">
+      <li>Prova objetiva com <b>60 questões de cinco alternativas</b>: seis disciplinas com 10 questões cada, em três blocos de 20.</li>
+      <li>Para não ser eliminado: ao menos <b>30% em cada bloco</b>, ao menos <b>30% do total</b> e <b>não zerar nenhuma disciplina</b>.</li>
+      <li>Redação de <b>40 pontos</b> no mesmo dia. Data prevista: <b>21/02/2027</b>.</li>
+    </ul>
+    <p class="edital-note">Números conforme o edital divulgado (Edital nº 001/2026 e retificações). Antes da prova, confira no PDF oficial, no site do Instituto AOCP: vale sempre a versão mais recente.</p>
+    <details class="deep">
+      <summary>Os 18 itens do conteúdo programático e onde estão neste e-book</summary>
+      <div><ol class="edital-map">
+        <li>Teoria geral dos Direitos Humanos: conceito, terminologia, estrutura normativa, fundamento, classificação, especificidades <a href="#c1">Cap. 1</a></li>
+        <li>Evolução histórica e gerações de direitos humanos <a href="#c2">Cap. 2</a></li>
+        <li>Incorporação dos tratados de DH: CF, art. 5º, §§ 2º e 3º; hierarquia normativa <a href="#c3">Cap. 3</a></li>
+        <li>Declaração Universal dos Direitos Humanos (ONU, 1948) <a href="#c4">Cap. 4</a></li>
+        <li>Convenção Americana – Pacto de San José (Decreto nº 678/1992) <a href="#c5">Cap. 5</a></li>
+        <li>ECA (Lei nº 8.069/1990): direitos e garantias, ato infracional, apreensão e apresentação, atuação policial, Conselho Tutelar, crimes e infrações administrativas <a href="#c6">Cap. 6</a></li>
+        <li>Lei nº 13.869/2019 (Abuso de Autoridade) <a href="#c7">Cap. 7</a></li>
+        <li>Lei nº 9.455/1997 (Tortura) <a href="#c8">Cap. 8</a></li>
+        <li>Lei nº 11.340/2006 (Maria da Penha) <a href="#c9">Cap. 9</a></li>
+        <li>Lei nº 7.716/1989 (Preconceito de Raça ou de Cor) <a href="#c10">Cap. 10</a></li>
+        <li>Lei nº 9.605/1998 (Crimes Ambientais) <a href="#c11">Cap. 11</a></li>
+        <li>Lei nº 8.072/1990 (Crimes Hediondos) <a href="#c12">Cap. 12</a></li>
+        <li>Lei nº 11.343/2006 (Drogas) <a href="#c13">Cap. 13</a></li>
+        <li>Lei Estadual nº 6.783/1974 (Estatuto dos Policiais Militares de PE) <a href="#c14">Cap. 14</a></li>
+        <li>Lei nº 10.741/2003 – Estatuto da Pessoa Idosa: atuação policial e crimes em espécie <a href="#c15">Cap. 15</a></li>
+        <li>Lei nº 12.852/2013 – Estatuto da Juventude (acrescido pela Lei estadual nº 18.926/2025) <a href="#c16">Cap. 16</a></li>
+        <li>Lei nº 11.340/2006 – Maria da Penha (acrescido pela Lei estadual nº 18.926/2025) <a href="#c9">Cap. 9</a></li>
+        <li>Súmulas, jurisprudência dominante dos Tribunais Superiores e legislação relacionada <a href="#c17">Cap. 17</a></li>
+      </ol></div>
+    </details>
+    <h3>Plano para a AOCP</h3>
+    <ol class="edital-plan">
+      <li>Abra o quadro <b>"Na prova da AOCP"</b> no topo de cada capítulo: ele diz o que o edital pede e como a banca cobra.</li>
+      <li>Estude a teoria e os quadros de pegadinha.</li>
+      <li>Faça o <b>treino V/F</b> no fim do capítulo: é o formato que a AOCP mais usa.</li>
+      <li>Resolva as questões com o filtro <b>AOCP</b> (já vem selecionado).</li>
+      <li>Toda semana, faça o <b>simulado no formato da prova</b> e revise o caderno de erros.</li>
+    </ol>
+    <p class="edital-note">Com 10 questões para 18 itens, nem todo item cai em toda prova. Uma ordem de estudo sensata é começar pelas leis ligadas à atividade policial (ECA, Abuso de Autoridade, Maria da Penha, Drogas e Tortura) e pela parte geral (tratados, DUDH e Pacto de San José), sem deixar nenhum item de fora.</p>
+  </section>
 
   <h2 style="font-size:1.35rem;margin:10px 0 4px">Raio-X das bancas</h2>
   <div class="banca-grid">
@@ -287,6 +378,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
       </ul>
     </div>
     <div class="banca">
+      <span class="banca-sub">Treino extra</span>
       <h3>FCC</h3>
       <ul>
         <li>Cobra <b>letra seca da lei</b>: troca um prazo, um número ou um verbo ("poderá" ↔ "deverá").</li>
@@ -297,6 +389,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
       </ul>
     </div>
     <div class="banca">
+      <span class="banca-sub">Treino extra</span>
       <h3>Vunesp</h3>
       <ul>
         <li>Enunciados objetivos, muita <b>literalidade</b> e completar lacunas.</li>
@@ -321,7 +414,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
       <button class="small-btn" id="resetNo">Cancelar</button>
     </div>
   </div>
-  <p class="footer-note">Material de estudo atualizado com a legislação até 2025 (inclui Lei 14.994/2024 – pacote antifeminicídio, Lei 14.811/2024, Lei 14.532/2023 e o julgamento do STF no RE 635.659 – porte de maconha para consumo). Conteúdos de Estatuto da Juventude e Lei Maria da Penha incluídos conforme a Lei estadual nº 18.926/2025. Sempre confira a redação vigente no Planalto e na ALEPE antes da prova.</p>
+  <p class="footer-note">Material de estudo atualizado com a legislação até 2025 (inclui Lei 14.994/2024 – pacote antifeminicídio, Lei 14.811/2024, Lei 14.532/2023 e o julgamento do STF no RE 635.659 – porte de maconha para consumo). Conteúdo organizado pelo Edital de Soldado PMPE 2026 (Instituto AOCP), incluindo os itens Estatuto da Juventude e Lei Maria da Penha acrescidos pela Lei estadual nº 18.926/2025. Sempre confira a redação vigente no Planalto e na ALEPE antes da prova.</p>
 </section>
 
 <!-- ======================= CAP 1 ======================= -->
@@ -2082,13 +2175,18 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 <header class="ch-head">
   <span class="ch-kicker">Treino</span>
   <h1>Simulado</h1>
-  <p class="lede">Escolha capítulos, banca e quantidade. As respostas só aparecem quando você entregar, como na prova.</p>
+  <p class="lede">Treine no formato da prova (10 questões AOCP) ou monte um simulado com os capítulos, a banca e a quantidade que quiser. As respostas só aparecem quando você entregar.</p>
 </header>
+<div class="panel sim-pmpe">
+  <h3>Simulado no formato da prova</h3>
+  <p class="q-exp">10 questões no estilo AOCP, uma de cada capítulo sorteado, como as 10 questões de Direitos Humanos e Legislação Extravagante do Edital de Soldado PMPE 2026.</p>
+  <div class="q-actions"><button class="btn" id="simPMPE" type="button">Iniciar simulado de 10 questões</button></div>
+</div>
 <div id="simSetup" class="panel">
-  <h3>Montar simulado</h3>
+  <h3>Montar simulado personalizado</h3>
   <div class="form-row">
     <div class="field"><label for="simBanca">Banca</label>
-      <select id="simBanca"><option value="">Todas as bancas</option><option value="AOCP">Só AOCP</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
+      <select id="simBanca"><option value="">Todas as bancas</option><option value="AOCP" selected>Só AOCP</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
     <div class="field"><label for="simQtd">Questões</label>
       <select id="simQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="999">Todas</option></select></div>
     <div class="field"><label for="simOnly">Filtro</label>
@@ -2245,6 +2343,235 @@ window.FLASH = [
 {c:'c17',f:'SV 25?',b:'Ilícita a prisão civil do depositário infiel, qualquer que seja a modalidade.'},
 {c:'c17',f:'Súmula 647 STJ?',b:'Imprescritíveis as ações indenizatórias por perseguição política no regime militar.'},
 {c:'c17',f:'Tema 280 STF?',b:'Entrada em domicílio sem mandado só com fundadas razões, justificadas a posteriori.'}
+];
+
+/* Adequação ao Edital de Soldado PMPE 2026 (Instituto AOCP):
+   AOCP_CAP = quadro "Na prova da AOCP" de cada capítulo; VF = treino de verdadeiro ou falso */
+window.AOCP_CAP = {
+c1:{item:`Teoria geral dos Direitos Humanos: conceito; terminologia; estrutura normativa; fundamento; classificação; especificidades.`,
+ cobra:[`V/F com características trocadas: "absolutos" (falso), "taxativo" (falso), "indivisíveis" (verdadeiro).`,`Relacione: corrente de fundamento (jusnaturalista, positivista, historicista) com sua ideia; status de Jellinek com o exemplo.`,`INCORRETA sobre terminologia: "liberdades públicas" ampla demais ou "direitos humanos = direitos fundamentais".`],
+ pares:[[`Direitos humanos`,`plano internacional`],[`Direitos fundamentais`,`positivados na CF`],[`Status negativo`,`liberdade frente ao Estado`],[`Status ativo`,`votar, participar`],[`Eficácia horizontal`,`entre particulares`]],
+ foco:`Características (universalidade, indivisibilidade, relatividade, vedação do retrocesso) e terminologia.`},
+c2:{item:`Evolução histórica e gerações de direitos humanos.`,
+ cobra:[`V/F de datas: Magna Carta 1215, Habeas Corpus Act 1679, Bill of Rights 1689, Virgínia 1776, França 1789, México 1917, Weimar 1919.`,`Relacione: geração com exemplo (voto → 1ª; saúde → 2ª; meio ambiente → 3ª).`,`INCORRETA com a "pioneira" trocada (Weimar no lugar do México; França no lugar da Virgínia).`],
+ pares:[[`1ª geração`,`liberdade, direitos civis e políticos`],[`2ª geração`,`igualdade, direitos sociais`],[`3ª geração`,`fraternidade, direitos difusos`],[`Karel Vasak`,`teoria das gerações (1979)`],[`Bonavides`,`4ª (democracia) e 5ª (paz)`]],
+ foco:`Ordem cronológica dos documentos e conteúdo de cada geração.`},
+c3:{item:`Incorporação dos tratados internacionais de Direitos Humanos ao ordenamento jurídico brasileiro: Constituição Federal, art. 5º, §§ 2º e 3º; hierarquia normativa dos tratados de Direitos Humanos.`,
+ cobra:[`V/F sobre o § 3º: "2 turnos, 3/5, em cada Casa" (verdadeiro); "maioria absoluta" ou "turno único" (falso).`,`Relacione: tratado com sua hierarquia (Convenção de NY → emenda; Pacto de San José → supralegal; tratado comercial → lei ordinária).`,`INCORRETA sobre as fases: troca de decreto legislativo (Congresso) com decreto presidencial (promulgação).`],
+ pares:[[`§ 2º`,`cláusula de abertura`],[`§ 3º`,`rito com status de emenda`],[`Pacto de San José`,`supralegal`],[`IDC`,`PGR suscita no STJ`],[`SV 25`,`sem prisão do depositário infiel`]],
+ foco:`Quadro de hierarquia (emenda × supralegal × lei) e os três tratados com status de emenda.`},
+c4:{item:`Declaração Universal dos Direitos Humanos (ONU – 1948).`,
+ cobra:[`V/F de literalidade: "procurar e gozar" asilo; instrução elementar obrigatória; superior pelo mérito.`,`Relacione: número do artigo com o direito (3º vida, 5º tortura, 14 asilo, 26 instrução).`,`INCORRETA sobre natureza jurídica e votação (não houve voto contrário; é resolução, não tratado).`],
+ pares:[[`Resolução 217-A (III)`,`10/12/1948, Paris`],[`Votação`,`48 a favor, 0 contra, 8 abstenções`],[`Art. 14`,`asilo`],[`Art. 26`,`instrução`],[`Art. 29`,`deveres e limites legais`]],
+ foco:`Dados da aprovação, natureza jurídica e artigos com palavras que a banca troca.`},
+c5:{item:`Convenção Americana sobre Direitos Humanos – Pacto de San José da Costa Rica (Decreto nº 678/1992).`,
+ cobra:[`V/F de números: pena de morte (18 e 70 anos), mandatos (Comissão 4 anos; Corte 6 anos), prazo da petição (6 meses).`,`Relacione: Comissão × Corte (sede, mandato, quem aciona, sentença).`,`INCORRETA sobre o art. 27 (direitos que nunca podem ser suspensos) e sobre quem leva caso à Corte.`],
+ pares:[[`Decreto 678/1992`,`promulgação no Brasil`],[`Art. 7.5`,`audiência de custódia`],[`Art. 7.7`,`prisão só por dívida alimentar`],[`Comissão`,`Washington, 4 anos, recebe petições`],[`Corte`,`San José, 6 anos, sentença inapelável`]],
+ foco:`Liberdade pessoal e garantias judiciais (arts. 7º e 8º), pena de morte e órgãos de proteção.`},
+c6:{item:`ECA (Lei nº 8.069/1990): direitos e garantias fundamentais; prática de ato infracional; direitos individuais e garantias do adolescente; apreensão e apresentação; atuação policial; Conselho Tutelar; crimes e infrações administrativas pertinentes à atividade policial.`,
+ cobra:[`V/F de atuação policial: auto de apreensão × BO circunstanciado; apresentação ao MP; 24 horas; compartimento fechado.`,`Relacione: medida socioeducativa com seu prazo (PSC até 6 meses; LA mínimo 6 meses; internação até 3 anos).`,`Casos: apreensão "para averiguação" (art. 230), falta de comunicação (art. 231), bebida a adolescente (art. 243).`],
+ pares:[[`Criança`,`até 12 anos incompletos`],[`Internação provisória`,`45 dias`],[`Entidade → MP`,`24 horas`],[`Conselho Tutelar`,`5 membros, 4 anos, maior de 21`],[`Art. 230`,`apreender sem flagrante ou ordem`]],
+ foco:`É o item mais detalhado do edital: atuação policial (arts. 106 a 109 e 171 a 178), medidas e crimes dos arts. 230 a 244-C.`},
+c7:{item:`Lei nº 13.869/2019 (Lei do Abuso de Autoridade).`,
+ cobra:[`V/F de vetos: algemas (art. 17) e fotografar preso (art. 14) não são crime.`,`Relacione: conduta com artigo (nota de culpa 24h → art. 12; busca após 21h → art. 22; interrogatório noturno → art. 18).`,`INCORRETA sobre efeitos da condenação (perda do cargo não é automática).`],
+ pares:[[`Dolo específico`,`prejudicar, beneficiar, capricho`],[`Ação penal`,`pública incondicionada`],[`Perda do cargo`,`exige reincidência`],[`Busca domiciliar`,`crime após 21h ou antes das 5h`],[`Art. 15-A`,`violência institucional`]],
+ foco:`Crimes ligados à prisão, ao preso e ao domicílio (arts. 12 a 22) e os artigos vetados.`},
+c8:{item:`Lei nº 9.455/1997 (Lei de Tortura).`,
+ cobra:[`V/F de penas: 2 a 8; 4 a 10; 8 a 16; omissão detenção de 1 a 4.`,`Relacione: espécie de tortura com descrição (prova, crime, discriminação, castigo).`,`INCORRETA com "imprescritível" ou com discriminação por orientação sexual.`],
+ pares:[[`Tortura-prova`,`obter confissão ou informação`],[`Tortura discriminatória`,`só racial ou religiosa`],[`Omissão`,`detenção de 1 a 4 anos`],[`Aumento`,`1/6 a 1/3 (agente público, sequestro…)`],[`Perda do cargo`,`automática, interdição pelo dobro`]],
+ foco:`Espécies, penas e efeitos; a tortura é prescritível.`},
+c9:{item:`Lei nº 11.340/2006 (Lei Maria da Penha). O edital lista o tema duas vezes: no rol original e como item acrescido pela Lei estadual nº 18.926/2025.`,
+ cobra:[`V/F sobre o art. 12-C (juiz → delegado → policial) e sobre as súmulas do STJ.`,`Relacione: forma de violência com exemplo; medida protetiva com sua natureza (agressor, ofendida, patrimonial).`,`Casos de ocorrência: afastamento do lar, descumprimento de medida, fiança só pelo juiz.`],
+ pares:[[`Súmula 600 STJ`,`sem coabitação`],[`Súmula 542 STJ`,`lesão: ação incondicionada`],[`Art. 24-A`,`reclusão de 2 a 5 anos`],[`Art. 12-C`,`policial só sem comarca e sem delegado`],[`Art. 121-A CP`,`feminicídio, 20 a 40 anos`]],
+ foco:`Atuação policial (arts. 10 a 12-C), medidas protetivas e alterações recentes (Leis 14.550/2023 e 14.994/2024).`},
+c10:{item:`Lei nº 7.716/1989 (Lei dos Crimes resultantes de Preconceito de Raça ou de Cor).`,
+ cobra:[`V/F sobre a Lei 14.532/2023: injúria racial no art. 2º-A, racismo recreativo, funcionário público.`,`Relacione: local do impedimento com a pena (escola e hotel 3 a 5; bar e comércio 1 a 3).`,`INCORRETA sobre a CF (racismo imprescritível e inafiançável, mas sem vedação de anistia).`],
+ pares:[[`Art. 2º-A`,`injúria racial, 2 a 5 anos`],[`Art. 20`,`praticar, induzir ou incitar`],[`Art. 20-A`,`racismo recreativo`],[`Art. 20-B`,`funcionário público`],[`ADO 26`,`homotransfobia como racismo`]],
+ foco:`Injúria racial × racismo e as mudanças de 2023.`},
+c11:{item:`Lei nº 9.605/1998 (Lei dos Crimes Ambientais).`,
+ cobra:[`V/F sobre regras especiais: sursis até 3 anos, transação com composição do dano, ação incondicionada.`,`Relacione: conduta com artigo (balões, pichação, maus-tratos a cão, incêndio).`,`Casos de policiamento ambiental: apreensão de animais e de madeira, obstrução da fiscalização.`],
+ pares:[[`Pessoa jurídica`,`responde sem dupla imputação`],[`Sursis`,`pena até 3 anos`],[`Cão ou gato`,`reclusão de 2 a 5 anos`],[`Animais apreendidos`,`prioridade: soltura no habitat`],[`Multa administrativa`,`R$ 50 a R$ 50 milhões`]],
+ foco:`Parte geral (PJ, penas, processo) e crimes contra a fauna.`},
+c12:{item:`Lei nº 8.072/1990 (Lei dos Crimes Hediondos).`,
+ cobra:[`V/F do rol: o que é e o que não é hediondo (arma de uso restrito, roubo simples, tráfico privilegiado).`,`Relacione: percentual de progressão com a situação (40, 50, 60, 70%).`,`INCORRETA sobre fiança, indulto e liberdade provisória.`],
+ pares:[[`Rol`,`taxativo, consumado ou tentado`],[`TTT`,`equiparados, não hediondos`],[`Temporária`,`30 + 30 dias`],[`Progressão`,`40 / 50 / 60 / 70%`],[`Art. 8º`,`associação 3 a 6 anos`]],
+ foco:`Rol atualizado (Pacote Anticrime, Leis 14.811 e 14.994/2024) e consequências do art. 2º.`},
+c13:{item:`Lei nº 11.343/2006 (Lei de Drogas).`,
+ cobra:[`V/F sobre o usuário (sem flagrante, termo circunstanciado) e sobre o Tema 506 (só maconha).`,`Relacione: crime com a pena (tráfico 5 a 15; associação 3 a 10; financiar 8 a 20; informante 2 a 6).`,`Casos: uso compartilhado × tráfico; competência estadual × federal.`],
+ pares:[[`Art. 28`,`usuário, sem prisão`],[`Art. 33, § 4º`,`tráfico privilegiado, 1/6 a 2/3`],[`Art. 35`,`2 ou mais pessoas`],[`Inquérito`,`30 dias preso, 90 solto`],[`Súmula 522 STF`,`Justiça Federal só se transnacional`]],
+ foco:`Usuário × traficante, majorantes do art. 40 e procedimento policial (arts. 48 a 53).`},
+c14:{item:`Lei Estadual nº 6.783/1974 (Estatuto dos Policiais Militares do Estado de Pernambuco).`,
+ cobra:[`V/F de conceitos: posto × graduação; círculos hierárquicos; agregação × reversão.`,`Relacione: situação com prazo (ausente 24h; desertor 8 dias; desaparecido 8 dias; extraviado 30 dias).`,`INCORRETA com regras da CF para militares (greve, partido, elegibilidade, perda do posto).`],
+ pares:[[`Posto`,`oficial, ato do Governador`],[`Graduação`,`praça, ato do Comandante-Geral`],[`Agregação`,`fora do Quadro, sem número`],[`Reserva remunerada`,`pode ser convocado`],[`Reforma`,`inatividade definitiva`]],
+ foco:`Hierarquia e disciplina, situações funcionais e regras constitucionais dos militares estaduais. Leia também o texto consolidado da lei no site da ALEPE.`},
+c15:{item:`Lei nº 10.741/2003 – Estatuto da Pessoa Idosa: disposições pertinentes à atuação policial e crimes em espécie.`,
+ cobra:[`V/F sobre ação penal (incondicionada, sem imunidades) e sobre o art. 94 (ADI 3.096).`,`Relacione: conduta com artigo (reter cartão → 104; coagir a doar → 107; abandonar → 98).`,`Casos de ocorrência: filho que retém benefício, hospital que recusa atendimento.`],
+ pares:[[`Pessoa idosa`,`60 anos ou mais`],[`Gratuidade urbana`,`maiores de 65`],[`Prioridade especial`,`maiores de 80`],[`Art. 104`,`reter cartão magnético`],[`Art. 107`,`coação, 2 a 5 anos`]],
+ foco:`O edital restringe o tema à atuação policial e aos crimes: concentre-se nos arts. 93 a 109.`},
+c16:{item:`Lei Federal nº 12.852/2013 – Estatuto da Juventude. Item acrescido pela Lei estadual nº 18.926/2025.`,
+ cobra:[`V/F sobre a faixa etária e a relação com o ECA.`,`Relacione: seção do Estatuto com o direito (cultura → meia-entrada; mobilidade → vagas interestaduais).`,`INCORRETA sobre conselhos de juventude e diretrizes de segurança pública (art. 38).`],
+ pares:[[`Jovem`,`15 a 29 anos`],[`15 a 17 anos`,`ECA, e excepcionalmente o Estatuto`],[`Emancipação`,`inclusão, não a civil`],[`Art. 37`,`ambiente seguro, sem violência`],[`Art. 38`,`diretrizes de segurança pública`]],
+ foco:`Destinatários, princípios e o direito à segurança pública e ao acesso à justiça.`},
+c17:{item:`Súmulas, jurisprudência dominante dos Tribunais Superiores e legislação relacionada com os temas.`,
+ cobra:[`V/F com súmula invertida ("cabe HC contra perda de patente", "tráfico obriga internação").`,`Relacione: número da súmula com o conteúdo.`,`Casos práticos resolvidos por tese (Tema 280, Tema 506, HC 208.240).`],
+ pares:[[`SV 11`,`algemas`],[`SV 25`,`depositário infiel`],[`Súmula 492 STJ`,`tráfico não obriga internação`],[`Súmula 600 STJ`,`sem coabitação`],[`Tema 280 STF`,`domicílio: fundadas razões`]],
+ foco:`Súmulas que tocam a atividade policial: algemas, domicílio, busca pessoal, adolescente e Maria da Penha.`}
+};
+
+window.VF = [
+/* c1 */
+{c:'c1',t:`Direitos fundamentais são, em regra, os direitos humanos positivados na Constituição de um Estado.`,v:true,x:`Distinção clássica pelo plano de positivação.`},
+{c:'c1',t:`Os direitos humanos são absolutos e não admitem qualquer restrição.`,v:false,x:`São, em regra, relativos. Parte da doutrina vê como absolutas apenas a proibição da tortura e da escravidão.`},
+{c:'c1',t:`A indivisibilidade afasta a hierarquia entre direitos civis e políticos e direitos sociais.`,v:true,x:`Reafirmada em Viena (1993).`},
+{c:'c1',t:`O rol de direitos do art. 5º da Constituição Federal é taxativo.`,v:false,x:`O § 2º do art. 5º é cláusula de abertura.`},
+{c:'c1',t:`Na teoria de Jellinek, o status positivo permite ao indivíduo exigir prestações do Estado.`,v:true,x:`Status positivo (civitatis).`},
+{c:'c1',t:`A eficácia horizontal dos direitos fundamentais ocorre na relação entre o Estado e o indivíduo.`,v:false,x:`Essa é a eficácia vertical. A horizontal ocorre entre particulares.`},
+{c:'c1',t:`Para Bobbio, o problema atual dos direitos humanos é mais protegê-los do que justificá-los.`,v:true,x:`A Era dos Direitos.`},
+{c:'c1',t:`A vedação do retrocesso permite suprimir direito social já conquistado, desde que por lei ordinária.`,v:false,x:`Ela impede justamente a redução do nível de proteção alcançado.`},
+/* c2 */
+{c:'c2',t:`A Declaração da Virgínia (1776) é anterior à Declaração francesa (1789).`,v:true,x:`É considerada a primeira declaração moderna de direitos.`},
+{c:'c2',t:`A Constituição de Weimar foi a primeira do mundo a prever direitos sociais.`,v:false,x:`A pioneira foi a do México (1917).`},
+{c:'c2',t:`Os direitos de 2ª geração ligam-se à igualdade e exigem prestações do Estado.`,v:true,x:`Saúde, educação, trabalho, previdência.`},
+{c:'c2',t:`O direito ao meio ambiente equilibrado é de 1ª geração.`,v:false,x:`É de 3ª geração (fraternidade).`},
+{c:'c2',t:`A classificação dos direitos em gerações foi proposta por Karel Vasak.`,v:true,x:`Em 1979, inspirada no lema da Revolução Francesa.`},
+{c:'c2',t:`A Magna Carta de 1215 reconheceu direitos a todos os seres humanos, sem distinção.`,v:false,x:`Protegia sobretudo barões e clero.`},
+{c:'c2',t:`Para Paulo Bonavides, a paz é direito de 5ª geração.`,v:true,x:`Na classificação clássica, a paz é de 3ª geração.`},
+{c:'c2',t:`A doutrina prefere "gerações" a "dimensões" por indicar a acumulação dos direitos.`,v:false,x:`É o contrário: "gerações" sugere substituição; "dimensões" indica acumulação.`},
+/* c3 */
+{c:'c3',t:`Tratado de direitos humanos aprovado em dois turnos, por três quintos dos votos, em cada Casa, equivale a emenda constitucional.`,v:true,x:`Art. 5º, § 3º, CF.`},
+{c:'c3',t:`O Pacto de San José da Costa Rica tem status de emenda constitucional.`,v:false,x:`É supralegal: foi incorporado em 1992, sem o rito do § 3º.`},
+{c:'c3',t:`O Congresso Nacional aprova tratados por meio de decreto legislativo.`,v:true,x:`Art. 49, I, CF.`},
+{c:'c3',t:`A promulgação do tratado no Brasil é feita por decreto legislativo.`,v:false,x:`É feita por decreto presidencial.`},
+{c:'c3',t:`O incidente de deslocamento de competência é suscitado pelo Procurador-Geral da República perante o STJ.`,v:true,x:`Art. 109, § 5º, CF.`},
+{c:'c3',t:`O Procurador-Geral de Justiça do Estado pode suscitar o incidente de deslocamento de competência.`,v:false,x:`A legitimidade é exclusiva do PGR.`},
+{c:'c3',t:`É ilícita a prisão civil do depositário infiel, qualquer que seja a modalidade do depósito.`,v:true,x:`Súmula Vinculante 25.`},
+{c:'c3',t:`Os tratados que não versam sobre direitos humanos têm, em regra, status supralegal.`,v:false,x:`Têm, em regra, status de lei ordinária.`},
+/* c4 */
+{c:'c4',t:`A DUDH foi adotada pela Resolução 217-A (III) da Assembleia Geral da ONU, em 10/12/1948.`,v:true,x:`Em Paris, no Palais de Chaillot.`},
+{c:'c4',t:`A DUDH recebeu votos contrários dos países do bloco soviético.`,v:false,x:`Não houve voto contrário: foram 8 abstenções.`},
+{c:'c4',t:`A DUDH é composta de preâmbulo e 30 artigos.`,v:true,x:`Arts. 3º a 21: civis e políticos; 22 a 28: sociais.`},
+{c:'c4',t:`Pela DUDH, o asilo pode ser invocado em caso de perseguição motivada por crime de direito comum.`,v:false,x:`Art. 14.2 exclui essa hipótese.`},
+{c:'c4',t:`Pela DUDH, a instrução elementar é obrigatória.`,v:true,x:`Art. 26.1.`},
+{c:'c4',t:`A DUDH é tratado internacional ratificado pelo Brasil.`,v:false,x:`É resolução, sem ratificação.`},
+{c:'c4',t:`A DUDH prevê o direito de propriedade, só ou em sociedade com outros.`,v:true,x:`Art. 17. Os Pactos de 1966 não preveem esse direito.`},
+{c:'c4',t:`A DUDH obriga todo trabalhador a filiar-se a um sindicato.`,v:false,x:`Ninguém pode ser obrigado a fazer parte de uma associação (art. 20.2).`},
+/* c5 */
+{c:'c5',t:`A Convenção Americana foi promulgada no Brasil pelo Decreto nº 678/1992.`,v:true,x:`Após adesão em 25/09/1992.`},
+{c:'c5',t:`A vítima pode submeter o caso diretamente à Corte Interamericana.`,v:false,x:`Só os Estados-Partes e a Comissão (art. 61).`},
+{c:'c5',t:`A pena de morte não pode ser imposta a quem, no momento do delito, era menor de 18 ou maior de 70 anos.`,v:true,x:`Art. 4.5. Também não se aplica à gestante.`},
+{c:'c5',t:`Os juízes da Corte Interamericana têm mandato de 4 anos.`,v:false,x:`Têm mandato de 6 anos. O de 4 anos é dos membros da Comissão.`},
+{c:'c5',t:`A petição à Comissão deve ser apresentada em 6 meses da notificação da decisão definitiva interna.`,v:true,x:`Art. 46.1.b.`},
+{c:'c5',t:`O direito à vida pode ser suspenso em caso de guerra.`,v:false,x:`Está entre os direitos insuscetíveis de suspensão (art. 27.2).`},
+{c:'c5',t:`A Convenção admite restrições e até a privação do exercício do direito de associação a membros da polícia.`,v:true,x:`Art. 16.3.`},
+{c:'c5',t:`O Brasil reconheceu a competência contenciosa da Corte Interamericana em 1992.`,v:false,x:`Em 10/12/1998.`},
+/* c6 */
+{c:'c6',t:`Criança é a pessoa até 12 anos de idade incompletos.`,v:true,x:`Art. 2º do ECA.`},
+{c:'c6',t:`Ao ato infracional praticado por criança corresponde medida socioeducativa.`,v:false,x:`Correspondem as medidas de proteção do art. 101 (art. 105).`},
+{c:'c6',t:`No ato infracional com violência ou grave ameaça a pessoa, a autoridade policial deverá lavrar auto de apreensão.`,v:true,x:`Art. 173. Nos demais casos, pode ser BO circunstanciado.`},
+{c:'c6',t:`O adolescente liberado aos pais será apresentado ao juiz.`,v:false,x:`Será apresentado ao Ministério Público (art. 174).`},
+{c:'c6',t:`A internação antes da sentença pode durar, no máximo, 45 dias.`,v:true,x:`Art. 108.`},
+{c:'c6',t:`O adolescente pode ser transportado em compartimento fechado de viatura, desde que algemado.`,v:false,x:`O art. 178 proíbe o transporte em compartimento fechado.`},
+{c:'c6',t:`O Conselho Tutelar é composto de 5 membros, com mandato de 4 anos.`,v:true,x:`Art. 132.`},
+{c:'c6',t:`Vender bebida alcoólica a adolescente é contravenção penal.`,v:false,x:`É crime do art. 243 do ECA desde a Lei 13.106/2015.`},
+/* c7 */
+{c:'c7',t:`Não existe crime de abuso de autoridade na forma culposa.`,v:true,x:`Todos exigem dolo e finalidade específica (art. 1º, § 1º).`},
+{c:'c7',t:`A perda do cargo é efeito automático da condenação por abuso de autoridade.`,v:false,x:`Exige reincidência e declaração motivada (art. 4º, parágrafo único).`},
+{c:'c7',t:`Cumprir mandado de busca domiciliar após as 21 horas ou antes das 5 horas é crime.`,v:true,x:`Art. 22, § 1º, III.`},
+{c:'c7',t:`Usar algemas fora das hipóteses legais é crime do art. 17 da Lei nº 13.869/2019.`,v:false,x:`O art. 17 foi vetado. Aplica-se a Súmula Vinculante 11.`},
+{c:'c7',t:`Os crimes de abuso de autoridade são de ação penal pública incondicionada.`,v:true,x:`Art. 3º, admitida a ação privada subsidiária.`},
+{c:'c7',t:`Interrogar durante a noite o preso capturado em flagrante é sempre crime.`,v:false,x:`O art. 18 ressalva o flagrante e o preso que consente, assistido.`},
+{c:'c7',t:`A divergência na interpretação de lei não configura abuso de autoridade.`,v:true,x:`Art. 1º, § 2º.`},
+{c:'c7',t:`Deixar de entregar ao preso a nota de culpa em 48 horas é crime.`,v:false,x:`O prazo é de 24 horas (art. 12, parágrafo único, III).`},
+/* c8 */
+{c:'c8',t:`A tortura é inafiançável e insuscetível de graça ou anistia.`,v:true,x:`Art. 5º, XLIII, CF e art. 1º, § 6º, da Lei 9.455/1997.`},
+{c:'c8',t:`A tortura é crime imprescritível.`,v:false,x:`Imprescritíveis são o racismo e a ação de grupos armados contra a ordem constitucional.`},
+{c:'c8',t:`Quem se omite diante da tortura, tendo o dever de evitá-la, responde com detenção de 1 a 4 anos.`,v:true,x:`Art. 1º, § 2º.`},
+{c:'c8',t:`A tortura discriminatória abrange a discriminação por orientação sexual.`,v:false,x:`Só racial ou religiosa (art. 1º, I, "c").`},
+{c:'c8',t:`A condenação por tortura acarreta a perda do cargo e a interdição para seu exercício pelo dobro do prazo da pena.`,v:true,x:`Art. 1º, § 5º. Efeito automático (STJ).`},
+{c:'c8',t:`Todas as modalidades de tortura são crimes próprios de agente público.`,v:false,x:`A tortura do art. 1º, I, é crime comum.`},
+{c:'c8',t:`Se da tortura resulta morte, a pena é de reclusão de 8 a 16 anos.`,v:true,x:`Art. 1º, § 3º.`},
+{c:'c8',t:`A tortura contra pessoa maior de 60 anos tem a pena aplicada em dobro.`,v:false,x:`O aumento é de 1/6 até 1/3 (§ 4º, II).`},
+/* c9 */
+{c:'c9',t:`A Lei Maria da Penha não exige coabitação entre autor e vítima.`,v:true,x:`Súmula 600 do STJ.`},
+{c:'c9',t:`O policial pode afastar o agressor do lar em município que é sede de comarca.`,v:false,x:`Só quando o município não for sede de comarca e não houver delegado disponível (art. 12-C, III).`},
+{c:'c9',t:`Descumprir medida protetiva de urgência é crime punido com reclusão de 2 a 5 anos e multa.`,v:true,x:`Art. 24-A, com a redação da Lei 14.994/2024.`},
+{c:'c9',t:`Na prisão em flagrante por descumprimento de medida protetiva, o delegado pode arbitrar fiança.`,v:false,x:`Apenas o juiz pode conceder fiança (art. 24-A, § 2º).`},
+{c:'c9',t:`A lesão corporal na violência doméstica contra a mulher é de ação penal pública incondicionada.`,v:true,x:`Súmula 542 do STJ.`},
+{c:'c9',t:`Cabe transação penal nos crimes da Lei Maria da Penha com pena máxima de até 2 anos.`,v:false,x:`A Lei 9.099/1995 não se aplica (art. 41; Súmula 536 STJ).`},
+{c:'c9',t:`A autoridade policial deve remeter ao juiz o pedido de medida protetiva em 48 horas.`,v:true,x:`Art. 12, III.`},
+{c:'c9',t:`Segundo o STJ, a Lei Maria da Penha não se aplica às mulheres trans.`,v:false,x:`Aplica-se (REsp 1.977.124/SP, 2022).`},
+/* c10 */
+{c:'c10',t:`A prática do racismo é crime inafiançável e imprescritível.`,v:true,x:`Art. 5º, XLII, CF.`},
+{c:'c10',t:`A injúria racial é crime do Código Penal de ação penal privada.`,v:false,x:`Está no art. 2º-A da Lei 7.716/1989 e é de ação pública incondicionada.`},
+{c:'c10',t:`A injúria em razão de religião continua prevista no art. 140, § 3º, do Código Penal.`,v:true,x:`O art. 2º-A abrange raça, cor, etnia e procedência nacional.`},
+{c:'c10',t:`A perda do cargo e a suspensão do estabelecimento são efeitos automáticos da condenação por racismo.`,v:false,x:`Não são automáticos (art. 18).`},
+{c:'c10',t:`O racismo recreativo aumenta a pena de 1/3 até a metade.`,v:true,x:`Art. 20-A.`},
+{c:'c10',t:`Impedir a hospedagem em hotel por discriminação racial é punido com reclusão de 1 a 3 anos.`,v:false,x:`Reclusão de 3 a 5 anos (art. 7º).`},
+{c:'c10',t:`A injúria racial praticada por funcionário público em serviço tem a pena aumentada de 1/3 até a metade.`,v:true,x:`Art. 20-B.`},
+{c:'c10',t:`A Constituição veda expressamente a anistia ao crime de racismo.`,v:false,x:`A vedação de graça e anistia está no inciso XLIII, para tortura, tráfico, terrorismo e hediondos.`},
+/* c11 */
+{c:'c11',t:`A pessoa jurídica pode ser condenada por crime ambiental independentemente da responsabilização da pessoa física.`,v:true,x:`STF, RE 548.181.`},
+{c:'c11',t:`Nos crimes ambientais, o sursis exige pena de até 2 anos.`,v:false,x:`Até 3 anos (art. 16).`},
+{c:'c11',t:`Maus-tratos a cão ou gato são punidos com reclusão de 2 a 5 anos, multa e proibição da guarda.`,v:true,x:`Art. 32, § 1º-A.`},
+{c:'c11',t:`Os animais apreendidos devem ser entregues prioritariamente a zoológicos.`,v:false,x:`Prioridade é a soltura no habitat (art. 25, § 1º).`},
+{c:'c11',t:`A transação penal nos crimes ambientais exige prévia composição do dano, salvo comprovada impossibilidade.`,v:true,x:`Art. 27.`},
+{c:'c11',t:`O grafite em bem público é crime mesmo com autorização do órgão competente.`,v:false,x:`Com autorização, não é crime (art. 65, § 2º).`},
+{c:'c11',t:`Soltar balões que possam provocar incêndios em florestas ou áreas urbanas é crime.`,v:true,x:`Art. 42.`},
+{c:'c11',t:`Os crimes ambientais são de ação penal pública condicionada à representação.`,v:false,x:`São de ação pública incondicionada (art. 26).`},
+/* c12 */
+{c:'c12',t:`O rol de crimes hediondos é taxativo e alcança as formas consumada e tentada.`,v:true,x:`Art. 1º, caput.`},
+{c:'c12',t:`O porte ilegal de arma de fogo de uso restrito é crime hediondo.`,v:false,x:`Desde o Pacote Anticrime, só o de uso proibido.`},
+{c:'c12',t:`Nos crimes hediondos, a prisão temporária é de 30 dias, prorrogável por igual período.`,v:true,x:`Art. 2º, § 4º.`},
+{c:'c12',t:`O tráfico de drogas privilegiado é crime hediondo.`,v:false,x:`Não é (STF, HC 118.533; art. 112, § 5º, LEP).`},
+{c:'c12',t:`O primário condenado por crime hediondo sem resultado morte progride após 40% da pena.`,v:true,x:`Art. 112, V, da LEP.`},
+{c:'c12',t:`A Constituição veda expressamente o indulto aos crimes hediondos.`,v:false,x:`A CF fala em fiança, graça e anistia; o indulto foi vedado pela Lei 8.072/1990.`},
+{c:'c12',t:`A associação criminosa para a prática de hediondos é punida com reclusão de 3 a 6 anos.`,v:true,x:`Art. 8º. A delação que desmantela o bando reduz a pena de 1 a 2/3.`},
+{c:'c12',t:`O roubo praticado com arma branca é, por si só, crime hediondo.`,v:false,x:`Não é. O roubo é hediondo com arma de fogo, restrição de liberdade ou resultado lesão grave ou morte.`},
+/* c13 */
+{c:'c13',t:`Ao usuário de drogas (art. 28) não se impõe prisão em flagrante.`,v:true,x:`Art. 48, § 2º: termo circunstanciado.`},
+{c:'c13',t:`O STF descriminalizou o porte de qualquer droga para consumo pessoal.`,v:false,x:`O Tema 506 vale só para a maconha.`},
+{c:'c13',t:`A associação para o tráfico exige duas ou mais pessoas, com estabilidade e permanência.`,v:true,x:`Art. 35 e jurisprudência do STJ.`},
+{c:'c13',t:`O tráfico de drogas é punido com reclusão de 3 a 10 anos.`,v:false,x:`Reclusão de 5 a 15 anos e 500 a 1.500 dias-multa.`},
+{c:'c13',t:`O inquérito será concluído em 30 dias se o indiciado estiver preso e em 90 dias se solto, prazos que podem ser duplicados.`,v:true,x:`Art. 51.`},
+{c:'c13',t:`O uso compartilhado (art. 33, § 3º) admite que o agente obtenha lucro.`,v:false,x:`Exige ausência de objetivo de lucro.`},
+{c:'c13',t:`A majorante do tráfico interestadual dispensa a efetiva transposição da fronteira entre estados.`,v:true,x:`Súmula 587 do STJ.`},
+{c:'c13',t:`O tráfico interestadual é de competência da Justiça Federal.`,v:false,x:`É da Justiça Estadual. A Federal julga o tráfico transnacional (Súmula 522 STF).`},
+/* c14 */
+{c:'c14',t:`A hierarquia e a disciplina são a base institucional da Polícia Militar.`,v:true,x:`Art. 42 da CF e Estatuto.`},
+{c:'c14',t:`Graduação é o grau hierárquico do oficial.`,v:false,x:`Graduação é da praça; posto é do oficial.`},
+{c:'c14',t:`As patentes dos oficiais da Polícia Militar são conferidas pelo Governador do Estado.`,v:true,x:`Art. 42, § 1º, CF.`},
+{c:'c14',t:`O Capitão é oficial subalterno.`,v:false,x:`É o único oficial intermediário.`},
+{c:'c14',t:`O militar agregado deixa de ocupar vaga na escala hierárquica do seu Quadro, permanecendo sem número.`,v:true,x:`Cessado o motivo, ocorre a reversão.`},
+{c:'c14',t:`O militar da ativa pode filiar-se a partido político.`,v:false,x:`É vedado enquanto em serviço ativo (art. 142, § 3º, V, CF).`},
+{c:'c14',t:`O militar com mais de 10 anos de serviço que se candidata é agregado e, se eleito, passa à inatividade na diplomação.`,v:true,x:`Art. 14, § 8º, II, CF.`},
+{c:'c14',t:`A deserção ocorre com a ausência sem licença por mais de 24 horas.`,v:false,x:`Mais de 24 horas: ausente. Deserção: mais de 8 dias (art. 187 do CPM).`},
+/* c15 */
+{c:'c15',t:`Considera-se pessoa idosa a pessoa com idade igual ou superior a 60 anos.`,v:true,x:`Art. 1º.`},
+{c:'c15',t:`O Estatuto garante gratuidade no transporte coletivo urbano a partir dos 60 anos.`,v:false,x:`A partir dos 65 anos. Entre 60 e 65, depende de lei local.`},
+{c:'c15',t:`Os crimes do Estatuto são de ação penal pública incondicionada, sem as imunidades dos arts. 181 e 182 do CP.`,v:true,x:`Art. 95.`},
+{c:'c15',t:`Nos crimes do Estatuto com pena de até 4 anos, cabem transação penal e composição civil.`,v:false,x:`O STF (ADI 3.096) afastou os benefícios despenalizadores; aplica-se só o rito da Lei 9.099.`},
+{c:'c15',t:`Reter o cartão magnético do benefício da pessoa idosa para receber dívida é crime.`,v:true,x:`Art. 104.`},
+{c:'c15',t:`O Estatuto assegura prioridade especial aos maiores de 70 anos.`,v:false,x:`Aos maiores de 80 anos (art. 3º, § 2º).`},
+{c:'c15',t:`Os serviços de saúde devem comunicar casos de violência contra pessoa idosa à autoridade policial, ao MP e aos conselhos da pessoa idosa.`,v:true,x:`Art. 19.`},
+{c:'c15',t:`Coagir a pessoa idosa a doar ou outorgar procuração é punido com detenção de 6 meses a 1 ano.`,v:false,x:`Reclusão de 2 a 5 anos (art. 107).`},
+/* c16 */
+{c:'c16',t:`São consideradas jovens as pessoas com idade entre 15 e 29 anos.`,v:true,x:`Art. 1º, § 1º.`},
+{c:'c16',t:`Aos adolescentes de 15 a 17 anos aplica-se exclusivamente o Estatuto da Juventude.`,v:false,x:`Aplica-se o ECA e, excepcionalmente, o Estatuto da Juventude.`},
+{c:'c16',t:`A emancipação prevista no Estatuto da Juventude não se confunde com a emancipação do Código Civil.`,v:true,x:`Art. 2º, parágrafo único.`},
+{c:'c16',t:`Os conselhos de juventude são órgãos jurisdicionais.`,v:false,x:`São permanentes e autônomos, não jurisdicionais (art. 45).`},
+{c:'c16',t:`No transporte interestadual, há 2 vagas gratuitas e 2 com desconto mínimo de 50% para jovens de baixa renda.`,v:true,x:`Art. 32.`},
+{c:'c16',t:`O Estatuto da Juventude não trata de segurança pública.`,v:false,x:`Arts. 37 e 38 (Seção XI).`},
+{c:'c16',t:`É diretriz priorizar ações para jovens em situação de risco, vulnerabilidade social e egressos do sistema penitenciário.`,v:true,x:`Art. 38, IV.`},
+{c:'c16',t:`O Estatuto da Juventude foi instituído pela Lei nº 8.069/1990.`,v:false,x:`Pela Lei 12.852/2013. A Lei 8.069/1990 é o ECA.`},
+/* c17 */
+{c:'c17',t:`Pela Súmula Vinculante 11, o uso de algemas exige justificativa por escrito da excepcionalidade.`,v:true,x:`Só em resistência, fundado receio de fuga ou perigo.`},
+{c:'c17',t:`Pela Súmula 492 do STJ, o ato infracional análogo ao tráfico conduz obrigatoriamente à internação.`,v:false,x:`Por si só, não conduz.`},
+{c:'c17',t:`Pela Súmula 500 do STJ, a corrupção de menores é crime formal.`,v:true,x:`Dispensa prova da efetiva corrupção.`},
+{c:'c17',t:`Pela Súmula 694 do STF, cabe habeas corpus contra a pena de perda de patente.`,v:false,x:`Não cabe.`},
+{c:'c17',t:`Segundo o STF (Tema 280), a entrada forçada em domicílio sem mandado exige fundadas razões, justificadas a posteriori.`,v:true,x:`RE 603.616.`},
+{c:'c17',t:`A Súmula 647 do STJ declara imprescritível o crime de tortura.`,v:false,x:`Trata de ações indenizatórias por perseguição política no regime militar.`},
+{c:'c17',t:`Pela Súmula 589 do STJ, não se aplica o princípio da insignificância nos crimes contra a mulher no âmbito doméstico.`,v:true,x:`Vale também para contravenções.`},
+{c:'c17',t:`A Súmula Vinculante 25 admite a prisão do depositário judicial infiel.`,v:false,x:`É ilícita em qualquer modalidade (SV 25; Súmula 419 STJ).`}
 ];
 
 window.QUESTOES = window.QUESTOES || [];
@@ -5443,6 +5770,9 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     if (raw) { var parsed = JSON.parse(raw); if (parsed && parsed.a) state = parsed; }
   } catch (e) { /* armazenamento indisponível: segue sem salvar */ }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  if (!state.vf) state.vf = {};
+  var bancaPref = 'AOCP';
+  try { var bp = localStorage.getItem('dhpmpe.banca'); if (bp !== null) bancaPref = bp; } catch (e) {}
 
   // ---------- capítulos e ids das questões ----------
   var chapters = Array.prototype.map.call(document.querySelectorAll('section.chapter'), function (s) {
@@ -5561,9 +5891,64 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     quiz.className = 'quiz';
     quiz.hidden = true;
     theory.after(quiz);
+    var cap = (window.AOCP_CAP || {})[c.id];
+    var vfList = (window.VF || []).filter(function (v) { return v.c === c.id; });
+    var vfBox = null;
+    if (vfList.length) {
+      vfBox = document.createElement('section');
+      vfBox.className = 'vf-train';
+      vfBox.setAttribute('aria-label', 'Treino de verdadeiro ou falso');
+      var renderVF = function () {
+        var done = 0, right = 0;
+        vfList.forEach(function (v, i) {
+          var ans = state.vf[c.id + '-' + i];
+          if (ans !== undefined) { done++; if (ans === v.v) right++; }
+        });
+        vfBox.innerHTML = '<h2>Treino V/F no estilo AOCP</h2>' +
+          '<p class="vf-intro">Marque verdadeiro ou falso. Na prova, a AOCP junta quatro itens como estes em uma sequência ("V – F – V – F"): acertando cada item, você acerta a questão.</p>' +
+          '<p class="vf-score">' + done + '/' + vfList.length + ' respondidos · ' + right + ' certos</p>' +
+          '<ol class="vf-list">' + vfList.map(function (v, i) {
+            var ans = state.vf[c.id + '-' + i];
+            var answered = ans !== undefined;
+            var ok = answered && ans === v.v;
+            return '<li class="vf-item' + (answered ? (ok ? ' ok' : ' no') : '') + '"><p class="vf-t">' + v.t + '</p>' +
+              '<div class="vf-btns">' +
+              '<button type="button" data-i="' + i + '" data-v="1"' + (answered ? ' disabled' : '') + (answered && ans === true ? ' class="picked"' : '') + ' aria-label="Verdadeiro">V</button>' +
+              '<button type="button" data-i="' + i + '" data-v="0"' + (answered ? ' disabled' : '') + (answered && ans === false ? ' class="picked"' : '') + ' aria-label="Falso">F</button></div>' +
+              (answered ? '<p class="vf-fb"><b>' + (ok ? 'Certo' : 'Errado') + ': é ' + (v.v ? 'VERDADEIRO' : 'FALSO') + '.</b> ' + v.x + '</p>' : '') + '</li>';
+          }).join('') + '</ol>' +
+          '<div class="q-actions"><button type="button" class="small-btn vf-reset">Refazer o treino</button></div>';
+        vfBox.querySelectorAll('.vf-btns button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            state.vf[c.id + '-' + b.dataset.i] = b.dataset.v === '1';
+            save(); renderVF();
+          });
+        });
+        vfBox.querySelector('.vf-reset').addEventListener('click', function () {
+          vfList.forEach(function (v, i) { delete state.vf[c.id + '-' + i]; });
+          save(); renderVF();
+        });
+      };
+      renderVF();
+      theory.appendChild(vfBox);
+    }
+    if (cap) {
+      var box = document.createElement('aside');
+      box.className = 'aocp-box';
+      box.innerHTML = '<span class="aocp-label">Na prova da AOCP · Edital Soldado PMPE 2026</span>' +
+        '<p class="aocp-item"><b>O que o edital pede:</b> ' + cap.item + '</p>' +
+        '<div class="aocp-cols"><div><h4>Como a AOCP cobra</h4><ul>' + cap.cobra.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>' +
+        '<div><h4>Pares para o "relacione as colunas"</h4><dl class="aocp-pares">' + cap.pares.map(function (p) { return '<dt>' + p[0] + '</dt><dd>' + p[1] + '</dd>'; }).join('') + '</dl></div></div>' +
+        '<p class="aocp-foco"><b>Foco:</b> ' + cap.foco + '</p>' +
+        '<div class="q-actions">' + (vfBox ? '<button type="button" class="small-btn go-vf">Ir ao treino V/F</button>' : '') +
+        '<button type="button" class="small-btn go-aocp">Questões AOCP deste capítulo</button></div>';
+      theory.insertBefore(box, theory.firstChild);
+      if (vfBox) box.querySelector('.go-vf').addEventListener('click', function () { vfBox.scrollIntoView(); });
+    }
+    var nA = list.filter(function (q) { return q.b === 'AOCP'; }).length;
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo AOCP, FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA) + ' no estilo FCC e Vunesp, para treino extra.</p><button type="button" class="btn go-q">Ir para as questões</button>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';
@@ -5578,7 +5963,12 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       var bar = document.createElement('div');
       bar.className = 'quiz-bar';
       var s = stats(list);
-      bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar questões">' +
+      var bancas = [['AOCP', 'AOCP'], ['', 'Todas as bancas'], ['FCC', 'FCC'], ['Vunesp', 'Vunesp']];
+      bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar por banca">' +
+        bancas.map(function (b) {
+          return '<button type="button" data-b="' + b[0] + '" aria-pressed="' + (bancaPref === b[0]) + '">' + b[1] + '</button>';
+        }).join('') + '</div>' +
+        '<div class="seg" role="group" aria-label="Filtrar questões">' +
         ['all:Todas', 'new:Não respondidas', 'wrong:Erradas'].map(function (p) {
           var k = p.split(':');
           return '<button type="button" data-f="' + k[0] + '" aria-pressed="' + (filter === k[0]) + '">' + k[1] + '</button>';
@@ -5594,6 +5984,13 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       bar.querySelectorAll('[data-f]').forEach(function (b) {
         b.addEventListener('click', function () { filter = b.dataset.f; renderQuiz(); });
       });
+      bar.querySelectorAll('[data-b]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          bancaPref = b.dataset.b;
+          try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+          renderQuiz();
+        });
+      });
       bar.querySelector('.reset-cap').addEventListener('click', function () { confirm.hidden = false; });
       confirm.querySelector('.no').addEventListener('click', function () { confirm.hidden = true; });
       confirm.querySelector('.yes').addEventListener('click', function () {
@@ -5602,6 +5999,7 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       });
       var shown = list.filter(function (q) {
         var v = state.a[q.id];
+        if (bancaPref && q.b !== bancaPref) return false;
         if (filter === 'new') return v === undefined;
         if (filter === 'wrong') return v !== undefined && v !== q.a;
         return true;
@@ -5609,7 +6007,7 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       if (!shown.length) {
         var e = document.createElement('p');
         e.className = 'empty';
-        e.textContent = filter === 'wrong' ? 'Nenhum erro neste capítulo.' : filter === 'new' ? 'Você já respondeu todas. Use "Zerar capítulo" para refazer.' : 'Sem questões.';
+        e.textContent = filter === 'wrong' ? 'Nenhum erro neste capítulo' + (bancaPref ? ' nas questões ' + bancaPref : '') + '.' : filter === 'new' ? 'Você já respondeu todas' + (bancaPref ? ' as questões ' + bancaPref : '') + '. Use "Zerar capítulo" para refazer.' : 'Sem questões.';
         quiz.appendChild(e);
       }
       shown.forEach(function (q) {
@@ -5630,6 +6028,12 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       if (b) { setTab(b.dataset.t); window.scrollTo(0, 0); }
     });
     cta.querySelector('.go-q').addEventListener('click', function () { setTab('q'); window.scrollTo(0, 0); });
+    var goA = sec.querySelector('.go-aocp');
+    if (goA) goA.addEventListener('click', function () {
+      bancaPref = 'AOCP';
+      try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+      setTab('q'); window.scrollTo(0, 0);
+    });
     c.setTab = setTab;
   });
 
@@ -5754,9 +6158,10 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     return arr;
   }
   function fmtTime(s) { return pad(Math.floor(s / 60)) + ':' + pad(s % 60); }
-  function startSim(pool) {
-    sim = { list: pool, ans: {}, t0: Date.now() };
+  function startSim(pool, pmpe) {
+    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe };
     $('simSetup').hidden = true; $('simResult').hidden = true; $('simRun').hidden = false;
+    document.querySelector('.sim-pmpe').hidden = true;
     var box = $('simList'); box.innerHTML = '';
     pool.forEach(function (q, k) {
       box.appendChild(qCard(q, { mode: 'exam', label: 'Questão ' + (k + 1) + ' de ' + pool.length, onPick: function (qq, i) { sim.ans[qq.id] = i; updCount(); } }));
@@ -5769,6 +6174,18 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     window.scrollTo(0, 0);
   }
   function updCount() { $('simCount').textContent = Object.keys(sim.ans).length + '/' + sim.list.length + ' respondidas'; }
+  $('simBanca').value = 'AOCP';
+  function startPMPE() {
+    var byCap = {};
+    QS.forEach(function (q) { if (q.b === 'AOCP') (byCap[q.c] = byCap[q.c] || []).push(q); });
+    var picked = shuffle(Object.keys(byCap)).slice(0, 10).sort(function (a, b) { return capById[a].num - capById[b].num; });
+    var pool = picked.map(function (k) { var arr = byCap[k]; return arr[Math.floor(Math.random() * arr.length)]; });
+    $('simMsg').hidden = true;
+    startSim(pool, true);
+  }
+  $('simPMPE').addEventListener('click', startPMPE);
+  var coverPMPE = $('coverPMPE');
+  if (coverPMPE) coverPMPE.addEventListener('click', function () { show('simulado', true); startPMPE(); });
   $('simStart').addEventListener('click', function () {
     var caps = capBoxes().filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
     var banca = $('simBanca').value, only = $('simOnly').value, qtd = +$('simQtd').value;
@@ -5789,6 +6206,7 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     if ($('simQuit').textContent === 'Cancelar') { $('simQuit').textContent = 'Confirmar cancelamento'; return; }
     clearInterval(timer); sim = null;
     $('simRun').hidden = true; $('simSetup').hidden = false;
+    document.querySelector('.sim-pmpe').hidden = false;
   });
   $('simEnd').addEventListener('click', function () {
     if (!sim) return;
@@ -5809,13 +6227,14 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
       reveal(art, q, sim.ans[q.id], { mode: 'exam' });
     });
     var pct = Math.round(right / sim.list.length * 100);
+    var pmpeNote = sim.pmpe ? '<p class="score-note">Na prova, estas 10 questões somam com as 10 de Direito Constitucional no Bloco III: são exigidos ao menos 6 acertos em 20 no bloco, sem zerar a disciplina. ' + (right >= 6 ? 'Com ' + right + ' acertos aqui, você já cobriria sozinho o mínimo do bloco.' : right >= 1 ? 'Com ' + right + ' acerto(s), você não zera a disciplina, mas precisaria completar o bloco com Constitucional.' : 'Zerar a disciplina elimina: revise a teoria antes do próximo simulado.') + '</p>' : '';
     var note = pct >= 80 ? 'Nível de aprovação. Revise só os erros.' : pct >= 60 ? 'Bom caminho. Volte à teoria dos capítulos com menor aproveitamento.' : 'Volte à teoria e aos quadros de pegadinhas antes do próximo simulado.';
     var rows = Object.keys(byCap).sort(function (a, b) { return capById[a].num - capById[b].num; }).map(function (k) {
       var c = capById[k], s = byCap[k];
       return '<tr><td>' + pad(c.num) + ' · ' + c.short + '</td><td>' + s.r + '/' + s.t + '</td><td>' + Math.round(s.r / s.t * 100) + '%</td></tr>';
     }).join('');
     var res = $('simResult');
-    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p></div></div>' +
+    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + '</div></div>' +
       '<div class="tbl-wrap"><table class="tbl"><tr><th>Capítulo</th><th>Acertos</th><th>%</th></tr>' + rows + '</table></div>' +
       '<div class="q-actions"><button type="button" class="btn" id="simNew">Novo simulado</button><a class="btn ghost" href="#erros">Ir ao caderno de erros</a></div>' +
       '<p class="q-exp" style="margin-top:10px">O gabarito comentado de cada questão está logo abaixo.</p></div>';
@@ -5823,6 +6242,7 @@ x:`A Súmula 607 diz que basta a prova da destinação internacional das drogas,
     $('simRun').querySelector('.sim-sticky').hidden = true;
     $('simNew').addEventListener('click', function () {
       $('simRun').hidden = true; $('simResult').hidden = true; $('simSetup').hidden = false;
+      document.querySelector('.sim-pmpe').hidden = false;
       $('simRun').querySelector('.sim-sticky').hidden = false;
       window.scrollTo(0, 0);
     });
