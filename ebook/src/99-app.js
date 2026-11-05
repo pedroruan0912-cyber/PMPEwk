@@ -133,7 +133,7 @@
     theory.after(quiz);
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo AOCP, FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';

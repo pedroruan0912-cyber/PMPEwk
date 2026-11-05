@@ -17,6 +17,7 @@
   --trap:#B42318; --trap-soft:#FCEBE9;
   --ok:#1C6E45; --ok-soft:#E2F3E8;
   --law-bg:#EBF0F7;
+  --aocp:#8A2F6B; --aocp-soft:#F7E9F2;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --f-body:"Literata",Georgia,"Times New Roman",serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -27,7 +28,7 @@
   --mark:#E6CB3F; --mark-ink:#131A26;
   --trap:#FF8F80; --trap-soft:#36191A;
   --ok:#72D29E; --ok-soft:#14301F;
-  --law-bg:#18212F; color-scheme:dark;
+  --law-bg:#18212F; --aocp:#E79BCB; --aocp-soft:#33172A; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --paper:#0D121A; --surface:#141B26; --ink:#E4E8EF; --muted:#9AA5B6; --rule:#283245;
@@ -35,7 +36,7 @@
   --mark:#E6CB3F; --mark-ink:#131A26;
   --trap:#FF8F80; --trap-soft:#36191A;
   --ok:#72D29E; --ok-soft:#14301F;
-  --law-bg:#18212F; color-scheme:dark;
+  --law-bg:#18212F; --aocp:#E79BCB; --aocp-soft:#33172A; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -157,8 +158,11 @@ details.deep>div{padding:0 14px 12px}
 .tag{border-radius:3px;padding:1px 7px;font-weight:600;letter-spacing:.08em;border:1px solid currentColor}
 .tag.fcc{color:var(--accent)}
 .tag.vunesp{color:var(--ok)}
+.tag.aocp{color:var(--aocp)}
 .q-stem{margin:0 0 12px;font-size:.98rem}
 .q-stem ol,.q-stem ul{margin:6px 0;padding-left:1.4em}
+.q-stem ul.vf{list-style:none;padding-left:.2em}
+.q-stem ul.vf li{margin:4px 0}
 .q-stem p{margin:0 0 8px}
 .q-opts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
 .opt{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;width:100%;text-align:left;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:9px 12px;font-family:var(--f-body);font-size:.94rem;line-height:1.45}
@@ -204,6 +208,9 @@ details.deep>div{padding:0 14px 12px}
 .banca h3{font-size:1.15rem;margin-bottom:6px}
 .banca ul{margin:0;padding-left:1.1em;font-size:.93rem}
 .banca li{margin:3px 0}
+.banca-main{border-color:var(--aocp);background:var(--aocp-soft);grid-column:1/-1}
+.banca-main h3{color:var(--aocp)}
+.banca-badge{display:inline-block;font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--aocp);border:1px solid var(--aocp);border-radius:3px;padding:1px 6px;margin-bottom:6px}
 
 /* ---------- simulado / flashcards ---------- */
 .panel{border:1px solid var(--rule);background:var(--surface);border-radius:6px;padding:16px 18px;margin:16px 0}
@@ -235,7 +242,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 <body>
 <div class="app">
 <aside class="side" id="side" aria-label="Sumário">
-  <p class="brand">Direitos Humanos<br>&amp; Legislação Especial<small>E-book interativo · PMPE · FCC &amp; Vunesp</small></p>
+  <p class="brand">Direitos Humanos<br>&amp; Legislação Especial<small>E-book interativo · PMPE · AOCP, FCC &amp; Vunesp</small></p>
   <nav id="nav"></nav>
 </aside>
 <div class="scrim" id="scrim"></div>
@@ -252,7 +259,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 <section class="view cover" id="inicio">
   <span class="eyebrow">Soldado PMPE · Direitos Humanos e Legislação Especial</span>
   <h1>Teoria completa,<br><mark>pegadinhas</mark> e questões</h1>
-  <p class="lede">Todo o conteúdo do edital em 17 capítulos: teoria organizada pela letra da lei, quadros de <b>pegadinhas</b> que FCC e Vunesp repetem e questões comentadas no estilo de cada banca. Suas respostas ficam salvas neste navegador.</p>
+  <p class="lede">Todo o conteúdo do edital em 17 capítulos: teoria organizada pela letra da lei, quadros de <b>pegadinhas</b> que as bancas repetem e questões comentadas no estilo do Instituto AOCP (banca do edital), da FCC e da Vunesp. Suas respostas ficam salvas neste navegador.</p>
   <div class="stats">
     <div class="stat"><b>17</b><span>capítulos</span></div>
     <div class="stat"><b id="statQ">0</b><span>questões comentadas</span></div>
@@ -268,6 +275,17 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 
   <h2 style="font-size:1.35rem;margin:10px 0 4px">Raio-X das bancas</h2>
   <div class="banca-grid">
+    <div class="banca banca-main">
+      <span class="banca-badge">Banca do edital PMPE 2026</span>
+      <h3>Instituto AOCP</h3>
+      <ul>
+        <li>Comando em <b>caixa alta</b>: "assinale a alternativa <b>CORRETA</b>" ou "<b>INCORRETA</b>". Leia o comando antes das alternativas.</li>
+        <li>Muitas questões de <b>verdadeiro ou falso</b> com sequência ("V – F – V – F"): resolva item por item e elimine alternativas.</li>
+        <li>Assertivas I, II, III com respostas como "<b>Apenas I e III</b>" ou "I, II e III".</li>
+        <li><b>Relacione as colunas</b>: lei, artigo, pena ou conceito com a descrição certa.</li>
+        <li>Letra da lei com uma palavra trocada e casos práticos de policiamento.</li>
+      </ul>
+    </div>
     <div class="banca">
       <h3>FCC</h3>
       <ul>
@@ -2070,7 +2088,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
   <h3>Montar simulado</h3>
   <div class="form-row">
     <div class="field"><label for="simBanca">Banca</label>
-      <select id="simBanca"><option value="">FCC + Vunesp</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
+      <select id="simBanca"><option value="">Todas as bancas</option><option value="AOCP">Só AOCP</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
     <div class="field"><label for="simQtd">Questões</label>
       <select id="simQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="999">Todas</option></select></div>
     <div class="field"><label for="simOnly">Filtro</label>
@@ -4224,6 +4242,603 @@ o:[`não se aplica a mulheres trans, por exigir o sexo biológico feminino.`,`ap
 x:`Decisão da 6ª Turma do STJ. A lei também se aplica a relações homoafetivas entre mulheres (art. 5º, parágrafo único).`}
 );
 
+window.QUESTOES = window.QUESTOES || [];
+/* Questões no estilo Instituto AOCP (banca do edital PMPE 2026) – capítulos 1 a 8 */
+QUESTOES.push(
+/* ===== CAP 1 ===== */
+{c:'c1',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma a seguir sobre as características dos direitos humanos e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A universalidade significa que todos os seres humanos são titulares desses direitos, sem distinção.</li><li>( ) Em regra, os direitos humanos são absolutos e não admitem limitação.</li><li>( ) A vedação do retrocesso impede a supressão do nível de proteção já alcançado.</li><li>( ) O rol de direitos do art. 5º da Constituição Federal é taxativo.</li></ul>`,
+o:[`V – F – V – F.`,`V – V – F – F.`,`F – F – V – V.`,`V – F – F – F.`,`F – V – V – F.`],a:0,
+x:`Os direitos humanos são, em regra, relativos (podem ser limitados). O rol do art. 5º não é taxativo, por força da cláusula de abertura do § 2º.`},
+
+{c:'c1',b:'AOCP',e:`<p>Relacione as correntes sobre o fundamento dos direitos humanos com as respectivas ideias e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Jusnaturalista.</li><li>Positivista.</li><li>Historicista.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Os direitos são conquistas obtidas ao longo de lutas sociais.</li><li>( ) Os direitos preexistem ao Estado, que apenas os declara.</li><li>( ) Os direitos só existem quando estabelecidos pela norma posta pelo Estado.</li></ul>`,
+o:[`3 – 1 – 2.`,`1 – 3 – 2.`,`2 – 1 – 3.`,`3 – 2 – 1.`,`1 – 2 – 3.`],a:0,
+x:`Historicismo: conquistas históricas (Bobbio). Jusnaturalismo: direitos anteriores ao Estado. Positivismo: direitos dependem da positivação estatal.`},
+
+{c:'c1',b:'AOCP',e:`Sobre a terminologia dos direitos humanos, assinale a alternativa INCORRETA.`,
+o:[`"Direitos fundamentais" designa, em regra, os direitos positivados na Constituição de um Estado.`,`"Direitos humanos" designa, em regra, os direitos previstos em normas internacionais.`,`A expressão "liberdades públicas" abrange todas as gerações de direitos, inclusive os difusos.`,`"Direitos do homem" remete a direitos naturais ainda não positivados.`,`A Constituição Federal de 1988 utiliza mais de uma expressão para designar esses direitos.`],a:2,
+x:`"Liberdades públicas" é expressão restritiva, de origem francesa, que alcança basicamente os direitos de 1ª geração.`},
+
+{c:'c1',b:'AOCP',e:`<p>Sobre a eficácia dos direitos fundamentais, analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A eficácia vertical refere-se à relação entre o Estado e o indivíduo.</li><li>A eficácia horizontal refere-se à aplicação dos direitos fundamentais nas relações entre particulares, admitida pelo Supremo Tribunal Federal.</li><li>A eficácia diagonal refere-se às relações entre particulares em posição de desigualdade, como as relações de trabalho.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas II e III.`,`Apenas I e III.`,`I, II e III.`],a:4,
+x:`As três estão corretas. Vertical: Estado × indivíduo; horizontal: entre particulares (STF, RE 201.819); diagonal: entre particulares com desigualdade de poder.`},
+
+{c:'c1',b:'AOCP',e:`Na teoria dos status de Georg Jellinek, o status que permite ao indivíduo participar da formação da vontade do Estado, por exemplo, por meio do voto, é o status`,
+o:[`passivo.`,`negativo.`,`positivo.`,`ativo.`,`subjetivo.`],a:3,
+x:`Status ativo (activae civitatis): participação política. Passivo = deveres; negativo = liberdade frente ao Estado; positivo = exigir prestações.`},
+
+{c:'c1',b:'AOCP',e:`Em relação à distinção entre direitos, garantias e remédios constitucionais, assinale a alternativa CORRETA.`,
+o:[`Garantias são normas declaratórias que reconhecem bens jurídicos.`,`Direitos e garantias são expressões sinônimas, segundo a doutrina clássica.`,`O habeas data é remédio constitucional, espécie de garantia de natureza processual.`,`Os remédios constitucionais não são considerados garantias fundamentais.`,`A vedação da censura é exemplo de direito, e não de garantia.`],a:2,
+x:`Direitos = normas declaratórias; garantias = normas assecuratórias (Rui Barbosa). Remédios (HC, MS, MI, HD, ação popular) são garantias processuais. A vedação da censura é garantia da liberdade de expressão.`},
+
+{c:'c1',b:'AOCP',e:`Quanto à classificação dos direitos fundamentais adotada pela Constituição Federal, assinale a alternativa INCORRETA.`,
+o:[`Os direitos sociais estão previstos nos arts. 6º a 11.`,`Os direitos de nacionalidade estão previstos no art. 5º.`,`Os direitos políticos estão previstos nos arts. 14 a 16.`,`Os partidos políticos estão disciplinados no art. 17.`,`Os direitos individuais e coletivos estão previstos no art. 5º.`],a:1,
+x:`Nacionalidade: arts. 12 e 13. O Título II tem cinco capítulos: individuais e coletivos, sociais, nacionalidade, políticos e partidos políticos.`},
+
+{c:'c1',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Para Bobbio, o problema atual dos direitos humanos é mais político (protegê-los) do que filosófico (justificá-los).</li><li>( ) Para Hannah Arendt, a cidadania é o "direito a ter direitos".</li><li>( ) Para Kant, as pessoas têm preço, e as coisas têm dignidade.</li><li>( ) Uma crítica ao positivismo é a de que regimes autoritários atuaram dentro da legalidade.</li></ul>`,
+o:[`V – V – F – V.`,`V – F – F – V.`,`F – V – V – F.`,`V – V – V – F.`,`F – F – V – V.`],a:0,
+x:`Kant disse o contrário: as coisas têm preço; as pessoas têm dignidade.`},
+
+/* ===== CAP 2 ===== */
+{c:'c2',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre os documentos históricos e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A Magna Carta foi outorgada em 1215, na Inglaterra.</li><li>( ) O Bill of Rights inglês é de 1679.</li><li>( ) A Declaração de Direitos da Virgínia é de 1776.</li><li>( ) A Declaração dos Direitos do Homem e do Cidadão é de 1789.</li></ul>`,
+o:[`V – F – V – V.`,`V – V – V – V.`,`F – F – V – V.`,`V – F – F – V.`,`V – V – F – F.`],a:0,
+x:`O Bill of Rights é de 1689. Em 1679 foi editado o Habeas Corpus Act.`},
+
+{c:'c2',b:'AOCP',e:`<p>Relacione as gerações de direitos com os respectivos exemplos e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Primeira geração.</li><li>Segunda geração.</li><li>Terceira geração.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Direito ao meio ambiente ecologicamente equilibrado.</li><li>( ) Liberdade de expressão.</li><li>( ) Direito à saúde e à educação.</li><li>( ) Direito à autodeterminação dos povos.</li></ul>`,
+o:[`3 – 1 – 2 – 3.`,`3 – 2 – 1 – 3.`,`1 – 3 – 2 – 2.`,`2 – 1 – 3 – 3.`,`3 – 1 – 3 – 2.`],a:0,
+x:`1ª: civis e políticos (liberdade). 2ª: sociais, econômicos e culturais (igualdade). 3ª: difusos, como meio ambiente, paz, desenvolvimento e autodeterminação (fraternidade).`},
+
+{c:'c2',b:'AOCP',e:`A classificação dos direitos humanos em gerações, inspirada no lema da Revolução Francesa, foi proposta por`,
+o:[`Norberto Bobbio.`,`Karel Vasak.`,`Paulo Bonavides.`,`Georg Jellinek.`,`Hannah Arendt.`],a:1,
+x:`Karel Vasak, em 1979. Bonavides acrescentou a 4ª e a 5ª gerações; Jellinek é autor da teoria dos status.`},
+
+{c:'c2',b:'AOCP',e:`Sobre a evolução histórica dos direitos humanos, assinale a alternativa INCORRETA.`,
+o:[`A Constituição do México de 1917 foi pioneira na previsão de direitos sociais.`,`A Constituição de Weimar de 1919 foi a primeira Constituição do mundo a prever direitos sociais.`,`A Carta da ONU foi assinada em 1945, em São Francisco.`,`A OIT foi criada em 1919, pelo Tratado de Versalhes.`,`A Convenção de Genebra de 1864 é marco do Direito Humanitário.`],a:1,
+x:`A pioneira foi a Constituição mexicana de 1917. Weimar é o marco do constitucionalismo social na Europa.`},
+
+{c:'c2',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A Liga das Nações é apontada como precedente da internacionalização dos direitos humanos.</li><li>A Declaração Universal dos Direitos Humanos foi aprovada antes da Carta da ONU.</li><li>Os Pactos Internacionais de 1966 integram a chamada Carta Internacional de Direitos Humanos.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: a Carta da ONU é de 1945; a DUDH, de 1948.`},
+
+{c:'c2',b:'AOCP',e:`A doutrina tem preferido o termo "dimensões" ao termo "gerações" de direitos humanos porque`,
+o:[`as dimensões indicam a substituição dos direitos antigos pelos novos.`,`o termo "gerações" sugere substituição, quando, na verdade, os direitos se acumulam e coexistem.`,`as dimensões excluem os direitos sociais.`,`o termo "gerações" só se aplica a direitos difusos.`,`as dimensões foram adotadas pela Constituição Federal.`],a:1,
+x:`Os direitos de cada geração convivem e se complementam, coerentemente com a indivisibilidade.`},
+
+{c:'c2',b:'AOCP',e:`A Declaração dos Direitos do Homem e do Cidadão, de 1789, distingue-se das declarações inglesas anteriores por`,
+o:[`proteger apenas os barões e o clero.`,`ter vocação universal, proclamando direitos do ser humano em geral.`,`prever direitos sociais e trabalhistas.`,`criar um tribunal internacional.`,`ter sido aprovada pela ONU.`],a:1,
+x:`As declarações inglesas protegiam os súditos ingleses; a francesa falava em direitos do homem, com pretensão universal.`},
+
+{c:'c2',b:'AOCP',e:`Sobre a história constitucional brasileira, assinale a alternativa INCORRETA.`,
+o:[`A Constituição de 1934 foi a primeira a prever direitos sociais.`,`A Constituição de 1824 não previa qualquer direito individual.`,`A Constituição de 1988 é conhecida como "Constituição Cidadã".`,`A Constituição de 1934 sofreu influência da Constituição de Weimar.`,`A Constituição de 1988 adota a dignidade da pessoa humana como fundamento da República.`],a:1,
+x:`A Constituição do Império (1824) já tinha um rol de direitos civis e políticos no art. 179.`},
+
+/* ===== CAP 3 ===== */
+{c:'c3',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre os tratados internacionais e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Tratados de direitos humanos aprovados em dois turnos, por 3/5 dos votos, em cada Casa, equivalem a emendas constitucionais.</li><li>( ) O Pacto de San José da Costa Rica tem status de emenda constitucional.</li><li>( ) É ilícita a prisão civil do depositário infiel, qualquer que seja a modalidade do depósito.</li><li>( ) Os tratados que não versam sobre direitos humanos têm, em regra, status de lei ordinária.</li></ul>`,
+o:[`V – F – V – V.`,`V – V – V – V.`,`V – F – F – V.`,`F – F – V – V.`,`V – V – F – F.`],a:0,
+x:`O Pacto de San José é supralegal: foi incorporado em 1992, sem o rito do art. 5º, § 3º.`},
+
+{c:'c3',b:'AOCP',e:`<p>Relacione os tratados com a hierarquia que possuem no Brasil e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Equivalente a emenda constitucional.</li><li>Supralegal.</li><li>Lei ordinária.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Convenção sobre os Direitos das Pessoas com Deficiência (Nova York).</li><li>( ) Convenção Americana sobre Direitos Humanos.</li><li>( ) Tratado comercial que não versa sobre direitos humanos.</li><li>( ) Pacto Internacional sobre Direitos Civis e Políticos.</li></ul>`,
+o:[`1 – 2 – 3 – 2.`,`2 – 1 – 3 – 2.`,`1 – 2 – 2 – 3.`,`1 – 1 – 3 – 2.`,`2 – 2 – 3 – 1.`],a:0,
+x:`A Convenção de Nova York foi aprovada pelo rito do § 3º. O Pacto de San José e o PIDCP, não: são supralegais. Tratados comuns valem como lei ordinária.`},
+
+{c:'c3',b:'AOCP',e:`Nas hipóteses de grave violação de direitos humanos, o incidente de deslocamento de competência para a Justiça Federal`,
+o:[`pode ser suscitado por qualquer cidadão, perante o STF.`,`pode ser suscitado pelo Procurador-Geral da República, perante o STJ, em qualquer fase do inquérito ou processo.`,`pode ser suscitado pelo Governador, perante o Tribunal de Justiça.`,`só pode ser suscitado após a sentença de primeiro grau.`,`depende de condenação prévia do Brasil pela Corte Interamericana.`],a:1,
+x:`Art. 109, § 5º, CF.`},
+
+{c:'c3',b:'AOCP',e:`Sobre o procedimento de incorporação dos tratados internacionais, assinale a alternativa INCORRETA.`,
+o:[`Compete ao Presidente da República celebrar tratados, sujeitos a referendo do Congresso Nacional.`,`O Congresso Nacional aprova os tratados por meio de decreto legislativo.`,`O decreto legislativo é o ato pelo qual o Presidente da República promulga o tratado.`,`A ratificação é ato do Presidente no plano internacional.`,`Segundo o STF, a promulgação por decreto presidencial é necessária para a vigência interna.`],a:2,
+x:`Decreto legislativo é ato do Congresso (aprovação). A promulgação é feita por decreto presidencial.`},
+
+{c:'c3',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>O art. 5º, § 2º, da Constituição Federal estabelece o quórum de três quintos para a aprovação de tratados de direitos humanos.</li><li>O Brasil se submete à jurisdição de Tribunal Penal Internacional a cuja criação tenha manifestado adesão.</li><li>Segundo o STF, os tratados de direitos humanos não aprovados pelo rito do art. 5º, § 3º, têm status supralegal.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:3,
+x:`I está errada: o § 2º é a cláusula de abertura; o quórum de três quintos está no § 3º. II: § 4º. III: RE 466.343.`},
+
+{c:'c3',b:'AOCP',e:`Compete exclusivamente ao Congresso Nacional, nos termos do art. 49, I, da Constituição Federal,`,
+o:[`celebrar tratados internacionais.`,`resolver definitivamente sobre tratados que acarretem encargos ou compromissos gravosos ao patrimônio nacional.`,`promulgar tratados por decreto.`,`ratificar tratados perante a ONU.`,`suscitar o incidente de deslocamento de competência.`],a:1,
+x:`Literalidade do art. 49, I. A celebração é do Presidente (art. 84, VIII).`},
+
+{c:'c3',b:'AOCP',e:`O dever de todos os juízes de verificar a compatibilidade das leis internas com os tratados de direitos humanos, inclusive de ofício, afirmado pela Corte Interamericana a partir do Caso Almonacid Arellano vs. Chile (2006), denomina-se`,
+o:[`controle de constitucionalidade concentrado.`,`controle de convencionalidade.`,`controle de legalidade.`,`controle político preventivo.`,`controle de supraconstitucionalidade.`],a:1,
+x:`Controle de convencionalidade. No Brasil, os tratados com status de EC também servem de parâmetro para o controle concentrado.`},
+
+{c:'c3',b:'AOCP',e:`Sobre as sentenças da Corte Interamericana de Direitos Humanos em relação ao Brasil, assinale a alternativa INCORRETA.`,
+o:[`São definitivas e inapeláveis.`,`O Brasil se comprometeu a cumpri-las nos casos em que for parte.`,`Dependem de homologação pelo Superior Tribunal de Justiça para produzir efeitos.`,`A parte indenizatória pode ser executada pelo processo interno de execução contra o Estado.`,`São sentenças internacionais, e não estrangeiras.`],a:2,
+x:`O STJ homologa sentenças estrangeiras (de outros Estados). A sentença da Corte IDH é internacional e não depende de homologação.`},
+
+/* ===== CAP 4 ===== */
+{c:'c4',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Declaração Universal dos Direitos Humanos e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) É composta de preâmbulo e 30 artigos.</li><li>( ) Foi aprovada em Paris, em 10 de dezembro de 1948.</li><li>( ) Recebeu votos contrários dos países do bloco soviético.</li><li>( ) É tratado internacional ratificado pelo Brasil.</li></ul>`,
+o:[`V – V – F – F.`,`V – V – V – F.`,`V – F – F – V.`,`F – V – V – F.`,`V – V – F – V.`],a:0,
+x:`Não houve voto contrário: foram 48 votos a favor e 8 abstenções. A DUDH é resolução da Assembleia Geral (217-A), não tratado.`},
+
+{c:'c4',b:'AOCP',e:`<p>Relacione os artigos da Declaração Universal dos Direitos Humanos com seu conteúdo e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Art. 3º.</li><li>Art. 5º.</li><li>Art. 14.</li><li>Art. 26.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Direito de procurar e de gozar asilo em outros países.</li><li>( ) Direito à instrução.</li><li>( ) Direito à vida, à liberdade e à segurança pessoal.</li><li>( ) Proibição da tortura e de tratamento cruel, desumano ou degradante.</li></ul>`,
+o:[`3 – 4 – 1 – 2.`,`4 – 3 – 1 – 2.`,`3 – 4 – 2 – 1.`,`2 – 4 – 1 – 3.`,`3 – 1 – 4 – 2.`],a:0,
+x:`Art. 3º (vida, liberdade e segurança), art. 5º (tortura), art. 14 (asilo) e art. 26 (instrução).`},
+
+{c:'c4',b:'AOCP',e:`Sobre o direito à instrução na Declaração Universal dos Direitos Humanos, assinale a alternativa INCORRETA.`,
+o:[`A instrução será gratuita, pelo menos nos graus elementares e fundamentais.`,`A instrução elementar será obrigatória.`,`A instrução superior será gratuita e obrigatória para todos.`,`A instrução técnico-profissional será acessível a todos.`,`Os pais têm prioridade de direito na escolha do gênero de instrução dos filhos.`],a:2,
+x:`A instrução superior será acessível a todos, baseada no mérito (art. 26.1). Não é gratuita nem obrigatória por força da DUDH.`},
+
+{c:'c4',b:'AOCP',e:`Nos termos do art. 12 da Declaração Universal dos Direitos Humanos, ninguém será sujeito a interferências`,
+o:[`no exercício do direito de voto, salvo em tempo de guerra.`,`na sua vida privada, na sua família, no seu lar ou na sua correspondência, nem a ataques à sua honra e reputação.`,`na sua atividade econômica, salvo por lei tributária.`,`na escolha da profissão, salvo para militares.`,`na liberdade de culto, salvo em Estados confessionais.`],a:1,
+x:`Literalidade do art. 12, que garante a proteção da lei contra essas interferências ou ataques.`},
+
+{c:'c4',b:'AOCP',e:`<p>Analise as assertivas sobre a Declaração Universal dos Direitos Humanos e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A liberdade de religião inclui a liberdade de mudar de religião ou crença.</li><li>A liberdade de expressão inclui procurar, receber e transmitir informações e ideias, independentemente de fronteiras.</li><li>Todo ser humano tem direito a organizar sindicatos e neles ingressar para proteção de seus interesses.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas II e III.`,`Apenas I e III.`,`I, II e III.`],a:4,
+x:`As três estão corretas: arts. 18, 19 e 23.4 da DUDH. Lembre: ninguém pode ser obrigado a fazer parte de uma associação (art. 20.2).`},
+
+{c:'c4',b:'AOCP',e:`Segundo o art. 24 da Declaração Universal dos Direitos Humanos, todo ser humano tem direito a repouso e lazer, inclusive`,
+o:[`a aposentadoria integral após 30 anos de trabalho.`,`a limitação razoável das horas de trabalho e férias periódicas remuneradas.`,`a jornada máxima de 6 horas diárias.`,`a estabilidade no emprego.`,`a licença remunerada para estudos.`],a:1,
+x:`Literalidade do art. 24.`},
+
+{c:'c4',b:'AOCP',e:`Segundo a Declaração Universal dos Direitos Humanos, todo ser humano tem o direito de participar livremente da vida cultural da comunidade e`,
+o:[`o dever de aceitar a cultura oficial do Estado.`,`direito à proteção dos interesses morais e materiais decorrentes de qualquer produção científica, literária ou artística da qual seja autor.`,`o direito de exigir subsídio estatal para qualquer produção artística.`,`o direito de censurar obras ofensivas.`,`o dever de produzir conhecimento científico.`],a:1,
+x:`Art. 27.1 e 27.2 (participação cultural e direitos de autor).`},
+
+{c:'c4',b:'AOCP',e:`Sobre a Declaração Universal dos Direitos Humanos, assinale a alternativa INCORRETA.`,
+o:[`Foi proclamada como ideal comum a ser atingido por todos os povos e todas as nações.`,`Contempla direitos civis, políticos, econômicos, sociais e culturais.`,`Prevê a criação de uma Comissão para receber petições individuais contra os Estados.`,`Prevê deveres do ser humano para com a comunidade.`,`Não proíbe expressamente a pena de morte.`],a:2,
+x:`A DUDH não cria órgãos de controle. Mecanismos de petição surgiram em tratados posteriores, como o Protocolo ao PIDCP e a Convenção Americana.`},
+
+/* ===== CAP 5 ===== */
+{c:'c5',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Convenção Americana sobre Direitos Humanos e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Foi promulgada no Brasil pelo Decreto nº 678/1992.</li><li>( ) Foi assinada em San José da Costa Rica, em 1969.</li><li>( ) O Brasil reconheceu a competência contenciosa da Corte Interamericana em 1992.</li><li>( ) Possui status supralegal no ordenamento brasileiro.</li></ul>`,
+o:[`V – V – F – V.`,`V – V – V – V.`,`V – F – F – V.`,`F – V – F – V.`,`V – V – V – F.`],a:0,
+x:`O reconhecimento da competência contenciosa ocorreu em 10/12/1998 (Decreto 4.463/2002), para fatos posteriores.`},
+
+{c:'c5',b:'AOCP',e:`<p>Relacione os órgãos do sistema interamericano com suas características e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Comissão Interamericana de Direitos Humanos.</li><li>Corte Interamericana de Direitos Humanos.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Tem sede em Washington.</li><li>( ) Seus membros têm mandato de 6 anos.</li><li>( ) Recebe petições de qualquer pessoa ou grupo de pessoas.</li><li>( ) Profere sentença definitiva e inapelável.</li></ul>`,
+o:[`1 – 2 – 1 – 2.`,`2 – 1 – 1 – 2.`,`1 – 1 – 2 – 2.`,`1 – 2 – 2 – 1.`,`2 – 2 – 1 – 1.`],a:0,
+x:`Comissão: Washington, 7 membros com mandato de 4 anos, recebe petições. Corte: San José, 7 juízes com mandato de 6 anos, sentença definitiva e inapelável.`},
+
+{c:'c5',b:'AOCP',e:`Sobre a pena de morte na Convenção Americana, assinale a alternativa INCORRETA.`,
+o:[`Não pode ser aplicada por delitos políticos.`,`Não pode ser imposta a quem, no momento do delito, era menor de 18 anos.`,`Pode ser restabelecida nos Estados que a hajam abolido, desde que por lei.`,`Não pode ser aplicada a mulher em estado de gravidez.`,`O condenado pode solicitar anistia, indulto ou comutação da pena.`],a:2,
+x:`Art. 4.3: não se pode restabelecer a pena de morte nos Estados que a hajam abolido.`},
+
+{c:'c5',b:'AOCP',e:`Segundo a Convenção Americana, toda pessoa detida ou retida deve ser`,
+o:[`mantida incomunicável até a audiência.`,`informada das razões da sua detenção e notificada, sem demora, da acusação ou acusações formuladas contra ela.`,`apresentada ao Ministério Público em 72 horas.`,`ouvida pela autoridade policial antes de qualquer comunicação.`,`julgada no prazo máximo de 30 dias.`],a:1,
+x:`Art. 7.4. O art. 7.5 exige a condução, sem demora, à presença de um juiz.`},
+
+{c:'c5',b:'AOCP',e:`<p>Sobre as garantias judiciais da Convenção Americana, analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>O acusado tem direito de ser assistido gratuitamente por tradutor ou intérprete, se não compreender o idioma do juízo.</li><li>O direito de ser assistido por defensor proporcionado pelo Estado é renunciável.</li><li>A confissão do acusado só é válida se feita sem coação de nenhuma natureza.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: o art. 8.2.e fala em direito irrenunciável de ser assistido por defensor proporcionado pelo Estado.`},
+
+{c:'c5',b:'AOCP',e:`Sobre a suspensão de garantias prevista no art. 27 da Convenção Americana, assinale a alternativa INCORRETA.`,
+o:[`Pode ocorrer em caso de guerra, perigo público ou outra emergência que ameace a independência ou segurança do Estado.`,`Deve ser comunicada aos demais Estados-Partes por intermédio do Secretário-Geral da OEA.`,`Permite a suspensão do direito à vida em caso de guerra declarada.`,`Não autoriza a suspensão do direito ao nome nem do direito à nacionalidade.`,`Deve limitar-se ao tempo estritamente necessário.`],a:2,
+x:`O direito à vida (art. 4º) está entre os que nunca podem ser suspensos.`},
+
+{c:'c5',b:'AOCP',e:`Nos termos do art. 15 da Convenção Americana, é reconhecido o direito de reunião`,
+o:[`com autorização prévia da autoridade policial.`,`pacífica e sem armas.`,`apenas em locais fechados.`,`apenas para fins políticos.`,`irrestrito, sem possibilidade de limitação legal.`],a:1,
+x:`Art. 15. O exercício pode sofrer restrições previstas em lei, necessárias numa sociedade democrática.`},
+
+{c:'c5',b:'AOCP',e:`O primeiro caso em que o Brasil foi condenado pela Corte Interamericana de Direitos Humanos, em 2006, foi o Caso`,
+o:[`Gomes Lund.`,`Ximenes Lopes.`,`Maria da Penha.`,`Favela Nova Brasília.`,`Herzog.`],a:1,
+x:`Ximenes Lopes (2006): morte de pessoa com deficiência mental em clínica no Ceará. O caso Maria da Penha foi apreciado pela Comissão (2001).`},
+
+{c:'c5',b:'AOCP',e:`Segundo o art. 20 da Convenção Americana, toda pessoa tem direito à nacionalidade`,
+o:[`de seus pais, exclusivamente.`,`do Estado em cujo território houver nascido, se não tiver direito a outra.`,`do Estado onde reside há mais de 5 anos.`,`escolhida livremente ao completar 18 anos.`,`do Estado que a acolher como refugiada.`],a:1,
+x:`Art. 20.2. Ninguém pode ser arbitrariamente privado da nacionalidade nem do direito de mudá-la (art. 20.3).`},
+
+/* ===== CAP 6 – ECA ===== */
+{c:'c6',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a atuação policial no ECA e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) No ato infracional cometido com grave ameaça a pessoa, a autoridade policial deverá lavrar auto de apreensão.</li><li>( ) O adolescente liberado aos pais deve ser apresentado ao Conselho Tutelar.</li><li>( ) A entidade de atendimento apresentará o adolescente ao Ministério Público em 24 horas.</li><li>( ) O transporte em compartimento fechado de viatura é permitido se o adolescente estiver algemado.</li></ul>`,
+o:[`V – F – V – F.`,`V – V – V – F.`,`F – F – V – V.`,`V – F – F – F.`,`V – V – F – V.`],a:0,
+x:`O adolescente liberado é apresentado ao Ministério Público (art. 174). O transporte em compartimento fechado de viatura é proibido (art. 178).`},
+
+{c:'c6',b:'AOCP',e:`<p>Relacione as medidas socioeducativas com suas características e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Prestação de serviços à comunidade.</li><li>Liberdade assistida.</li><li>Internação.</li><li>Advertência.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Admoestação verbal, reduzida a termo e assinada.</li><li>( ) Prazo mínimo de 6 meses.</li><li>( ) Período não excedente a 6 meses, com jornada máxima de 8 horas semanais.</li><li>( ) Em nenhuma hipótese o período máximo excederá 3 anos.</li></ul>`,
+o:[`4 – 2 – 1 – 3.`,`4 – 1 – 2 – 3.`,`2 – 4 – 1 – 3.`,`4 – 2 – 3 – 1.`,`1 – 2 – 4 – 3.`],a:0,
+x:`Arts. 115 (advertência), 118 (LA), 117 (PSC) e 121, § 3º (internação).`},
+
+{c:'c6',b:'AOCP',e:`Sobre o Conselho Tutelar, assinale a alternativa INCORRETA.`,
+o:[`É órgão permanente e autônomo, não jurisdicional.`,`Em cada Município haverá, no mínimo, um Conselho Tutelar.`,`É composto de 5 membros escolhidos pela população local.`,`Suas decisões podem ser revistas pelo Prefeito Municipal.`,`Pode requisitar serviços públicos nas áreas de saúde, educação, serviço social e segurança.`],a:3,
+x:`As decisões do Conselho Tutelar só podem ser revistas pela autoridade judiciária, a pedido de quem tenha legítimo interesse (art. 137).`},
+
+{c:'c6',b:'AOCP',e:`Segundo o art. 106, parágrafo único, do ECA, o adolescente apreendido tem direito`,
+o:[`de escolher o policial que fará sua condução.`,`à identificação dos responsáveis pela sua apreensão, devendo ser informado acerca de seus direitos.`,`de não ser fotografado em nenhuma hipótese.`,`de ser ouvido apenas na presença do juiz.`,`de recusar a apresentação ao Ministério Público.`],a:1,
+x:`Literalidade do art. 106, parágrafo único. Na Lei de Abuso de Autoridade, deixar de identificar-se ao preso é crime (art. 16).`},
+
+{c:'c6',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A criança pode praticar ato infracional, mas a ela correspondem as medidas de proteção do art. 101.</li><li>À criança que pratica ato infracional pode ser aplicada a medida socioeducativa de advertência.</li><li>Considera-se adolescente a pessoa entre 12 e 18 anos de idade.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: medidas socioeducativas são exclusivas de adolescentes (art. 105).`},
+
+{c:'c6',b:'AOCP',e:`Durante a internação, a realização de atividades externas pelo adolescente`,
+o:[`é vedada em qualquer hipótese.`,`será permitida a critério da equipe técnica da entidade, salvo expressa determinação judicial em contrário.`,`depende sempre de autorização judicial prévia.`,`só é permitida após um ano de internação.`,`depende de autorização do Conselho Tutelar.`],a:1,
+x:`Art. 121, § 1º. Na semiliberdade, as atividades externas independem de autorização judicial (art. 120).`},
+
+{c:'c6',b:'AOCP',e:`Sobre os crimes previstos no ECA, assinale a alternativa INCORRETA.`,
+o:[`Vender bebida alcoólica a adolescente é crime punido com detenção de 2 a 4 anos e multa.`,`Vender arma de fogo a adolescente é crime punido com reclusão de 3 a 6 anos.`,`Vender fogos de estampido a adolescente é mera contravenção penal.`,`A corrupção de menores é crime formal.`,`Os crimes do ECA são de ação penal pública incondicionada.`],a:2,
+x:`Vender fogos de estampido ou de artifício a criança ou adolescente é crime do art. 244 (detenção de 6 meses a 2 anos e multa), salvo os de reduzido potencial.`},
+
+{c:'c6',b:'AOCP',e:`Nos termos do art. 4º do ECA, é dever de assegurar, com absoluta prioridade, a efetivação dos direitos da criança e do adolescente`,
+o:[`exclusivamente do Estado.`,`da família, da comunidade, da sociedade em geral e do poder público.`,`apenas da família e do Conselho Tutelar.`,`apenas do Ministério Público e do Judiciário.`,`apenas dos pais ou responsável legal.`],a:1,
+x:`Literalidade do art. 4º, em consonância com o art. 227 da CF.`},
+
+{c:'c6',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre o Conselho Tutelar e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) É composto de 5 membros.</li><li>( ) Os membros são escolhidos pela população local.</li><li>( ) O mandato é de 3 anos.</li><li>( ) A idade mínima para candidatura é de 18 anos.</li></ul>`,
+o:[`V – V – F – F.`,`V – V – V – F.`,`V – F – F – F.`,`F – V – F – V.`,`V – V – V – V.`],a:0,
+x:`Mandato de 4 anos, com recondução por novos processos de escolha; idade superior a 21 anos (arts. 132 e 133).`},
+
+{c:'c6',b:'AOCP',e:`Policial militar que, sem estar em flagrante de ato infracional e sem ordem escrita da autoridade judiciária, apreende adolescente "para averiguação" pratica`,
+o:[`conduta lícita, se o adolescente estiver em local de risco.`,`o crime do art. 230 do ECA.`,`apenas infração administrativa.`,`o crime do art. 243 do ECA.`,`conduta atípica, se o adolescente for liberado no mesmo dia.`],a:1,
+x:`Art. 106 e art. 230 do ECA (detenção de 6 meses a 2 anos). Não existe apreensão "para averiguação".`},
+
+/* ===== CAP 7 – ABUSO ===== */
+{c:'c7',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Lei nº 13.869/2019 e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Admite modalidade culposa nos crimes de abuso de autoridade.</li><li>( ) Exige finalidade específica de prejudicar outrem, beneficiar a si ou a terceiro, ou mero capricho ou satisfação pessoal.</li><li>( ) Os crimes são de ação penal pública incondicionada.</li><li>( ) A perda do cargo é efeito automático da condenação.</li></ul>`,
+o:[`F – V – V – F.`,`V – V – V – F.`,`F – V – F – V.`,`F – F – V – F.`,`V – F – V – V.`],a:0,
+x:`Não há abuso de autoridade culposo. A perda do cargo exige reincidência em abuso de autoridade e declaração motivada na sentença (art. 4º, parágrafo único).`},
+
+{c:'c7',b:'AOCP',e:`<p>Relacione as condutas com os respectivos artigos da Lei nº 13.869/2019 e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Art. 12.</li><li>Art. 18.</li><li>Art. 22.</li><li>Art. 20.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Cumprir mandado de busca e apreensão domiciliar após as 21 horas.</li><li>( ) Deixar de entregar ao preso, em 24 horas, a nota de culpa.</li><li>( ) Impedir, sem justa causa, a entrevista pessoal e reservada do preso com seu advogado.</li><li>( ) Submeter o preso a interrogatório policial durante o repouso noturno, fora das exceções legais.</li></ul>`,
+o:[`3 – 1 – 4 – 2.`,`3 – 2 – 4 – 1.`,`1 – 3 – 4 – 2.`,`3 – 1 – 2 – 4.`,`4 – 1 – 3 – 2.`],a:0,
+x:`Art. 22, § 1º, III (busca após 21h); art. 12, parágrafo único, III (nota de culpa); art. 20 (entrevista com advogado); art. 18 (interrogatório noturno).`},
+
+{c:'c7',b:'AOCP',e:`Sobre a Lei de Abuso de Autoridade, assinale a alternativa INCORRETA.`,
+o:[`A divergência na interpretação de lei não configura abuso de autoridade.`,`O art. 17 tipifica como crime o uso de algemas fora das hipóteses legais.`,`Admite-se ação penal privada subsidiária da pública.`,`São efeitos da condenação, entre outros, a inabilitação para o exercício de cargo por 1 a 5 anos.`,`Os militares podem ser sujeitos ativos dos crimes.`],a:1,
+x:`O art. 17 (algemas) foi vetado. A matéria é regida pela Súmula Vinculante 11.`},
+
+{c:'c7',b:'AOCP',e:`Para os fins da Lei nº 13.869/2019, considera-se agente público`,
+o:[`apenas o servidor efetivo e estável.`,`todo aquele que exerce, ainda que transitoriamente ou sem remuneração, por eleição, nomeação, designação, contratação ou qualquer outra forma de investidura ou vínculo, mandato, cargo, emprego ou função.`,`apenas quem exerce cargo em comissão.`,`apenas os membros de Poder.`,`apenas os servidores da União.`],a:1,
+x:`Art. 2º, parágrafo único.`},
+
+{c:'c7',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A Lei nº 13.869/2019 revogou a Lei nº 4.898/1965.</li><li>A divergência na avaliação de fatos e provas configura abuso de autoridade.</li><li>A inabilitação para o exercício de cargo, mandato ou função pública, como efeito da condenação, é de 1 a 5 anos.</li></ol>`,
+o:[`Apenas I.`,`Apenas II.`,`Apenas II e III.`,`Apenas I e III.`,`I, II e III.`],a:3,
+x:`II está errada: a divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso (art. 1º, § 2º).`},
+
+{c:'c7',b:'AOCP',e:`Policial que, em abordagem de trânsito, exige do condutor a apresentação de documento não previsto em lei como condição para liberá-lo pratica, em tese, o crime de`,
+o:[`concussão.`,`exigir informação ou cumprimento de obrigação, inclusive o dever de fazer ou de não fazer, sem expresso amparo legal (art. 33 da Lei nº 13.869/2019).`,`constrangimento ilegal do Código Penal, exclusivamente.`,`prevaricação.`,`desobediência.`],a:1,
+x:`Art. 33, caput (detenção de 6 meses a 2 anos e multa), desde que presente a finalidade específica do art. 1º, § 1º.`},
+
+{c:'c7',b:'AOCP',e:`Sobre o crime de violação de domicílio da Lei nº 13.869/2019 (art. 22), assinale a alternativa INCORRETA.`,
+o:[`Pune quem invade imóvel alheio clandestina ou astuciosamente, sem determinação judicial.`,`Pune quem coage alguém, mediante violência ou grave ameaça, a franquear-lhe o acesso.`,`Pune quem cumpre mandado de busca domiciliar antes das 5 horas.`,`Configura crime o ingresso para prestar socorro.`,`Não há crime quando houver fundados indícios de situação de flagrante delito.`],a:3,
+x:`O § 2º do art. 22 exclui o crime quando o ingresso for para prestar socorro ou houver fundados indícios de flagrante delito ou desastre.`},
+
+{c:'c7',b:'AOCP',e:`As penas restritivas de direitos substitutivas das privativas de liberdade previstas na Lei nº 13.869/2019 são`,
+o:[`multa e advertência.`,`prestação de serviços à comunidade ou a entidades públicas e suspensão do exercício do cargo, da função ou do mandato, de 1 a 6 meses, com perda dos vencimentos.`,`interdição de fim de semana e prestação pecuniária.`,`perda do cargo e cassação da aposentadoria.`,`limitação de fim de semana e recolhimento domiciliar.`],a:1,
+x:`Art. 5º, I e II. Podem ser aplicadas autônoma ou cumulativamente.`},
+
+{c:'c7',b:'AOCP',e:`Quanto ao procedimento dos crimes da Lei nº 13.869/2019, aplicam-se, no que couber,`,
+o:[`apenas as regras do Código de Processo Penal Militar.`,`as disposições do Código de Processo Penal e da Lei nº 9.099/1995.`,`exclusivamente as regras do Estatuto dos Servidores.`,`as regras do processo civil.`,`as regras da Lei de Improbidade Administrativa.`],a:1,
+x:`Art. 39. Como a maior parte das penas é de até 4 anos, institutos como a suspensão condicional do processo podem ser cabíveis.`},
+
+/* ===== CAP 8 – TORTURA ===== */
+{c:'c8',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Lei nº 9.455/1997 e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A pena é aumentada de 1/6 até 1/3 se o crime é cometido por agente público.</li><li>( ) Quem se omite diante da tortura, tendo o dever de evitá-la, responde com pena de reclusão de 2 a 8 anos.</li><li>( ) O crime de tortura é imprescritível.</li><li>( ) A tortura para obter confissão é punida com reclusão de 2 a 8 anos.</li></ul>`,
+o:[`V – F – F – V.`,`V – V – F – V.`,`F – F – V – V.`,`V – F – V – V.`,`F – V – F – F.`],a:0,
+x:`A omissão é punida com detenção de 1 a 4 anos (§ 2º). A tortura é prescritível; imprescritíveis são o racismo e a ação de grupos armados contra a ordem constitucional.`},
+
+{c:'c8',b:'AOCP',e:`<p>Relacione as espécies de tortura com suas descrições e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Tortura-prova.</li><li>Tortura para a prática de crime.</li><li>Tortura discriminatória.</li><li>Tortura-castigo.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Em razão de discriminação religiosa.</li><li>( ) Intenso sofrimento a quem está sob guarda, poder ou autoridade, como castigo pessoal.</li><li>( ) Para obter informação, declaração ou confissão.</li><li>( ) Para provocar ação ou omissão de natureza criminosa.</li></ul>`,
+o:[`3 – 4 – 1 – 2.`,`3 – 1 – 4 – 2.`,`4 – 3 – 1 – 2.`,`3 – 4 – 2 – 1.`,`2 – 4 – 1 – 3.`],a:0,
+x:`Art. 1º, I, "a" (prova), "b" (prática de crime), "c" (discriminação racial ou religiosa) e art. 1º, II (castigo).`},
+
+{c:'c8',b:'AOCP',e:`Sobre os efeitos da condenação por tortura, assinale a alternativa INCORRETA.`,
+o:[`A condenação acarreta a perda do cargo, função ou emprego público.`,`Há interdição para o exercício do cargo pelo dobro do prazo da pena aplicada.`,`A perda do cargo exige reincidência e motivação específica na sentença.`,`O crime é inafiançável.`,`O crime é insuscetível de graça ou anistia.`],a:2,
+x:`Na Lei de Tortura, a perda do cargo é efeito automático (STJ). A exigência de reincidência é da Lei de Abuso de Autoridade.`},
+
+{c:'c8',b:'AOCP',e:`A Lei nº 9.455/1997 aplica-se ao crime cometido fora do território nacional quando`,
+o:[`o agente for estrangeiro, apenas.`,`a vítima for brasileira ou o agente se encontrar em local sob jurisdição brasileira.`,`houver tratado de extradição com o país do fato.`,`o crime for também punido no país em que foi praticado.`,`houver requisição do Ministro da Justiça.`],a:1,
+x:`Art. 2º da Lei 9.455/1997.`},
+
+{c:'c8',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>O crime de tortura é inafiançável.</li><li>O crime de tortura admite graça, mas não anistia.</li><li>O condenado pela omissão do art. 1º, § 2º, iniciará obrigatoriamente o cumprimento da pena em regime fechado.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:0,
+x:`II está errada: a tortura é insuscetível de graça e de anistia (art. 1º, § 6º). III está errada: o § 7º exclui a omissão do § 2º do regime inicial fechado.`},
+
+{c:'c8',b:'AOCP',e:`Fulano tortura uma mulher grávida para obter dela informações sobre o paradeiro do marido. Nos termos da Lei nº 9.455/1997,`,
+o:[`responde por tortura-castigo, sem aumento de pena.`,`responde por tortura-prova, com pena aumentada de 1/6 até 1/3 por ser a vítima gestante.`,`responde apenas por constrangimento ilegal.`,`responde por tortura qualificada, com pena de 8 a 16 anos.`,`não responde por tortura, pois a informação era sobre terceiro.`],a:1,
+x:`Art. 1º, I, "a" (informação da vítima ou de terceira pessoa) e § 4º, II (gestante).`},
+
+{c:'c8',b:'AOCP',e:`Com o advento da Lei nº 9.455/1997, a tortura praticada contra criança ou adolescente`,
+o:[`continua prevista no art. 233 do ECA.`,`passou a ser punida pela Lei de Tortura, que revogou o art. 233 do ECA.`,`deixou de ser crime.`,`passou a ser contravenção penal.`,`é punida apenas como maus-tratos.`],a:1,
+x:`Art. 4º da Lei 9.455/1997. Ser a vítima criança ou adolescente aumenta a pena de 1/6 a 1/3.`},
+
+{c:'c8',b:'AOCP',e:`Sobre a tortura discriminatória prevista na Lei nº 9.455/1997, assinale a alternativa INCORRETA.`,
+o:[`Exige constrangimento com emprego de violência ou grave ameaça.`,`Exige sofrimento físico ou mental da vítima.`,`Abrange a discriminação em razão de orientação sexual.`,`Abrange a discriminação racial.`,`Abrange a discriminação religiosa.`],a:2,
+x:`O art. 1º, I, "c", fala apenas em discriminação racial ou religiosa.`}
+);
+
+window.QUESTOES = window.QUESTOES || [];
+/* Questões no estilo Instituto AOCP (banca do edital PMPE 2026) – capítulos 9 a 17 */
+QUESTOES.push(
+/* ===== CAP 9 – MARIA DA PENHA ===== */
+{c:'c9',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Lei Maria da Penha e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A concessão de medida protetiva de urgência depende do registro de boletim de ocorrência.</li><li>( ) O afastamento do agressor do lar cabe ao juiz, ao delegado (município que não seja sede de comarca) ou ao policial (município que não seja sede de comarca e sem delegado disponível).</li><li>( ) O policial militar pode afastar o agressor do lar em município sede de comarca, quando o juiz não estiver disponível.</li><li>( ) Aplicada a medida pelo delegado ou pelo policial, o juiz será comunicado em até 24 horas.</li></ul>`,
+o:[`F – V – F – V.`,`V – V – F – V.`,`F – V – V – V.`,`F – F – F – V.`,`V – F – V – F.`],a:0,
+x:`As medidas independem de boletim de ocorrência (Lei 14.550/2023). Em município sede de comarca, só o juiz afasta o agressor (art. 12-C).`},
+
+{c:'c9',b:'AOCP',e:`<p>Relacione as formas de violência doméstica com os exemplos e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Física.</li><li>Psicológica.</li><li>Sexual.</li><li>Patrimonial.</li><li>Moral.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Injúria.</li><li>( ) Destruição de instrumentos de trabalho da mulher.</li><li>( ) Isolamento e vigilância constante.</li><li>( ) Forçar a mulher ao aborto.</li><li>( ) Ofensa à integridade corporal.</li></ul>`,
+o:[`5 – 4 – 2 – 3 – 1.`,`5 – 2 – 4 – 3 – 1.`,`4 – 5 – 2 – 3 – 1.`,`5 – 4 – 3 – 2 – 1.`,`2 – 4 – 5 – 3 – 1.`],a:0,
+x:`Art. 7º, I a V, da Lei 11.340/2006.`},
+
+{c:'c9',b:'AOCP',e:`Sobre a jurisprudência do STJ relativa à Lei Maria da Penha, assinale a alternativa INCORRETA.`,
+o:[`Não se exige a coabitação entre autor e vítima.`,`É inaplicável o princípio da insignificância.`,`A ação penal no crime de lesão corporal leve depende de representação da vítima.`,`A transação penal e a suspensão condicional do processo não se aplicam.`,`Com violência ou grave ameaça, é vedada a substituição da pena privativa de liberdade por restritiva de direitos.`],a:2,
+x:`Súmula 542 STJ: lesão corporal decorrente de violência doméstica contra a mulher é de ação pública incondicionada. As demais alternativas correspondem às Súmulas 600, 589, 536 e 588.`},
+
+{c:'c9',b:'AOCP',e:`No crime de descumprimento de medida protetiva de urgência (art. 24-A da Lei Maria da Penha), havendo prisão em flagrante,`,
+o:[`o delegado poderá arbitrar fiança, se a pena máxima não exceder 4 anos.`,`apenas a autoridade judicial poderá conceder fiança.`,`o policial militar poderá liberar o preso mediante termo de compromisso.`,`a fiança é vedada em qualquer hipótese.`,`a liberdade provisória depende de anuência da vítima.`],a:1,
+x:`Art. 24-A, § 2º. A pena é de reclusão de 2 a 5 anos e multa (Lei 14.994/2024).`},
+
+{c:'c9',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista, não se aplica a Lei nº 9.099/1995.</li><li>É permitida a aplicação de pena de cesta básica, desde que cumulada com multa.</li><li>Em qualquer fase do inquérito policial ou da instrução criminal, caberá a prisão preventiva do agressor.</li></ol>`,
+o:[`Apenas I.`,`Apenas II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: o art. 17 veda penas de cesta básica ou outras de prestação pecuniária e a substituição por pagamento isolado de multa.`},
+
+{c:'c9',b:'AOCP',e:`No atendimento à mulher em situação de violência doméstica, nos termos do art. 11 da Lei Maria da Penha, a autoridade policial deverá, entre outras providências,`,
+o:[`garantir proteção policial, quando necessário, comunicando de imediato ao Ministério Público e ao Poder Judiciário.`,`decidir sobre a guarda dos filhos do casal.`,`promover a conciliação entre a vítima e o agressor.`,`exigir prova testemunhal antes de registrar a ocorrência.`,`aplicar ao agressor a medida de prestação de alimentos.`],a:0,
+x:`Art. 11, I. Alimentos e guarda são decididos pelo juiz.`},
+
+{c:'c9',b:'AOCP',e:`Com a Lei nº 14.994/2024, o feminicídio passou a ser crime autônomo, previsto no art. 121-A do Código Penal, com pena de`,
+o:[`reclusão, de 12 a 30 anos.`,`reclusão, de 15 a 30 anos.`,`reclusão, de 20 a 40 anos.`,`reclusão, de 6 a 20 anos.`,`reclusão, de 30 a 50 anos.`],a:2,
+x:`Art. 121-A do CP. O crime é hediondo e julgado pelo Tribunal do Júri.`},
+
+{c:'c9',b:'AOCP',e:`Sobre o âmbito de aplicação da Lei Maria da Penha, assinale a alternativa INCORRETA.`,
+o:[`A lei não se aplica quando a agressora for mulher.`,`As relações pessoais nela previstas independem de orientação sexual.`,`A relação íntima de afeto independe de coabitação.`,`O STJ admite sua aplicação a mulheres trans.`,`A lei se aplica independentemente da causa ou da motivação dos atos de violência.`],a:0,
+x:`O sujeito ativo pode ser homem ou mulher; a vítima é sempre mulher. O art. 40-A (Lei 14.550/2023) afasta a exigência de motivação específica.`},
+
+{c:'c9',b:'AOCP',e:`Nos termos do art. 12 da Lei Maria da Penha, feito o registro da ocorrência, a autoridade policial deverá, de imediato,`,
+o:[`ouvir a ofendida, lavrar o boletim de ocorrência e tomar a representação a termo, se apresentada.`,`arquivar o caso, se a vítima não quiser representar.`,`designar audiência de retratação.`,`aplicar ao agressor advertência por escrito.`,`encaminhar o caso ao Juizado Especial Criminal.`],a:0,
+x:`Art. 12, I. A retratação só ocorre perante o juiz (art. 16), e a Lei 9.099/1995 não se aplica (art. 41).`},
+
+{c:'c9',b:'AOCP',e:`Entre as medidas protetivas que obrigam o agressor, previstas no art. 22 da Lei Maria da Penha, está a proibição de aproximação da ofendida, de seus familiares e das testemunhas,`,
+o:[`sem possibilidade de fixação de distância.`,`fixando o juiz o limite mínimo de distância entre estes e o agressor.`,`com distância fixa de 100 metros prevista em lei.`,`apenas no período noturno.`,`apenas se houver condenação.`],a:1,
+x:`Art. 22, III, "a". O juiz também pode proibir contato por qualquer meio e a frequência a determinados lugares.`},
+
+/* ===== CAP 10 – RACISMO ===== */
+{c:'c10',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A injúria racial é punida com reclusão de 2 a 5 anos e multa.</li><li>( ) A prática do racismo é crime prescritível.</li><li>( ) A injúria em razão de religião continua prevista no Código Penal.</li><li>( ) O racismo recreativo aumenta a pena de 1/3 até a metade.</li></ul>`,
+o:[`V – F – V – V.`,`V – V – V – V.`,`V – F – F – V.`,`F – F – V – V.`,`V – F – V – F.`],a:0,
+x:`O racismo é inafiançável e imprescritível (art. 5º, XLII, CF).`},
+
+{c:'c10',b:'AOCP',e:`<p>Relacione as penas com as condutas da Lei nº 7.716/1989 e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Reclusão de 1 a 3 anos.</li><li>Reclusão de 2 a 5 anos.</li><li>Reclusão de 3 a 5 anos.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Impedir a hospedagem em hotel.</li><li>( ) Negar emprego em empresa privada.</li><li>( ) Recusar atendimento em bar.</li><li>( ) Impedir o ingresso de aluno em estabelecimento de ensino.</li></ul>`,
+o:[`3 – 2 – 1 – 3.`,`3 – 1 – 2 – 3.`,`2 – 2 – 1 – 3.`,`3 – 2 – 1 – 2.`,`1 – 2 – 3 – 3.`],a:0,
+x:`Hotel (art. 7º) e escola (art. 6º): 3 a 5 anos. Emprego privado (art. 4º): 2 a 5. Bar (art. 8º): 1 a 3.`},
+
+{c:'c10',b:'AOCP',e:`Sobre os efeitos da condenação na Lei nº 7.716/1989, assinale a alternativa INCORRETA.`,
+o:[`Constitui efeito da condenação a perda do cargo ou função pública, para o servidor público.`,`Constitui efeito da condenação a suspensão do funcionamento do estabelecimento particular por prazo não superior a 3 meses.`,`Os efeitos da condenação são automáticos e dispensam declaração na sentença.`,`A destruição do material discriminatório apreendido é efeito da condenação após o trânsito em julgado.`,`Os efeitos devem ser motivadamente declarados na sentença.`],a:2,
+x:`Art. 18: os efeitos dos arts. 16 e 17 não são automáticos.`},
+
+{c:'c10',b:'AOCP',e:`Quanto à ação penal no crime de injúria racial (art. 2º-A da Lei nº 7.716/1989), é correto afirmar que é`,
+o:[`privada.`,`pública condicionada à representação.`,`pública incondicionada.`,`privada subsidiária, em todos os casos.`,`pública condicionada à requisição do Ministro da Justiça.`],a:2,
+x:`Com a migração para a Lei 7.716/1989, a injúria racial passou a ser de ação pública incondicionada, como os demais crimes da lei.`},
+
+{c:'c10',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>A injúria racial praticada por funcionário público no exercício de suas funções tem a pena aplicada em dobro.</li><li>Divulgar o nazismo com o uso da cruz suástica é crime punido com reclusão de 2 a 5 anos e multa.</li><li>No julgamento da ADO 26, o STF enquadrou as condutas homofóbicas e transfóbicas nos tipos da Lei nº 7.716/1989.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:3,
+x:`I está errada: o aumento para o funcionário público é de 1/3 até a metade (art. 20-B). II: art. 20, § 1º. III: ADO 26 e MI 4.733 (2019).`},
+
+{c:'c10',b:'AOCP',e:`O gerente de uma loja que impede a entrada de um cliente em razão da cor de sua pele pratica, em tese, o crime de`,
+o:[`injúria racial (art. 2º-A).`,`recusar ou impedir acesso a estabelecimento comercial (art. 5º da Lei nº 7.716/1989).`,`constrangimento ilegal, apenas.`,`impedir acesso a cargo público (art. 3º).`,`apologia de crime.`],a:1,
+x:`Art. 5º (reclusão de 1 a 3 anos). Se o gerente também ofender a vítima com termos racistas, pode haver injúria racial.`},
+
+{c:'c10',b:'AOCP',e:`Nos termos do art. 1º da Lei nº 7.716/1989, serão punidos os crimes resultantes de discriminação ou preconceito de`,
+o:[`raça e cor, exclusivamente.`,`raça, cor, etnia, religião ou procedência nacional.`,`raça, cor, sexo e idade.`,`raça, cor e condição social.`,`qualquer natureza, inclusive política.`],a:1,
+x:`Literalidade do art. 1º. A homofobia e a transfobia foram incluídas por decisão do STF (ADO 26).`},
+
+{c:'c10',b:'AOCP',e:`Sobre o tratamento constitucional do racismo, assinale a alternativa INCORRETA.`,
+o:[`A prática do racismo é crime inafiançável.`,`A prática do racismo é crime imprescritível.`,`A prática do racismo está sujeita à pena de reclusão.`,`A Constituição veda expressamente a anistia ao crime de racismo.`,`O STF considera a injúria racial espécie de racismo.`],a:3,
+x:`O art. 5º, XLII, não menciona graça ou anistia. A vedação de graça e anistia está no inciso XLIII, para tortura, tráfico, terrorismo e hediondos.`},
+
+/* ===== CAP 11 – AMBIENTAIS ===== */
+{c:'c11',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Lei nº 9.605/1998 e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A pessoa jurídica pode ser condenada independentemente da responsabilização da pessoa física.</li><li>( ) Os crimes ambientais são de ação penal pública incondicionada.</li><li>( ) O sursis pode ser aplicado em condenações a pena não superior a 2 anos.</li><li>( ) Os animais apreendidos devem ser entregues prioritariamente a zoológicos.</li></ul>`,
+o:[`V – V – F – F.`,`V – V – V – F.`,`F – V – F – F.`,`V – F – F – V.`,`V – V – F – V.`],a:0,
+x:`O sursis ambiental vale para penas de até 3 anos (art. 16). Os animais são prioritariamente libertados no habitat (art. 25, § 1º).`},
+
+{c:'c11',b:'AOCP',e:`<p>Relacione as condutas com os artigos da Lei nº 9.605/1998 e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Art. 32, § 1º-A.</li><li>Art. 41.</li><li>Art. 42.</li><li>Art. 65.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Soltar balões que possam provocar incêndios.</li><li>( ) Pichar monumento urbano.</li><li>( ) Maus-tratos a cão ou gato.</li><li>( ) Provocar incêndio em mata ou floresta.</li></ul>`,
+o:[`3 – 4 – 1 – 2.`,`2 – 4 – 1 – 3.`,`3 – 1 – 4 – 2.`,`3 – 4 – 2 – 1.`,`4 – 3 – 1 – 2.`],a:0,
+x:`Art. 42 (balões), art. 65 (pichação), art. 32, § 1º-A (cão ou gato: reclusão de 2 a 5 anos) e art. 41 (incêndio).`},
+
+{c:'c11',b:'AOCP',e:`Nos termos do art. 37 da Lei nº 9.605/1998, NÃO é crime o abate de animal, EXCETO quando realizado`,
+o:[`em estado de necessidade, para saciar a fome do agente ou de sua família.`,`para proteger lavouras, pomares e rebanhos, desde que legal e expressamente autorizado.`,`por ser nocivo o animal, assim caracterizado pelo órgão competente.`,`para comercialização da carne em feira livre, sem autorização.`,`nas hipóteses autorizadas pela autoridade competente.`],a:3,
+x:`A comercialização sem autorização não está entre as excludentes do art. 37 e configura crime contra a fauna.`},
+
+{c:'c11',b:'AOCP',e:`Nos crimes ambientais de menor potencial ofensivo, a proposta de transação penal`,
+o:[`depende da prévia composição do dano ambiental, salvo em caso de comprovada impossibilidade.`,`é vedada.`,`depende de laudo de reparação do dano.`,`só pode ser feita à pessoa jurídica.`,`dispensa qualquer requisito específico.`],a:0,
+x:`Art. 27 da Lei 9.605/1998.`},
+
+{c:'c11',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>As penas restritivas de direitos substituem as privativas de liberdade quando se tratar de crime culposo ou de pena inferior a 4 anos.</li><li>As penas aplicáveis às pessoas jurídicas incluem a detenção de seus diretores, aplicada à empresa.</li><li>A multa ineficaz, ainda que no valor máximo, pode ser aumentada até 3 vezes.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas II e III.`,`Apenas III.`,`Apenas I e III.`],a:4,
+x:`II está errada: as penas da pessoa jurídica são multa, restritivas de direitos e prestação de serviços à comunidade (art. 21).`},
+
+{c:'c11',b:'AOCP',e:`Policiais militares da companhia ambiental flagram madeira ilegal recém-cortada. Segundo o art. 25 da Lei nº 9.605/1998, os produtos perecíveis ou madeiras apreendidos serão`,
+o:[`destruídos no local, obrigatoriamente.`,`avaliados e doados a instituições científicas, hospitalares, penais e outras com fins beneficentes.`,`devolvidos ao infrator mediante caução.`,`leiloados, com valor revertido à corporação.`,`mantidos como prova até o trânsito em julgado.`],a:1,
+x:`Art. 25, § 3º. Os instrumentos utilizados na infração são vendidos, garantida a descaracterização por reciclagem.`},
+
+{c:'c11',b:'AOCP',e:`É circunstância que agrava a pena nos crimes ambientais, nos termos do art. 15 da Lei nº 9.605/1998, ter o agente cometido a infração`,
+o:[`após comunicar previamente o perigo de degradação.`,`em período de defeso à fauna.`,`colaborando com a fiscalização.`,`com baixo grau de instrução.`,`com arrependimento e reparação do dano.`],a:1,
+x:`As demais alternativas são atenuantes (art. 14).`},
+
+{c:'c11',b:'AOCP',e:`O proprietário de uma serraria que impede a entrada de fiscais ambientais em seu estabelecimento comete, em tese, o crime de`,
+o:[`desobediência, exclusivamente.`,`obstar ou dificultar a ação fiscalizadora do Poder Público no trato de questões ambientais (art. 69 da Lei nº 9.605/1998).`,`resistência qualificada.`,`desacato.`,`apresentar laudo ambiental falso.`],a:1,
+x:`Art. 69 (detenção de 1 a 3 anos e multa).`},
+
+/* ===== CAP 12 – HEDIONDOS ===== */
+{c:'c12',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre o rol de crimes hediondos e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) O roubo simples é crime hediondo.</li><li>( ) O latrocínio é crime hediondo.</li><li>( ) O estupro é crime hediondo.</li><li>( ) O porte ilegal de arma de fogo de uso restrito é crime hediondo.</li></ul>`,
+o:[`F – V – V – F.`,`V – V – V – F.`,`F – V – V – V.`,`F – F – V – F.`,`V – V – F – F.`],a:0,
+x:`Roubo simples não é hediondo. Desde o Pacote Anticrime, só o porte ou a posse de arma de uso proibido é hediondo.`},
+
+{c:'c12',b:'AOCP',e:`<p>Relacione os percentuais de progressão de regime com as situações (art. 112 da LEP) e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>40%.</li><li>50%.</li><li>60%.</li><li>70%.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Reincidente em crime hediondo ou equiparado.</li><li>( ) Primário em crime hediondo ou equiparado, sem resultado morte.</li><li>( ) Reincidente em crime hediondo ou equiparado com resultado morte.</li><li>( ) Primário em crime hediondo ou equiparado com resultado morte.</li></ul>`,
+o:[`3 – 1 – 4 – 2.`,`3 – 2 – 4 – 1.`,`1 – 3 – 4 – 2.`,`3 – 1 – 2 – 4.`,`4 – 1 – 3 – 2.`],a:0,
+x:`40% (primário), 50% (primário com morte), 60% (reincidente) e 70% (reincidente com morte), conforme a LEP após a Lei 13.964/2019.`},
+
+{c:'c12',b:'AOCP',e:`Sobre a Lei nº 8.072/1990, assinale a alternativa INCORRETA.`,
+o:[`Os crimes hediondos são insuscetíveis de anistia, graça e indulto.`,`Os crimes hediondos admitem fiança arbitrada pelo juiz.`,`A prisão temporária nesses crimes é de 30 dias, prorrogável por igual período.`,`O juiz decidirá fundamentadamente se o réu poderá apelar em liberdade.`,`A associação criminosa para a prática de hediondos é punida com reclusão de 3 a 6 anos.`],a:1,
+x:`Os crimes hediondos e equiparados são inafiançáveis (art. 2º, II).`},
+
+{c:'c12',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Tortura, tráfico de drogas e terrorismo são equiparados a hediondos.</li><li>O tráfico privilegiado é crime hediondo.</li><li>O rol de crimes hediondos é taxativo.</li></ol>`,
+o:[`Apenas I.`,`Apenas II.`,`Apenas III.`,`Apenas I e III.`,`I, II e III.`],a:3,
+x:`II está errada: o tráfico privilegiado não é hediondo nem equiparado (STF, HC 118.533; art. 112, § 5º, da LEP).`},
+
+{c:'c12',b:'AOCP',e:`É crime hediondo, nos termos da Lei nº 8.072/1990, o favorecimento da prostituição ou de outra forma de exploração sexual de`,
+o:[`qualquer pessoa maior de idade.`,`criança, adolescente ou vulnerável (art. 218-B do Código Penal).`,`pessoa idosa, apenas.`,`estrangeiro, apenas.`,`servidor público.`],a:1,
+x:`Art. 1º, VIII, da Lei 8.072/1990.`},
+
+{c:'c12',b:'AOCP',e:`Quanto à forma do crime, os delitos listados no art. 1º da Lei nº 8.072/1990 são considerados hediondos`,
+o:[`apenas na forma consumada.`,`apenas na forma tentada.`,`tanto na forma consumada quanto na tentada.`,`apenas se houver resultado morte.`,`apenas se praticados com violência.`],a:2,
+x:`O caput do art. 1º diz "consumados ou tentados".`},
+
+{c:'c12',b:'AOCP',e:`Sobre a progressão de regime e o livramento condicional nos crimes hediondos, assinale a alternativa INCORRETA.`,
+o:[`O primário condenado por crime hediondo com resultado morte progride após 50% da pena, vedado o livramento condicional.`,`O livramento condicional exige o cumprimento de mais de 2/3 da pena, se o apenado não for reincidente específico.`,`O STF declarou inconstitucional o regime inicial fechado obrigatório.`,`O reincidente em crime hediondo progride após 1/6 da pena.`,`A Súmula Vinculante 26 admite a determinação fundamentada de exame criminológico.`],a:3,
+x:`O reincidente em crime hediondo ou equiparado progride após 60% (art. 112, VII, da LEP). A fração de 1/6 era a regra geral antiga.`},
+
+{c:'c12',b:'AOCP',e:`O participante de associação criminosa voltada à prática de crimes hediondos que denunciar à autoridade o bando, possibilitando seu desmantelamento, terá a pena`,
+o:[`extinta.`,`reduzida de 1 a 2/3.`,`reduzida de 1/6.`,`substituída por multa.`,`aumentada, por ter participado.`],a:1,
+x:`Art. 8º, parágrafo único, da Lei 8.072/1990.`},
+
+/* ===== CAP 13 – DROGAS ===== */
+{c:'c13',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre a Lei nº 11.343/2006 e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A associação para o tráfico exige, no mínimo, três pessoas.</li><li>( ) Ao usuário de drogas não se impõe prisão em flagrante.</li><li>( ) O tráfico privilegiado é equiparado a hediondo.</li><li>( ) As medidas aplicadas ao usuário têm prazo máximo de 5 meses, salvo reincidência.</li></ul>`,
+o:[`F – V – F – V.`,`V – V – F – V.`,`F – V – V – V.`,`F – F – F – V.`,`F – V – F – F.`],a:0,
+x:`A associação para o tráfico (art. 35) exige duas ou mais pessoas. O tráfico privilegiado não é hediondo.`},
+
+{c:'c13',b:'AOCP',e:`<p>Relacione os crimes da Lei de Drogas com as penas e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Tráfico (art. 33).</li><li>Associação para o tráfico (art. 35).</li><li>Financiamento do tráfico (art. 36).</li><li>Informante (art. 37).</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Reclusão de 8 a 20 anos.</li><li>( ) Reclusão de 2 a 6 anos.</li><li>( ) Reclusão de 3 a 10 anos.</li><li>( ) Reclusão de 5 a 15 anos.</li></ul>`,
+o:[`3 – 4 – 2 – 1.`,`3 – 2 – 4 – 1.`,`1 – 4 – 2 – 3.`,`3 – 4 – 1 – 2.`,`4 – 3 – 2 – 1.`],a:0,
+x:`Financiar (8 a 20), informante (2 a 6), associação (3 a 10) e tráfico (5 a 15).`},
+
+{c:'c13',b:'AOCP',e:`Sobre o julgamento do STF no RE 635.659 (Tema 506), assinale a alternativa INCORRETA.`,
+o:[`O porte de maconha para consumo pessoal deixou de ter natureza penal.`,`Presume-se usuário quem portar até 40 gramas de maconha ou cultivar até 6 plantas-fêmeas.`,`A presunção de usuário é relativa.`,`A decisão descriminalizou o porte de todas as drogas para consumo pessoal.`,`A droga continua sujeita a apreensão.`],a:3,
+x:`A tese vale só para a cannabis sativa. O porte de outras drogas para consumo continua sendo crime do art. 28.`},
+
+{c:'c13',b:'AOCP',e:`O inquérito policial nos crimes da Lei de Drogas será concluído no prazo de`,
+o:[`10 dias, se preso, e 30 dias, se solto.`,`30 dias, se preso, e 90 dias, se solto, podendo ser duplicados pelo juiz.`,`15 dias, se preso, e 60 dias, se solto.`,`30 dias em qualquer caso, improrrogáveis.`,`60 dias, se preso, e 120 dias, se solto.`],a:1,
+x:`Art. 51 e parágrafo único: duplicação pelo juiz, ouvido o MP, a pedido justificado da autoridade de polícia judiciária.`},
+
+{c:'c13',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Para a lavratura do auto de prisão em flagrante, basta o laudo de constatação da natureza e quantidade da droga.</li><li>O perito que subscreve o laudo de constatação fica impedido de participar do laudo definitivo.</li><li>A destruição das drogas apreendidas sem prisão em flagrante ocorre no prazo máximo de 30 dias da apreensão.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: o perito não fica impedido (art. 50, § 2º). III: art. 50-A.`},
+
+{c:'c13',b:'AOCP',e:`Em uma festa, um homem entrega gratuitamente porções de cocaína a pessoas que acabara de conhecer, sem consumir com elas. A conduta configura`,
+o:[`uso compartilhado (art. 33, § 3º).`,`tráfico de drogas (art. 33, caput), pois fornecer droga, ainda que gratuitamente, é núcleo do tipo.`,`porte para consumo pessoal (art. 28).`,`conduta atípica, por ausência de lucro.`,`induzimento ao uso (art. 33, § 2º), apenas.`],a:1,
+x:`O uso compartilhado exige eventualidade, ausência de lucro, pessoa do relacionamento e consumo conjunto. Faltando qualquer um, incide o caput.`},
+
+{c:'c13',b:'AOCP',e:`A pena do tráfico de drogas é aumentada de 1/6 a 2/3, nos termos do art. 40, VI, da Lei nº 11.343/2006, quando a prática`,
+o:[`ocorrer durante o dia.`,`envolver ou visar a atingir criança ou adolescente ou quem tenha diminuída ou suprimida a capacidade de entendimento e determinação.`,`for praticada por agente primário.`,`envolver droga de baixo valor.`,`for praticada em zona rural.`],a:1,
+x:`Literalidade do art. 40, VI.`},
+
+{c:'c13',b:'AOCP',e:`Sobre a competência para julgar os crimes da Lei de Drogas, assinale a alternativa INCORRETA.`,
+o:[`Em regra, a competência é da Justiça Estadual.`,`O tráfico transnacional é de competência da Justiça Federal.`,`O tráfico interestadual, por si só, não desloca a competência para a Justiça Federal.`,`Todo crime de tráfico de drogas é de competência da Justiça Federal.`,`A majorante da transnacionalidade dispensa a efetiva transposição da fronteira.`],a:3,
+x:`Súmula 522 STF e art. 70 da Lei 11.343/2006: só o tráfico com o exterior vai para a Justiça Federal.`},
+
+{c:'c13',b:'AOCP',e:`Nos termos do art. 243 da Constituição Federal, as propriedades onde forem localizadas culturas ilegais de plantas psicotrópicas serão`,
+o:[`desapropriadas com indenização prévia em dinheiro.`,`expropriadas e destinadas à reforma agrária e a programas de habitação popular, sem qualquer indenização ao proprietário.`,`confiscadas somente após condenação definitiva por tráfico.`,`interditadas por 5 anos.`,`leiloadas em favor do Município.`],a:1,
+x:`Art. 243 da CF, que também alcança a exploração de trabalho escravo.`},
+
+/* ===== CAP 14 – ESTATUTO PMPE ===== */
+{c:'c14',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) A hierarquia e a disciplina são a base institucional da Polícia Militar.</li><li>( ) O Aluno-Oficial (Cadete) é praça especial.</li><li>( ) O posto é conferido pelo Comandante-Geral.</li><li>( ) O militar da ativa pode filiar-se a partido político.</li></ul>`,
+o:[`V – V – F – F.`,`V – V – V – F.`,`V – F – F – F.`,`F – V – F – V.`,`V – V – F – V.`],a:0,
+x:`O posto (grau do oficial) é conferido pelo Governador; a graduação (grau da praça), pelo Comandante-Geral. O militar da ativa não pode estar filiado a partido (art. 142, § 3º, V, CF).`},
+
+{c:'c14',b:'AOCP',e:`<p>Relacione os institutos com seus conceitos e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Agregação.</li><li>Reversão.</li><li>Reserva remunerada.</li><li>Reforma.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Retorno do militar agregado ao respectivo Quadro.</li><li>( ) Inatividade definitiva, sem possibilidade de convocação.</li><li>( ) Militar da ativa deixa de ocupar vaga na escala hierárquica, permanecendo sem número.</li><li>( ) Inatividade com possibilidade de convocação.</li></ul>`,
+o:[`2 – 4 – 1 – 3.`,`2 – 3 – 1 – 4.`,`1 – 4 – 2 – 3.`,`2 – 4 – 3 – 1.`,`4 – 2 – 1 – 3.`],a:0,
+x:`Agregação e reversão são situações da ativa; reserva remunerada e reforma, da inatividade.`},
+
+{c:'c14',b:'AOCP',e:`Sobre a perda do posto e da graduação dos militares estaduais, assinale a alternativa INCORRETA.`,
+o:[`O oficial só perde o posto e a patente se julgado indigno do oficialato ou com ele incompatível, por decisão do tribunal competente.`,`O oficial condenado a pena privativa de liberdade superior a 2 anos, por sentença transitada em julgado, será submetido a esse julgamento.`,`A perda da graduação da praça pode ocorrer por procedimento administrativo, segundo o STF.`,`Pernambuco possui Tribunal de Justiça Militar próprio, competente para esse julgamento.`,`Não cabe habeas corpus contra a pena de perda de patente.`],a:3,
+x:`Só São Paulo, Minas Gerais e Rio Grande do Sul têm Tribunal de Justiça Militar. Em Pernambuco, o tribunal competente é o TJPE.`},
+
+{c:'c14',b:'AOCP',e:`Nos termos do art. 142, § 2º, da Constituição Federal, aplicável aos militares estaduais,`,
+o:[`cabe habeas corpus para discutir o mérito de punições disciplinares.`,`não caberá habeas corpus em relação a punições disciplinares militares.`,`cabe mandado de injunção contra punições disciplinares.`,`punições disciplinares só podem ser aplicadas pelo Judiciário.`,`punições disciplinares são vedadas aos militares da reserva.`],a:1,
+x:`O STF admite o HC apenas para examinar a legalidade da punição (hierarquia, poder disciplinar, ato ligado à função, pena cabível), não o mérito.`},
+
+{c:'c14',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Ao militar são proibidas a sindicalização e a greve.</li><li>O militar alistável com menos de 10 anos de serviço que se candidatar deverá afastar-se da atividade.</li><li>O militar alistável com mais de 10 anos de serviço será agregado pela autoridade superior e, se eleito, passará automaticamente, no ato da diplomação, para a inatividade.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas II e III.`,`Apenas I e III.`,`I, II e III.`],a:4,
+x:`As três estão corretas: art. 142, § 3º, IV, e art. 14, § 8º, I e II, da CF, aplicáveis aos militares estaduais.`},
+
+{c:'c14',b:'AOCP',e:`Na hierarquia da Polícia Militar, o 1º Tenente integra o círculo de`,
+o:[`oficiais superiores.`,`oficiais intermediários.`,`oficiais subalternos.`,`praças especiais.`,`subtenentes e sargentos.`],a:2,
+x:`Oficiais subalternos: 1º e 2º Tenentes. Intermediário: Capitão. Superiores: Major, Tenente-Coronel e Coronel.`},
+
+{c:'c14',b:'AOCP',e:`O processo destinado a julgar a capacidade do oficial para permanecer na ativa, quando acusado de conduta incompatível com o oficialato, é denominado`,
+o:[`Conselho de Disciplina.`,`Conselho de Justificação.`,`Sindicância.`,`Inquérito Policial Militar.`,`Processo Administrativo de Deserção.`],a:1,
+x:`Conselho de Justificação (oficiais). O Conselho de Disciplina destina-se às praças com estabilidade.`},
+
+{c:'c14',b:'AOCP',e:`Sobre posto e graduação, assinale a alternativa INCORRETA.`,
+o:[`Posto é o grau hierárquico do oficial.`,`Graduação é o grau hierárquico do oficial.`,`As patentes dos oficiais são conferidas pelo Governador.`,`Dentro de um mesmo posto ou graduação, a hierarquia se define pela antiguidade.`,`O Subtenente é praça.`],a:1,
+x:`Graduação é o grau hierárquico da praça.`},
+
+/* ===== CAP 15 – PESSOA IDOSA ===== */
+{c:'c15',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre o Estatuto da Pessoa Idosa e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Os crimes do Estatuto são de ação penal pública condicionada à representação.</li><li>( ) Considera-se pessoa idosa a pessoa com idade igual ou superior a 60 anos.</li><li>( ) Aplicam-se aos crimes do Estatuto as imunidades dos arts. 181 e 182 do Código Penal.</li><li>( ) A gratuidade no transporte coletivo urbano é assegurada aos maiores de 65 anos.</li></ul>`,
+o:[`F – V – F – V.`,`V – V – F – V.`,`F – V – V – V.`,`F – F – F – V.`,`F – V – F – F.`],a:0,
+x:`Os crimes do Estatuto são de ação pública incondicionada, sem as imunidades dos arts. 181 e 182 do CP (art. 95).`},
+
+{c:'c15',b:'AOCP',e:`<p>Relacione as condutas com os artigos do Estatuto da Pessoa Idosa e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Art. 98.</li><li>Art. 102.</li><li>Art. 104.</li><li>Art. 107.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Reter o cartão magnético de benefício para assegurar o recebimento de dívida.</li><li>( ) Coagir a pessoa idosa a doar, contratar, testar ou outorgar procuração.</li><li>( ) Abandonar a pessoa idosa em hospital ou entidade de longa permanência.</li><li>( ) Desviar a pensão da pessoa idosa, dando-lhe aplicação diversa da finalidade.</li></ul>`,
+o:[`3 – 4 – 1 – 2.`,`3 – 2 – 1 – 4.`,`4 – 3 – 1 – 2.`,`3 – 4 – 2 – 1.`,`1 – 4 – 3 – 2.`],a:0,
+x:`Art. 104 (cartão), art. 107 (coação), art. 98 (abandono) e art. 102 (apropriação ou desvio).`},
+
+{c:'c15',b:'AOCP',e:`Sobre o Estatuto da Pessoa Idosa, assinale a alternativa INCORRETA.`,
+o:[`É assegurada prioridade especial aos maiores de 70 anos.`,`Todo cidadão tem o dever de comunicar à autoridade competente qualquer violação ao Estatuto de que tenha conhecimento.`,`São reservados 10% dos assentos nos transportes coletivos urbanos.`,`São reservadas 5% das vagas nos estacionamentos públicos e privados.`,`Os casos de suspeita de violência contra pessoa idosa são de notificação compulsória pelos serviços de saúde.`],a:0,
+x:`A prioridade especial é dos maiores de 80 anos (art. 3º, § 2º).`},
+
+{c:'c15',b:'AOCP',e:`Segundo o STF (ADI 3.096), o art. 94 do Estatuto da Pessoa Idosa, que manda aplicar a Lei nº 9.099/1995 aos crimes com pena máxima de até 4 anos,`,
+o:[`autoriza a transação penal para esses crimes.`,`deve ser interpretado no sentido de aplicar apenas o procedimento sumaríssimo, sem os benefícios despenalizadores.`,`foi declarado inconstitucional por completo.`,`transformou esses crimes em infrações de menor potencial ofensivo.`,`aplica-se apenas quando a vítima for maior de 80 anos.`],a:1,
+x:`A finalidade é dar celeridade ao processo em favor da vítima idosa, não beneficiar o autor.`},
+
+{c:'c15',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Os serviços de saúde devem comunicar os casos de suspeita ou confirmação de violência contra pessoa idosa à autoridade policial.</li><li>Todo cidadão tem o dever de comunicar à autoridade competente qualquer forma de violação ao Estatuto.</li><li>As medidas de proteção à pessoa idosa são aplicadas pelo Conselho Tutelar.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:1,
+x:`III está errada: as medidas do art. 45 são determinadas pelo Ministério Público ou pelo Poder Judiciário. O Conselho Tutelar atua para crianças e adolescentes.`},
+
+{c:'c15',b:'AOCP',e:`Policial militar atende ocorrência em que o filho mantém consigo o cartão bancário da aposentadoria do pai idoso para garantir o pagamento de uma dívida que o pai tem com ele. A conduta do filho configura, em tese,`,
+o:[`exercício regular de direito.`,`o crime do art. 104 do Estatuto da Pessoa Idosa, de ação penal pública incondicionada.`,`apropriação indébita do Código Penal, isenta de pena por ser descendente.`,`mero ilícito civil.`,`crime de ação penal privada.`],a:1,
+x:`Art. 104 (detenção de 6 meses a 2 anos e multa). A imunidade entre parentes não se aplica (art. 95).`},
+
+{c:'c15',b:'AOCP',e:`Nos termos do art. 43 do Estatuto da Pessoa Idosa, as medidas de proteção são aplicáveis sempre que os direitos reconhecidos na lei forem ameaçados ou violados`,
+o:[`apenas por ação ou omissão do Estado.`,`por ação ou omissão da sociedade ou do Estado; por falta, omissão ou abuso da família, curador ou entidade de atendimento; ou em razão de sua condição pessoal.`,`apenas por abuso da família.`,`somente quando houver crime previsto no Estatuto.`,`apenas quando a pessoa idosa for maior de 80 anos.`],a:1,
+x:`Art. 43, I a III. A estrutura é parecida com a do art. 98 do ECA, que usa "em razão de sua conduta" no lugar de "condição pessoal".`},
+
+{c:'c15',b:'AOCP',e:`Nos veículos de transporte coletivo urbano e semiurbano, o Estatuto da Pessoa Idosa determina a reserva, para pessoas idosas, de`,
+o:[`5% dos assentos.`,`10% dos assentos, devidamente identificados.`,`20% dos assentos.`,`2 assentos por veículo.`,`metade dos assentos.`],a:1,
+x:`Art. 39, § 2º.`},
+
+/* ===== CAP 16 – JUVENTUDE ===== */
+{c:'c16',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma sobre o Estatuto da Juventude e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) São jovens as pessoas com idade entre 15 e 29 anos.</li><li>( ) Aos adolescentes entre 15 e 18 anos aplica-se exclusivamente o Estatuto da Juventude.</li><li>( ) A emancipação prevista no Estatuto corresponde à emancipação do Código Civil.</li><li>( ) O direito à segurança pública e ao acesso à justiça está previsto no Estatuto.</li></ul>`,
+o:[`V – F – F – V.`,`V – V – F – V.`,`V – F – V – V.`,`F – F – F – V.`,`V – F – F – F.`],a:0,
+x:`Entre 15 e 18 anos aplica-se o ECA e, excepcionalmente, o Estatuto da Juventude. A emancipação do Estatuto é a trajetória de inclusão e participação, não a emancipação civil.`},
+
+{c:'c16',b:'AOCP',e:`<p>Relacione os artigos do Estatuto da Juventude com o conteúdo e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Art. 37.</li><li>Art. 38.</li><li>Art. 45.</li><li>Art. 32.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) Conselhos de juventude como órgãos permanentes e autônomos, não jurisdicionais.</li><li>( ) Reserva de vagas no transporte coletivo interestadual.</li><li>( ) Direito de viver em ambiente seguro, sem violência.</li><li>( ) Diretrizes das políticas de segurança pública voltadas para os jovens.</li></ul>`,
+o:[`3 – 4 – 1 – 2.`,`3 – 1 – 4 – 2.`,`4 – 3 – 1 – 2.`,`3 – 4 – 2 – 1.`,`2 – 4 – 1 – 3.`],a:0,
+x:`Art. 45 (conselhos), art. 32 (transporte), art. 37 (ambiente seguro) e art. 38 (diretrizes de segurança pública).`},
+
+{c:'c16',b:'AOCP',e:`Sobre o Estatuto da Juventude, assinale a alternativa INCORRETA.`,
+o:[`O jovem tem direito à participação na formulação, execução e avaliação das políticas públicas de juventude.`,`Os conselhos de juventude são órgãos jurisdicionais, competentes para julgar violações de direitos dos jovens.`,`O jovem não será discriminado por motivo de orientação sexual, idioma ou religião.`,`É assegurada a meia-entrada aos estudantes e aos jovens de baixa renda.`,`O Sistema Nacional de Juventude tem funcionamento definido em regulamento.`],a:1,
+x:`Os conselhos de juventude são não jurisdicionais (art. 45).`},
+
+{c:'c16',b:'AOCP',e:`Constitui diretriz das políticas de segurança pública voltadas para os jovens, segundo o art. 38 do Estatuto da Juventude,`,
+o:[`a prevenção e o enfrentamento da violência.`,`a redução da maioridade penal.`,`o toque de recolher para jovens de até 21 anos.`,`a criação de presídios exclusivos para jovens.`,`a vigilância permanente das escolas pela polícia.`],a:0,
+x:`Art. 38, II. As demais alternativas não constam do Estatuto.`},
+
+{c:'c16',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>É princípio do Estatuto da Juventude a promoção da vida segura, da cultura da paz, da solidariedade e da não discriminação.</li><li>É princípio do Estatuto a precedência dos direitos dos jovens sobre os das demais gerações.</li><li>O Estatuto da Juventude revogou o ECA em relação aos adolescentes de 15 a 18 anos.</li></ol>`,
+o:[`Apenas I.`,`Apenas I e II.`,`Apenas II e III.`,`Apenas I e III.`,`I, II e III.`],a:0,
+x:`II está errada: o princípio é a valorização do diálogo e do convívio com as demais gerações, sem precedência. III está errada: o ECA continua sendo a regra para essa faixa (art. 1º, § 2º).`},
+
+{c:'c16',b:'AOCP',e:`A Lei nº 12.852/2013, além de instituir o Estatuto da Juventude e dispor sobre os direitos dos jovens e os princípios e diretrizes das políticas públicas de juventude, instituiu o`,
+o:[`Conselho Tutelar.`,`Sistema Nacional de Juventude (SINAJUVE).`,`Sistema Nacional de Atendimento Socioeducativo (SINASE).`,`Fundo Nacional da Criança e do Adolescente.`,`Sistema Único de Segurança Pública (SUSP).`],a:1,
+x:`O SINASE é da Lei 12.594/2012; o SUSP, da Lei 13.675/2018.`},
+
+{c:'c16',b:'AOCP',e:`Segundo o Estatuto da Juventude, o jovem tem direito à educação de qualidade, com a garantia de educação básica, obrigatória e gratuita,`,
+o:[`apenas até os 17 anos.`,`inclusive para os que a ela não tiveram acesso na idade adequada.`,`apenas no ensino noturno.`,`apenas aos jovens de baixa renda.`,`apenas na rede privada conveniada.`],a:1,
+x:`Art. 7º do Estatuto da Juventude.`},
+
+{c:'c16',b:'AOCP',e:`Sobre a segurança pública e o acesso à justiça no Estatuto da Juventude, assinale a alternativa INCORRETA.`,
+o:[`Todos os jovens têm direito de viver em um ambiente seguro, sem violência.`,`As políticas de segurança pública voltadas para os jovens devem articular ações da União, dos Estados, do DF e dos Municípios.`,`Deve ser promovido o acesso efetivo dos jovens à Defensoria Pública.`,`O Estatuto não trata de segurança pública, matéria exclusiva da Constituição.`,`Devem ser priorizadas ações para jovens em situação de risco e egressos do sistema penitenciário.`],a:3,
+x:`A Seção XI do Estatuto (arts. 37 e 38) trata do direito à segurança pública e ao acesso à justiça.`},
+
+/* ===== CAP 17 – SÚMULAS ===== */
+{c:'c17',b:'AOCP',e:`<p>Informe se é verdadeiro (V) ou falso (F) o que se afirma e assinale a alternativa com a sequência correta.</p><ul class="vf"><li>( ) Segundo a Súmula Vinculante 11, a excepcionalidade do uso de algemas deve ser justificada por escrito.</li><li>( ) Segundo a Súmula 600 do STJ, não se exige coabitação para a configuração da violência doméstica.</li><li>( ) Segundo a Súmula Vinculante 25, é lícita a prisão do depositário judicial infiel.</li><li>( ) Segundo a Súmula 492 do STJ, o ato infracional análogo ao tráfico conduz obrigatoriamente à internação.</li></ul>`,
+o:[`V – V – F – F.`,`V – V – V – F.`,`V – F – F – F.`,`F – V – F – V.`,`V – V – F – V.`],a:0,
+x:`SV 25: é ilícita a prisão civil do depositário infiel, qualquer que seja a modalidade. Súmula 492: o ato análogo ao tráfico, por si só, não conduz obrigatoriamente à internação.`},
+
+{c:'c17',b:'AOCP',e:`<p>Relacione as súmulas com seu conteúdo e assinale a alternativa com a sequência correta.</p><p><b>Coluna 1</b></p><ol><li>Súmula Vinculante 14.</li><li>Súmula Vinculante 56.</li><li>Súmula 500 do STJ.</li><li>Súmula 589 do STJ.</li></ol><p><b>Coluna 2</b></p><ul class="vf"><li>( ) A corrupção de menores é crime formal.</li><li>( ) A falta de estabelecimento penal adequado não autoriza a manutenção em regime mais gravoso.</li><li>( ) O defensor tem acesso amplo aos elementos de prova já documentados no procedimento investigatório.</li><li>( ) É inaplicável o princípio da insignificância nos crimes contra a mulher no âmbito doméstico.</li></ul>`,
+o:[`3 – 2 – 1 – 4.`,`3 – 1 – 2 – 4.`,`2 – 3 – 1 – 4.`,`3 – 2 – 4 – 1.`,`4 – 2 – 1 – 3.`],a:0,
+x:`Súmula 500 STJ (corrupção de menores), SV 56 (regime), SV 14 (acesso do defensor) e Súmula 589 STJ (insignificância).`},
+
+{c:'c17',b:'AOCP',e:`Sobre as súmulas do STF relativas aos militares, assinale a alternativa INCORRETA.`,
+o:[`A perda da graduação de militar pode ocorrer por procedimento administrativo (Súmula 673).`,`Cabe habeas corpus contra a imposição da pena de perda de patente (Súmula 694).`,`Não cabe habeas corpus contra a pena de exclusão de militar (Súmula 694).`,`O art. 125, § 4º, da CF não impede a perda da graduação por via administrativa.`,`A perda de função pública não é impugnável por habeas corpus.`],a:1,
+x:`A Súmula 694 diz o contrário: não cabe HC contra exclusão de militar, perda de patente ou de função pública.`},
+
+{c:'c17',b:'AOCP',e:`Segundo a Súmula 536 do STJ, a suspensão condicional do processo e a transação penal`,
+o:[`aplicam-se a todos os crimes de menor potencial ofensivo.`,`não se aplicam na hipótese de delitos sujeitos ao rito da Lei Maria da Penha.`,`aplicam-se aos crimes de tortura.`,`só se aplicam aos crimes ambientais.`,`dependem de anuência da vítima na Lei Maria da Penha.`],a:1,
+x:`Súmula 536 STJ, em consonância com o art. 41 da Lei 11.340/2006.`},
+
+{c:'c17',b:'AOCP',e:`<p>Analise as assertivas e assinale a alternativa que aponta a(s) correta(s).</p><ol type="I"><li>Segundo o STF (Tema 280), a entrada forçada em domicílio sem mandado só é lícita quando amparada em fundadas razões, justificadas a posteriori.</li><li>Segundo o STF (HC 208.240), é lícita a busca pessoal motivada pela aparência física do abordado.</li><li>Segundo a Súmula 630 do STJ, a confissão no tráfico exige o reconhecimento da traficância.</li></ol>`,
+o:[`Apenas I.`,`Apenas II.`,`Apenas I e III.`,`Apenas II e III.`,`I, II e III.`],a:2,
+x:`II está errada: o STF fixou que a busca pessoal exige elementos objetivos e não pode se basear em raça, sexo, orientação sexual, cor da pele ou aparência física.`},
+
+{c:'c17',b:'AOCP',e:`Segundo a Súmula 342 do STJ, no procedimento para aplicação de medida socioeducativa,`,
+o:[`a confissão do adolescente dispensa as demais provas.`,`é nula a desistência de outras provas em face da confissão do adolescente.`,`a medida pode ser aplicada pelo Ministério Público.`,`a internação é obrigatória após a confissão.`,`a oitiva do adolescente é dispensável.`],a:1,
+x:`Súmula 342 STJ.`},
+
+{c:'c17',b:'AOCP',e:`Segundo a Súmula 265 do STJ, antes de decretar-se a regressão da medida socioeducativa,`,
+o:[`é dispensável a oitiva do adolescente.`,`é necessária a oitiva do menor infrator.`,`é necessária a autorização do Conselho Tutelar.`,`é necessária a concordância dos pais.`,`é necessário o trânsito em julgado.`],a:1,
+x:`Súmula 265 STJ. A internação-sanção também exige o devido processo legal (art. 122, § 1º, do ECA).`},
+
+{c:'c17',b:'AOCP',e:`Sobre a Súmula 647 do STJ, assinale a alternativa INCORRETA.`,
+o:[`Trata de ações indenizatórias.`,`Refere-se a atos de perseguição política com violação de direitos fundamentais.`,`Alcança fatos ocorridos durante o regime militar.`,`Torna imprescritível o crime de tortura praticado em qualquer época.`,`Abrange danos morais e materiais.`],a:3,
+x:`A súmula é cível: trata da imprescritibilidade das ações de indenização. No plano penal, a tortura é prescritível segundo a Constituição.`}
+);
+
 (function () {
   'use strict';
   var QS = window.QUESTOES || [];
@@ -4359,7 +4974,7 @@ x:`Decisão da 6ª Turma do STJ. A lei também se aplica a relações homoafetiv
     theory.after(quiz);
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as ' + list.length + ' questões deste capítulo no estilo AOCP, FCC e Vunesp.</p><button type="button" class="btn go-q">Ir para as questões</button>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';

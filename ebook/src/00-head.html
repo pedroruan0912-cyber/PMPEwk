@@ -12,6 +12,7 @@
   --trap:#B42318; --trap-soft:#FCEBE9;
   --ok:#1C6E45; --ok-soft:#E2F3E8;
   --law-bg:#EBF0F7;
+  --aocp:#8A2F6B; --aocp-soft:#F7E9F2;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --f-body:"Literata",Georgia,"Times New Roman",serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -22,7 +23,7 @@
   --mark:#E6CB3F; --mark-ink:#131A26;
   --trap:#FF8F80; --trap-soft:#36191A;
   --ok:#72D29E; --ok-soft:#14301F;
-  --law-bg:#18212F; color-scheme:dark;
+  --law-bg:#18212F; --aocp:#E79BCB; --aocp-soft:#33172A; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --paper:#0D121A; --surface:#141B26; --ink:#E4E8EF; --muted:#9AA5B6; --rule:#283245;
@@ -30,7 +31,7 @@
   --mark:#E6CB3F; --mark-ink:#131A26;
   --trap:#FF8F80; --trap-soft:#36191A;
   --ok:#72D29E; --ok-soft:#14301F;
-  --law-bg:#18212F; color-scheme:dark;
+  --law-bg:#18212F; --aocp:#E79BCB; --aocp-soft:#33172A; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -152,8 +153,11 @@ details.deep>div{padding:0 14px 12px}
 .tag{border-radius:3px;padding:1px 7px;font-weight:600;letter-spacing:.08em;border:1px solid currentColor}
 .tag.fcc{color:var(--accent)}
 .tag.vunesp{color:var(--ok)}
+.tag.aocp{color:var(--aocp)}
 .q-stem{margin:0 0 12px;font-size:.98rem}
 .q-stem ol,.q-stem ul{margin:6px 0;padding-left:1.4em}
+.q-stem ul.vf{list-style:none;padding-left:.2em}
+.q-stem ul.vf li{margin:4px 0}
 .q-stem p{margin:0 0 8px}
 .q-opts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
 .opt{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;width:100%;text-align:left;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:9px 12px;font-family:var(--f-body);font-size:.94rem;line-height:1.45}
@@ -199,6 +203,9 @@ details.deep>div{padding:0 14px 12px}
 .banca h3{font-size:1.15rem;margin-bottom:6px}
 .banca ul{margin:0;padding-left:1.1em;font-size:.93rem}
 .banca li{margin:3px 0}
+.banca-main{border-color:var(--aocp);background:var(--aocp-soft);grid-column:1/-1}
+.banca-main h3{color:var(--aocp)}
+.banca-badge{display:inline-block;font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--aocp);border:1px solid var(--aocp);border-radius:3px;padding:1px 6px;margin-bottom:6px}
 
 /* ---------- simulado / flashcards ---------- */
 .panel{border:1px solid var(--rule);background:var(--surface);border-radius:6px;padding:16px 18px;margin:16px 0}
