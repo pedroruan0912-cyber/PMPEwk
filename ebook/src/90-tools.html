@@ -4,13 +4,18 @@
 <header class="ch-head">
   <span class="ch-kicker">Treino</span>
   <h1>Simulado</h1>
-  <p class="lede">Escolha capítulos, banca e quantidade. As respostas só aparecem quando você entregar, como na prova.</p>
+  <p class="lede">Treine no formato da prova (10 questões AOCP) ou monte um simulado com os capítulos, a banca e a quantidade que quiser. As respostas só aparecem quando você entregar.</p>
 </header>
+<div class="panel sim-pmpe">
+  <h3>Simulado no formato da prova</h3>
+  <p class="q-exp">10 questões no estilo AOCP, uma de cada capítulo sorteado, como as 10 questões de Direitos Humanos e Legislação Extravagante do Edital de Soldado PMPE 2026.</p>
+  <div class="q-actions"><button class="btn" id="simPMPE" type="button">Iniciar simulado de 10 questões</button></div>
+</div>
 <div id="simSetup" class="panel">
-  <h3>Montar simulado</h3>
+  <h3>Montar simulado personalizado</h3>
   <div class="form-row">
     <div class="field"><label for="simBanca">Banca</label>
-      <select id="simBanca"><option value="">Todas as bancas</option><option value="AOCP">Só AOCP</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
+      <select id="simBanca"><option value="">Todas as bancas</option><option value="AOCP" selected>Só AOCP</option><option value="FCC">Só FCC</option><option value="Vunesp">Só Vunesp</option></select></div>
     <div class="field"><label for="simQtd">Questões</label>
       <select id="simQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="999">Todas</option></select></div>
     <div class="field"><label for="simOnly">Filtro</label>
