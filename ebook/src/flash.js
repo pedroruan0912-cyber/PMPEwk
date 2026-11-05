@@ -98,5 +98,12 @@ window.FLASH = [
 {c:'c17',f:'SV 11 em uma frase?',b:'Algemas só com resistência, fundado receio de fuga ou perigo, justificadas por escrito.'},
 {c:'c17',f:'SV 25?',b:'Ilícita a prisão civil do depositário infiel, qualquer que seja a modalidade.'},
 {c:'c17',f:'Súmula 647 STJ?',b:'Imprescritíveis as ações indenizatórias por perseguição política no regime militar.'},
-{c:'c17',f:'Tema 280 STF?',b:'Entrada em domicílio sem mandado só com fundadas razões, justificadas a posteriori.'}
+{c:'c17',f:'Tema 280 STF?',b:'Entrada em domicílio sem mandado só com fundadas razões, justificadas a posteriori.'},
+{c:'c11',f:'Poluição que dificulta ou impede o uso público das praias?',b:'Forma qualificada do art. 54 (§ 2º, IV): reclusão de 1 a 5 anos. A forma simples é de 1 a 4 anos.'},
+{c:'c11',f:'Poluição dolosa com resultado morte?',b:'Pena aumentada até o dobro (art. 58, III). Lesão grave: 1/3 até a metade. Dano irreversível: 1/6 a 1/3.'},
+{c:'c11',f:'Transportar madeira sem licença válida para a viagem?',b:'Crime do art. 46, parágrafo único: detenção de 6 meses a 1 ano e multa.'},
+{c:'c6',f:'Quem pode afastar o agressor da moradia comum em caso de maus-tratos ou abuso sexual contra criança (ECA)?',b:'O juiz, como medida cautelar (art. 130). Pela Lei Henry Borel, também o delegado ou o policial, nas condições do modelo Maria da Penha.'},
+{c:'c7',f:'Fim do prazo da prisão temporária: precisa de nova ordem para soltar?',b:'Não. O responsável pela custódia solta imediatamente, salvo se comunicado da prorrogação ou da preventiva (Lei 7.960, alterada pela Lei 13.869).'},
+{c:'c13',f:'Quem destrói plantação ilícita de drogas?',b:'O delegado de polícia, imediatamente, recolhendo amostra para perícia (art. 32).'},
+{c:'c17',f:'Pode atirar em suspeito desarmado em fuga?',b:'Não. A Lei 13.060/2014 (art. 2º, parágrafo único) veda; também contra veículo que fura bloqueio, salvo risco de morte ou lesão.'}
 ];
