@@ -26,11 +26,11 @@ E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; ta
 16. Estatuto da Juventude (Lei 12.852/2013)
 17. Súmulas e jurisprudência dos Tribunais Superiores
 
-Recursos: 627 questões comentadas (143 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 768 questões comentadas (284 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 100 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 ## Editar e gerar de novo
 
-Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q8.js`, sendo `q7.js` e `q8.js` as do estilo AOCP, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
+Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q10.js`, sendo `q7.js` a `q10.js` as do estilo AOCP, flashcards em `flash.js`, lógica em `99-app.js`). Depois de editar:
 
 ```bash
 ./ebook/build.sh
