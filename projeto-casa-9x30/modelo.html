@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Moderna 9×30</title>
+<meta name="description" content="Estudo preliminar de sobrado moderno em lote de 9 × 30 m: plantas do térreo e do 1º andar, fachada, perspectiva, quadro de áreas e memorial descritivo.">
+<style>
+  :root {
+    --bg: #f6f4f0; --card: #ffffff; --ink: #1f1f1d; --muted: #5d5b56; --line: #e2ded6;
+    --accent: #8a5a2b; --accent-soft: #f3e9dd; --ok: #2f6b4f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.55 Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  header { background: #1f1f1d; color: #f6f4f0; padding: 48px 16px 40px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { padding: 0; }
+  .kicker { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: #c9b79f; margin: 0 0 8px; }
+  h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.1; margin: 0 0 12px; font-weight: 750; }
+  header p.lead { max-width: 760px; color: #d9d5cc; margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 28px; }
+  .stat { border: 1px solid #3b3a36; border-radius: 10px; padding: 12px 14px; }
+  .stat b { display: block; font-size: 22px; color: #fff; }
+  .stat span { font-size: 13px; color: #bdb8ad; }
+  nav { position: sticky; top: 0; z-index: 5; background: rgba(246,244,240,.94); backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; gap: 18px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 14px; white-space: nowrap; font-weight: 600; }
+  nav a:hover { color: var(--accent); }
+  section { padding: 40px 0 8px; }
+  h2 { font-size: 24px; margin: 0 0 6px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 18px; max-width: 820px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  figure { margin: 0; }
+  .desenho { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .desenho svg { display: block; width: 100%; min-width: 820px; height: auto; }
+  .desenho.peq svg { min-width: 0; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+  .legenda { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .legenda i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px;
+               margin-right: 6px; border: 1px solid #0002; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  caption { text-align: left; font-weight: 700; padding: 0 0 8px; font-size: 15px; }
+  td { padding: 7px 4px; border-bottom: 1px solid var(--line); }
+  td:last-child { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tfoot td { font-weight: 700; border-bottom: 0; border-top: 2px solid var(--ink); }
+  .params { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .param { background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; }
+  .param b { font-size: 20px; display: block; }
+  .param span { font-size: 13px; color: var(--muted); }
+  ul.memo { padding-left: 18px; margin: 6px 0 0; }
+  ul.memo li { margin: 4px 0; }
+  .aviso { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: 12px 16px;
+           border-radius: 0 10px 10px 0; font-size: 14px; }
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center; }
+  @media (max-width: 700px) { .calc { grid-template-columns: 1fr; } }
+  .calc label { font-weight: 600; font-size: 14px; display: block; margin-bottom: 6px; }
+  .calc input[type=range] { width: 100%; accent-color: var(--accent); }
+  .calc .valor { font-size: 32px; font-weight: 750; color: var(--accent); }
+  .calc .linha { display: flex; justify-content: space-between; font-size: 14px; padding: 6px 0;
+                 border-bottom: 1px dashed var(--line); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .chips button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 12px;
+                  font: inherit; font-size: 13px; cursor: pointer; }
+  .chips button:hover { border-color: var(--accent); color: var(--accent); }
+  .ckb { display: flex; gap: 8px; align-items: center; font-size: 14px; margin-top: 10px; }
+  footer { color: var(--muted); font-size: 13px; padding: 32px 0 48px; }
+  @media print {
+    nav, .calc .chips { display: none; }
+    header { background: #fff; color: #000; padding: 0 0 16px; }
+    header p.lead, .stat span { color: #333; }
+    .stat { border-color: #999; } .stat b { color: #000; }
+    section { break-inside: avoid; padding-top: 18px; }
+    .desenho svg { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">Estudo preliminar · Lote 9 × 30 m</p>
+    <h1>Casa Moderna 9×30 — sobrado com 1º andar</h1>
+    <p class="lead">Sobrado contemporâneo para lote estreito: social integrado no térreo, que se abre para uma área gourmet com piscina, e três suítes no 1º andar. Volumes puros, fachada em pedra, ripado de madeira e grandes panos de vidro.</p>
+    <div class="stats">
+      <div class="stat"><b>{{AREA_TOTAL}} m²</b><span>área construída</span></div>
+      <div class="stat"><b>3 suítes</b><span>master com closet e varanda</span></div>
+      <div class="stat"><b>2 vagas</b><span>no recuo frontal</span></div>
+      <div class="stat"><b>Piscina</b><span>6,00 × 2,60 m + gourmet</span></div>
+      <div class="stat"><b>270 m²</b><span>de terreno (9 × 30 m)</span></div>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#terreo">Térreo</a><a href="#superior">1º andar</a><a href="#fachada">Fachada e perspectiva</a>
+  <a href="#areas">Quadro de áreas</a><a href="#parametros">Parâmetros</a><a href="#memorial">Memorial</a><a href="#custo">Custo</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="conceito">
+  <h2>Conceito</h2>
+  <p class="sub">O lote estreito pede uma casa “em fila”, que se desenvolve em profundidade. A casa encosta na divisa direita (parede cega, sem aberturas) e deixa um <b>recuo lateral de 1,50 m</b> à esquerda, que funciona como corredor de serviço e garante iluminação e ventilação natural a todos os ambientes desse lado. Uma <b>claraboia sobre a escada</b> leva luz ao miolo da casa e cria efeito chaminé, puxando o ar quente para cima.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">Térreo — viver e receber</h3>
+      <ul class="memo">
+        <li>Sala de estar com pé-direito de 2,70 m e pano de vidro para a frente</li>
+        <li>Jantar e cozinha integrados, com ilha e despensa sob a escada</li>
+        <li>Lavabo social; lavanderia com saída para o corredor lateral</li>
+        <li>Área gourmet com churrasqueira, aberta para o deck e a piscina</li>
+        <li>Banheiro de apoio para a piscina e depósito / casa de bombas</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">1º andar — descanso</h3>
+      <ul class="memo">
+        <li>Suíte master na frente, com closet, banho e varanda em balanço</li>
+        <li>Sala íntima / home office no centro, junto à escada</li>
+        <li>Duas suítes nos fundos, voltadas para a piscina</li>
+        <li>Laje da área gourmet com telhado verde e espaço para condensadoras</li>
+        <li>Placas solares sobre a laje de cobertura, escondidas pela platibanda</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="terreo">
+  <h2>Planta baixa — térreo e implantação</h2>
+  <p class="sub">A rua fica à esquerda do desenho. Medidas em metros; áreas pelos eixos das paredes.</p>
+  <figure class="card">
+    <div class="desenho">{{PLANTA_TERREO}}</div>
+    <div class="legenda">
+      <span><i style="background:#f4ece0"></i>social</span>
+      <span><i style="background:#dcefeb"></i>áreas molhadas</span>
+      <span><i style="background:#efe3cf"></i>área gourmet / externa</span>
+      <span><i style="background:#ece8f1"></i>serviço</span>
+      <span><i style="background:#cfd5c6"></i>piso drenante (concregrama)</span>
+      <span><i style="background:#d8ead0"></i>jardim</span>
+    </div>
+    <figcaption>Escada reta de 1,20 m com 16 degraus (espelho 18 cm, piso 28 cm). Porta de entrada pivotante de 1,20 × 2,70 m. Na tela do celular, arraste o desenho para o lado.</figcaption>
+  </figure>
+</section>
+
+<section id="superior">
+  <h2>Planta baixa — 1º andar</h2>
+  <p class="sub">Pavimento superior com 16 m de profundidade sobre o térreo. A varanda da suíte master avança 1,00 m em balanço sobre a garagem.</p>
+  <figure class="card">
+    <div class="desenho">{{PLANTA_SUPERIOR}}</div>
+    <div class="legenda">
+      <span><i style="background:#e6edf4"></i>íntimo</span>
+      <span><i style="background:#f4ece0"></i>estar</span>
+      <span><i style="background:#dcefeb"></i>banheiros</span>
+      <span><i style="background:#f1f1ef"></i>circulação</span>
+    </div>
+    <figcaption>O banho 3 fica na parede de divisa e por isso recebe luz e ventilação por domus (zenital) com exaustor. Todos os outros ambientes têm janela para a frente, para os fundos ou para o recuo lateral.</figcaption>
+  </figure>
+</section>
+
+<section id="fachada">
+  <h2>Fachada e perspectiva</h2>
+  <p class="sub">Dois volumes: o térreo, revestido em pedra, serve de base; o 1º andar é uma caixa branca emoldurada em concreto aparente, com ripado de madeira que dá privacidade ao closet.</p>
+  <div class="grid2">
+    <figure class="card"><div class="desenho peq">{{FACHADA}}</div>
+      <figcaption>Altura total de 6,60 m até o topo da platibanda. Pé-direito de 2,70 m nos dois pavimentos.</figcaption></figure>
+    <figure class="card"><div class="desenho peq">{{PERSPECTIVA}}</div>
+      <figcaption>Perspectiva esquemática da volumetria, com piscina, deck e placas solares.</figcaption></figure>
+  </div>
+</section>
+
+<section id="areas">
+  <h2>Quadro de áreas</h2>
+  <p class="sub">Áreas medidas pelos eixos das paredes. As áreas úteis finais ficam cerca de 8% menores por causa da espessura das paredes.</p>
+  <div class="grid2">
+    <div class="card">{{TABELA_TERREO}}</div>
+    <div class="card">{{TABELA_SUPERIOR}}</div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <table><tbody>
+      <tr><td>Térreo (inclui área gourmet coberta)</td><td>{{AREA_TERREO}} m²</td></tr>
+      <tr><td>1º andar (inclui varanda)</td><td>{{AREA_SUPERIOR}} m²</td></tr>
+    </tbody><tfoot><tr><td>Área construída total</td><td>{{AREA_TOTAL}} m²</td></tr></tfoot></table>
+  </div>
+</section>
+
+<section id="parametros">
+  <h2>Parâmetros urbanísticos adotados</h2>
+  <p class="sub">Valores usados neste estudo. Cada município define os seus no Plano Diretor e no Código de Obras, por isso confira antes de aprovar o projeto.</p>
+  <div class="params">
+    <div class="param"><b>{{TO}}%</b><span>taxa de ocupação ({{AREA_TERREO}} m² ÷ 270 m²)</span></div>
+    <div class="param"><b>{{CA}}</b><span>coeficiente de aproveitamento (sem a varanda)</span></div>
+    <div class="param"><b>≈ {{PERM}}%</b><span>área permeável (≈ {{PERM_M2}} m²: concregrama, corredor gramado e jardim)</span></div>
+    <div class="param"><b>5,00 m</b><span>recuo frontal (vagas descobertas)</span></div>
+    <div class="param"><b>1,50 m / 0</b><span>recuo lateral esquerdo / direito (divisa sem aberturas)</span></div>
+    <div class="param"><b>6,00 / 9,00 m</b><span>afastamento de fundos: térreo / 1º andar</span></div>
+  </div>
+  <p class="aviso" style="margin-top:16px"><b>Se a sua prefeitura não permitir encostar na divisa</b> (ou exigir recuo dos dois lados no pavimento superior), estreite a casa para 6,00 m e passe a escada e o banho 3 para o eixo central. Pelo Código Civil (art. 1.301), janelas só podem ser abertas a 1,50 m ou mais da divisa; por isso a parede da direita é cega.</p>
+</section>
+
+<section id="memorial">
+  <h2>Memorial descritivo (resumo)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">Estrutura e vedações</h3>
+      <ul class="memo">
+        <li>Fundação em sapatas ou estacas, a definir pela sondagem do solo (SPT)</li>
+        <li>Estrutura em concreto armado: pilares, vigas e lajes treliçadas; laje maciça na varanda em balanço</li>
+        <li>Paredes em bloco cerâmico de 14 cm; parede de divisa em bloco de 19 cm, com isolamento acústico</li>
+        <li>Pé-direito de 2,70 m; piso a piso de 2,88 m</li>
+      </ul>
+      <h3>Cobertura</h3>
+      <ul class="memo">
+        <li>Laje impermeabilizada com manta asfáltica e caimento de 1% a 2% para os ralos, escondida por platibanda de 60 cm</li>
+        <li>Telhado verde extensivo sobre a laje da área gourmet</li>
+        <li>Claraboia fixa de vidro laminado sobre a escada; domus no banho 3</li>
+      </ul>
+      <h3>Esquadrias</h3>
+      <ul class="memo">
+        <li>Alumínio preto com vidro laminado 8 mm; panos de vidro de piso a teto na sala e na suíte master</li>
+        <li>Porta de entrada pivotante em madeira maciça, 1,20 × 2,70 m</li>
+        <li>Porta de correr de quatro folhas entre a cozinha e a área gourmet</li>
+        <li>Guarda-corpo de vidro temperado laminado na varanda</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Acabamentos</h3>
+      <ul class="memo">
+        <li>Fachada: térreo em pedra natural (filetes) e 1º andar com pintura texturizada branca e moldura em concreto aparente</li>
+        <li>Ripado de madeira cumaru (ou WPC) na fachada do closet</li>
+        <li>Porcelanato 90 × 90 cm acetinado no térreo; vinílico amadeirado nos quartos</li>
+        <li>Deck da piscina em madeira ou porcelanato atérmico; piscina em vinil ou alvenaria com prainha</li>
+      </ul>
+      <h3>Instalações e sustentabilidade</h3>
+      <ul class="memo">
+        <li>Placas fotovoltaicas (cerca de 8 placas, aproximadamente 4 kWp) e aquecimento de água solar ou por bomba de calor</li>
+        <li>Cisterna para reaproveitar água de chuva na rega e na lavagem de pisos</li>
+        <li>Infraestrutura para ar-condicionado split nos quartos e na sala, com condensadoras na laje do térreo</li>
+        <li>Ponto de recarga para carro elétrico na garagem; pré-instalação para automação e câmeras</li>
+        <li>Ventilação cruzada pelo recuo lateral e luz zenital na escada</li>
+      </ul>
+      <h3>Paisagismo</h3>
+      <ul class="memo">
+        <li>Árvore de pequeno porte no jardim frontal; corredor lateral gramado com pisantes</li>
+        <li>Jardim e árvores no fundo do lote para dar privacidade à piscina</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="custo">
+  <h2>Estimativa de custo da obra</h2>
+  <p class="sub">Simulação simples: área construída × custo por m². Use como referência o CUB/m² do Sinduscon do seu estado (padrão residencial R1 ou R8, normal ou alto) mais uma margem para projetos, taxas e acabamentos.</p>
+  <div class="card calc">
+    <div>
+      <label for="pm2">Custo por m²: <span id="pm2v"></span></label>
+      <input id="pm2" type="range" min="2000" max="8000" step="100" value="3800">
+      <div class="chips">
+        <button type="button" data-v="2800">Padrão econômico</button>
+        <button type="button" data-v="3800">Padrão médio</button>
+        <button type="button" data-v="5200">Alto padrão</button>
+      </div>
+      <label class="ckb"><input type="checkbox" id="lazer" checked> Incluir piscina, deck e paisagismo (verba fixa)</label>
+      <label class="ckb"><input type="checkbox" id="proj" checked> Incluir projetos e aprovação (+8%)</label>
+    </div>
+    <div>
+      <div class="linha"><span>Construção ({{AREA_TOTAL}} m²)</span><b id="c1"></b></div>
+      <div class="linha"><span>Piscina, deck e paisagismo</span><b id="c2"></b></div>
+      <div class="linha"><span>Projetos, ART/RRT e taxas</span><b id="c3"></b></div>
+      <div style="margin-top:12px;color:var(--muted);font-size:14px">Total estimado</div>
+      <div class="valor" id="ct"></div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted)">Os valores são ilustrativos e não substituem um orçamento detalhado. O custo real varia com a cidade, o solo, os acabamentos e a mão de obra.</p>
+</section>
+
+<section>
+  <p class="aviso"><b>Importante:</b> este é um <b>estudo preliminar</b> (anteprojeto) para orientar a ideia da casa. Para construir, é preciso contratar um arquiteto (RRT/CAU) ou engenheiro (ART/CREA) para o projeto legal e o executivo, com levantamento topográfico, sondagem do solo, projetos de estrutura, elétrica, hidráulica e prevenção de incêndio, além da aprovação na prefeitura.</p>
+</section>
+</main>
+
+<footer><div class="wrap">Projeto gerado por <code>gerar_projeto.py</code>. Para alterar ambientes, medidas ou aberturas, edite o script e rode-o de novo.</div></footer>
+
+<script>
+(function () {
+  var area = {{AREA_TOTAL_NUM}};
+  var VERBA_LAZER = 65000;
+  var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  var r = document.getElementById('pm2');
+  function calc() {
+    var v = +r.value;
+    var c1 = area * v;
+    var c2 = document.getElementById('lazer').checked ? VERBA_LAZER : 0;
+    var c3 = document.getElementById('proj').checked ? (c1 + c2) * 0.08 : 0;
+    document.getElementById('pm2v').textContent = brl.format(v) + '/m²';
+    document.getElementById('c1').textContent = brl.format(c1);
+    document.getElementById('c2').textContent = brl.format(c2);
+    document.getElementById('c3').textContent = brl.format(c3);
+    document.getElementById('ct').textContent = brl.format(c1 + c2 + c3);
+  }
+  r.addEventListener('input', calc);
+  document.getElementById('lazer').addEventListener('change', calc);
+  document.getElementById('proj').addEventListener('change', calc);
+  document.querySelectorAll('.chips button').forEach(function (b) {
+    b.addEventListener('click', function () { r.value = b.dataset.v; calc(); });
+  });
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -74,3 +74,9 @@ Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.j
 ```
 
 Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
+
+---
+
+# Projeto: Casa Moderna 9×30 (sobrado com 1º andar)
+
+Estudo preliminar de uma casa moderna para um lote de 9 × 30 m, com plantas do térreo e do 1º andar, fachada, perspectiva, quadro de áreas, memorial descritivo e calculadora de custo. Veja [`projeto-casa-9x30/`](projeto-casa-9x30/README.md) e abra `projeto-casa-9x30/index.html` no navegador.
