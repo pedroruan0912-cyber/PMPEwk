@@ -1,0 +1,32 @@
+0:00:00 Abertura
+0:00:20 Questão 31
+0:02:17 Questão 32
+0:04:22 Questão 33
+0:06:28 Questão 34
+0:08:26 Questão 35
+0:10:30 Questão 36
+0:12:26 Questão 37
+0:14:35 Questão 38
+0:16:37 Questão 39
+0:18:51 Questão 40
+0:21:00 Questão 41
+0:23:11 Questão 42
+0:25:07 Questão 43
+0:27:05 Questão 44
+0:29:25 Questão 45
+0:31:32 Questão 46
+0:33:28 Questão 47
+0:35:06 Questão 48
+0:36:57 Questão 49
+0:38:53 Questão 50
+0:40:59 Questão 51
+0:42:44 Questão 52
+0:44:46 Questão 53
+0:46:17 Questão 54
+0:48:19 Questão 55
+0:49:52 Questão 56
+0:51:51 Questão 57
+0:53:53 Questão 58
+0:56:01 Questão 59
+0:58:01 Questão 60
+1:00:12 Encerramento
