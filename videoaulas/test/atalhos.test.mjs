@@ -42,3 +42,21 @@ test('a tabela cobre as quatro áreas', () => {
   const areas = new Set(Object.values(ATALHOS).map(a => a.onde));
   assert.deepEqual([...areas].sort(), ['geral', 'planilha', 'slides', 'texto']);
 });
+
+// Conferido na documentação: refazer não é igual em todo o Office em português.
+test('refazer é Ctrl+R no Word, mas Ctrl+Y no Excel; no LibreOffice é sempre Ctrl+Y', () => {
+  assert.deepEqual([ATALHOS.refazer.office, ATALHOS.refazer.libre, ATALHOS.refazer.onde], ['Ctrl+R', 'Ctrl+Y', 'texto']);
+  assert.deepEqual([ATALHOS.refazerPlanilha.office, ATALHOS.refazerPlanilha.libre, ATALHOS.refazerPlanilha.onde], ['Ctrl+Y', 'Ctrl+Y', 'planilha']);
+});
+
+test('teclas de função que mudam de papel entre as suítes', () => {
+  assert.deepEqual([ATALHOS.listaNumerada.office, ATALHOS.listaNumerada.libre], [null, 'F12']);
+  assert.deepEqual([ATALHOS.graficoRapido.office, ATALHOS.graficoRapido.libre], ['F11', null]);
+  assert.equal(ATALHOS.salvarComo.office, 'F12');
+  assert.equal(ATALHOS.estilos.libre, 'F11');
+});
+
+test('tela preta e tela branca usam ponto e vírgula nas duas suítes', () => {
+  assert.deepEqual([ATALHOS.telaPreta.office, ATALHOS.telaPreta.libre], ['.', '.']);
+  assert.deepEqual([ATALHOS.telaBranca.office, ATALHOS.telaBranca.libre], [',', ',']);
+});

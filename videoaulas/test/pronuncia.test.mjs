@@ -18,6 +18,7 @@ casos('combinações de teclas dizem o nome de cada tecla', [
   ['Ctrl+*', 'control asterisco'],
   ['Ctrl+PgDn', 'control pêige dáun'],
   ['Ctrl+1', 'control 1'],
+  ['Ctrl+A', 'control á'],
 ]);
 
 casos('teclas de função soltas', [
@@ -27,7 +28,7 @@ casos('teclas de função soltas', [
 ]);
 
 casos('pontuação depois de um atalho continua sendo pontuação', [
-  ['No Word é Ctrl+N; no Writer, Ctrl+B.', 'No uârd é control ene; no ráiter, control bê.'],
+  ['No Word é Ctrl+N; no Writer, Ctrl+B.', 'No uôrd é control ene; no ráiter, control bê.'],
   ['Aperte Ctrl+B.', 'Aperte control bê.'],
 ]);
 
@@ -43,22 +44,22 @@ casos('extensões de arquivo', [
 ]);
 
 casos('referências de célula e intervalos', [
-  ['A1:B3', 'a 1 até bê 3'],
-  ['$A$1', 'cifrão a cifrão 1'],
+  ['A1:B3', 'á 1 até bê 3'],
+  ['$A$1', 'cifrão á cifrão 1'],
   ['A célula C4 soma B2 e B3.', 'A célula cê 4 soma bê 2 e bê 3.'],
 ]);
 
 casos('fórmulas são lidas sinal por sinal', [
-  ['=SOMA(A1;A3)', 'igual soma, abre parênteses, a 1, ponto e vírgula, a 3, fecha parênteses'],
-  ['=SOMA(A1:A3)', 'igual soma, abre parênteses, a 1 até a 3, fecha parênteses'],
-  ['=A1+B1*2', 'igual a 1 mais bê 1 vezes 2'],
-  ['=SE(A1>=7;"Aprovado";"Reprovado")', 'igual se, abre parênteses, a 1 maior ou igual a 7, ponto e vírgula, aprovado, ponto e vírgula, reprovado, fecha parênteses'],
-  ['=$A$1*B2', 'igual cifrão a cifrão 1 vezes bê 2'],
-  ['=Planilha2.A1', 'igual planilha2 ponto a 1'],
-  ['=Planilha2!A1', 'igual planilha2 exclamação a 1'],
-  ['=ARRED(MÉDIA(A1:A3);1)', 'igual arred, abre parênteses, média, abre parênteses, a 1 até a 3, fecha parênteses, ponto e vírgula, 1, fecha parênteses'],
-  ['A fórmula =SOMA(A1;A3) devolve 60.', 'A fórmula igual soma, abre parênteses, a 1, ponto e vírgula, a 3, fecha parênteses, devolve 60.'],
-  ['Digite =A1/2.', 'Digite igual a 1 dividido por 2.'],
+  ['=SOMA(A1;A3)', 'igual soma, abre parênteses, á 1, ponto e vírgula, á 3, fecha parênteses'],
+  ['=SOMA(A1:A3)', 'igual soma, abre parênteses, á 1 até á 3, fecha parênteses'],
+  ['=A1+B1*2', 'igual á 1 mais bê 1 vezes 2'],
+  ['=SE(A1>=7;"Aprovado";"Reprovado")', 'igual se, abre parênteses, á 1 maior ou igual a 7, ponto e vírgula, aprovado, ponto e vírgula, reprovado, fecha parênteses'],
+  ['=$A$1*B2', 'igual cifrão á cifrão 1 vezes bê 2'],
+  ['=Planilha2.A1', 'igual planilha2 ponto á 1'],
+  ['=Planilha2!A1', 'igual planilha2 exclamação á 1'],
+  ['=ARRED(MÉDIA(A1:A3);1)', 'igual arred, abre parênteses, média, abre parênteses, á 1 até á 3, fecha parênteses, ponto e vírgula, 1, fecha parênteses'],
+  ['A fórmula =SOMA(A1;A3) devolve 60.', 'A fórmula igual soma, abre parênteses, á 1, ponto e vírgula, á 3, fecha parênteses, devolve 60.'],
+  ['Digite =A1/2.', 'Digite igual á 1 dividido por 2.'],
 ]);
 
 casos('nomes de função', [
@@ -73,13 +74,13 @@ casos('nomes de função', [
 
 casos('nomes de programas e siglas', [
   ['Writer', 'ráiter'],
-  ['Calc', 'cálc'],
+  ['Calc', 'cálqui'],
   ['Impress', 'imprés'],
-  ['Excel', 'ecsél'],
+  ['Excel', 'ecsséu'],
   ['PowerPoint', 'páuer póint'],
   ['LibreOffice', 'libre ófice'],
   ['Office', 'ófice'],
-  ['Word', 'uârd'],
+  ['Word', 'uôrd'],
   ['AOCP', 'a ó cê pê'],
   ['PMPE', 'pê eme pê é'],
 ]);
@@ -90,4 +91,21 @@ casos('texto comum, aspas e parênteses', [
   ['O Writer (editor de texto) é livre.', 'O ráiter, editor de texto, é livre.'],
   ['Use 0,5 ponto.', 'Use 0 vírgula 5 ponto.'],
   ['  dois   espaços  ', 'dois espaços'],
+]);
+
+// Respelling escolhido olhando a transcrição fonética que o Kokoro gera para cada palavra.
+casos('nomes em inglês que a voz leria errado', [
+  ['The Document Foundation', 'dê dóquiument faundêichon'],
+  ['OpenDocument', 'ôupen dóquiument'],
+  ['Office Open XML', 'ófice ôupen xis eme éle'],
+  ['Access', 'ácsses'],
+  ['Outlook', 'áutluc'],
+  ['Publisher', 'páblixer'],
+  ['Draw', 'dró'],
+  ['Math', 'méf'],
+  ['macOS', 'méc ó esse'],
+  ['spreadsheet', 'ispréd xit'],
+  ['É software livre.', 'É sóftuér livre.'],
+  ['ODF', 'ó dê efe'],
+  ['a base do documento', 'a base do documento'],
 ]);

@@ -3,7 +3,7 @@
 // Algarismos ficam como estão: o voz.py os escreve por extenso.
 
 const LETRAS = {
-  A: 'a', B: 'bê', C: 'cê', D: 'dê', E: 'é', F: 'efe', G: 'gê', H: 'agá', I: 'i', J: 'jota', K: 'cá', L: 'éle', M: 'eme',
+  A: 'á', B: 'bê', C: 'cê', D: 'dê', E: 'é', F: 'efe', G: 'gê', H: 'agá', I: 'i', J: 'jota', K: 'cá', L: 'éle', M: 'eme',
   N: 'ene', O: 'ó', P: 'pê', Q: 'quê', R: 'érre', S: 'esse', T: 'tê', U: 'u', V: 'vê', W: 'dáblio', X: 'xis', Y: 'ípsilon', Z: 'zê',
 };
 
@@ -27,8 +27,10 @@ const FUNCOES = ['SOMA', 'MÉDIA', 'MÁXIMO', 'MÍNIMO', 'MAIOR', 'MENOR', 'SE',
 // (escrita, pronúncia aproximada em português). A ordem importa: o mais específico vem antes.
 const LEXICO = [
   ['PROCV', 'proc vê'], ['PROCH', 'proc agá'], ['SOMASES', 'soma ses'], ['SOMASE', 'soma se'], ['MÉDIASE', 'média se'], ['SEERRO', 'se erro'],
-  ['LibreOffice', 'libre ófice'], ['Microsoft', 'máicrossóft'], ['PowerPoint', 'páuer póint'], ['WordArt', 'uârd árt'], ['SmartArt', 'ismárt árt'],
-  ['Office', 'ófice'], ['Word', 'uârd'], ['Excel', 'ecsél'], ['Writer', 'ráiter'], ['Calc', 'cálc'], ['Impress', 'imprés'],
+  ['The Document Foundation', 'dê dóquiument faundêichon'], ['OpenDocument', 'ôupen dóquiument'], ['Open XML', 'ôupen xis eme éle'],
+  ['LibreOffice', 'libre ófice'], ['Microsoft', 'máicrossóft'], ['PowerPoint', 'páuer póint'], ['WordArt', 'uôrd árt'], ['SmartArt', 'ismárt árt'],
+  ['Office', 'ófice'], ['Word', 'uôrd'], ['Excel', 'ecsséu'], ['Writer', 'ráiter'], ['Calc', 'cálqui'], ['Impress', 'imprés'],
+  ['Access', 'ácsses'], ['Outlook', 'áutluc'], ['Publisher', 'páblixer'], ['Draw', 'dró'], ['Math', 'méf'], ['macOS', 'méc ó esse'], ['spreadsheet', 'ispréd xit'], ['software', 'sóftuér'],
   ['Windows', 'uíndous'], ['Backstage', 'béc stêidj'], ['Layout', 'leiáute'], ['layout', 'leiáute'], ['layouts', 'leiáutes'], ['Design', 'dizáin'],
   ['slides', 'isláides'], ['slide', 'isláide'], ['Slides', 'isláides'], ['Slide', 'isláide'],
   ['hiperlink', 'hiperlínque'], ['Hiperlink', 'hiperlínque'], ['mouse', 'máuze'], ['AutoSoma', 'auto soma'], ['Autofiltro', 'auto filtro'], ['AutoFiltro', 'auto filtro'],

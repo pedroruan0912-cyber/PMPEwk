@@ -2,6 +2,20 @@
 // para nenhuma aula mostrar um atalho diferente de outra.
 // office = Microsoft Office 2019 em português do Brasil; libre = LibreOffice 7.
 // null = não há atalho padrão para a ação naquela suíte.
+//
+// Conferência (novembro de 2026):
+// - LibreOffice: ajuda oficial 7.6 em português (help.libreoffice.org, páginas de teclas de atalho gerais,
+//   do Writer, do Calc e do Impress) e a configuração de teclas de uma instalação do LibreOffice.
+//   Não achei nessas fontes: alteracoes (Ctrl+Shift+C), autoSoma no Calc (Alt+=) e novoSlide no Impress (Ctrl+M);
+//   ficam como aparecem nos menus do programa.
+// - Office: páginas "Atalhos de teclado" do suporte da Microsoft em português (Word, Excel, PowerPoint).
+//   Essas páginas misturam teclas da versão em inglês com as da versão em português (na mesma tabela, Ctrl+A
+//   aparece como "abrir" e como "selecionar tudo"). Confirmadas ali: novo, abrir, salvar, salvarComo, imprimir,
+//   fechar, sair, desfazer, negrito, italico, sublinhado, esquerda, centralizar, justificar, quebraPagina, marcas,
+//   maiusculas, sobrescrito, alteracoes, hiperlink, ortografia, ajuda, colarEspecial e todas as de planilha e de slides.
+//   A página mostra a tecla da versão em inglês, e a tabela mantém a da versão em português (a que as provas
+//   cobram), em: selecionarTudo (Ctrl+T), refazer no Word (Ctrl+R), localizar (Ctrl+L), substituir (Ctrl+U),
+//   direita (Ctrl+G) e subscrito (Ctrl+=).
 
 const a = (nome, office, libre, onde) => ({ nome, office, libre, onde });
 
@@ -15,7 +29,6 @@ export const ATALHOS = {
   fechar: a('Fechar documento', 'Ctrl+W', 'Ctrl+W', 'geral'),
   sair: a('Sair do programa', 'Alt+F4', 'Ctrl+Q', 'geral'),
   desfazer: a('Desfazer', 'Ctrl+Z', 'Ctrl+Z', 'geral'),
-  refazer: a('Refazer', 'Ctrl+R', 'Ctrl+Y', 'geral'),
   selecionarTudo: a('Selecionar tudo', 'Ctrl+T', 'Ctrl+A', 'geral'),
   copiar: a('Copiar', 'Ctrl+C', 'Ctrl+C', 'geral'),
   recortar: a('Recortar', 'Ctrl+X', 'Ctrl+X', 'geral'),
@@ -31,6 +44,7 @@ export const ATALHOS = {
   ajuda: a('Ajuda', 'F1', 'F1', 'geral'),
 
   // ---- editores de texto: Word e Writer ----
+  refazer: a('Refazer (Word e Writer)', 'Ctrl+R', 'Ctrl+Y', 'texto'),
   esquerda: a('Alinhar à esquerda', 'Ctrl+Q', 'Ctrl+L', 'texto'),
   centralizar: a('Centralizar', 'Ctrl+E', 'Ctrl+E', 'texto'),
   direita: a('Alinhar à direita', 'Ctrl+G', 'Ctrl+R', 'texto'),
@@ -45,6 +59,7 @@ export const ATALHOS = {
   estilos: a('Painel de estilos', null, 'F11', 'texto'),
   inserirTabela: a('Inserir tabela', null, 'Ctrl+F12', 'texto'),
   limparFormatacao: a('Limpar formatação direta', null, 'Ctrl+M', 'texto'),
+  listaNumerada: a('Lista numerada', null, 'F12', 'texto'),
 
   // ---- planilhas: Excel e Calc ----
   editarCelula: a('Editar a célula', 'F2', 'F2', 'planilha'),
@@ -56,10 +71,14 @@ export const ATALHOS = {
   inserirFuncao: a('Inserir função ou Assistente de funções', 'Shift+F3', 'Ctrl+F2', 'planilha'),
   recalcular: a('Recalcular', 'F9', 'F9', 'planilha'),
   proximaPlanilha: a('Próxima planilha', 'Ctrl+PgDn', 'Ctrl+PgDn', 'planilha'),
+  refazerPlanilha: a('Refazer (Excel e Calc)', 'Ctrl+Y', 'Ctrl+Y', 'planilha'),
+  graficoRapido: a('Criar gráfico em uma planilha nova', 'F11', null, 'planilha'),
 
   // ---- apresentações: PowerPoint e Impress ----
   inicioApresentacao: a('Apresentar desde o primeiro slide', 'F5', 'F5', 'slides'),
   slideAtual: a('Apresentar a partir do slide atual', 'Shift+F5', 'Shift+F5', 'slides'),
   novoSlide: a('Novo slide', 'Ctrl+M', 'Ctrl+M', 'slides'),
   encerrar: a('Encerrar a apresentação', 'Esc', 'Esc', 'slides'),
+  telaPreta: a('Tela preta durante a apresentação', '.', '.', 'slides'),
+  telaBranca: a('Tela branca durante a apresentação', ',', ',', 'slides'),
 };
