@@ -81,6 +81,7 @@
         miolo = el('div', { class: 'faixa', 'data-caber': 'faixa de opções' }, juntos.map((g) => el('div', { class: 'grupo' }, [
           el('div', { class: 'grupo-itens' }, g.itens.map(item)),
           g.grupo && t('div', 'grupo-nome', g.grupo),
+          g.grupo && t('div', 'botao-recolhido', `${g.grupo} ▾`),
         ])));
       } else {
         const lista = el('div', { class: 'menu-aberto', 'data-caber': 'menu aberto' });
@@ -98,6 +99,22 @@
       const caixa = el('section', { class: 'com-janela' }, [janela, balao]);
       // O menu aberto fica embaixo do nome do menu, como no programa.
       caixa.depois = () => {
+        // Faixa cheia: como o Office faz em janela estreita, recolhe grupos da direita para a esquerda
+        // (nunca o do destaque) até caber. Um grupo recolhido mostra só o nome.
+        const faixa = caixa.querySelector('.faixa');
+        if (faixa) {
+          // Um grupo com quebra de linha ocuparia a largura máxima mesmo com linhas curtas: ajusta ao botão mais à direita.
+          for (const caixaDeItens of faixa.querySelectorAll('.grupo-itens')) {
+            const esquerda = caixaDeItens.getBoundingClientRect().left;
+            const direita = Math.max(...[...caixaDeItens.children].map((c) => c.getBoundingClientRect().right));
+            caixaDeItens.style.width = `${Math.ceil(direita - esquerda)}px`;
+          }
+          const estoura = () => faixa.scrollWidth > faixa.clientWidth + 1 || faixa.scrollHeight > faixa.clientHeight + 1;
+          const grupos = [...faixa.querySelectorAll('.grupo')].filter((g) => g.querySelector('.botao-recolhido'));
+          for (let i = grupos.length - 1; i >= 0 && estoura(); i--) {
+            if (!grupos[i].querySelector('.destaque')) grupos[i].classList.add('recolhido');
+          }
+        }
         const menu = caixa.querySelector('.menu-aberto');
         const ativa = caixa.querySelector('.aba.ativa');
         if (!menu || !ativa) return;

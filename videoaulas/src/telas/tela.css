@@ -57,9 +57,13 @@ h1.titulo{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;m
 .janela.office .aba.ativa{background:var(--papel);color:var(--app);font-weight:700;border-radius:6px 6px 0 0;margin-top:5px}
 .janela.libre .aba.ativa{background:var(--app);color:#fff;font-weight:700}
 .janela .faixa{flex:1;min-height:0;display:flex;align-items:stretch;gap:0;padding:10px 6px 8px;background:#F9FAFB;overflow:hidden}
-.janela .grupo{display:flex;flex-direction:column;justify-content:space-between;padding:0 12px;border-right:1px solid var(--linha);min-width:0}
+.janela .grupo{flex:none;display:flex;flex-direction:column;justify-content:space-between;padding:0 12px;border-right:1px solid var(--linha)}
 .janela .grupo:last-child{border-right:0}
-.janela .grupo-itens{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.janela .grupo-itens{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;max-width:440px}
+.janela .botao-recolhido{display:none;font-size:20px;line-height:26px;padding:6px 8px;border:2px dashed #9CA3AF;border-radius:8px;color:var(--suave);background:var(--papel);white-space:nowrap}
+.janela .grupo.recolhido{justify-content:flex-start;padding:0 6px}
+.janela .grupo.recolhido .grupo-itens,.janela .grupo.recolhido .grupo-nome{display:none}
+.janela .grupo.recolhido .botao-recolhido{display:block}
 .janela .grupo-nome{font-size:20px;color:var(--suave);text-align:center;padding-top:8px;white-space:nowrap}
 .janela .item{font-size:20px;line-height:26px;padding:6px 12px;border:2px solid var(--linha);border-radius:8px;background:var(--papel);white-space:nowrap}
 .janela .item.destaque{background:var(--marca);border-color:var(--marca-borda);font-weight:700;box-shadow:0 0 0 4px rgba(255,212,59,.45)}

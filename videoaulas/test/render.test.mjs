@@ -267,3 +267,57 @@ test('comparação e lista com pouco texto usam letra maior para ocupar a tela',
   assert.ok(listaCurta > listaLonga, `${listaCurta} x ${listaLonga}`);
   assert.deepEqual([r1.transbordou, r2.transbordou], [[], []]);
 });
+
+// Faixa de opções cheia: como no Office em janela estreita, os grupos fora de foco recolhem e mostram só o nome.
+const FAIXA_CHEIA = [
+  { grupo: 'Área de Transferência', itens: ['Colar', 'Recortar', 'Copiar', 'Pincel de Formatação'] },
+  { grupo: 'Fonte', itens: ['Negrito', 'Itálico', 'Sublinhado', 'Tachado', 'Subscrito', 'Sobrescrito', 'Maiúsculas e Minúsculas', 'Cor do Realce do Texto', 'Cor da Fonte', 'Limpar Toda a Formatação'] },
+  { grupo: 'Parágrafo', itens: ['Marcadores', 'Numeração', 'Aumentar Recuo', 'Mostrar Tudo', 'Alinhar à Esquerda', 'Centralizar', 'Alinhar à Direita', 'Justificar', 'Espaçamento de Linha', 'Bordas'] },
+  { grupo: 'Estilos', itens: ['Normal', 'Título 1', 'Título 2'] },
+  { grupo: 'Edição', itens: ['Localizar', 'Substituir', 'Selecionar'] },
+];
+const lerFaixa = (palco) => palco.pagina.evaluate(() => [...document.querySelectorAll('.janela .grupo')].map((g) => {
+  const visivel = (e) => e && getComputedStyle(e).display !== 'none' && e.getBoundingClientRect().width > 0;
+  return {
+    nome: [...g.querySelectorAll('.grupo-nome, .botao-recolhido')].filter(visivel).map((e) => e.textContent.replace('▾', '').trim())[0],
+    recolhido: g.classList.contains('recolhido'),
+    itens: [...g.querySelectorAll('.item')].filter(visivel).map((e) => e.textContent.trim()),
+  };
+}));
+
+test('faixa de opções cheia: o grupo do destaque fica aberto e os outros recolhem até caber', async () => {
+  const palco = await p();
+  const r = await palco.desenhar(cena({ tipo: 'janela', app: 'word', aba: 'Página Inicial', itens: FAIXA_CHEIA, destaque: 'Mostrar Tudo', balao: 'Mostra as marcas de parágrafo, espaços e tabulações. Elas não saem na impressão.' }), meta());
+  assert.deepEqual(r.transbordou, []);
+  const grupos = await lerFaixa(palco);
+  assert.deepEqual(grupos.map((g) => g.nome), ['Área de Transferência', 'Fonte', 'Parágrafo', 'Estilos', 'Edição'], 'todos os nomes de grupo continuam na tela');
+  const paragrafo = grupos[2];
+  assert.equal(paragrafo.recolhido, false);
+  assert.deepEqual(paragrafo.itens, FAIXA_CHEIA[2].itens);
+  assert.ok(grupos.some((g) => g.recolhido), 'algum grupo precisa recolher');
+  for (const g of grupos) if (g.recolhido) assert.deepEqual(g.itens, [], `${g.nome} recolhido não mostra botões`);
+});
+
+test('faixa de opções cheia sem destaque: recolhe da direita para a esquerda', async () => {
+  const palco = await p();
+  const r = await palco.desenhar(cena({ tipo: 'janela', app: 'word', aba: 'Página Inicial', itens: FAIXA_CHEIA }), meta());
+  assert.deepEqual(r.transbordou, []);
+  const grupos = await lerFaixa(palco);
+  assert.equal(grupos[0].recolhido, false);
+  const primeiroRecolhido = grupos.findIndex((g) => g.recolhido);
+  assert.ok(primeiroRecolhido > 0);
+  assert.ok(grupos.slice(primeiroRecolhido).every((g) => g.recolhido), 'depois do primeiro recolhido, todos à direita também estão');
+});
+
+test('faixa de opções que cabe inteira não recolhe nenhum grupo', async () => {
+  const palco = await p();
+  await palco.desenhar(cena(UMA_DE_CADA[2]), meta());
+  assert.ok((await lerFaixa(palco)).every((g) => !g.recolhido));
+});
+
+test('um grupo sozinho grande demais continua sendo erro de texto que não cabe', async () => {
+  const palco = await p();
+  const itens = [{ grupo: 'Enorme', itens: Array.from({ length: 40 }, (_, i) => `Comando número ${i + 1}`) }];
+  const r = await palco.desenhar(cena({ tipo: 'janela', app: 'word', aba: 'Inserir', itens, destaque: 'Comando número 3' }), meta());
+  assert.ok(r.transbordou.includes('faixa de opções'));
+});
