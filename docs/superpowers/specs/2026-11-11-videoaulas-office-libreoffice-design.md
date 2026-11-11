@@ -43,7 +43,7 @@ Um vídeo é uma sequência de **cenas**. Cada cena tem uma fala e uma tela. A d
 
 ```
 roteiro da aula (dados)
-   ├─ fala  ──> Piper (voz pt-BR) ──> WAV + duração
+   ├─ fala  ──> Kokoro (voz pt-BR) ──> WAV + duração
    └─ tela  ──> HTML/CSS ──> Chromium (Playwright) ──> PNG 1280×720
                          └──> ffmpeg junta PNG + WAV de cada cena ──> MP4 da aula
 ```
@@ -61,7 +61,7 @@ roteiro da aula (dados)
   - `lista`: tópicos curtos;
   - `pegadinha` e `questao`: quadro de armadilha e item no estilo da banca com gabarito.
   Toda tela mostra no rodapé a fala da cena por escrito e o número da aula.
-- **Pronúncia** (`videoaulas/src/pronuncia.js`). Converte o texto da fala para o que a voz deve ler: "Ctrl" vira "control", "F5" vira "efe cinco", "PROCV" vira "proc vê", ".docx" vira "ponto doc xis". A tela mostra o texto original; só o áudio usa o convertido.
+- **Pronúncia** (`videoaulas/src/pronuncia.js`). Mesma ideia da lista `LEXICO` do desenho de História, com o vocabulário de informática. Converte o texto da fala para o que a voz deve ler: "Ctrl" vira "control", "F5" vira "efe cinco", "PROCV" vira "proc vê", ".docx" vira "ponto doc xis". A tela mostra o texto original; só o áudio usa o convertido.
 - **Gerador** (`videoaulas/build.mjs`, chamado por `videoaulas/build.sh`). Para cada aula: valida o roteiro, gera os áudios, renderiza os PNG, monta o MP4. Aceita o número da aula para gerar só uma. Áudios e imagens intermediários vão para uma pasta de trabalho ignorada pelo Git, com cache por conteúdo (cena não alterada não é gerada de novo).
 
 ### Parâmetros do vídeo
@@ -73,7 +73,11 @@ roteiro da aula (dados)
 ### Dependências
 
 - `ffmpeg` e Chromium com Playwright: já instalados.
-- `piper-tts` (pip) e a voz `pt_BR-faber-medium`, baixada do Hugging Face para a pasta de trabalho. A voz não entra no Git. O `build.sh` instala e baixa se faltar.
+- `kokoro-onnx`, `soundfile` e `num2words` (pip) e os modelos `kokoro-v1.0.onnx` e `voices-v1.0.bin`, baixados para a pasta de trabalho. Os modelos não entram no Git. O `build.sh` instala e baixa se faltar.
+
+### Voz
+
+A narração usa o Kokoro com a voz `pf_dora`, a mesma do desenho animado de História de Pernambuco que já está no repositório (`ebook/historia-src/voz/gerar_voz.py`), para o material todo ter uma voz só. O volume é normalizado do mesmo jeito (`loudnorm`).
 
 ## Onde fica no repositório
 
@@ -92,8 +96,8 @@ Os MP4 são commitados direto na `main`, sem Git LFS.
 ## Erros e limites
 
 - Roteiro inválido (cena sem fala, tipo de tela desconhecido, ação que não existe na tabela de atalhos, fala que não cabe no rodapé): o gerador para e diz a aula e a cena.
-- Falha do Piper ou do ffmpeg numa cena: o gerador para com a saída do programa; nada de MP4 parcial é deixado no lugar do antigo.
-- Sem rede e sem voz baixada: mensagem clara de como obter a voz.
+- Falha do Kokoro ou do ffmpeg numa cena: o gerador para com a saída do programa; nada de MP4 parcial é deixado no lugar do antigo.
+- Sem rede e sem os modelos de voz baixados: mensagem clara de como obtê-los.
 
 ## Verificação
 
