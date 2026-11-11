@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validarAula, TIPOS, LIMITE_FALA } from '../src/roteiro.mjs';
+import { validarAula, TIPOS, LIMITE_FALA, ABAS } from '../src/roteiro.mjs';
 
 const ATALHOS = { negrito: { nome: 'Negrito', office: 'Ctrl+N', libre: 'Ctrl+B', onde: 'geral' } };
 const capa = { fala: 'Bem-vindo.', tela: { tipo: 'capa', titulo: 'Aula', subtitulo: 'Sub' } };
@@ -52,6 +52,14 @@ test('janela exige app conhecido, aba e itens, e o destaque precisa estar nos it
   temErro(erros(j({ itens: [] })), 'itens');
 });
 
+test('a aba da janela precisa existir no programa', () => {
+  const j = (app, aba) => ({ fala: 'x', tela: { tipo: 'janela', app, aba, itens: ['Um'] } });
+  assert.deepEqual(erros(j('word', 'Correspondências')), []);
+  assert.deepEqual(erros(j('writer', 'Formatar')), []);
+  temErro(erros(j('writer', 'Página Inicial')), 'Página Inicial', 'writer');
+  temErro(erros(j('word', 'Formatar')), 'Formatar', 'word');
+});
+
 test('janela aceita itens em grupos e acha o destaque dentro do grupo', () => {
   const tela = { tipo: 'janela', app: 'word', aba: 'Página Inicial', itens: [{ grupo: 'Fonte', itens: ['Negrito'] }, { grupo: 'Parágrafo', itens: ['Centralizar'] }] };
   assert.deepEqual(erros({ fala: 'x', tela: { ...tela, destaque: 'Centralizar' } }), []);
@@ -98,4 +106,11 @@ test('aula sem cenas, sem número ou sem título é erro', () => {
 test('todos os erros de uma aula são devolvidos, não só o primeiro', () => {
   const e = erros({ tela: capa.tela }, { fala: 'x', tela: { tipo: 'video' } });
   assert.equal(e.length, 2);
+});
+
+test('cada programa tem sua lista de guias ou menus, começando por Arquivo', () => {
+  assert.deepEqual(Object.keys(ABAS).sort(), ['calc', 'excel', 'impress', 'powerpoint', 'word', 'writer']);
+  for (const lista of Object.values(ABAS)) assert.equal(lista[0], 'Arquivo');
+  assert.ok(ABAS.word.includes('Correspondências') && ABAS.excel.includes('Fórmulas') && ABAS.powerpoint.includes('Transições'));
+  assert.ok(ABAS.writer.includes('Estilos') && ABAS.calc.includes('Planilha') && ABAS.impress.includes('Slide'));
 });

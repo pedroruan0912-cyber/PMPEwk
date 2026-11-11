@@ -6,6 +6,16 @@ export const LIMITE_FALA = 300;
 
 export const APPS = ['word', 'excel', 'powerpoint', 'writer', 'calc', 'impress'];
 export const APPS_PLANILHA = ['excel', 'calc'];
+
+// Guias da faixa de opções (Office 2019) e menus (LibreOffice 7), em português, na ordem em que aparecem.
+export const ABAS = {
+  word: ['Arquivo', 'Página Inicial', 'Inserir', 'Design', 'Layout', 'Referências', 'Correspondências', 'Revisão', 'Exibir', 'Ajuda'],
+  excel: ['Arquivo', 'Página Inicial', 'Inserir', 'Layout da Página', 'Fórmulas', 'Dados', 'Revisão', 'Exibir', 'Ajuda'],
+  powerpoint: ['Arquivo', 'Página Inicial', 'Inserir', 'Design', 'Transições', 'Animações', 'Apresentação de Slides', 'Revisão', 'Exibir', 'Ajuda'],
+  writer: ['Arquivo', 'Editar', 'Exibir', 'Inserir', 'Formatar', 'Estilos', 'Tabela', 'Formulário', 'Ferramentas', 'Janela', 'Ajuda'],
+  calc: ['Arquivo', 'Editar', 'Exibir', 'Inserir', 'Formatar', 'Estilos', 'Planilha', 'Dados', 'Ferramentas', 'Janela', 'Ajuda'],
+  impress: ['Arquivo', 'Editar', 'Exibir', 'Inserir', 'Formatar', 'Slide', 'Apresentação de slides', 'Ferramentas', 'Janela', 'Ajuda'],
+};
 export const COLUNAS = 'ABCDEF';
 export const LINHAS = 8;
 
@@ -38,6 +48,7 @@ const REGRAS = {
   janela: (t, erro) => {
     if (!APPS.includes(t.app)) erro(`janela com app desconhecido: ${t.app}`);
     if (!texto(t.aba)) erro('janela sem aba');
+    else if (ABAS[t.app] && !ABAS[t.app].includes(t.aba)) erro(`"${t.aba}" não é guia nem menu do ${t.app}`);
     const itens = itensDaJanela(t.itens);
     const gruposOk = Array.isArray(t.itens) && t.itens.every((i) => texto(i) || (texto(i?.grupo) && listaDeTextos(i.itens)));
     if (itens.length === 0 || !gruposOk) erro('janela sem itens válidos');

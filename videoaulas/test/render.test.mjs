@@ -1,0 +1,228 @@
+import { test, after } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, readFileSync, statSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { renderizarCenas, abrirPalco } from '../src/render.mjs';
+import { ATALHOS } from '../src/atalhos.mjs';
+import { ABAS, validarAula } from '../src/roteiro.mjs';
+
+const pasta = () => mkdtempSync(join(tmpdir(), 'png-'));
+const aula = (...cenas) => ({ n: 1, slug: 'teste', titulo: 'Aula de teste', cenas });
+const FALA = 'Aqui a narradora explica o comando com calma.';
+const cena = (tela, fala = FALA) => ({ fala, tela });
+const meta = (extra = {}) => ({ n: 1, titulo: 'Aula de teste', indice: 1, total: 1, atalhos: ATALHOS, abas: ABAS, ...extra });
+
+const tamanhoPng = (arq) => {
+  const b = readFileSync(arq);
+  assert.equal(b.toString('latin1', 1, 4), 'PNG');
+  return [b.readUInt32BE(16), b.readUInt32BE(20)];
+};
+
+const UMA_DE_CADA = [
+  { tipo: 'capa', titulo: 'Visão geral', subtitulo: 'Office 2019 e LibreOffice 7' },
+  { tipo: 'secao', titulo: 'Extensões de arquivo', itens: ['Texto', 'Planilha', 'Apresentação'] },
+  { tipo: 'janela', app: 'word', aba: 'Página Inicial', itens: [{ grupo: 'Fonte', itens: ['Negrito', 'Itálico', 'Sublinhado'] }, { grupo: 'Parágrafo', itens: ['Centralizar', 'Justificar'] }], destaque: 'Negrito', balao: 'Deixa o texto selecionado mais forte.' },
+  { tipo: 'planilha', app: 'excel', celulas: { A1: 10, A2: 20, A3: 30, B1: 'Total' }, em: 'A4', formula: '=SOMA(A1:A3)', resultado: '60', destaque: ['A1:A3'], nota: 'Os dois-pontos significam "até".' },
+  { tipo: 'teclas', titulo: 'Formatação', acoes: ['negrito', 'italico', 'sublinhado'] },
+  { tipo: 'compara', titulo: 'Onde ficam os comandos', office: ['Faixa de opções', 'Guias e grupos'], libre: ['Barra de menus', 'Barras de ferramentas'] },
+  { tipo: 'lista', titulo: 'O que vamos ver', itens: ['As duas suítes', 'Extensões', 'Atalhos'] },
+  { tipo: 'pegadinha', titulo: 'Negrito não é igual nas duas', texto: 'No Word em português é Ctrl+N; no Writer é Ctrl+B.' },
+  { tipo: 'questao', enunciado: 'No Writer, o atalho para negrito é:', alternativas: ['Ctrl+N', 'Ctrl+B', 'Ctrl+S', 'Ctrl+G', 'Ctrl+T'], correta: 1, gabarito: true, comentario: 'No LibreOffice os atalhos seguem o inglês: B de bold.' },
+];
+
+let palco;
+const p = async () => (palco ??= await abrirPalco());
+after(async () => { await palco?.fechar(); });
+
+test('uma cena de cada tipo vira PNG de 1280×720 sem texto sobrando', async () => {
+  const cenas = UMA_DE_CADA.map((t) => cena(t));
+  assert.deepEqual(validarAula(aula(...cenas), ATALHOS), []);
+  const pngs = await renderizarCenas(aula(...cenas), pasta());
+  assert.equal(pngs.length, 9);
+  for (const arq of pngs) assert.deepEqual(tamanhoPng(arq), [1280, 720]);
+});
+
+test('balão longo demais interrompe a geração dizendo aula e cena', async () => {
+  const tela = { ...UMA_DE_CADA[2], balao: 'Explicação comprida demais. '.repeat(22) };
+  await assert.rejects(renderizarCenas(aula(cena(UMA_DE_CADA[0]), cena(tela)), pasta()), /aula 1, cena 2: texto não cabe/);
+});
+
+test('alternativas longas demais interrompem a geração', async () => {
+  const tela = { ...UMA_DE_CADA[8], alternativas: [0, 1, 2, 3, 4].map((i) => `${i} ` + 'alternativa comprida demais '.repeat(9)) };
+  await assert.rejects(renderizarCenas(aula(cena(tela)), pasta()), /aula 1, cena 1: texto não cabe/);
+});
+
+test('uma fala no limite de 300 caracteres cabe no rodapé', async () => {
+  const fala = 'No Word em português o negrito é Ctrl+N e o sublinhado é Ctrl+S; no Writer, negrito é Ctrl+B. '.repeat(4).slice(0, 300);
+  assert.equal(fala.length, 300);
+  const r = await (await p()).desenhar(cena(UMA_DE_CADA[6], fala), meta());
+  assert.deepEqual(r.transbordou, []);
+});
+
+test('a tela mostra a fala, o número e o título da aula e a posição da cena', async () => {
+  const palco = await p();
+  await palco.desenhar(cena(UMA_DE_CADA[6]), meta({ n: 4, titulo: 'Excel 2019', indice: 7, total: 52 }));
+  const texto = await palco.pagina.evaluate(() => document.body.innerText);
+  assert.ok(texto.includes(FALA));
+  assert.ok(texto.includes('Aula 4'));
+  assert.ok(texto.includes('Excel 2019'));
+  assert.ok(texto.includes('7/52'));
+});
+
+test('teclas mostra os atalhos das duas suítes e marca só as linhas em que diferem', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'teclas', acoes: ['negrito', 'italico'] }), meta());
+  const r = await palco.pagina.evaluate(() => ({
+    linhas: [...document.querySelectorAll('.linha-tecla')].map((l) => ({ difere: l.classList.contains('difere'), teclas: [...l.querySelectorAll('.atalho')].map((a) => a.dataset.teclas) })),
+  }));
+  assert.deepEqual(r.linhas, [
+    { difere: true, teclas: ['Ctrl+N', 'Ctrl+B'] },
+    { difere: false, teclas: ['Ctrl+I', 'Ctrl+I'] },
+  ]);
+});
+
+test('ação sem atalho numa suíte aparece com travessão', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'teclas', acoes: ['navegador'] }), meta());
+  const colunas = await palco.pagina.evaluate(() => [...document.querySelectorAll('.linha-tecla .atalho')].map((a) => a.innerText.trim()));
+  assert.equal(colunas[0], '—');
+  assert.equal(colunas[1], 'F5');
+});
+
+test('Ctrl+Shift++ vira três teclas, a última sendo o sinal de mais', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'teclas', acoes: ['sobrescrito'] }), meta());
+  const teclas = await palco.pagina.evaluate(() => [...document.querySelector('.linha-tecla .atalho').querySelectorAll('kbd')].map((k) => k.textContent));
+  assert.deepEqual(teclas, ['Ctrl', 'Shift', '+']);
+});
+
+for (const app of ['word', 'excel', 'powerpoint']) {
+  test(`janela do ${app}: todas as guias aparecem, a ativa e o destaque ficam marcados`, async () => {
+    const palco = await p();
+    const aba = ABAS[app][2];
+    const r = await palco.desenhar(cena({ tipo: 'janela', app, aba, itens: [{ grupo: 'Grupo um', itens: ['Primeiro', 'Segundo'] }], destaque: 'Segundo', balao: 'Explica o segundo.' }), meta());
+    assert.deepEqual(r.transbordou, []);
+    const d = await palco.pagina.evaluate(() => ({
+      abas: [...document.querySelectorAll('.janela .aba')].map((a) => a.textContent),
+      ativa: document.querySelector('.janela .aba.ativa')?.textContent,
+      destaque: [...document.querySelectorAll('.janela .destaque')].map((e) => e.textContent.trim()),
+      grupo: document.querySelector('.janela .grupo-nome')?.textContent,
+      balao: document.querySelector('.balao')?.innerText,
+    }));
+    assert.deepEqual(d.abas, ABAS[app]);
+    assert.equal(d.ativa, aba);
+    assert.deepEqual(d.destaque, ['Segundo']);
+    assert.equal(d.grupo, 'Grupo um');
+    assert.ok(d.balao.includes('Explica o segundo.'));
+  });
+}
+
+for (const app of ['writer', 'calc', 'impress']) {
+  test(`janela do ${app}: o menu aberto lista os itens e marca o destaque`, async () => {
+    const palco = await p();
+    const aba = ABAS[app][4];
+    const itens = ['Texto', 'Parágrafo...', 'Listas', 'Caractere...', 'Página...', 'Colunas...', 'Limpar formatação direta'];
+    const r = await palco.desenhar(cena({ tipo: 'janela', app, aba, itens, destaque: 'Parágrafo...' }), meta());
+    assert.deepEqual(r.transbordou, []);
+    const d = await palco.pagina.evaluate(() => ({
+      menus: [...document.querySelectorAll('.janela .aba')].map((a) => a.textContent),
+      aberto: document.querySelector('.janela .aba.ativa')?.textContent,
+      itens: [...document.querySelectorAll('.janela .menu-aberto .item')].map((e) => e.textContent.trim()),
+      destaque: [...document.querySelectorAll('.janela .destaque')].map((e) => e.textContent.trim()),
+    }));
+    assert.deepEqual(d.menus, ABAS[app]);
+    assert.equal(d.aberto, aba);
+    assert.deepEqual(d.itens, itens);
+    assert.deepEqual(d.destaque, ['Parágrafo...']);
+  });
+}
+
+test('planilha mostra a fórmula na barra, o resultado na célula ativa e pinta o intervalo', async () => {
+  const palco = await p();
+  const r = await palco.desenhar(cena(UMA_DE_CADA[3]), meta());
+  assert.deepEqual(r.transbordou, []);
+  const d = await palco.pagina.evaluate(() => ({
+    nome: document.querySelector('.caixa-nome').textContent,
+    formula: document.querySelector('.barra-formula').textContent,
+    ativa: document.querySelector('.celula.ativa').textContent,
+    ativaRef: document.querySelector('.celula.ativa').dataset.ref,
+    pintadas: [...document.querySelectorAll('.celula.pintada')].map((c) => c.dataset.ref),
+    a2: document.querySelector('.celula[data-ref="A2"]').textContent,
+    colunas: [...document.querySelectorAll('.cab-coluna')].map((c) => c.textContent).join(''),
+    linhas: document.querySelectorAll('.cab-linha').length,
+  }));
+  assert.deepEqual(d, { nome: 'A4', formula: '=SOMA(A1:A3)', ativa: '60', ativaRef: 'A4', pintadas: ['A1', 'A2', 'A3'], a2: '20', colunas: 'ABCDEF', linhas: 8 });
+});
+
+test('planilha sem resultado mostra a fórmula sendo digitada na célula', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'planilha', app: 'calc', celulas: { A1: 5 }, em: 'B1', formula: '=A1*2' }), meta());
+  assert.equal(await palco.pagina.evaluate(() => document.querySelector('.celula.ativa').textContent), '=A1*2');
+});
+
+test('questão só revela a resposta quando gabarito é verdadeiro', async () => {
+  const palco = await p();
+  const ler = () => palco.pagina.evaluate(() => ({
+    letras: [...document.querySelectorAll('.alternativa .letra')].map((l) => l.textContent).join(''),
+    correta: [...document.querySelectorAll('.alternativa.correta .letra')].map((l) => l.textContent),
+    comentario: document.querySelector('.comentario')?.innerText ?? null,
+  }));
+  await palco.desenhar(cena({ ...UMA_DE_CADA[8], gabarito: false }), meta());
+  assert.deepEqual(await ler(), { letras: 'ABCDE', correta: [], comentario: null });
+  await palco.desenhar(cena(UMA_DE_CADA[8]), meta());
+  const com = await ler();
+  assert.deepEqual(com.correta, ['B']);
+  assert.ok(com.comentario.includes('B de bold'));
+});
+
+test('texto do roteiro com sinais de HTML aparece como texto, não como marcação', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'lista', titulo: 'Operadores', itens: ['Menor que: <', 'Diferente: <>', 'E comercial: &'] }, 'Use <b>com cuidado</b>.'), meta());
+  const d = await palco.pagina.evaluate(() => ({ texto: document.body.innerText, negritos: document.querySelectorAll('#fala b').length }));
+  assert.ok(d.texto.includes('Diferente: <>'));
+  assert.ok(d.texto.includes('Use <b>com cuidado</b>.'));
+  assert.equal(d.negritos, 0);
+});
+
+test('renderizar de novo a mesma cena reaproveita o arquivo', async () => {
+  const dir = pasta();
+  const a = aula(cena(UMA_DE_CADA[0]));
+  const [um] = await renderizarCenas(a, dir);
+  const quando = statSync(um).mtimeMs;
+  const [dois] = await renderizarCenas(a, dir);
+  assert.equal(dois, um);
+  assert.equal(statSync(dois).mtimeMs, quando);
+});
+
+test('mudar o texto da cena gera outro arquivo', async () => {
+  const dir = pasta();
+  const [um] = await renderizarCenas(aula(cena(UMA_DE_CADA[0])), dir);
+  const [dois] = await renderizarCenas(aula(cena(UMA_DE_CADA[0], 'Outra fala.')), dir);
+  assert.notEqual(um, dois);
+});
+
+test('fórmulas aparecem sem ligaduras: ">=" não vira "≥"', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'planilha', app: 'calc', celulas: { A1: 7 }, em: 'B1', formula: '=SE(A1>=7;"Sim";"Não")' }), meta());
+  const estilos = await palco.pagina.evaluate(() => ['.barra-formula', '.celula.ativa span', 'kbd'].map((s) => {
+    const e = document.querySelector(s) ?? document.body.appendChild(document.createElement(s));
+    return getComputedStyle(e).fontVariantLigatures;
+  }));
+  assert.deepEqual(estilos, ['none', 'none', 'none']);
+});
+
+test('fórmula mais larga que a célula aparece inteira, sem alargar a coluna', async () => {
+  const palco = await p();
+  const formula = '=SE(A1>=7;"Aprovado";"Reprovado")';
+  const r = await palco.desenhar(cena({ tipo: 'planilha', app: 'calc', celulas: { A1: 7 }, em: 'B1', formula }), meta());
+  assert.deepEqual(r.transbordou, []);
+  const d = await palco.pagina.evaluate(() => {
+    const larg = (ref) => document.querySelector(`.celula[data-ref="${ref}"]`).getBoundingClientRect().width;
+    const texto = document.querySelector('.celula.ativa span');
+    return { b: larg('B1'), c: larg('C1'), cortado: texto.scrollWidth > texto.clientWidth, larguraTexto: texto.getBoundingClientRect().width };
+  });
+  assert.equal(d.b, d.c);
+  assert.equal(d.cortado, false);
+  assert.ok(d.larguraTexto > d.b, 'a fórmula deve passar por cima das células vizinhas');
+});
