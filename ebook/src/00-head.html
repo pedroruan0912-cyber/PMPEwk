@@ -273,4 +273,64 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 .vf-btns button[disabled]{cursor:default;opacity:.55}
 .vf-btns button.picked{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .theory .vf-fb{grid-column:1/-1;margin:2px 0 0;font-size:.9rem}
+/* ---------- Sistema (jogo) ---------- */
+.hud{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:4px 8px;font-family:var(--f-mono);font-size:.72rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hud:hover{border-color:var(--accent)}
+.hud-rank{font-family:var(--f-display);font-weight:800;font-size:.9rem;line-height:1;background:var(--accent);color:var(--accent-ink);border-radius:3px;padding:3px 6px}
+.hud .bar{width:44px}
+.sys-lbl{display:block;font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.sys-win{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px 18px;align-items:center;border:2px solid var(--accent);background:var(--surface);border-radius:6px;padding:18px;margin:16px 0}
+.sys-rank{font-family:var(--f-display);font-weight:800;font-stretch:75%;font-size:3.6rem;line-height:1;width:1.5em;height:1.5em;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);border-radius:6px}
+.sys-level{font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:1.7rem;line-height:1.1;margin:4px 0 0}
+.sys-level span{color:var(--muted);font-weight:600;font-size:1.05rem}
+.sys-title{margin:2px 0 8px;font-style:italic;color:var(--muted);font-size:.95rem}
+.sys-xp{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.sys-xp .bar{flex:1;width:auto;height:8px}
+.sys-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:0}
+.sys-facts div{border:1px solid var(--rule);border-radius:4px;padding:8px 10px}
+.sys-facts dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sys-facts dd{margin:0;font-family:var(--f-display);font-weight:800;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.sys-hint{margin:8px 0 0;font-size:.88rem;color:var(--muted)}
+.panel h3+.sys-hint{margin:0 0 12px}
+.sys-pen{border-color:var(--trap);background:var(--trap-soft)}
+.sys-pen .sys-lbl{color:var(--trap)}
+.sys-pen p{margin:6px 0 12px;font-size:.94rem}
+.sys-goals,.sys-attrs,.sys-titles,.sys-troop{list-style:none;margin:0;padding:0}
+.sys-goals li{display:grid;grid-template-columns:minmax(0,1fr) 90px 3.2em;gap:10px;align-items:center;padding:6px 0;font-size:.94rem}
+.sys-goals b,.sys-attrs b{font-family:var(--f-mono);font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
+.sys-goals li.ok .bar i{background:var(--ok)}
+.sys-goals li.ok b{color:var(--ok)}
+.sys-attrs li{display:grid;grid-template-columns:minmax(0,1fr) 90px 2.4em;gap:2px 10px;align-items:center;padding:8px 0;border-top:1px solid var(--rule)}
+.sys-attrs li:first-child{border-top:0}
+.sys-attrs .a-n{font-family:var(--f-display);font-weight:700;font-size:.95rem}
+.sys-attrs small{display:block;font-family:var(--f-body);font-weight:400;font-size:.8rem;color:var(--muted)}
+.sys-attrs .a-s{grid-column:1/-1;font-family:var(--f-mono);font-size:.7rem}
+.sys-dungeons{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.sys-dg{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 10px;border:1px solid var(--rule);border-radius:4px;padding:10px 12px}
+.sys-dg.ok{border-color:var(--ok);background:var(--ok-soft)}
+.sys-dg .n{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);font-weight:600;padding-top:2px}
+.sys-dg .t{font-family:var(--f-display);font-weight:700;font-size:.93rem;line-height:1.25}
+.sys-dg small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.68rem;color:var(--muted);margin-top:3px}
+.sys-dg .small-btn{grid-column:1/-1;justify-self:start}
+.sys-titles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.sys-titles button{display:block;width:100%;height:100%;text-align:left;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:4px;padding:8px 10px}
+.sys-titles button b{display:block;font-family:var(--f-display);font-size:.9rem}
+.sys-titles button small{display:block;font-size:.78rem;color:var(--muted);line-height:1.3}
+.sys-titles button[disabled]{opacity:.5;border-style:dashed;cursor:default}
+.sys-titles button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.sys-troop li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--rule);font-size:.92rem}
+.sys-troop b{font-family:var(--f-mono);font-size:.82rem}
+.sys-note{margin-top:6px}
+.sys-toasts{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none;max-width:min(320px,calc(100vw - 24px))}
+.sys-toast{background:var(--surface);color:var(--ink);border:1px solid var(--accent);border-left-width:4px;border-radius:4px;padding:7px 12px;box-shadow:0 6px 20px rgba(0,0,0,.18);font-family:var(--f-display);font-size:.9rem;animation:sysIn .18s ease-out}
+.sys-toast .sys-lbl{font-size:.62rem}
+.sys-toast.big{background:var(--accent);color:var(--accent-ink);font-size:1.05rem}
+.sys-toast.big .sys-lbl{color:inherit;opacity:.85}
+@keyframes sysIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sys-toast{animation:none}}
+@media (max-width:920px){
+  .hud .bar,.hud-lv{display:none}
+  .hud{padding:3px;border:0}
+  .sys-rank{font-size:2.6rem}
+}
 </style>

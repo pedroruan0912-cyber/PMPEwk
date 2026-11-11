@@ -5,6 +5,7 @@
   var KEY = 'dhpmpe.v1';
   var LET = 'ABCDE';
   var $ = function (id) { return document.getElementById(id); };
+  var SYS;
 
   // ---------- estado salvo (só neste navegador) ----------
   var state = { a: {} };
@@ -84,6 +85,7 @@
         state.a[q.id] = i; save();
         reveal(art, q, i, opts);
         refreshProgress();
+        SYS.answer(q, i);
         if (opts.onAnswer) opts.onAnswer(q, i);
       });
     });
@@ -163,8 +165,10 @@
           '<div class="q-actions"><button type="button" class="small-btn vf-reset">Refazer o treino</button></div>';
         vfBox.querySelectorAll('.vf-btns button').forEach(function (b) {
           b.addEventListener('click', function () {
-            state.vf[c.id + '-' + b.dataset.i] = b.dataset.v === '1';
+            var picked = b.dataset.v === '1';
+            state.vf[c.id + '-' + b.dataset.i] = picked;
             save(); renderVF();
+            SYS.vf(c.id + '-' + b.dataset.i, picked === vfList[+b.dataset.i].v);
           });
         });
         vfBox.querySelector('.vf-reset').addEventListener('click', function () {
@@ -173,6 +177,7 @@
         });
       };
       renderVF();
+      c.renderVF = renderVF;
       theory.appendChild(vfBox);
     }
     if (cap) {
@@ -285,7 +290,7 @@
   function navLink(id, num, label) {
     return '<a class="nav-link" href="#' + id + '" data-v="' + id + '"><span class="nav-num">' + num + '</span><span>' + label + '</span><span class="nav-prog" data-p="' + id + '"></span></a>';
   }
-  var h = navLink('inicio', '◆', 'Início');
+  var h = navLink('inicio', '◆', 'Início') + navLink('sistema', '★', 'Sistema');
   h += '<div class="nav-group">Parte geral</div>';
   chapters.slice(0, 5).forEach(function (c) { h += navLink(c.id, pad(c.num), c.short); });
   h += '<div class="nav-group">Legislação especial</div>';
@@ -301,7 +306,7 @@
 
   var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
   var viewIds = views.map(function (v) { return v.id; });
-  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros' };
+  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema' };
 
   function show(id, push) {
     if (viewIds.indexOf(id) < 0) id = 'inicio';
@@ -314,6 +319,7 @@
     if (c) c.setTab('t');
     if (id === 'erros') renderErrors();
     if (id === 'flashcards') renderFC();
+    if (id === 'sistema') SYS.render();
     closeMenu();
     window.scrollTo(0, 0);
     if (push) { try { history.pushState(null, '', '#' + id); } catch (e) {} }
@@ -372,7 +378,8 @@
   $('resetAll').addEventListener('click', function () { $('resetConfirm').hidden = false; });
   $('resetNo').addEventListener('click', function () { $('resetConfirm').hidden = true; });
   $('resetYes').addEventListener('click', function () {
-    state = { a: {} }; save(); refreshProgress(); $('resetConfirm').hidden = true;
+    state = { a: {}, vf: {} }; save(); refreshProgress(); SYS.reset(); $('resetConfirm').hidden = true;
+    chapters.forEach(function (c) { if (c.renderVF) c.renderVF(); });
   });
 
   // ---------- caderno de erros ----------
@@ -401,8 +408,9 @@
     return arr;
   }
   function fmtTime(s) { return pad(Math.floor(s / 60)) + ':' + pad(s % 60); }
-  function startSim(pool, pmpe) {
-    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe };
+  function startSim(pool, pmpe, extra) {
+    extra = extra || {};
+    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe, boss: extra.boss, pen: !!extra.pen, limit: extra.limit || 0 };
     $('simSetup').hidden = true; $('simResult').hidden = true; $('simRun').hidden = false;
     document.querySelector('.sim-pmpe').hidden = true;
     var box = $('simList'); box.innerHTML = '';
@@ -411,8 +419,15 @@
     });
     updCount();
     clearInterval(timer);
-    timer = setInterval(function () { $('simTime').textContent = fmtTime(Math.floor((Date.now() - sim.t0) / 1000)); }, 1000);
-    $('simTime').textContent = '00:00';
+    // com limite (missão de penalidade), o relógio conta para trás e entrega sozinho no zero
+    var tick = function () {
+      var secs = Math.floor((Date.now() - sim.t0) / 1000);
+      if (!sim.limit) { $('simTime').textContent = fmtTime(secs); return; }
+      $('simTime').textContent = 'Restam ' + fmtTime(Math.max(0, sim.limit - secs));
+      if (secs >= sim.limit) $('simEnd').click();
+    };
+    timer = setInterval(tick, 1000);
+    tick();
     $('simQuit').textContent = 'Cancelar';
     window.scrollTo(0, 0);
   }
@@ -427,6 +442,20 @@
     startSim(pool, true);
   }
   $('simPMPE').addEventListener('click', startPMPE);
+  // chefe da masmorra: 10 questões sorteadas do capítulo
+  function startBoss(capId) {
+    show('simulado', true);
+    startSim(shuffle(qsOf(capId)).slice(0, 10), false, { boss: capId });
+  }
+  // missão de penalidade: 5 questões do caderno de erros (completa com outras se faltar), em 5 minutos
+  function startPen() {
+    var pool = shuffle(QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; })).slice(0, 5);
+    if (pool.length < 5) {
+      pool = pool.concat(shuffle(QS.filter(function (q) { return pool.indexOf(q) < 0; })).slice(0, 5 - pool.length));
+    }
+    show('simulado', true);
+    startSim(pool, false, { pen: true, limit: 300 });
+  }
   var coverPMPE = $('coverPMPE');
   if (coverPMPE) coverPMPE.addEventListener('click', function () { show('simulado', true); startPMPE(); });
   $('simStart').addEventListener('click', function () {
@@ -458,13 +487,14 @@
     var right = 0, byCap = {};
     sim.list.forEach(function (q) {
       var v = sim.ans[q.id];
-      if (v !== undefined) state.a[q.id] = v;
+      if (v !== undefined) { state.a[q.id] = v; SYS.answer(q, v, true); }
       var ok = v === q.a;
       if (ok) right++;
       byCap[q.c] = byCap[q.c] || { t: 0, r: 0 };
       byCap[q.c].t++; if (ok) byCap[q.c].r++;
     });
     save(); refreshProgress();
+    var sysNote = SYS.simDone({ right: right, total: sim.list.length, boss: sim.boss, pen: sim.pen });
     document.querySelectorAll('#simList .q').forEach(function (art) {
       var q = QS.filter(function (x) { return x.id === art.dataset.id; })[0];
       reveal(art, q, sim.ans[q.id], { mode: 'exam' });
@@ -477,7 +507,7 @@
       return '<tr><td>' + pad(c.num) + ' · ' + c.short + '</td><td>' + s.r + '/' + s.t + '</td><td>' + Math.round(s.r / s.t * 100) + '%</td></tr>';
     }).join('');
     var res = $('simResult');
-    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + '</div></div>' +
+    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + sysNote + '</div></div>' +
       '<div class="tbl-wrap"><table class="tbl"><tr><th>Capítulo</th><th>Acertos</th><th>%</th></tr>' + rows + '</table></div>' +
       '<div class="q-actions"><button type="button" class="btn" id="simNew">Novo simulado</button><a class="btn ghost" href="#erros">Ir ao caderno de erros</a></div>' +
       '<p class="q-exp" style="margin-top:10px">O gabarito comentado de cada questão está logo abaixo.</p></div>';
@@ -513,8 +543,12 @@
     $('fcCount').textContent = (fcI + 1) + '/' + fcList.length;
   }
   function fcGo(d) { if (!fcList.length) return; fcI = (fcI + d + fcList.length) % fcList.length; fcBack = false; renderFC(); }
-  $('fcCard').addEventListener('click', function () { fcBack = !fcBack; renderFC(); });
-  $('fcFlip').addEventListener('click', function () { fcBack = !fcBack; renderFC(); });
+  function fcFlip() {
+    fcBack = !fcBack; renderFC();
+    if (fcBack && fcList.length) SYS.flash(FC.indexOf(fcList[fcI]));
+  }
+  $('fcCard').addEventListener('click', fcFlip);
+  $('fcFlip').addEventListener('click', fcFlip);
   $('fcNext').addEventListener('click', function () { fcGo(1); });
   $('fcPrev').addEventListener('click', function () { fcGo(-1); });
   $('fcShuffle').addEventListener('click', function () { shuffle(fcList); fcI = 0; fcBack = false; renderFC(); });
@@ -523,6 +557,12 @@
     if ($('flashcards').hidden || /input|select|textarea/i.test(ev.target.tagName)) return;
     if (ev.key === 'ArrowRight') fcGo(1);
     if (ev.key === 'ArrowLeft') fcGo(-1);
+  });
+
+  // ---------- Sistema (jogo) ----------
+  SYS = window.initSistema({
+    $: $, QS: QS, chapters: chapters, capById: capById, pad: pad, stats: stats, qsOf: qsOf,
+    state: function () { return state; }, save: save, startBoss: startBoss, startPen: startPen
   });
 
   // ---------- início ----------
