@@ -74,3 +74,28 @@ Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.j
 ```
 
 Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
+
+---
+
+# Desenho animado – História de Pernambuco (Soldado PMPE · Instituto AOCP)
+
+Toda a História de Pernambuco em 31 episódios animados (mais a abertura), na ordem dos 8 itens do conteúdo programático do Edital 001/2026: ocupação e colonização, açúcar, Olinda e Recife, holandeses e Nassau, movimentos de resistência e emancipacionistas, período republicano, cultura popular e aspectos afro-brasileiros. Na prova de Soldado são 10 questões de História de Pernambuco, no Bloco I.
+
+**Abrir:** baixe `ebook/historia-pernambuco-desenho.html` e abra no navegador (funciona offline; as fontes carregam do Google Fonts quando há internet).
+
+## Como funciona
+
+- Cada episódio tem cenas desenhadas em SVG, narração em voz alta (voz em português do próprio navegador) e legenda.
+- No fim de cada episódio aparece o quadro **Cai na prova**, com os fatos para memorizar e a **pegadinha da AOCP**.
+- Controles: tocar e pausar, episódio anterior e próximo, voz ligada ou desligada, velocidade (1×, 1,25×, 1,5× e 2×) e tela cheia. Atalhos: espaço, setas e F.
+- A lista de episódios marca os já assistidos, e o desenho continua de onde você parou.
+
+## Editar e gerar de novo
+
+Os fontes ficam em `ebook/historia-src/`: `10-art.js` (biblioteca de desenho: personagens, cenários, bandeiras), `20-cenas-1.js` a `24-cenas-5.js` (os episódios) e `99-app.js` (o player). Depois de editar:
+
+```bash
+./ebook/build-historia.sh
+```
+
+Cada episódio segue o formato `S({id, g: grupo, item: item do edital, year, title, art: () => SVG, beats: [{t: 'narração', say: ['ator', 'balão'], do() { ... }}], facts: [...], trap: 'pegadinha'})`. Em `do()`, use `show`, `hide`, `go`, `walk` e `booms` para animar os atores criados com `act(...)`.
