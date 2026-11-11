@@ -81,11 +81,12 @@ Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; man
 
 Toda a História de Pernambuco em 31 episódios animados (mais a abertura), na ordem dos 8 itens do conteúdo programático do Edital 001/2026: ocupação e colonização, açúcar, Olinda e Recife, holandeses e Nassau, movimentos de resistência e emancipacionistas, período republicano, cultura popular e aspectos afro-brasileiros. Na prova de Soldado são 10 questões de História de Pernambuco, no Bloco I.
 
-**Abrir:** baixe `ebook/historia-pernambuco-desenho.html` e abra no navegador (funciona offline; as fontes carregam do Google Fonts quando há internet).
+**Abrir:** baixe `ebook/historia-pernambuco-desenho.html` **junto com a pasta `ebook/historia-voz/`** (os dois lado a lado) e abra o HTML no navegador. Funciona offline; as fontes carregam do Google Fonts quando há internet. Sem a pasta de voz, o desenho usa a voz do próprio navegador ou segue só com a legenda.
 
 ## Como funciona
 
-- Cada episódio tem cenas desenhadas em SVG, narração em voz alta (voz em português do próprio navegador) e legenda.
+- Cada episódio tem cenas desenhadas em SVG, narração gravada com voz neural em português (cerca de 50 minutos no total) e legenda.
+- Barra de volume da narração, além do botão que liga e desliga a voz.
 - No fim de cada episódio aparece o quadro **Cai na prova**, com os fatos para memorizar e a **pegadinha da AOCP**.
 - Controles: tocar e pausar, episódio anterior e próximo, voz ligada ou desligada, velocidade (1×, 1,25×, 1,5× e 2×) e tela cheia. Atalhos: espaço, setas e F.
 - A lista de episódios marca os já assistidos, e o desenho continua de onde você parou.
@@ -97,5 +98,23 @@ Os fontes ficam em `ebook/historia-src/`: `10-art.js` (biblioteca de desenho: pe
 ```bash
 ./ebook/build-historia.sh
 ```
+
+### Regravar a narração
+
+A voz é gerada com o modelo aberto [Kokoro](https://github.com/thewh1teagle/kokoro-onnx) (licença Apache 2.0), voz `pf_dora`, e fica em `ebook/historia-voz/`, um arquivo por episódio. Depois de mudar o texto de alguma fala:
+
+```bash
+pip install kokoro-onnx soundfile num2words
+```
+
+```bash
+node ebook/historia-src/voz/falas.js > falas.json
+```
+
+```bash
+python ebook/historia-src/voz/gerar_voz.py falas.json --modelos PASTA_COM_OS_MODELOS
+```
+
+O script precisa do `ffmpeg` e dos arquivos `kokoro-v1.0.onnx` e `voices-v1.0.bin` (baixados da página de releases do kokoro-onnx). Ele só regrava as falas cujo texto mudou. Se uma fala mudar e não for regravada, o player percebe (cada gravação guarda um código do texto) e usa a voz do navegador naquela fala. Pronúncias especiais (siglas, nomes estrangeiros, algarismos romanos) ficam na lista `LEXICO` do script.
 
 Cada episódio segue o formato `S({id, g: grupo, item: item do edital, year, title, art: () => SVG, beats: [{t: 'narração', say: ['ator', 'balão'], do() { ... }}], facts: [...], trap: 'pegadinha'})`. Em `do()`, use `show`, `hide`, `go`, `walk` e `booms` para animar os atores criados com `act(...)`.

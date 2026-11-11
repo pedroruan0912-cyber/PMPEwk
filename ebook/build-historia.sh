@@ -2,6 +2,8 @@
 # Monta o desenho animado da História de Pernambuco em um único arquivo HTML a partir de historia-src/.
 #   ./build-historia.sh                 -> gera historia-pernambuco-desenho.html (documento completo)
 #   ./build-historia.sh caminho.html    -> também gera um fragmento sem <html>/<head>/<body> (para publicar como Artifact)
+# A narração gravada fica em historia-voz/ (um arquivo por episódio) e é carregada pela página sob demanda;
+# para regravar depois de mudar um texto, veja historia-src/voz/gerar_voz.py.
 set -euo pipefail
 cd "$(dirname "$0")"
 

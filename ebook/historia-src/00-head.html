@@ -42,7 +42,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* ---------- player ---------- */
 .player{display:flex;flex-direction:column;gap:10px;min-width:0}
-.wrap{position:relative;background:#0A1030;border-radius:14px;overflow:hidden;border:3px solid var(--ink);line-height:0;width:100%;max-width:max(520px,calc((100vh - 330px) * 16 / 9));align-self:center}
+.wrap{position:relative;background:#0A1030;border-radius:14px;overflow:hidden;border:3px solid var(--ink);line-height:0;width:100%;max-width:max(520px,calc((100vh - 372px) * 16 / 9));align-self:center}
 @media (max-width:700px){.wrap{max-width:none}}
 #stage{display:block;width:100%;height:auto;aspect-ratio:16/9}
 #stage text{font-family:var(--f-body);font-weight:900}
@@ -102,6 +102,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ctl button.main{background:var(--blue);color:var(--blue-ink);border-color:var(--blue);min-width:7.4em;justify-content:center}
 .ctl button[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink);border-color:var(--sun-ink)}
 .ctl .sp{flex:1}
+.ctl .vol{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:2px solid var(--ink);border-radius:10px;padding:5px 12px 5px 10px;line-height:1}
+.ctl .vol svg{width:20px;height:20px;flex:none}
+.ctl .vol input{width:clamp(84px,12vw,140px);height:24px;margin:0;accent-color:var(--blue);cursor:pointer}
+.player.fs .ctl .vol{background:#101B36;color:#FFFFFF;border-color:#5B6C92}
+.player.fs .ctl .vol input{accent-color:#F6C21C}
 @media (max-width:560px){.ctl .lbl{display:none}.ctl .now{order:9;flex-basis:100%}}
 .ctl .now{font-weight:800;color:var(--muted);font-size:14px;min-width:0}
 .note{margin:0;color:var(--muted);font-size:14px;font-weight:700}
