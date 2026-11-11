@@ -66,7 +66,11 @@
       ]);
       const grupos = tela.itens.map((i) => (typeof i === 'string' ? { grupo: null, itens: [i] } : i));
       let miolo;
-      if (office) {
+      if (office && tela.aba === 'Arquivo') {
+        // A guia Arquivo não tem faixa de opções: abre o Backstage, uma coluna de comandos na cor do programa.
+        const coluna = el('div', { class: 'backstage', 'data-caber': 'Backstage' }, grupos.flatMap((g) => g.itens).map(item));
+        miolo = el('div', { class: 'corpo-backstage' }, [coluna, el('div', { class: 'painel-backstage' }, [t('span', '', 'Modo de exibição Backstage')])]);
+      } else if (office) {
         // Itens soltos seguidos ficam num grupo só, sem nome.
         const juntos = [];
         for (const g of grupos) {
@@ -155,14 +159,15 @@
 
     compara(tela) {
       const coluna = (classe, nome, itens) => el('div', { class: `col ${classe}` }, [t('h2', '', nome), el('ul', {}, itens.map((i) => t('li', '', i)))]);
-      return el('section', { class: 'compara' }, [
+      const folgado = Math.max(tela.office.length, tela.libre.length) <= 3;
+      return el('section', { class: 'compara' + (folgado ? ' folgado' : '') }, [
         t('h1', 'titulo', tela.titulo),
         el('div', { class: 'colunas' }, [coluna('office', 'Microsoft Office 2019', tela.office), coluna('libre', 'LibreOffice 7', tela.libre)]),
       ]);
     },
 
     lista(tela) {
-      return el('section', { class: 'lista' }, [t('h1', 'titulo', tela.titulo), el('ul', {}, tela.itens.map((i) => t('li', '', i)))]);
+      return el('section', { class: 'lista' + (tela.itens.length <= 4 ? ' folgado' : '') }, [t('h1', 'titulo', tela.titulo), el('ul', {}, tela.itens.map((i) => t('li', '', i)))]);
     },
 
     pegadinha(tela) {

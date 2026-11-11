@@ -226,3 +226,44 @@ test('fórmula mais larga que a célula aparece inteira, sem alargar a coluna', 
   assert.equal(d.cortado, false);
   assert.ok(d.larguraTexto > d.b, 'a fórmula deve passar por cima das células vizinhas');
 });
+
+test('a guia Arquivo do Office aparece como Backstage: lista vertical no lugar da faixa de opções', async () => {
+  const palco = await p();
+  const itens = ['Informações', 'Novo', 'Abrir', 'Salvar', 'Salvar como', 'Imprimir', 'Compartilhar', 'Exportar', 'Fechar', 'Conta', 'Opções'];
+  const r = await palco.desenhar(cena({ tipo: 'janela', app: 'word', aba: 'Arquivo', itens, destaque: 'Exportar', balao: 'Aqui se gera o PDF.' }), meta());
+  assert.deepEqual(r.transbordou, []);
+  const d = await palco.pagina.evaluate(() => {
+    const itens = [...document.querySelectorAll('.janela .backstage .item')];
+    return {
+      itens: itens.map((e) => e.textContent.trim()),
+      faixa: document.querySelectorAll('.janela .faixa').length,
+      destaque: [...document.querySelectorAll('.janela .destaque')].map((e) => e.textContent.trim()),
+      // empilhados: o segundo fica abaixo do primeiro, na mesma coluna
+      empilhado: itens[1].getBoundingClientRect().top > itens[0].getBoundingClientRect().top && itens[1].getBoundingClientRect().left === itens[0].getBoundingClientRect().left,
+    };
+  });
+  assert.deepEqual(d, { itens, faixa: 0, destaque: ['Exportar'], empilhado: true });
+});
+
+test('as outras guias do Office continuam com a faixa de opções', async () => {
+  const palco = await p();
+  await palco.desenhar(cena({ tipo: 'janela', app: 'excel', aba: 'Dados', itens: ['Classificar', 'Filtro'] }), meta());
+  const d = await palco.pagina.evaluate(() => [document.querySelectorAll('.janela .faixa').length, document.querySelectorAll('.janela .backstage').length]);
+  assert.deepEqual(d, [1, 0]);
+});
+
+test('comparação e lista com pouco texto usam letra maior para ocupar a tela', async () => {
+  const palco = await p();
+  const tamanho = () => palco.pagina.evaluate(() => parseFloat(getComputedStyle(document.querySelector('#conteudo li')).fontSize));
+  await palco.desenhar(cena({ tipo: 'compara', titulo: 'Texto', office: ['Word', 'Documentos'], libre: ['Writer', 'Documentos'] }), meta());
+  const comparaCurta = await tamanho();
+  const r1 = await palco.desenhar(cena({ tipo: 'compara', titulo: 'Licença', office: ['a', 'b', 'c', 'd', 'e'], libre: ['a', 'b', 'c', 'd', 'e'] }), meta());
+  const comparaLonga = await tamanho();
+  await palco.desenhar(cena({ tipo: 'lista', titulo: 'Curta', itens: ['um', 'dois', 'três'] }), meta());
+  const listaCurta = await tamanho();
+  const r2 = await palco.desenhar(cena({ tipo: 'lista', titulo: 'Longa', itens: ['1', '2', '3', '4', '5', '6', '7'] }), meta());
+  const listaLonga = await tamanho();
+  assert.ok(comparaCurta > comparaLonga, `${comparaCurta} x ${comparaLonga}`);
+  assert.ok(listaCurta > listaLonga, `${listaCurta} x ${listaLonga}`);
+  assert.deepEqual([r1.transbordou, r2.transbordou], [[], []]);
+});

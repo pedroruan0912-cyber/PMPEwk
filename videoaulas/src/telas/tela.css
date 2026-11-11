@@ -73,6 +73,13 @@ h1.titulo{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;m
 .balao{flex:none;max-height:152px;overflow:hidden;background:var(--marca-fundo);border:2px solid var(--marca-borda);border-left-width:10px;border-radius:10px;padding:12px 18px;font-size:23px;line-height:31px}
 .balao b{font-weight:800;margin-right:6px}
 
+/* guia Arquivo do Office: o Backstage toma o lugar da faixa de opções */
+.janela .corpo-backstage{flex:1;min-height:0;display:flex}
+.janela .backstage{background:var(--app);display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;padding:8px 10px;overflow:hidden}
+.janela .backstage .item{background:transparent;border:0;border-radius:6px;color:#fff;padding:3px 18px;line-height:26px;min-width:210px}
+.janela .backstage .item.destaque{background:var(--marca);color:var(--tinta);box-shadow:inset 0 0 0 2px var(--marca-borda)}
+.janela .painel-backstage{flex:1;display:flex;align-items:center;justify-content:center;background:#F9FAFB;color:var(--suave);font-size:22px;font-weight:600}
+
 /* ---------- planilha ---------- */
 .com-planilha{display:flex;gap:20px;height:100%;align-items:stretch}
 .planilha{flex:none;background:var(--papel);border:2px solid #9CA3AF;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(17,24,39,.12);display:flex;flex-direction:column}
@@ -120,6 +127,10 @@ kbd{font-family:var(--mono);font-size:22px;font-weight:600;background:#fff;borde
 .compara li:first-child{border-top:0}
 .lista li{font-size:27px;line-height:1.3;padding:9px 0 9px 44px;position:relative}
 .lista li::before{content:"";position:absolute;left:8px;top:19px;width:16px;height:16px;border-radius:4px;background:var(--marca);border:2px solid var(--marca-borda)}
+.compara.folgado li{font-size:30px;padding:16px 22px}
+.compara.folgado .col h2{font-size:27px;padding:12px 22px}
+.lista.folgado li{font-size:33px;padding:13px 0 13px 48px}
+.lista.folgado li::before{top:27px;width:18px;height:18px}
 .pegadinha{background:var(--alerta-fundo);border:3px solid var(--alerta);border-radius:16px;padding:30px 36px}
 .pegadinha .rotulo{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--alerta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
 .pegadinha h1{font-size:38px;line-height:1.15;font-weight:800;margin-bottom:14px}
