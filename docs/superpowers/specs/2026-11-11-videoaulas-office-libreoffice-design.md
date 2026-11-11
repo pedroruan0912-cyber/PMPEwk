@@ -86,6 +86,7 @@ videoaulas/
   aula-01-visao-geral.mp4 … aula-09-atalhos.mp4
   build.sh, build.mjs
   src/aulas/, src/telas/, src/atalhos.js, src/pronuncia.js
+  src/voz.py        (chama o Kokoro; o resto do gerador é Node)
   test/
   .gitignore        (pasta de trabalho)
 README.md           (nova seção "Videoaulas")
