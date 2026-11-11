@@ -8,6 +8,7 @@
   <header class="topbar">
     <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
     <span class="where" id="where">Início</span>
+    <a class="hud" id="hud" href="#sistema"><span class="hud-rank" id="hudRank">E</span><span class="hud-lv">Nv <b id="hudLv">1</b></span><span class="bar"><i id="hudFill"></i></span></a>
     <span class="progress-mini" title="Questões respondidas"><span class="bar"><i id="barFill"></i></span><span id="barTxt">0/0</span></span>
     <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
   </header>
@@ -29,6 +30,7 @@
     <button class="btn ghost" id="coverPMPE" type="button">Simulado no formato da prova</button>
     <a class="btn ghost" href="#flashcards">Revisar pegadinhas</a>
     <a class="btn ghost" href="#erros">Caderno de erros</a>
+    <a class="btn ghost" href="#sistema">Sistema: nível e missões</a>
   </div>
 
   <section class="edital" aria-labelledby="editalTit">
@@ -122,7 +124,7 @@
 
   <div class="panel">
     <h3>Seu progresso</h3>
-    <p style="margin:0 0 8px;font-size:.94rem">As respostas ficam guardadas só neste navegador. Para recomeçar do zero:</p>
+    <p style="margin:0 0 8px;font-size:.94rem">As respostas e o seu nível no Sistema ficam guardados só neste navegador. Para recomeçar do zero (apaga também nível, sequência e títulos):</p>
     <button class="small-btn" id="resetAll">Apagar todas as respostas</button>
     <div class="confirm" id="resetConfirm" hidden>
       <span>Apagar o histórico de todas as questões?</span>

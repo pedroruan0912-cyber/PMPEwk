@@ -278,6 +278,66 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 .vf-btns button[disabled]{cursor:default;opacity:.55}
 .vf-btns button.picked{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .theory .vf-fb{grid-column:1/-1;margin:2px 0 0;font-size:.9rem}
+/* ---------- Sistema (jogo) ---------- */
+.hud{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:4px 8px;font-family:var(--f-mono);font-size:.72rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hud:hover{border-color:var(--accent)}
+.hud-rank{font-family:var(--f-display);font-weight:800;font-size:.9rem;line-height:1;background:var(--accent);color:var(--accent-ink);border-radius:3px;padding:3px 6px}
+.hud .bar{width:44px}
+.sys-lbl{display:block;font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.sys-win{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px 18px;align-items:center;border:2px solid var(--accent);background:var(--surface);border-radius:6px;padding:18px;margin:16px 0}
+.sys-rank{font-family:var(--f-display);font-weight:800;font-stretch:75%;font-size:3.6rem;line-height:1;width:1.5em;height:1.5em;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);border-radius:6px}
+.sys-level{font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:1.7rem;line-height:1.1;margin:4px 0 0}
+.sys-level span{color:var(--muted);font-weight:600;font-size:1.05rem}
+.sys-title{margin:2px 0 8px;font-style:italic;color:var(--muted);font-size:.95rem}
+.sys-xp{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.sys-xp .bar{flex:1;width:auto;height:8px}
+.sys-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:0}
+.sys-facts div{border:1px solid var(--rule);border-radius:4px;padding:8px 10px}
+.sys-facts dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sys-facts dd{margin:0;font-family:var(--f-display);font-weight:800;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.sys-hint{margin:8px 0 0;font-size:.88rem;color:var(--muted)}
+.panel h3+.sys-hint{margin:0 0 12px}
+.sys-pen{border-color:var(--trap);background:var(--trap-soft)}
+.sys-pen .sys-lbl{color:var(--trap)}
+.sys-pen p{margin:6px 0 12px;font-size:.94rem}
+.sys-goals,.sys-attrs,.sys-titles,.sys-troop{list-style:none;margin:0;padding:0}
+.sys-goals li{display:grid;grid-template-columns:minmax(0,1fr) 90px 3.2em;gap:10px;align-items:center;padding:6px 0;font-size:.94rem}
+.sys-goals b,.sys-attrs b{font-family:var(--f-mono);font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
+.sys-goals li.ok .bar i{background:var(--ok)}
+.sys-goals li.ok b{color:var(--ok)}
+.sys-attrs li{display:grid;grid-template-columns:minmax(0,1fr) 90px 2.4em;gap:2px 10px;align-items:center;padding:8px 0;border-top:1px solid var(--rule)}
+.sys-attrs li:first-child{border-top:0}
+.sys-attrs .a-n{font-family:var(--f-display);font-weight:700;font-size:.95rem}
+.sys-attrs small{display:block;font-family:var(--f-body);font-weight:400;font-size:.8rem;color:var(--muted)}
+.sys-attrs .a-s{grid-column:1/-1;font-family:var(--f-mono);font-size:.7rem}
+.sys-dungeons{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.sys-dg{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 10px;border:1px solid var(--rule);border-radius:4px;padding:10px 12px}
+.sys-dg.ok{border-color:var(--ok);background:var(--ok-soft)}
+.sys-dg .n{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);font-weight:600;padding-top:2px}
+.sys-dg .t{font-family:var(--f-display);font-weight:700;font-size:.93rem;line-height:1.25}
+.sys-dg small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.68rem;color:var(--muted);margin-top:3px}
+.sys-dg .small-btn{grid-column:1/-1;justify-self:start}
+.sys-titles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.sys-titles button{display:block;width:100%;height:100%;text-align:left;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:4px;padding:8px 10px}
+.sys-titles button b{display:block;font-family:var(--f-display);font-size:.9rem}
+.sys-titles button small{display:block;font-size:.78rem;color:var(--muted);line-height:1.3}
+.sys-titles button[disabled]{opacity:.5;border-style:dashed;cursor:default}
+.sys-titles button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.sys-troop li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--rule);font-size:.92rem}
+.sys-troop b{font-family:var(--f-mono);font-size:.82rem}
+.sys-note{margin-top:6px}
+.sys-toasts{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none;max-width:min(320px,calc(100vw - 24px))}
+.sys-toast{background:var(--surface);color:var(--ink);border:1px solid var(--accent);border-left-width:4px;border-radius:4px;padding:7px 12px;box-shadow:0 6px 20px rgba(0,0,0,.18);font-family:var(--f-display);font-size:.9rem;animation:sysIn .18s ease-out}
+.sys-toast .sys-lbl{font-size:.62rem}
+.sys-toast.big{background:var(--accent);color:var(--accent-ink);font-size:1.05rem}
+.sys-toast.big .sys-lbl{color:inherit;opacity:.85}
+@keyframes sysIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sys-toast{animation:none}}
+@media (max-width:920px){
+  .hud .bar,.hud-lv{display:none}
+  .hud{padding:3px;border:0}
+  .sys-rank{font-size:2.6rem}
+}
 </style>
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
@@ -292,6 +352,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
   <header class="topbar">
     <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
     <span class="where" id="where">Início</span>
+    <a class="hud" id="hud" href="#sistema"><span class="hud-rank" id="hudRank">E</span><span class="hud-lv">Nv <b id="hudLv">1</b></span><span class="bar"><i id="hudFill"></i></span></a>
     <span class="progress-mini" title="Questões respondidas"><span class="bar"><i id="barFill"></i></span><span id="barTxt">0/0</span></span>
     <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
   </header>
@@ -313,6 +374,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
     <button class="btn ghost" id="coverPMPE" type="button">Simulado no formato da prova</button>
     <a class="btn ghost" href="#flashcards">Revisar pegadinhas</a>
     <a class="btn ghost" href="#erros">Caderno de erros</a>
+    <a class="btn ghost" href="#sistema">Sistema: nível e missões</a>
   </div>
 
   <section class="edital" aria-labelledby="editalTit">
@@ -406,7 +468,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 
   <div class="panel">
     <h3>Seu progresso</h3>
-    <p style="margin:0 0 8px;font-size:.94rem">As respostas ficam guardadas só neste navegador. Para recomeçar do zero:</p>
+    <p style="margin:0 0 8px;font-size:.94rem">As respostas e o seu nível no Sistema ficam guardados só neste navegador. Para recomeçar do zero (apaga também nível, sequência e títulos):</p>
     <button class="small-btn" id="resetAll">Apagar todas as respostas</button>
     <div class="confirm" id="resetConfirm" hidden>
       <span>Apagar o histórico de todas as questões?</span>
@@ -2568,6 +2630,16 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
 </div>
 </section>
 
+<!-- ======================= SISTEMA ======================= -->
+<section class="view" id="sistema" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Jogo</span>
+  <h1>Sistema</h1>
+  <p class="lede">Cada questão, item de verdadeiro ou falso e flashcard rende XP. Suba de nível e de rank, cumpra a missão diária, vença o chefe de cada capítulo e transforme seus erros em tropa.</p>
+</header>
+<div id="sysBody"></div>
+</section>
+
 <!-- ======================= ERROS ======================= -->
 <section class="view" id="erros" hidden>
 <header class="ch-head">
@@ -2581,6 +2653,7 @@ select{font:inherit;font-family:var(--f-display);font-size:.9rem;padding:7px 10p
   </div>
 </div>
 </div>
+<div class="sys-toasts" id="sysToasts" role="status" aria-live="polite"></div>
 <script>
 window.FLASH = [
 {c:'c1',f:'Direitos humanos × direitos fundamentais: qual o critério da distinção?',b:'O plano de positivação: humanos = normas internacionais; fundamentais = positivados na Constituição.'},
@@ -6232,6 +6305,291 @@ o:[`que a vítima tenha advogado constituído.`,`que estejam esgotados os proces
 x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissão comparece em todos os casos (art. 57).`}
 );
 
+// Sistema: camada de jogo sobre o estudo (XP, nível, rank, missão diária, masmorras, tropa, títulos).
+// Fica em state.g, no mesmo armazenamento das respostas. O app chama os ganchos devolvidos por initSistema.
+window.initSistema = function (api) {
+  'use strict';
+  var $ = api.$, QS = api.QS, chapters = api.chapters, pad = api.pad;
+  var GOAL = { q: 10, vf: 5, fc: 5 };
+  var XP = { right: 10, wrong: 2, soldier: 5, vfRight: 3, vfWrong: 1, flash: 1, daily: 50, boss: 50, simPass: 20, simEach: 2 };
+  var RANKS = [[25, 'S'], [20, 'A'], [15, 'B'], [10, 'C'], [5, 'D'], [1, 'E']];
+  var ATTRS = [
+    { n: 'Fundamentos', d: 'Teoria geral e gerações', caps: [1, 2] },
+    { n: 'Tratados', d: 'Incorporação, DUDH e Pacto de San José', caps: [3, 4, 5] },
+    { n: 'Penal especial', d: 'Abuso, tortura, racismo, ambientais, hediondos e drogas', caps: [7, 8, 10, 11, 12, 13] },
+    { n: 'Estatutos', d: 'ECA, Maria da Penha, PMPE, idoso e juventude', caps: [6, 9, 14, 15, 16] },
+    { n: 'Jurisprudência', d: 'Súmulas e tribunais superiores', caps: [17] }
+  ];
+  var quiet = false;
+
+  function dayKey(off) {
+    var d = new Date(); d.setDate(d.getDate() + (off || 0));
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function blank() { return { xp: 0, q: {}, v: {}, c: {}, tt: {}, ti: '', s: 0, best: 0, last: '', lost: 0, pen: false, d: null }; }
+
+  // estado do jogo; na primeira vez, converte em XP o que já estava respondido
+  function G() {
+    var s = api.state();
+    if (!s.g) {
+      s.g = blank();
+      quiet = true;
+      QS.forEach(function (q) {
+        var v = s.a[q.id];
+        if (v === undefined) return;
+        if (v === q.a) { s.g.q[q.id] = 2; s.g.xp += XP.right; } else { s.g.q[q.id] = 1; s.g.xp += XP.wrong; }
+      });
+      (window.VF || []).forEach(function (v, i, all) {
+        var n = all.slice(0, i).filter(function (o) { return o.c === v.c; }).length, k = v.c + '-' + n;
+        var ans = (s.vf || {})[k];
+        if (ans === undefined) return;
+        s.g.v[k] = 1; s.g.xp += ans === v.v ? XP.vfRight : XP.vfWrong;
+      });
+      roll(s.g); checkTitles(s.g);
+      quiet = false;
+    }
+    roll(s.g);
+    return s.g;
+  }
+  // virada do dia: zera a missão diária e, se ontem ficou sem missão, quebra a sequência
+  function roll(g) {
+    var today = dayKey(0);
+    if (g.d && g.d.k === today) return;
+    if (g.s > 0 && g.last !== today && g.last !== dayKey(-1)) { g.lost = g.s; g.s = 0; g.pen = true; }
+    g.d = { k: today, q: 0, vf: 0, fc: {}, done: false };
+  }
+
+  function need(n) { return 40 + 20 * n; }
+  function levelOf(xp) {
+    var n = 1;
+    while (xp >= need(n)) { xp -= need(n); n++; }
+    return { n: n, into: xp, need: need(n) };
+  }
+  function rankOf(n) { for (var i = 0; i < RANKS.length; i++) if (n >= RANKS[i][0]) return RANKS[i][1]; return 'E'; }
+  function soldiers(g) { var n = 0; for (var k in g.q) if (g.q[k] & 4) n++; return n; }
+  function cleared(g) { return Object.keys(g.c).length; }
+  function fcToday(g) { return Object.keys(g.d.fc).length; }
+
+  function titles(g) {
+    var lv = levelOf(g.xp).n, sol = soldiers(g), hits = 0, k;
+    for (k in g.q) if (g.q[k] & 2) hits++;
+    var list = [
+      { id: 'first', n: 'Primeiro Acerto', d: 'Acerte a primeira questão', has: hits >= 1 },
+      { id: 'h100', n: 'Cem Acertos', d: 'Acerte 100 questões diferentes', has: hits >= 100 },
+      { id: 'h400', n: 'Meio Banco', d: 'Acerte 400 questões diferentes', has: hits >= 400 },
+      { id: 's3', n: 'Constante', d: 'Sequência de 3 dias', has: g.best >= 3 },
+      { id: 's7', n: 'Disciplinado', d: 'Sequência de 7 dias', has: g.best >= 7 },
+      { id: 's30', n: 'Incansável', d: 'Sequência de 30 dias', has: g.best >= 30 },
+      { id: 't10', n: 'Caçador de Erros', d: 'Tropa com 10 soldados', has: sol >= 10 },
+      { id: 't50', n: 'Comandante', d: 'Tropa com 50 soldados', has: sol >= 50 },
+      { id: 'rc', n: 'Rank C', d: 'Chegue ao nível 10', has: lv >= 10 },
+      { id: 'ra', n: 'Rank A', d: 'Chegue ao nível 20', has: lv >= 20 },
+      { id: 'rs', n: 'Rank S', d: 'Chegue ao nível 25', has: lv >= 25 },
+      { id: 'all', n: 'Limpa-Masmorras', d: 'Limpe as 17 masmorras', has: cleared(g) >= chapters.length }
+    ];
+    chapters.forEach(function (c) {
+      list.push({ id: 'c' + c.num, n: 'Domínio: ' + c.short, d: 'Vença o chefe do capítulo ' + c.num, has: !!g.c[c.id] });
+    });
+    return list;
+  }
+  function checkTitles(g) {
+    titles(g).forEach(function (t) {
+      if (!t.has || g.tt[t.id]) return;
+      g.tt[t.id] = 1;
+      g.ti = t.id;
+      toast('Título conquistado', t.n, 'big');
+    });
+  }
+
+  // ---------- avisos ----------
+  var toasts = $('sysToasts');
+  function toast(label, text, kind) {
+    if (quiet || !toasts) return;
+    var el = document.createElement('div');
+    el.className = 'sys-toast' + (kind ? ' ' + kind : '');
+    el.innerHTML = '<span class="sys-lbl"></span><b></b>';
+    el.firstChild.textContent = label;
+    el.lastChild.textContent = text;
+    toasts.appendChild(el);
+    while (toasts.children.length > 4) toasts.removeChild(toasts.firstChild);
+    setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, kind === 'big' ? 4200 : 1900);
+  }
+
+  function addXP(g, n, why) {
+    if (!n) return;
+    var before = levelOf(g.xp).n;
+    g.xp += n;
+    var after = levelOf(g.xp).n;
+    if (why) toast(why, '+' + n + ' XP');
+    if (after > before) {
+      toast('Subiu de nível', 'Nível ' + after, 'big');
+      if (rankOf(after) !== rankOf(before)) toast('Novo rank', 'Rank ' + rankOf(after), 'big');
+    }
+  }
+  function checkDaily(g) {
+    var d = g.d;
+    if (d.done || d.q < GOAL.q || d.vf < GOAL.vf || fcToday(g) < GOAL.fc) return;
+    d.done = true;
+    if (g.last !== d.k) { g.s++; g.last = d.k; if (g.s > g.best) g.best = g.s; }
+    toast('Missão diária concluída', 'Sequência: ' + g.s + (g.s === 1 ? ' dia' : ' dias'), 'big');
+    addXP(g, XP.daily, 'Recompensa da missão');
+  }
+  function done(g) { checkDaily(g); checkTitles(g); api.save(); hud(g); if (!$('sistema').hidden) render(); }
+
+  // ---------- ganchos chamados pelo app ----------
+  function answer(q, chosen, silent) {
+    if (chosen === undefined || chosen === null) return;
+    var g = G(), m = g.q[q.id] || 0, gain = 0, why = '';
+    if (chosen === q.a) {
+      if (!(m & 2)) {
+        m |= 2; gain = XP.right; why = 'Acerto';
+        if (m & 1) { m |= 4; gain += XP.soldier; why = 'Erro vencido: novo soldado na tropa'; }
+      }
+    } else if (!(m & 1)) { m |= 1; gain = XP.wrong; why = 'Tentativa'; }
+    g.q[q.id] = m;
+    g.d.q++;
+    addXP(g, gain, silent ? '' : why);
+    if (!silent) done(g);
+  }
+  function vf(key, ok) {
+    var g = G(), gain = 0;
+    if (!g.v[key]) { g.v[key] = 1; gain = ok ? XP.vfRight : XP.vfWrong; }
+    g.d.vf++;
+    addXP(g, gain, ok ? 'Item certo' : 'Tentativa');
+    done(g);
+  }
+  function flash(i) {
+    var g = G();
+    if (i < 0 || g.d.fc[i]) return;
+    g.d.fc[i] = 1;
+    addXP(g, XP.flash, 'Flashcard revisado');
+    done(g);
+  }
+  // fim de simulado: devolve o trecho de HTML que entra no painel de resultado
+  function simDone(r) {
+    var g = G(), pct = r.total ? r.right / r.total * 100 : 0, pass = pct >= 70, html = '';
+    var bonus = r.right * XP.simEach + (pass ? XP.simPass : 0);
+    if (r.boss) {
+      var c = api.capById[r.boss];
+      if (pass && !g.c[r.boss]) {
+        g.c[r.boss] = 1; bonus += XP.boss;
+        html = '<b>Masmorra limpa.</b> Você venceu o chefe de "' + c.short + '" e ganhou o título "Domínio: ' + c.short + '".';
+      } else if (pass) html = '<b>Chefe vencido de novo.</b> A masmorra "' + c.short + '" continua limpa.';
+      else html = '<b>O chefe resistiu.</b> São precisos 7 acertos em 10 para limpar "' + c.short + '". Revise a teoria e tente outra vez.';
+    } else if (r.pen) {
+      if (r.right >= 3 && g.pen) {
+        g.s += g.lost; if (g.s > g.best) g.best = g.s;
+        if (g.last !== dayKey(0)) g.last = dayKey(-1);
+        html = '<b>Penalidade cumprida.</b> Sequência recuperada: ' + g.s + (g.s === 1 ? ' dia.' : ' dias.');
+        g.lost = 0; g.pen = false;
+      } else html = '<b>Penalidade não cumprida.</b> São precisos 3 acertos em 5. Você pode tentar de novo pelo Sistema.';
+    }
+    addXP(g, bonus, 'Simulado entregue');
+    done(g);
+    return '<p class="score-note sys-note">' + (html ? html + ' ' : '') + 'Bônus do Sistema: +' + bonus + ' XP.</p>';
+  }
+  function reset() { api.state().g = blank(); var g = G(); api.save(); hud(g); if (!$('sistema').hidden) render(); }
+
+  // ---------- painel do topo ----------
+  function hud(g) {
+    var lv = levelOf(g.xp);
+    $('hudRank').textContent = rankOf(lv.n);
+    $('hudLv').textContent = lv.n;
+    $('hudFill').style.width = (lv.into / lv.need * 100) + '%';
+    $('hud').setAttribute('aria-label', 'Sistema: rank ' + rankOf(lv.n) + ', nível ' + lv.n + ', ' + lv.into + ' de ' + lv.need + ' XP');
+    var np = document.querySelector('[data-p="sistema"]');
+    if (np) np.textContent = 'Nv ' + lv.n;
+  }
+
+  // ---------- tela do Sistema ----------
+  function meter(val, max) { return '<span class="bar"><i style="width:' + Math.min(100, max ? val / max * 100 : 0) + '%"></i></span>'; }
+  function render() {
+    var g = G(), s = api.state(), lv = levelOf(g.xp), rank = rankOf(lv.n), sol = soldiers(g);
+    var all = titles(g), active = all.filter(function (t) { return t.id === g.ti && t.has; })[0];
+    var d = g.d, fc = fcToday(g);
+    var h = '<div class="sys-win"><div class="sys-rank" aria-hidden="true">' + rank + '</div><div class="sys-id">' +
+      '<span class="sys-lbl">Status do jogador</span>' +
+      '<p class="sys-level">Nível ' + lv.n + ' <span>· Rank ' + rank + '</span></p>' +
+      '<p class="sys-title">' + (active ? active.n : 'Sem título') + '</p>' +
+      '<div class="sys-xp">' + meter(lv.into, lv.need) + '<span>' + lv.into + '/' + lv.need + ' XP</span></div></div>' +
+      '<dl class="sys-facts"><div><dt>Sequência</dt><dd>' + g.s + (g.s === 1 ? ' dia' : ' dias') + '</dd></div>' +
+      '<div><dt>Tropa</dt><dd>' + sol + '</dd></div>' +
+      '<div><dt>Masmorras</dt><dd>' + cleared(g) + '/' + chapters.length + '</dd></div>' +
+      '<div><dt>XP total</dt><dd>' + g.xp + '</dd></div></dl></div>';
+
+    if (g.pen) {
+      h += '<div class="panel sys-pen"><span class="sys-lbl">Missão de penalidade</span>' +
+        '<p>Você deixou de concluir a missão diária e perdeu a sequência de ' + g.lost + (g.lost === 1 ? ' dia' : ' dias') +
+        '. Para recuperá-la, acerte 3 de 5 questões do seu caderno de erros em até 5 minutos. É opcional: o ganho de XP continua normal.</p>' +
+        '<div class="q-actions"><button type="button" class="btn" id="sysPen">Cumprir a penalidade</button>' +
+        '<button type="button" class="small-btn" id="sysPenSkip">Dispensar e recomeçar a sequência</button></div></div>';
+    }
+
+    var rows = [['Questões respondidas', d.q, GOAL.q], ['Itens de verdadeiro ou falso', d.vf, GOAL.vf], ['Flashcards revisados', fc, GOAL.fc]];
+    h += '<div class="panel"><h3>Missão diária</h3><ul class="sys-goals">' + rows.map(function (r) {
+      var ok = r[1] >= r[2];
+      return '<li class="' + (ok ? 'ok' : '') + '"><span>' + r[0] + '</span>' + meter(r[1], r[2]) + '<b>' + Math.min(r[1], r[2]) + '/' + r[2] + '</b></li>';
+    }).join('') + '</ul><p class="sys-hint">' + (d.done
+      ? 'Concluída hoje. Recompensa recebida: +' + XP.daily + ' XP. Volte amanhã para manter a sequência.'
+      : 'Recompensa: +' + XP.daily + ' XP e um dia a mais na sequência. A missão zera à meia-noite.') + '</p></div>';
+
+    h += '<div class="panel"><h3>Atributos</h3><ul class="sys-attrs">' + ATTRS.map(function (a) {
+      var tot = 0, ans = 0, right = 0;
+      QS.forEach(function (q) {
+        if (a.caps.indexOf(api.capById[q.c].num) < 0) return;
+        tot++;
+        var v = s.a[q.id];
+        if (v !== undefined) { ans++; if (v === q.a) right++; }
+      });
+      return '<li><span class="a-n">' + a.n + '<small>' + a.d + '</small></span>' + meter(right, tot) +
+        '<b>' + Math.round(tot ? right / tot * 100 : 0) + '</b><small class="a-s">' + (ans ? Math.round(right / ans * 100) + '% de acerto em ' + ans : 'sem respostas') + '</small></li>';
+    }).join('') + '</ul><p class="sys-hint">Cada atributo vai de 0 a 100: é a parte das questões do bloco que você já acertou.</p></div>';
+
+    h += '<div class="panel"><h3>Masmorras</h3><p class="sys-hint">Cada capítulo é uma masmorra. O chefe é um mini-simulado de 10 questões do capítulo: com 7 acertos, ela fica limpa.</p><div class="sys-dungeons">' +
+      chapters.map(function (c) {
+        var st = api.stats(api.qsOf(c.id)), ok = !!g.c[c.id];
+        return '<div class="sys-dg' + (ok ? ' ok' : '') + '"><span class="n">' + pad(c.num) + '</span><span class="t">' + c.short +
+          '<small>' + (ok ? 'Limpa · ' : '') + st.right + '/' + st.total + ' acertos</small></span>' +
+          '<button type="button" class="small-btn" data-boss="' + c.id + '">' + (ok ? 'Revanche' : 'Enfrentar o chefe') + '</button></div>';
+      }).join('') + '</div></div>';
+
+    var got = all.filter(function (t) { return t.has; }).length;
+    h += '<div class="panel"><h3>Títulos (' + got + '/' + all.length + ')</h3><p class="sys-hint">Toque em um título conquistado para usá-lo.</p><ul class="sys-titles">' +
+      all.map(function (t) {
+        return '<li><button type="button" data-ti="' + t.id + '"' + (t.has ? '' : ' disabled') + ' aria-pressed="' + (t.has && t.id === g.ti) + '">' +
+          '<b>' + t.n + '</b><small>' + t.d + '</small></button></li>';
+      }).join('') + '</ul></div>';
+
+    h += '<div class="panel"><h3>Tropa (' + sol + ')</h3><p class="sys-hint">Cada questão que você errou e depois acertou vira um soldado. ' +
+      (sol ? '' : 'Refaça as questões do <a href="#erros">caderno de erros</a> para recrutar os primeiros.') + '</p>';
+    if (sol) {
+      h += '<ul class="sys-troop">' + chapters.map(function (c) {
+        var n = api.qsOf(c.id).filter(function (q) { return g.q[q.id] & 4; }).length;
+        return n ? '<li><span>' + pad(c.num) + ' · ' + c.short + '</span><b>' + n + '</b></li>' : '';
+      }).join('') + '</ul>';
+    }
+    h += '</div>';
+
+    var body = $('sysBody');
+    body.innerHTML = h;
+    body.querySelectorAll('[data-boss]').forEach(function (b) {
+      b.addEventListener('click', function () { api.startBoss(b.dataset.boss); });
+    });
+    body.querySelectorAll('[data-ti]').forEach(function (b) {
+      b.addEventListener('click', function () { g.ti = b.dataset.ti; api.save(); render(); });
+    });
+    var pen = $('sysPen');
+    if (pen) pen.addEventListener('click', api.startPen);
+    var skip = $('sysPenSkip');
+    if (skip) skip.addEventListener('click', function () { g.pen = false; g.lost = 0; api.save(); render(); });
+  }
+
+  var g0 = G();
+  api.save();
+  hud(g0);
+  return { answer: answer, vf: vf, flash: flash, simDone: simDone, reset: reset, render: render };
+};
+
 (function () {
   'use strict';
   var QS = window.QUESTOES || [];
@@ -6239,6 +6597,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
   var KEY = 'dhpmpe.v1';
   var LET = 'ABCDE';
   var $ = function (id) { return document.getElementById(id); };
+  var SYS;
 
   // ---------- estado salvo (só neste navegador) ----------
   var state = { a: {} };
@@ -6318,6 +6677,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
         state.a[q.id] = i; save();
         reveal(art, q, i, opts);
         refreshProgress();
+        SYS.answer(q, i);
         if (opts.onAnswer) opts.onAnswer(q, i);
       });
     });
@@ -6397,8 +6757,10 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
           '<div class="q-actions"><button type="button" class="small-btn vf-reset">Refazer o treino</button></div>';
         vfBox.querySelectorAll('.vf-btns button').forEach(function (b) {
           b.addEventListener('click', function () {
-            state.vf[c.id + '-' + b.dataset.i] = b.dataset.v === '1';
+            var picked = b.dataset.v === '1';
+            state.vf[c.id + '-' + b.dataset.i] = picked;
             save(); renderVF();
+            SYS.vf(c.id + '-' + b.dataset.i, picked === vfList[+b.dataset.i].v);
           });
         });
         vfBox.querySelector('.vf-reset').addEventListener('click', function () {
@@ -6407,6 +6769,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
         });
       };
       renderVF();
+      c.renderVF = renderVF;
       theory.appendChild(vfBox);
     }
     if (cap) {
@@ -6519,7 +6882,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
   function navLink(id, num, label) {
     return '<a class="nav-link" href="#' + id + '" data-v="' + id + '"><span class="nav-num">' + num + '</span><span>' + label + '</span><span class="nav-prog" data-p="' + id + '"></span></a>';
   }
-  var h = navLink('inicio', '◆', 'Início');
+  var h = navLink('inicio', '◆', 'Início') + navLink('sistema', '★', 'Sistema');
   h += '<div class="nav-group">Parte geral</div>';
   chapters.slice(0, 5).forEach(function (c) { h += navLink(c.id, pad(c.num), c.short); });
   h += '<div class="nav-group">Legislação especial</div>';
@@ -6535,7 +6898,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
 
   var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
   var viewIds = views.map(function (v) { return v.id; });
-  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros' };
+  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema' };
 
   function show(id, push) {
     if (viewIds.indexOf(id) < 0) id = 'inicio';
@@ -6548,6 +6911,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     if (c) c.setTab('t');
     if (id === 'erros') renderErrors();
     if (id === 'flashcards') renderFC();
+    if (id === 'sistema') SYS.render();
     closeMenu();
     window.scrollTo(0, 0);
     if (push) { try { history.pushState(null, '', '#' + id); } catch (e) {} }
@@ -6606,7 +6970,8 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
   $('resetAll').addEventListener('click', function () { $('resetConfirm').hidden = false; });
   $('resetNo').addEventListener('click', function () { $('resetConfirm').hidden = true; });
   $('resetYes').addEventListener('click', function () {
-    state = { a: {} }; save(); refreshProgress(); $('resetConfirm').hidden = true;
+    state = { a: {}, vf: {} }; save(); refreshProgress(); SYS.reset(); $('resetConfirm').hidden = true;
+    chapters.forEach(function (c) { if (c.renderVF) c.renderVF(); });
   });
 
   // ---------- caderno de erros ----------
@@ -6635,8 +7000,9 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     return arr;
   }
   function fmtTime(s) { return pad(Math.floor(s / 60)) + ':' + pad(s % 60); }
-  function startSim(pool, pmpe) {
-    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe };
+  function startSim(pool, pmpe, extra) {
+    extra = extra || {};
+    sim = { list: pool, ans: {}, t0: Date.now(), pmpe: !!pmpe, boss: extra.boss, pen: !!extra.pen, limit: extra.limit || 0 };
     $('simSetup').hidden = true; $('simResult').hidden = true; $('simRun').hidden = false;
     document.querySelector('.sim-pmpe').hidden = true;
     var box = $('simList'); box.innerHTML = '';
@@ -6645,8 +7011,15 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     });
     updCount();
     clearInterval(timer);
-    timer = setInterval(function () { $('simTime').textContent = fmtTime(Math.floor((Date.now() - sim.t0) / 1000)); }, 1000);
-    $('simTime').textContent = '00:00';
+    // com limite (missão de penalidade), o relógio conta para trás e entrega sozinho no zero
+    var tick = function () {
+      var secs = Math.floor((Date.now() - sim.t0) / 1000);
+      if (!sim.limit) { $('simTime').textContent = fmtTime(secs); return; }
+      $('simTime').textContent = 'Restam ' + fmtTime(Math.max(0, sim.limit - secs));
+      if (secs >= sim.limit) $('simEnd').click();
+    };
+    timer = setInterval(tick, 1000);
+    tick();
     $('simQuit').textContent = 'Cancelar';
     window.scrollTo(0, 0);
   }
@@ -6661,6 +7034,20 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     startSim(pool, true);
   }
   $('simPMPE').addEventListener('click', startPMPE);
+  // chefe da masmorra: 10 questões sorteadas do capítulo
+  function startBoss(capId) {
+    show('simulado', true);
+    startSim(shuffle(qsOf(capId)).slice(0, 10), false, { boss: capId });
+  }
+  // missão de penalidade: 5 questões do caderno de erros (completa com outras se faltar), em 5 minutos
+  function startPen() {
+    var pool = shuffle(QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; })).slice(0, 5);
+    if (pool.length < 5) {
+      pool = pool.concat(shuffle(QS.filter(function (q) { return pool.indexOf(q) < 0; })).slice(0, 5 - pool.length));
+    }
+    show('simulado', true);
+    startSim(pool, false, { pen: true, limit: 300 });
+  }
   var coverPMPE = $('coverPMPE');
   if (coverPMPE) coverPMPE.addEventListener('click', function () { show('simulado', true); startPMPE(); });
   $('simStart').addEventListener('click', function () {
@@ -6692,13 +7079,14 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     var right = 0, byCap = {};
     sim.list.forEach(function (q) {
       var v = sim.ans[q.id];
-      if (v !== undefined) state.a[q.id] = v;
+      if (v !== undefined) { state.a[q.id] = v; SYS.answer(q, v, true); }
       var ok = v === q.a;
       if (ok) right++;
       byCap[q.c] = byCap[q.c] || { t: 0, r: 0 };
       byCap[q.c].t++; if (ok) byCap[q.c].r++;
     });
     save(); refreshProgress();
+    var sysNote = SYS.simDone({ right: right, total: sim.list.length, boss: sim.boss, pen: sim.pen });
     document.querySelectorAll('#simList .q').forEach(function (art) {
       var q = QS.filter(function (x) { return x.id === art.dataset.id; })[0];
       reveal(art, q, sim.ans[q.id], { mode: 'exam' });
@@ -6711,7 +7099,7 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
       return '<tr><td>' + pad(c.num) + ' · ' + c.short + '</td><td>' + s.r + '/' + s.t + '</td><td>' + Math.round(s.r / s.t * 100) + '%</td></tr>';
     }).join('');
     var res = $('simResult');
-    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + '</div></div>' +
+    res.innerHTML = '<div class="panel"><div class="score"><span class="score-big">' + pct + '%</span><div><p class="score-note"><b>' + right + ' acertos em ' + sim.list.length + ' questões</b> · tempo ' + fmtTime(secs) + '</p><p class="score-note">' + note + '</p>' + pmpeNote + sysNote + '</div></div>' +
       '<div class="tbl-wrap"><table class="tbl"><tr><th>Capítulo</th><th>Acertos</th><th>%</th></tr>' + rows + '</table></div>' +
       '<div class="q-actions"><button type="button" class="btn" id="simNew">Novo simulado</button><a class="btn ghost" href="#erros">Ir ao caderno de erros</a></div>' +
       '<p class="q-exp" style="margin-top:10px">O gabarito comentado de cada questão está logo abaixo.</p></div>';
@@ -6747,8 +7135,12 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     $('fcCount').textContent = (fcI + 1) + '/' + fcList.length;
   }
   function fcGo(d) { if (!fcList.length) return; fcI = (fcI + d + fcList.length) % fcList.length; fcBack = false; renderFC(); }
-  $('fcCard').addEventListener('click', function () { fcBack = !fcBack; renderFC(); });
-  $('fcFlip').addEventListener('click', function () { fcBack = !fcBack; renderFC(); });
+  function fcFlip() {
+    fcBack = !fcBack; renderFC();
+    if (fcBack && fcList.length) SYS.flash(FC.indexOf(fcList[fcI]));
+  }
+  $('fcCard').addEventListener('click', fcFlip);
+  $('fcFlip').addEventListener('click', fcFlip);
   $('fcNext').addEventListener('click', function () { fcGo(1); });
   $('fcPrev').addEventListener('click', function () { fcGo(-1); });
   $('fcShuffle').addEventListener('click', function () { shuffle(fcList); fcI = 0; fcBack = false; renderFC(); });
@@ -6757,6 +7149,12 @@ x:`Art. 61, 2. A Corte delibera com quórum de 5 juízes (art. 56), e a Comissã
     if ($('flashcards').hidden || /input|select|textarea/i.test(ev.target.tagName)) return;
     if (ev.key === 'ArrowRight') fcGo(1);
     if (ev.key === 'ArrowLeft') fcGo(-1);
+  });
+
+  // ---------- Sistema (jogo) ----------
+  SYS = window.initSistema({
+    $: $, QS: QS, chapters: chapters, capById: capById, pad: pad, stats: stats, qsOf: qsOf,
+    state: function () { return state; }, save: save, startBoss: startBoss, startPen: startPen
   });
 
   // ---------- início ----------
