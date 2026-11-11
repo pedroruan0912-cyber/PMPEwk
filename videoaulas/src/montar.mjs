@@ -41,9 +41,11 @@ export async function montarAula({ pngs, audio, linha, saida, ffmpeg = 'ffmpeg' 
   writeFileSync(lista, `ffconcat version 1.0\n${linhas.join('\n')}\n`);
   try {
     try {
+      // Quadro-chave a cada 10 s no máximo (e em toda troca de cena): em telas paradas, é o quadro-chave que pesa.
+      // Com 2 s a aula de 10 minutos dava 24 MB; com 10 s, 10 MB.
       await executar(ffmpeg, [
         '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', lista, '-i', audio,
-        '-vf', `fps=${FPS},format=yuv420p`, '-c:v', 'libx264', '-tune', 'stillimage', '-crf', '23', '-g', String(FPS * 2),
+        '-vf', `fps=${FPS},format=yuv420p`, '-c:v', 'libx264', '-tune', 'stillimage', '-crf', '23', '-g', String(FPS * 10),
         '-c:a', 'aac', '-b:a', '64k', '-ac', '1', '-t', total.toFixed(3), '-movflags', '+faststart', parcial,
       ], { maxBuffer: 16 * 1024 * 1024 });
     } catch (e) {

@@ -118,3 +118,45 @@ python ebook/historia-src/voz/gerar_voz.py falas.json --modelos PASTA_COM_OS_MOD
 O script precisa do `ffmpeg` e dos arquivos `kokoro-v1.0.onnx` e `voices-v1.0.bin` (baixados da página de releases do kokoro-onnx). Ele só regrava as falas cujo texto mudou. Se uma fala mudar e não for regravada, o player percebe (cada gravação guarda um código do texto) e usa a voz do navegador naquela fala. Pronúncias especiais (siglas, nomes estrangeiros, algarismos romanos) ficam na lista `LEXICO` do script.
 
 Cada episódio segue o formato `S({id, g: grupo, item: item do edital, year, title, art: () => SVG, beats: [{t: 'narração', say: ['ator', 'balão'], do() { ... }}], facts: [...], trap: 'pegadinha'})`. Em `do()`, use `show`, `hide`, `go`, `walk` e `booms` para animar os atores criados com `act(...)`.
+
+---
+
+# Videoaulas – Office 2019 e LibreOffice 7
+
+Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Microsoft Office 2019 (Word, Excel, PowerPoint) e o LibreOffice 7 (Writer, Calc, Impress): interface, recursos e atalhos, com foco no que as bancas costumam cobrar e nas diferenças entre as duas suítes. Cada aula termina com questões no estilo de prova.
+
+**Assistir:** baixe os arquivos `videoaulas/aula-NN-*.mp4` e abra em qualquer player (celular ou computador).
+
+| Aula | Arquivo | Assunto |
+|---|---|---|
+| 1 | `aula-01-visao-geral.mp4` | As duas suítes, programas equivalentes, licença, extensões de arquivo, faixa de opções × menus, comandos de arquivo |
+
+## Como são feitas
+
+- As telas são **desenhadas**, não gravadas de um computador: reproduzem em português as guias, grupos, menus e comandos do Office 2019 e do LibreOffice 7, com o item explicado em destaque e a fala escrita no rodapé.
+- A narração usa a mesma voz neural do desenho de História ([Kokoro](https://github.com/thewh1teagle/kokoro-onnx), voz `pf_dora`).
+- Todo atalho mostrado vem de uma tabela única (`videoaulas/src/atalhos.mjs`), conferida na documentação da Microsoft e do LibreOffice; o cabeçalho do arquivo diz o que foi confirmado e o que não foi.
+
+## Editar e gerar de novo
+
+Cada aula é um roteiro em `videoaulas/src/aulas/` (por exemplo `01-visao-geral.mjs`): uma lista de cenas, cada uma com a fala e a tela. Depois de editar:
+
+```bash
+./videoaulas/build.sh 1
+```
+
+Sem número, gera todas as aulas. Na primeira vez o script instala `kokoro-onnx`, `soundfile` e `num2words` e baixa os modelos de voz (cerca de 350 MB, em `videoaulas/.trabalho/`, fora do Git). Precisa de Node 22, Python 3, ffmpeg e Chromium com Playwright. Só as cenas alteradas são gravadas e desenhadas de novo.
+
+Para ver o texto que a voz vai ler (com as teclas e siglas já por extenso) sem gerar nada:
+
+```bash
+node videoaulas/build.mjs 1 --texto
+```
+
+Para rodar os testes:
+
+```bash
+node --test 'videoaulas/test/*.test.mjs'
+```
+
+Tipos de tela (`tela.tipo`): `capa`, `secao`, `janela` (janela do programa com uma guia ou menu aberto), `planilha`, `teclas` (atalhos das duas suítes lado a lado), `compara`, `lista`, `pegadinha` e `questao`. Se um texto não couber na tela, a geração para e diz a aula e a cena. Pronúncias especiais (nomes em inglês, siglas, teclas) ficam em `videoaulas/src/pronuncia.mjs`; quando a fala escrita não serve para a voz, a cena pode trazer um terceiro texto só para o áudio.
