@@ -133,6 +133,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 | 2 | `aula-02-word.mp4` | Word 2019: as guias uma a uma, fonte, parágrafo, estilos, quebras, sumário, mala direta, revisão, modos de exibição e atalhos em português |
 | 3 | `aula-03-writer.mp4` | Writer 7: os menus um a um, barra lateral, Navegador, estilos, exportar como PDF, registrar alterações e atalhos |
 | 4 | `aula-04-excel.mp4` | Excel 2019: célula e intervalo, operadores, referências relativa e absoluta, alça de preenchimento, as guias, mensagens de erro e atalhos |
+| 5 | `aula-05-calc.mp4` | Calc 7: o que é igual ao Excel, tamanho da planilha, referência a outra planilha, alça de preenchimento, menus Planilha, Dados e Formatar, e atalhos |
 
 ## Como são feitas
 
