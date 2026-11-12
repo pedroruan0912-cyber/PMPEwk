@@ -30,7 +30,7 @@ const LEXICO = [
   ['The Document Foundation', 'dê dóquiument faundêichon'], ['OpenDocument', 'ôupen dóquiument'], ['Open XML', 'ôupen xis eme éle'],
   ['LibreOffice', 'libre ófice'], ['Microsoft', 'máicrossóft'], ['PowerPoint', 'páuer póint'], ['WordArt', 'uôrd árt'], ['SmartArt', 'ismárt árt'],
   ['Office', 'ófice'], ['Word', 'uôrd'], ['Excel', 'ecsséu'], ['Writer', 'ráiter'], ['Calc', 'cálqui'], ['Impress', 'imprés'],
-  ['Access', 'ácsses'], ['Outlook', 'áutluc'], ['Publisher', 'páblixer'], ['Draw', 'dró'], ['Math', 'méf'], ['macOS', 'méc ó esse'], ['spreadsheet', 'ispréd xit'], ['software', 'sóftuér'],
+  ['Access', 'ácsses'], ['Outlook', 'áutluc'], ['Publisher', 'páblixer'], ['Draw', 'dró'], ['Math', 'méf'], ['macOS', 'méc ó esse'], ['spreadsheet', 'ispréd xit'], ['software', 'sóftuér'], ['Calibri', 'calíbri'],
   ['Windows', 'uíndous'], ['Backstage', 'béc stêidj'], ['Layout', 'leiáute'], ['layout', 'leiáute'], ['layouts', 'leiáutes'], ['Design', 'dizáin'],
   ['slides', 'isláides'], ['slide', 'isláide'], ['Slides', 'isláides'], ['Slide', 'isláide'],
   ['hiperlink', 'hiperlínque'], ['Hiperlink', 'hiperlínque'], ['mouse', 'máuze'], ['AutoSoma', 'auto soma'], ['Autofiltro', 'auto filtro'], ['AutoFiltro', 'auto filtro'],
@@ -109,5 +109,7 @@ export function falavel(texto) {
   t = t.replace(/→/g, ', depois, ').replace(/ = /g, ' é igual a ');
   t = t.replace(/\s*\(([^)]*)\)/g, ', $1,');
   t = t.replace(/,\s*([.,;:!?])/g, '$1');
+  // "Planilha2" -> "Planilha 2": o número vai ser escrito por extenso e não pode grudar na palavra.
+  t = t.replace(/([A-Za-zÀ-ú])(\d)/g, '$1 $2').replace(/(\d)([A-Za-zÀ-ú])/g, '$1 $2');
   return t.replace(/\s+/g, ' ').replace(/[\s,]+$/, '').trim();
 }

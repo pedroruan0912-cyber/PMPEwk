@@ -55,8 +55,8 @@ casos('fórmulas são lidas sinal por sinal', [
   ['=A1+B1*2', 'igual á 1 mais bê 1 vezes 2'],
   ['=SE(A1>=7;"Aprovado";"Reprovado")', 'igual se, abre parênteses, á 1 maior ou igual a 7, ponto e vírgula, aprovado, ponto e vírgula, reprovado, fecha parênteses'],
   ['=$A$1*B2', 'igual cifrão á cifrão 1 vezes bê 2'],
-  ['=Planilha2.A1', 'igual planilha2 ponto á 1'],
-  ['=Planilha2!A1', 'igual planilha2 exclamação á 1'],
+  ['=Planilha2.A1', 'igual planilha 2 ponto á 1'],
+  ['=Planilha2!A1', 'igual planilha 2 exclamação á 1'],
   ['=ARRED(MÉDIA(A1:A3);1)', 'igual arred, abre parênteses, média, abre parênteses, á 1 até á 3, fecha parênteses, ponto e vírgula, 1, fecha parênteses'],
   ['A fórmula =SOMA(A1;A3) devolve 60.', 'A fórmula igual soma, abre parênteses, á 1, ponto e vírgula, á 3, fecha parênteses, devolve 60.'],
   ['Digite =A1/2.', 'Digite igual á 1 dividido por 2.'],
@@ -108,4 +108,12 @@ casos('nomes em inglês que a voz leria errado', [
   ['É software livre.', 'É sóftuér livre.'],
   ['ODF', 'ó dê efe'],
   ['a base do documento', 'a base do documento'],
+  ['Calibri, tamanho 11', 'calíbri, tamanho 11'],
+]);
+
+// O voz.py escreve os números por extenso; grudado numa palavra, "Planilha2" viraria "planilhadois".
+casos('número grudado em palavra é separado para a voz', [
+  ['A aba Planilha2 fica ao lado.', 'A aba Planilha 2 fica ao lado.'],
+  ['Título 1 e Título 2', 'Título 1 e Título 2'],
+  ['25% de 200', '25% de 200'],
 ]);
