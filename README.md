@@ -136,6 +136,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 | 5 | `aula-05-calc.mp4` | Calc 7: o que é igual ao Excel, tamanho da planilha, referência a outra planilha, alça de preenchimento, menus Planilha, Dados e Formatar, e atalhos |
 | 6 | `aula-06-funcoes.mp4` | Funções de planilha: SOMA, MÉDIA, MÁXIMO, MÍNIMO, MAIOR, MENOR, MED, MODO, contagens, SE, E, OU, PROCV, arredondamentos, CONCATENAR, HOJE e AGORA, com exemplos resolvidos |
 | 7 | `aula-07-powerpoint.mp4` | PowerPoint 2019: layouts, slide mestre, transição × animação, modos de exibição, guia Apresentação de Slides, exportar e imprimir, e atalhos |
+| 8 | `aula-08-impress.mp4` | Impress 7: o que é igual ao PowerPoint, menus Slide e Apresentação de slides, slide mestre, transição e animação na barra lateral, nomes que mudam e atalhos |
 
 ## Como são feitas
 
