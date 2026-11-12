@@ -21,7 +21,8 @@ function textosDaCena(cena) {
 
 const TECLAS_DA_TABELA = new Set(Object.values(ATALHOS).flatMap((a) => [a.office, a.libre]).filter(Boolean));
 const COMBINACAO = /(?<![A-Za-zÀ-ú0-9])(?:Ctrl|Shift|Alt)(?:\+(?:Ctrl|Shift|Alt))*\+(?:F\d{1,2}|Enter|Espaço|Home|End|PgUp|PgDn|Esc|Tab|[A-Z0-9](?![A-Za-zÀ-ú0-9])|[=;*<>\[\]+-])/g;
-const TECLA_DE_FUNCAO = /(?<![A-Za-zÀ-ú0-9+$])F(?:[1-9]|1[0-2])(?![A-Za-zÀ-ú0-9])/g;
+// Dentro de uma fórmula, F10 é uma célula (D2:F10), não a tecla: por isso os vizinhos ":", ";" e "(" ficam de fora.
+const TECLA_DE_FUNCAO = /(?<![A-Za-zÀ-ú0-9+$:;(])F(?:[1-9]|1[0-2])(?![A-Za-zÀ-ú0-9:;)])/g;
 
 test('existe ao menos uma aula em src/aulas/', () => {
   assert.ok(aulas.length >= 1);
@@ -88,3 +89,93 @@ for (const aula of aulas) {
     });
   });
 }
+
+// ---------- as contas mostradas nas planilhas estão certas? ----------
+// Recalcula, de forma independente do roteiro, o resultado das fórmulas que este pequeno avaliador entende.
+const numero = (v) => {
+  if (typeof v === 'number') return v;
+  if (typeof v !== 'string') return NaN;
+  const t = v.trim();
+  if (!/^-?\d+(\.\d{3})*(,\d+)?%?$/.test(t)) return NaN;
+  const n = Number(t.replace('%', '').replace(/\./g, '').replace(',', '.'));
+  return t.endsWith('%') ? n / 100 : n;
+};
+const celulasDo = (trecho) => {
+  const [a, b = a] = trecho.replace(/\$/g, '').split(':');
+  const cols = 'ABCDEF', lista = [];
+  for (let c = cols.indexOf(a[0]); c <= cols.indexOf(b[0]); c++) for (let l = Number(a.slice(1)); l <= Number(b.slice(1)); l++) lista.push(cols[c] + l);
+  return lista;
+};
+const criterio = (texto) => {
+  const m = /^(>=|<=|<>|>|<|=)?(.+)$/.exec(texto.replace(/"/g, ''));
+  const alvo = numero(m[2]);
+  return { '>=': (v) => v >= alvo, '<=': (v) => v <= alvo, '<>': (v) => v !== alvo, '>': (v) => v > alvo, '<': (v) => v < alvo, '=': (v) => v === alvo, undefined: (v) => v === alvo }[m[1]];
+};
+function recalcular(formula, celulas) {
+  const corpo = formula.slice(1);
+  if (/^[\d+\-*/^() ,]+$/.test(corpo)) return Function(`"use strict"; return (${corpo.replace(/,/g, '.').replace(/\^/g, '**')});`)();
+  const conta = /^(\$?[A-F]\$?\d)([+\-*/])(\$?[A-F]\$?\d)$/.exec(corpo);
+  const valor = (ref) => numero(celulas[ref.replace(/\$/g, '')]);
+  if (conta) {
+    const [a, b] = [valor(conta[1]), valor(conta[3])];
+    return { '+': a + b, '-': a - b, '*': a * b, '/': a / b }[conta[2]];
+  }
+  const f = /^([A-ZÀ-Ú.]+)\((.*)\)$/.exec(corpo);
+  if (!f) return undefined;
+  const args = f[2].split(';');
+  const ehFaixa = (a) => /^\$?[A-F]\$?\d(:\$?[A-F]\$?\d)?$/.test(a);
+  const brutos = (a) => celulasDo(a).map((r) => celulas[r]).filter((v) => v !== undefined && v !== '');
+  const nums = (lista) => lista.flatMap((a) => (ehFaixa(a) ? brutos(a).map(numero) : [numero(a)])).filter((n) => !Number.isNaN(n));
+  const ordenados = (lista) => nums(lista).sort((x, y) => x - y);
+  switch (f[1]) {
+    case 'SOMA': return nums(args).reduce((s, n) => s + n, 0);
+    case 'MÉDIA': return nums(args).reduce((s, n) => s + n, 0) / nums(args).length;
+    case 'MÁXIMO': return Math.max(...nums(args));
+    case 'MÍNIMO': return Math.min(...nums(args));
+    case 'CONT.NÚM': return nums(args).length;
+    case 'CONT.VALORES': return args.flatMap(brutos).length;
+    case 'MED': { const o = ordenados(args); return o.length % 2 ? o[(o.length - 1) / 2] : (o[o.length / 2 - 1] + o[o.length / 2]) / 2; }
+    case 'MODO': { const o = nums(args); return o.sort((x, y) => o.filter((v) => v === y).length - o.filter((v) => v === x).length)[0]; }
+    case 'MAIOR': return ordenados([args[0]]).reverse()[Number(args[1]) - 1];
+    case 'MENOR': return ordenados([args[0]])[Number(args[1]) - 1];
+    case 'CONT.SE': return nums([args[0]]).filter(criterio(args[1])).length;
+    case 'SOMASE': return nums([args[0]]).filter(criterio(args[1])).reduce((s, n) => s + n, 0);
+    case 'MOD': return numero(args[0]) % numero(args[1]);
+    default: return undefined;
+  }
+}
+
+test('o avaliador de conferência acerta contas feitas à mão', () => {
+  const c = { A1: 2, A2: 4, A3: 6, A4: 8, B1: 'texto', B2: '2,50', B3: '10%' };
+  assert.equal(recalcular('=SOMA(A1:A4)', c), 20);
+  assert.equal(recalcular('=SOMA(A1;A4)', c), 10);
+  assert.equal(recalcular('=MÉDIA(A1:A4)', c), 5);
+  assert.equal(recalcular('=CONT.NÚM(A1:B3)', c), 5);
+  assert.equal(recalcular('=CONT.VALORES(A1:B3)', c), 6);
+  assert.equal(recalcular('=CONT.SE(A1:A4;">=4")', c), 3);
+  assert.equal(recalcular('=SOMASE(A1:A4;">4")', c), 14);
+  assert.equal(recalcular('=MAIOR(A1:A4;2)', c), 6);
+  assert.equal(recalcular('=MED(A1:A4)', c), 5);
+  assert.equal(recalcular('=10+2*3^2', c), 28);
+  assert.equal(recalcular('=A2*$B$3', c), 0.4);
+  assert.equal(recalcular('=PROCV(1;A1:B3;2;FALSO)', c), undefined);
+});
+
+for (const aula of aulas) {
+  test(`aula ${aula.n}: os resultados mostrados nas planilhas conferem com a conta refeita`, () => {
+    aula.cenas.forEach((cena, i) => {
+      const t = cena.tela;
+      if (t.tipo !== 'planilha' || !t.formula || t.resultado === undefined) return;
+      const esperado = recalcular(t.formula, t.celulas);
+      if (esperado === undefined) return; // fórmula que o avaliador não cobre
+      assert.ok(Math.abs(esperado - numero(String(t.resultado))) < 1e-9, `cena ${i + 1}: ${t.formula} dá ${esperado}, mas a tela mostra ${t.resultado}`);
+    });
+  });
+}
+
+test('aula 6: pelo menos 12 fórmulas de função têm o resultado refeito pelo avaliador', () => {
+  const aula = aulas.find((a) => a.n === 6);
+  if (!aula) return; // a aula ainda não foi escrita
+  const conferidas = aula.cenas.filter((c) => c.tela.tipo === 'planilha' && c.tela.formula && c.tela.resultado !== undefined && recalcular(c.tela.formula, c.tela.celulas) !== undefined);
+  assert.ok(conferidas.length >= 12, `${conferidas.length} conferidas`);
+});
