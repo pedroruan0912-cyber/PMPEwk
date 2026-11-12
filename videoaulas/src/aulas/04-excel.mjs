@@ -33,7 +33,7 @@ const DADOS = [
   { grupo: 'Estrutura de Tópicos', itens: ['Agrupar', 'Subtotal'] },
 ];
 const EXIBIR = [
-  { grupo: 'Modos de Exibição', itens: ['Normal', 'Visualização da Quebra de Página', 'Layout da Página'] },
+  { grupo: 'Modos de Exibição de Pasta de Trabalho', itens: ['Normal', 'Visualização da Quebra de Página', 'Layout da Página'] },
   { grupo: 'Mostrar', itens: ['Linhas de Grade', 'Barra de Fórmulas', 'Títulos'] },
   { grupo: 'Janela', itens: ['Nova Janela', 'Congelar Painéis', 'Dividir', 'Ocultar'] },
 ];

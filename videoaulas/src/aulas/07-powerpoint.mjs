@@ -34,7 +34,7 @@ const ANIMACOES = [
   { grupo: 'Intervalo', itens: ['Iniciar', 'Duração', 'Atraso', 'Reordenar Animação'] },
 ];
 const APRESENTACAO = [
-  { grupo: 'Iniciar Apresentação de Slides', itens: ['Do Começo', 'Do Slide Atual', 'Apresentação Personalizada'] },
+  { grupo: 'Iniciar Apresentação de Slides', itens: ['Do Começo', 'Do Slide Atual', 'Apresentação de Slides Personalizada'] },
   { grupo: 'Configurar', itens: ['Configurar Apresentação de Slides', 'Ocultar Slide', 'Testar Intervalos', 'Gravar Apresentação de Slides'] },
   { grupo: 'Monitores', itens: ['Usar Modo de Exibição do Apresentador'] },
 ];

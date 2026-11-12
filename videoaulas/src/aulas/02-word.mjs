@@ -4,7 +4,7 @@ import { cena, pergunta } from './_cenas.mjs';
 const PAGINA_INICIAL = [
   { grupo: 'Área de Transferência', itens: ['Colar', 'Recortar', 'Copiar', 'Pincel de Formatação'] },
   { grupo: 'Fonte', itens: ['Negrito', 'Itálico', 'Sublinhado', 'Tachado', 'Subscrito', 'Sobrescrito', 'Maiúsculas e Minúsculas', 'Cor do Realce do Texto', 'Cor da Fonte', 'Limpar Toda a Formatação'] },
-  { grupo: 'Parágrafo', itens: ['Marcadores', 'Numeração', 'Aumentar Recuo', 'Mostrar Tudo', 'Alinhar à Esquerda', 'Centralizar', 'Alinhar à Direita', 'Justificar', 'Espaçamento de Linha', 'Bordas'] },
+  { grupo: 'Parágrafo', itens: ['Marcadores', 'Numeração', 'Mostrar Tudo', 'Alinhar à Esquerda', 'Centralizar', 'Alinhar à Direita', 'Justificar', 'Espaçamento de Linha e Parágrafo', 'Bordas'] },
   { grupo: 'Estilos', itens: ['Normal', 'Título 1', 'Título 2'] },
   { grupo: 'Edição', itens: ['Localizar', 'Substituir', 'Selecionar'] },
 ];
