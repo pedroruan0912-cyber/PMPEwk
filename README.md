@@ -137,6 +137,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 | 6 | `aula-06-funcoes.mp4` | Funções de planilha: SOMA, MÉDIA, MÁXIMO, MÍNIMO, MAIOR, MENOR, MED, MODO, contagens, SE, E, OU, PROCV, arredondamentos, CONCATENAR, HOJE e AGORA, com exemplos resolvidos |
 | 7 | `aula-07-powerpoint.mp4` | PowerPoint 2019: layouts, slide mestre, transição × animação, modos de exibição, guia Apresentação de Slides, exportar e imprimir, e atalhos |
 | 8 | `aula-08-impress.mp4` | Impress 7: o que é igual ao PowerPoint, menus Slide e Apresentação de slides, slide mestre, transição e animação na barra lateral, nomes que mudam e atalhos |
+| 9 | `aula-09-atalhos.mp4` | Atalhos lado a lado: todas as teclas da série no Office em português e no LibreOffice, teclas de função, pegadinhas clássicas e revisão geral das diferenças entre as suítes |
 
 ## Como são feitas
 

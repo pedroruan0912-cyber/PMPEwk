@@ -179,3 +179,11 @@ test('aula 6: pelo menos 12 fórmulas de função têm o resultado refeito pelo 
   const conferidas = aula.cenas.filter((c) => c.tela.tipo === 'planilha' && c.tela.formula && c.tela.resultado !== undefined && recalcular(c.tela.formula, c.tela.celulas) !== undefined);
   assert.ok(conferidas.length >= 12, `${conferidas.length} conferidas`);
 });
+
+test('aula 9: toda ação da tabela de atalhos aparece em alguma tela de teclas', () => {
+  const aula = aulas.find((a) => a.n === 9);
+  assert.ok(aula, 'a aula 9 precisa existir');
+  const mostradas = new Set(aula.cenas.filter((c) => c.tela.tipo === 'teclas').flatMap((c) => c.tela.acoes));
+  const faltam = Object.keys(ATALHOS).filter((k) => !mostradas.has(k));
+  assert.deepEqual(faltam, []);
+});
