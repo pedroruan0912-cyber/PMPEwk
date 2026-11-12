@@ -143,7 +143,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 
 - As telas são **desenhadas**, não gravadas de um computador: reproduzem em português as guias, grupos, menus e comandos do Office 2019 e do LibreOffice 7, com o item explicado em destaque e a fala escrita no rodapé.
 - A narração usa a mesma voz neural do desenho de História ([Kokoro](https://github.com/thewh1teagle/kokoro-onnx), voz `pf_dora`).
-- Todo atalho mostrado vem de uma tabela única (`videoaulas/src/atalhos.mjs`), conferida na documentação da Microsoft e do LibreOffice; o cabeçalho do arquivo diz o que foi confirmado e o que não foi.
+- Todo atalho mostrado vem de uma tabela única (`videoaulas/src/atalhos.mjs`), conferida na página de atalhos da Microsoft e no arquivo de teclas do código-fonte do LibreOffice (versões 7.0 a 7.6); o cabeçalho do arquivo diz o que foi confirmado e onde. Os menus do LibreOffice desenhados nas aulas foram conferidos nos arquivos de menu do código-fonte do 7.6.
 
 ## Editar e gerar de novo
 
@@ -153,7 +153,7 @@ Cada aula é um roteiro em `videoaulas/src/aulas/` (por exemplo `01-visao-geral.
 ./videoaulas/build.sh 1
 ```
 
-Sem número, gera todas as aulas. Na primeira vez o script instala `kokoro-onnx`, `soundfile` e `num2words` e baixa os modelos de voz (cerca de 350 MB, em `videoaulas/.trabalho/`, fora do Git). Precisa de Node 22, Python 3, ffmpeg e Chromium com Playwright. Só as cenas alteradas são gravadas e desenhadas de novo.
+Sem número, gera todas as aulas. Na primeira vez o script instala `kokoro-onnx`, `soundfile` e `num2words` e baixa os modelos de voz (cerca de 350 MB, em `videoaulas/.trabalho/`, fora do Git). Precisa de Node 22, Python 3, ffmpeg e Chromium com Playwright. O Playwright tem de estar visível para o Node: instalado globalmente (`npm install -g playwright` e `npx playwright install chromium`), com o `NODE_PATH` apontando para a pasta `node_modules` global; sem isso, a geração para com a mensagem "Playwright não encontrado". Só as cenas alteradas são gravadas e desenhadas de novo.
 
 Para ver o texto que a voz vai ler (com as teclas e siglas já por extenso) sem gerar nada:
 

@@ -8,7 +8,15 @@ import { ATALHOS } from './atalhos.mjs';
 import { ABAS } from './roteiro.mjs';
 
 // O Playwright está instalado globalmente; o import de ESM não o encontra, o require sim.
-const { chromium } = createRequire(import.meta.url)('playwright');
+function carregarPlaywright() {
+  try {
+    return createRequire(import.meta.url)('playwright');
+  } catch (e) {
+    if (e.code !== 'MODULE_NOT_FOUND') throw e;
+    throw new Error('Playwright não encontrado. Instale o Playwright e o Chromium (npm install -g playwright && npx playwright install chromium) ou aponte NODE_PATH para a pasta node_modules onde ele está.');
+  }
+}
+const { chromium } = carregarPlaywright();
 
 const TELAS = join(dirname(fileURLToPath(import.meta.url)), 'telas');
 const ARQUIVOS_DE_TELA = ['tela.html', 'tela.css', 'tela.js'];
@@ -53,7 +61,8 @@ export async function renderizarCenas(aula, dirTrabalho, opcoes = {}) {
     // A voz não muda a imagem; o resto da cena e o cabeçalho, sim.
     const visivel = { fala: cena.fala, tela: cena.tela, n: meta.n, titulo: meta.titulo, indice: meta.indice, total: meta.total };
     const atalhosUsados = cena.tela.tipo === 'teclas' ? cena.tela.acoes.map((a) => meta.atalhos[a]) : null;
-    const hash = createHash('sha1').update(JSON.stringify([telas, visivel, atalhosUsados])).digest('hex').slice(0, 16);
+    const abasUsadas = cena.tela.tipo === 'janela' ? meta.abas[cena.tela.app] : null; // a janela desenha a lista inteira
+    const hash = createHash('sha1').update(JSON.stringify([telas, visivel, atalhosUsados, abasUsadas])).digest('hex').slice(0, 16);
     return { cena, meta, i, png: join(dirPng, `${hash}.png`) };
   });
   const faltam = trabalhos.filter((t) => !existsSync(t.png));

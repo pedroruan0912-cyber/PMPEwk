@@ -29,7 +29,7 @@ const FORMULAS = [
 ];
 const DADOS = [
   { grupo: 'Classificar e Filtrar', itens: ['Classificar', 'Filtro', 'Avançado'] },
-  { grupo: 'Ferramentas de Dados', itens: ['Texto para Colunas', 'Remover Duplicadas', 'Validação de Dados'] },
+  { grupo: 'Ferramentas de Dados', itens: ['Texto para Colunas', 'Remover Duplicatas', 'Validação de Dados'] },
   { grupo: 'Estrutura de Tópicos', itens: ['Agrupar', 'Subtotal'] },
 ];
 const EXIBIR = [
@@ -145,7 +145,7 @@ export default {
     cena('A guia Dados trabalha com listas. Classificar reordena as linhas, por exemplo de A a Z. Filtro mostra só as linhas que atendem a um critério. As outras linhas ficam escondidas, mas não são apagadas.',
       excel('Dados', DADOS, 'Filtro', 'Mostra só as linhas que atendem ao critério. As demais ficam ocultas, não são apagadas.')),
 
-    cena('Ainda em Dados, a Validação de Dados restringe o que pode ser digitado numa célula: uma lista de opções, um número entre dois limites, uma data. E Remover Duplicadas apaga as linhas repetidas.',
+    cena('Ainda em Dados, a Validação de Dados restringe o que pode ser digitado numa célula: uma lista de opções, um número entre dois limites, uma data. E Remover Duplicatas apaga as linhas repetidas.',
       excel('Dados', DADOS, 'Validação de Dados', 'Limita o que a célula aceita: lista de opções, intervalo de números, datas.')),
 
     cena('Na guia Exibir, o destaque é Congelar Painéis. Ele mantém linhas ou colunas paradas na tela enquanto você rola o resto da planilha. É o que se usa para deixar a linha de títulos sempre à vista.',

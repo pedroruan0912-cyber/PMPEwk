@@ -187,3 +187,43 @@ test('aula 9: toda ação da tabela de atalhos aparece em alguma tela de teclas'
   const faltam = Object.keys(ATALHOS).filter((k) => !mostradas.has(k));
   assert.deepEqual(faltam, []);
 });
+
+// ---------- fatos corrigidos depois da revisão final ----------
+// Conferidos nos menus do código-fonte do LibreOffice 7 (menubar.xml) e na ajuda da Microsoft em português.
+const janelas = (app) => aulas.flatMap((a) => a.cenas.map((c, i) => ({ n: a.n, i: i + 1, t: c.tela }))).filter((x) => x.t.tipo === 'janela' && x.t.app === app);
+const itensDe = (t) => t.itens.flatMap((i) => (typeof i === 'string' ? [i] : i.itens));
+
+test('Impress: Animação fica em Exibir e Interação fica em Formatar, não no menu Apresentação de slides', () => {
+  for (const { n, i, t } of janelas('impress')) {
+    if (t.aba !== 'Apresentação de slides') continue;
+    for (const item of itensDe(t)) assert.ok(!/^Animação|^Interação/.test(item), `aula ${n}, cena ${i}: ${item}`);
+  }
+});
+
+test('Calc: Proteger planilha fica em Ferramentas, não no menu Planilha', () => {
+  for (const { n, i, t } of janelas('calc')) {
+    if (t.aba === 'Planilha') assert.ok(!itensDe(t).includes('Proteger planilha...'), `aula ${n}, cena ${i}`);
+  }
+});
+
+test('nenhum texto ensina frases já desmentidas', () => {
+  const proibidas = [/Duplicadas/, /só têm função no Writer/, /Apresentação de slides, Interação/, /menu Apresentação de slides: iniciar, cronometrar, interação/i];
+  for (const aula of aulas) aula.cenas.forEach((cena, i) => {
+    for (const t of textosDaCena(cena)) for (const p of proibidas) assert.doesNotMatch(t, p, `aula ${aula.n}, cena ${i + 1}`);
+  });
+});
+
+test('no Calc, o PDF é Arquivo > Exportar como PDF, sem o submenu Exportar como', () => {
+  const aula = aulas.find((a) => a.n === 5);
+  aula.cenas.forEach((cena, i) => {
+    for (const t of textosDaCena(cena)) assert.doesNotMatch(t, /Exportar como >|Exportar como, Exportar como PDF/, `cena ${i + 1}: ${t}`);
+  });
+});
+
+test('tela de teclas com "Iguais" no título só mostra atalhos iguais nas duas suítes', () => {
+  for (const aula of aulas) aula.cenas.forEach((cena, i) => {
+    const t = cena.tela;
+    if (t.tipo !== 'teclas' || !/Iguais/.test(t.titulo ?? '')) return;
+    for (const a of t.acoes) assert.equal(ATALHOS[a].office, ATALHOS[a].libre, `aula ${aula.n}, cena ${i + 1}: ${a}`);
+  });
+});

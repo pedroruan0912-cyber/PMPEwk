@@ -2,22 +2,25 @@
 // para nenhuma aula mostrar um atalho diferente de outra.
 // office = Microsoft Office 2019 em português do Brasil; libre = LibreOffice 7.
 // null = não há atalho padrão para a ação naquela suíte.
+// nota = ressalva curta, mostrada na tela embaixo do nome da ação.
 //
 // Conferência (novembro de 2026):
 // - LibreOffice: ajuda oficial 7.6 em português (help.libreoffice.org, páginas de teclas de atalho gerais,
 //   do Writer, do Calc e do Impress) e a configuração de teclas de uma instalação do LibreOffice.
-//   Não achei nessas fontes: alteracoes (Ctrl+Shift+C), autoSoma no Calc (Alt+=) e novoSlide no Impress (Ctrl+M);
-//   ficam como aparecem nos menus do programa.
+//   Depois, todas as teclas do LibreOffice foram conferidas no arquivo de teclas do código-fonte
+//   (officecfg/.../Accelerators.xcu, ramos 7.0 a 7.6): Ctrl+Shift+C registra alterações só no 7.0 e no 7.1
+//   (sai no 7.2), e Alt+= nunca foi atalho da AutoSoma no Calc 7.
 // - Office: páginas "Atalhos de teclado" do suporte da Microsoft em português (Word, Excel, PowerPoint).
 //   Essas páginas misturam teclas da versão em inglês com as da versão em português (na mesma tabela, Ctrl+A
 //   aparece como "abrir" e como "selecionar tudo"). Confirmadas ali: novo, abrir, salvar, salvarComo, imprimir,
 //   fechar, sair, desfazer, negrito, italico, sublinhado, esquerda, centralizar, justificar, quebraPagina, marcas,
-//   maiusculas, sobrescrito, alteracoes, hiperlink, ortografia, ajuda, colarEspecial e todas as de planilha e de slides.
+//   maiusculas, sobrescrito, alteracoes, hiperlink, ortografia, ajuda, colarEspecial, estilos (Ctrl+Alt+Shift+S)
+//   e todas as de planilha e de slides.
 //   A página mostra a tecla da versão em inglês, e a tabela mantém a da versão em português (a que as provas
 //   cobram), em: selecionarTudo (Ctrl+T), refazer no Word (Ctrl+R), localizar (Ctrl+L), substituir (Ctrl+U),
 //   direita (Ctrl+G) e subscrito (Ctrl+=).
 
-const a = (nome, office, libre, onde) => ({ nome, office, libre, onde });
+const a = (nome, office, libre, onde, nota) => ({ nome, office, libre, onde, ...(nota ? { nota } : {}) });
 
 export const ATALHOS = {
   // ---- comuns a todos os programas ----
@@ -54,9 +57,9 @@ export const ATALHOS = {
   maiusculas: a('Alternar maiúsculas e minúsculas', 'Shift+F3', 'Shift+F3', 'texto'),
   sobrescrito: a('Sobrescrito', 'Ctrl+Shift++', 'Ctrl+Shift+P', 'texto'),
   subscrito: a('Subscrito', 'Ctrl+=', 'Ctrl+Shift+B', 'texto'),
-  alteracoes: a('Controlar ou registrar alterações', 'Ctrl+Shift+E', 'Ctrl+Shift+C', 'texto'),
+  alteracoes: a('Controlar ou registrar alterações', 'Ctrl+Shift+E', 'Ctrl+Shift+C', 'texto', 'No LibreOffice, só nas versões 7.0 e 7.1'),
   navegador: a('Navegador', null, 'F5', 'texto'),
-  estilos: a('Painel de estilos', null, 'F11', 'texto'),
+  estilos: a('Painel de estilos', 'Ctrl+Alt+Shift+S', 'F11', 'texto'),
   inserirTabela: a('Inserir tabela', null, 'Ctrl+F12', 'texto'),
   limparFormatacao: a('Limpar formatação direta', null, 'Ctrl+M', 'texto'),
   listaNumerada: a('Lista numerada', null, 'F12', 'texto'),
@@ -67,7 +70,7 @@ export const ATALHOS = {
   formatarCelulas: a('Formatar células', 'Ctrl+1', 'Ctrl+1', 'planilha'),
   dataAtual: a('Inserir a data de hoje', 'Ctrl+;', 'Ctrl+;', 'planilha'),
   filtro: a('Filtro ou Autofiltro', 'Ctrl+Shift+L', 'Ctrl+Shift+L', 'planilha'),
-  autoSoma: a('AutoSoma', 'Alt+=', 'Alt+=', 'planilha'),
+  autoSoma: a('AutoSoma', 'Alt+=', null, 'planilha'),
   inserirFuncao: a('Inserir função ou Assistente de funções', 'Shift+F3', 'Ctrl+F2', 'planilha'),
   recalcular: a('Recalcular', 'F9', 'F9', 'planilha'),
   proximaPlanilha: a('Próxima planilha', 'Ctrl+PgDn', 'Ctrl+PgDn', 'planilha'),

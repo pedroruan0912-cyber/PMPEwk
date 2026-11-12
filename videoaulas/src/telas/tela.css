@@ -103,8 +103,10 @@ h1.titulo{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;m
 .planilha .guias-planilha{flex:1;display:flex;align-items:flex-start;padding:0 12px;background:#F3F4F6;border-top:2px solid var(--linha)}
 .planilha .guias-planilha span{font-size:20px;font-weight:600;padding:5px 18px;background:var(--papel);border:2px solid var(--linha);border-top:0;border-radius:0 0 8px 8px;color:var(--app)}
 /* fórmula sendo digitada: passa por cima das células vizinhas, como no programa */
-.planilha td.ativa.formula{overflow:visible;box-shadow:none;padding:0;position:relative}
-.planilha td.ativa.formula span{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;min-width:100%;padding:0 10px;font-family:var(--mono);font-size:21px;font-weight:600;background:var(--papel);box-shadow:inset 0 0 0 4px var(--app);white-space:nowrap}
+.planilha td.sobrepoe{overflow:visible;box-shadow:none;padding:0;position:relative}
+.planilha td.sobrepoe span{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;min-width:100%;padding:0 10px;background:var(--papel);box-shadow:inset 0 0 0 4px var(--app);white-space:nowrap;z-index:1}
+.planilha td.sobrepoe.num span{justify-content:flex-end}
+.planilha td.ativa.formula span{font-family:var(--mono);font-size:21px;font-weight:600;justify-content:flex-start}
 .nota{flex:1;align-self:center;background:var(--marca-fundo);border:2px solid var(--marca-borda);border-left-width:10px;border-radius:10px;padding:16px 18px;font-size:23px;line-height:32px}
 
 /* ---------- teclas ---------- */
@@ -116,9 +118,13 @@ h1.titulo{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;m
 .linha-tecla{background:var(--papel);border:2px solid var(--linha);border-radius:10px;padding:6px 18px;margin-bottom:6px;min-height:54px}
 .linha-tecla.difere{background:var(--marca-fundo);border-color:var(--marca-borda)}
 .linha-tecla .acao{font-size:24px;font-weight:600;line-height:1.2}
+.linha-tecla .nota-atalho{display:block;font-size:18px;font-weight:500;color:var(--suave);margin-top:2px}
 .atalho{display:flex;align-items:center;gap:6px;font-size:24px;white-space:nowrap}
 .atalho .mais{color:var(--suave);font-weight:700}
 kbd{font-family:var(--mono);font-size:22px;font-weight:600;background:#fff;border:2px solid #6B7280;border-bottom-width:5px;border-radius:8px;padding:3px 10px;min-width:42px;text-align:center}
+.atalho.longo{gap:3px}
+.atalho.longo kbd{font-size:19px;padding:3px 6px;min-width:32px}
+.atalho.longo .mais{font-size:20px}
 .atalho.sem{color:var(--suave);font-weight:700;padding-left:6px}
 
 /* ---------- comparação, lista, pegadinha ---------- */

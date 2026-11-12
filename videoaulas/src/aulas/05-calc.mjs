@@ -1,7 +1,7 @@
 import { cena, pergunta } from './_cenas.mjs';
 
 // Menus do LibreOffice Calc 7 em português, com os comandos que aparecem nas telas desta aula.
-const PLANILHA = ['Inserir células...', 'Inserir linhas', 'Inserir colunas', 'Excluir células...', 'Preencher células', 'Limpar células...', 'Intervalos nomeados e expressões', 'Inserir planilha...', 'Excluir planilha...', 'Mover ou copiar planilha...', 'Renomear planilha...', 'Proteger planilha...'];
+const PLANILHA = ['Inserir células...', 'Inserir linhas', 'Inserir colunas', 'Excluir células...', 'Preencher células', 'Limpar células...', 'Intervalos nomeados e expressões', 'Inserir planilha...', 'Excluir planilha...', 'Mover ou copiar planilha...', 'Renomear planilha...'];
 const DADOS = ['Ordenar...', 'Ordenar crescente', 'Ordenar decrescente', 'Autofiltro', 'Mais filtros', 'Tabela dinâmica', 'Validação...', 'Subtotais...', 'Texto para colunas...', 'Consolidar...', 'Esquema'];
 const FORMATAR = ['Texto', 'Alinhar', 'Formato numérico', 'Clonar formatação', 'Limpar formatação direta', 'Células...', 'Linhas', 'Colunas', 'Mesclar células', 'Intervalos de impressão', 'Condicional', 'Estilos de autoformatação...'];
 const EXIBIR = ['Normal', 'Quebra de página', 'Barra de fórmulas', 'Barra de status', 'Linhas de grade', 'Realce de valor', 'Mostrar fórmula', 'Congelar linhas e colunas', 'Dividir janela', 'Barra lateral', 'Navegador', 'Zoom'];
@@ -58,8 +58,8 @@ export default {
     cena('Vamos aos menus. O Calc tem os mesmos onze menus do Writer, com duas trocas: no lugar de Tabela e Formulário entram Planilha e Dados. É neles que está a maior parte do que é próprio das planilhas.',
       { tipo: 'secao', titulo: 'Os menus do Calc', itens: ['Arquivo', 'Editar', 'Exibir', 'Inserir', 'Formatar', 'Estilos', 'Planilha', 'Dados', 'Ferramentas'] }),
 
-    cena('O menu Planilha trata das células e das planilhas do arquivo. Nele você insere e exclui células, linhas e colunas, e também insere, exclui, move, copia, renomeia e protege planilhas inteiras.',
-      calc('Planilha', PLANILHA, 'Inserir planilha...', 'Tudo o que se faz com a planilha inteira fica aqui: inserir, excluir, mover, copiar, renomear e proteger.')),
+    cena('O menu Planilha trata das células e das planilhas do arquivo. Nele você insere e exclui células, linhas e colunas, e também insere, exclui, move, copia e renomeia planilhas inteiras.',
+      calc('Planilha', PLANILHA, 'Inserir planilha...', 'Tudo o que se faz com a planilha inteira fica aqui: inserir, excluir, mover, copiar e renomear.')),
 
     cena('O menu Dados é o equivalente à guia Dados do Excel. O Autofiltro coloca setas nos títulos das colunas e mostra só as linhas que atendem ao critério escolhido. No Excel, o mesmo recurso se chama Filtro.',
       calc('Dados', DADOS, 'Autofiltro', 'É o Filtro do Excel. As linhas que não atendem ao critério ficam ocultas, não são apagadas.')),
@@ -100,11 +100,11 @@ export default {
     cena('Atingir meta faz a conta de trás para a frente. Você informa o resultado que quer numa fórmula, e o Calc descobre que valor uma das células precisa ter para chegar nele. O Excel tem o mesmo recurso, com o mesmo nome, na guia Dados.',
       calc('Ferramentas', FERRAMENTAS, 'Atingir meta...', 'Você diz o resultado desejado; o Calc encontra o valor de entrada que leva a ele.')),
 
-    cena('Proteger planilha impede que as células sejam alteradas, com senha se você quiser. O comando aparece no menu Ferramentas e também no menu Planilha. No Excel, Proteger Planilha fica na guia Revisão.',
+    cena('Proteger planilha impede que as células sejam alteradas, com senha se você quiser. O comando fica no menu Ferramentas e também aparece ao clicar com o botão direito no nome da planilha. No Excel, Proteger Planilha fica na guia Revisão.',
       calc('Ferramentas', FERRAMENTAS, 'Proteger planilha...', 'Bloqueia a edição das células, com ou sem senha. No Excel: guia Revisão.')),
 
-    cena('Sobre arquivos. O Calc abre e salva planilhas do Excel, no formato .xlsx, mas por padrão salva em .ods. E, como no Writer, o PDF não está em Salvar como: fica em Arquivo, Exportar como, Exportar como PDF.',
-      { tipo: 'lista', titulo: 'Arquivos no Calc', itens: ['Formato padrão: .ods', 'Abre e salva .xlsx, o formato do Excel', 'Modelo de planilha: .ots', 'PDF: Arquivo > Exportar como > Exportar como PDF'] }),
+    cena('Sobre arquivos. O Calc abre e salva planilhas do Excel, no formato .xlsx, mas por padrão salva em .ods. O PDF não está em Salvar como: fica direto em Arquivo, Exportar como PDF. Diferente do Writer, o Calc não tem o submenu Exportar como.',
+      { tipo: 'lista', titulo: 'Arquivos no Calc', itens: ['Formato padrão: .ods', 'Abre e salva .xlsx, o formato do Excel', 'Modelo de planilha: .ots', 'PDF: Arquivo > Exportar como PDF'] }),
 
     cena('Um quadro para fixar os nomes. Classificar vira Ordenar. Filtro vira Autofiltro. Congelar Painéis vira Congelar linhas e colunas. Área de Impressão vira Intervalos de impressão. E Auditoria de Fórmulas vira Detetive.',
       { tipo: 'compara', titulo: 'O mesmo recurso, nomes diferentes', office: ['Classificar', 'Filtro', 'Congelar Painéis', 'Área de Impressão', 'Auditoria de Fórmulas'], libre: ['Ordenar', 'Autofiltro', 'Congelar linhas e colunas', 'Intervalos de impressão', 'Detetive'] }),
@@ -114,11 +114,11 @@ export default {
       'As mensagens de erro são parecidas com as do Excel: divisão por zero, nome não reconhecido, valor de tipo errado e referência inválida. O Calc tem ainda códigos próprios, que começam com as letras é, érre, érre, e mostra cerquilhas quando a coluna está estreita.'),
 
     // ---------- atalhos ----------
-    cena('Os atalhos de planilha são, em boa parte, os mesmos do Excel. F2 edita a célula. F4 alterna a referência. Ctrl+1 abre Formatar células. Ctrl+; insere a data. Ctrl+Shift+L liga o Autofiltro. E Alt+= insere a soma.',
-      { tipo: 'teclas', titulo: 'Iguais no Excel e no Calc', acoes: ['editarCelula', 'refAbsoluta', 'formatarCelulas', 'dataAtual', 'filtro', 'autoSoma'] }),
+    cena('Os atalhos de planilha são, em boa parte, os mesmos do Excel. F2 edita a célula. F4 alterna a referência. Ctrl+1 abre Formatar células. Ctrl+; insere a data. Ctrl+Shift+L liga o Autofiltro. E F9 recalcula.',
+      { tipo: 'teclas', titulo: 'Iguais no Excel e no Calc', acoes: ['editarCelula', 'refAbsoluta', 'formatarCelulas', 'dataAtual', 'filtro', 'recalcular'] }),
 
-    cena('Agora os que mudam. O Assistente de funções abre com Ctrl+F2; no Excel, Inserir Função é Shift+F3. E a tecla F11: no Excel, cria um gráfico em uma planilha nova; no Calc, abre o painel de Estilos. F9 recalcula nos dois.',
-      { tipo: 'teclas', titulo: 'O que muda do Excel para o Calc', acoes: ['inserirFuncao', 'graficoRapido', 'estilos', 'recalcular'] }),
+    cena('Agora os que mudam. O Assistente de funções abre com Ctrl+F2; no Excel, Inserir Função é Shift+F3. E a tecla F11: no Excel, cria um gráfico em uma planilha nova; no Calc, abre o painel de Estilos. E a AutoSoma: Alt+= no Excel; no Calc 7 não há atalho padrão.',
+      { tipo: 'teclas', titulo: 'O que muda do Excel para o Calc', acoes: ['inserirFuncao', 'graficoRapido', 'estilos', 'autoSoma'] }),
 
     cena('E os atalhos gerais são os do LibreOffice. Negrito é Ctrl+B, salvar é Ctrl+S, abrir é Ctrl+O, novo é Ctrl+N, selecionar tudo é Ctrl+A e localizar é Ctrl+F. Na coluna do Office, estão os do Excel em português.',
       { tipo: 'teclas', titulo: 'Atalhos gerais', acoes: ['negrito', 'salvar', 'abrir', 'novo', 'selecionarTudo', 'localizar'] }),

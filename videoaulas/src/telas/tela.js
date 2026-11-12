@@ -30,8 +30,9 @@
 
   function atalho(teclas) {
     if (!teclas) return el('div', { class: 'atalho sem', text: '—' });
-    const caixa = el('div', { class: 'atalho', 'data-teclas': teclas });
-    partesDoAtalho(teclas).forEach((p, i) => {
+    const partes = partesDoAtalho(teclas);
+    const caixa = el('div', { class: 'atalho' + (partes.length >= 4 ? ' longo' : ''), 'data-teclas': teclas });
+    partes.forEach((p, i) => {
       if (i > 0) caixa.appendChild(t('span', 'mais', '+'));
       caixa.appendChild(t('kbd', '', p));
     });
@@ -148,8 +149,10 @@
           else if (ativa && tela.formula) { valor = tela.formula; digitando = true; }
           const texto = valor === undefined ? '' : String(valor);
           const numero = texto !== '' && /^-?[\d.]+(,\d+)?%?$/.test(texto);
-          const classes = ['celula', ativa && 'ativa', pintadas.has(ref) && 'pintada', numero && 'num', digitando && 'formula'].filter(Boolean).join(' ');
-          tr.appendChild(digitando ? el('td', { class: classes, 'data-ref': ref }, [t('span', '', texto)]) : el('td', { class: classes, 'data-ref': ref, text: texto }));
+          // Na célula ativa, fórmula ou resultado pode passar por cima das vizinhas vazias, como no programa.
+          const sobrepoe = ativa && texto !== '';
+          const classes = ['celula', ativa && 'ativa', pintadas.has(ref) && 'pintada', numero && 'num', digitando && 'formula', sobrepoe && 'sobrepoe'].filter(Boolean).join(' ');
+          tr.appendChild(sobrepoe ? el('td', { class: classes, 'data-ref': ref }, [t('span', '', texto)]) : el('td', { class: classes, 'data-ref': ref, text: texto }));
         }
         linhas.push(tr);
       }
@@ -166,7 +169,8 @@
     teclas(tela, meta) {
       const linhas = tela.acoes.map((chave) => {
         const a = meta.atalhos[chave];
-        return el('div', { class: 'linha-tecla' + (a.office !== a.libre ? ' difere' : '') }, [t('div', 'acao', a.nome), atalho(a.office), atalho(a.libre)]);
+        const acao = el('div', { class: 'acao' }, [document.createTextNode(a.nome), a.nota && t('small', 'nota-atalho', a.nota)]);
+        return el('div', { class: 'linha-tecla' + (a.office !== a.libre ? ' difere' : '') }, [acao, atalho(a.office), atalho(a.libre)]);
       });
       return el('section', { class: 'teclas' }, [
         tela.titulo && t('h1', 'titulo', tela.titulo),
@@ -215,6 +219,27 @@
         fora.push('conteúdo');
         break;
       }
+    }
+    // Teclas: as teclas de uma coluna não podem chegar perto da coluna seguinte nem sair da linha.
+    for (const linha of document.querySelectorAll('.linha-tecla')) {
+      const colunas = [...linha.querySelectorAll('.atalho')];
+      const limites = [colunas[1]?.getBoundingClientRect().left - 24, linha.getBoundingClientRect().right - 12];
+      colunas.forEach((c, i) => {
+        const fim = Math.max(c.getBoundingClientRect().left, ...[...c.children].map((k) => k.getBoundingClientRect().right));
+        if (fim > limites[i]) fora.push('teclas');
+      });
+    }
+    // Planilha: célula comum cortada, ou texto da célula ativa que sai da grade ou cobre uma vizinha preenchida.
+    for (const td of document.querySelectorAll('.planilha td.celula')) {
+      const span = td.querySelector('span');
+      if (!span) {
+        if (td.scrollWidth > td.clientWidth + 1) fora.push('planilha');
+        continue;
+      }
+      const r = span.getBoundingClientRect();
+      const grade = td.closest('table').getBoundingClientRect();
+      const cobre = [...td.parentElement.querySelectorAll('td.celula')].some((v) => v !== td && v.textContent !== '' && v.getBoundingClientRect().left >= td.getBoundingClientRect().right - 1 && v.getBoundingClientRect().left < r.right - 1);
+      if (r.right > grade.right + 1 || cobre || span.scrollWidth > span.clientWidth + 1) fora.push('planilha');
     }
     return [...new Set(fora)];
   }

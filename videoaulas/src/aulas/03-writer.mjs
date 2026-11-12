@@ -40,7 +40,7 @@ export default {
     cena('O menu Editar reúne desfazer e refazer, cortar, copiar e colar, selecionar tudo, localizar e substituir. Repare na palavra: o LibreOffice diz Cortar, e o Office diz Recortar.',
       { tipo: 'secao', titulo: 'Menus Editar e Exibir', itens: ['Editar: desfazer, colar, localizar', 'Exibir: barras, barra lateral, zoom'] }),
 
-    cena('No menu Editar fica também Registrar alterações, que é o controle de alterações do Writer. Com ele ligado, cada inclusão e cada exclusão fica marcada, para ser aceita ou rejeitada depois. O atalho é Ctrl+Shift+C.',
+    cena('No menu Editar fica também Registrar alterações, que é o controle de alterações do Writer. Com ele ligado, cada inclusão e cada exclusão fica marcada, para ser aceita ou rejeitada depois. Nas versões 7.0 e 7.1, o atalho era Ctrl+Shift+C; da 7.2 em diante, não há atalho padrão.',
       writer('Editar', EDITAR, 'Registrar alterações', 'Equivale ao Controlar Alterações do Word. No Word fica na guia Revisão; no Writer, no menu Editar.')),
 
     cena('Os atalhos do menu Editar. Desfazer é Ctrl+Z e refazer é Ctrl+Y. Selecionar tudo é Ctrl+A. Localizar é Ctrl+F e localizar e substituir é Ctrl+H. Colar especial é Ctrl+Shift+V.',

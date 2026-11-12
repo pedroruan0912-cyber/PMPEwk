@@ -1,6 +1,7 @@
 import { test, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, readFileSync, statSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { renderizarCenas, abrirPalco } from '../src/render.mjs';
@@ -320,4 +321,83 @@ test('um grupo sozinho grande demais continua sendo erro de texto que não cabe'
   const itens = [{ grupo: 'Enorme', itens: Array.from({ length: 40 }, (_, i) => `Comando número ${i + 1}`) }];
   const r = await palco.desenhar(cena({ tipo: 'janela', app: 'word', aba: 'Inserir', itens, destaque: 'Comando número 3' }), meta());
   assert.ok(r.transbordou.includes('faixa de opções'));
+});
+
+// ---------- texto cortado dentro da planilha e da capa (achado da revisão final) ----------
+const planilhaCom = (extra) => ({ tipo: 'planilha', app: 'excel', celulas: {}, em: 'A1', ...extra });
+
+test('texto comprido numa célula comum é texto que não cabe', async () => {
+  const r = await (await p()).desenhar(cena(planilhaCom({ celulas: { B2: 'Texto comprido demais para a célula' } })), meta());
+  assert.ok(r.transbordou.includes('planilha'), JSON.stringify(r.transbordou));
+});
+
+test('resultado mais largo que a célula passa por cima das vizinhas vazias e aparece inteiro', async () => {
+  const palco = await p();
+  const r = await palco.desenhar(cena(planilhaCom({ celulas: { A1: 8 }, em: 'D1', formula: '=OU(A1>=7;A2>=7)', resultado: 'VERDADEIRO' })), meta());
+  assert.deepEqual(r.transbordou, []);
+  const d = await palco.pagina.evaluate(() => {
+    const s = document.querySelector('.celula.ativa span');
+    return { texto: s?.textContent, cortado: s ? s.scrollWidth > s.clientWidth : true };
+  });
+  assert.deepEqual(d, { texto: 'VERDADEIRO', cortado: false });
+});
+
+test('resultado largo com a célula vizinha ocupada é texto que não cabe', async () => {
+  const r = await (await p()).desenhar(cena(planilhaCom({ celulas: { E1: 'ocupada' }, em: 'D1', formula: '=1', resultado: 'VERDADEIRO' })), meta());
+  assert.ok(r.transbordou.includes('planilha'), JSON.stringify(r.transbordou));
+});
+
+test('fórmula digitada na última coluna que passa da grade é texto que não cabe', async () => {
+  const r = await (await p()).desenhar(cena(planilhaCom({ em: 'F1', formula: '=SE(A1>=7;"Aprovado";"Reprovado")' })), meta());
+  assert.ok(r.transbordou.includes('planilha'), JSON.stringify(r.transbordou));
+});
+
+test('título de capa comprido demais é texto que não cabe', async () => {
+  const r = await (await p()).desenhar(cena({ tipo: 'capa', titulo: 'Um título muito comprido '.repeat(8), subtitulo: 'Sub' }), meta());
+  assert.ok(r.transbordou.length > 0);
+});
+
+test('a nota de um atalho aparece embaixo do nome da ação', async () => {
+  const palco = await p();
+  const atalhos = { ...ATALHOS, teste: { nome: 'Ação de teste', office: 'Ctrl+N', libre: 'Ctrl+B', onde: 'geral', nota: 'Só em algumas versões' } };
+  const r = await palco.desenhar(cena({ tipo: 'teclas', acoes: ['teste'] }), meta({ atalhos }));
+  assert.deepEqual(r.transbordou, []);
+  assert.equal(await palco.pagina.evaluate(() => document.querySelector('.linha-tecla .nota-atalho')?.textContent), 'Só em algumas versões');
+});
+
+test('mudar a lista de guias ou menus gera outra imagem para a janela', async () => {
+  const dir = pasta();
+  const a = aula(cena(UMA_DE_CADA[2]));
+  const [um] = await renderizarCenas(a, dir);
+  const abas = { ...ABAS, word: ABAS.word.map((x) => (x === 'Ajuda' ? 'Ajuda e Suporte' : x)) };
+  const [dois] = await renderizarCenas(a, dir, { abas });
+  assert.notEqual(um, dois);
+});
+
+test('sem o Playwright, a mensagem diz o que falta e como resolver', () => {
+  const env = { ...process.env, NODE_PATH: '' };
+  const r = spawnSync(process.execPath, ['--input-type=module', '-e', `await import(${JSON.stringify(new URL('../src/render.mjs', import.meta.url).href)})`], { encoding: 'utf8', env, cwd: tmpdir() });
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /Playwright não encontrado/);
+});
+
+test('atalho de quatro teclas cabe na própria coluna, sem invadir a vizinha', async () => {
+  const palco = await p();
+  const r = await palco.desenhar(cena({ tipo: 'teclas', acoes: ['estilos', 'inserirFuncao'] }), meta());
+  assert.deepEqual(r.transbordou, []);
+  // O fim visível das teclas do Office não pode passar do começo da coluna do LibreOffice.
+  const linhas = await palco.pagina.evaluate(() => [...document.querySelectorAll('.linha-tecla')].map((l) => {
+    const [office, libre] = l.querySelectorAll('.atalho');
+    const fim = Math.max(...[...office.children].map((c) => c.getBoundingClientRect().right), office.getBoundingClientRect().left);
+    return [fim, libre.getBoundingClientRect().left];
+  }));
+  // Folga mínima de 24 px: coladas, as duas colunas parecem um atalho só.
+  for (const [fim, inicio] of linhas) assert.ok(fim + 24 <= inicio, `as teclas do Office terminam em ${fim}, a menos de 24 px da coluna seguinte (${inicio})`);
+});
+
+test('atalho comprido demais para a coluna é texto que não cabe', async () => {
+  const palco = await p();
+  const atalhos = { ...ATALHOS, enorme: { nome: 'Enorme', office: 'Ctrl+Shift+Alt+Ctrl+Shift+Alt+F12', libre: null, onde: 'geral' } };
+  const r = await palco.desenhar(cena({ tipo: 'teclas', acoes: ['enorme'] }), meta({ atalhos }));
+  assert.ok(r.transbordou.includes('teclas'), JSON.stringify(r.transbordou));
 });

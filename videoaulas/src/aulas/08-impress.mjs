@@ -2,10 +2,12 @@ import { cena, pergunta } from './_cenas.mjs';
 
 // Menus do LibreOffice Impress 7 em português, com os comandos que aparecem nas telas desta aula.
 const ARQUIVO = ['Novo', 'Abrir...', 'Documentos recentes', 'Fechar', 'Modelos', 'Salvar', 'Salvar como...', 'Exportar...', 'Exportar como', 'Imprimir...', 'Propriedades...', 'Sair do LibreOffice'];
-const EXIBIR = ['Normal', 'Estrutura de tópicos', 'Notas', 'Organizador de slides', 'Slide mestre', 'Notas mestre', 'Folheto mestre', 'Barras de ferramentas', 'Painel de slides', 'Réguas', 'Barra lateral', 'Navegador', 'Zoom'];
+const EXIBIR = ['Normal', 'Estrutura de tópicos', 'Notas', 'Organizador de slides', 'Slide mestre', 'Notas mestre', 'Folheto mestre', 'Barras de ferramentas', 'Painel de slides', 'Réguas', 'Barra lateral', 'Transição de slides', 'Animação', 'Navegador', 'Zoom'];
 const INSERIR = ['Figura...', 'Áudio ou vídeo...', 'Gráfico...', 'Tabela...', 'Forma', 'Fontwork...', 'Caixa de texto', 'Hiperlink...', 'Caractere especial...', 'Número do slide', 'Campo', 'Cabeçalho e rodapé...'];
 const SLIDE = ['Novo slide', 'Duplicar slide', 'Layout', 'Excluir slide', 'Propriedades do slide...', 'Alterar slide mestre...', 'Novo mestre', 'Ocultar slide', 'Renomear slide', 'Ir para slide', 'Resumo de slides', 'Transição de slides'];
-const APRESENTACAO = ['Iniciar no primeiro slide', 'Iniciar do slide atual', 'Cronometrar', 'Interação...', 'Animação', 'Apresentação de slides personalizada...', 'Configurações da apresentação de slides...'];
+const APRESENTACAO = ['Iniciar no primeiro slide', 'Iniciar do slide atual', 'Cronometrar', 'Apresentação de slides personalizada...', 'Impress Remote', 'Configurações da apresentação de slides...'];
+// Interação fica direto no menu Formatar; Animação e Transição de slides, em Exibir (menus do código-fonte do LibreOffice 7.6).
+const FORMATAR = ['Texto', 'Espaçamento', 'Alinhar texto', 'Listas', 'Limpar formatação direta', 'Caractere...', 'Parágrafo...', 'Marcadores e numeração...', 'Tabela', 'Imagem', 'Interação...', 'Nome...', 'Espelhar', 'Dispor'];
 
 const impress = (aba, itens, destaque, balao) => ({ tipo: 'janela', app: 'impress', aba, itens, ...(destaque ? { destaque } : {}), ...(balao ? { balao } : {}) });
 
@@ -77,15 +79,15 @@ export default {
     cena('O comando Transição de slides, no menu Slide, abre o painel de transições na barra lateral. Lá você escolhe o efeito, a duração, o som e o avanço do slide. Há também o botão para aplicar a transição a todos os slides.',
       impress('Slide', SLIDE, 'Transição de slides', 'Abre o painel de transições na barra lateral. Lá fica Aplicar transição a todos os slides.')),
 
-    cena('O comando Animação, no menu Apresentação de slides, abre o painel de animação. Você seleciona um objeto, clica no botão de adicionar e escolhe o efeito. O painel lista as animações do slide na ordem em que acontecem.',
-      impress('Apresentação de slides', APRESENTACAO, 'Animação', 'Abre o painel Animação na barra lateral, com a lista de efeitos do slide.')),
+    cena('O comando Animação fica no menu Exibir e abre o painel de animação. Você seleciona um objeto, clica no botão de adicionar e escolhe o efeito. O painel lista as animações do slide na ordem em que acontecem.',
+      impress('Exibir', EXIBIR, 'Animação', 'Menu Exibir. Abre o painel Animação na barra lateral, com a lista de efeitos do slide.')),
 
     cena('As categorias são as mesmas: entrada, ênfase, saída e caminhos de movimento, que o PowerPoint chama de trajetórias. E o início também: ao clicar, com o anterior ou após o anterior.',
       { tipo: 'lista', titulo: 'Categorias de animação no Impress', itens: ['Entrada: o objeto aparece', 'Ênfase: destaca o objeto', 'Saída: o objeto some', 'Caminhos de movimento: o objeto percorre um trajeto', 'Início: ao clicar, com o anterior ou após o anterior'] }),
 
     // ---------- Apresentação de slides ----------
     cena('O menu Apresentação de slides controla a exibição para a plateia. Os dois primeiros comandos iniciam a apresentação, e os nomes dizem exatamente de onde.',
-      { tipo: 'secao', titulo: 'Menu Apresentação de slides', itens: ['Iniciar no primeiro slide', 'Iniciar do slide atual', 'Cronometrar', 'Interação', 'Configurações'] }),
+      { tipo: 'secao', titulo: 'Menu Apresentação de slides', itens: ['Iniciar no primeiro slide', 'Iniciar do slide atual', 'Cronometrar', 'Configurações'] }),
 
     cena('Iniciar no primeiro slide é o equivalente ao Do Começo do PowerPoint, e o atalho é a tecla F5.',
       impress('Apresentação de slides', APRESENTACAO, 'Iniciar no primeiro slide', 'Equivale ao Do Começo do PowerPoint. Atalho: F5.')),
@@ -99,8 +101,8 @@ export default {
     cena('Cronometrar serve para ensaiar: você passa os slides e o Impress registra o tempo de cada um. No PowerPoint, o mesmo recurso se chama Testar Intervalos.',
       impress('Apresentação de slides', APRESENTACAO, 'Cronometrar', 'É o Testar Intervalos do PowerPoint: ensaia e registra o tempo de cada slide.')),
 
-    cena('Interação define o que acontece quando alguém clica em um objeto durante a apresentação: ir para outro slide, abrir um documento ou tocar um som. No PowerPoint, o nome é Ação.',
-      impress('Apresentação de slides', APRESENTACAO, 'Interação...', 'É a Ação do PowerPoint: o que acontece ao clicar no objeto.')),
+    cena('Fora deste menu, no menu Formatar, fica a Interação. Ela define o que acontece quando alguém clica em um objeto durante a apresentação: ir para outro slide, abrir um documento ou tocar um som. No PowerPoint, o nome é Ação.',
+      impress('Formatar', FORMATAR, 'Interação...', 'Menu Formatar. É a Ação do PowerPoint: o que acontece ao clicar no objeto.')),
 
     cena('Em Configurações da apresentação de slides você define de qual slide começar, se a exibição é em tela cheia ou em janela, se ela se repete sozinha e em qual monitor aparece.',
       impress('Apresentação de slides', APRESENTACAO, 'Configurações da apresentação de slides...', 'Slide inicial, tela cheia ou janela, repetição automática e monitor.')),
@@ -130,8 +132,8 @@ export default {
     cena('Repare: nas apresentações, quase nada muda de uma suíte para a outra. F5, Shift+F5, Esc e Ctrl+M são iguais. O que muda são os atalhos gerais, como salvar, abrir, novo e negrito.',
       { tipo: 'pegadinha', titulo: 'Poucas teclas mudam nas apresentações', texto: 'F5, Shift+F5, Esc e Ctrl+M são iguais no PowerPoint e no Impress. Mudam os atalhos gerais: salvar, abrir, novo e negrito.' }),
 
-    cena('Resumo. O Impress salva em .odp. Os comandos de slide ficam no menu Slide, e os de exibição para a plateia, no menu Apresentação de slides. Transição e animação são painéis da barra lateral. E guarde os nomes: Organizador de slides, Notas, Cronometrar e Interação.',
-      { tipo: 'lista', titulo: 'Resumo da aula', itens: ['Extensão .odp; modelo .otp', 'Menu Slide: novo, duplicar, layout, ocultar', 'Menu Apresentação de slides: iniciar, cronometrar, interação', 'Transição e animação: painéis da barra lateral', 'Organizador de slides, Notas e Slide mestre: menu Exibir', 'F5 e Shift+F5: iguais aos do PowerPoint'] }),
+    cena('Resumo. O Impress salva em .odp. Os comandos de slide ficam no menu Slide, e os de exibição para a plateia, no menu Apresentação de slides. Animação fica em Exibir, e Interação, em Formatar. E guarde os nomes: Organizador de slides, Notas, Cronometrar e Interação.',
+      { tipo: 'lista', titulo: 'Resumo da aula', itens: ['Extensão .odp; modelo .otp', 'Menu Slide: novo, duplicar, layout, ocultar', 'Menu Apresentação de slides: iniciar e cronometrar', 'Animação: menu Exibir. Interação: menu Formatar', 'Organizador de slides, Notas e Slide mestre: menu Exibir', 'F5 e Shift+F5: iguais aos do PowerPoint'] }),
 
     // ---------- como cai na prova ----------
     cena('Três questões no estilo das bancas sobre o Impress. Repare que elas costumam testar justamente os nomes que mudam.',
@@ -167,13 +169,13 @@ export default {
         'Apresentação de slides > Cronometrar.',
         'Slide > Duplicar slide.',
         'Exibir > Notas.',
-        'Apresentação de slides > Interação.',
+        'Formatar > Interação.',
         'Formatar > Clonar formatação.',
       ],
       correta: 0,
       comentario: 'Cronometrar, no menu Apresentação de slides, equivale ao Testar Intervalos do PowerPoint.',
       falaPergunta: 'Terceira questão. No Impress 7, qual comando permite ensaiar a apresentação registrando o tempo de exibição de cada slide? Pause e escolha.',
-      falaResposta: 'Resposta: letra A, Apresentação de slides, Cronometrar. É o equivalente ao Testar Intervalos do PowerPoint. Interação define o que acontece ao clicar em um objeto.',
+      falaResposta: 'Resposta: letra A, Apresentação de slides, Cronometrar. É o equivalente ao Testar Intervalos do PowerPoint. Interação, no menu Formatar, define o que acontece ao clicar em um objeto.',
     }),
 
     cena('Fim da aula oito. Você já percorreu os seis programas. Na última aula, vamos colocar todos os atalhos lado a lado, suíte contra suíte, e repassar as pegadinhas que mais derrubam candidatos. Até lá!',

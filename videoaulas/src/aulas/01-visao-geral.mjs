@@ -71,11 +71,11 @@ export default {
     cena('E uma suíte abre o arquivo da outra? Abre. O LibreOffice abre e salva os formatos do Office, e o Office 2019 abre e salva os formatos OpenDocument. A formatação pode sofrer pequenas mudanças, mas dizer que os formatos são incompatíveis está errado.',
       { tipo: 'lista', titulo: 'Uma suíte abre o arquivo da outra?', itens: ['O LibreOffice abre e salva .docx, .xlsx e .pptx', 'O Office 2019 abre e salva .odt, .ods e .odp', 'A formatação pode mudar um pouco na conversão', 'Por padrão, cada suíte salva no seu próprio formato'] }),
 
-    cena('As duas suítes geram PDF sem precisar de outro programa. No Office, vá em Arquivo, Exportar, ou use Salvar como e escolha o tipo PDF. No LibreOffice, o caminho é Arquivo, Exportar como, Exportar como PDF. Há também um botão na barra de ferramentas.',
-      { tipo: 'compara', titulo: 'Gerar um PDF', office: ['Arquivo > Exportar > Criar Documento PDF/XPS', 'Ou Arquivo > Salvar como, escolhendo o tipo PDF'], libre: ['Arquivo > Exportar como > Exportar como PDF', 'Ou o botão Exportar diretamente como PDF'] }),
+    cena('As duas suítes geram PDF sem precisar de outro programa. No Office, vá em Arquivo, Exportar, ou use Salvar como e escolha o tipo PDF. No Writer e no Impress, o caminho é Arquivo, Exportar como, Exportar como PDF; no Calc, Arquivo, Exportar como PDF. Há também um botão na barra.',
+      { tipo: 'compara', titulo: 'Gerar um PDF', office: ['Arquivo > Exportar > Criar Documento PDF/XPS', 'Ou Arquivo > Salvar como, escolhendo o tipo PDF'], libre: ['Writer e Impress: Arquivo > Exportar como > Exportar como PDF', 'Calc: Arquivo > Exportar como PDF', 'Ou o botão Exportar diretamente como PDF'] }),
 
     cena('Cuidado com esta. No LibreOffice, o PDF não está na janela Salvar como. Ele fica em Exportar como PDF, no menu Arquivo. No Word é diferente: o PDF aparece tanto em Exportar quanto na lista de tipos do Salvar como.',
-      { tipo: 'pegadinha', titulo: 'No LibreOffice, PDF é em Exportar', texto: 'No LibreOffice, o PDF não aparece na lista de tipos do Salvar como. O comando certo é Arquivo > Exportar como > Exportar como PDF.' }),
+      { tipo: 'pegadinha', titulo: 'No LibreOffice, PDF é em Exportar', texto: 'No LibreOffice, o PDF não aparece na lista de tipos do Salvar como. O comando certo é Exportar como PDF, no menu Arquivo (no Writer e no Impress, dentro de Exportar como).' }),
 
     // ---------- interface ----------
     cena('Agora, a interface, que é a organização da tela. Aqui está a maior diferença visual entre as duas suítes: o Office usa a faixa de opções, e o LibreOffice, por padrão, usa barra de menus e barras de ferramentas.',

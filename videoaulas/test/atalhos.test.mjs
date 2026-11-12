@@ -60,3 +60,24 @@ test('tela preta e tela branca usam ponto e vírgula nas duas suítes', () => {
   assert.deepEqual([ATALHOS.telaPreta.office, ATALHOS.telaPreta.libre], ['.', '.']);
   assert.deepEqual([ATALHOS.telaBranca.office, ATALHOS.telaBranca.libre], [',', ',']);
 });
+
+// Conferido no arquivo de teclas do código-fonte do LibreOffice (Accelerators.xcu, ramos 7.0 a 7.6)
+// e na página de atalhos do Word da Microsoft.
+test('AutoSoma (Alt+=) é atalho do Excel, mas não do Calc 7', () => {
+  assert.deepEqual([ATALHOS.autoSoma.office, ATALHOS.autoSoma.libre], ['Alt+=', null]);
+});
+
+test('registrar alterações com Ctrl+Shift+C só existe no LibreOffice 7.0 e 7.1, e a tabela diz isso', () => {
+  assert.equal(ATALHOS.alteracoes.libre, 'Ctrl+Shift+C');
+  assert.match(ATALHOS.alteracoes.nota ?? '', /7\.0 e 7\.1/);
+});
+
+test('o painel Estilos tem atalho no Word: Ctrl+Alt+Shift+S', () => {
+  assert.equal(ATALHOS.estilos.office, 'Ctrl+Alt+Shift+S');
+});
+
+test('nota, quando existe, é um texto curto', () => {
+  for (const [chave, a] of Object.entries(ATALHOS)) {
+    if (a.nota !== undefined) assert.ok(typeof a.nota === 'string' && a.nota.length > 0 && a.nota.length <= 60, chave);
+  }
+});

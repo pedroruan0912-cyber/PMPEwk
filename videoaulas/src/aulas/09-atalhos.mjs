@@ -70,7 +70,7 @@ export default {
     cena('Por isso Ctrl+L e Ctrl+R enganam. No Writer, alinham à esquerda e à direita. No Word em português, Ctrl+L localiza e Ctrl+R refaz a última ação.',
       { tipo: 'pegadinha', titulo: 'Ctrl+L e Ctrl+R', texto: 'No Writer: alinhar à esquerda e alinhar à direita. No Word em português: localizar e refazer.' }),
 
-    cena('Mais cinco dos editores de texto. Quebra de página é Ctrl+Enter nos dois. As marcas de formatação aparecem com Ctrl+* no Word e Ctrl+F10 no Writer. O controle de alterações é Ctrl+Shift+E no Word e Ctrl+Shift+C no Writer. E Ctrl+M e Ctrl+F12 só têm função no Writer.',
+    cena('Mais cinco dos editores de texto. Quebra de página é Ctrl+Enter nos dois. As marcas de formatação aparecem com Ctrl+* no Word e Ctrl+F10 no Writer. Controlar alterações é Ctrl+Shift+E no Word; no Writer, Ctrl+Shift+C só no 7.0 e 7.1. E limpar formatação e inserir tabela só têm atalho no Writer.',
       teclas('Documento de texto', ['quebraPagina', 'marcas', 'alteracoes', 'limparFormatacao', 'inserirTabela'])),
 
     // ---------- teclas de função ----------
@@ -93,11 +93,11 @@ export default {
     cena('Nas planilhas, a boa notícia é que os atalhos próprios são quase todos iguais no Excel e no Calc.',
       { tipo: 'secao', titulo: 'Planilhas', itens: ['Editar e referência', 'Formatar células', 'Data, filtro e soma', 'Funções'] }),
 
-    cena('Todos estes são iguais. F2 edita a célula. F4 alterna a referência. Ctrl+1 abre Formatar células. Ctrl+; insere a data de hoje. Ctrl+Shift+L liga o filtro. E Alt+= insere a soma.',
-      teclas('Iguais no Excel e no Calc', ['editarCelula', 'refAbsoluta', 'formatarCelulas', 'dataAtual', 'filtro', 'autoSoma'])),
+    cena('Todos estes são iguais. F2 edita a célula. F4 alterna a referência. Ctrl+1 abre Formatar células. Ctrl+; insere a data de hoje. Ctrl+Shift+L liga o filtro. E F9 recalcula.',
+      teclas('Iguais no Excel e no Calc', ['editarCelula', 'refAbsoluta', 'formatarCelulas', 'dataAtual', 'filtro', 'recalcular'])),
 
-    cena('A diferença está em inserir função: Shift+F3 no Excel e Ctrl+F2 no Calc, onde abre o Assistente de funções. Ctrl+PgDn vai para a próxima planilha nos dois. E lembre: negrito na planilha segue a suíte, Ctrl+N no Excel e Ctrl+B no Calc.',
-      teclas('Funções, planilhas e negrito', ['inserirFuncao', 'proximaPlanilha', 'negrito'])),
+    cena('A diferença está em inserir função: Shift+F3 no Excel e Ctrl+F2 no Calc. A AutoSoma, Alt+=, só tem atalho no Excel. Ctrl+PgDn vai para a próxima planilha nos dois. E o negrito segue a suíte: Ctrl+N no Excel e Ctrl+B no Calc.',
+      teclas('O que muda nas planilhas', ['inserirFuncao', 'autoSoma', 'proximaPlanilha', 'negrito'])),
 
     // ---------- apresentações ----------
     cena('Nas apresentações, é mais simples ainda: as teclas próprias são todas iguais no PowerPoint e no Impress.',
@@ -131,8 +131,8 @@ export default {
       { tipo: 'compara', titulo: 'Excel e Calc: as duas diferenças', office: ['Outra planilha: =Planilha2!A1', 'Alça com um número: copia (1, 1, 1)'], libre: ['Outra planilha: =Planilha2.A1', 'Alça com um número: sequência (1, 2, 3)'] },
       'Nas planilhas, duas diferenças. Para citar uma célula de outra planilha, o Excel usa o ponto de exclamação e o Calc usa o ponto. E, ao arrastar a alça de uma célula com um número só, o Excel copia e o Calc faz a sequência.'),
 
-    cena('O PDF. No Office, ele aparece em Arquivo, Exportar, e também na lista de tipos do Salvar como. No LibreOffice, só em Arquivo, Exportar como, Exportar como PDF. Lá, o PDF não está no Salvar como.',
-      { tipo: 'compara', titulo: 'Gerar um PDF', office: ['Arquivo > Exportar', 'Arquivo > Salvar como, tipo PDF'], libre: ['Arquivo > Exportar como > Exportar como PDF', 'Não aparece em Salvar como'] }),
+    cena('O PDF. No Office, ele aparece em Arquivo, Exportar, e também na lista de tipos do Salvar como. No Writer e no Impress, fica em Arquivo, Exportar como, Exportar como PDF; no Calc, direto em Arquivo, Exportar como PDF. Nunca no Salvar como.',
+      { tipo: 'compara', titulo: 'Gerar um PDF', office: ['Arquivo > Exportar', 'Arquivo > Salvar como, tipo PDF'], libre: ['Writer e Impress: Arquivo > Exportar como > Exportar como PDF', 'Calc: Arquivo > Exportar como PDF', 'Não aparece em Salvar como'] }),
 
     cena('E a seleção com o mouse nos editores de texto. Dois cliques selecionam a palavra nos dois programas. Três cliques selecionam o parágrafo no Word, mas só a frase no Writer. No Writer, o parágrafo pede quatro cliques.',
       { tipo: 'compara', titulo: 'Selecionar com o mouse', office: ['Word: dois cliques, a palavra', 'Word: três cliques, o parágrafo'], libre: ['Writer: dois cliques, a palavra', 'Writer: três cliques, a frase', 'Writer: quatro cliques, o parágrafo'] }),
