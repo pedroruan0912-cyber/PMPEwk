@@ -105,3 +105,11 @@ test('linha de comando: pedir uma aula que não existe termina com erro e diz qu
   assert.notEqual(r.status, 0);
   assert.match(r.stderr, /aula 99/);
 });
+
+test('a duração é mostrada em minutos e segundos, sem "8:60"', async () => {
+  const { minutos } = await import('../build.mjs');
+  assert.equal(minutos(539.6), '9:00');
+  assert.equal(minutos(604.3), '10:04');
+  assert.equal(minutos(59.4), '0:59');
+  assert.equal(minutos(480), '8:00');
+});

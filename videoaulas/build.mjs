@@ -20,7 +20,10 @@ const AULAS = join(RAIZ, 'src', 'aulas');
 
 const doisDigitos = (n) => String(n).padStart(2, '0');
 export const nomeDoMp4 = (aula) => `aula-${doisDigitos(aula.n)}-${aula.slug}.mp4`;
-export const minutos = (s) => `${Math.floor(s / 60)}:${doisDigitos(Math.round(s % 60))}`;
+export const minutos = (s) => {
+  const total = Math.round(s); // arredonda antes de separar, para 539,6 s virar 9:00 e não 8:60
+  return `${Math.floor(total / 60)}:${doisDigitos(total % 60)}`;
+};
 
 export async function gerarAula(aula, { dirTrabalho = join(RAIZ, '.trabalho'), dirSaida = RAIZ, gravar, semLimite = false, avisar = () => {} } = {}) {
   const erros = validarAula(aula, ATALHOS);
