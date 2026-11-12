@@ -134,6 +134,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 | 3 | `aula-03-writer.mp4` | Writer 7: os menus um a um, barra lateral, Navegador, estilos, exportar como PDF, registrar alterações e atalhos |
 | 4 | `aula-04-excel.mp4` | Excel 2019: célula e intervalo, operadores, referências relativa e absoluta, alça de preenchimento, as guias, mensagens de erro e atalhos |
 | 5 | `aula-05-calc.mp4` | Calc 7: o que é igual ao Excel, tamanho da planilha, referência a outra planilha, alça de preenchimento, menus Planilha, Dados e Formatar, e atalhos |
+| 6 | `aula-06-funcoes.mp4` | Funções de planilha: SOMA, MÉDIA, MÁXIMO, MÍNIMO, MAIOR, MENOR, MED, MODO, contagens, SE, E, OU, PROCV, arredondamentos, CONCATENAR, HOJE e AGORA, com exemplos resolvidos |
 
 ## Como são feitas
 
