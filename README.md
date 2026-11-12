@@ -131,6 +131,7 @@ Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Micros
 |---|---|---|
 | 1 | `aula-01-visao-geral.mp4` | As duas suítes, programas equivalentes, licença, extensões de arquivo, faixa de opções × menus, comandos de arquivo |
 | 2 | `aula-02-word.mp4` | Word 2019: as guias uma a uma, fonte, parágrafo, estilos, quebras, sumário, mala direta, revisão, modos de exibição e atalhos em português |
+| 3 | `aula-03-writer.mp4` | Writer 7: os menus um a um, barra lateral, Navegador, estilos, exportar como PDF, registrar alterações e atalhos |
 
 ## Como são feitas
 
