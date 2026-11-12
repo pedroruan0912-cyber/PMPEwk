@@ -1,0 +1,156 @@
+/* Palco fixo de 1280×720: faixa de cima (48), conteúdo (540), rodapé com a fala (132). */
+:root{
+  --fundo:#F3F4F6; --tinta:#111827; --suave:#4B5563; --linha:#D1D5DB; --papel:#FFFFFF;
+  --marca:#FFD43B; --marca-borda:#B45309; --marca-fundo:#FFF6CF;
+  --certo:#1C6E45; --certo-fundo:#E2F3E8; --alerta:#B42318; --alerta-fundo:#FDECEA;
+  --office:#D83B01; --libre:#18A303;
+  --app:#2B579A;
+  --ui:"Inter","Liberation Sans",Arial,sans-serif;
+  --mono:"JetBrains Mono","DejaVu Sans Mono",monospace;
+  --doc:"Carlito","Liberation Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;overflow:hidden;background:var(--fundo)}
+/* sem ligaduras: ">=" e "<>" de uma fórmula têm de aparecer como são digitados */
+body{font-family:var(--ui);color:var(--tinta);-webkit-font-smoothing:antialiased;font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0}
+#palco{position:relative;width:1280px;height:720px;display:grid;grid-template-rows:48px 540px 132px}
+
+#topo{background:var(--tinta);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 32px;font-size:20px;font-weight:600;letter-spacing:.01em}
+#topo-cena{font-family:var(--mono);font-weight:500;color:#CBD5E1}
+#conteudo{position:relative;padding:28px 32px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+#rodape{background:var(--papel);border-top:2px solid var(--linha);padding:13px 40px 0;display:flex;align-items:flex-start}
+#fala{font-size:24px;line-height:34px;height:102px;overflow:hidden;width:100%;font-weight:500}
+#progresso{position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--linha)}
+#progresso i{display:block;height:100%;background:var(--app)}
+
+.app-word{--app:#2B579A}.app-excel{--app:#217346}.app-powerpoint{--app:#B7472A}
+.app-writer{--app:#0369A3}.app-calc{--app:#43A047}.app-impress{--app:#D0530F}
+
+h1.titulo{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin-bottom:22px}
+
+/* ---------- capa e seção ---------- */
+.capa{background:var(--tinta);color:#fff;border-radius:18px;height:100%;padding:48px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.capa .rotulo{font-family:var(--mono);font-size:24px;color:var(--marca);margin-bottom:18px;letter-spacing:.04em}
+.capa h1{font-size:60px;line-height:1.08;font-weight:800;letter-spacing:-.02em;max-width:980px}
+.capa p{font-size:28px;line-height:1.35;color:#CBD5E1;margin-top:20px;max-width:900px}
+.capa .faixas{position:absolute;right:0;top:0;bottom:0;display:flex}
+.capa .faixas i{display:block;width:22px;height:100%}
+.secao{height:100%;display:flex;flex-direction:column;justify-content:center;padding-left:28px;border-left:14px solid var(--marca)}
+.secao h1{font-size:54px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.secao ul{list-style:none;display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.secao li{font-size:24px;font-weight:600;background:var(--papel);border:2px solid var(--linha);border-radius:999px;padding:8px 22px}
+
+/* ---------- janela de programa ---------- */
+.com-janela{display:flex;flex-direction:column;gap:16px;height:100%}
+.janela{flex:1;min-height:0;background:var(--papel);border:2px solid #9CA3AF;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(17,24,39,.12)}
+.janela .barra-titulo{height:38px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:20px;font-weight:600}
+.janela.office .barra-titulo{background:var(--app);color:#fff}
+.janela.libre .barra-titulo{background:#E5E7EB;color:var(--tinta);border-bottom:1px solid var(--linha)}
+.janela .barra-titulo .selo{display:inline-block;width:14px;height:14px;border-radius:3px;background:var(--app);margin-right:10px;vertical-align:-1px}
+.janela.office .barra-titulo .selo{background:#fff}
+.janela .controles{font-family:var(--mono);letter-spacing:.5em;font-weight:400}
+.janela .abas{flex:none;display:flex;align-items:stretch;height:44px;padding:0 6px;overflow:hidden;white-space:nowrap}
+.janela.office .abas{background:var(--app)}
+.janela.libre .abas{background:#F3F4F6;border-bottom:1px solid var(--linha)}
+.janela .aba{font-size:20px;padding:0 11px;display:flex;align-items:center;font-weight:500}
+.janela.office .aba{color:#fff}
+.janela.office .aba.ativa{background:var(--papel);color:var(--app);font-weight:700;border-radius:6px 6px 0 0;margin-top:5px}
+.janela.libre .aba.ativa{background:var(--app);color:#fff;font-weight:700}
+.janela .faixa{flex:1;min-height:0;display:flex;align-items:stretch;gap:0;padding:10px 6px 8px;background:#F9FAFB;overflow:hidden}
+.janela .grupo{flex:none;display:flex;flex-direction:column;justify-content:space-between;padding:0 12px;border-right:1px solid var(--linha)}
+.janela .grupo:last-child{border-right:0}
+.janela .grupo-itens{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;max-width:440px}
+.janela .botao-recolhido{display:none;font-size:20px;line-height:26px;padding:6px 8px;border:2px dashed #9CA3AF;border-radius:8px;color:var(--suave);background:var(--papel);white-space:nowrap}
+.janela .grupo.recolhido{justify-content:flex-start;padding:0 6px}
+.janela .grupo.recolhido .grupo-itens,.janela .grupo.recolhido .grupo-nome{display:none}
+.janela .grupo.recolhido .botao-recolhido{display:block}
+.janela .grupo-nome{font-size:20px;color:var(--suave);text-align:center;padding-top:8px;white-space:nowrap}
+.janela .item{font-size:20px;line-height:26px;padding:6px 12px;border:2px solid var(--linha);border-radius:8px;background:var(--papel);white-space:nowrap}
+.janela .item.destaque{background:var(--marca);border-color:var(--marca-borda);font-weight:700;box-shadow:0 0 0 4px rgba(255,212,59,.45)}
+.janela .corpo{flex:1;min-height:0;position:relative;background:#E5E7EB;overflow:hidden}
+.janela .folha{position:absolute;left:50%;top:18px;bottom:-20px;width:520px;margin-left:-260px;background:var(--papel);box-shadow:0 1px 6px rgba(17,24,39,.2);padding:26px 34px}
+.janela .folha i{display:block;height:9px;border-radius:5px;background:#E5E7EB;margin-bottom:14px}
+.janela .menu-aberto{position:absolute;top:0;bottom:12px;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;background:var(--papel);border:2px solid #9CA3AF;border-top:0;border-radius:0 0 8px 8px;box-shadow:0 8px 20px rgba(17,24,39,.22);padding:6px;max-width:calc(100% - 24px)}
+.janela .menu-aberto .item{border:0;border-radius:6px;padding:4px 16px;line-height:26px;min-width:250px;background:transparent}
+.janela .menu-aberto .item.destaque{background:var(--marca);box-shadow:inset 0 0 0 2px var(--marca-borda)}
+.janela .menu-aberto .grupo-nome{text-align:left;padding:6px 16px 2px;font-size:20px;font-weight:700;color:var(--app)}
+.balao{flex:none;max-height:152px;overflow:hidden;background:var(--marca-fundo);border:2px solid var(--marca-borda);border-left-width:10px;border-radius:10px;padding:12px 18px;font-size:23px;line-height:31px}
+.balao b{font-weight:800;margin-right:6px}
+
+/* guia Arquivo do Office: o Backstage toma o lugar da faixa de opções */
+.janela .corpo-backstage{flex:1;min-height:0;display:flex}
+.janela .backstage{background:var(--app);display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;padding:8px 10px;overflow:hidden}
+.janela .backstage .item{background:transparent;border:0;border-radius:6px;color:#fff;padding:3px 18px;line-height:26px;min-width:210px}
+.janela .backstage .item.destaque{background:var(--marca);color:var(--tinta);box-shadow:inset 0 0 0 2px var(--marca-borda)}
+.janela .painel-backstage{flex:1;display:flex;align-items:center;justify-content:center;background:#F9FAFB;color:var(--suave);font-size:22px;font-weight:600}
+
+/* ---------- planilha ---------- */
+.com-planilha{display:flex;gap:20px;height:100%;align-items:stretch}
+.planilha{flex:none;background:var(--papel);border:2px solid #9CA3AF;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(17,24,39,.12);display:flex;flex-direction:column}
+.planilha .barra-titulo{height:38px;display:flex;align-items:center;padding:0 16px;font-size:20px;font-weight:600;background:var(--app);color:#fff}
+.planilha .linha-formula{display:flex;align-items:center;gap:10px;height:50px;padding:0 10px;border-bottom:2px solid var(--linha);background:#F9FAFB}
+.planilha .caixa-nome{font-family:var(--mono);font-size:22px;font-weight:600;width:84px;height:36px;line-height:32px;text-align:center;border:2px solid var(--linha);border-radius:6px;background:var(--papel)}
+.planilha .fx{font-family:var(--doc);font-style:italic;font-size:24px;color:var(--suave)}
+.planilha .barra-formula{flex:1;font-family:var(--mono);font-size:24px;font-weight:600;height:36px;line-height:32px;padding:0 12px;border:2px solid var(--linha);border-radius:6px;background:var(--papel);white-space:nowrap;overflow:hidden}
+.planilha table{border-collapse:collapse;table-layout:fixed;width:816px}
+.planilha th,.planilha td{border:1px solid var(--linha);height:40px;font-size:22px;padding:0 10px;overflow:hidden;white-space:nowrap}
+.planilha th{background:#F3F4F6;color:var(--suave);font-weight:600;text-align:center}
+.planilha th.cab-linha,.planilha th.canto{width:46px}
+.planilha td{width:128px;font-family:var(--doc);font-size:24px}
+.planilha td.num{text-align:right}
+.planilha td.pintada{background:var(--marca-fundo);box-shadow:inset 0 0 0 2px var(--marca-borda)}
+.planilha td.ativa{box-shadow:inset 0 0 0 4px var(--app);font-weight:700}
+.planilha .guias-planilha{flex:1;display:flex;align-items:flex-start;padding:0 12px;background:#F3F4F6;border-top:2px solid var(--linha)}
+.planilha .guias-planilha span{font-size:20px;font-weight:600;padding:5px 18px;background:var(--papel);border:2px solid var(--linha);border-top:0;border-radius:0 0 8px 8px;color:var(--app)}
+/* fórmula sendo digitada: passa por cima das células vizinhas, como no programa */
+.planilha td.sobrepoe{overflow:visible;box-shadow:none;padding:0;position:relative}
+.planilha td.sobrepoe span{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;min-width:100%;padding:0 10px;background:var(--papel);box-shadow:inset 0 0 0 4px var(--app);white-space:nowrap;z-index:1}
+.planilha td.sobrepoe.num span{justify-content:flex-end}
+.planilha td.ativa.formula span{font-family:var(--mono);font-size:21px;font-weight:600;justify-content:flex-start}
+.nota{flex:1;align-self:center;background:var(--marca-fundo);border:2px solid var(--marca-borda);border-left-width:10px;border-radius:10px;padding:16px 18px;font-size:23px;line-height:32px}
+
+/* ---------- teclas ---------- */
+.teclas{width:100%}
+.teclas .cab,.linha-tecla{display:grid;grid-template-columns:1fr 330px 330px;align-items:center;column-gap:16px}
+.teclas .cab{font-size:22px;font-weight:800;padding:0 18px 6px}
+.teclas h1.titulo{margin-bottom:12px}
+.teclas .cab .office{color:var(--office)}.teclas .cab .libre{color:#127A02}
+.linha-tecla{background:var(--papel);border:2px solid var(--linha);border-radius:10px;padding:6px 18px;margin-bottom:6px;min-height:54px}
+.linha-tecla.difere{background:var(--marca-fundo);border-color:var(--marca-borda)}
+.linha-tecla .acao{font-size:24px;font-weight:600;line-height:1.2}
+.linha-tecla .nota-atalho{display:block;font-size:18px;font-weight:500;color:var(--suave);margin-top:2px}
+.atalho{display:flex;align-items:center;gap:6px;font-size:24px;white-space:nowrap}
+.atalho .mais{color:var(--suave);font-weight:700}
+kbd{font-family:var(--mono);font-size:22px;font-weight:600;background:#fff;border:2px solid #6B7280;border-bottom-width:5px;border-radius:8px;padding:3px 10px;min-width:42px;text-align:center}
+.atalho.longo{gap:3px}
+.atalho.longo kbd{font-size:19px;padding:3px 6px;min-width:32px}
+.atalho.longo .mais{font-size:20px}
+.atalho.sem{color:var(--suave);font-weight:700;padding-left:6px}
+
+/* ---------- comparação, lista, pegadinha ---------- */
+.compara .colunas{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.compara .col{background:var(--papel);border:2px solid var(--linha);border-radius:12px;overflow:hidden}
+.compara .col h2{font-size:24px;font-weight:800;color:#fff;padding:10px 20px}
+.compara .col.office h2{background:var(--office)}.compara .col.libre h2{background:#127A02}
+.compara ul,.lista ul{list-style:none}
+.compara li{font-size:24px;line-height:1.3;padding:11px 20px;border-top:1px solid var(--linha)}
+.compara li:first-child{border-top:0}
+.lista li{font-size:27px;line-height:1.3;padding:9px 0 9px 44px;position:relative}
+.lista li::before{content:"";position:absolute;left:8px;top:19px;width:16px;height:16px;border-radius:4px;background:var(--marca);border:2px solid var(--marca-borda)}
+.compara.folgado li{font-size:30px;padding:16px 22px}
+.compara.folgado .col h2{font-size:27px;padding:12px 22px}
+.lista.folgado li{font-size:33px;padding:13px 0 13px 48px}
+.lista.folgado li::before{top:27px;width:18px;height:18px}
+.pegadinha{background:var(--alerta-fundo);border:3px solid var(--alerta);border-radius:16px;padding:30px 36px}
+.pegadinha .rotulo{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--alerta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.pegadinha h1{font-size:38px;line-height:1.15;font-weight:800;margin-bottom:14px}
+.pegadinha p{font-size:28px;line-height:1.4}
+
+/* ---------- questão ---------- */
+.questao .rotulo{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--suave);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.questao .enunciado{font-size:24px;line-height:1.35;font-weight:600;margin-bottom:14px}
+.alternativa{display:flex;align-items:flex-start;gap:14px;font-size:22px;line-height:30px;background:var(--papel);border:2px solid var(--linha);border-radius:10px;padding:7px 14px;margin-bottom:7px}
+.alternativa .letra{flex:none;font-family:var(--mono);font-weight:700;width:34px;height:30px;text-align:center;border-radius:6px;background:#E5E7EB}
+.alternativa.correta{background:var(--certo-fundo);border-color:var(--certo);font-weight:700}
+.alternativa.correta .letra{background:var(--certo);color:#fff}
+.comentario{font-size:22px;line-height:30px;margin-top:10px;padding:8px 14px;border-left:8px solid var(--certo);background:var(--certo-fundo);border-radius:8px}
