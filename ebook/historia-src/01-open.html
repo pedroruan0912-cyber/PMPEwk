@@ -1,0 +1,45 @@
+<div class="page">
+  <header class="top">
+    <h1>Pernambuco em <em>Desenho Animado</em></h1>
+    <p id="resumo">Toda a História de Pernambuco na ordem dos 8 itens do edital de Soldado PMPE 2026 (Instituto AOCP).</p>
+  </header>
+  <div class="layout">
+    <section class="player" id="player" aria-label="Desenho animado">
+      <div class="wrap" id="wrap">
+        <svg id="stage" viewBox="0 0 1280 720" role="img" aria-label="Cena do desenho"></svg>
+        <div class="hud" aria-hidden="true"><span id="hudItem"></span><span id="hudYear"></span></div>
+        <div id="bubbles" aria-hidden="true"></div>
+        <div class="card" id="card" hidden>
+          <h2><b>Cai na prova</b> <small id="cardEp"></small></h2>
+          <ul id="cardFacts"></ul>
+          <div class="trap" id="cardTrap"><b>PEGADINHA DA AOCP</b><span id="cardTrapTxt"></span></div>
+        </div>
+        <div class="title off" id="title" aria-hidden="true">
+          <div class="t-item" id="tItem"></div>
+          <div class="t-year" id="tYear"></div>
+          <div class="t-name" id="tName"></div>
+          <div class="t-ep" id="tEp"></div>
+        </div>
+        <button class="bigplay" id="bigplay" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>
+          <span id="bigplayTxt">Assistir</span>
+        </button>
+      </div>
+      <div class="sub" id="sub" aria-live="polite"><span id="subTxt">Aperte “Assistir”. A narração é falada e também aparece aqui, como legenda.</span></div>
+      <div class="bar" id="bar" aria-label="Episódios"></div>
+      <div class="ctl">
+        <button type="button" id="bPrev" title="Episódio anterior (seta para a esquerda)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.5v14H6zM20 5v14L9.5 12z" fill="currentColor"/></svg><span class="lbl">Anterior</span></button>
+        <button type="button" id="bPlay" class="main" title="Tocar ou pausar (barra de espaço)"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="icPlay" d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg><span id="bPlayTxt">Assistir</span></button>
+        <button type="button" id="bNext" title="Próximo episódio (seta para a direita)"><span class="lbl">Próximo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 5H18v14h-2.5zM4 5v14l10.5-7z" fill="currentColor"/></svg></button>
+        <span class="now" id="now"></span>
+        <span class="sp"></span>
+        <label class="vol" title="Volume da narração"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5v5h3.5L11 19V5L6.5 9.5z" fill="currentColor"/><path d="M14.5 8.5a5 5 0 0 1 0 7M17 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="range" id="vol" min="0" max="100" step="5" value="100" aria-label="Volume da narração"></label>
+        <button type="button" id="bVoice" aria-pressed="true" title="Liga ou desliga a narração em voz alta">Voz ligada</button>
+        <button type="button" id="bSpeed" title="Velocidade">1×</button>
+        <button type="button" id="bFs" title="Tela cheia (tecla F)">Tela cheia</button>
+      </div>
+      <p class="note" id="note">Atalhos: espaço toca e pausa, setas trocam de episódio, F abre a tela cheia.</p>
+    </section>
+    <nav class="eps" id="eps" aria-label="Lista de episódios"><h2>Episódios</h2></nav>
+  </div>
+</div>
