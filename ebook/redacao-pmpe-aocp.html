@@ -325,7 +325,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
     <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
     <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
-    <li><div><a href="#modelos">Redações nota 40</a>: 55 textos de 20 linhas com marcação de cada parte: um para cada tema provável e uma segunda versão para os 13 de chance alta.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: 56 textos de 20 linhas com marcação de cada parte: um para cada tema provável e uma segunda versão para os 13 de chance alta.</div></li>
     <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
   </ol>
   <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
@@ -849,7 +849,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div class="chap-head">
     <span class="eyebrow">Capítulo 10</span>
     <h2>Redações nota 40</h2>
-    <p>55 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo anterior e uma segunda versão, com outra tese e outros repertórios, para os 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
+    <p>56 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo anterior e uma segunda versão, com outra tese e outros repertórios, para os 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
   </div>
   <div class="mod-nav">
     <button class="icon-btn" id="modPrev" type="button" aria-label="Redação anterior">‹</button>
@@ -2581,6 +2581,44 @@ const MODELOS = [
     'A conclusão retoma Kant ("uma sociedade menos violenta"), fechando o texto em círculo.'
   ]
 },
+{
+  id:'m56', curto:'Feminicídio: Estado e sociedade',
+  tema:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio',
+  tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
+  p:[
+    [
+      '{r}A Constituição determina, no artigo 226, que o Estado crie',
+      'mecanismos para coibir a violência no âmbito das relações familiares{/}.',
+      'Contudo, o feminicídio persiste no Brasil, e combatê-lo {t}exige que o',
+      'Estado garanta proteção efetiva e que a sociedade rompa o silêncio{/}.'
+    ],[
+      'Em primeiro lugar, cabe ao Estado tornar a lei uma proteção real.',
+      '{r}A Lei 14.994, de 2024, tornou o feminicídio crime autônomo, com pena',
+      'de 20 a 40 anos{/}, mas a punição chega depois da morte. Nesse sentido,',
+      'medidas protetivas sem fiscalização, poucas delegacias especializadas',
+      'e falta de abrigos deixam a vítima exposta, de modo que muitas mortes',
+      'ocorrem depois de denúncias que não foram acompanhadas.'
+    ],[
+      'Além disso, a sociedade precisa abandonar a cultura do silêncio. O',
+      'ditado "em briga de marido e mulher, ninguém mete a colher" ainda',
+      'faz vizinhos, colegas e familiares ignorarem sinais de agressão.',
+      '{r}Segundo Pierre Bourdieu, a violência simbólica é a dominação aceita',
+      'como natural pelos costumes{/}. Sob essa ótica, quem se cala diante do',
+      'abuso ajuda a manter o ciclo que termina no feminicídio.'
+    ],[
+      'Portanto, Estado e sociedade devem agir juntos. Para isso, {p}o',
+      'governo deve fiscalizar as medidas protetivas e ampliar a rede de',
+      'acolhimento, e a população deve denunciar pelo Ligue 180, a fim de',
+      'interromper a violência antes que ela se torne fatal{/}.'
+    ]
+  ],
+  notas:[
+    'O tema nomeia dois responsáveis, e o texto dá um desenvolvimento a cada um: o D1 trata do Estado; o D2, da sociedade. Falar só de um deles tangenciaria o tema.',
+    'O artigo 226 da Constituição é um repertório preciso: impõe ao próprio Estado o dever de coibir a violência familiar.',
+    'O D1 reconhece o avanço da lei (pena de 20 a 40 anos), mas mostra que punir depois da morte não basta: é preciso prevenir.',
+    'O D2 desmonta um ditado popular, e a proposta dá uma tarefa a cada responsável, com um canal real de denúncia (Ligue 180).'
+  ]
+},
 // ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------
 {
   id:'m43', base:'m1', curto:'Segurança pública',
@@ -3110,6 +3148,9 @@ const REPS = [
  i:'É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à educação, à dignidade e à convivência familiar, protegendo-os de toda forma de negligência, violência e exploração.',
  u:'A Constituição determina, no artigo 227, que crianças e adolescentes têm "absoluta prioridade". Na prática, porém, ...'},
 // ---------- Leis ----------
+{n:'Constituição Federal, art. 226, § 8º', w:'Constituição', t:['mul','vul'],
+ i:'"O Estado assegurará a assistência à família na pessoa de cada um dos que a integram, criando mecanismos para coibir a violência no âmbito de suas relações."',
+ u:'A Constituição determina, no artigo 226, que o Estado crie mecanismos para coibir a violência nas relações familiares. Na prática, porém, ...'},
 {n:'Lei Maria da Penha (Lei 11.340/2006)', w:'Lei', t:['mul'],
  i:'Cria mecanismos para coibir a violência doméstica e familiar contra a mulher e prevê medidas protetivas de urgência. Define cinco formas de violência: física, psicológica, sexual, patrimonial e moral. Desde 2023 (Lei 14.674), prevê também o auxílio-aluguel para vítimas afastadas do lar em situação de vulnerabilidade.',
  u:'A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência para as vítimas. Contudo, ...'},
@@ -3275,6 +3316,9 @@ const REPS = [
 {n:'OMS e trânsito', w:'Dado e fato', t:['tra'],
  i:'Para a Organização Mundial da Saúde, as lesões de trânsito são a principal causa de morte de crianças e jovens de 5 a 29 anos no mundo. A ONU definiu 2021–2030 como a Década de Ação pela Segurança no Trânsito, com meta de reduzir as mortes pela metade.',
  u:'Segundo a OMS, os acidentes de trânsito são a principal causa de morte de jovens de 5 a 29 anos no mundo.'},
+{n:'Ligue 180', w:'Dado e fato', t:['mul'],
+ i:'Central de Atendimento à Mulher: canal gratuito e confidencial para denunciar violência contra a mulher e receber orientação sobre a rede de proteção.',
+ u:'A população deve denunciar a violência contra a mulher pelo Ligue 180, canal gratuito e sigiloso.'},
 {n:'Maio Amarelo e Setembro Amarelo', w:'Dado e fato', t:['tra','sm'],
  i:'Maio Amarelo: movimento de conscientização sobre segurança no trânsito. Setembro Amarelo: campanha de prevenção ao suicídio.',
  u:'Campanhas como o Setembro Amarelo mostram a importância de falar sobre saúde mental, inclusive dentro das corporações policiais.'},
@@ -3397,6 +3441,13 @@ const TEMAS = [
  r:'Robert Peel ("a polícia é o público..."); art. 144 da CF ("responsabilidade de todos"); kobans do Japão; Janelas Quebradas.',
  p:'SDS-PE amplia bases comunitárias com policiais fixos e reuniões periódicas com moradores e escolas.',
  x:'Tema positivo: os argumentos são benefícios. Não escreva só sobre problemas.'},
+{m:'m56', t:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio', c:'mul', h:'alta',
+ tese:'Combater o feminicídio exige que o Estado garanta proteção efetiva e que a sociedade rompa o silêncio diante das agressões.',
+ a1:'Estado: fiscalizar as medidas protetivas e ampliar delegacias especializadas e abrigos. Punir é tarde quando a vítima já morreu.',
+ a2:'Sociedade: abandonar o "em briga de marido e mulher, ninguém mete a colher" e denunciar os sinais de violência.',
+ r:'Art. 226, § 8º, da CF; Lei Maria da Penha; Lei 14.994/2024 (feminicídio, pena de 20 a 40 anos); Bourdieu (violência simbólica); Anuário do FBSP; Ligue 180.',
+ p:'O governo fiscaliza as medidas protetivas e amplia a rede de acolhimento; a população denuncia pelo Ligue 180 ou pelo 190.',
+ x:'Quando o tema nomeia dois responsáveis (Estado e sociedade), dedique um desenvolvimento a cada um. Falar só do Estado tangencia o tema.'},
 {m:'m2', t:'Os desafios para combater a violência contra a mulher no Brasil', c:'mul', h:'alta',
  tese:'A violência persiste devido à cultura machista e à fragilidade da rede de proteção às vítimas.',
  a1:'Cultura machista: posse sobre a companheira, agressão vista como "assunto de casal".',

@@ -1597,6 +1597,44 @@ const MODELOS = [
     'A conclusão retoma Kant ("uma sociedade menos violenta"), fechando o texto em círculo.'
   ]
 },
+{
+  id:'m56', curto:'Feminicídio: Estado e sociedade',
+  tema:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio',
+  tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
+  p:[
+    [
+      '{r}A Constituição determina, no artigo 226, que o Estado crie',
+      'mecanismos para coibir a violência no âmbito das relações familiares{/}.',
+      'Contudo, o feminicídio persiste no Brasil, e combatê-lo {t}exige que o',
+      'Estado garanta proteção efetiva e que a sociedade rompa o silêncio{/}.'
+    ],[
+      'Em primeiro lugar, cabe ao Estado tornar a lei uma proteção real.',
+      '{r}A Lei 14.994, de 2024, tornou o feminicídio crime autônomo, com pena',
+      'de 20 a 40 anos{/}, mas a punição chega depois da morte. Nesse sentido,',
+      'medidas protetivas sem fiscalização, poucas delegacias especializadas',
+      'e falta de abrigos deixam a vítima exposta, de modo que muitas mortes',
+      'ocorrem depois de denúncias que não foram acompanhadas.'
+    ],[
+      'Além disso, a sociedade precisa abandonar a cultura do silêncio. O',
+      'ditado "em briga de marido e mulher, ninguém mete a colher" ainda',
+      'faz vizinhos, colegas e familiares ignorarem sinais de agressão.',
+      '{r}Segundo Pierre Bourdieu, a violência simbólica é a dominação aceita',
+      'como natural pelos costumes{/}. Sob essa ótica, quem se cala diante do',
+      'abuso ajuda a manter o ciclo que termina no feminicídio.'
+    ],[
+      'Portanto, Estado e sociedade devem agir juntos. Para isso, {p}o',
+      'governo deve fiscalizar as medidas protetivas e ampliar a rede de',
+      'acolhimento, e a população deve denunciar pelo Ligue 180, a fim de',
+      'interromper a violência antes que ela se torne fatal{/}.'
+    ]
+  ],
+  notas:[
+    'O tema nomeia dois responsáveis, e o texto dá um desenvolvimento a cada um: o D1 trata do Estado; o D2, da sociedade. Falar só de um deles tangenciaria o tema.',
+    'O artigo 226 da Constituição é um repertório preciso: impõe ao próprio Estado o dever de coibir a violência familiar.',
+    'O D1 reconhece o avanço da lei (pena de 20 a 40 anos), mas mostra que punir depois da morte não basta: é preciso prevenir.',
+    'O D2 desmonta um ditado popular, e a proposta dá uma tarefa a cada responsável, com um canal real de denúncia (Ligue 180).'
+  ]
+},
 // ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------
 {
   id:'m43', base:'m1', curto:'Segurança pública',
