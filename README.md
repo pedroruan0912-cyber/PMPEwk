@@ -83,10 +83,11 @@ Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; man
 
 # Post-its para imprimir
 
-Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada um traz o artigo (ou a regra e o comando, em Raciocínio Lógico e Informática), o resumo, uma pegadinha ou um macete, e as cores separam os assuntos; o último de cada conjunto é um teste de V ou F com as respostas de cabeça para baixo.
+Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada um traz o artigo, o fato histórico, a regra ou o comando, o resumo, uma pegadinha ou um macete, e as cores separam os assuntos; o último de cada conjunto é um teste de V ou F com as respostas de cabeça para baixo.
 
 | Conjunto | Post-its | Imprimir |
 |---|---|---|
+| História de Pernambuco (colonização, açúcar, holandeses, revoltas, República, cultura popular e herança afro) | 48 (8 folhas) | `postits/historia-pernambuco-colorido.pdf` ou `-economico.pdf` |
 | Raciocínio Lógico (proposições, argumentação, diagramas, contagem e probabilidade) | 42 (7 folhas) | `postits/raciocinio-logico-colorido.pdf` ou `-economico.pdf` |
 | Informática (Windows 11, Office 2019, LibreOffice 7, internet, segurança) | 54 (9 folhas) | `postits/informatica-colorido.pdf` ou `-economico.pdf` |
 | Direito Constitucional | 48 (8 folhas) | `postits/direito-constitucional-colorido.pdf` ou `-economico.pdf` |
@@ -104,11 +105,11 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
 | Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
 
-**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 16 conjuntos (86 folhas cada) na ordem do edital, com um marcador por conjunto na barra lateral do leitor de PDF.
+**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 17 conjuntos (94 folhas cada) na ordem do edital, com um marcador por conjunto na barra lateral do leitor de PDF.
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
-Raciocínio Lógico e Informática seguem o conteúdo programático do Edital 001/2026 (Anexo II, cargo de Soldado). Em Informática, os atalhos são os da instalação em português, nas versões que o edital pede: Windows 11, Office 2019 e LibreOffice 7.
+História de Pernambuco, Raciocínio Lógico e Informática seguem o conteúdo programático do Edital 001/2026 (Anexo II, cargo de Soldado). Em Informática, os atalhos são os da instalação em português, nas versões que o edital pede: Windows 11, Office 2019 e LibreOffice 7.
 
 Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024), as Leis 14.811/2024 e 14.994/2024 (feminicídio) e, no abuso de autoridade, a violência institucional (art. 15-A, Lei 14.321/2022), os artigos vetados e a Súmula Vinculante 11 (algemas). Na tortura, entra o novo art. 1º, III (tortura doméstica contra a mulher, Lei 15.410/2026). No Estatuto da Pessoa Idosa, entra a Lei 15.163/2025 (sem Lei 9.099 e maus-tratos com reclusão de 2 a 5 anos). No ECA, entram a Lei Henry Borel, a escuta especializada e a Lei 15.487/2026 (violência sexual em registros). Nos hediondos, o vicaricídio (Lei 15.384/2026). Na Maria da Penha, entram as leis de 2025 e 2026 (tornozeleira, violência vicária, afastamento ampliado, título executivo, retratação só a pedido e 12 meses para representar).
 
