@@ -78,3 +78,23 @@ Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.j
 ```
 
 Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
+
+---
+
+# Post-its para imprimir – Lei de Drogas (Lei 11.343/2006)
+
+36 post-its para colar na parede, em 6 folhas A4 (6 por folha, quadrados de 95 × 90 mm), com as cores por assunto: usuário (amarelo), crimes (rosa), penas (laranja), procedimento (azul), abordagem e STF/STJ (verde), tratamento e revisão (lilás). Cada um traz o artigo, o resumo, uma pegadinha ou um macete; o último é um teste de V ou F com as respostas de cabeça para baixo.
+
+**Imprimir:** `postits/lei-de-drogas-colorido.pdf` ou `postits/lei-de-drogas-economico.pdf` (fundo branco, gasta menos tinta). Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
+
+Inclui o art. 40-A (pena em dobro, Lei 15.358/2026) e o julgamento do STF sobre maconha (RE 635.659, 2024).
+
+## Editar e gerar de novo
+
+O texto fica em `postits/lei-de-drogas.html` (abre no navegador, com botão de imprimir e troca de modo). Depois de editar:
+
+```bash
+node postits/gerar-pdf.js
+```
+
+O script avisa se o texto de algum post-it passar do tamanho do quadrado. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.

@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-its Lei de Drogas</title>
+<style>
+/* Post-its para imprimir em A4: 6 por folha (95 x 90 mm), 36 no total.
+   Cores por assunto. Modo "econômico" (body.eco): fundo branco, só a faixa e a borda coloridas. */
+@font-face{font-family:"Inter PI";src:url("fonts/inter-latin.woff2") format("woff2");font-weight:400 800;font-display:block}
+/* Kalam sem os algarismos (U+0030-0039): no Kalam o "1" parece um "l", então os números caem para a Inter */
+@font-face{font-family:"Kalam PI";src:url("fonts/kalam-700-latin.woff2") format("woff2");font-weight:700;font-display:block;
+  unicode-range:U+0000-002F,U+003A-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215}
+@page{size:A4 portrait;margin:0}
+:root{
+  --f-body:"Inter PI","Inter",Arial,Helvetica,sans-serif;
+  --f-hand:"Kalam PI","Inter PI","Inter",Arial,sans-serif;
+  --ink:#191919; --trap:#C0261F;
+  --desk:#5d636e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--desk);color:var(--ink);font-family:var(--f-body);-webkit-print-color-adjust:exact;print-color-adjust:exact;counter-reset:pi}
+
+/* ---------- barra (só na tela) ---------- */
+.bar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:center;padding:12px 16px;background:#22262d;color:#f2f2f2;font:500 14px/1.4 var(--f-body)}
+.bar b{font-weight:700}
+.bar button{font:600 14px var(--f-body);border:0;border-radius:6px;padding:8px 14px;cursor:pointer;background:#FFE266;color:#191919}
+.bar button.alt{background:#3a404a;color:#f2f2f2}
+.bar small{opacity:.8;font-size:12.5px;max-width:640px;text-align:center}
+
+/* ---------- folha A4 ---------- */
+.sheet{width:210mm;height:297mm;margin:10mm auto;padding:7mm;background:#fff;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:95mm 95mm;grid-template-rows:repeat(3,90.33mm);gap:6mm;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.foot{position:absolute;left:7mm;right:7mm;bottom:2.1mm;display:flex;justify-content:space-between;font:500 6pt var(--f-body);color:#9a9a9a;letter-spacing:.02em}
+@media print{
+  body{background:#fff}
+  .bar{display:none}
+  .sheet{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .sheet:last-of-type{break-after:auto;page-break-after:auto}
+}
+@media screen and (max-width:820px){
+  .sheet{zoom:.45}
+}
+
+/* ---------- post-it ---------- */
+.pi{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--bg);counter-increment:pi}
+.y{--bg:#FFF3A3;--strip:#FFE05C;--acc:#7A5B00;--hl:#FFE05C}
+.p{--bg:#FFD9E5;--strip:#FFB0C8;--acc:#A01E4C;--hl:#FFB8CD}
+.o{--bg:#FFE0BF;--strip:#FFC285;--acc:#9A4300;--hl:#FFC68E}
+.b{--bg:#D3E8FF;--strip:#A6CFFF;--acc:#174A93;--hl:#ACD2FF}
+.g{--bg:#D6F2D6;--strip:#A6E1AA;--acc:#1A6A40;--hl:#ADE3B1}
+.l{--bg:#E8DDFF;--strip:#CBB6FF;--acc:#55349E;--hl:#CFBCFF}
+.n{--bg:#F5F1E8;--strip:#E0D8C6;--acc:#3D3A33;--hl:#E6DFCD}
+.strip{flex:0 0 6.6mm;display:flex;align-items:center;justify-content:space-between;padding:0 3.4mm;background:var(--strip);font:800 6.4pt/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.strip .num::after{content:counter(pi,decimal-leading-zero) " / 36"}
+.body{flex:1;display:flex;flex-direction:column;gap:1.25mm;padding:2.3mm 3.5mm 2.6mm;font:400 9pt/1.3 var(--f-body);min-height:0}
+.k{font:800 6.6pt/1.1 var(--f-body);letter-spacing:.07em;text-transform:uppercase;color:var(--acc)}
+h2{margin:0;font:700 16.5pt/1 var(--f-hand);color:#121212;letter-spacing:-.005em}
+h2 small{font-size:.62em;color:var(--acc)}
+p{margin:0}
+ul,ol{margin:0;padding-left:3.5mm}
+li{margin:0 0 .55mm}
+li::marker{color:var(--acc)}
+ul.plain{list-style:none;padding-left:0}
+b{font-weight:750}
+.hl{background:var(--hl);padding:0 .5mm;border-radius:.5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.big{font:700 13.5pt/1.05 var(--f-hand);color:var(--acc)}
+.big span{display:block;margin-top:.3mm;font:600 8pt var(--f-body);color:var(--ink)}
+.trap,.tip{padding:1.1mm 2mm 1.2mm;background:rgba(255,255,255,.6);font-size:8.4pt;line-height:1.28;margin-top:auto}
+.trap{border-left:1.1mm solid var(--trap)}
+.tip{border-left:1.1mm solid var(--acc)}
+.trap::before,.tip::before{display:block;font:800 6.1pt/1.3 var(--f-body);letter-spacing:.09em}
+.trap::before{content:"PEGADINHA";color:var(--trap)}
+.tip::before{content:"MACETE";color:var(--acc)}
+.tip.mt0,.trap.mt0{margin-top:0}
+.s{font-size:8.4pt;line-height:1.27}
+.xs{font-size:7.1pt;line-height:1.24}
+.muted{color:#55524c}
+.chips{display:flex;flex-wrap:wrap;gap:.9mm}
+.chips span{padding:.35mm 1.3mm;border-radius:.6mm;background:rgba(255,255,255,.7);font-size:8pt}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2mm}
+.box{background:rgba(255,255,255,.6);padding:1.1mm 1.6mm;border-radius:.6mm;font-size:8.1pt;line-height:1.25}
+.box b:first-child{display:block;font:700 10.5pt/1 var(--f-hand);color:var(--acc);margin-bottom:.3mm}
+.mn{display:grid;grid-template-columns:4.2mm 1fr;gap:.45mm 1.2mm;align-items:baseline;font-size:8.2pt;line-height:1.24}
+.mn i{font:800 10.5pt/1 var(--f-body);font-style:normal;color:var(--acc);text-align:center}
+table{border-collapse:collapse;width:100%;font-size:8.2pt;line-height:1.2}
+td,th{padding:.55mm 1mm;text-align:left;vertical-align:top;border-bottom:.2mm solid rgba(0,0,0,.14)}
+th{font:800 6.2pt var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+td.r{white-space:nowrap;font-weight:700}
+.ok{color:#17683D;font-weight:800}
+.no{color:var(--trap);font-weight:800}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:.9mm 2mm;font-size:7.8pt}
+.legend span{display:flex;align-items:center;gap:1.2mm}
+.legend span::before{content:"";width:3.4mm;height:3.4mm;border-radius:.5mm;background:var(--c);border:.2mm solid rgba(0,0,0,.18);flex:none}
+.flow{display:flex;flex-direction:column;gap:.7mm;font-size:8.1pt;line-height:1.24}
+.flow .q{background:rgba(255,255,255,.65);padding:.9mm 1.5mm;border-radius:.6mm}
+.flow .y1{padding-left:3mm}
+.flow .y1::before{content:"SIM ▸ ";font-weight:800;color:var(--acc)}
+.flow .y1.end::before{content:"→ "}
+.flow .n1{font:800 6.4pt var(--f-body);letter-spacing:.06em;color:#6b675f;padding-left:3mm}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:.9mm 2.2mm;font-size:6.9pt;line-height:1.18}
+.nums div{display:flex;flex-direction:column}
+.nums b{font:700 10.6pt/1 var(--f-hand);color:var(--acc)}
+.vf{margin:0;padding-left:4mm;font-size:8.4pt;line-height:1.27}
+.vf li{margin-bottom:.7mm}
+.vf li::after{content:"  ( V )  ( F )";white-space:pre;font-weight:700;color:var(--acc);font-size:7pt}
+.ans{margin-top:auto;transform:rotate(180deg);text-align:center;font:700 7.4pt var(--f-body);color:var(--acc);background:rgba(255,255,255,.6);padding:1mm;border-radius:.6mm}
+.new{display:inline-block;background:var(--trap);color:#fff;font:800 6.2pt/1 var(--f-body);letter-spacing:.08em;padding:.8mm 1.4mm;border-radius:.6mm;vertical-align:middle}
+
+/* ---------- modo econômico ---------- */
+body.eco .pi{background:#fff;outline:.45mm solid var(--strip);outline-offset:-.45mm}
+body.eco .trap,body.eco .tip,body.eco .box,body.eco .chips span,body.eco .flow .q,body.eco .ans{background:#fff;box-shadow:inset 0 0 0 .2mm rgba(0,0,0,.18)}
+body.eco .trap,body.eco .tip{box-shadow:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <button type="button" onclick="window.print()">Imprimir</button>
+  <button type="button" class="alt" id="modo">Trocar para modo econômico</button>
+  <small><b>Na impressão:</b> papel A4, margens <b>Nenhuma</b>, escala <b>100%</b> e <b>Gráficos de fundo</b> ligado. Recorte cada quadrado e cole na parede.</small>
+</div>
+
+<!-- =================== FOLHA 1 =================== -->
+<section class="sheet">
+
+<article class="pi n">
+  <header class="strip"><span>Lei 11.343/2006</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Lei de Drogas: o mapa</h2>
+    <table class="s">
+      <tr><td class="r">1º a 17</td><td>Disposições gerais e SISNAD</td></tr>
+      <tr><td class="r">18 a 26</td><td>Prevenção, atenção e reinserção do usuário</td></tr>
+      <tr><td class="r">27 a 30</td><td>Crime do usuário (art. 28)</td></tr>
+      <tr><td class="r">31 a 47</td><td>Repressão: crimes e penas</td></tr>
+      <tr><td class="r">48 a 59</td><td>Procedimento penal</td></tr>
+      <tr><td class="r">60 a 64</td><td>Bens apreendidos</td></tr>
+    </table>
+    <p class="s"><b>Droga</b> é o que está na <span class="hl">lista da ANVISA</span> (Portaria SVS/MS 344/1998) → os tipos são <b>normas penais em branco heterogêneas</b> (art. 1º, par. único, e art. 66).</p>
+    <p class="s">Bem jurídico: <b>saúde pública</b> · crimes de <b>perigo abstrato</b>.</p>
+    <div class="legend">
+      <span style="--c:#FFF3A3">Usuário</span>
+      <span style="--c:#FFD9E5">Crimes</span>
+      <span style="--c:#FFE0BF">Penas</span>
+      <span style="--c:#D3E8FF">Procedimento</span>
+      <span style="--c:#D6F2D6">Abordagem e STF/STJ</span>
+      <span style="--c:#E8DDFF">Tratamento e revisão</span>
+    </div>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Usuário</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 28</p>
+    <h2>Porte para consumo pessoal</h2>
+    <p><b>5 verbos:</b> <span class="hl">Adquirir · Guardar · Ter em depósito · Transportar · Trazer consigo</span></p>
+    <p><b>Penas (sem prisão):</b> I. <b>A</b>dvertência sobre os efeitos · II. <b>P</b>restação de serviços à comunidade · III. <b>M</b>edida educativa (programa ou curso)</p>
+    <ul class="s">
+      <li>II e III: máximo de <b>5 meses</b>; reincidente: <b>10 meses</b>.</li>
+      <li>Descumpriu? O juiz aplica, nesta ordem: <b>admoestação verbal</b> → <b>multa</b> (§ 6º).</li>
+      <li>Prescrição: <b>2 anos</b> (art. 30).</li>
+      <li>§ 1º: semear, cultivar ou colher para consumo próprio, em pequena quantidade = mesmas medidas.</li>
+    </ul>
+    <p class="tip">"AGT³" (Adquirir, Guardar + 3 T) e penas "A-P-M".</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Usuário</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 28, § 2º</p>
+    <h2>Usuário ou traficante?</h2>
+    <p class="s">Para decidir se era para consumo, o juiz olha:</p>
+    <div class="grid2">
+      <div class="box"><b>O quê</b>natureza e quantidade da substância</div>
+      <div class="box"><b>Onde</b>local e condições em que se deu a ação</div>
+      <div class="box"><b>Quem</b>circunstâncias sociais e pessoais</div>
+      <div class="box"><b>Passado</b>conduta e antecedentes do agente</div>
+    </div>
+    <p class="s"><b>Indícios de tráfico</b> (STF): droga fracionada ou embalada, variedade de drogas, balança, anotações de venda, celular com contatos de compradores.</p>
+    <p class="trap">O art. 28 foi <b>despenalizado</b>, não descriminalizado: continua crime, só não tem prisão (STF, RE 430.105). A exceção é a maconha (post-it 05).</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Usuário · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 48, §§ 1º a 3º</p>
+    <h2>Flagrou o usuário. E agora?</h2>
+    <ul class="s">
+      <li><span class="hl"><b>Não se impõe prisão em flagrante.</b></span></li>
+      <li>O autor vai <b>de imediato ao juízo</b> ou assume o <b>compromisso de comparecer</b>.</li>
+      <li>Lavra-se <b>termo circunstanciado</b> e requisitam-se exames e perícias.</li>
+      <li>Sem juiz disponível: a autoridade policial resolve <b>no local em que estiver</b>, <b>vedada a detenção</b>.</li>
+      <li>Rito do <b>JECrim</b> (Lei 9.099/95), salvo concurso com os crimes dos arts. 33 a 37.</li>
+      <li>STF (ADI 5.637/2022): lei estadual pode autorizar a <b>PM a lavrar o TCO</b>; o termo não é ato de investigação.</li>
+    </ul>
+    <p class="trap">Conduzir o usuário pode. O que não cabe é <b>auto de prisão em flagrante</b> nem mantê-lo preso.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Usuário · STF</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">STF, RE 635.659 · Tema 506 · jun/2024</p>
+    <h2>Maconha para consumo</h2>
+    <p class="s">Portar <b>cannabis</b> para uso próprio <b>não é infração penal</b>: é ilícito <b>administrativo</b>. Há apreensão da droga, advertência e medida educativa, <b>sem efeitos penais</b>.</p>
+    <p class="big">até 40 g ou 6 plantas-fêmeas <span>= presume-se usuário (até o Congresso legislar)</span></p>
+    <ul class="s">
+      <li>Presunção <b>relativa</b>: cabe flagrante por tráfico mesmo <b>abaixo de 40 g</b> se houver sinais de venda (embalagens, balança, variedade, registros, celular). O juiz revisa na audiência de custódia.</li>
+      <li>Acima de 40 g, o juiz ainda pode reconhecer o usuário.</li>
+      <li>Até o CNJ regulamentar: JECrim, sem efeitos penais.</li>
+    </ul>
+    <p class="trap">Vale <b>só para maconha</b>. Cocaína, crack etc.: o art. 28 continua crime.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Achou droga: qual crime?</h2>
+    <div class="flow">
+      <div class="q"><b>1.</b> A droga era para <b>outras pessoas</b> (vender, entregar, fornecer, guardar), mesmo de graça?</div>
+      <div class="y1"><b>Art. 33, tráfico:</b> prisão em flagrante.</div>
+      <div class="n1">NÃO ↓</div>
+      <div class="q"><b>2.</b> Ofereceu <b>de vez em quando</b>, <b>sem lucro</b>, a alguém do <b>convívio</b>, para <b>usarem juntos</b>?</div>
+      <div class="y1"><b>Art. 33, § 3º:</b> TCO (menor potencial ofensivo).</div>
+      <div class="n1">NÃO ↓ · era para consumo próprio</div>
+      <div class="q"><b>3.</b> É <b>maconha</b>?</div>
+      <div class="y1"><b>STF:</b> ilícito administrativo; apreende e notifica para comparecer em juízo.</div>
+      <div class="n1">NÃO ↓ · outra droga</div>
+      <div class="y1 end"><b>Art. 28:</b> TCO, sem prisão em flagrante.</div>
+    </div>
+    <p class="tip">2 ou mais pessoas unidas de forma estável para traficar: some o <b>art. 35</b>.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 1 de 6</span></div>
+</section>
+
+<!-- =================== FOLHA 2 =================== -->
+<section class="sheet">
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33, caput</p>
+    <h2>Tráfico de drogas: 18 verbos</h2>
+    <p class="s">importar · exportar · remeter · preparar · produzir · fabricar · adquirir · vender · expor à venda · oferecer · ter em depósito · transportar · trazer consigo · guardar · prescrever · ministrar · entregar a consumo · fornecer</p>
+    <p class="s">… <span class="hl"><b>ainda que gratuitamente</b></span>, sem autorização ou em desacordo com a lei ou o regulamento.</p>
+    <p class="big">Reclusão de 5 a 15 anos <span>+ 500 a 1.500 dias-multa</span></p>
+    <p class="trap">Dar droga de graça também é tráfico. Adquirir, guardar, ter em depósito, transportar e trazer consigo estão no 28 e no 33: o que decide é a <b>finalidade</b> (consumo próprio × terceiros).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33 · características</p>
+    <h2>Raio-X do tráfico</h2>
+    <ul class="s">
+      <li><b>Tipo misto alternativo:</b> vários verbos no mesmo contexto = <b>um crime só</b>.</li>
+      <li><b>Perigo abstrato:</b> não é preciso provar dano a ninguém.</li>
+      <li><b>Crime permanente</b> em guardar, ter em depósito, trazer consigo, transportar e expor à venda: o flagrante dura enquanto durar a conduta (CPP, art. 303).</li>
+      <li><b>Só doloso.</b> O único culposo da lei é o art. 38.</li>
+      <li><b>Equiparado a hediondo</b> (CF, art. 5º, XLIII): inafiançável e sem graça ou anistia.</li>
+      <li>Competência, em regra, da <b>Justiça Estadual</b>; se transnacional, <b>Federal</b>.</li>
+    </ul>
+    <p class="tip">Permanente = flagrante a qualquer hora, inclusive dentro de casa, desde que haja fundadas razões (post-it 31).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33, § 1º · mesma pena (5 a 15)</p>
+    <h2>Figuras equiparadas</h2>
+    <ol class="s" type="I">
+      <li>Importar, vender, guardar etc. <b>matéria-prima, insumo ou produto químico</b> destinado a preparar drogas.</li>
+      <li><b>Semear, cultivar ou colher</b> plantas que sejam matéria-prima de drogas.</li>
+      <li><b>Utilizar local ou bem</b> de que tem propriedade, posse, administração, guarda ou vigilância, ou <b>consentir</b> que outro o use, mesmo de graça, para o tráfico.</li>
+      <li>Vender ou entregar droga a <b>agente policial disfarçado</b>, havendo indícios de conduta criminal <b>preexistente</b> (Pacote Anticrime).</li>
+    </ol>
+    <p class="trap">Cultivo para <b>consumo próprio</b>, em pequena quantidade → art. 28, § 1º. Cultivo <b>para o tráfico</b> → art. 33, § 1º, II.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33, § 1º, IV · Súmula 145 STF</p>
+    <h2>Agente disfarçado × flagrante preparado</h2>
+    <table>
+      <tr><td class="no">✘</td><td><b>Preparado (provocado):</b> o policial <b>induz</b> alguém a cometer o crime → crime impossível (Súm. 145 STF).</td></tr>
+      <tr><td class="ok">✔</td><td><b>Esperado:</b> a polícia só <b>aguarda</b> o crime acontecer → válido.</td></tr>
+      <tr><td class="ok">✔</td><td><b>Agente disfarçado:</b> o policial se passa por comprador de quem <b>já traficava</b> → válido.</td></tr>
+    </table>
+    <p class="s">Mesmo que a venda ao policial tenha sido provocada, <b>subsiste o tráfico</b> pelo "trazer consigo" ou "ter em depósito" anterior, que é crime permanente (STJ).</p>
+    <p class="tip">Ação controlada (flagrante retardado) na Lei de Drogas exige <b>autorização judicial</b> (post-it 28).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33, §§ 2º e 3º</p>
+    <h2>Induzir × uso compartilhado</h2>
+    <p class="s"><b>§ 2º</b> Induzir, instigar ou auxiliar alguém ao uso de droga: <b>detenção de 1 a 3 anos</b> + 100 a 300 dias-multa. A "Marcha da Maconha" não é crime (STF, ADI 4.274).</p>
+    <p class="s"><b>§ 3º</b> Oferecer droga com os <b>4 requisitos</b>:</p>
+    <div class="chips"><span>☐ eventualmente</span><span>☐ sem objetivo de lucro</span><span>☐ a pessoa do seu relacionamento</span><span>☐ para juntos consumirem</span></div>
+    <p class="s">→ <b>detenção de 6 meses a 1 ano</b> + 700 a 1.500 dias-multa, sem prejuízo das penas do art. 28. Menor potencial ofensivo (TCO).</p>
+    <p class="trap">Faltou <b>um</b> requisito (ex.: cobrou ou ofereceu a desconhecido) → <b>tráfico</b>, art. 33, caput.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes · penas</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 33, § 4º</p>
+    <h2>Tráfico privilegiado</h2>
+    <p class="big">Pena reduzida de 1/6 a 2/3</p>
+    <p class="s"><b>Requisitos cumulativos:</b> <b>P</b>rimário · <b>B</b>ons antecedentes · <b>N</b>ão se dedica a atividades criminosas · <b>N</b>ão integra organização criminosa.</p>
+    <ul class="s">
+      <li>Vale para o caput e o § 1º.</li>
+      <li><span class="hl"><b>NÃO é hediondo</b></span> (STF, HC 118.533; a Súm. 512 do STJ foi cancelada).</li>
+      <li>Cabe <b>pena restritiva de direitos</b> (Resolução 5/2012 do Senado) e regime inicial diferente do fechado.</li>
+      <li>STJ (Tema 1.139): inquéritos e ações penais em curso <b>não</b> impedem o redutor.</li>
+    </ul>
+    <p class="tip">"P-B-N-N": falhou um, não há privilégio.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 2 de 6</span></div>
+</section>
+
+<!-- =================== FOLHA 3 =================== -->
+<section class="sheet">
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 34</p>
+    <h2>Maquinário do tráfico</h2>
+    <p class="s">Fabricar, adquirir, utilizar, transportar, oferecer, vender, distribuir, entregar a qualquer título, possuir, guardar ou fornecer, <b>ainda que gratuitamente</b>, <b>maquinário, aparelho, instrumento ou qualquer objeto</b> destinado à fabricação, preparação, produção ou transformação de drogas.</p>
+    <p class="big">Reclusão de 3 a 10 anos <span>+ 1.200 a 2.000 dias-multa</span></p>
+    <ul class="s">
+      <li>STJ: petrechos apreendidos <b>no mesmo contexto</b> do tráfico (balança, embalagens) → o art. 34 é <b>absorvido</b> pelo art. 33.</li>
+      <li>Concurso de crimes só se houver autonomia (ex.: um laboratório montado).</li>
+    </ul>
+    <p class="trap">Inafiançável e com as vedações do art. 44, como o tráfico.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 35</p>
+    <h2>Associação para o tráfico</h2>
+    <p class="s">Associarem-se <span class="hl"><b>2 ou mais pessoas</b></span> para praticar, <b>reiteradamente ou não</b>, os crimes dos arts. 33 (caput e § 1º) e 34. Mesma pena para quem se associa para praticar, de forma reiterada, o art. 36 (par. único).</p>
+    <p class="big">Reclusão de 3 a 10 anos <span>+ 700 a 1.200 dias-multa</span></p>
+    <ul class="s">
+      <li>Exige vínculo <b>estável e permanente</b> (STJ). Encontro ocasional é só concurso de agentes.</li>
+      <li><b>Não é hediondo</b> (STJ).</li>
+      <li>Concurso <b>material</b> com o tráfico (33 + 35).</li>
+    </ul>
+    <p class="tip"><b>2-3-4:</b> associação para o tráfico, 2 · associação criminosa (CP, art. 288), 3 · organização criminosa (Lei 12.850), 4.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 36 e 37</p>
+    <h2>Financiador e informante</h2>
+    <p class="s"><b>Art. 36:</b> <b>financiar ou custear</b> os crimes dos arts. 33 (caput e § 1º) e 34.</p>
+    <p class="big">Reclusão de 8 a 20 anos <span>+ 1.500 a 4.000 dias-multa: a maior pena da lei</span></p>
+    <p class="s muted">STJ: quem financia <b>e também</b> trafica responde pelo art. 33 com a majorante do art. 40, VII, e não pelo art. 36.</p>
+    <p class="s"><b>Art. 37:</b> colaborar, <b>como informante</b>, com grupo, organização ou associação dedicados aos arts. 33 e 34 ("olheiro", "fogueteiro").</p>
+    <p class="big">Reclusão de 2 a 6 anos <span>+ 300 a 700 dias-multa</span></p>
+    <p class="trap">Se o informante <b>integra</b> a associação, responde pelo art. 35. O art. 37 é subsidiário (STJ).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Crimes</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 38 e 39</p>
+    <h2>Culposo e embarcação/aeronave</h2>
+    <p class="s"><b>Art. 38:</b> prescrever ou ministrar <b>culposamente</b> droga a quem não precisa, em dose excessiva ou em desacordo com a norma: <b>detenção de 6 meses a 2 anos</b> + 50 a 200 dias-multa. O juiz comunica a condenação ao conselho federal da profissão.</p>
+    <p class="s muted"><span class="hl">Único crime culposo da lei.</span> Se for doloso, é o art. 33.</p>
+    <p class="s"><b>Art. 39:</b> conduzir <b>embarcação ou aeronave</b> após consumir droga, expondo outros a dano potencial: <b>detenção de 6 meses a 3 anos</b> + apreensão do veículo + cassação da habilitação + 200 a 400 dias-multa. Se for <b>transporte coletivo de passageiros</b>: <b>4 a 6 anos</b>.</p>
+    <p class="tip">Barco e avião → Lei de Drogas. Carro e moto → CTB, art. 306.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tabela das penas</h2>
+    <table>
+      <tr><th>Art.</th><th>Crime</th><th>Pena</th></tr>
+      <tr><td class="r">28</td><td>Usuário</td><td>advertência · serviços · medida educativa</td></tr>
+      <tr><td class="r">33</td><td>Tráfico (caput e § 1º)</td><td class="r">R 5 a 15</td></tr>
+      <tr><td class="r">33 § 2º</td><td>Induzir ao uso</td><td class="r">D 1 a 3</td></tr>
+      <tr><td class="r">33 § 3º</td><td>Uso compartilhado</td><td class="r">D 6 m a 1</td></tr>
+      <tr><td class="r">34</td><td>Maquinário</td><td class="r">R 3 a 10</td></tr>
+      <tr><td class="r">35</td><td>Associação</td><td class="r">R 3 a 10</td></tr>
+      <tr><td class="r">36</td><td>Financiar</td><td class="r">R 8 a 20</td></tr>
+      <tr><td class="r">37</td><td>Informante</td><td class="r">R 2 a 6</td></tr>
+      <tr><td class="r">38</td><td>Culposo</td><td class="r">D 6 m a 2</td></tr>
+      <tr><td class="r">39</td><td>Embarcação/aeronave</td><td class="r">D 6 m a 3</td></tr>
+    </table>
+    <p class="tip mt0">R = reclusão (33 caput a 37). D = detenção (§§ 2º e 3º, 38 e 39). Anos, salvo "m" (meses).</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 40 · crimes dos arts. 33 a 37</p>
+    <h2>Majorantes: + 1/6 a 2/3</h2>
+    <div class="mn">
+      <i>T</i><span><b>I.</b> Transnacionalidade</span>
+      <i>F</i><span><b>II.</b> Função pública ou missão de educação, poder familiar, guarda ou vigilância</span>
+      <i>L</i><span><b>III.</b> Locais: presídios, escolas, hospitais, entidades estudantis, sociais, culturais, recreativas, esportivas ou beneficentes, trabalho coletivo, espetáculos, unidades militares ou policiais, transporte público</span>
+      <i>A</i><span><b>IV.</b> Arma de fogo, violência, grave ameaça ou intimidação difusa ou coletiva</span>
+      <i>I</i><span><b>V.</b> Interestadual (entre Estados ou com o DF)</span>
+      <i>C</i><span><b>VI.</b> Criança, adolescente ou pessoa com entendimento diminuído</span>
+      <i>F</i><span><b>VII.</b> Financiar ou custear o crime</span>
+    </div>
+    <p class="tip">"<b>T</b>io <b>F</b>ábio <b>L</b>eva <b>A</b>rma: <b>I</b>sso <b>C</b>hoca a <b>F</b>amília!"</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 3 de 6</span></div>
+</section>
+
+<!-- =================== FOLHA 4 =================== -->
+<section class="sheet">
+
+<article class="pi o">
+  <header class="strip"><span>Penas · STF/STJ</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 40 na jurisprudência</p>
+    <h2>Majorantes que caem na prova</h2>
+    <ul class="s">
+      <li><b>Súm. 587 STJ:</b> no tráfico <b>interestadual</b>, não precisa cruzar a divisa; basta a intenção inequívoca de levar a droga a outro Estado.</li>
+      <li><b>Súm. 607 STJ:</b> no <b>transnacional</b>, não precisa cruzar a fronteira; basta provar a destinação internacional.</li>
+      <li><b>Transporte público:</b> só incide se a droga é <b>vendida dentro</b> do ônibus ou metrô. Usá-lo só para levar a droga não basta (STF e STJ).</li>
+      <li><b>Competência:</b> transnacional → <b>Justiça Federal</b> (art. 70). Interestadual e os demais → <b>Justiça Estadual</b> (Súm. 522 STF).</li>
+    </ul>
+    <p class="trap">Interestadual <b>não</b> leva o caso para a Justiça Federal.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas · <span class="new">Novidade 2026</span></span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 40-A · incluído pela Lei 15.358/2026</p>
+    <h2>Pena em dobro</h2>
+    <p class="s">A Lei 15.358, de 24/03/2026 (marco legal do combate ao crime organizado), criou o art. 40-A:</p>
+    <p class="s">As penas dos <b>arts. 33 a 37</b> são aplicadas <span class="hl"><b>em dobro</b></span> se o crime for praticado por integrante de <b>organização criminosa ultraviolenta, grupo paramilitar ou milícia privada</b>, ligado à atuação desses grupos.</p>
+    <p class="s"><b>Par. único:</b> com emprego de <b>arma de fogo</b>, aplica-se o <b>concurso material</b> (CP, art. 69) com o crime de arma, mesmo que ela não esteja ligada ao tráfico.</p>
+    <p class="big">Art. 40: + 1/6 a 2/3 · Art. 40-A: × 2</p>
+    <p class="trap">Confira no edital até que data a legislação é cobrada e leia a redação no site do Planalto. A mesma lei mudou a progressão de regime (LEP, art. 112).</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 41 a 43</p>
+    <h2>Colaboração, dosimetria e multa</h2>
+    <p class="s"><b>Art. 41, colaboração premiada:</b> indiciado ou acusado que colabora <b>voluntariamente</b> na identificação dos coautores ou partícipes <b>e</b> na recuperação, total ou parcial, do produto do crime.</p>
+    <p class="big">Redução de 1/3 a 2/3</p>
+    <p class="s"><b>Art. 42:</b> na dosimetria, <b>preponderam</b> sobre o art. 59 do CP: <span class="hl">natureza e quantidade</span> da droga, <span class="hl">personalidade</span> e <span class="hl">conduta social</span>.</p>
+    <p class="s"><b>Art. 43:</b> dia-multa de <b>1/30 a 5 vezes</b> o maior salário mínimo. Pode chegar ao <b>décuplo</b> se for ineficaz. Em concurso de crimes, as multas são sempre <b>cumulativas</b>.</p>
+    <p class="tip">Art. 42 = "NQ-PC": Natureza, Quantidade, Personalidade, Conduta social.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 44 · arts. 33 (caput e § 1º) e 34 a 37</p>
+    <h2>Vedações: a lei não "FISGA"</h2>
+    <div class="mn">
+      <i>F</i><span><b>Fiança</b>: são inafiançáveis</span>
+      <i>I</i><span><b>Indulto</b></span>
+      <i>S</i><span><b>Sursis</b> (suspensão condicional da pena)</span>
+      <i>G</i><span><b>Graça</b></span>
+      <i>A</i><span><b>Anistia</b></span>
+    </div>
+    <p class="s"><b>O STF derrubou, então CABE:</b></p>
+    <ul class="s plain">
+      <li><span class="ok">✔</span> <b>liberdade provisória</b> (HC 104.339; RE 1.038.925, Tema 959);</li>
+      <li><span class="ok">✔</span> <b>conversão em restritivas de direitos</b> (HC 97.256; Resolução 5/2012 do Senado).</li>
+    </ul>
+    <p class="tip mt0">Livramento condicional: após <b>2/3</b> da pena, <b>vedado ao reincidente específico</b> (par. único).</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>É hediondo?</h2>
+    <table>
+      <tr><td class="ok">✔</td><td><b>Tráfico</b>, art. 33, caput e § 1º: equiparado a hediondo (CF, art. 5º, XLIII)</td></tr>
+      <tr><td class="no">✘</td><td><b>Tráfico privilegiado</b>, § 4º (STF, HC 118.533)</td></tr>
+      <tr><td class="no">✘</td><td><b>Associação para o tráfico</b>, art. 35 (STJ)</td></tr>
+      <tr><td class="no">✘</td><td><b>Uso compartilhado</b>, § 3º (menor potencial ofensivo)</td></tr>
+      <tr><td class="no">✘</td><td><b>Usuário</b>, art. 28 (nem pena de prisão tem)</td></tr>
+    </table>
+    <p class="s">Regime inicial <b>fechado obrigatório</b> é inconstitucional (STF, HC 111.840): o regime segue o art. 33 do CP.</p>
+    <p class="trap">Progressão de regime: os percentuais da LEP (art. 112) foram alterados pela Lei 15.358/2026. Use uma tabela atualizada.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Penas</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 45 a 47</p>
+    <h2>Dependência e imputabilidade</h2>
+    <ul class="s">
+      <li><b>Art. 45, isento de pena:</b> quem, por <b>dependência</b> ou sob <b>efeito</b> de droga vindo de <b>caso fortuito ou força maior</b>, era <b>inteiramente incapaz</b> de entender o caráter ilícito do fato ou de se determinar, <b>em qualquer infração penal</b>. O juiz pode encaminhá-lo a tratamento.</li>
+      <li><b>Art. 46:</b> capacidade só <b>reduzida</b> → pena reduzida de <b>1/3 a 2/3</b>.</li>
+      <li><b>Art. 47:</b> se uma avaliação atestar a necessidade, o juiz, na sentença condenatória, <b>determina o tratamento</b>.</li>
+    </ul>
+    <p class="trap">A <b>dependência</b> isenta mesmo que o uso tenha começado por vontade própria. Já o simples <b>efeito</b> da droga só isenta se veio de caso fortuito ou força maior.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 4 de 6</span></div>
+</section>
+
+<!-- =================== FOLHA 5 =================== -->
+<section class="sheet">
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 50, caput e §§ 1º e 2º</p>
+    <h2>Flagrante e laudos</h2>
+    <ul class="s">
+      <li>Prisão em flagrante: comunicação <b>imediata ao juiz</b>, com cópia do auto, que dá <b>vista ao MP em 24 h</b>.</li>
+      <li><b>Laudo de constatação</b> (provisório): basta para lavrar o auto de prisão em flagrante e estabelecer a materialidade. Feito por <b>perito oficial</b> ou, na falta, por <b>pessoa idônea</b>.</li>
+      <li>O perito do laudo provisório <b>pode</b> fazer o definitivo (§ 2º).</li>
+      <li>Para condenar, em regra, é preciso o <b>laudo toxicológico definitivo</b>; o provisório só basta em casos excepcionais, com o mesmo grau de certeza (STJ).</li>
+    </ul>
+    <p class="trap">"Pessoa idônea" só <b>na falta de perito oficial</b>, e só no laudo de constatação.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 32, 50 (§§ 3º a 5º) e 50-A</p>
+    <h2>Destruição da droga: 10 · 15 · 30</h2>
+    <ul class="s">
+      <li><b>Com flagrante:</b> em <b>10 dias</b> o juiz certifica o laudo de constatação e manda destruir. O delegado executa em <b>15 dias</b>, na presença do MP e da autoridade sanitária, guardando amostra para o laudo definitivo. O local é vistoriado antes e depois.</li>
+      <li><b>Sem flagrante:</b> incineração em até <b>30 dias</b> da apreensão, guardada amostra (art. 50-A).</li>
+      <li><b>Plantações ilícitas:</b> destruídas <b>imediatamente pelo delegado</b>, que recolhe amostra para perícia e lavra auto de levantamento (art. 32).</li>
+    </ul>
+    <p class="tip">Terra com cultivo ilegal → <b>expropriação sem indenização</b>, para reforma agrária e habitação popular (CF, art. 243).</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 51 e 52</p>
+    <h2>Prazo do inquérito</h2>
+    <p class="big">Preso: 30 dias · Solto: 90 dias</p>
+    <p class="s">Podem ser <b>duplicados</b> pelo juiz, ouvido o MP, mediante pedido justificado do delegado (→ 60 e 180 dias).</p>
+    <table>
+      <tr><th>Regra</th><th>Preso</th><th>Solto</th></tr>
+      <tr><td>CPP</td><td class="r">10</td><td class="r">30</td></tr>
+      <tr><td>Justiça Federal</td><td class="r">15 + 15</td><td class="r">30</td></tr>
+      <tr><td><b>Lei de Drogas</b></td><td class="r">30 (×2)</td><td class="r">90 (×2)</td></tr>
+    </table>
+    <p class="s"><b>Art. 52:</b> no relatório, o delegado <b>justifica a classificação</b> do delito (natureza e quantidade da droga, local, condições, circunstâncias da prisão, conduta, qualificação e antecedentes) ou pede a devolução para diligências.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 53</p>
+    <h2>Infiltração e ação controlada</h2>
+    <p class="s">Em qualquer fase da persecução, com <span class="hl"><b>autorização judicial</b></span> e ouvido o MP:</p>
+    <ol class="s" type="I">
+      <li><b>Infiltração</b> por agentes de polícia, em tarefas de investigação, pelos órgãos especializados.</li>
+      <li><b>Ação controlada:</b> a polícia <b>não atua</b> sobre os portadores de drogas ou precursores que estejam no Brasil, para identificar e responsabilizar <b>mais integrantes</b> do tráfico. Requisito: conhecer o <b>itinerário provável</b> e a identificação dos agentes ou colaboradores.</li>
+    </ol>
+    <p class="trap">Lei de Drogas: ação controlada exige <b>AUTORIZAÇÃO</b> judicial. Lei 12.850 (organização criminosa): basta <b>COMUNICAÇÃO</b> prévia ao juiz.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 54 a 58</p>
+    <h2>O rito na Justiça</h2>
+    <ol class="s">
+      <li><b>MP, 10 dias:</b> pede arquivamento, requisita diligências ou denuncia (até <b>5 testemunhas</b>).</li>
+      <li><b>Defesa prévia:</b> antes de receber a denúncia, o juiz <b>notifica</b> o acusado para responder por escrito em <b>10 dias</b> (até 5 testemunhas). Sem resposta, nomeia defensor.</li>
+      <li>O juiz decide em <b>5 dias</b> se recebe a denúncia.</li>
+      <li><b>Audiência em 30 dias</b> (90 dias se houver exame de dependência).</li>
+      <li><b>Debates:</b> 20 minutos para cada parte, prorrogáveis por mais 10.</li>
+    </ol>
+    <p class="trap">A lei põe o interrogatório no início, mas o STF (HC 127.900) mandou fazê-lo <b>no final</b> da instrução.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Procedimento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 60 a 64 · CF, art. 243</p>
+    <h2>Bens apreendidos</h2>
+    <ul class="s">
+      <li>A apreensão de veículos, embarcações, aeronaves e objetos usados no crime é comunicada de imediato ao juiz, que pode determinar a <b>alienação antecipada</b> (exceto armas).</li>
+      <li><b>Art. 62:</b> comprovado o interesse público, os órgãos de polícia <b>judiciária, militar e rodoviária</b> podem <b>usar</b> os bens, sob sua responsabilidade e para conservá-los, com <b>autorização judicial</b>, ouvido o MP e feita avaliação prévia.</li>
+      <li>Todo bem de valor econômico apreendido em decorrência do tráfico é <b>confiscado</b> (CF, art. 243, par. único).</li>
+      <li>STF (Tema 647): o confisco não exige habitualidade, uso reiterado nem adaptação do bem para esconder droga.</li>
+    </ul>
+    <p class="tip">A PM pode usar o carro apreendido? <b>Sim</b>, com autorização do juiz.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 5 de 6</span></div>
+</section>
+
+<!-- =================== FOLHA 6 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Abordagem · STF</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">CF, art. 5º, XI · STF, RE 603.616 (Tema 280)</p>
+    <h2>Entrar na casa sem mandado</h2>
+    <ul class="s">
+      <li>Guardar ou ter droga em depósito é crime <b>permanente</b>: há flagrante enquanto a droga está na casa (de dia ou à noite).</li>
+      <li><b>STF:</b> a entrada só é lícita com <span class="hl"><b>fundadas razões</b></span>, justificadas <b>depois</b>, de que há flagrante dentro da casa. Sem elas: responsabilidade disciplinar, civil e penal do agente e <b>nulidade das provas</b>.</li>
+      <li><b>STJ:</b> denúncia anônima, "atitude suspeita" ou fuga ao ver a viatura, <b>isoladamente</b>, não bastam.</li>
+      <li><b>Consentimento</b> do morador: livre e comprovado (STJ, HC 598.051: por escrito e, se possível, gravado).</li>
+    </ul>
+    <p class="tip">Fundadas razões <b>antes</b> de entrar, justificativa <b>depois</b>.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Abordagem · STF/STJ</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">CPP, arts. 240, § 2º, e 244</p>
+    <h2>Busca pessoal e em veículo</h2>
+    <ul class="s">
+      <li>Sem mandado, só com <span class="hl"><b>fundada suspeita</b></span>: elementos <b>objetivos e concretos</b> de que a pessoa leva arma, droga ou objeto de crime.</li>
+      <li>Não bastam "atitude suspeita", nervosismo ou intuição do policial (STJ, RHC 158.580/2022).</li>
+      <li>É <b>proibida</b> a busca motivada por raça, sexo, orientação sexual, cor da pele ou aparência física (STF, HC 208.240/2024).</li>
+      <li>Busca em <b>veículo</b> equivale à busca pessoal e dispensa mandado, salvo quando o veículo serve de <b>moradia</b> (ex.: trailer, cabine usada para pernoite).</li>
+    </ul>
+    <p class="trap">Prova obtida em busca ilegal é <b>ilícita</b>, assim como as que dela derivam.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>STF/STJ</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Súmulas e teses-relâmpago</h2>
+    <ul class="s">
+      <li><b>Súm. 501 STJ:</b> a Lei 11.343 retroage se, <b>por inteiro</b>, for mais benéfica que a Lei 6.368/76. É vedada a <b>combinação de leis</b>.</li>
+      <li><b>Súm. 630 STJ:</b> a atenuante da confissão no tráfico exige admitir a <b>traficância</b>; dizer "era para uso" não serve.</li>
+      <li><b>Súm. 711 STF:</b> a lei mais grave se aplica ao crime <b>permanente</b> se entrou em vigor antes de cessar a permanência.</li>
+      <li><b>STJ:</b> condenação anterior pelo art. 28 <b>não gera reincidência</b>.</li>
+      <li><b>STJ:</b> importar poucas <b>sementes de maconha</b> é fato atípico (a semente não tem THC).</li>
+      <li><b>STJ:</b> cabe <b>salvo-conduto</b> (habeas corpus preventivo) para cultivo de cannabis com fins medicinais e prescrição médica.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Tratamento</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 23-A · Lei 13.840/2019</p>
+    <h2>Internação do dependente</h2>
+    <ul class="s">
+      <li>Só quando os recursos extra-hospitalares forem insuficientes, em <b>unidade de saúde ou hospital geral</b>. É vedada em comunidade terapêutica.</li>
+      <li><b>Voluntária:</b> com consentimento do dependente (declaração escrita).</li>
+      <li><b>Involuntária:</b> sem consentimento, a pedido de <b>familiar ou responsável legal</b> ou, na falta deles, de servidor da saúde, da assistência social ou de órgão do SISNAD, <span class="hl"><b>exceto da segurança pública</b></span>. Exige decisão formalizada por médico e dura no máximo <b>90 dias</b>. A família pode pedir a interrupção a qualquer tempo.</li>
+      <li>Internações e altas são informadas ao MP, à Defensoria e aos órgãos de fiscalização em até <b>72 h</b>.</li>
+    </ul>
+    <p class="trap">O <b>policial não pode</b> pedir a internação involuntária.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Números da Lei de Drogas</h2>
+    <div class="nums">
+      <div><b>5 / 10 meses</b>serviços e medida educativa (reincidente: 10)</div>
+      <div><b>2 anos</b>prescrição do art. 28</div>
+      <div><b>40 g / 6 plantas</b>presunção de usuário de maconha (STF)</div>
+      <div><b>5 a 15 anos</b>tráfico (art. 33)</div>
+      <div><b>1/6 a 2/3</b>reduz no privilegiado; aumenta no art. 40</div>
+      <div><b>× 2</b>art. 40-A (Lei 15.358/2026)</div>
+      <div><b>1/3 a 2/3</b>colaboração (art. 41) e semi-imputável (art. 46)</div>
+      <div><b>2/3</b>livramento condicional</div>
+      <div><b>24 h</b>vista do flagrante ao MP</div>
+      <div><b>10 · 15 · 30 dias</b>destruição da droga</div>
+      <div><b>30 / 90 dias</b>inquérito, preso / solto (×2)</div>
+      <div><b>10 dias</b>denúncia e defesa prévia (até 5 testemunhas)</div>
+      <div><b>72 h / 90 dias</b>aviso e prazo máximo da internação involuntária</div>
+      <div><b>2 · 3 · 4</b>pessoas: associação p/ tráfico · associação criminosa · organização criminosa</div>
+    </div>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Teste relâmpago: V ou F?</h2>
+    <ol class="vf">
+      <li>O usuário flagrado com cocaína para consumo deve ser preso em flagrante.</li>
+      <li>A associação para o tráfico exige no mínimo 3 pessoas.</li>
+      <li>O tráfico privilegiado não é crime hediondo.</li>
+      <li>Dar droga de graça a um desconhecido é tráfico.</li>
+      <li>Na Lei de Drogas, a ação controlada dispensa autorização judicial.</li>
+      <li>Com o indiciado preso, o inquérito tem 30 dias, que podem ser duplicados.</li>
+      <li>O policial militar pode pedir a internação involuntária do dependente.</li>
+      <li>Usar o ônibus só para levar a droga já gera a majorante do transporte público.</li>
+    </ol>
+    <p class="ans">Respostas: 1F (TCO) · 2F (2) · 3V · 4V · 5F (exige) · 6V · 7F · 8F</p>
+  </div>
+</article>
+
+<div class="foot"><span>Lei de Drogas · post-its PMPE 2026</span><span>folha 6 de 6</span></div>
+</section>
+
+<script>
+(function(){
+  var b=document.getElementById('modo');
+  function set(eco){document.body.classList.toggle('eco',eco);b.textContent=eco?'Trocar para modo colorido':'Trocar para modo econômico';}
+  b.addEventListener('click',function(){set(!document.body.classList.contains('eco'));});
+  if(/[?&]eco\b/.test(location.search))set(true);
+})();
+</script>
+</body>
+</html>
