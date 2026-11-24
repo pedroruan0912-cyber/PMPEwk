@@ -93,6 +93,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Tortura (Lei 9.455/1997) | 24 (4 folhas) | `postits/tortura-colorido.pdf` ou `-economico.pdf` |
 | Maria da Penha (Lei 11.340/2006) | 36 (6 folhas) | `postits/maria-da-penha-colorido.pdf` ou `-economico.pdf` |
 | Racismo (Lei 7.716/1989) | 24 (4 folhas) | `postits/racismo-colorido.pdf` ou `-economico.pdf` |
+| Crimes Ambientais (Lei 9.605/1998) | 30 (5 folhas) | `postits/crimes-ambientais-colorido.pdf` ou `-economico.pdf` |
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
