@@ -14,9 +14,10 @@ from pypdf import PdfReader, PdfWriter
 PASTA = Path(__file__).resolve().parent
 VERSOES = ["colorido", "economico"]
 
-# Ordem do edital: Bloco I (História de Pernambuco), Bloco II (Raciocínio Lógico e Informática) e
-# Bloco III (Direito Constitucional e os capítulos do e-book de Direitos Humanos)
+# Ordem do edital: Bloco I (Língua Portuguesa e História de Pernambuco), Bloco II (Raciocínio Lógico e
+# Informática) e Bloco III (Direito Constitucional e os capítulos do e-book de Direitos Humanos)
 CONJUNTOS = [
+    ("portugues", "Língua Portuguesa"),
     ("historia-pernambuco", "História de Pernambuco"),
     ("raciocinio-logico", "Raciocínio Lógico"),
     ("informatica", "Informática"),
