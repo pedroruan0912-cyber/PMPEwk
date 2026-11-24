@@ -90,10 +90,11 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Lei de Drogas (Lei 11.343/2006) | 36 (6 folhas) | `postits/lei-de-drogas-colorido.pdf` ou `-economico.pdf` |
 | Crimes Hediondos (Lei 8.072/1990) | 24 (4 folhas) | `postits/crimes-hediondos-colorido.pdf` ou `-economico.pdf` |
 | Abuso de Autoridade (Lei 13.869/2019) | 30 (5 folhas) | `postits/abuso-de-autoridade-colorido.pdf` ou `-economico.pdf` |
+| Tortura (Lei 9.455/1997) | 24 (4 folhas) | `postits/tortura-colorido.pdf` ou `-economico.pdf` |
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
-Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024), as Leis 14.811/2024 e 14.994/2024 (feminicídio) e, no abuso de autoridade, a violência institucional (art. 15-A, Lei 14.321/2022), os artigos vetados e a Súmula Vinculante 11 (algemas).
+Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024), as Leis 14.811/2024 e 14.994/2024 (feminicídio) e, no abuso de autoridade, a violência institucional (art. 15-A, Lei 14.321/2022), os artigos vetados e a Súmula Vinculante 11 (algemas). Na tortura, entra o novo art. 1º, III (tortura doméstica contra a mulher, Lei 15.410/2026).
 
 ## Editar e gerar de novo
 
