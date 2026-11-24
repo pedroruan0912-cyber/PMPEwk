@@ -101,6 +101,8 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
 | Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
 
+**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` junta os 13 conjuntos coloridos (62 folhas) na ordem do edital, com um marcador por lei na barra lateral do leitor de PDF.
+
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
 Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024), as Leis 14.811/2024 e 14.994/2024 (feminicídio) e, no abuso de autoridade, a violência institucional (art. 15-A, Lei 14.321/2022), os artigos vetados e a Súmula Vinculante 11 (algemas). Na tortura, entra o novo art. 1º, III (tortura doméstica contra a mulher, Lei 15.410/2026). No Estatuto da Pessoa Idosa, entra a Lei 15.163/2025 (sem Lei 9.099 e maus-tratos com reclusão de 2 a 5 anos). No ECA, entram a Lei Henry Borel, a escuta especializada e a Lei 15.487/2026 (violência sexual em registros). Nos hediondos, o vicaricídio (Lei 15.384/2026). Na Maria da Penha, entram as leis de 2025 e 2026 (tornozeleira, violência vicária, afastamento ampliado, título executivo, retratação só a pedido e 12 meses para representar).
@@ -113,4 +115,4 @@ O texto de cada conjunto fica em `postits/<conjunto>.html` (abre no navegador, c
 node postits/gerar-pdf.js
 ```
 
-O script gera os PDFs de todos os conjuntos (ou só de um: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
+O script gera os PDFs de todos os conjuntos, atualiza o arquivo único (via `postits/juntar-pdfs.py`, que usa o pacote Python `pypdf`) (para gerar só um conjunto: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.

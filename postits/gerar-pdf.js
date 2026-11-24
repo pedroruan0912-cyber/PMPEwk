@@ -44,4 +44,11 @@ const files = fs.readdirSync(dir)
   }
   await browser.close();
   if (failed) process.exit(1);
+  // Atualiza o arquivo único com todos os coloridos (precisa de Python com o pacote pypdf)
+  const { execFileSync } = require('child_process');
+  try {
+    execFileSync('python3', ['-I', path.join(dir, 'juntar-pdfs.py')], { stdio: 'inherit' });
+  } catch (e) {
+    console.warn('aviso: não consegui juntar os PDFs (rode: python3 postits/juntar-pdfs.py)');
+  }
 })();
