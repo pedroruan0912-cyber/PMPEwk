@@ -98,6 +98,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Estatuto da PMPE (Lei estadual 6.783/1974) | 24 (4 folhas) | `postits/estatuto-pmpe-colorido.pdf` ou `-economico.pdf` |
 | Estatuto da Pessoa Idosa (Lei 10.741/2003) | 24 (4 folhas) | `postits/pessoa-idosa-colorido.pdf` ou `-economico.pdf` |
 | Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
+| Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
