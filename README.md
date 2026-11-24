@@ -81,20 +81,25 @@ Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; man
 
 ---
 
-# Post-its para imprimir – Lei de Drogas (Lei 11.343/2006)
+# Post-its para imprimir
 
-36 post-its para colar na parede, em 6 folhas A4 (6 por folha, quadrados de 95 × 90 mm), com as cores por assunto: usuário (amarelo), crimes (rosa), penas (laranja), procedimento (azul), abordagem e STF/STJ (verde), tratamento e revisão (lilás). Cada um traz o artigo, o resumo, uma pegadinha ou um macete; o último é um teste de V ou F com as respostas de cabeça para baixo.
+Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada um traz o artigo, o resumo, uma pegadinha ou um macete, e as cores separam os assuntos; o último de cada conjunto é um teste de V ou F com as respostas de cabeça para baixo.
 
-**Imprimir:** `postits/lei-de-drogas-colorido.pdf` ou `postits/lei-de-drogas-economico.pdf` (fundo branco, gasta menos tinta). Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
+| Conjunto | Post-its | Imprimir |
+|---|---|---|
+| Lei de Drogas (Lei 11.343/2006) | 36 (6 folhas) | `postits/lei-de-drogas-colorido.pdf` ou `-economico.pdf` |
+| Crimes Hediondos (Lei 8.072/1990) | 24 (4 folhas) | `postits/crimes-hediondos-colorido.pdf` ou `-economico.pdf` |
 
-Inclui o art. 40-A (pena em dobro, Lei 15.358/2026) e o julgamento do STF sobre maconha (RE 635.659, 2024).
+A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
+
+Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024) e as Leis 14.811/2024 e 14.994/2024 (feminicídio).
 
 ## Editar e gerar de novo
 
-O texto fica em `postits/lei-de-drogas.html` (abre no navegador, com botão de imprimir e troca de modo). Depois de editar:
+O texto de cada conjunto fica em `postits/<conjunto>.html` (abre no navegador, com botão de imprimir e troca de modo); o visual comum fica em `postits/postits.css`. O total de post-its vai em `--total`, no `<body>`. Depois de editar:
 
 ```bash
 node postits/gerar-pdf.js
 ```
 
-O script avisa se o texto de algum post-it passar do tamanho do quadrado. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
+O script gera os PDFs de todos os conjuntos (ou só de um: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
