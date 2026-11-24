@@ -111,3 +111,10 @@ td.r{white-space:nowrap;font-weight:700}
 body.eco .pi{background:#fff;outline:.45mm solid var(--strip);outline-offset:-.45mm}
 body.eco .trap,body.eco .tip,body.eco .box,body.eco .chips span,body.eco .flow .q,body.eco .ans{background:#fff;box-shadow:inset 0 0 0 .2mm rgba(0,0,0,.18)}
 body.eco .trap,body.eco .tip{box-shadow:none}
+
+/* ---------- raciocínio lógico: tabela-verdade e diagramas ---------- */
+table.tv td,table.tv th{text-align:center;padding:.5mm .6mm}
+.venn{display:block;width:100%;height:14mm;color:var(--acc)}
+.venn circle{fill:none;stroke:currentColor;stroke-width:1.1}
+.venn text{font:700 6.5px var(--f-body);fill:currentColor;text-anchor:middle}
+.venn .x{font-size:8px;fill:var(--trap)}

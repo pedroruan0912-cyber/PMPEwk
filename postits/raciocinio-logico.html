@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-its Raciocínio Lógico</title>
+<link rel="stylesheet" href="postits.css">
+</head>
+<body style="--total:'42'">
+
+<div class="bar">
+  <button type="button" onclick="window.print()">Imprimir</button>
+  <button type="button" class="alt" id="modo">Trocar para modo econômico</button>
+  <small><b>Na impressão:</b> papel A4, margens <b>Nenhuma</b>, escala <b>100%</b> e <b>Gráficos de fundo</b> ligado. Recorte cada quadrado e cole na parede.</small>
+</div>
+
+<!-- =================== FOLHA 1 =================== -->
+<section class="sheet">
+
+<article class="pi n">
+  <header class="strip"><span>Raciocínio Lógico</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Raciocínio Lógico: o mapa</h2>
+    <table class="xs">
+      <tr><td class="r">02 a 08</td><td>Proposições, conectivos e tabela-verdade</td></tr>
+      <tr><td class="r">09 a 13</td><td>Negações, equivalências e implicação</td></tr>
+      <tr><td class="r">14 a 18</td><td>Quantificadores e diagramas lógicos</td></tr>
+      <tr><td class="r">19 a 26</td><td>Argumentação, falácias e deduções</td></tr>
+      <tr><td class="r">27 a 32</td><td>Contagem: PFC, permutação, arranjo, combinação</td></tr>
+      <tr><td class="r">33 a 37</td><td>Probabilidade</td></tr>
+      <tr><td class="r">38 a 42</td><td>Revisão</td></tr>
+    </table>
+    <p class="xs">Na prova de Soldado: <b>10 questões</b> no Bloco II, com Informática. Para passar: <b>30% do bloco</b> (6 de 20), <b>nenhuma matéria zerada</b> e 30% da prova. O edital não pede porcentagem nem razão e proporção.</p>
+    <div class="legend">
+      <span style="--c:#FFF3A3">Proposições</span>
+      <span style="--c:#FFE0BF">Negação e equivalência</span>
+      <span style="--c:#D3E8FF">Quantificadores e diagramas</span>
+      <span style="--c:#D6F2D6">Argumentação</span>
+      <span style="--c:#FFD9E5">Contagem</span>
+      <span style="--c:#E8DDFF">Probabilidade</span>
+    </div>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>O que é proposição</h2>
+    <p class="s">Frase <b>declarativa</b> que pode ser julgada <b>verdadeira ou falsa</b>, nunca as duas (princípios da não contradição e do terceiro excluído).</p>
+    <p class="s"><span class="ok">✔</span> "Recife é a capital de Pernambuco." (V)<br><span class="ok">✔</span> "2 + 2 = 5." (F, mas é proposição)</p>
+    <p class="s"><b>Não são proposições:</b></p>
+    <ul class="s">
+      <li><b>pergunta</b>: "Quem estava de serviço?"</li>
+      <li><b>ordem</b>: "Apresente o documento."</li>
+      <li><b>exclamação</b>: "Que operação!"</li>
+      <li><b>sentença aberta</b>: "x + 3 = 7", "Ele é sargento" (quem é ele?)</li>
+      <li><b>paradoxo</b>: "Esta frase é falsa."</li>
+    </ul>
+    <p class="trap">Frase com variável ou pronome indefinido ("ele", "aquela pessoa") é <b>sentença aberta</b>: não é proposição.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Os conectivos</h2>
+    <table>
+      <tr><th>Nome</th><th>Símbolo</th><th>Leitura</th></tr>
+      <tr><td>Negação</td><td class="r">~p</td><td>não p</td></tr>
+      <tr><td>Conjunção</td><td class="r">p ∧ q</td><td>p <b>e</b> q</td></tr>
+      <tr><td>Disjunção</td><td class="r">p ∨ q</td><td>p <b>ou</b> q</td></tr>
+      <tr><td>Disjunção exclusiva</td><td class="r">p ⊻ q</td><td><b>ou</b> p <b>ou</b> q</td></tr>
+      <tr><td>Condicional</td><td class="r">p → q</td><td><b>se</b> p, <b>então</b> q</td></tr>
+      <tr><td>Bicondicional</td><td class="r">p ↔ q</td><td>p <b>se e somente se</b> q</td></tr>
+    </table>
+    <p class="s"><b>Simples:</b> uma ideia só (p). <b>Composta:</b> duas ou mais ligadas por conectivo.</p>
+    <p class="tip">Linhas da tabela-verdade = <b>2<sup>n</sup></b> (n = proposições simples diferentes). 2 → 4 linhas; 3 → 8; 4 → 16.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tabela-verdade</h2>
+    <table class="tv">
+      <tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ q</th><th>p ⊻ q</th><th>p → q</th><th>p ↔ q</th></tr>
+      <tr><td><b>V</b></td><td><b>V</b></td><td class="ok">V</td><td class="ok">V</td><td class="no">F</td><td class="ok">V</td><td class="ok">V</td></tr>
+      <tr><td><b>V</b></td><td><b>F</b></td><td class="no">F</td><td class="ok">V</td><td class="ok">V</td><td class="no">F</td><td class="no">F</td></tr>
+      <tr><td><b>F</b></td><td><b>V</b></td><td class="no">F</td><td class="ok">V</td><td class="ok">V</td><td class="ok">V</td><td class="no">F</td></tr>
+      <tr><td><b>F</b></td><td><b>F</b></td><td class="no">F</td><td class="no">F</td><td class="no">F</td><td class="ok">V</td><td class="ok">V</td></tr>
+    </table>
+    <p class="s"><b>Negação</b> (~p): troca o valor. p = V → ~p = F.</p>
+    <p class="tip">Leia por coluna: o <b>E</b> tem um V só; o <b>OU</b> tem um F só; o <b>SE…ENTÃO</b> tem um F só (na 2ª linha); o <b>OU…OU</b> e o <b>SE E SOMENTE SE</b> são opostos.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Quando cada um é V ou F</h2>
+    <table>
+      <tr><td class="r">p ∧ q</td><td>só é <b>V</b> se as <b>duas</b> forem V</td></tr>
+      <tr><td class="r">p ∨ q</td><td>só é <b>F</b> se as <b>duas</b> forem F</td></tr>
+      <tr><td class="r">p ⊻ q</td><td>V quando são <b>diferentes</b></td></tr>
+      <tr><td class="r">p → q</td><td>só é <b>F</b> em <b>V → F</b></td></tr>
+      <tr><td class="r">p ↔ q</td><td>V quando são <b>iguais</b></td></tr>
+    </table>
+    <p class="s"><b>No condicional:</b> se a 1ª é <b>F</b>, ele já é V; se a 2ª é <b>V</b>, ele já é V.</p>
+    <p class="tip"><b>V</b>era <b>F</b>ischer é <b>F</b>alsa: o condicional só é falso com <b>V</b> na frente e <b>F</b> atrás.</p>
+    <p class="trap mt0">"Se 2 + 2 = 5, então Recife fica na Bahia" é <b>verdadeira</b>: o antecedente é falso.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>O condicional por dentro</h2>
+    <p class="s"><b>p → q</b>: p é o <b>antecedente</b>, q é o <b>consequente</b>.</p>
+    <p class="s"><b>p é condição suficiente</b> para q · <b>q é condição necessária</b> para p.</p>
+    <p class="s"><b>Outras formas de dizer p → q:</b></p>
+    <ul class="s">
+      <li>"Quando p, q." · "q, se p." · "p implica q."</li>
+      <li>"p é suficiente para q." · "q é necessário para p."</li>
+      <li>"p <b>somente se</b> q."</li>
+    </ul>
+    <p class="s"><b>Exemplo:</b> "Se o PM está de serviço, está fardado." Estar de serviço <b>basta</b> para estar fardado; estar fardado é <b>necessário</b> para estar de serviço.</p>
+    <p class="trap">"p somente se q" é <b>p → q</b>, não q → p. E "necessário e suficiente" é o <b>bicondicional</b>.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 1 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 2 =================== -->
+<section class="sheet">
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tautologia, contradição, contingência</h2>
+    <table>
+      <tr><td class="r">Tautologia</td><td><b>sempre V</b>, em todas as linhas. Ex.: p ∨ ~p · (p ∧ q) → p</td></tr>
+      <tr><td class="r">Contradição</td><td><b>sempre F</b>. Ex.: p ∧ ~p</td></tr>
+      <tr><td class="r">Contingência</td><td>às vezes V, às vezes F. Ex.: p → q</td></tr>
+    </table>
+    <p class="s"><b>Exemplo:</b> "Choveu ou não choveu" é tautologia: é verdadeira em qualquer caso. "Choveu e não choveu" é contradição.</p>
+    <p class="tip">Para mostrar que <b>não</b> é tautologia, basta achar <b>uma linha F</b>. Para mostrar que não é contradição, basta uma linha V.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Estruturas lógicas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Calcular o valor lógico</h2>
+    <p class="s"><b>Ordem:</b> parênteses; depois ~, ∧, ∨, → e, por último, ↔.</p>
+    <p class="s">Sendo <b>p = V</b>, <b>q = F</b> e <b>r = V</b>:</p>
+    <table>
+      <tr><td class="r">~p ∨ q</td><td>F ∨ F = <b>F</b></td></tr>
+      <tr><td class="r">(p ∧ r) → q</td><td>V → F = <b>F</b></td></tr>
+      <tr><td class="r">p ↔ ~q</td><td>V ↔ V = <b>V</b></td></tr>
+      <tr><td class="r">(q ∨ r) ∧ ~p</td><td>V ∧ F = <b>F</b></td></tr>
+      <tr><td class="r">q → (p ∧ ~r)</td><td>F → … = <b>V</b></td></tr>
+    </table>
+    <p class="tip"><b>Composta dada como verdadeira?</b> Comece pela que só tem um jeito: <b>E</b> verdadeiro (tudo V), <b>OU</b> falso (tudo F) ou <b>SE…ENTÃO</b> falso (V e F).</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Negação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Como negar</h2>
+    <table>
+      <tr><th>Proposição</th><th>Negação</th></tr>
+      <tr><td class="r">p ∧ q</td><td><b>~p ∨ ~q</b></td></tr>
+      <tr><td class="r">p ∨ q</td><td><b>~p ∧ ~q</b></td></tr>
+      <tr><td class="r">p → q</td><td><b>p ∧ ~q</b></td></tr>
+      <tr><td class="r">p ↔ q</td><td><b>p ⊻ q</b> (ou p ou q)</td></tr>
+      <tr><td class="r">p ⊻ q</td><td><b>p ↔ q</b></td></tr>
+      <tr><td class="r">~(~p)</td><td>p</td></tr>
+    </table>
+    <p class="tip"><b>E e OU</b> (De Morgan): nega as duas e troca E por OU. <b>Condicional: MANÉ</b>, <b>MA</b>ntém a primeira <b>E</b> <b>NE</b>ga a segunda.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Negação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Negando frases</h2>
+    <table class="xs">
+      <tr><td>"O PM está fardado <b>e</b> armado."</td><td>"O PM <b>não</b> está fardado <b>ou não</b> está armado."</td></tr>
+      <tr><td>"Choveu <b>ou</b> a operação foi adiada."</td><td>"<b>Não</b> choveu <b>e</b> a operação <b>não</b> foi adiada."</td></tr>
+      <tr><td>"<b>Se</b> o sinal fecha, a viatura para."</td><td>"O sinal fecha <b>e</b> a viatura <b>não</b> para."</td></tr>
+      <tr><td>"<b>Ou</b> João é cabo <b>ou</b> é soldado."</td><td>"João é cabo <b>se e somente se</b> é soldado."</td></tr>
+      <tr><td>"<b>Todos</b> os presos foram ouvidos."</td><td>"<b>Algum</b> preso <b>não</b> foi ouvido."</td></tr>
+    </table>
+    <p class="s">"<b>Não é verdade que</b>…" e "<b>é falso que</b>…" são negações da frase inteira.</p>
+    <p class="trap">A negação do "se…então" <b>não tem "se"</b>: é uma frase com <b>E</b>. Desconfie da alternativa que nega com outro condicional.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Equivalência</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Equivalências do condicional</h2>
+    <table>
+      <tr><td class="r">p → q ≡ ~q → ~p</td><td><b>contrapositiva</b>: troca de lugar e nega as duas</td></tr>
+      <tr><td class="r">p → q ≡ ~p ∨ q</td><td>nega a primeira, troca por <b>OU</b>, mantém a segunda</td></tr>
+    </table>
+    <p class="s"><b>Exemplo:</b> "Se estudo, passo."<br>≡ "Se <b>não</b> passo, <b>não</b> estudo."<br>≡ "<b>Não</b> estudo <b>ou</b> passo."</p>
+    <p class="s"><b>Não são equivalentes</b> a p → q:</p>
+    <ul class="s">
+      <li>q → p (recíproca): "Se passo, estudo."</li>
+      <li>~p → ~q (inversa): "Se não estudo, não passo."</li>
+    </ul>
+    <p class="tip">Contrapositiva: <b>volta negando</b>. Para o OU: <b>NEOUMA</b>, <b>NE</b>ga, <b>OU</b>, <b>MA</b>ntém.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Equivalência</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Outras equivalências</h2>
+    <table class="xs">
+      <tr><td class="r">p ↔ q</td><td>≡ (p → q) ∧ (q → p) ≡ ~p ↔ ~q</td></tr>
+      <tr><td class="r">p ∨ q</td><td>≡ ~p → q ("se não p, então q")</td></tr>
+      <tr><td class="r">p ⊻ q</td><td>≡ ~(p ↔ q)</td></tr>
+      <tr><td class="r">~(p ∧ q)</td><td>≡ ~p ∨ ~q (De Morgan)</td></tr>
+      <tr><td class="r">~(p ∨ q)</td><td>≡ ~p ∧ ~q (De Morgan)</td></tr>
+      <tr><td class="r">p ∧ q · p ∨ q</td><td>≡ q ∧ p · q ∨ p (a ordem não importa)</td></tr>
+      <tr><td class="r">p ∧ (q ∨ r)</td><td>≡ (p ∧ q) ∨ (p ∧ r) (distributiva)</td></tr>
+      <tr><td class="r">p ∨ (p ∧ q)</td><td>≡ p (absorção)</td></tr>
+      <tr><td class="r">(p ∧ q) → r</td><td>≡ p → (q → r)</td></tr>
+    </table>
+    <p class="trap">No <b>condicional</b> a ordem importa: p → q <b>não</b> equivale a q → p.</p>
+    <p class="tip mt0">Na dúvida, monte a tabela-verdade das duas: colunas <b>iguais</b> = equivalentes.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 2 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 3 =================== -->
+<section class="sheet">
+
+<article class="pi o">
+  <header class="strip"><span>Implicação lógica</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Implicação × equivalência</h2>
+    <table>
+      <tr><td class="r">Equivalência<br>p ⇔ q</td><td>as duas têm a <b>mesma tabela-verdade</b>; p ↔ q é tautologia</td></tr>
+      <tr><td class="r">Implicação<br>p ⇒ q</td><td>sempre que p é V, q também é; p → q é <b>tautologia</b></td></tr>
+    </table>
+    <p class="s"><b>Implicações que caem:</b></p>
+    <ul class="s">
+      <li>p ∧ q ⇒ p (simplificação)</li>
+      <li>p ⇒ p ∨ q (adição)</li>
+      <li>(p → q) ∧ p ⇒ q (modus ponens)</li>
+      <li>(p → q) ∧ ~q ⇒ ~p (modus tollens)</li>
+    </ul>
+    <p class="trap"><b>→</b> é um conectivo (forma uma nova proposição). <b>⇒</b> é uma relação entre proposições. Equivalência é implicação nos <b>dois</b> sentidos.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Quantificadores</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Todo, algum, nenhum</h2>
+    <table>
+      <tr><td class="r">∀ universal</td><td><b>todo</b>, qualquer, cada, para todo</td></tr>
+      <tr><td class="r">∃ existencial</td><td><b>algum</b>, existe, há, pelo menos um</td></tr>
+      <tr><td class="r">∄</td><td><b>nenhum</b>, não existe (= todo… não)</td></tr>
+    </table>
+    <p class="s">O quantificador transforma a sentença aberta em proposição: "x &gt; 2" não é proposição; "<b>existe</b> número natural x &gt; 2" é (V); "<b>todo</b> número natural é maior que 2" também é (F).</p>
+    <p class="trap">"<b>Algum</b> PM é atleta" significa "<b>pelo menos um</b>". Continua verdadeira mesmo que <b>todos</b> sejam atletas.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Quantificadores</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Negar quantificadores</h2>
+    <table>
+      <tr><th>Frase</th><th>Negação</th></tr>
+      <tr><td>Todo A é B</td><td><b>Algum A não é B</b></td></tr>
+      <tr><td>Algum A é B</td><td><b>Nenhum A é B</b></td></tr>
+      <tr><td>Nenhum A é B</td><td><b>Algum A é B</b></td></tr>
+      <tr><td>Algum A não é B</td><td><b>Todo A é B</b></td></tr>
+    </table>
+    <p class="s"><b>Exemplo:</b> "Todo soldado é atleta" → "<b>Pelo menos um</b> soldado <b>não</b> é atleta."</p>
+    <p class="tip"><b>Todo</b> vira <b>PEA + NÃO</b> (Pelo menos um, Existe ou Algum… não). <b>Algum</b> vira <b>Nenhum</b>, e vice-versa.</p>
+    <p class="trap mt0">A negação de "Todo PM é honesto" <b>não</b> é "Nenhum PM é honesto".</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Diagramas lógicos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Os quatro desenhos</h2>
+    <div class="grid2">
+      <div class="box"><b>Todo A é B</b>
+        <svg class="venn" viewBox="0 0 60 30" aria-hidden="true"><circle cx="30" cy="15" r="13"/><circle cx="25" cy="16" r="6.5"/><text x="25" y="18.5">A</text><text x="37.5" y="20">B</text></svg>
+        A fica <b>dentro</b> de B</div>
+      <div class="box"><b>Nenhum A é B</b>
+        <svg class="venn" viewBox="0 0 60 30" aria-hidden="true"><circle cx="17" cy="15" r="10"/><circle cx="43" cy="15" r="10"/><text x="17" y="17.5">A</text><text x="43" y="17.5">B</text></svg>
+        círculos <b>separados</b></div>
+      <div class="box"><b>Algum A é B</b>
+        <svg class="venn" viewBox="0 0 60 30" aria-hidden="true"><circle cx="23" cy="15" r="11"/><circle cx="37" cy="15" r="11"/><text x="17" y="17.5">A</text><text x="43" y="17.5">B</text><text class="x" x="30" y="18">×</text></svg>
+        há alguém na <b>interseção</b></div>
+      <div class="box"><b>Algum A não é B</b>
+        <svg class="venn" viewBox="0 0 60 30" aria-hidden="true"><circle cx="23" cy="15" r="11"/><circle cx="37" cy="15" r="11"/><text x="17" y="13">A</text><text x="43" y="17.5">B</text><text class="x" x="18" y="22">×</text></svg>
+        há alguém em A <b>fora</b> de B</div>
+    </div>
+    <p class="tip">O <b>×</b> marca onde <b>com certeza</b> há alguém. Área sem ×, no "algum", pode estar vazia.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Diagramas lógicos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tirar conclusões com diagramas</h2>
+    <p class="s"><b>Método:</b> desenhe primeiro o "todo" e o "nenhum", depois o "algum". A conclusão só vale se aparecer em <b>todos</b> os desenhos possíveis.</p>
+    <table class="xs">
+      <tr><td>Todo PM é servidor. Nenhum servidor é empresário.</td><td><span class="ok">✔</span> Nenhum PM é empresário.</td></tr>
+      <tr><td>Algum PM é músico. Todo músico é artista.</td><td><span class="ok">✔</span> Algum PM é artista.</td></tr>
+      <tr><td>Todo PM é servidor. Algum servidor é atleta.</td><td><span class="no">✘</span> "Algum PM é atleta" não dá para concluir: os atletas podem estar fora dos PMs.</td></tr>
+      <tr><td>Todo PM é servidor.</td><td><span class="no">✘</span> "Todo servidor é PM."</td></tr>
+    </table>
+    <p class="trap">"Todo A é B" <b>não</b> quer dizer "Todo B é A": B pode ser maior.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Diagramas lógicos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Contar com diagramas</h2>
+    <p class="s"><b>n(A ∪ B) = n(A) + n(B) − n(A ∩ B)</b></p>
+    <p class="s"><b>Exemplo:</b> 40 PMs. 25 fazem curso de tiro, 18 de defesa pessoal e 7 fazem os dois.</p>
+    <table class="xs">
+      <tr><td class="r">Os dois</td><td>7 (comece pelo centro)</td></tr>
+      <tr><td class="r">Só tiro</td><td>25 − 7 = 18</td></tr>
+      <tr><td class="r">Só defesa</td><td>18 − 7 = 11</td></tr>
+      <tr><td class="r">Pelo menos um</td><td>18 + 7 + 11 = 36</td></tr>
+      <tr><td class="r">Nenhum</td><td>40 − 36 = <b>4</b></td></tr>
+    </table>
+    <p class="s xs"><b>Três conjuntos:</b> n(A ∪ B ∪ C) = A + B + C − (A∩B) − (A∩C) − (B∩C) + (A∩B∩C).</p>
+    <p class="tip">Preencha sempre <b>do centro para fora</b>, descontando o que já foi contado.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 3 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 4 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Argumento válido</h2>
+    <p class="s"><b>Argumento</b> = premissas (P1, P2…) + conclusão.</p>
+    <p class="s"><b>Válido:</b> se as premissas forem V, a conclusão é <b>obrigatoriamente</b> V. Quem garante é a <b>forma</b>, não o assunto.<br><b>Inválido</b> (sofisma ou falácia): dá para ter premissas V e conclusão F.</p>
+    <table class="xs">
+      <tr><td>Todo peixe voa. Todo cão é peixe. Logo, todo cão voa.</td><td><span class="ok">✔ válido</span> (premissas falsas, forma correta)</td></tr>
+      <tr><td>Todo PM é servidor. João é servidor. Logo, João é PM.</td><td><span class="no">✘ inválido</span></td></tr>
+    </table>
+    <p class="trap">Na prova, trate as premissas como <b>verdadeiras</b>, mesmo que pareçam absurdas. Validade não é verdade.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Regras de inferência</h2>
+    <table class="xs">
+      <tr><td class="r">Modus ponens</td><td>p → q · p <b>∴ q</b></td><td>afirma a 1ª, conclui a 2ª</td></tr>
+      <tr><td class="r">Modus tollens</td><td>p → q · ~q <b>∴ ~p</b></td><td>nega a 2ª, conclui que a 1ª é falsa</td></tr>
+      <tr><td class="r">Silogismo hipotético</td><td>p → q · q → r <b>∴ p → r</b></td><td>corrente de condicionais</td></tr>
+      <tr><td class="r">Silogismo disjuntivo</td><td>p ∨ q · ~p <b>∴ q</b></td><td>eliminou um, sobra o outro</td></tr>
+      <tr><td class="r">Simplificação</td><td>p ∧ q <b>∴ p</b></td><td></td></tr>
+      <tr><td class="r">Conjunção</td><td>p · q <b>∴ p ∧ q</b></td><td></td></tr>
+      <tr><td class="r">Adição</td><td>p <b>∴ p ∨ q</b></td><td></td></tr>
+    </table>
+    <p class="s"><b>Exemplo de modus tollens:</b> "Se houve arrombamento, a porta está danificada. A porta não está danificada. Logo, não houve arrombamento."</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação · falácias</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Falácias do condicional</h2>
+    <table class="xs">
+      <tr><th>Forma</th><th></th><th>Nome</th></tr>
+      <tr><td>p → q · p ∴ q</td><td class="ok">válido</td><td>afirmar o antecedente</td></tr>
+      <tr><td>p → q · ~q ∴ ~p</td><td class="ok">válido</td><td>negar o consequente</td></tr>
+      <tr><td>p → q · q ∴ p</td><td class="no">falácia</td><td><b>afirmar o consequente</b></td></tr>
+      <tr><td>p → q · ~p ∴ ~q</td><td class="no">falácia</td><td><b>negar o antecedente</b></td></tr>
+    </table>
+    <p class="s"><span class="no">✘</span> "Se o suspeito fugiu, o alarme tocou. O alarme tocou. Logo, ele fugiu." (o alarme pode ter tocado por outro motivo)</p>
+    <p class="s"><span class="no">✘</span> "Se chover, a rua alaga. Não choveu. Logo, não alagou." (pode ter sido um cano estourado)</p>
+    <p class="tip">Vale <b>afirmar a 1ª</b> ou <b>negar a 2ª</b>. Afirmar a 2ª ou negar a 1ª não leva a nada.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação · falácias</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Falácias informais</h2>
+    <table class="xs">
+      <tr><td class="r">Ataque à pessoa</td><td>(ad hominem) ataca quem fala, não o argumento</td></tr>
+      <tr><td class="r">Apelo à autoridade</td><td>"é verdade porque um famoso disse"</td></tr>
+      <tr><td class="r">Apelo à força</td><td>(ad baculum) convence pela ameaça</td></tr>
+      <tr><td class="r">Apelo à ignorância</td><td>"ninguém provou que é falso, então é verdade"</td></tr>
+      <tr><td class="r">Apelo ao povo</td><td>(ad populum) "todo mundo faz"</td></tr>
+      <tr><td class="r">Apelo à emoção</td><td>pena, medo ou compaixão no lugar de razões</td></tr>
+      <tr><td class="r">Espantalho</td><td>distorce a ideia do outro para atacá-la</td></tr>
+      <tr><td class="r">Generalização apressada</td><td>poucos casos viram regra</td></tr>
+      <tr><td class="r">Falsa causa</td><td>"aconteceu depois, então foi por causa disso"</td></tr>
+      <tr><td class="r">Falso dilema</td><td>só duas saídas, quando há outras</td></tr>
+      <tr><td class="r">Petição de princípio</td><td>a conclusão já está na premissa (circular)</td></tr>
+      <tr><td class="r">Ladeira escorregadia</td><td>um passo levaria fatalmente à catástrofe</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Resolver em 4 passos</h2>
+    <ol class="s">
+      <li>Considere <b>todas</b> as premissas verdadeiras.</li>
+      <li>Comece pela premissa <b>simples</b> (ou por um E, que só é V de um jeito).</li>
+      <li>Descubra os valores e vá substituindo nas outras.</li>
+      <li>Marque a alternativa que fica <b>obrigatoriamente</b> V.</li>
+    </ol>
+    <p class="s"><b>P1:</b> Se João estuda, passa. <b>P2:</b> Se passa, toma posse. <b>P3:</b> João não tomou posse.<br>P3 é V → "passa" é F (P2) → "estuda" é F (P1). <b>Conclusão:</b> João não estudou.</p>
+    <p class="tip"><b>É válido?</b> Suponha a conclusão <b>F</b> e tente deixar todas as premissas V. Se conseguir, o argumento é <b>inválido</b>.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Argumentação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Dedução, indução, analogia</h2>
+    <table>
+      <tr><td class="r">Dedução</td><td>do <b>geral</b> para o particular; conclusão <b>necessária</b>. "Todo PM fez curso de formação; Ana é PM; logo, Ana fez o curso."</td></tr>
+      <tr><td class="r">Indução</td><td>de <b>casos</b> para uma regra; conclusão <b>provável</b>. "Os 5 cães que vi latiam; todo cão late."</td></tr>
+      <tr><td class="r">Analogia</td><td>conclui por <b>semelhança</b> entre casos. "Deu certo no 1º BPM, vai dar certo no 2º."</td></tr>
+      <tr><td class="r">Inferência</td><td>o ato de tirar uma conclusão das premissas</td></tr>
+    </table>
+    <p class="s"><b>Analogia em questão:</b> "Médico está para hospital assim como professor está para…" → escola. Descubra a <b>relação</b> (lugar, função, parte e todo, oposto) e repita.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 4 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 5 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Deduções</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Associação lógica</h2>
+    <p class="s">Ana, Bruno e Caio servem no 1º, 2º e 3º BPM, um em cada. Bruno não é do 1º nem do 2º. Ana não é do 1º.</p>
+    <table class="tv">
+      <tr><th></th><th>1º</th><th>2º</th><th>3º</th></tr>
+      <tr><td><b>Ana</b></td><td class="no">✘</td><td class="ok">✔</td><td class="no">✘</td></tr>
+      <tr><td><b>Bruno</b></td><td class="no">✘</td><td class="no">✘</td><td class="ok">✔</td></tr>
+      <tr><td><b>Caio</b></td><td class="ok">✔</td><td class="no">✘</td><td class="no">✘</td></tr>
+    </table>
+    <p class="s">Bruno só pode ser do <b>3º</b>. Então Ana (que não é do 1º) é do <b>2º</b>, e sobra o <b>1º</b> para Caio.</p>
+    <p class="tip">Monte a tabela, marque ✘ nas pistas negativas. Cada linha e cada coluna têm <b>um só ✔</b>: ao marcar um, risque o resto da linha e da coluna.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Deduções</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Verdades e mentiras</h2>
+    <p class="s">Um dos três suspeitos furtou. <b>Só um mente.</b><br>A: "Foi o B." · B: "Foi o C." · C: "Não fui eu."</p>
+    <p class="s"><b>1.</b> B e C <b>se contradizem</b>: um dos dois mente.<br><b>2.</b> Como só há um mentiroso, <b>A fala a verdade</b>.<br><b>3.</b> Foi o <b>B</b>. Confere: B mente, C diz a verdade.</p>
+    <p class="s"><b>Sem contradição à vista?</b> Teste hipóteses: "se o culpado for A, quantos mentem?" e fique com a que bate com o enunciado.</p>
+    <p class="tip">Duas falas <b>contraditórias</b> (uma nega a outra): exatamente uma é V. Comece por elas.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Princípio multiplicativo</h2>
+    <p class="s">Etapas independentes com a, b e c opções: <b>a × b × c</b> resultados.<br>"<b>E</b>" multiplica; "<b>OU</b>" soma (princípio aditivo).</p>
+    <table class="xs">
+      <tr><td>4 camisas e 3 calças</td><td>4 × 3 = <b>12</b> combinações</td></tr>
+      <tr><td>Senha de 4 dígitos</td><td>10 × 10 × 10 × 10 = <b>10.000</b></td></tr>
+      <tr><td>Senha de 4 dígitos <b>distintos</b></td><td>10 × 9 × 8 × 7 = <b>5.040</b></td></tr>
+      <tr><td>Placa Mercosul (ABC1D23)</td><td>26⁴ × 10³</td></tr>
+    </table>
+    <p class="s"><b>Pares de 3 algarismos distintos com 1, 2, 3, 4, 5:</b> último (2 ou 4) = 2; primeiro = 4; meio = 3 → 2 × 4 × 3 = <b>24</b>.</p>
+    <p class="tip">Comece pela posição que tem <b>restrição</b>.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Fatorial e permutação</h2>
+    <p class="s"><b>n! = n × (n − 1) × … × 1</b> · <b>0! = 1</b></p>
+    <div class="nums">
+      <div><b>3! = 6</b></div>
+      <div><b>4! = 24</b></div>
+      <div><b>5! = 120</b></div>
+      <div><b>6! = 720</b></div>
+      <div><b>7! = 5.040</b></div>
+      <div><b>8! = 40.320</b></div>
+    </div>
+    <p class="s"><b>Permutação simples:</b> organizar <b>todos</b> os n elementos: <b>P = n!</b></p>
+    <ul class="s">
+      <li>5 PMs em fila: 5! = <b>120</b></li>
+      <li>Anagramas de AMOR: 4! = <b>24</b></li>
+    </ul>
+    <p class="tip">Simplifique antes de multiplicar: 8!/6! = 8 × 7 = 56.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Permutação: casos especiais</h2>
+    <table class="xs">
+      <tr><td class="r">Com repetição</td><td><b>n! / (a! · b! …)</b><br>BANANA: 6! / (3! · 2!) = <b>60</b></td></tr>
+      <tr><td class="r">Juntos</td><td>amarre num bloco: (n − 1)! × permutação do bloco<br>5 PMs, Ana e Bia juntas: 4! × 2! = <b>48</b></td></tr>
+      <tr><td class="r">Separados</td><td>total − juntos: 120 − 48 = <b>72</b></td></tr>
+      <tr><td class="r">Posição fixa</td><td>AMOR começando com vogal: 2 × 3! = <b>12</b></td></tr>
+      <tr><td class="r">Circular</td><td><b>(n − 1)!</b><br>5 pessoas numa mesa redonda: 4! = <b>24</b></td></tr>
+    </table>
+    <p class="trap">Na mesa redonda, girar todo mundo não cria arrumação nova; por isso é (n − 1)!.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Arranjo × combinação</h2>
+    <div class="grid2">
+      <div class="box"><b>Arranjo</b>a <b>ordem importa</b><br>A = n! / (n − p)!<br>Comandante e subcomandante entre 5: 5 × 4 = <b>20</b></div>
+      <div class="box"><b>Combinação</b>a ordem <b>não</b> importa<br>C = n! / [p! (n − p)!]<br>Dupla de patrulha entre 5: 20 / 2 = <b>10</b></div>
+    </div>
+    <p class="s">Arranjo é o próprio princípio multiplicativo sem repetir: pode resolver com tracinhos.</p>
+    <p class="tip">Troque dois escolhidos de lugar. <b>Virou outra coisa?</b> Arranjo (cargos, pódio, senha). <b>Ficou igual?</b> Combinação (equipe, comissão, grupo).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 5 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 6 =================== -->
+<section class="sheet">
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Combinação na prática</h2>
+    <table class="xs">
+      <tr><td>3 PMs para uma guarnição, entre 10</td><td>C(10,3) = (10 × 9 × 8) / (3 × 2 × 1) = <b>120</b></td></tr>
+      <tr><td>Comissão com 2 de 6 homens <b>e</b> 1 de 4 mulheres</td><td>C(6,2) × C(4,1) = 15 × 4 = <b>60</b></td></tr>
+      <tr><td>Apertos de mão entre 8 pessoas</td><td>C(8,2) = 8 × 7 / 2 = <b>28</b></td></tr>
+      <tr><td>Jogos de todos contra todos, 6 times</td><td>C(6,2) = <b>15</b></td></tr>
+      <tr><td>Triângulos com 6 pontos (sem 3 alinhados)</td><td>C(6,3) = <b>20</b></td></tr>
+    </table>
+    <p class="s"><b>Atalhos:</b> C(n,2) = n(n − 1)/2 · C(n,p) = C(n, n − p) · C(n,1) = n · C(n,n) = 1.</p>
+    <p class="tip">Na conta, em cima vão <b>p</b> fatores a partir de n; embaixo, p!.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Contagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Qual técnica usar?</h2>
+    <div class="flow">
+      <div class="q"><b>1.</b> Usa <b>todos</b> os elementos?</div>
+      <div class="y1"><b>permutação</b> n! (com repetidos, divide pelos fatoriais)</div>
+      <div class="n1">NÃO ↓ · usa só alguns</div>
+      <div class="q"><b>2.</b> A <b>ordem</b> importa?</div>
+      <div class="y1"><b>arranjo</b> ou princípio multiplicativo</div>
+      <div class="n1">NÃO ↓</div>
+      <div class="y1 end"><b>combinação</b></div>
+    </div>
+    <p class="s"><b>"Pelo menos um"</b>: total − nenhum. <b>Restrição</b> ("começa com", "juntos"): resolva-a primeiro.</p>
+    <p class="tip">Pode repetir (senhas, placas)? Use o princípio multiplicativo direto: 10 × 10 × 10.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Probabilidade</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Probabilidade: o básico</h2>
+    <p class="big">P = favoráveis ÷ possíveis<span>de 0 (impossível) a 1 (certo), ou de 0% a 100%</span></p>
+    <table class="xs">
+      <tr><td>Moeda: cara</td><td>1/2</td></tr>
+      <tr><td>Dado: número maior que 4</td><td>2/6 = <b>1/3</b></td></tr>
+      <tr><td>Dois dados: soma 7</td><td>6/36 = <b>1/6</b> (1+6, 2+5, 3+4, 4+3, 5+2, 6+1)</td></tr>
+    </table>
+    <p class="s"><b>Complementar:</b> P(não A) = <b>1 − P(A)</b>. Se a chance de chover é 30%, a de não chover é 70%.</p>
+    <p class="trap">Dois dados têm <b>36</b> resultados possíveis (6 × 6), não 11 somas: (2,5) e (5,2) são resultados diferentes.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Probabilidade</span><span class="num"></span></header>
+  <div class="body">
+    <h2>"E" e "OU"</h2>
+    <table>
+      <tr><td class="r">A <b>e</b> B</td><td><b>P(A) × P(B)</b>, se um não interfere no outro. Duas moedas, duas caras: 1/2 × 1/2 = <b>1/4</b></td></tr>
+      <tr><td class="r">A <b>ou</b> B</td><td><b>P(A) + P(B) − P(A e B)</b>. Dado, par ou maior que 4: 3/6 + 2/6 − 1/6 = <b>2/3</b></td></tr>
+      <tr><td class="r">Exclusivos</td><td>não acontecem juntos: <b>só soma</b>. Dado, 1 ou 2: 2/6 = <b>1/3</b></td></tr>
+    </table>
+    <p class="tip"><b>E</b> multiplica, <b>OU</b> soma, mas tira o que foi contado duas vezes (o 6 é par <b>e</b> maior que 4).</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Probabilidade</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Sem reposição e "sabendo que"</h2>
+    <p class="s"><b>Urna com 3 brancas e 2 pretas</b>; tiram-se duas bolas. P(duas brancas):</p>
+    <table class="xs">
+      <tr><td class="r">Com reposição</td><td>3/5 × 3/5 = <b>9/25</b></td></tr>
+      <tr><td class="r">Sem reposição</td><td>3/5 × 2/4 = 6/20 = <b>3/10</b> (a urna diminui)</td></tr>
+    </table>
+    <p class="s"><b>Condicional:</b> P(A | B) = P(A e B) ÷ P(B). "Sabendo que B ocorreu", o espaço passa a ser só B.</p>
+    <p class="s"><b>Exemplo:</b> o dado deu número par. Chance de ser 6? Pares: 2, 4, 6 → <b>1/3</b>.</p>
+    <p class="trap">"Sabendo que…" <b>muda o denominador</b>: conte só os casos em que a informação é verdadeira.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Probabilidade</span><span class="num"></span></header>
+  <div class="body">
+    <h2>"Pelo menos um" e grupos</h2>
+    <p class="s"><b>P(pelo menos um) = 1 − P(nenhum)</b><br>3 moedas, pelo menos uma cara: 1 − 1/8 = <b>7/8</b>.</p>
+    <p class="s"><b>Sorteio de grupo:</b> P = C(favoráveis) ÷ C(total).<br>3 homens e 2 mulheres; sorteiam-se 2 pessoas:</p>
+    <table class="xs">
+      <tr><td>Total de duplas</td><td>C(5,2) = 10</td></tr>
+      <tr><td>Duas mulheres</td><td>C(2,2) = 1 → <b>1/10</b></td></tr>
+      <tr><td>Um de cada</td><td>3 × 2 = 6 → <b>6/10 = 3/5</b></td></tr>
+      <tr><td>Dois homens</td><td>C(3,2) = 3 → <b>3/10</b></td></tr>
+    </table>
+    <p class="tip">Confira: as probabilidades de todos os casos somam <b>1</b> (1 + 6 + 3 = 10).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 6 de 7</span></div>
+</section>
+
+<!-- =================== FOLHA 7 =================== -->
+<section class="sheet">
+
+<article class="pi l">
+  <header class="strip"><span>Probabilidade</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Exatamente k vezes</h2>
+    <p class="s"><b>P = C(n,k) × p<sup>k</sup> × (1 − p)<sup>n − k</sup></b><br>n tentativas, k sucessos, p = chance de sucesso em cada uma.</p>
+    <p class="s"><b>Exemplo:</b> 3 lançamentos de moeda, exatamente 2 caras: C(3,2) × (1/2)² × (1/2) = 3 × 1/8 = <b>3/8</b>.</p>
+    <table class="xs">
+      <tr><td class="r">Moedas</td><td>1 → 2 resultados · 2 → 4 · 3 → 8 · n → 2<sup>n</sup></td></tr>
+      <tr><td class="r">Dados</td><td>1 → 6 · 2 → 36 · 3 → 216</td></tr>
+      <tr><td class="r">Baralho</td><td>52 cartas: 4 naipes de 13</td></tr>
+      <tr><td class="r">Frações</td><td>1/2 = 50% · 1/4 = 25% · 1/5 = 20% · 1/8 = 12,5% · 3/8 = 37,5%</td></tr>
+    </table>
+    <p class="trap">"Exatamente 2 caras" ≠ "<b>pelo menos</b> 2 caras": esta soma 2 e 3 caras, 3/8 + 1/8 = <b>1/2</b>.</p>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · fórmulas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Fórmulas numa olhada</h2>
+    <table class="xs">
+      <tr><td class="r">Permutação</td><td>P = n!</td></tr>
+      <tr><td class="r">Com repetição</td><td>n! / (a! · b! …)</td></tr>
+      <tr><td class="r">Circular</td><td>(n − 1)!</td></tr>
+      <tr><td class="r">Arranjo</td><td>n! / (n − p)!</td></tr>
+      <tr><td class="r">Combinação</td><td>n! / [p! · (n − p)!]</td></tr>
+      <tr><td class="r">Probabilidade</td><td>favoráveis / possíveis</td></tr>
+      <tr><td class="r">Complementar</td><td>1 − P(A)</td></tr>
+      <tr><td class="r">A e B</td><td>P(A) × P(B)</td></tr>
+      <tr><td class="r">A ou B</td><td>P(A) + P(B) − P(A e B)</td></tr>
+      <tr><td class="r">Pelo menos um</td><td>1 − P(nenhum)</td></tr>
+      <tr><td class="r">Dois conjuntos</td><td>n(A ∪ B) = A + B − (A ∩ B)</td></tr>
+      <tr><td class="r">Tabela-verdade</td><td>2<sup>n</sup> linhas</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · lógica</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Lógica numa olhada</h2>
+    <table class="xs">
+      <tr><th></th><th>É falso quando</th><th>Negação</th><th>Equivale a</th></tr>
+      <tr><td class="r">p ∧ q</td><td>alguma é F</td><td>~p ∨ ~q</td><td>q ∧ p</td></tr>
+      <tr><td class="r">p ∨ q</td><td>as duas são F</td><td>~p ∧ ~q</td><td>~p → q</td></tr>
+      <tr><td class="r">p ⊻ q</td><td>são iguais</td><td>p ↔ q</td><td>~(p ↔ q)</td></tr>
+      <tr><td class="r">p → q</td><td>V → F</td><td>p ∧ ~q</td><td>~q → ~p · ~p ∨ q</td></tr>
+      <tr><td class="r">p ↔ q</td><td>são diferentes</td><td>p ⊻ q</td><td>(p → q) ∧ (q → p)</td></tr>
+    </table>
+    <table class="xs">
+      <tr><td class="r">Todo A é B</td><td>negação: algum A não é B</td></tr>
+      <tr><td class="r">Algum A é B</td><td>negação: nenhum A é B</td></tr>
+      <tr><td class="r">Válidos</td><td>afirmar a 1ª (ponens) · negar a 2ª (tollens)</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · pegadinhas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Pegadinhas certas</h2>
+    <ul class="s plain">
+      <li><span class="no">✘</span> "x + 2 = 5 é proposição" → sentença <b>aberta</b>.</li>
+      <li><span class="no">✘</span> "Negar 'se p, então q' dá 'se p, então não q'" → é <b>p e não q</b>.</li>
+      <li><span class="no">✘</span> "p → q equivale a q → p" → equivale a <b>~q → ~p</b>.</li>
+      <li><span class="no">✘</span> "A negação de 'todo' é 'nenhum'" → é <b>algum… não</b>.</li>
+      <li><span class="no">✘</span> "Algum exclui todos" → algum = <b>pelo menos um</b>.</li>
+      <li><span class="no">✘</span> "Argumento válido tem conclusão verdadeira" → só se as premissas forem V.</li>
+      <li><span class="no">✘</span> "Afirmar o consequente é válido" → é <b>falácia</b>.</li>
+      <li><span class="no">✘</span> "Na combinação a ordem importa" → isso é <b>arranjo</b>.</li>
+      <li><span class="no">✘</span> "P(A ou B) = P(A) + P(B) sempre" → tire a <b>interseção</b>.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>V ou F? Lógica</h2>
+    <ol class="vf">
+      <li>"Feche a porta!" é uma proposição.</li>
+      <li>p → q só é falsa quando p é V e q é F.</li>
+      <li>A negação de "João é PM e Maria é bombeira" é "João não é PM e Maria não é bombeira".</li>
+      <li>"Se chove, fico em casa" equivale a "Se não fico em casa, não chove".</li>
+      <li>A negação de "Todo soldado é atleta" é "Nenhum soldado é atleta".</li>
+      <li>Com 3 proposições simples, a tabela-verdade tem 8 linhas.</li>
+      <li>De "se p, então q" e "q", conclui-se "p".</li>
+      <li>p ∨ ~p é uma tautologia.</li>
+    </ol>
+    <p class="ans">Respostas: 1F · 2V · 3F (é "ou") · 4V · 5F · 6V · 7F · 8V</p>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Resolva de cabeça</h2>
+    <ol class="s">
+      <li>Anagramas de SOLDADO.</li>
+      <li>Equipes de 3 PMs escolhidos entre 7.</li>
+      <li>Comandante e motorista escolhidos entre 6 PMs.</li>
+      <li>Senhas de 3 dígitos distintos.</li>
+      <li>6 pessoas numa mesa redonda.</li>
+      <li>Duas moedas: chance de pelo menos uma cara.</li>
+      <li>Dois dados: chance de a soma ser 12.</li>
+      <li>Urna com 4 azuis e 1 vermelha; tiram-se 2 sem reposição: chance de as duas serem azuis.</li>
+    </ol>
+    <p class="ans">Respostas, em ordem: 1.260 · 35 · 30 · 720 · 120 · 3/4 · 1/36 · 3/5</p>
+  </div>
+</article>
+
+<div class="foot"><span>Raciocínio Lógico · post-its PMPE 2026</span><span>folha 7 de 7</span></div>
+</section>
+
+<script>
+(function(){
+  var b=document.getElementById('modo');
+  function set(eco){document.body.classList.toggle('eco',eco);b.textContent=eco?'Trocar para modo colorido':'Trocar para modo econômico';}
+  b.addEventListener('click',function(){set(!document.body.classList.contains('eco'));});
+  if(/[?&]eco\b/.test(location.search))set(true);
+})();
+</script>
+</body>
+</html>
