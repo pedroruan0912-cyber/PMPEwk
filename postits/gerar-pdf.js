@@ -27,6 +27,16 @@ const files = fs.readdirSync(dir)
         return b.scrollHeight - b.clientHeight > 1 ? `#${i + 1} (${el.querySelector('h2').textContent.trim()}): +${b.scrollHeight - b.clientHeight}px` : null;
       }).filter(Boolean));
       if (over.length) { failed = true; console.error(`${f}: texto estourando em ${over.join('; ')}`); }
+      // Cada folha tem 6 post-its e o total declarado em --total precisa bater com a contagem
+      const count = await page.evaluate(() => ({
+        total: parseInt(getComputedStyle(document.body).getPropertyValue('--total').replace(/\D/g, ''), 10),
+        cards: document.querySelectorAll('.pi').length,
+        perSheet: [...document.querySelectorAll('.sheet')].map(s => s.querySelectorAll('.pi').length),
+      }));
+      if (count.cards !== count.total || count.perSheet.some(n => n !== 6)) {
+        failed = true;
+        console.error(`${f}: --total=${count.total}, post-its=${count.cards}, por folha=${count.perSheet.join(',')}`);
+      }
       const out = path.join(dir, `${base}-${eco ? 'economico' : 'colorido'}.pdf`);
       await page.pdf({ path: out, format: 'A4', printBackground: true, preferCSSPageSize: true });
       console.log('ok:', path.relative(process.cwd(), out));

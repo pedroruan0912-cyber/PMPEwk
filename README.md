@@ -87,6 +87,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 
 | Conjunto | Post-its | Imprimir |
 |---|---|---|
+| Direitos Humanos: parte geral (teoria, tratados, DUDH, Pacto de San José) | 42 (7 folhas) | `postits/direitos-humanos-geral-colorido.pdf` ou `-economico.pdf` |
 | Lei de Drogas (Lei 11.343/2006) | 36 (6 folhas) | `postits/lei-de-drogas-colorido.pdf` ou `-economico.pdf` |
 | Crimes Hediondos (Lei 8.072/1990) | 24 (4 folhas) | `postits/crimes-hediondos-colorido.pdf` ou `-economico.pdf` |
 | Abuso de Autoridade (Lei 13.869/2019) | 30 (5 folhas) | `postits/abuso-de-autoridade-colorido.pdf` ou `-economico.pdf` |
@@ -112,4 +113,4 @@ O texto de cada conjunto fica em `postits/<conjunto>.html` (abre no navegador, c
 node postits/gerar-pdf.js
 ```
 
-O script gera os PDFs de todos os conjuntos (ou só de um: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
+O script gera os PDFs de todos os conjuntos (ou só de um: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
