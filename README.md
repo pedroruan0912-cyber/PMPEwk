@@ -87,6 +87,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 
 | Conjunto | Post-its | Imprimir |
 |---|---|---|
+| Direito Constitucional | 48 (8 folhas) | `postits/direito-constitucional-colorido.pdf` ou `-economico.pdf` |
 | Direitos Humanos: parte geral (teoria, tratados, DUDH, Pacto de San José) | 42 (7 folhas) | `postits/direitos-humanos-geral-colorido.pdf` ou `-economico.pdf` |
 | Lei de Drogas (Lei 11.343/2006) | 36 (6 folhas) | `postits/lei-de-drogas-colorido.pdf` ou `-economico.pdf` |
 | Crimes Hediondos (Lei 8.072/1990) | 24 (4 folhas) | `postits/crimes-hediondos-colorido.pdf` ou `-economico.pdf` |
@@ -101,7 +102,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
 | Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
 
-**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 13 conjuntos (62 folhas cada) na ordem do edital, com um marcador por lei na barra lateral do leitor de PDF.
+**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 14 conjuntos (70 folhas cada) na ordem do edital, com um marcador por lei na barra lateral do leitor de PDF.
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 

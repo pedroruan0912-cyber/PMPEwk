@@ -79,6 +79,8 @@ b{font-weight:750}
 .box b:first-child{display:block;font:700 10.5pt/1 var(--f-hand);color:var(--acc);margin-bottom:.3mm}
 .mn{display:grid;grid-template-columns:4.2mm 1fr;gap:.45mm 1.2mm;align-items:baseline;font-size:8.2pt;line-height:1.24}
 .mn i{font:800 10.5pt/1 var(--f-body);font-style:normal;color:var(--acc);text-align:center}
+.mn.m{grid-template-columns:9.5mm 1fr}
+.mn.m i{text-align:left}
 .mn.w{grid-template-columns:11.5mm 1fr}
 .mn.w i{font:800 6.4pt/1.25 var(--f-body);letter-spacing:.05em;text-transform:uppercase;text-align:left}
 table{border-collapse:collapse;width:100%;font-size:8.2pt;line-height:1.2}

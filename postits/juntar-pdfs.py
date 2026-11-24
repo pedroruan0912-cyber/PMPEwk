@@ -14,8 +14,9 @@ from pypdf import PdfReader, PdfWriter
 PASTA = Path(__file__).resolve().parent
 VERSOES = ["colorido", "economico"]
 
-# Mesma ordem dos capítulos do e-book (e do conteúdo programático do edital)
+# Ordem do Bloco III do edital: Direito Constitucional, depois os capítulos do e-book de Direitos Humanos
 CONJUNTOS = [
+    ("direito-constitucional", "Direito Constitucional"),
     ("direitos-humanos-geral", "Direitos Humanos: parte geral"),
     ("eca", "ECA"),
     ("abuso-de-autoridade", "Abuso de Autoridade"),
@@ -48,7 +49,7 @@ def juntar(versao: str) -> int:
 
     escritor.page_mode = "/UseOutlines"
     rotulo = "colorido" if versao == "colorido" else "econômico"
-    escritor.add_metadata({"/Title": f"Post-its PMPE 2026: Direitos Humanos e Legislação ({rotulo})"})
+    escritor.add_metadata({"/Title": f"Post-its PMPE 2026: Direito Constitucional, Direitos Humanos e Legislação ({rotulo})"})
     # As fontes se repetem em cada conjunto: tirar as cópias reduz o arquivo pela metade
     escritor.compress_identical_objects(remove_duplicates=True, remove_unreferenced=True)
     saida = PASTA / f"postits-pmpe-2026-{versao}.pdf"
