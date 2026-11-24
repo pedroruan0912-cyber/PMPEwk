@@ -95,6 +95,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Racismo (Lei 7.716/1989) | 24 (4 folhas) | `postits/racismo-colorido.pdf` ou `-economico.pdf` |
 | Crimes Ambientais (Lei 9.605/1998) | 30 (5 folhas) | `postits/crimes-ambientais-colorido.pdf` ou `-economico.pdf` |
 | ECA (Lei 8.069/1990) | 36 (6 folhas) | `postits/eca-colorido.pdf` ou `-economico.pdf` |
+| Estatuto da PMPE (Lei estadual 6.783/1974) | 24 (4 folhas) | `postits/estatuto-pmpe-colorido.pdf` ou `-economico.pdf` |
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
