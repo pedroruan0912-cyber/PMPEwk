@@ -127,10 +127,10 @@ const MODELOS = [
       'confiança da população e por tornar a prevenção do crime mais eficaz{/}.'
     ],[
       'Em primeiro lugar, a proximidade fortalece a confiança da população.',
-      '{r}A Constituição de 1988 define, no artigo 144, a segurança pública como',
-      '"dever do Estado, direito e responsabilidade de todos"{/}. Sob essa ótica,',
-      'quando o mesmo policial atua no bairro por longo tempo, moradores e',
-      'comerciantes passam a vê-lo como aliado e colaboram com informações, o',
+      '{r}A Constituição Federal de 1988 define, no artigo 144, a segurança pública',
+      'como "dever do Estado, direito e responsabilidade de todos"{/}. Sob essa',
+      'ótica, quando o mesmo policial atua no bairro por longo tempo, moradores',
+      'e comerciantes passam a vê-lo como aliado e colaboram com informações, o',
       'que agiliza investigações e enfraquece o domínio de grupos criminosos.'
     ],[
       'Além disso, o policiamento comunitário torna a prevenção eficaz.',
@@ -212,9 +212,9 @@ const MODELOS = [
       'Além disso, a saúde mental do agente repercute na qualidade do',
       'atendimento. Um profissional esgotado tem mais dificuldade de controlar',
       'emoções, decidir sob pressão e dialogar com o cidadão em uma ocorrência.',
-      'Nesse contexto, {r}a Constituição, no artigo 196, define a saúde como direito',
-      'de todos{/}, inclusive de quem veste a farda, de modo que cuidar dela é',
-      'também uma forma de garantir uma atuação policial técnica e segura.'
+      'Nesse contexto, {r}a Constituição Federal de 1988, no artigo 196, define a saúde',
+      'como direito de todos{/}, inclusive de quem veste a farda, de modo que cuidar',
+      'dela é também uma forma de garantir uma atuação policial técnica e segura.'
     ],[
       'Portanto, a saúde mental do policial deve ser prioridade. Para isso,',
       '{p}o Governo do Estado deve garantir atendimento psicológico periódico',
@@ -241,10 +241,10 @@ const MODELOS = [
       'oportunidades para os jovens e pela ausência do Estado nas periferias{/}.'
     ],[
       'Em primeiro lugar, a falta de oportunidades torna o crime atraente.',
-      '{r}A Constituição determina, no artigo 227, que o jovem deve receber',
-      '"absoluta prioridade" da família, da sociedade e do Estado{/}. Contudo,',
-      'a evasão escolar e o desemprego deixam muitos adolescentes sem renda',
-      'e sem perspectiva, de modo que a promessa de dinheiro rápido feita',
+      '{r}A Constituição Federal de 1988 determina, no artigo 227, que o jovem',
+      'deve receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
+      'Contudo, a evasão escolar e o desemprego deixam muitos adolescentes sem',
+      'renda e sem perspectiva, de modo que a promessa de dinheiro rápido feita',
       'pelo tráfico parece, para eles, o único caminho possível.'
     ],[
       'Além disso, a ausência do Estado abre espaço para o tráfico. {r}Segundo',
@@ -400,11 +400,11 @@ const MODELOS = [
       'outras atividades ilegais nas periferias.'
     ],[
       'Além disso, a escola forma valores de convivência e respeito. {r}O',
-      'artigo 205 da Constituição afirma que a educação deve preparar a',
-      'pessoa para o exercício da cidadania{/}. Sob essa ótica, aulas que',
-      'tratam de diálogo, tolerância e respeito às leis ajudam a prevenir',
-      'conflitos, bullying e violência doméstica, de modo que a escola atua',
-      'antes que o problema chegue às delegacias.'
+      'artigo 205 da Constituição Federal de 1988 afirma que a educação deve',
+      'preparar a pessoa para o exercício da cidadania{/}. Sob essa ótica, aulas',
+      'que tratam de diálogo, tolerância e respeito às leis ajudam a prevenir',
+      'conflitos, bullying e violência doméstica, de modo que a escola atua antes',
+      'que o problema chegue às delegacias.'
     ],[
       'Portanto, investir em educação é investir em segurança. Para isso,',
       '{p}os estados devem ampliar as escolas em tempo integral e manter',
@@ -425,9 +425,9 @@ const MODELOS = [
   tipo:'Tema polêmico → posição contrária, fundamentada na Constituição',
   p:[
     [
-      '{r}A Constituição Federal, no artigo 228, determina que os menores de',
-      '18 anos são penalmente inimputáveis{/}. Embora a proposta de reduzir',
-      'essa idade ganhe apoio diante da violência, {t}ela não resolve o',
+      '{r}A Constituição Federal de 1988, no artigo 228, determina que os',
+      'menores de 18 anos são penalmente inimputáveis{/}. Embora a proposta de',
+      'reduzir essa idade ganhe apoio diante da violência, {t}ela não resolve o',
       'problema, pois ignora suas causas sociais e a falência das prisões{/}.'
     ],[
       'Em primeiro lugar, a medida não ataca as causas da criminalidade',
@@ -577,10 +577,10 @@ const MODELOS = [
   tipo:'Tema de "importância" → dois benefícios',
   p:[
     [
-      '{r}O artigo 144 da Constituição define a segurança pública como',
-      '"dever do Estado, direito e responsabilidade de todos"{/}. Para cumprir',
-      'esse dever, {t}valorizar o policial é essencial, pois melhora o serviço',
-      'prestado e protege a saúde de quem protege a sociedade{/}.'
+      '{r}O artigo 144 da Constituição Federal de 1988 define a segurança',
+      'pública como "dever do Estado, direito e responsabilidade de todos"{/}.',
+      'Para cumprir esse dever, {t}valorizar o policial é essencial, pois melhora',
+      'o serviço prestado e protege a saúde de quem protege a sociedade{/}.'
     ],[
       'Em primeiro lugar, a valorização torna o serviço mais eficiente.',
       'Formação continuada, equipamentos modernos e salário digno permitem que',
@@ -698,10 +698,10 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, a falta de moradia empurra famílias para o risco.',
       'Sem renda para pagar aluguel em áreas seguras, muitas pessoas ocupam',
-      'morros e margens de rios. {r}O geógrafo Milton Santos chamou de',
-      '"cidadania mutilada" a condição de quem tem direitos só no papel{/}.',
-      'Sob essa ótica, o direito à moradia, previsto na Constituição, não',
-      'chega a essas famílias, que ficam expostas a deslizamentos e enchentes.'
+      'morros e margens de rios. {r}O geógrafo Milton Santos chamou de "cidadania',
+      'mutilada" a condição de quem tem direitos só no papel{/}. Sob essa ótica, o',
+      'direito à moradia, previsto na Constituição Federal de 1988, não chega a',
+      'essas famílias, que ficam expostas a deslizamentos e enchentes.'
     ],[
       'Além disso, o poder público investe pouco em prevenção. Drenagem',
       'precária, obras de contenção inacabadas e sistemas de alerta pouco',
@@ -881,10 +881,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição determina, no artigo 227, que crianças e adolescentes',
-      'devem receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
-      'Na prática, a violência contra esse público persiste, {t}sobretudo porque',
-      'ocorre dentro de casa e porque a rede de proteção é falha{/}.'
+      '{r}A Constituição Federal de 1988 determina, no artigo 227, que crianças',
+      'e adolescentes devem receber "absoluta prioridade" da família, da sociedade',
+      'e do Estado{/}. Na prática, a violência contra esse público persiste,',
+      '{t}sobretudo porque ocorre dentro de casa e porque a rede de proteção é falha{/}.'
     ],[
       'Em primeiro lugar, grande parte das agressões acontece no lar. O',
       'agressor costuma ser alguém próximo, e a criança, por medo ou dependência,',
@@ -969,12 +969,12 @@ const MODELOS = [
       'preconceito persiste, de modo que o dependente só procura ajuda',
       'quando já perdeu emprego, laços familiares e saúde.'
     ],[
-      'Além disso, o tratamento ainda é difícil de acessar. Os Centros',
-      'de Atenção Psicossocial especializados em álcool e drogas (CAPS AD)',
-      'são poucos diante da demanda, e as filas são longas. {r}A Constituição, no',
-      'artigo 196, define a saúde como direito de todos e dever do Estado{/}. Nesse',
-      'contexto, quem não consegue atendimento volta ao consumo e, muitas vezes,',
-      'ao ciclo de dívidas com o tráfico, que alimenta a violência.'
+      'Além disso, o tratamento ainda é difícil de acessar. Os Centros de',
+      'Atenção Psicossocial especializados em álcool e drogas (CAPS AD) são poucos',
+      'diante da demanda, e as filas são longas. {r}A Constituição Federal de 1988,',
+      'no artigo 196, define a saúde como direito de todos e dever do Estado{/}.',
+      'Nesse contexto, quem não consegue atendimento volta ao consumo e, muitas',
+      'vezes, ao ciclo de dívidas com o tráfico, que alimenta a violência.'
     ],[
       'Portanto, a dependência química deve ser tratada como questão de',
       'saúde. Para isso, {p}o Ministério da Saúde deve ampliar os CAPS AD,',
@@ -995,10 +995,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}O artigo 37 da Constituição impõe à administração pública os',
-      'princípios da legalidade, impessoalidade, moralidade, publicidade e',
-      'eficiência{/}. A corrupção, porém, ainda desafia o país, {t}sobretudo',
-      'pela cultura de privilégios e pela impunidade{/}.'
+      '{r}O artigo 37 da Constituição Federal de 1988 impõe à administração',
+      'pública os princípios da legalidade, impessoalidade, moralidade,',
+      'publicidade e eficiência{/}. A corrupção, porém, ainda desafia o país,',
+      '{t}sobretudo pela cultura de privilégios e pela impunidade{/}.'
     ],[
       'Em primeiro lugar, a cultura de privilégios favorece desvios.',
       '{r}Em "Raízes do Brasil", Sérgio Buarque de Holanda descreve o "homem',
@@ -1071,10 +1071,10 @@ const MODELOS = [
   tipo:'Tema de "desafios" → dois obstáculos',
   p:[
     [
-      '{r}O artigo 225 da Constituição garante a todos o direito ao meio',
-      'ambiente ecologicamente equilibrado{/}. Contudo, desmatamentos e',
-      'queimadas ilegais persistem no Brasil, {t}sobretudo pela fiscalização',
-      'insuficiente e pela busca por lucro imediato{/}.'
+      '{r}O artigo 225 da Constituição Federal de 1988 garante a todos',
+      'o direito ao meio ambiente ecologicamente equilibrado{/}. Contudo,',
+      'desmatamentos e queimadas ilegais persistem no Brasil, {t}sobretudo pela',
+      'fiscalização insuficiente e pela busca por lucro imediato{/}.'
     ],[
       'Em primeiro lugar, a fiscalização não acompanha o tamanho do país.',
       'Grandes áreas de mata são vigiadas por poucos agentes, e muitas multas',
@@ -1299,10 +1299,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição garante, no artigo 5º, que é inviolável a liberdade',
-      'de consciência e de crença{/}. Ainda assim, a intolerância religiosa',
-      'persiste no Brasil, {t}sobretudo pelo desconhecimento das outras',
-      'crenças e pela impunidade dos ataques{/}.'
+      '{r}A Constituição Federal de 1988 garante, no artigo 5º, que é',
+      'inviolável a liberdade de consciência e de crença{/}. Ainda assim, a',
+      'intolerância religiosa persiste no Brasil, {t}sobretudo pelo desconhecimento',
+      'das outras crenças e pela impunidade dos ataques{/}.'
     ],[
       'Em primeiro lugar, o desconhecimento alimenta o preconceito.',
       'Religiões de matriz africana, como o candomblé e a umbanda, são',
@@ -1375,10 +1375,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição proíbe qualquer trabalho a menores de 16 anos, salvo',
-      'na condição de aprendiz, a partir dos 14{/}. Ainda assim, o trabalho',
-      'infantil persiste no país, {t}sobretudo pela pobreza das famílias e',
-      'pela ideia de que "trabalhar cedo forma o caráter"{/}.'
+      '{r}A Constituição Federal de 1988 proíbe qualquer trabalho a menores',
+      'de 16 anos, salvo na condição de aprendiz, a partir dos 14{/}. Ainda assim,',
+      'o trabalho infantil persiste no país, {t}sobretudo pela pobreza das famílias',
+      'e pela ideia de que "trabalhar cedo forma o caráter"{/}.'
     ],[
       'Em primeiro lugar, a pobreza empurra crianças para o trabalho.',
       'Em famílias de baixa renda, o dinheiro ganho por crianças nas ruas, nas',
@@ -1413,10 +1413,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição inclui, no artigo 6º, a moradia entre os direitos',
-      'sociais{/}. Contudo, cresce o número de pessoas em situação de rua nas',
-      'grandes cidades, {t}sobretudo pela crise habitacional e de renda e pela falta',
-      'de acolhimento contínuo{/}.'
+      '{r}A Constituição Federal de 1988 inclui, no artigo 6º, a moradia entre',
+      'os direitos sociais{/}. Contudo, cresce o número de pessoas em situação de',
+      'rua nas grandes cidades, {t}sobretudo pela crise habitacional e de renda e',
+      'pela falta de acolhimento contínuo{/}.'
     ],[
       'Em primeiro lugar, a falta de renda e de um lar leva muitos às ruas.',
       'Desemprego, aluguéis caros e o rompimento de vínculos familiares deixam',
@@ -1463,12 +1463,12 @@ const MODELOS = [
       'contínuas, a conquista não se sustenta, e a mesa vazia volta à rotina dos',
       'mais pobres.'
     ],[
-      'Além disso, o desperdício agrava a insegurança alimentar. Muitos',
-      'alimentos se perdem na colheita, no transporte e nos supermercados,',
-      'enquanto pessoas passam fome a poucos metros. {r}A Constituição inclui',
-      'a alimentação entre os direitos sociais, no artigo 6º{/}. Nesse',
-      'sentido, desperdiçar comida em um país com fome é negar esse direito',
-      'a quem mais precisa dele.'
+      'Além disso, o desperdício agrava a insegurança alimentar.',
+      'Muitos alimentos se perdem na colheita, no transporte e nos',
+      'supermercados, enquanto pessoas passam fome a poucos metros. {r}A',
+      'Constituição Federal de 1988 inclui a alimentação entre os direitos',
+      'sociais, no artigo 6º{/}. Nesse sentido, desperdiçar comida em um país com',
+      'fome é negar esse direito a quem mais precisa dele.'
     ],[
       'Portanto, acabar com a fome exige ação permanente. Para isso, {p}o',
       'governo deve manter a transferência de renda e a alimentação escolar',
@@ -1496,10 +1496,10 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, as barreiras impedem o exercício de direitos.',
       'Calçadas irregulares, ônibus sem elevador e a falta de intérpretes de',
-      'Libras dificultam o acesso à escola, ao trabalho e aos serviços.',
-      '{r}O artigo 5º da Constituição garante a igualdade de todos perante a',
-      'lei{/}, mas, sem acessibilidade, essa igualdade fica no papel, de modo',
-      'que muitas pessoas deixam de sair de casa.'
+      'Libras dificultam o acesso à escola, ao trabalho e aos serviços. {r}O artigo',
+      '5º da Constituição Federal de 1988 garante a igualdade de todos perante',
+      'a lei{/}, mas, sem acessibilidade, essa igualdade fica no papel, de modo que',
+      'muitas pessoas deixam de sair de casa.'
     ],[
       'Além disso, o capacitismo limita oportunidades. Muitos ainda duvidam',
       'da capacidade da pessoa com deficiência e a tratam com pena ou',
@@ -1527,9 +1527,9 @@ const MODELOS = [
   tipo:'Tema de "desafios" → dois obstáculos',
   p:[
     [
-      '{r}Desde 2015, a Constituição inclui o transporte entre os direitos',
-      'sociais{/}. Nas grandes cidades, porém, deslocar-se ainda é um desafio,',
-      '{t}sobretudo pela priorização do transporte individual e pela baixa',
+      '{r}Desde 2015, a Constituição Federal de 1988 inclui o transporte entre',
+      'os direitos sociais{/}. Nas grandes cidades, porém, deslocar-se ainda é um',
+      'desafio, {t}sobretudo pela priorização do transporte individual e pela baixa',
       'qualidade do transporte público{/}.'
     ],[
       'Em primeiro lugar, as cidades foram planejadas para o carro. O',
@@ -1578,11 +1578,11 @@ const MODELOS = [
       'ruas das cidades.'
     ],[
       'Além disso, a fiscalização e as denúncias são insuficientes.',
-      'Muitos casos acontecem dentro de casas e quintais, longe dos olhos',
-      'das autoridades. {r}O artigo 225 da Constituição veda práticas que',
-      'submetam os animais a crueldade{/}. Nesse sentido, sem canais de',
-      'denúncia conhecidos e sem equipes para atender, a lei não chega a',
-      'quem precisa de proteção.'
+      'Muitos casos acontecem dentro de casas e quintais, longe dos olhos das',
+      'autoridades. {r}O artigo 225 da Constituição Federal de 1988 veda práticas',
+      'que submetam os animais a crueldade{/}. Nesse sentido, sem canais de denúncia',
+      'conhecidos e sem equipes para atender, a lei não chega a quem precisa de',
+      'proteção.'
     ],[
       'Portanto, é preciso combater os maus-tratos a animais. Para isso, {p}os',
       'municípios devem ampliar castração e adoção responsável, e o policiamento',
@@ -1603,10 +1603,10 @@ const MODELOS = [
   tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
   p:[
     [
-      '{r}A Constituição determina, no artigo 226, que o Estado crie',
-      'mecanismos para coibir a violência no âmbito das relações familiares{/}.',
-      'Contudo, o feminicídio persiste no Brasil, e combatê-lo {t}exige que o',
-      'Estado garanta proteção efetiva e que a sociedade rompa o silêncio{/}.'
+      '{r}A Constituição Federal de 1988 determina, no artigo 226, que o',
+      'Estado crie mecanismos para coibir a violência no âmbito das relações',
+      'familiares{/}. Contudo, o feminicídio persiste no Brasil, e combatê-lo {t}exige',
+      'que o Estado garanta proteção efetiva e que a sociedade rompa o silêncio{/}.'
     ],[
       'Em primeiro lugar, cabe ao Estado tornar a lei uma proteção real.',
       '{r}A Lei 14.994, de 2024, tornou o feminicídio crime autônomo, com pena',
@@ -1642,10 +1642,10 @@ const MODELOS = [
   tipo:'Tema de aula · "papel" pede o potencial e os limites',
   p:[
     [
-      '{r}A Constituição define a segurança pública como "dever do Estado,',
-      'direito e responsabilidade de todos"{/}. Nessa tarefa coletiva, a tecnologia',
-      'e as redes sociais {t}são aliadas contra a violência urbana, desde que riscos',
-      'como a desinformação e a violação da privacidade sejam controlados{/}.'
+      '{r}A Constituição Federal de 1988 define a segurança pública como "dever',
+      'do Estado, direito e responsabilidade de todos"{/}. Nessa tarefa coletiva, a',
+      'tecnologia e as redes sociais {t}são aliadas contra a violência urbana, desde',
+      'que riscos como a desinformação e a violação da privacidade sejam controlados{/}.'
     ],[
       'Em primeiro lugar, a tecnologia amplia a prevenção. Sistemas de',
       'mapeamento da mancha criminal indicam os locais e horários de maior',
@@ -1756,10 +1756,10 @@ const MODELOS = [
   tipo:'Tema de aula · esqueleto 3: a lei garante, a realidade não cumpre',
   p:[
     [
-      '{r}O artigo 230 da Constituição impõe à família, à sociedade e ao',
-      'Estado o dever de amparar os idosos{/}. Contudo, a violência contra esse',
-      'grupo persiste, {t}sobretudo pela subnotificação dos abusos e pela atuação',
-      'ainda limitada da segurança pública{/}.'
+      '{r}O artigo 230 da Constituição Federal de 1988 impõe à família, à',
+      'sociedade e ao Estado o dever de amparar os idosos{/}. Contudo, a violência',
+      'contra esse grupo persiste, {t}sobretudo pela subnotificação dos abusos e',
+      'pela atuação ainda limitada da segurança pública{/}.'
     ],[
       'Em primeira análise, a violência contra o idoso é silenciosa.',
       '{r}Como mostra Gilberto Dimenstein em "O Cidadão de Papel", muitos direitos',
@@ -1832,10 +1832,10 @@ const MODELOS = [
   tipo:'Tema de aula · "linha tênue entre X e Y": um desenvolvimento para cada lado',
   p:[
     [
-      '{r}A Constituição, no artigo 227, e o Estatuto da Criança e do',
-      'Adolescente asseguram, em tese, a proteção integral de crianças e',
-      'adolescentes{/}. Contudo, o aliciamento desse público pelo crime organizado',
-      'expõe {t}a vulnerabilidade social e a ineficácia do Estatuto{/}.'
+      '{r}A Constituição Federal de 1988, no artigo 227, e o Estatuto da',
+      'Criança e do Adolescente asseguram, em tese, a proteção integral de',
+      'crianças e adolescentes{/}. Contudo, o aliciamento desse público pelo crime',
+      'organizado expõe {t}a vulnerabilidade social e a ineficácia do Estatuto{/}.'
     ],[
       'Primordialmente, a vulnerabilidade social deixa crianças e',
       'adolescentes à mercê das facções. Sem escola de qualidade, lazer e',
@@ -1908,9 +1908,9 @@ const MODELOS = [
   tipo:'Tema de aula · a tensão entre direito à informação e lógica do entretenimento',
   p:[
     [
-      '{r}A Constituição assegura a liberdade de informação, mas também',
-      'protege a intimidade, a honra e a imagem das pessoas{/}. Contudo, a',
-      'espetacularização do crime pela mídia ultrapassa esse limite, {t}sobretudo',
+      '{r}A Constituição Federal de 1988 assegura a liberdade de informação,',
+      'mas também protege a intimidade, a honra e a imagem das pessoas{/}. Contudo,',
+      'a espetacularização do crime pela mídia ultrapassa esse limite, {t}sobretudo',
       'pela busca por audiência e pela fragilidade da autorregulação{/}.'
     ],[
       'Em primeiro plano, destaca-se a lógica comercial. {r}Em "Sobre a',
@@ -1947,9 +1947,9 @@ const MODELOS = [
   tipo:'Versão 2 · outros dois desafios: integração e prevenção',
   p:[
     [
-      '{r}O artigo 144 da Constituição define a segurança pública como "dever',
-      'do Estado, direito e responsabilidade de todos"{/}. No Brasil, porém, a',
-      'violência persiste, {t}sobretudo pela falta de integração entre as',
+      '{r}O artigo 144 da Constituição Federal de 1988 define a segurança pública',
+      'como "dever do Estado, direito e responsabilidade de todos"{/}. No Brasil,',
+      'porém, a violência persiste, {t}sobretudo pela falta de integração entre as',
       'instituições e pelo foco excessivo na repressão, em vez da prevenção{/}.'
     ],[
       'Em primeiro lugar, os órgãos de segurança ainda atuam isolados.',
@@ -2227,10 +2227,10 @@ const MODELOS = [
     ],[
       'Além disso, a ferramenta exige limites para não violar direitos.',
       'Sistemas de reconhecimento podem errar, sobretudo com pessoas negras,',
-      'e já houve casos de prisões injustas por identificação equivocada.',
-      '{r}A Constituição garante que ninguém será considerado culpado antes de',
-      'condenação definitiva{/}. Por isso, o alerta da máquina deve ser apenas o',
-      'início de uma verificação feita por agentes humanos.'
+      'e já houve casos de prisões injustas por identificação equivocada. {r}A',
+      'Constituição Federal de 1988 garante que ninguém será considerado culpado',
+      'antes de condenação definitiva{/}. Por isso, o alerta da máquina deve ser',
+      'apenas o início de uma verificação feita por agentes humanos.'
     ],[
       'Portanto, a tecnologia deve servir à segurança com responsabilidade.',
       'Para isso, {p}a Secretaria de Defesa Social deve adotar protocolos que exijam',
@@ -2258,10 +2258,10 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, a escola em tempo integral protege os jovens.',
       'Quando o aluno passa o dia em atividades de estudo, esporte e cultura,',
-      'fica menos exposto à rua e ao aliciamento do tráfico. {r}O artigo 227',
-      'da Constituição exige "absoluta prioridade" para crianças e jovens{/}.',
-      'Nesse sentido, ampliar a jornada escolar é cumprir essa prioridade e',
-      'oferecer um ambiente seguro enquanto as famílias trabalham.'
+      'fica menos exposto à rua e ao aliciamento do tráfico. {r}O artigo 227 da',
+      'Constituição Federal de 1988 exige "absoluta prioridade" para crianças e',
+      'jovens{/}. Nesse sentido, ampliar a jornada escolar é cumprir essa prioridade',
+      'e oferecer um ambiente seguro enquanto as famílias trabalham.'
     ],[
       'Além disso, a escola ensina a convivência e o diálogo. {r}Para Émile',
       'Durkheim, a educação é a socialização das novas gerações, que aprendem',
@@ -2379,10 +2379,10 @@ const MODELOS = [
     ],[
       'Além disso, a IA pode repetir preconceitos se não houver controle.',
       'Algoritmos aprendem com dados do passado e, se esses dados refletem',
-      'abordagens desiguais, tendem a apontar sempre os mesmos bairros e',
-      'grupos. {r}O artigo 5º da Constituição garante que todos são iguais',
-      'perante a lei{/}. Por isso, decisões automatizadas precisam ser',
-      'auditadas para não transformar preconceito em estatística.'
+      'abordagens desiguais, tendem a apontar sempre os mesmos bairros e grupos.',
+      '{r}O artigo 5º da Constituição Federal de 1988 garante que todos são iguais',
+      'perante a lei{/}. Por isso, decisões automatizadas precisam ser auditadas',
+      'para não transformar preconceito em estatística.'
     ],[
       'Portanto, a inteligência artificial deve ser usada com equilíbrio.',
       'Para isso, {p}o Ministério da Justiça deve criar regras de uso e',
@@ -2408,11 +2408,11 @@ const MODELOS = [
       'adolescentes, o uso excessivo de telas cresce, {t}sobretudo pela falta de',
       'supervisão das famílias e pelo funcionamento viciante das plataformas{/}.'
     ],[
-      'Em primeiro lugar, muitas famílias não acompanham o uso das telas.',
-      'Com pais sobrecarregados pelo trabalho, o celular vira babá, e a',
-      'criança passa horas na internet sem limites de tempo ou de conteúdo.',
-      '{r}A Constituição, no artigo 227, atribui também à família o dever de',
-      'proteger crianças e adolescentes{/}. Nesse sentido, a falta de',
+      'Em primeiro lugar, muitas famílias não acompanham o uso das',
+      'telas. Com pais sobrecarregados pelo trabalho, o celular vira babá, e',
+      'a criança passa horas na internet sem limites de tempo ou de conteúdo.',
+      '{r}A Constituição Federal de 1988, no artigo 227, atribui também à família',
+      'o dever de proteger crianças e adolescentes{/}. Nesse sentido, a falta de',
       'supervisão deixa os filhos expostos a riscos que não sabem reconhecer.'
     ],[
       'Além disso, as plataformas são projetadas para prender a atenção.',
