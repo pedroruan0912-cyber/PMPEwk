@@ -101,7 +101,7 @@ Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada u
 | Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
 | Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
 
-**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` junta os 13 conjuntos coloridos (62 folhas) na ordem do edital, com um marcador por lei na barra lateral do leitor de PDF.
+**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 13 conjuntos (62 folhas cada) na ordem do edital, com um marcador por lei na barra lateral do leitor de PDF.
 
 A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
 
@@ -115,4 +115,4 @@ O texto de cada conjunto fica em `postits/<conjunto>.html` (abre no navegador, c
 node postits/gerar-pdf.js
 ```
 
-O script gera os PDFs de todos os conjuntos, atualiza o arquivo único (via `postits/juntar-pdfs.py`, que usa o pacote Python `pypdf`) (para gerar só um conjunto: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
+O script gera os PDFs de todos os conjuntos, atualiza os dois arquivos únicos (via `postits/juntar-pdfs.py`, que usa o pacote Python `pypdf`) (para gerar só um conjunto: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.
