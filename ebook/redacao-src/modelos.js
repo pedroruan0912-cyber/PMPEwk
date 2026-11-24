@@ -1598,7 +1598,7 @@ const MODELOS = [
   ]
 },
 {
-  id:'m56', curto:'Feminicídio: Estado e sociedade',
+  id:'m56', aula:'03/10', curto:'Feminicídio: Estado e sociedade',
   tema:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio',
   tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
   p:[
@@ -1633,6 +1633,311 @@ const MODELOS = [
     'O artigo 226 da Constituição é um repertório preciso: impõe ao próprio Estado o dever de coibir a violência familiar.',
     'O D1 reconhece o avanço da lei (pena de 20 a 40 anos), mas mostra que punir depois da morte não basta: é preciso prevenir.',
     'O D2 desmonta um ditado popular, e a proposta dá uma tarefa a cada responsável, com um canal real de denúncia (Ligue 180).'
+  ]
+},
+// ---------- Temas trabalhados nas aulas do curso (Instituto AOCP, PMPE 2027) ----------
+{
+  id:'m57', aula:'03/10', curto:'Tecnologia e redes sociais',
+  tema:'O papel da tecnologia e das redes sociais na prevenção e combate à violência urbana',
+  tipo:'Tema de aula · "papel" pede o potencial e os limites',
+  p:[
+    [
+      '{r}A Constituição define a segurança pública como "dever do Estado,',
+      'direito e responsabilidade de todos"{/}. Nesse cenário, a tecnologia e as',
+      'redes sociais {t}são aliadas contra a violência urbana, desde que riscos como',
+      'a desinformação e a violação da privacidade sejam controlados{/}.'
+    ],[
+      'Em primeiro lugar, a tecnologia amplia a prevenção. Softwares',
+      'de mapeamento da mancha criminal indicam os locais e horários de maior',
+      'incidência de delitos, o que otimiza o efetivo policial. {r}Em Pernambuco,',
+      'o Pacto pela Vida mostrou que a gestão baseada em dados contribui para',
+      'reduzir homicídios{/}. Somam-se a isso os canais digitais de denúncia, que',
+      'permitem à população colaborar com a polícia.'
+    ],[
+      'Por outro lado, o uso inadequado dessas ferramentas gera riscos.',
+      'Nas redes, boatos sobre supostos criminosos já levaram inocentes a',
+      'linchamentos, numa lógica de "justiça com as próprias mãos". {r}A Lei Geral',
+      'de Proteção de Dados exige transparência no uso de informações pessoais{/},',
+      'cuidado indispensável quando o reconhecimento facial em massa pode errar',
+      'e reproduzir vieses contra pessoas negras.'
+    ],[
+      'Portanto, a tecnologia deve servir à segurança com responsabilidade.',
+      'Para isso, {p}o Governo do Estado deve ampliar o videomonitoramento e os',
+      'canais de denúncia, com proteção de dados e campanhas contra notícias',
+      'falsas, a fim de prevenir crimes sem violar direitos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula (Instituto AOCP, PMPE 2027). A palavra "papel" pede os dois lados: o potencial e os limites, como foi discutido em sala.',
+    'A introdução destaca a "responsabilidade de todos" do artigo 144, o que justifica falar das redes sociais, isto é, da sociedade participando.',
+    'O D1 traz o potencial (mancha criminal, dados, denúncia); o D2, os riscos apontados na aula: notícias falsas, "justiça com as próprias mãos", privacidade e vieses algorítmicos.',
+    'A proposta une tecnologia e proteção de direitos, sem demonizar as redes.'
+  ]
+},
+{
+  id:'m58', aula:'03/10', curto:'Violência doméstica e medidas protetivas',
+  tema:'Os desafios para o enfrentamento da violência doméstica e a garantia da efetividade das medidas protetivas',
+  tipo:'Tema de aula · dois desafios: fiscalização das medidas e acolhimento',
+  p:[
+    [
+      '{r}A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência',
+      'para afastar o agressor e proteger a vítima{/}. No entanto, a violência',
+      'doméstica persiste, {t}não pela falta de lei, mas pela fiscalização frágil',
+      'dessas medidas e pela falta de acolhimento às mulheres{/}.'
+    ],[
+      'Em primeiro lugar, as medidas protetivas nem sempre saem do',
+      'papel. {r}Desde 2018, descumpri-las é crime, previsto no artigo 24-A da Lei',
+      'Maria da Penha{/}. Na prática, porém, poucas cidades contam com patrulhas',
+      'especializadas para visitar as vítimas e monitorar os agressores, de modo',
+      'que a ordem judicial vira apenas um documento. Assim, a vítima continua',
+      'exposta, e o ciclo de agressões pode terminar em feminicídio.'
+    ],[
+      'Além disso, falta uma rede de acolhimento que permita romper o',
+      'ciclo. {r}Segundo o Anuário Brasileiro de Segurança Pública, a maior parte',
+      'dos feminicídios ocorre dentro de casa e é cometida por parceiros ou',
+      'ex-parceiros{/}. Mesmo assim, muitas mulheres deixam de denunciar por medo',
+      'ou dependência financeira e, sem abrigo nem atendimento psicológico,',
+      'permanecem no lar violento, o que perpetua as agressões.'
+    ],[
+      'Portanto, as medidas protetivas precisam ser efetivas. Para isso,',
+      '{p}os estados devem ampliar as Patrulhas Maria da Penha e o monitoramento',
+      'eletrônico dos agressores, e o Judiciário deve agilizar a concessão das',
+      'medidas, a fim de proteger a vítima a tempo{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A tese segue a ideia central discutida em sala: a violência não persiste pela falta de lei, mas pela ineficácia da rede de proteção.',
+    'O D1 cita o crime de descumprimento de medida protetiva (art. 24-A), repertório jurídico preciso e ligado à atuação policial.',
+    'O D2 usa um dado do Anuário que também aparece nos textos motivadores da aula e explica por que a vítima não sai do ciclo.',
+    'A proposta tem dois agentes, como sugerido em aula: o Executivo (patrulhas e monitoramento) e o Judiciário (celeridade).'
+  ]
+},
+{
+  id:'m59', aula:'10/10', curto:'Era digital e segurança da informação',
+  tema:'Os desafios da segurança pública na era digital: crimes cibernéticos e segurança da informação',
+  tipo:'Tema de aula · dois desafios: polícias defasadas e usuários vulneráveis',
+  p:[
+    [
+      '{r}Em 2023, o Brasil promulgou a Convenção de Budapeste, tratado',
+      'de cooperação internacional contra o crime cibernético{/}. Ainda assim,',
+      'a segurança pública enfrenta desafios na era digital, {t}sobretudo pela',
+      'defasagem tecnológica das polícias e pela vulnerabilidade dos usuários{/}.'
+    ],[
+      'Em primeiro lugar, as polícias ainda não acompanham a velocidade',
+      'do crime virtual. Golpes, extorsões e roubos de dados são praticados de',
+      'outros estados ou países, mas faltam delegacias especializadas, peritos e',
+      'equipamentos para rastrear os autores. {r}Embora a Lei 14.155, de 2021, tenha',
+      'endurecido as penas das fraudes eletrônicas{/}, a punição continua rara, de',
+      'modo que a sensação de impunidade estimula novos ataques.'
+    ],[
+      'Além disso, a falta de educação digital torna o cidadão o elo',
+      'mais frágil. Criminosos usam a engenharia social, isto é, a manipulação',
+      'psicológica, para obter senhas e dados bancários com mensagens falsas',
+      'e ligações de supostos bancos. {r}O Marco Civil da Internet prevê que',
+      'a educação inclua a capacitação para o uso seguro da rede{/}, mas essa',
+      'orientação raramente chega à população.'
+    ],[
+      'Portanto, a segurança na era digital exige estrutura e prevenção.',
+      'Para isso, {p}os governos devem criar delegacias e laboratórios de perícia',
+      'digital e promover campanhas de educação digital com bancos e escolas, a',
+      'fim de proteger os dados da população e responsabilizar os criminosos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O D1 segue os textos motivadores: os crimes virtuais "não conhecem fronteiras físicas", e as polícias precisam se modernizar.',
+    'A introdução usa a Convenção de Budapeste, repertório atual e específico do tema.',
+    'O D2 explica o conceito de engenharia social antes de usá-lo e liga o tema à "vulnerabilidade humana" citada na proposta.',
+    'A proposta responde aos dois desafios: estrutura para investigar e educação para prevenir.'
+  ]
+},
+{
+  id:'m60', aula:'17/10', curto:'Pessoa idosa: lei e segurança pública',
+  tema:'A garantia de direitos e a proteção da pessoa idosa no Brasil: entre a previsão legal e os desafios da segurança pública',
+  tipo:'Tema de aula · esqueleto 3: a lei garante, a realidade não cumpre',
+  p:[
+    [
+      '{r}A Constituição, no artigo 230, atribui à família, à sociedade e',
+      'ao Estado o dever de amparar os idosos{/}. Contudo, a violência contra esse',
+      'público revela a distância entre a lei e a realidade, {t}sobretudo pela',
+      'subnotificação dos abusos e pela fiscalização insuficiente{/}.'
+    ],[
+      'Em primeira análise, a violência contra o idoso é silenciosa.',
+      '{r}Como mostra Gilberto Dimenstein em "O Cidadão de Papel", muitos direitos',
+      'existem apenas na lei{/}. Grande parte das agressões ocorre dentro de',
+      'casa, praticada por filhos ou netos de quem a vítima depende, e o abuso',
+      'financeiro, como a apropriação de aposentadorias, raramente é denunciado.',
+      'Assim, o problema some das estatísticas.'
+    ],[
+      'Ademais, cabe sublinhar o papel da segurança pública. Presente',
+      'no cotidiano das comunidades, o policiamento ostensivo pode identificar',
+      'sinais de abandono e maus-tratos e acionar a rede de proteção. {r}O Estatuto',
+      'da Pessoa Idosa tipifica como crime desviar bens ou rendimentos do idoso{/}.',
+      'Logo, policiais capacitados para reconhecer esses crimes são decisivos',
+      'para tirar a lei do papel.'
+    ],[
+      'Depreende-se, portanto, a urgência de proteger a pessoa idosa.',
+      'Para tanto, {p}cabe à Secretaria de Defesa Social capacitar policiais para',
+      'identificar abusos e, com a assistência social, divulgar o Disque 100, a',
+      'fim de garantir a efetividade da lei{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula, com o esqueleto 3: a lei assegura o direito, mas a realidade mostra a distância entre o texto legal e a prática.',
+    'Repertórios sugeridos em sala: o artigo 230 da Constituição, o Estatuto da Pessoa Idosa e "O Cidadão de Papel".',
+    'O D2 atende ao recorte "desafios da segurança pública": o policiamento identifica os abusos cedo, como dizia o texto motivador.',
+    'A conclusão usa o conector da aula ("Depreende-se, portanto") e um agente local (SDS).'
+  ]
+},
+{
+  id:'m61', aula:'24/10', curto:'Juventude e mercado de trabalho',
+  tema:'Os desafios para a inserção digna e a profissionalização da juventude no mercado de trabalho brasileiro',
+  tipo:'Tema de aula · dois desafios: precarização e falta de qualificação',
+  p:[
+    [
+      '{r}O Estatuto da Juventude, de 2013, assegura ao jovem o direito à',
+      'profissionalização, ao trabalho e à renda{/}. Contudo, essa inserção enfrenta',
+      'graves entraves, {t}motivados pela precarização do trabalho e pela falta de',
+      'qualificação, que aproxima muitos jovens da criminalidade{/}.'
+    ],[
+      'Primeiramente, a precarização atinge em cheio a juventude. Sem',
+      'experiência, muitos jovens só encontram vagas informais ou trabalho',
+      'por aplicativos, sem carteira assinada nem direitos previdenciários. {r}O',
+      'sociólogo Ricardo Antunes chama esse processo de "uberização" do trabalho{/},',
+      'marcado por jornadas longas e renda instável, o que deixa esses jovens',
+      'sem proteção social e fere o Estatuto.'
+    ],[
+      'Ademais, a falta de qualificação limita as oportunidades. A evasão',
+      'escolar e o acesso restrito a cursos técnicos afastam os jovens das vagas',
+      'que exigem formação. {r}Embora a Lei da Aprendizagem obrigue médias e grandes',
+      'empresas a contratar aprendizes{/}, as vagas ainda são insuficientes diante',
+      'da demanda. Assim, sem perspectiva de renda, parte da juventude torna-se',
+      'alvo do aliciamento do tráfico, o que alimenta a violência urbana.'
+    ],[
+      'Portanto, urge mitigar tais desafios. {p}O Ministério do Trabalho, com',
+      'o Sistema S, deve ampliar as vagas de aprendizagem e os cursos técnicos,',
+      'além de fiscalizar a informalidade, a fim de garantir renda digna e',
+      'afastar os jovens do crime{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. É um tema de trabalho, mas a aula orientou a ligar a falta de oportunidades à criminalidade, o que aproxima o texto da segurança pública.',
+    'A introdução segue o esqueleto da aula: repertório legal (Estatuto da Juventude), apresentação do tema e duas teses.',
+    'O D1 usa um sociólogo brasileiro e o conceito de "uberização", citado no texto motivador.',
+    'O D2 cita a Lei da Aprendizagem e mostra a consequência para a segurança pública.'
+  ]
+},
+{
+  id:'m62', aula:'31/10', curto:'Aliciamento de crianças pelo crime',
+  tema:'O aliciamento de crianças e adolescentes pelo crime organizado: a linha tênue entre a vulnerabilidade social e a ineficácia do ECA',
+  tipo:'Tema de aula · "linha tênue entre X e Y": um desenvolvimento para cada lado',
+  p:[
+    [
+      '{r}A Constituição, no artigo 227, e o Estatuto da Criança e do',
+      'Adolescente (ECA) asseguram, em tese, a proteção integral da infância{/}.',
+      'Contudo, o aliciamento infantojuvenil pelo crime organizado escancara uma',
+      'falha grave, {t}fruto da vulnerabilidade social e da ineficácia do ECA{/}.'
+    ],[
+      'Primordialmente, a vulnerabilidade social deixa crianças e',
+      'adolescentes à mercê do crime. Sem escola de qualidade, lazer e',
+      'acompanhamento familiar, muitos passam o dia nas ruas. {r}O documentário',
+      '"Falcão – Meninos do Tráfico", de MV Bill e Celso Athayde, mostra jovens',
+      'recrutados como vigias do tráfico{/}. Assim, o crime preenche o vácuo deixado',
+      'pelo Estado, oferecendo dinheiro e pertencimento.'
+    ],[
+      'Ademais, a aplicação do ECA ainda é falha. {r}O Estatuto pune, no',
+      'artigo 244-B, o adulto que corrompe menor de 18 anos para a prática de',
+      'crimes{/}, mas os aliciadores raramente são identificados, já que as facções',
+      'usam a inimputabilidade dos adolescentes para escapar da punição. Isso',
+      'eleva drasticamente a letalidade infantojuvenil e sobrecarrega um sistema',
+      'socioeducativo que pouco consegue recuperar esses jovens.'
+    ],[
+      'Portanto, o combate a essa realidade exige repressão qualificada.',
+      '{p}Cabe ao Estado ampliar as escolas em tempo integral e investigar os',
+      'adultos que aliciam menores{/}. Só assim o ECA deixará de ser uma utopia',
+      'legislativa para ser, de fato, um escudo protetor.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A expressão "linha tênue entre X e Y" pede um desenvolvimento para cada lado: vulnerabilidade social (D1) e ineficácia do ECA (D2).',
+    'Repertórios sugeridos em sala: artigo 227 da Constituição, ECA e o documentário "Falcão – Meninos do Tráfico".',
+    'O D2 cita o crime de corrupção de menores (art. 244-B) e explica como as facções usam a inimputabilidade, ponto destacado na aula.',
+    'A conclusão usa o fecho do esqueleto da aula: o ECA deixa de ser "utopia legislativa" para ser "escudo protetor".'
+  ]
+},
+{
+  id:'m63', aula:'07/11', curto:'Crime organizado e sistema prisional',
+  tema:'O avanço do crime organizado e a falência do sistema prisional brasileiro',
+  tipo:'Tema de aula · relação de causa: prisões falidas fortalecem as facções',
+  p:[
+    [
+      '{r}Em 2015, o Supremo Tribunal Federal reconheceu o "estado de coisas',
+      'inconstitucional" do sistema prisional brasileiro, decisão confirmada em',
+      '2023{/}. Esse quadro favorece o avanço do crime organizado, {t}sobretudo pela',
+      'superlotação dominada por facções e pela ausência de ressocialização{/}.'
+    ],[
+      'Primordialmente, a superlotação entrega o controle dos presídios às',
+      'facções. Sem separação por perfil, o preso de baixa periculosidade convive',
+      'com líderes criminosos e, em busca de proteção, acaba recrutado. {r}Michel',
+      'Foucault, em "Vigiar e Punir", já apontava que a prisão pode produzir',
+      'delinquência em vez de recuperar{/}. Além disso, celulares nas celas permitem',
+      'ordenar crimes de dentro das cadeias.'
+    ],[
+      'Ademais, a ausência de ressocialização mantém o ciclo criminoso.',
+      '{r}Embora a Lei de Execução Penal preveja trabalho e estudo no cárcere{/},',
+      'poucas unidades os oferecem, e o egresso encontra portas fechadas',
+      'no mercado. Sem alternativas, muitos dependem da própria facção para',
+      'sobreviver, o que eleva drasticamente a reincidência e garante novos',
+      'membros ao crime organizado.'
+    ],[
+      'Portanto, o combate a essa realidade exige repressão qualificada.',
+      '{p}Cabe aos governos estaduais separar os presos por perfil e bloquear as',
+      'comunicações nas unidades, aliados à ampliação do trabalho e do estudo no',
+      'cárcere{/}. Só assim a prisão deixará de ser escritório do crime.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A introdução usa uma decisão do STF (ADPF 347), repertório forte e preciso para o tema.',
+    'O D1 mostra como a superlotação vira recrutamento; o D2, como a falta de ressocialização alimenta a reincidência.',
+    'Os dois desenvolvimentos ligam as duas partes do tema (crime organizado e sistema prisional), sem tratar só de uma delas.',
+    'A proposta une repressão (bloqueio de comunicações, separação) e ressocialização, como pede a "repressão qualificada" do esqueleto da aula.'
+  ]
+},
+{
+  id:'m64', aula:'21/11', curto:'Espetacularização do crime pela mídia',
+  tema:'A espetacularização do crime pela mídia brasileira e os limites éticos entre informação e entretenimento',
+  tipo:'Tema de aula · a tensão entre direito à informação e lógica do entretenimento',
+  p:[
+    [
+      '{r}A Constituição assegura a liberdade de informação, mas também',
+      'protege a intimidade, a honra e a imagem das pessoas{/}. Contudo, a',
+      'espetacularização do crime pela mídia ultrapassa esse limite, {t}sobretudo',
+      'pela busca por audiência e pela fragilidade da autorregulação{/}.'
+    ],[
+      'Em primeiro plano, destaca-se a lógica da audiência. {r}Em "Sobre a',
+      'televisão", o sociólogo Pierre Bourdieu critica a pressão dos índices de',
+      'audiência, que leva a mídia a privilegiar o sensacional{/}. Nesse sentido,',
+      'programas policiais e produções de "true crime" transformam tragédias',
+      'em produto, exploram o sofrimento das famílias e expõem vítimas, o que',
+      'contribui para a banalização da violência.'
+    ],[
+      'Ademais, a falta de limites éticos prejudica a justiça e a',
+      'atividade policial. Suspeitos são apresentados como culpados antes de',
+      'qualquer julgamento, em afronta à presunção de inocência, e detalhes de',
+      'investigações em andamento são divulgados. {r}A Lei de Abuso de Autoridade',
+      'pune o agente que constrange o preso a se exibir à curiosidade pública{/},',
+      'o que mostra que a própria polícia deve resistir à pressão por espetáculo.'
+    ],[
+      'Portanto, informar sem transformar o crime em espetáculo é',
+      'essencial. {p}Cabe aos veículos de comunicação fortalecer seus códigos de',
+      'ética e às polícias adotar protocolos de divulgação que preservem vítimas',
+      'e investigados, a fim de garantir informação responsável{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O texto desenvolve a "tensão" discutida em sala: direito à informação × lógica mercantil do entretenimento.',
+    'Repertórios da aula: a Constituição e Pierre Bourdieu. A Lei de Abuso de Autoridade aproxima o tema do trabalho policial.',
+    'O D2 mostra as consequências apontadas na aula: julgamento antecipado, prejuízo à investigação e exposição de vítimas.',
+    'A conclusão defende o equilíbrio entre transparência e responsabilidade, sem pedir censura.'
   ]
 },
 // ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------

@@ -261,6 +261,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
 .gauge i{position:absolute;inset:0 auto 0 0;background:var(--pen);transition:width .3s}
 .gauge::after{content:"";position:absolute;top:0;bottom:0;left:30%;border-left:2px dashed var(--red)}
 
+.aula-list{list-style:none;padding:0;margin:12px 0;display:grid;gap:10px}
+.aula-list li{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin:0;line-height:1.5}
 .week{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
 .week .acc{margin:0}
 
@@ -295,7 +297,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <header class="topbar">
     <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
     <span class="where" id="where">Início</span>
-    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/12 lidos</span>
+    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/13 lidos</span>
     <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
   </header>
   <div class="content">
@@ -325,7 +327,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
     <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
     <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
-    <li><div><a href="#modelos">Redações nota 40</a>: 56 textos de 20 linhas com marcação de cada parte: um para cada tema provável e uma segunda versão para os 13 de chance alta.</div></li>
+    <li><div><a href="#aulas">Aulas AOCP</a>: os esqueletos, as expressões e os 9 temas trabalhados no curso para a PMPE 2027.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: 64 textos de 20 linhas com marcação de cada parte: um para cada tema provável, incluindo os das aulas, e uma segunda versão para 13 temas de chance alta.</div></li>
     <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
   </ol>
   <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
@@ -343,17 +346,19 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <tr><th>Item</th><th>Soldado (QPMG)</th></tr>
     <tr><td>Valor da redação</td><td><b>até 40 pontos</b></td></tr>
     <tr><td>Nota mínima</td><td><b>12 pontos</b> (abaixo disso, eliminado)</td></tr>
-    <tr><td>Tipo de texto</td><td>Dissertativo-argumentativo, em prosa</td></tr>
+    <tr><td>Tipo de texto</td><td>"Dissertação": o texto deve apresentar valores, opiniões, hipóteses e ideias (item 12.2)</td></tr>
     <tr><td>Extensão</td><td>mínimo de <b>15</b> e máximo de <b>20</b> linhas</td></tr>
-    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado</td></tr>
+    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado (item 12.6)</td></tr>
+    <tr><td>Caneta</td><td>esferográfica de tinta <b>azul ou preta</b> (item 12.7)</td></tr>
+    <tr><td>Rascunho</td><td>facultativo e <b>não corrigido</b>: só vale a Folha da Versão Definitiva (item 12.5)</td></tr>
     <tr><td>Natureza</td><td>eliminatória e classificatória (soma com a objetiva)</td></tr>
     <tr><td>Quem é corrigido</td><td>só quem é aprovado na objetiva e fica dentro do limite de classificação previsto no edital</td></tr>
     <tr><td>Data prevista</td><td>mesmo dia da prova objetiva (previsão divulgada: 21/02/2027)</td></tr>
   </table></div>
 
-  <div class="box warn">
-    <span class="tag">Confira no edital oficial</span>
-    <p>Os números acima são os divulgados para o edital e sua retificação. Antes da prova, leia no PDF oficial do Instituto AOCP o item da <b>Prova de Redação</b>: tabela de critérios, causas de nota zero, tipo de caneta e regras da folha. Se algo mudar em retificação, vale o edital.</p>
+  <div class="box pen">
+    <span class="tag">O que diz o edital (itens 12.2 a 12.8)</span>
+    <p>A tabela acima segue o texto do edital da PMPE, reproduzido nas aulas do curso para o Instituto AOCP. O item 12.2 pede a tipologia "Dissertação", com "valores, opiniões, crenças, hipóteses, ideias". Em outras palavras, o corretor espera que você <b>se posicione</b>: descrever o problema sem defender uma tese não basta. Se sair retificação, vale o texto mais recente.</p>
   </div>
 
   <h3>A redação decide a classificação</h3>
@@ -372,15 +377,23 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><b>ponto de vista</b>: precisa ter tese clara, não só descrever o problema.</li>
   </ul>
 
-  <h3>O que pode zerar ou anular a redação</h3>
-  <p>Os editais da AOCP costumam prever nota zero nestes casos. Trate a lista como regra de segurança:</p>
+  <h3>O que zera a redação (item 12.8)</h3>
+  <p>O edital dá nota zero e <b>elimina do concurso</b> quem:</p>
   <div class="vs">
-    <div class="no"><p><b>Fugir ao tema</b>: falar de outro assunto. Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
-    <div class="no"><p><b>Não seguir o tipo de texto</b>: narração, poema, carta, texto em tópicos.</p></div>
-    <div class="no"><p><b>Identificar-se</b>: nome, assinatura, apelido, rubrica ou qualquer marca fora do espaço permitido.</p></div>
-    <div class="no"><p><b>Ficar abaixo de 15 linhas</b> ou deixar em branco.</p></div>
-    <div class="no"><p><b>Letra ilegível</b>, texto a lápis ou com caneta fora da cor exigida.</p></div>
-    <div class="no"><p><b>Copiar os textos motivadores</b>: trechos copiados não contam e podem reduzir o texto abaixo do mínimo.</p></div>
+    <div class="no"><p><b>Fugir ao tema proposto.</b> Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
+    <div class="no"><p><b>Não usar a tipologia exigida</b>: narração, poema, carta, texto em tópicos.</p></div>
+    <div class="no"><p><b>Desestruturar o texto</b> de forma acentuada ou <b>atentar contra o pudor</b>.</p></div>
+    <div class="no"><p><b>Escrever a lápis</b> ou com tinta que não seja azul ou preta.</p></div>
+    <div class="no"><p><b>Não passar para a Folha Definitiva</b>, entregar em branco, ter <b>letra ilegível</b> ou <b>espaçamento excessivo entre letras, palavras, parágrafos e margens</b>.</p></div>
+    <div class="no"><p><b>Identificar-se</b> de qualquer forma: nome, apelido, números, letras, sinais, desenhos ou códigos.</p></div>
+  </div>
+  <div class="box trap">
+    <span class="tag">Espaçamento excessivo zera</span>
+    <p>Quem mira 20 linhas pode cair na tentação de <b>espaçar letras e palavras</b> para "encher" a folha. O edital trata isso como causa de nota zero. As 20 linhas têm de vir do conteúdo, nunca da letra esticada. No capítulo 3 há ferramentas para ganhar linhas com texto.</p>
+  </div>
+  <div class="box warn">
+    <span class="tag">E o mínimo de 15 linhas?</span>
+    <p>O item 12.6 exige no mínimo 15 linhas, mas ele não está na lista de nota zero. Mesmo assim, um texto curto perde pontos em estrutura e informatividade. Também não destaque nenhuma parte da folha nem escreva nos espaços reservados à banca (item 12.7). Trechos copiados dos textos motivadores costumam ser desconsiderados.</p>
   </div>
   <div class="box trap">
     <span class="tag">Cuidado</span>
@@ -411,12 +424,12 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </div>
 
   <div class="crit-grid">
-    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento ao tema, informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão e coerência</h4><p>As ideias se ligam com conectivos corretos? O texto tem lógica, sem contradição, sem repetir palavras?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Estrutura dissertativo-argumentativa e parágrafos</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia e acentuação, concordância, regência, crase e colocação pronominal.</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento e desenvolvimento do tema / Informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão intra e entre parágrafos / Coerência</h4><p>Coesão "referencial e sequencial, diversificada e recorrente"; coerência com "progressão, articulação, não-contradição".</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Atendimento à estrutura textual proposta</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia <b>(inclusive legibilidade)</b>, concordância, regência e colocação pronominal.</p></div>
   </div>
-  <p class="small">Distribuição divulgada para Soldado: 10 + 10 + 10 + 10 = 40. Confira a tabela no item da Prova de Redação do edital.</p>
+  <p class="small">Tabela 12.2 do edital: 10 + 10 + 10 + 10 = 40 pontos para Soldado (para 2º Tenente, 8 + 8 + 7 + 7 = 30). Os nomes dos critérios abaixo seguem o texto do edital.</p>
 
   <h3>Critério 1 · Tema, informatividade e argumentação</h3>
   <p>É o critério que mais separa notas. O corretor pergunta: <i>este texto informa algo e convence?</i></p>
@@ -441,6 +454,14 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><b>Coesão</b> é a costura: conectivos entre frases e parágrafos, pronomes e sinônimos para não repetir palavras.</li>
     <li><b>Coerência</b> é a lógica: o argumento prova a tese, a conclusão retoma o que foi dito, nada se contradiz.</li>
   </ul>
+  <p>O edital detalha o que o corretor observa:</p>
+  <ul>
+    <li><b>Referencial</b>: retomar palavras com pronomes e sinônimos ("essa problemática", "tal cenário").</li>
+    <li><b>Sequencial</b>: ligar frases e parágrafos com conectivos.</li>
+    <li><b>Diversificada</b>: variar os conectivos. Três "além disso" no mesmo texto custam pontos.</li>
+    <li><b>Progressão</b>: cada parágrafo traz informação nova, sem repetir a ideia anterior com outras palavras.</li>
+    <li><b>Não-contradição</b>: a conclusão não pode desdizer a tese.</li>
+  </ul>
   <p><b>Como garantir os 10:</b> comece todo parágrafo com conectivo, use pelo menos um conectivo dentro de cada parágrafo e troque palavras repetidas por sinônimos ou pronomes. O capítulo 6 tem a lista completa.</p>
 
   <h3>Critério 3 · Estrutura</h3>
@@ -452,7 +473,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </ul>
 
   <h3>Critério 4 · Modalidade gramatical</h3>
-  <p>Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
+  <p>A <b>legibilidade</b> faz parte deste critério: letra difícil de ler perde pontos mesmo sem erro de português, e letra ilegível zera (item 12.8). Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
   <div class="box tip">
     <span class="tag">Regra de ouro</span>
     <p>Frases curtas erram menos. Se uma frase passar de duas linhas e meia, divida em duas. Você perde pouco em estilo e ganha muito em correção.</p>
@@ -547,7 +568,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
 
   <h3>Regras da folha</h3>
   <ul>
-    <li><b>Não pule linha</b> entre parágrafos. O recuo já marca o parágrafo, e uma linha em branco pode bagunçar a contagem.</li>
+    <li><b>Não espace letras nem palavras para chegar a 20 linhas.</b> O item 12.8 do edital dá nota zero a quem deixa "espaçamento excessivo entre letras, palavras, parágrafos e margens". Escreva com a letra de sempre e use as ferramentas acima para ganhar linhas com conteúdo.</li>
+    <li><b>Não pule linha</b> entre parágrafos. O recuo já marca o parágrafo, e uma linha em branco pode bagunçar a contagem (e conta como espaçamento excessivo).</li>
     <li><b>Respeite as margens</b>. Não escreva na margem nem além da linha.</li>
     <li><b>Separação de sílabas</b>: se a palavra não couber, separe com hífen no lugar certo (ci-da-da-ni-a) ou leve a palavra inteira para a linha de baixo.</li>
     <li><b>Erro na folha definitiva</b>: passe um traço simples sobre a palavra e escreva a correta em seguida. Nada de corretivo, parênteses ou rabiscos.</li>
@@ -844,12 +866,106 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div id="temaList"></div>
 </section>
 
-<!-- ======================= 10. MODELOS ======================= -->
-<section class="view" id="modelos" data-title="Redações nota 40" hidden>
+<!-- ======================= 10. AULAS AOCP ======================= -->
+<section class="view" id="aulas" data-title="Aulas AOCP" hidden>
   <div class="chap-head">
     <span class="eyebrow">Capítulo 10</span>
+    <h2>Aulas AOCP: o que o curso ensina</h2>
+    <p>Os pontos altos das aulas de redação do curso preparatório para a PMPE (Instituto AOCP), de outubro e novembro. O conteúdo voltado à CEBRASPE ficou de fora.</p>
+  </div>
+
+  <h3>O que a AOCP valoriza</h3>
+  <p>Segundo as aulas, a banca valoriza <b>objetividade, clareza e rigidez na estrutura lógica</b>: introdução com tese clara, dois argumentos diretos no desenvolvimento e conclusão com proposta de intervenção. Cada frase precisa cumprir uma função; floreio não soma pontos.</p>
+
+  <h3>Tamanho dos parágrafos</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Parágrafo</th><th>Faixa indicada nas aulas</th><th>Mapa deste e-book</th></tr>
+    <tr><td>Introdução</td><td>3 a 5 linhas</td><td>4</td></tr>
+    <tr><td>Desenvolvimento 1</td><td>4 a 7 linhas</td><td>6</td></tr>
+    <tr><td>Desenvolvimento 2</td><td>4 a 7 linhas</td><td>6</td></tr>
+    <tr><td>Conclusão</td><td>4 a 5 linhas</td><td>4</td></tr>
+  </table></div>
+  <p class="small">O mapa 4-6-6-4 cabe em todas as faixas das aulas e fecha exatamente as 20 linhas.</p>
+
+  <h3>O desenvolvimento em três movimentos</h3>
+  <ol class="steps">
+    <li><b>Tópico frasal</b>: afirme o argumento em uma frase.</li>
+    <li><b>Fundamentação</b>: repertório (lei, autor, obra) ou dado que prove o argumento.</li>
+    <li><b>Fechamento crítico</b>: a consequência dessa falha para a sociedade ou para a segurança pública.</li>
+  </ol>
+
+  <h3>A proposta completa</h3>
+  <div class="box pen">
+    <span class="tag">Fórmula das aulas</span>
+    <p><b>Agente + Ação + Meio/Modo + Detalhamento + Efeito.</b> O ideal é ter duas ações, uma para cada tese, e dividir os agentes quando o tema pedir.</p>
+  </div>
+  <p>Exemplo discutido em sala (feminicídio): <b>Executivo</b>, ampliar as delegacias da mulher e fortalecer as Patrulhas Maria da Penha; <b>Judiciário</b>, dar celeridade à concessão das medidas protetivas; <b>escola e mídia</b>, promover debates sobre igualdade de gênero.</p>
+
+  <h3>Os esqueletos das aulas</h3>
+  <p>Moldes usados em sala. As partes fixas estão em <b>negrito</b>; as lacunas, <span class="slot">assim</span>.</p>
+  <div class="mold"><h4>Esqueleto 1 <span class="mono">tema geral, duas causas</span></h4>
+    <p><span class="fixed">Nas últimas décadas, debate-se na esfera social brasileira acerca dos desafios que envolvem</span> <span class="slot">tema</span><span class="fixed">. Tal problemática persiste não apenas devido à</span> <span class="slot">causa 1</span><span class="fixed">, mas também em virtude da</span> <span class="slot">causa 2</span><span class="fixed">. Nesse cenário, faz-se imperiosa uma análise crítica acerca de tal conjuntura para mitigar seus impactos na coletividade.</span></p>
+    <p><span class="fixed">Em primeiro lugar, convém destacar que a raiz desse impasse está associada à</span> <span class="slot">causa 1</span><span class="fixed">. Sob essa ótica,</span> <span class="slot">conceito ou contexto</span> <span class="fixed">gera entraves estruturais. Na prática, isso se reflete na falta de</span> <span class="slot">consequência</span><span class="fixed">, o que enfraquece a garantia plena dos direitos fundamentais assegurados pela Constituição Federal de 1988.</span></p>
+    <p><span class="fixed">Ademais, sob o prisma da</span> <span class="slot">causa 2</span><span class="fixed">, percebe-se que a omissão de medidas efetivas agrava o quadro. Consequentemente, a população sofre com</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Depreende-se, portanto, a urgência de medidas saneadoras. Para isso, cabe ao</span> <span class="slot">agente</span><span class="fixed">, por meio de</span> <span class="slot">ação 1</span><span class="fixed">, bem como</span> <span class="slot">ação 2</span><span class="fixed">, com o intuito de</span> <span class="slot">efeito</span><span class="fixed">. Somente assim, o Estado consolidará uma ordem pública mais eficiente e segura.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto 2 <span class="mono">"o debate acerca de"</span></h4>
+    <p><span class="fixed">O debate acerca de</span> <span class="slot">tema</span> <span class="fixed">revela-se de fundamental importância no contexto contemporâneo da sociedade. Nesse cenário, tal problemática persiste devido a</span> <span class="slot">causa 1</span> <span class="fixed">e, somado a isso, à</span> <span class="slot">causa 2</span><span class="fixed">. Torna-se imperiosa, assim, a análise desses fatores para o enfrentamento da questão.</span></p>
+    <p><span class="fixed">Em primeira análise, destaca-se que</span> <span class="slot">causa 1</span> <span class="fixed">atua como um entrave para a superação desse desafio. Sob essa ótica,</span> <span class="slot">explicação</span><span class="fixed">. Dessa forma, enquanto essa realidade persistir,</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Ademais, convém pontuar que</span> <span class="slot">causa 2</span> <span class="fixed">agrava o panorama exposto. Isso ocorre porque</span> <span class="slot">explicação</span><span class="fixed">. Consequentemente, observa-se a perpetuação de</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Infere-se, portanto, a urgência de medidas para mitigar os impactos de</span> <span class="slot">tema</span><span class="fixed">. Para tanto, cabe ao</span> <span class="slot">agente</span> <span class="slot">ação 1</span><span class="fixed">, bem como</span> <span class="slot">ação 2</span><span class="fixed">, com o intuito de</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto 3 <span class="mono">a lei garante, a realidade não cumpre</span></h4>
+    <p><span class="slot">lei, Constituição ou Estatuto</span> <span class="fixed">assegura</span> <span class="slot">direito central do tema</span><span class="fixed">. Contudo, a persistência de</span> <span class="slot">problema</span> <span class="fixed">evidencia a distância entre o texto legal e a realidade brasileira. Assim, torna-se premente analisar</span> <span class="slot">causa 1</span> <span class="fixed">e</span> <span class="slot">causa 2</span> <span class="fixed">como fatores que agravam a problemática.</span></p>
+    <p><span class="fixed">Primordialmente,</span> <span class="slot">tese 1</span><span class="fixed">. Sob essa ótica,</span> <span class="slot">repertório, ex.: "O Cidadão de Papel"</span> <span class="fixed">retrata a ineficácia prática de garantias teóricas. Nesse contexto,</span> <span class="slot">análise</span><span class="fixed">. Desse modo,</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Ademais, cabe sublinhar</span> <span class="slot">tese 2 e explicação</span><span class="fixed">. Isso eleva drasticamente</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Portanto, o combate a essa realidade exige uma repressão qualificada. Cabe ao</span> <span class="slot">agente 1</span><span class="fixed">, em conjunto com</span> <span class="slot">agente 2</span><span class="fixed">,</span> <span class="slot">ação 1</span><span class="fixed">, aliada a</span> <span class="slot">ação 2</span><span class="fixed">. Só assim,</span> <span class="slot">repertório da introdução</span> <span class="fixed">deixará de ser uma utopia legislativa para ser, de fato, um escudo protetor.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto da Constituição <span class="mono">aula de 21/11</span></h4>
+    <p><span class="fixed">A Constituição Federal de 1988 assegura</span> <span class="slot">direito ou princípio</span><span class="fixed">, mas condiciona o exercício de qualquer prerrogativa ao respeito aos direitos fundamentais. No Brasil, contudo,</span> <span class="slot">problema</span> <span class="fixed">evidencia falhas que comprometem a coletividade. Esse cenário decorre</span> <span class="slot">tese 1</span> <span class="fixed">e</span> <span class="slot">tese 2</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Em primeiro plano, destaca-se</span> <span class="slot">tese 1</span><span class="fixed">. Conforme</span> <span class="slot">autor, obra ou dado</span><span class="fixed">,</span> <span class="slot">aplicação ao tema</span><span class="fixed">. Como consequência,</span> <span class="slot">efeito</span><span class="fixed">, o que agrava o problema.</span></p>
+    <p><span class="fixed">Ademais,</span> <span class="slot">tese 2</span> <span class="fixed">contribui para a permanência desse quadro. A ausência de</span> <span class="slot">medida ou fiscalização</span> <span class="fixed">favorece</span> <span class="slot">desdobramento</span><span class="fixed">, gerando impactos diretos sobre</span> <span class="slot">grupo afetado</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Portanto, enfrentar</span> <span class="slot">tema</span> <span class="fixed">exige medidas firmes e coordenadas. Cabe</span> <span class="slot">agente</span> <span class="slot">ação e meio</span><span class="fixed">, a fim de</span> <span class="slot">finalidade</span><span class="fixed">, garantindo maior efetividade social e respeito à lei.</span></p>
+  </div>
+  <div class="box warn">
+    <span class="tag">Use os esqueletos com cuidado</span>
+    <p>Frases genéricas como "Nas últimas décadas, debate-se..." ajudam a começar, mas não informam nada sozinhas. O critério 1 premia <b>repertório e argumento específicos do tema</b>: preencha as lacunas com lei, autor ou dado, como nas redações nota 40 deste e-book. Os esqueletos das aulas têm parágrafos de 4 a 5 linhas; para chegar ao mapa 4-6-6-4, acrescente o repertório e a explicação nos desenvolvimentos. E não repita conectivos: se a introdução já tem "portanto", troque por "assim", porque a conclusão também começa com "portanto".</p>
+  </div>
+
+  <h3>Banco de expressões das aulas</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Função</th><th>Expressões</th></tr>
+    <tr><td>Abrir a introdução</td><td>"Nas últimas décadas, debate-se na esfera social brasileira acerca de..." · "O debate acerca de... revela-se de fundamental importância..."</td></tr>
+    <tr><td>Anunciar as teses</td><td>"não apenas devido à..., mas também em virtude da..." · "decorre, sobretudo, da... e da..."</td></tr>
+    <tr><td>Abrir o D1</td><td>"Em primeiro lugar, convém destacar que..." · "Em primeira análise, destaca-se que..." · "Primordialmente," · "Em primeiro plano,"</td></tr>
+    <tr><td>Abrir o D2</td><td>"Ademais, sob o prisma de..." · "Ademais, convém pontuar que..." · "Ademais, cabe sublinhar..."</td></tr>
+    <tr><td>Explicar</td><td>"Sob essa ótica," · "Isso ocorre porque" · "Na prática, isso se reflete em..."</td></tr>
+    <tr><td>Mostrar consequência</td><td>"Consequentemente," · "Isso eleva drasticamente..." · "Como consequência,"</td></tr>
+    <tr><td>Concluir</td><td>"Depreende-se, portanto, a urgência de..." · "Infere-se, portanto,..." · "Portanto, urge mitigar tais desafios."</td></tr>
+    <tr><td>Fechar o texto</td><td>"Somente assim..." · "Só assim, ... deixará de ser uma utopia legislativa para ser, de fato, um escudo protetor."</td></tr>
+  </table></div>
+
+  <h3>Como discutir um tema em 5 passos</h3>
+  <ol class="steps">
+    <li><b>Sublinhe as palavras do tema</b> e ache o recorte. "Linha tênue entre X e Y" pede um parágrafo para cada lado; "Estado e sociedade" pede um parágrafo para cada responsável.</li>
+    <li><b>Liste as causas.</b> As duas melhores viram as teses.</li>
+    <li><b>Liste as consequências.</b> Elas alimentam o fechamento crítico de cada parágrafo.</li>
+    <li><b>Escolha os repertórios</b>: a Constituição ou uma lei específica, um autor ou obra, um dado.</li>
+    <li><b>Escreva as soluções por agente</b>: Executivo, Judiciário, escola, mídia e sociedade.</li>
+  </ol>
+  <p>Os kits dos temas das aulas, no <a href="#temas">capítulo 9</a>, trazem o resumo do que foi discutido em sala (filtro "Temas das aulas").</p>
+
+  <h3>Os temas das aulas para a PMPE 2027</h3>
+  <p>Todos têm redação nota 40 de 20 linhas, no capítulo 11.</p>
+  <ul class="aula-list" id="aulaTemas"></ul>
+</section>
+
+<!-- ======================= 11. MODELOS ======================= -->
+<section class="view" id="modelos" data-title="Redações nota 40" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 11</span>
     <h2>Redações nota 40</h2>
-    <p>56 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo anterior e uma segunda versão, com outra tese e outros repertórios, para os 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
+    <p>64 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo 9, incluindo os 9 temas das aulas, e uma segunda versão, com outra tese e outros repertórios, para 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
   </div>
   <div class="mod-nav">
     <button class="icon-btn" id="modPrev" type="button" aria-label="Redação anterior">‹</button>
@@ -859,10 +975,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div id="modBox"></div>
   <p class="small">As linhas foram quebradas como numa folha de prova manuscrita (cerca de 11 palavras por linha). Na sua letra, a quebra pode mudar; o que importa é manter 4-6-6-4.</p>
 </section>
-<!-- ======================= 11. LABORATÓRIO ======================= -->
+<!-- ======================= 12. LABORATÓRIO ======================= -->
 <section class="view" id="lab" data-title="Laboratório" hidden>
   <div class="chap-head">
-    <span class="eyebrow">Capítulo 11</span>
+    <span class="eyebrow">Capítulo 12</span>
     <h2>Laboratório</h2>
     <p>Ferramentas para treinar: montar a redação pelos moldes, contar as linhas, cronometrar e se autoavaliar.</p>
   </div>
@@ -953,10 +1069,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </div>
 </section>
 
-<!-- ======================= 12. PLANO ======================= -->
+<!-- ======================= 13. PLANO ======================= -->
 <section class="view" id="plano" data-title="Plano de treino" hidden>
   <div class="chap-head">
-    <span class="eyebrow">Capítulo 12</span>
+    <span class="eyebrow">Capítulo 13</span>
     <h2>Plano de treino e dia da prova</h2>
     <p>Quatro semanas para sair do zero. Marque cada tarefa ao terminar; fica salvo neste navegador.</p>
   </div>
@@ -975,7 +1091,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <ul class="checks" id="finalChecks"></ul>
   <div class="box tip">
     <span class="tag">No dia</span>
-    <p>Leve caneta esferográfica da cor exigida no edital (normalmente preta, de corpo transparente) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
+    <p>Leve caneta esferográfica de tinta azul ou preta (item 12.7 do edital) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
   </div>
 </section>
   </div>
@@ -2582,7 +2698,7 @@ const MODELOS = [
   ]
 },
 {
-  id:'m56', curto:'Feminicídio: Estado e sociedade',
+  id:'m56', aula:'03/10', curto:'Feminicídio: Estado e sociedade',
   tema:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio',
   tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
   p:[
@@ -2617,6 +2733,311 @@ const MODELOS = [
     'O artigo 226 da Constituição é um repertório preciso: impõe ao próprio Estado o dever de coibir a violência familiar.',
     'O D1 reconhece o avanço da lei (pena de 20 a 40 anos), mas mostra que punir depois da morte não basta: é preciso prevenir.',
     'O D2 desmonta um ditado popular, e a proposta dá uma tarefa a cada responsável, com um canal real de denúncia (Ligue 180).'
+  ]
+},
+// ---------- Temas trabalhados nas aulas do curso (Instituto AOCP, PMPE 2027) ----------
+{
+  id:'m57', aula:'03/10', curto:'Tecnologia e redes sociais',
+  tema:'O papel da tecnologia e das redes sociais na prevenção e combate à violência urbana',
+  tipo:'Tema de aula · "papel" pede o potencial e os limites',
+  p:[
+    [
+      '{r}A Constituição define a segurança pública como "dever do Estado,',
+      'direito e responsabilidade de todos"{/}. Nesse cenário, a tecnologia e as',
+      'redes sociais {t}são aliadas contra a violência urbana, desde que riscos como',
+      'a desinformação e a violação da privacidade sejam controlados{/}.'
+    ],[
+      'Em primeiro lugar, a tecnologia amplia a prevenção. Softwares',
+      'de mapeamento da mancha criminal indicam os locais e horários de maior',
+      'incidência de delitos, o que otimiza o efetivo policial. {r}Em Pernambuco,',
+      'o Pacto pela Vida mostrou que a gestão baseada em dados contribui para',
+      'reduzir homicídios{/}. Somam-se a isso os canais digitais de denúncia, que',
+      'permitem à população colaborar com a polícia.'
+    ],[
+      'Por outro lado, o uso inadequado dessas ferramentas gera riscos.',
+      'Nas redes, boatos sobre supostos criminosos já levaram inocentes a',
+      'linchamentos, numa lógica de "justiça com as próprias mãos". {r}A Lei Geral',
+      'de Proteção de Dados exige transparência no uso de informações pessoais{/},',
+      'cuidado indispensável quando o reconhecimento facial em massa pode errar',
+      'e reproduzir vieses contra pessoas negras.'
+    ],[
+      'Portanto, a tecnologia deve servir à segurança com responsabilidade.',
+      'Para isso, {p}o Governo do Estado deve ampliar o videomonitoramento e os',
+      'canais de denúncia, com proteção de dados e campanhas contra notícias',
+      'falsas, a fim de prevenir crimes sem violar direitos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula (Instituto AOCP, PMPE 2027). A palavra "papel" pede os dois lados: o potencial e os limites, como foi discutido em sala.',
+    'A introdução destaca a "responsabilidade de todos" do artigo 144, o que justifica falar das redes sociais, isto é, da sociedade participando.',
+    'O D1 traz o potencial (mancha criminal, dados, denúncia); o D2, os riscos apontados na aula: notícias falsas, "justiça com as próprias mãos", privacidade e vieses algorítmicos.',
+    'A proposta une tecnologia e proteção de direitos, sem demonizar as redes.'
+  ]
+},
+{
+  id:'m58', aula:'03/10', curto:'Violência doméstica e medidas protetivas',
+  tema:'Os desafios para o enfrentamento da violência doméstica e a garantia da efetividade das medidas protetivas',
+  tipo:'Tema de aula · dois desafios: fiscalização das medidas e acolhimento',
+  p:[
+    [
+      '{r}A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência',
+      'para afastar o agressor e proteger a vítima{/}. No entanto, a violência',
+      'doméstica persiste, {t}não pela falta de lei, mas pela fiscalização frágil',
+      'dessas medidas e pela falta de acolhimento às mulheres{/}.'
+    ],[
+      'Em primeiro lugar, as medidas protetivas nem sempre saem do',
+      'papel. {r}Desde 2018, descumpri-las é crime, previsto no artigo 24-A da Lei',
+      'Maria da Penha{/}. Na prática, porém, poucas cidades contam com patrulhas',
+      'especializadas para visitar as vítimas e monitorar os agressores, de modo',
+      'que a ordem judicial vira apenas um documento. Assim, a vítima continua',
+      'exposta, e o ciclo de agressões pode terminar em feminicídio.'
+    ],[
+      'Além disso, falta uma rede de acolhimento que permita romper o',
+      'ciclo. {r}Segundo o Anuário Brasileiro de Segurança Pública, a maior parte',
+      'dos feminicídios ocorre dentro de casa e é cometida por parceiros ou',
+      'ex-parceiros{/}. Mesmo assim, muitas mulheres deixam de denunciar por medo',
+      'ou dependência financeira e, sem abrigo nem atendimento psicológico,',
+      'permanecem no lar violento, o que perpetua as agressões.'
+    ],[
+      'Portanto, as medidas protetivas precisam ser efetivas. Para isso,',
+      '{p}os estados devem ampliar as Patrulhas Maria da Penha e o monitoramento',
+      'eletrônico dos agressores, e o Judiciário deve agilizar a concessão das',
+      'medidas, a fim de proteger a vítima a tempo{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A tese segue a ideia central discutida em sala: a violência não persiste pela falta de lei, mas pela ineficácia da rede de proteção.',
+    'O D1 cita o crime de descumprimento de medida protetiva (art. 24-A), repertório jurídico preciso e ligado à atuação policial.',
+    'O D2 usa um dado do Anuário que também aparece nos textos motivadores da aula e explica por que a vítima não sai do ciclo.',
+    'A proposta tem dois agentes, como sugerido em aula: o Executivo (patrulhas e monitoramento) e o Judiciário (celeridade).'
+  ]
+},
+{
+  id:'m59', aula:'10/10', curto:'Era digital e segurança da informação',
+  tema:'Os desafios da segurança pública na era digital: crimes cibernéticos e segurança da informação',
+  tipo:'Tema de aula · dois desafios: polícias defasadas e usuários vulneráveis',
+  p:[
+    [
+      '{r}Em 2023, o Brasil promulgou a Convenção de Budapeste, tratado',
+      'de cooperação internacional contra o crime cibernético{/}. Ainda assim,',
+      'a segurança pública enfrenta desafios na era digital, {t}sobretudo pela',
+      'defasagem tecnológica das polícias e pela vulnerabilidade dos usuários{/}.'
+    ],[
+      'Em primeiro lugar, as polícias ainda não acompanham a velocidade',
+      'do crime virtual. Golpes, extorsões e roubos de dados são praticados de',
+      'outros estados ou países, mas faltam delegacias especializadas, peritos e',
+      'equipamentos para rastrear os autores. {r}Embora a Lei 14.155, de 2021, tenha',
+      'endurecido as penas das fraudes eletrônicas{/}, a punição continua rara, de',
+      'modo que a sensação de impunidade estimula novos ataques.'
+    ],[
+      'Além disso, a falta de educação digital torna o cidadão o elo',
+      'mais frágil. Criminosos usam a engenharia social, isto é, a manipulação',
+      'psicológica, para obter senhas e dados bancários com mensagens falsas',
+      'e ligações de supostos bancos. {r}O Marco Civil da Internet prevê que',
+      'a educação inclua a capacitação para o uso seguro da rede{/}, mas essa',
+      'orientação raramente chega à população.'
+    ],[
+      'Portanto, a segurança na era digital exige estrutura e prevenção.',
+      'Para isso, {p}os governos devem criar delegacias e laboratórios de perícia',
+      'digital e promover campanhas de educação digital com bancos e escolas, a',
+      'fim de proteger os dados da população e responsabilizar os criminosos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O D1 segue os textos motivadores: os crimes virtuais "não conhecem fronteiras físicas", e as polícias precisam se modernizar.',
+    'A introdução usa a Convenção de Budapeste, repertório atual e específico do tema.',
+    'O D2 explica o conceito de engenharia social antes de usá-lo e liga o tema à "vulnerabilidade humana" citada na proposta.',
+    'A proposta responde aos dois desafios: estrutura para investigar e educação para prevenir.'
+  ]
+},
+{
+  id:'m60', aula:'17/10', curto:'Pessoa idosa: lei e segurança pública',
+  tema:'A garantia de direitos e a proteção da pessoa idosa no Brasil: entre a previsão legal e os desafios da segurança pública',
+  tipo:'Tema de aula · esqueleto 3: a lei garante, a realidade não cumpre',
+  p:[
+    [
+      '{r}A Constituição, no artigo 230, atribui à família, à sociedade e',
+      'ao Estado o dever de amparar os idosos{/}. Contudo, a violência contra esse',
+      'público revela a distância entre a lei e a realidade, {t}sobretudo pela',
+      'subnotificação dos abusos e pela fiscalização insuficiente{/}.'
+    ],[
+      'Em primeira análise, a violência contra o idoso é silenciosa.',
+      '{r}Como mostra Gilberto Dimenstein em "O Cidadão de Papel", muitos direitos',
+      'existem apenas na lei{/}. Grande parte das agressões ocorre dentro de',
+      'casa, praticada por filhos ou netos de quem a vítima depende, e o abuso',
+      'financeiro, como a apropriação de aposentadorias, raramente é denunciado.',
+      'Assim, o problema some das estatísticas.'
+    ],[
+      'Ademais, cabe sublinhar o papel da segurança pública. Presente',
+      'no cotidiano das comunidades, o policiamento ostensivo pode identificar',
+      'sinais de abandono e maus-tratos e acionar a rede de proteção. {r}O Estatuto',
+      'da Pessoa Idosa tipifica como crime desviar bens ou rendimentos do idoso{/}.',
+      'Logo, policiais capacitados para reconhecer esses crimes são decisivos',
+      'para tirar a lei do papel.'
+    ],[
+      'Depreende-se, portanto, a urgência de proteger a pessoa idosa.',
+      'Para tanto, {p}cabe à Secretaria de Defesa Social capacitar policiais para',
+      'identificar abusos e, com a assistência social, divulgar o Disque 100, a',
+      'fim de garantir a efetividade da lei{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula, com o esqueleto 3: a lei assegura o direito, mas a realidade mostra a distância entre o texto legal e a prática.',
+    'Repertórios sugeridos em sala: o artigo 230 da Constituição, o Estatuto da Pessoa Idosa e "O Cidadão de Papel".',
+    'O D2 atende ao recorte "desafios da segurança pública": o policiamento identifica os abusos cedo, como dizia o texto motivador.',
+    'A conclusão usa o conector da aula ("Depreende-se, portanto") e um agente local (SDS).'
+  ]
+},
+{
+  id:'m61', aula:'24/10', curto:'Juventude e mercado de trabalho',
+  tema:'Os desafios para a inserção digna e a profissionalização da juventude no mercado de trabalho brasileiro',
+  tipo:'Tema de aula · dois desafios: precarização e falta de qualificação',
+  p:[
+    [
+      '{r}O Estatuto da Juventude, de 2013, assegura ao jovem o direito à',
+      'profissionalização, ao trabalho e à renda{/}. Contudo, essa inserção enfrenta',
+      'graves entraves, {t}motivados pela precarização do trabalho e pela falta de',
+      'qualificação, que aproxima muitos jovens da criminalidade{/}.'
+    ],[
+      'Primeiramente, a precarização atinge em cheio a juventude. Sem',
+      'experiência, muitos jovens só encontram vagas informais ou trabalho',
+      'por aplicativos, sem carteira assinada nem direitos previdenciários. {r}O',
+      'sociólogo Ricardo Antunes chama esse processo de "uberização" do trabalho{/},',
+      'marcado por jornadas longas e renda instável, o que deixa esses jovens',
+      'sem proteção social e fere o Estatuto.'
+    ],[
+      'Ademais, a falta de qualificação limita as oportunidades. A evasão',
+      'escolar e o acesso restrito a cursos técnicos afastam os jovens das vagas',
+      'que exigem formação. {r}Embora a Lei da Aprendizagem obrigue médias e grandes',
+      'empresas a contratar aprendizes{/}, as vagas ainda são insuficientes diante',
+      'da demanda. Assim, sem perspectiva de renda, parte da juventude torna-se',
+      'alvo do aliciamento do tráfico, o que alimenta a violência urbana.'
+    ],[
+      'Portanto, urge mitigar tais desafios. {p}O Ministério do Trabalho, com',
+      'o Sistema S, deve ampliar as vagas de aprendizagem e os cursos técnicos,',
+      'além de fiscalizar a informalidade, a fim de garantir renda digna e',
+      'afastar os jovens do crime{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. É um tema de trabalho, mas a aula orientou a ligar a falta de oportunidades à criminalidade, o que aproxima o texto da segurança pública.',
+    'A introdução segue o esqueleto da aula: repertório legal (Estatuto da Juventude), apresentação do tema e duas teses.',
+    'O D1 usa um sociólogo brasileiro e o conceito de "uberização", citado no texto motivador.',
+    'O D2 cita a Lei da Aprendizagem e mostra a consequência para a segurança pública.'
+  ]
+},
+{
+  id:'m62', aula:'31/10', curto:'Aliciamento de crianças pelo crime',
+  tema:'O aliciamento de crianças e adolescentes pelo crime organizado: a linha tênue entre a vulnerabilidade social e a ineficácia do ECA',
+  tipo:'Tema de aula · "linha tênue entre X e Y": um desenvolvimento para cada lado',
+  p:[
+    [
+      '{r}A Constituição, no artigo 227, e o Estatuto da Criança e do',
+      'Adolescente (ECA) asseguram, em tese, a proteção integral da infância{/}.',
+      'Contudo, o aliciamento infantojuvenil pelo crime organizado escancara uma',
+      'falha grave, {t}fruto da vulnerabilidade social e da ineficácia do ECA{/}.'
+    ],[
+      'Primordialmente, a vulnerabilidade social deixa crianças e',
+      'adolescentes à mercê do crime. Sem escola de qualidade, lazer e',
+      'acompanhamento familiar, muitos passam o dia nas ruas. {r}O documentário',
+      '"Falcão – Meninos do Tráfico", de MV Bill e Celso Athayde, mostra jovens',
+      'recrutados como vigias do tráfico{/}. Assim, o crime preenche o vácuo deixado',
+      'pelo Estado, oferecendo dinheiro e pertencimento.'
+    ],[
+      'Ademais, a aplicação do ECA ainda é falha. {r}O Estatuto pune, no',
+      'artigo 244-B, o adulto que corrompe menor de 18 anos para a prática de',
+      'crimes{/}, mas os aliciadores raramente são identificados, já que as facções',
+      'usam a inimputabilidade dos adolescentes para escapar da punição. Isso',
+      'eleva drasticamente a letalidade infantojuvenil e sobrecarrega um sistema',
+      'socioeducativo que pouco consegue recuperar esses jovens.'
+    ],[
+      'Portanto, o combate a essa realidade exige repressão qualificada.',
+      '{p}Cabe ao Estado ampliar as escolas em tempo integral e investigar os',
+      'adultos que aliciam menores{/}. Só assim o ECA deixará de ser uma utopia',
+      'legislativa para ser, de fato, um escudo protetor.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A expressão "linha tênue entre X e Y" pede um desenvolvimento para cada lado: vulnerabilidade social (D1) e ineficácia do ECA (D2).',
+    'Repertórios sugeridos em sala: artigo 227 da Constituição, ECA e o documentário "Falcão – Meninos do Tráfico".',
+    'O D2 cita o crime de corrupção de menores (art. 244-B) e explica como as facções usam a inimputabilidade, ponto destacado na aula.',
+    'A conclusão usa o fecho do esqueleto da aula: o ECA deixa de ser "utopia legislativa" para ser "escudo protetor".'
+  ]
+},
+{
+  id:'m63', aula:'07/11', curto:'Crime organizado e sistema prisional',
+  tema:'O avanço do crime organizado e a falência do sistema prisional brasileiro',
+  tipo:'Tema de aula · relação de causa: prisões falidas fortalecem as facções',
+  p:[
+    [
+      '{r}Em 2015, o Supremo Tribunal Federal reconheceu o "estado de coisas',
+      'inconstitucional" do sistema prisional brasileiro, decisão confirmada em',
+      '2023{/}. Esse quadro favorece o avanço do crime organizado, {t}sobretudo pela',
+      'superlotação dominada por facções e pela ausência de ressocialização{/}.'
+    ],[
+      'Primordialmente, a superlotação entrega o controle dos presídios às',
+      'facções. Sem separação por perfil, o preso de baixa periculosidade convive',
+      'com líderes criminosos e, em busca de proteção, acaba recrutado. {r}Michel',
+      'Foucault, em "Vigiar e Punir", já apontava que a prisão pode produzir',
+      'delinquência em vez de recuperar{/}. Além disso, celulares nas celas permitem',
+      'ordenar crimes de dentro das cadeias.'
+    ],[
+      'Ademais, a ausência de ressocialização mantém o ciclo criminoso.',
+      '{r}Embora a Lei de Execução Penal preveja trabalho e estudo no cárcere{/},',
+      'poucas unidades os oferecem, e o egresso encontra portas fechadas',
+      'no mercado. Sem alternativas, muitos dependem da própria facção para',
+      'sobreviver, o que eleva drasticamente a reincidência e garante novos',
+      'membros ao crime organizado.'
+    ],[
+      'Portanto, o combate a essa realidade exige repressão qualificada.',
+      '{p}Cabe aos governos estaduais separar os presos por perfil e bloquear as',
+      'comunicações nas unidades, aliados à ampliação do trabalho e do estudo no',
+      'cárcere{/}. Só assim a prisão deixará de ser escritório do crime.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A introdução usa uma decisão do STF (ADPF 347), repertório forte e preciso para o tema.',
+    'O D1 mostra como a superlotação vira recrutamento; o D2, como a falta de ressocialização alimenta a reincidência.',
+    'Os dois desenvolvimentos ligam as duas partes do tema (crime organizado e sistema prisional), sem tratar só de uma delas.',
+    'A proposta une repressão (bloqueio de comunicações, separação) e ressocialização, como pede a "repressão qualificada" do esqueleto da aula.'
+  ]
+},
+{
+  id:'m64', aula:'21/11', curto:'Espetacularização do crime pela mídia',
+  tema:'A espetacularização do crime pela mídia brasileira e os limites éticos entre informação e entretenimento',
+  tipo:'Tema de aula · a tensão entre direito à informação e lógica do entretenimento',
+  p:[
+    [
+      '{r}A Constituição assegura a liberdade de informação, mas também',
+      'protege a intimidade, a honra e a imagem das pessoas{/}. Contudo, a',
+      'espetacularização do crime pela mídia ultrapassa esse limite, {t}sobretudo',
+      'pela busca por audiência e pela fragilidade da autorregulação{/}.'
+    ],[
+      'Em primeiro plano, destaca-se a lógica da audiência. {r}Em "Sobre a',
+      'televisão", o sociólogo Pierre Bourdieu critica a pressão dos índices de',
+      'audiência, que leva a mídia a privilegiar o sensacional{/}. Nesse sentido,',
+      'programas policiais e produções de "true crime" transformam tragédias',
+      'em produto, exploram o sofrimento das famílias e expõem vítimas, o que',
+      'contribui para a banalização da violência.'
+    ],[
+      'Ademais, a falta de limites éticos prejudica a justiça e a',
+      'atividade policial. Suspeitos são apresentados como culpados antes de',
+      'qualquer julgamento, em afronta à presunção de inocência, e detalhes de',
+      'investigações em andamento são divulgados. {r}A Lei de Abuso de Autoridade',
+      'pune o agente que constrange o preso a se exibir à curiosidade pública{/},',
+      'o que mostra que a própria polícia deve resistir à pressão por espetáculo.'
+    ],[
+      'Portanto, informar sem transformar o crime em espetáculo é',
+      'essencial. {p}Cabe aos veículos de comunicação fortalecer seus códigos de',
+      'ética e às polícias adotar protocolos de divulgação que preservem vítimas',
+      'e investigados, a fim de garantir informação responsável{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O texto desenvolve a "tensão" discutida em sala: direito à informação × lógica mercantil do entretenimento.',
+    'Repertórios da aula: a Constituição e Pierre Bourdieu. A Lei de Abuso de Autoridade aproxima o tema do trabalho policial.',
+    'O D2 mostra as consequências apontadas na aula: julgamento antecipado, prejuízo à investigação e exposição de vítimas.',
+    'A conclusão defende o equilíbrio entre transparência e responsabilidade, sem pedir censura.'
   ]
 },
 // ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------
@@ -3194,7 +3615,7 @@ const REPS = [
  i:'Incluiu no Código Penal o crime de intimidação sistemática (bullying) e sua forma virtual (cyberbullying). Já a Lei 13.185/2015 havia criado o Programa de Combate à Intimidação Sistemática.',
  u:'Em 2024, a Lei 14.811 transformou o bullying e o cyberbullying em crimes, reconhecendo os danos que causam aos jovens.'},
 {n:'Estatuto da Pessoa Idosa (Lei 10.741/2003)', w:'Lei', t:['vul'],
- i:'Garante direitos às pessoas com 60 anos ou mais e prevê que nenhuma pessoa idosa será objeto de negligência, discriminação, violência, crueldade ou opressão.',
+ i:'Garante direitos às pessoas com 60 anos ou mais e prevê que nenhuma pessoa idosa será objeto de negligência, discriminação, violência, crueldade ou opressão. Tipifica crimes como desviar bens, pensão ou rendimentos da pessoa idosa (art. 102).',
  u:'O Estatuto da Pessoa Idosa proíbe qualquer forma de violência contra pessoas com 60 anos ou mais. Entretanto, ...'},
 {n:'Lei de Execução Penal (Lei 7.210/1984)', w:'Lei', t:['pri'],
  i:'O art. 1º diz que a execução penal deve efetivar a sentença e proporcionar condições para a harmônica integração social do condenado.',
@@ -3248,8 +3669,8 @@ const REPS = [
 {n:'Simone de Beauvoir', w:'Pensador', t:['mul'],
  i:'Em "O Segundo Sexo" (1949): "Ninguém nasce mulher: torna-se mulher." Os papéis de gênero são construídos socialmente.',
  u:'Segundo Simone de Beauvoir, "ninguém nasce mulher: torna-se mulher", o que mostra que o machismo é uma construção social e pode ser combatido.'},
-{n:'Pierre Bourdieu', w:'Pensador', t:['mul','des','edu'],
- i:'Criou o conceito de "violência simbólica": dominação invisível, exercida por meio da cultura, da linguagem e dos costumes, que a própria vítima tende a aceitar como natural.',
+{n:'Pierre Bourdieu', w:'Pensador', t:['mul','des','edu','dh','tec'],
+ i:'Criou o conceito de "violência simbólica": dominação invisível, exercida por meio da cultura, da linguagem e dos costumes, que a própria vítima tende a aceitar como natural. Em "Sobre a televisão" (1996), critica a pressão dos índices de audiência, que leva a mídia ao sensacionalismo.',
  u:'O sociólogo Pierre Bourdieu chamou de violência simbólica a dominação naturalizada pelos costumes, como ocorre com o machismo.'},
 {n:'Byung-Chul Han', w:'Pensador', t:['sm','tec'],
  i:'Em "Sociedade do Cansaço" (2010), afirma que a cobrança excessiva por desempenho gera esgotamento, depressão e síndrome de burnout.',
@@ -3311,7 +3732,7 @@ const REPS = [
  i:'Publicação do Ipea e do Fórum Brasileiro de Segurança Pública. Mostra que a maioria das vítimas de homicídio no Brasil é negra e do sexo masculino e que quase metade tem entre 15 e 29 anos (47,8% em 2023, segundo a edição de 2025). Cuidado: os jovens não são a maioria das vítimas, e sim o grupo mais atingido.',
  u:'Segundo o Atlas da Violência, os jovens negros são as principais vítimas de homicídio no país.'},
 {n:'Anuário Brasileiro de Segurança Pública (FBSP)', w:'Dado e fato', t:['seg','mul'],
- i:'Publicação anual do Fórum Brasileiro de Segurança Pública. Registra, por exemplo, mais de mil feminicídios por ano no país.',
+ i:'Publicação anual do Fórum Brasileiro de Segurança Pública. Registra, por exemplo, mais de mil feminicídios por ano no país, a maior parte deles dentro de casa e cometida por parceiros ou ex-parceiros.',
  u:'Dados do Anuário Brasileiro de Segurança Pública revelam que mais de mil mulheres são vítimas de feminicídio por ano no Brasil.'},
 {n:'OMS e trânsito', w:'Dado e fato', t:['tra'],
  i:'Para a Organização Mundial da Saúde, as lesões de trânsito são a principal causa de morte de crianças e jovens de 5 a 29 anos no mundo. A ONU definiu 2021–2030 como a Década de Ação pela Segurança no Trânsito, com meta de reduzir as mortes pela metade.',
@@ -3422,7 +3843,44 @@ const REPS = [
  u:'Segundo a OMS, saúde é um estado de completo bem-estar físico, mental e social, o que inclui cuidar da mente de quem trabalha sob pressão.'},
 {n:'Educação financeira na BNCC', w:'Lei', t:['edu','tec','des'],
  i:'A Base Nacional Comum Curricular inclui a educação financeira entre os Temas Contemporâneos Transversais que as escolas devem trabalhar.',
- u:'A BNCC inclui a educação financeira entre os temas das escolas, mas o conteúdo ainda é pouco trabalhado, o que deixa jovens vulneráveis às apostas e às dívidas.'}
+ u:'A BNCC inclui a educação financeira entre os temas das escolas, mas o conteúdo ainda é pouco trabalhado, o que deixa jovens vulneráveis às apostas e às dívidas.'},
+// ---------- Acréscimos das aulas do curso (Instituto AOCP, PMPE 2027) ----------
+{n:'Constituição Federal, arts. 229 e 230', w:'Constituição', t:['vul'],
+ i:'Art. 229: os filhos maiores têm o dever de ajudar e amparar os pais na velhice. Art. 230: a família, a sociedade e o Estado têm o dever de amparar as pessoas idosas, assegurando sua participação na comunidade.',
+ u:'A Constituição, no artigo 230, atribui à família, à sociedade e ao Estado o dever de amparar as pessoas idosas. Contudo, ...'},
+{n:'Constituição Federal, art. 5º, X, e art. 220', w:'Constituição', t:['dh','tec'],
+ i:'O art. 5º, X, protege a intimidade, a vida privada, a honra e a imagem das pessoas. O art. 220 garante a liberdade de informação, observado o disposto na própria Constituição.',
+ u:'A Constituição assegura a liberdade de informação, mas também protege a intimidade, a honra e a imagem das pessoas.'},
+{n:'Convenção de Budapeste (Decreto 11.491/2023)', w:'Lei', t:['tec'],
+ i:'Tratado do Conselho da Europa sobre o crime cibernético, de 2001. O Brasil aderiu e o promulgou em 2023, para facilitar a cooperação internacional na investigação desses crimes.',
+ u:'Em 2023, o Brasil promulgou a Convenção de Budapeste, tratado de cooperação internacional contra o crime cibernético. Ainda assim, ...'},
+{n:'STF, ADPF 347', w:'Lei', t:['pri','dh'],
+ i:'Em 2015, o Supremo Tribunal Federal reconheceu, em caráter cautelar, o "estado de coisas inconstitucional" do sistema prisional brasileiro, pela violação massiva de direitos dos presos. O julgamento de mérito, em 2023, confirmou a decisão e determinou um plano nacional para o setor.',
+ u:'O Supremo Tribunal Federal reconheceu o "estado de coisas inconstitucional" do sistema prisional, quadro que favorece o avanço das facções.'},
+{n:'Descumprimento de medida protetiva (art. 24-A da Lei Maria da Penha)', w:'Lei', t:['mul'],
+ i:'Incluído pela Lei 13.641/2018: descumprir decisão judicial que concede medidas protetivas de urgência é crime.',
+ u:'Desde 2018, descumprir medida protetiva é crime. Na prática, porém, poucas cidades fiscalizam o cumprimento dessas decisões.'},
+{n:'Corrupção de menores (art. 244-B do ECA)', w:'Lei', t:['dro','vul'],
+ i:'Pune quem corrompe ou facilita a corrupção de menor de 18 anos, praticando infração penal com ele ou induzindo-o a praticá-la.',
+ u:'O ECA pune, no artigo 244-B, o adulto que corrompe menor de 18 anos para a prática de crimes, mas os aliciadores raramente são identificados.'},
+{n:'Estatuto da Juventude (Lei 12.852/2013)', w:'Lei', t:['des','dro','edu'],
+ i:'Art. 14: o jovem tem direito à profissionalização, ao trabalho e à renda, exercido em condições de liberdade, equidade e segurança, adequadamente remunerado e com proteção social.',
+ u:'O Estatuto da Juventude assegura ao jovem o direito à profissionalização, ao trabalho e à renda. Contudo, ...'},
+{n:'Lei da Aprendizagem (Lei 10.097/2000)', w:'Lei', t:['des','edu'],
+ i:'Obriga as empresas de médio e grande porte a contratar aprendizes, jovens que trabalham e estudam ao mesmo tempo, em uma cota sobre o total de empregados.',
+ u:'Embora a Lei da Aprendizagem obrigue médias e grandes empresas a contratar aprendizes, as vagas ainda são insuficientes.'},
+{n:'Lei de Abuso de Autoridade, art. 13', w:'Lei', t:['dh','seg'],
+ i:'A Lei 13.869/2019 pune o agente que constrange o preso, mediante violência, grave ameaça ou redução de sua resistência, a se exibir ou ter o corpo exibido à curiosidade pública.',
+ u:'A Lei de Abuso de Autoridade pune o agente que constrange o preso a se exibir à curiosidade pública, o que impõe limites à exposição de detidos.'},
+{n:'Documentário "Falcão – Meninos do Tráfico" (2006)', w:'Obra', t:['dro','vul'],
+ i:'Dirigido pelo rapper MV Bill e por Celso Athayde, mostra a rotina de crianças e adolescentes usados pelo tráfico como "falcões", os vigias que avisam da chegada da polícia.',
+ u:'O documentário "Falcão – Meninos do Tráfico" mostra jovens recrutados como vigias do tráfico, retrato do vácuo deixado pelo Estado.'},
+{n:'Ricardo Antunes e a "uberização"', w:'Pensador', t:['des'],
+ i:'Sociólogo brasileiro que estuda o trabalho por plataformas digitais e chama de "uberização" a precarização marcada por renda instável, jornadas longas e ausência de direitos.',
+ u:'O sociólogo Ricardo Antunes chama de "uberização" a precarização do trabalho por aplicativos, que atinge sobretudo os jovens.'},
+{n:'Guy Debord, "A Sociedade do Espetáculo"', w:'Obra', t:['tec','dh'],
+ i:'Livro (1967) que descreve uma sociedade em que as relações passam a ser mediadas por imagens e espetáculos.',
+ u:'Guy Debord descreveu a "sociedade do espetáculo", em que tudo vira imagem para consumo, inclusive a violência.'}
 ];
 
 // Temas prováveis com kit completo. h = chance (alta/média). Os repertórios citados estão no capítulo Repertórios.
@@ -3441,13 +3899,78 @@ const TEMAS = [
  r:'Robert Peel ("a polícia é o público..."); art. 144 da CF ("responsabilidade de todos"); kobans do Japão; Janelas Quebradas.',
  p:'SDS-PE amplia bases comunitárias com policiais fixos e reuniões periódicas com moradores e escolas.',
  x:'Tema positivo: os argumentos são benefícios. Não escreva só sobre problemas.'},
-{m:'m56', t:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio', c:'mul', h:'alta',
+{m:'m56', aula:'03/10', t:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio', c:'mul', h:'alta',
  tese:'Combater o feminicídio exige que o Estado garanta proteção efetiva e que a sociedade rompa o silêncio diante das agressões.',
  a1:'Estado: fiscalizar as medidas protetivas e ampliar delegacias especializadas e abrigos. Punir é tarde quando a vítima já morreu.',
  a2:'Sociedade: abandonar o "em briga de marido e mulher, ninguém mete a colher" e denunciar os sinais de violência.',
  r:'Art. 226, § 8º, da CF; Lei Maria da Penha; Lei 14.994/2024 (feminicídio, pena de 20 a 40 anos); Bourdieu (violência simbólica); Anuário do FBSP; Ligue 180.',
  p:'O governo fiscaliza as medidas protetivas e amplia a rede de acolhimento; a população denuncia pelo Ligue 180 ou pelo 190.',
- x:'Quando o tema nomeia dois responsáveis (Estado e sociedade), dedique um desenvolvimento a cada um. Falar só do Estado tangencia o tema.'},
+ x:'Quando o tema nomeia dois responsáveis (Estado e sociedade), dedique um desenvolvimento a cada um. Falar só do Estado tangencia o tema.',
+ na:'Ideia central: o feminicídio "não persiste pela falta de lei, mas pela ineficácia na rede de proteção". Causas: sofrimento minimizado ("briga de marido e mulher"), falta de acolhimento (vítimas deixam de denunciar ou não encontram suporte), cultura patriarcal e naturalização da violência de gênero. Consequências: a "morte anunciada", o ciclo de violência, os órfãos do feminicídio e o impacto na saúde pública e na segurança. Soluções por agente: Executivo (delegacias da mulher, Patrulhas Maria da Penha), Judiciário (celeridade nas medidas protetivas), escola e mídia (debate sobre igualdade de gênero).'},
+{m:'m57', aula:'03/10', t:'O papel da tecnologia e das redes sociais na prevenção e combate à violência urbana', c:'tec', h:'alta',
+ tese:'Tecnologia e redes sociais são aliadas contra a violência urbana, desde que riscos como a desinformação e a violação da privacidade sejam controlados.',
+ a1:'Potencial: mapeamento da mancha criminal, inteligência artificial, videomonitoramento e canais digitais de denúncia otimizam o efetivo policial.',
+ a2:'Limites: notícias falsas e "justiça com as próprias mãos", vazamento de dados, reconhecimento facial em massa e vieses algorítmicos.',
+ r:'Art. 144 da CF ("responsabilidade de todos"); Pacto pela Vida (PE); LGPD; Marco Civil da Internet; O Dilema das Redes.',
+ p:'Governo do Estado amplia o videomonitoramento e os canais oficiais de denúncia, com proteção de dados e campanhas contra notícias falsas.',
+ x:'"Papel" pede os dois lados. Um texto só de elogios ou só de críticas à tecnologia tangencia o tema.',
+ na:'Potencial positivo: algoritmos e IA; software de mapeamento de mancha criminal para antecipar locais e horários de maior incidência; videomonitoramento; reconhecimento facial; engajamento da sociedade; canais de denúncia; campanhas de conscientização. Desafios, riscos e limites: vazamento de informações; fake news que expõem inocentes e levam à "justiça com as próprias mãos"; privacidade do cidadão comum diante do reconhecimento facial em massa; vieses algorítmicos (discriminação racial ou social pelo sistema).'},
+{m:'m58', aula:'03/10', t:'Os desafios para o enfrentamento da violência doméstica e a garantia da efetividade das medidas protetivas', c:'mul', h:'alta',
+ tese:'A violência doméstica persiste não pela falta de lei, mas pela fiscalização frágil das medidas protetivas e pela falta de acolhimento às vítimas.',
+ a1:'Medidas protetivas sem fiscalização: poucas patrulhas especializadas e pouco monitoramento dos agressores.',
+ a2:'Falta de acolhimento: medo, dependência financeira, falta de abrigo e de atendimento psicológico mantêm a vítima no lar violento.',
+ r:'Lei Maria da Penha (2006); art. 24-A (descumprir medida protetiva é crime, desde 2018); Anuário Brasileiro de Segurança Pública; auxílio-aluguel (Lei 14.674/2023).',
+ p:'Estados ampliam Patrulhas Maria da Penha e o monitoramento eletrônico; o Judiciário agiliza a concessão das medidas.',
+ x:'O recorte é a efetividade das medidas protetivas: elas precisam aparecer no D1 e na proposta.',
+ na:'Ideia central: a violência "não persiste pela falta de lei, mas pela ineficácia na rede de proteção". Causas: cultura patriarcal (a ideia distorcida de posse sobre a mulher, que não aceita o fim do relacionamento), sofrimento minimizado ("briga de marido e mulher"), falta de acolhimento e ineficiência das medidas protetivas de urgência. A AOCP valoriza objetividade, clareza e estrutura rígida: introdução com tese clara, dois argumentos diretos e conclusão com proposta.'},
+{m:'m59', aula:'10/10', t:'Os desafios da segurança pública na era digital: crimes cibernéticos e segurança da informação', c:'tec', h:'alta',
+ tese:'A segurança pública enfrenta desafios na era digital sobretudo pela defasagem tecnológica das polícias e pela vulnerabilidade dos usuários.',
+ a1:'Polícias defasadas: crimes "sem fronteiras", poucas delegacias especializadas, peritos e equipamentos; punição rara.',
+ a2:'Usuários vulneráveis: engenharia social, falta de educação digital, idosos como alvo.',
+ r:'Convenção de Budapeste (promulgada em 2023); Lei 14.155/2021; Lei Carolina Dieckmann; Marco Civil da Internet (art. 26); LGPD.',
+ p:'Governos criam delegacias e laboratórios de perícia digital e fazem campanhas de educação digital com bancos e escolas.',
+ x:'Inclua os dois lados do recorte: crimes cibernéticos (investigação) e segurança da informação (proteção de dados e do usuário).',
+ na:'Textos motivadores: a digitalização trouxe golpes, roubo de dados, extorsões e fraudes que "não conhecem fronteiras físicas", e as polícias precisam se modernizar. O combate exige capacitação técnica das forças de segurança, inteligência digital e educação digital da população, porque "a vulnerabilidade humana continua sendo o principal elo explorado pelos cibercriminosos". A aula apresentou os esqueletos estruturais 1 e 2 com este tema.'},
+{m:'m60', aula:'17/10', t:'A garantia de direitos e a proteção da pessoa idosa no Brasil: entre a previsão legal e os desafios da segurança pública', c:'vul', h:'alta',
+ tese:'A violência contra a pessoa idosa revela a distância entre a lei e a realidade, sobretudo pela subnotificação dos abusos e pela fiscalização insuficiente.',
+ a1:'Subnotificação: violência silenciosa, dentro de casa, por pessoas próximas; abuso financeiro raramente denunciado.',
+ a2:'Segurança pública: o policiamento ostensivo e comunitário identifica abusos cedo e aciona a rede de proteção.',
+ r:'Arts. 229 e 230 da CF; Estatuto da Pessoa Idosa (crimes dos arts. 97, 99 e 102); "O Cidadão de Papel" (Dimenstein); Disque 100.',
+ p:'SDS capacita policiais para identificar abusos e, com a assistência social, divulga o Disque 100.',
+ x:'O recorte "desafios da segurança pública" precisa aparecer: dedique um desenvolvimento ao papel da polícia.',
+ na:'Violência multifacetada e silenciosa: física, psicológica, patrimonial (por pessoa próxima, como filho ou neto), sexual, negligência e abandono. Repertórios: art. 230 da CF (família, sociedade e Estado devem amparar a pessoa idosa e garantir sua participação na comunidade), art. 229 da CF, Estatuto da Pessoa Idosa (Lei 10.741/2003), "O Cidadão de Papel". Teses: falta de fiscalização e subnotificação dos casos; dever de denunciar do cidadão e do agente público. A aula usou o esqueleto 3: a lei assegura o direito, mas a realidade mostra a distância entre o texto legal e a prática.'},
+{m:'m61', aula:'24/10', t:'Os desafios para a inserção digna e a profissionalização da juventude no mercado de trabalho brasileiro', c:'des', h:'alta',
+ tese:'A inserção dos jovens no trabalho enfrenta a precarização e a falta de qualificação, o que aproxima muitos deles da criminalidade.',
+ a1:'Precarização: informalidade, trabalho por aplicativos ("uberização"), renda instável e falta de proteção social.',
+ a2:'Falta de qualificação: evasão escolar, poucos cursos técnicos e vagas de aprendizagem insuficientes; jovem sem renda vira alvo do tráfico.',
+ r:'Estatuto da Juventude (Lei 12.852/2013, art. 14); Lei da Aprendizagem (Lei 10.097/2000); Ricardo Antunes ("uberização"); IBGE (desemprego juvenil).',
+ p:'Ministério do Trabalho e Sistema S ampliam aprendizagem e cursos técnicos e fiscalizam a informalidade.',
+ x:'Tema de trabalho, mas em prova policial ligue a falta de oportunidades à violência urbana, como orientou a aula.',
+ na:'Texto motivador: a desocupação entre jovens de 18 a 24 anos é historicamente o dobro da média do país, e a precarização, a "uberização" e a informalidade dificultam a emancipação financeira e afastam a realidade das garantias do Estatuto da Juventude. No esqueleto da aula, a segunda tese "atua como um severo fator criminógeno", e a conclusão fecha com "afastar os jovens da criminalidade e materializar o Estatuto da Juventude".'},
+{m:'m62', aula:'31/10', t:'O aliciamento de crianças e adolescentes pelo crime organizado: a linha tênue entre a vulnerabilidade social e a ineficácia do ECA', c:'dro', h:'alta',
+ tese:'O aliciamento infantojuvenil escancara uma falha grave, fruto da vulnerabilidade social e da ineficácia na aplicação do ECA.',
+ a1:'Vulnerabilidade social: sem escola de qualidade, lazer e família presente, o crime ocupa o vácuo deixado pelo Estado.',
+ a2:'Ineficácia do ECA: aliciadores adultos impunes, uso da inimputabilidade pelas facções, sistema socioeducativo falido.',
+ r:'Art. 227 da CF; art. 4º e art. 244-B do ECA (corrupção de menores); "Falcão – Meninos do Tráfico" (MV Bill e Celso Athayde, 2006); "Capitães da Areia".',
+ p:'Estado amplia escolas em tempo integral e investiga os adultos que aliciam menores ("repressão qualificada").',
+ x:'"Linha tênue entre X e Y" pede um desenvolvimento para cada lado. Não defenda a redução da maioridade penal: não é o recorte.',
+ na:'Por que o aliciamento aumenta: crianças e adolescentes passam despercebidos e são inimputáveis; falta proteção social (sociedade e família); acesso às redes sem supervisão; abandono parental; "letargia estatal" e vácuo ocupado pelo crime; instrumentalização da criança pelo crime por causa da sensação de inimputabilidade. Consequências: aumento da letalidade infantojuvenil e falência do sistema socioeducativo. Repertórios: art. 227 da CF, art. 4º do ECA, "Capitães da Areia", "Falcão – Meninos do Tráfico".'},
+{m:'m63', aula:'07/11', t:'O avanço do crime organizado e a falência do sistema prisional brasileiro', c:'pri', h:'alta',
+ tese:'A falência do sistema prisional favorece o crime organizado, sobretudo pela superlotação dominada por facções e pela ausência de ressocialização.',
+ a1:'Superlotação: presos misturados sem separação por perfil, recrutamento pelas facções, comando do crime de dentro das celas.',
+ a2:'Sem ressocialização: falta de trabalho e estudo, egresso sem oportunidade, dependência da facção e reincidência.',
+ r:'STF, ADPF 347 ("estado de coisas inconstitucional", 2015 e 2023); Lei de Execução Penal; Foucault ("Vigiar e Punir"); população carcerária.',
+ p:'Governos estaduais separam presos por perfil, bloqueiam comunicações e ampliam trabalho e estudo no cárcere.',
+ x:'Relacione as duas partes do tema. Falar só de facções ou só de presídios tangencia.',
+ na:'A aula aplicou o esqueleto 3: repertório legal na introdução ("asseguram, em tese..."), "Primordialmente" no D1, "Ademais" no D2 e conclusão com "repressão qualificada" que retoma o repertório da introdução.'},
+{m:'m64', aula:'21/11', t:'A espetacularização do crime pela mídia brasileira e os limites éticos entre informação e entretenimento', c:'dh', h:'alta',
+ tese:'A espetacularização do crime ultrapassa os limites éticos sobretudo pela busca por audiência e pela fragilidade da autorregulação dos veículos.',
+ a1:'Lógica da audiência: monetização do choque, tragédia transformada em produto, cultura "true crime".',
+ a2:'Falta de limites: exposição de vítimas, julgamento antecipado (presunção de inocência), prejuízo à investigação policial, banalização do crime.',
+ r:'Art. 5º, X e LVII, e art. 220 da CF; Pierre Bourdieu ("Sobre a televisão"); Guy Debord ("A Sociedade do Espetáculo"); Lei de Abuso de Autoridade (art. 13).',
+ p:'Veículos fortalecem seus códigos de ética e as polícias adotam protocolos de divulgação que preservem vítimas e investigados.',
+ x:'Não defenda censura: o caminho é ética e responsabilidade. Mostre a tensão entre direito à informação e lógica do entretenimento.',
+ na:'Pergunta para pensar a tese: o público é apenas vítima do sensacionalismo ou também alimenta esse mercado? Causas: busca por audiência, monetização do choque e do drama, tragédia transformada em produto, fragilidade na regulação. A tensão: direito à informação × lógica mercantil do entretenimento. Consequências: exposição indevida das vítimas, prejuízo da atividade policial, banalização do crime. Soluções: primazia da ética e dos direitos fundamentais sobre o Ibope; equilíbrio entre transparência e responsabilidade social. Repertórios: CF/88, Pierre Bourdieu, a cultura "true crime".'},
 {m:'m2', t:'Os desafios para combater a violência contra a mulher no Brasil', c:'mul', h:'alta',
  tese:'A violência persiste devido à cultura machista e à fragilidade da rede de proteção às vítimas.',
  a1:'Cultura machista: posse sobre a companheira, agressão vista como "assunto de casal".',
@@ -3923,18 +4446,22 @@ function renderQuiz(boxId, key, items, scoreId){
 // ---------- temas ----------
 (function(){
   let cat = 'todos';
-  $('#temaFilters').innerHTML = ['todos', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${c === 'todos' ? 'Todos' : esc(TEMA_CATS[c])}</button>`).join('');
+  const label = c => c === 'todos' ? 'Todos' : c === 'aula' ? 'Temas das aulas' : TEMA_CATS[c];
+  $('#temaFilters').innerHTML = ['todos', 'aula', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${esc(label(c))}</button>`).join('');
   function render(){
-    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat).sort((x, y) => (y.h === 'alta') - (x.h === 'alta'));
+    // temas das aulas primeiro, depois os de chance alta
+    const rank = t => (t.aula ? 2 : 0) + (t.h === 'alta' ? 1 : 0);
+    const list = TEMAS.filter(t => cat === 'todos' || (cat === 'aula' ? t.aula : t.c === cat)).sort((x, y) => rank(y) - rank(x));
     $('#temaCount').textContent = `${list.length} temas`;
     $('#temaList').innerHTML = list.map(t =>
-      `<details class="acc"><summary><span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span><span>${esc(t.t)}</span></summary><div class="acc-body">
+      `<details class="acc"><summary>${t.aula ? `<span class="chip ok">aula ${esc(t.aula)}</span>` : `<span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span>`}<span>${esc(t.t)}</span></summary><div class="acc-body">
         <h4>Tese</h4><p><span class="hl">${esc(t.tese)}</span></p>
         <h4>Argumento 1 · Desenvolvimento 1</h4><p>${esc(t.a1)}</p>
         <h4>Argumento 2 · Desenvolvimento 2</h4><p>${esc(t.a2)}</p>
         <h4>Repertórios</h4><p>${esc(t.r)}</p>
         <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
         <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
+        ${t.na ? `<div class="box tip"><span class="tag">O que a aula destacou (${esc(t.aula)})</span><p>${esc(t.na)}</p></div>` : ''}
         ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a>${v2Of(t.m) ? ` · <a href="#modelos" data-mod="${v2Of(t.m).id}">Ver a versão 2 →</a>` : ''}</p>` : ''}
       </div></details>`
     ).join('');
@@ -3972,7 +4499,8 @@ let showModelo = () => {};
   let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
   const sel = $('#modSel');
   const opt = (m, label) => `<option value="${MODELOS.indexOf(m)}">${esc(label)}</option>`;
-  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base && !m.aula).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+    + `<optgroup label="Temas das aulas · PMPE 2027">${MODELOS.filter(m => m.aula).map(m => opt(m, `${m.curto} · aula ${m.aula}`)).join('')}</optgroup>`
     + `<optgroup label="Versão 2 · temas de chance alta">${MODELOS.filter(m => m.base).map(m => opt(m, `${m.curto} · versão 2`)).join('')}</optgroup>`;
   function render(){
     const m = MODELOS[cur];
@@ -3999,6 +4527,14 @@ let showModelo = () => {};
   $('#modPrev').addEventListener('click', () => select(cur - 1));
   $('#modNext').addEventListener('click', () => select(cur + 1));
   select(cur);
+})();
+
+// ---------- capítulo das aulas: temas propostos ----------
+(function(){
+  const box = $('#aulaTemas'); if(!box) return;
+  const list = TEMAS.filter(t => t.aula).sort((x, y) => x.aula.split('/').reverse().join('').localeCompare(y.aula.split('/').reverse().join('')));
+  box.innerHTML = list.map(t => `<li><span class="chip ok">${esc(t.aula)}</span> <b>${esc(t.t)}</b><br><a href="#modelos" data-mod="${t.m}">Ver a redação nota 40 →</a></li>`).join('');
+  box.addEventListener('click', e => { const a = e.target.closest('[data-mod]'); if(a) showModelo(a.dataset.mod); });
 })();
 
 // ---------- contador de 20 linhas ----------
@@ -4140,7 +4676,7 @@ function count(){
     ['Semana 3 · Coesão e gramática', ['Fazer os exercícios dos capítulos 6 e 7','Escrever 2 redações sem o montador','Anotar os 5 erros que você mais repete','Reescrever o pior parágrafo da semana']],
     ['Semana 4 · Simulado', ['Copiar à mão uma redação-modelo','Escrever 3 redações em condição de prova (rascunho + definitiva)','Revisar os kits de todos os temas','Ler o checklist do dia da prova']]
   ];
-  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, com a caneta exigida','Transcrevi tudo para a folha definitiva'];
+  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, caneta azul ou preta, sem espaçar letras e palavras para encher linhas','Transcrevi tudo para a folha definitiva'];
   let p = store.get('plan', {});
   $('#weeks').innerHTML = W.map(([t, items], wi) =>
     `<details class="acc" open><summary>${esc(t)}</summary><div class="acc-body"><ul class="checks">${items.map((it, ii) => `<li><label><input type="checkbox" id="w_${wi}_${ii}" data-k="w${wi}_${ii}"><span>${esc(it)}</span></label></li>`).join('')}</ul></div></details>`

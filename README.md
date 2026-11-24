@@ -57,11 +57,12 @@ Método para a redação de Soldado PMPE (Edital 001/2026, banca Instituto AOCP)
 5. Lendo o tema e criando a tese (tipos de tema, fórmula da tese, argumentos coringa)
 6. Conectivos (por parágrafo e por função, erros comuns)
 7. Coesão, coerência e gramática (os erros que mais derrubam a nota)
-8. Repertórios (97, com filtro por tema e tipo, e frase pronta de uso)
-9. Possíveis temas (43 kits com tese, argumentos, repertórios e proposta)
-10. Redações nota 40 (56 redações de 20 linhas com marcações: uma por tema e uma segunda versão dos 13 temas de chance alta)
-11. Laboratório (montador de redação, contador de 20 linhas, cronômetro, autoavaliação)
-12. Plano de treino de 4 semanas e checklist do dia da prova
+8. Repertórios (109, com filtro por tema e tipo, e frase pronta de uso)
+9. Possíveis temas (51 kits com tese, argumentos, repertórios e proposta; filtro "Temas das aulas")
+10. Aulas AOCP (pontos altos das aulas do curso para a PMPE: edital, esqueletos, expressões e os 9 temas propostos)
+11. Redações nota 40 (64 redações de 20 linhas com marcações: uma por tema, incluindo os 9 das aulas, e uma segunda versão de 13 temas de chance alta)
+12. Laboratório (montador de redação, contador de 20 linhas, cronômetro, autoavaliação)
+13. Plano de treino de 4 semanas e checklist do dia da prova
 
 Exercícios: teses, fuga ao tema, conectivos e gramática. Progresso, rascunhos e respostas ficam salvos no navegador.
 
