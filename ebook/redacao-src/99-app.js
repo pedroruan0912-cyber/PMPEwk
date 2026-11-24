@@ -132,18 +132,22 @@ function renderQuiz(boxId, key, items, scoreId){
 // ---------- temas ----------
 (function(){
   let cat = 'todos';
-  $('#temaFilters').innerHTML = ['todos', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${c === 'todos' ? 'Todos' : esc(TEMA_CATS[c])}</button>`).join('');
+  const label = c => c === 'todos' ? 'Todos' : c === 'aula' ? 'Temas das aulas' : TEMA_CATS[c];
+  $('#temaFilters').innerHTML = ['todos', 'aula', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${esc(label(c))}</button>`).join('');
   function render(){
-    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat).sort((x, y) => (y.h === 'alta') - (x.h === 'alta'));
+    // temas das aulas primeiro, depois os de chance alta
+    const rank = t => (t.aula ? 2 : 0) + (t.h === 'alta' ? 1 : 0);
+    const list = TEMAS.filter(t => cat === 'todos' || (cat === 'aula' ? t.aula : t.c === cat)).sort((x, y) => rank(y) - rank(x));
     $('#temaCount').textContent = `${list.length} temas`;
     $('#temaList').innerHTML = list.map(t =>
-      `<details class="acc"><summary><span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span><span>${esc(t.t)}</span></summary><div class="acc-body">
+      `<details class="acc"><summary>${t.aula ? `<span class="chip ok">aula ${esc(t.aula)}</span>` : `<span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span>`}<span>${esc(t.t)}</span></summary><div class="acc-body">
         <h4>Tese</h4><p><span class="hl">${esc(t.tese)}</span></p>
         <h4>Argumento 1 · Desenvolvimento 1</h4><p>${esc(t.a1)}</p>
         <h4>Argumento 2 · Desenvolvimento 2</h4><p>${esc(t.a2)}</p>
         <h4>Repertórios</h4><p>${esc(t.r)}</p>
         <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
         <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
+        ${t.na ? `<div class="box tip"><span class="tag">O que a aula destacou (${esc(t.aula)})</span><p>${esc(t.na)}</p></div>` : ''}
         ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a>${v2Of(t.m) ? ` · <a href="#modelos" data-mod="${v2Of(t.m).id}">Ver a versão 2 →</a>` : ''}</p>` : ''}
       </div></details>`
     ).join('');
@@ -181,7 +185,8 @@ let showModelo = () => {};
   let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
   const sel = $('#modSel');
   const opt = (m, label) => `<option value="${MODELOS.indexOf(m)}">${esc(label)}</option>`;
-  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base && !m.aula).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+    + `<optgroup label="Temas das aulas · PMPE 2027">${MODELOS.filter(m => m.aula).map(m => opt(m, `${m.curto} · aula ${m.aula}`)).join('')}</optgroup>`
     + `<optgroup label="Versão 2 · temas de chance alta">${MODELOS.filter(m => m.base).map(m => opt(m, `${m.curto} · versão 2`)).join('')}</optgroup>`;
   function render(){
     const m = MODELOS[cur];
@@ -208,6 +213,14 @@ let showModelo = () => {};
   $('#modPrev').addEventListener('click', () => select(cur - 1));
   $('#modNext').addEventListener('click', () => select(cur + 1));
   select(cur);
+})();
+
+// ---------- capítulo das aulas: temas propostos ----------
+(function(){
+  const box = $('#aulaTemas'); if(!box) return;
+  const list = TEMAS.filter(t => t.aula).sort((x, y) => x.aula.split('/').reverse().join('').localeCompare(y.aula.split('/').reverse().join('')));
+  box.innerHTML = list.map(t => `<li><span class="chip ok">${esc(t.aula)}</span> <b>${esc(t.t)}</b><br><a href="#modelos" data-mod="${t.m}">Ver a redação nota 40 →</a></li>`).join('');
+  box.addEventListener('click', e => { const a = e.target.closest('[data-mod]'); if(a) showModelo(a.dataset.mod); });
 })();
 
 // ---------- contador de 20 linhas ----------
@@ -349,7 +362,7 @@ function count(){
     ['Semana 3 · Coesão e gramática', ['Fazer os exercícios dos capítulos 6 e 7','Escrever 2 redações sem o montador','Anotar os 5 erros que você mais repete','Reescrever o pior parágrafo da semana']],
     ['Semana 4 · Simulado', ['Copiar à mão uma redação-modelo','Escrever 3 redações em condição de prova (rascunho + definitiva)','Revisar os kits de todos os temas','Ler o checklist do dia da prova']]
   ];
-  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, com a caneta exigida','Transcrevi tudo para a folha definitiva'];
+  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, caneta azul ou preta, sem espaçar letras e palavras para encher linhas','Transcrevi tudo para a folha definitiva'];
   let p = store.get('plan', {});
   $('#weeks').innerHTML = W.map(([t, items], wi) =>
     `<details class="acc" open><summary>${esc(t)}</summary><div class="acc-body"><ul class="checks">${items.map((it, ii) => `<li><label><input type="checkbox" id="w_${wi}_${ii}" data-k="w${wi}_${ii}"><span>${esc(it)}</span></label></li>`).join('')}</ul></div></details>`
