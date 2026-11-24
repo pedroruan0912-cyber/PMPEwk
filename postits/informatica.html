@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-its Informática</title>
+<link rel="stylesheet" href="postits.css">
+</head>
+<body style="--total:'54'">
+
+<div class="bar">
+  <button type="button" onclick="window.print()">Imprimir</button>
+  <button type="button" class="alt" id="modo">Trocar para modo econômico</button>
+  <small><b>Na impressão:</b> papel A4, margens <b>Nenhuma</b>, escala <b>100%</b> e <b>Gráficos de fundo</b> ligado. Recorte cada quadrado e cole na parede.</small>
+</div>
+
+<!-- =================== FOLHA 1 =================== -->
+<section class="sheet">
+
+<article class="pi n">
+  <header class="strip"><span>Noções de Informática</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Informática: o mapa</h2>
+    <table class="xs">
+      <tr><td class="r">02 a 05</td><td>Hardware e software</td></tr>
+      <tr><td class="r">06 a 18</td><td>Windows 11, arquivos e pastas</td></tr>
+      <tr><td class="r">19 a 24</td><td>Word 2019 e Writer</td></tr>
+      <tr><td class="r">25 a 32</td><td>Excel 2019 e Calc</td></tr>
+      <tr><td class="r">33 e 34</td><td>PowerPoint e Impress</td></tr>
+      <tr><td class="r">35 a 42</td><td>Internet, intranet, e-mail e nuvem</td></tr>
+      <tr><td class="r">43 a 48</td><td>Segurança da informação e backup</td></tr>
+      <tr><td class="r">49 a 54</td><td>Revisão</td></tr>
+    </table>
+    <p class="xs">Na prova de Soldado: <b>10 questões</b> no Bloco II, junto com Raciocínio Lógico. <b>Zerar a matéria elimina.</b> Versões cobradas: <b>Windows 11</b>, <b>Office 2019</b> e <b>LibreOffice 7</b>, em português.</p>
+    <div class="legend">
+      <span style="--c:#FFF3A3">Hardware e software</span>
+      <span style="--c:#D3E8FF">Windows 11</span>
+      <span style="--c:#FFE0BF">Textos e slides</span>
+      <span style="--c:#D6F2D6">Planilhas</span>
+      <span style="--c:#FFD9E5">Internet e nuvem</span>
+      <span style="--c:#E8DDFF">Segurança e backup</span>
+    </div>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Hardware</span><span class="num"></span></header>
+  <div class="body">
+    <h2>As peças do computador</h2>
+    <table>
+      <tr><td class="r">CPU</td><td>processador: <b>UC</b> (unidade de controle), <b>ULA</b> (contas e lógica) e <b>registradores</b>; velocidade em GHz, vários núcleos</td></tr>
+      <tr><td class="r">Placa-mãe</td><td>liga todas as peças; guarda o <b>BIOS/UEFI</b></td></tr>
+      <tr><td class="r">GPU</td><td>placa de vídeo</td></tr>
+      <tr><td class="r">Fonte</td><td>converte e distribui a energia</td></tr>
+    </table>
+    <p class="s"><b>Entrada:</b> teclado, mouse, scanner, microfone, webcam.<br><b>Saída:</b> monitor, impressora, caixa de som.<br><b>Entrada e saída:</b> tela sensível ao toque, multifuncional, modem.</p>
+    <p class="s"><b>Instalar periférico:</b> o Windows reconhece e instala o <b>driver</b> sozinho (<i>Plug and Play</i>); ajustes em Configurações › Bluetooth e dispositivos.</p>
+    <p class="trap">Multifuncional (imprime e digitaliza) e touchscreen são de <b>entrada e saída</b>. Pen drive e HD são de <b>armazenamento</b>.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Hardware</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Memórias</h2>
+    <p class="s"><b>Da mais rápida para a mais lenta:</b> registradores → cache → RAM → SSD → HD. Quanto mais rápida, mais cara e menor.</p>
+    <table>
+      <tr><td class="r">RAM</td><td>memória <b>principal</b>, <b>volátil</b> (perde tudo ao desligar); guarda o que está aberto</td></tr>
+      <tr><td class="r">ROM</td><td><b>não volátil</b>, só leitura; guarda o firmware (BIOS/UEFI), que faz o teste inicial e dá a partida</td></tr>
+      <tr><td class="r">Cache</td><td>pequena e rapidíssima, entre a CPU e a RAM</td></tr>
+      <tr><td class="r">Secundária</td><td>HD, SSD, pen drive: guarda os arquivos de forma <b>permanente</b></td></tr>
+    </table>
+    <p class="trap">Mais RAM deixa o PC mais rápido com vários programas abertos, mas <b>não</b> dá mais espaço para salvar arquivos: isso é o HD ou o SSD.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Hardware</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Armazenamento e portas</h2>
+    <p class="s"><b>HD:</b> disco magnético, com partes móveis. <b>SSD:</b> memória flash, sem partes móveis, mais rápido e resistente. <b>Pen drive</b> e <b>cartão SD</b> também são flash.</p>
+    <p class="s"><b>Mídias ópticas:</b> CD 700 MB · DVD 4,7 GB · Blu-ray 25 GB (uma camada).</p>
+    <p class="s"><b>Unidades:</b> 8 bits = 1 byte · 1 KB = 1.024 bytes · depois MB, GB, TB (cada um 1.024 vezes o anterior).</p>
+    <table class="xs">
+      <tr><td class="r">USB</td><td>periféricos e pen drives (USB-C: conector reversível)</td></tr>
+      <tr><td class="r">HDMI</td><td>vídeo e áudio <b>digitais</b> no mesmo cabo</td></tr>
+      <tr><td class="r">VGA</td><td>só vídeo, <b>analógico</b> (antigo)</td></tr>
+      <tr><td class="r">RJ-45</td><td>cabo de rede (Ethernet)</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Software</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tipos e licenças</h2>
+    <p class="s"><b>Básico</b> (sistema operacional: Windows, Linux, Android) · <b>aplicativo</b> (Word, navegador) · <b>utilitário</b> (antivírus, compactador) · <b>driver</b> (faz o hardware funcionar).</p>
+    <table>
+      <tr><td class="r">Livre</td><td>4 liberdades: <b>usar, estudar, copiar e melhorar</b>; código aberto (ex.: Linux, LibreOffice, GPL)</td></tr>
+      <tr><td class="r">Freeware</td><td>grátis, mas código fechado</td></tr>
+      <tr><td class="r">Shareware</td><td>teste por tempo ou com recursos limitados</td></tr>
+      <tr><td class="r">Proprietário</td><td>licença paga e código fechado (Windows, Office)</td></tr>
+    </table>
+    <p class="trap">Software livre fala de <b>liberdade</b>, não de preço: pode ser vendido. O grátis de código fechado é o <b>freeware</b>.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11</span><span class="num"></span></header>
+  <div class="body">
+    <h2>O que o Windows 11 tem</h2>
+    <ul class="s">
+      <li><b>Menu Iniciar</b> e barra de tarefas <b>centralizados</b> (dá para alinhar à esquerda).</li>
+      <li><b>Layouts de ajuste</b> (Win+Z), <b>Widgets</b> (Win+W) e <b>abas</b> no Explorador de Arquivos.</li>
+      <li><b>Edge</b> é o navegador padrão; <b>OneDrive</b> e <b>Segurança do Windows</b> (Defender) já vêm integrados.</li>
+      <li><b>Copilot</b>: assistente de IA da Microsoft.</li>
+      <li>Requisitos: só <b>64 bits</b>, <b>TPM 2.0</b>, inicialização segura (UEFI), 4 GB de RAM e 64 GB de armazenamento.</li>
+      <li>Sistema de arquivos padrão: <b>NTFS</b>.</li>
+    </ul>
+    <p class="trap">Não existe Windows 11 de 32 bits. E o <b>WordPad</b> foi retirado nas versões recentes; o <b>Bloco de Notas</b> continua.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 1 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 2 =================== -->
+<section class="sheet">
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Atalhos com a tecla ⊞</h2>
+    <table class="xs">
+      <tr><td class="r">Win</td><td>abre o Menu Iniciar</td></tr>
+      <tr><td class="r">Win + E</td><td>Explorador de Arquivos</td></tr>
+      <tr><td class="r">Win + D</td><td>mostra a área de trabalho (de novo: volta)</td></tr>
+      <tr><td class="r">Win + L</td><td><b>bloqueia</b> o computador</td></tr>
+      <tr><td class="r">Win + I</td><td>Configurações</td></tr>
+      <tr><td class="r">Win + R</td><td>Executar</td></tr>
+      <tr><td class="r">Win + S</td><td>Pesquisar</td></tr>
+      <tr><td class="r">Win + A</td><td>Configurações rápidas (Wi-Fi, volume)</td></tr>
+      <tr><td class="r">Win + N</td><td>notificações e calendário</td></tr>
+      <tr><td class="r">Win + V</td><td>histórico da área de transferência</td></tr>
+      <tr><td class="r">Win + Shift + S</td><td>captura de parte da tela</td></tr>
+      <tr><td class="r">Win + Tab</td><td>Visão de Tarefas</td></tr>
+      <tr><td class="r">Win + X</td><td>menu de links rápidos (botão direito no Iniciar)</td></tr>
+      <tr><td class="r">Win + .</td><td>emojis</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Atalhos gerais</h2>
+    <table class="xs">
+      <tr><td class="r">Ctrl + C · X · V</td><td>copiar · recortar · colar</td></tr>
+      <tr><td class="r">Ctrl + Z · Y</td><td>desfazer · refazer</td></tr>
+      <tr><td class="r">Ctrl + A</td><td>selecionar tudo</td></tr>
+      <tr><td class="r">Alt + Tab</td><td>alterna entre janelas abertas</td></tr>
+      <tr><td class="r">Alt + F4</td><td>fecha a janela (na área de trabalho: desligar)</td></tr>
+      <tr><td class="r">Ctrl + Shift + Esc</td><td><b>Gerenciador de Tarefas</b> direto</td></tr>
+      <tr><td class="r">Ctrl + Alt + Del</td><td>tela de segurança (bloquear, trocar usuário, Gerenciador)</td></tr>
+      <tr><td class="r">F2</td><td>renomear</td></tr>
+      <tr><td class="r">F5</td><td>atualizar</td></tr>
+      <tr><td class="r">Delete</td><td>manda para a <b>Lixeira</b></td></tr>
+      <tr><td class="r">Shift + Delete</td><td>exclui <b>de vez</b>, sem Lixeira</td></tr>
+      <tr><td class="r">Win + PrtScn</td><td>salva a tela em Imagens › Capturas de Tela</td></tr>
+      <tr><td class="r">Alt + Enter</td><td>propriedades do item</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · arquivos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Explorador de Arquivos</h2>
+    <p class="s">Abre com <b>Win + E</b>. À esquerda: <b>Início</b> (acesso rápido), <b>OneDrive</b>, <b>Este Computador</b> (unidades C:, D:) e <b>Rede</b>. Pastas do usuário ficam em C:\Usuários\<i>nome</i>.</p>
+    <table class="xs">
+      <tr><td class="r">Ctrl + clique</td><td>seleciona itens <b>alternados</b></td></tr>
+      <tr><td class="r">Shift + clique</td><td>seleciona um <b>intervalo</b> seguido</td></tr>
+      <tr><td class="r">Ctrl + Shift + N</td><td>nova pasta</td></tr>
+      <tr><td class="r">Ctrl + T · W</td><td>nova aba · fecha a aba</td></tr>
+      <tr><td class="r">Ctrl + E ou F</td><td>caixa de pesquisa</td></tr>
+      <tr><td class="r">Alt + P</td><td>painel de visualização</td></tr>
+      <tr><td class="r">Alt + ↑</td><td>sobe para a pasta de cima</td></tr>
+    </table>
+    <p class="tip">As <b>extensões vêm ocultas</b>. Para ver: Exibir › Mostrar › Extensões de nomes de arquivos.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · arquivos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Arrastar e soltar</h2>
+    <table>
+      <tr><th>Ação</th><th>Resultado</th></tr>
+      <tr><td>Arrastar para pasta da <b>mesma unidade</b></td><td><b>move</b></td></tr>
+      <tr><td>Arrastar para <b>outra unidade</b> (pen drive, D:)</td><td><b>copia</b></td></tr>
+      <tr><td>Arrastar com <b>Ctrl</b></td><td>sempre <b>copia</b></td></tr>
+      <tr><td>Arrastar com <b>Shift</b></td><td>sempre <b>move</b></td></tr>
+      <tr><td>Arrastar com <b>Alt</b> (ou Ctrl + Shift)</td><td>cria <b>atalho</b></td></tr>
+    </table>
+    <p class="s"><b>Recortar</b> (Ctrl + X) + colar = mover. <b>Copiar</b> (Ctrl + C) + colar = duplicar.</p>
+    <p class="tip">Mesmo disco, <b>muda</b> de lugar; outro disco, <b>cópia</b>. Ctrl = <b>C</b>opia.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · arquivos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Lixeira</h2>
+    <ul class="s">
+      <li><b>Delete</b> manda para a Lixeira; dá para <b>restaurar</b> ao local original.</li>
+      <li><b>Shift + Delete</b> exclui permanentemente.</li>
+      <li><b>Não vão para a Lixeira</b>: arquivos apagados de <b>pen drive</b>, cartão de memória ou <b>pasta de rede</b>, e arquivos maiores que o espaço da Lixeira.</li>
+      <li>Esvaziar a Lixeira apaga tudo de vez.</li>
+      <li>Excluir um <b>atalho</b> não apaga o arquivo original.</li>
+    </ul>
+    <p class="trap">"Arquivo excluído do pen drive pode ser restaurado da Lixeira" → <b>errado</b>: ele não passa pela Lixeira.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · arquivos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Nomes e extensões</h2>
+    <p class="s"><b>Proibidos no nome:</b> <b>\ / : * ? " &lt; &gt; |</b> · o Windows não diferencia maiúsculas de minúsculas no nome.</p>
+    <table class="xs">
+      <tr><td class="r">Office</td><td>.docx · .xlsx · .pptx (com macro: .docm, .xlsm)</td></tr>
+      <tr><td class="r">LibreOffice</td><td>.odt · .ods · .odp (formato aberto ODF)</td></tr>
+      <tr><td class="r">Documentos</td><td>.pdf · .txt · .rtf · .csv</td></tr>
+      <tr><td class="r">Programas</td><td>.exe · .msi · .bat</td></tr>
+      <tr><td class="r">Compactados</td><td>.zip · .rar · .7z</td></tr>
+      <tr><td class="r">Imagens</td><td>.jpg · .png · .gif · .bmp</td></tr>
+      <tr><td class="r">Áudio · vídeo</td><td>.mp3 · .wav · .mp4 · .avi</td></tr>
+      <tr><td class="r">Atalho</td><td>.lnk</td></tr>
+    </table>
+    <p class="tip">O Windows compacta e extrai <b>.zip</b> sem programa extra (botão direito › Compactar).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 2 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 3 =================== -->
+<section class="sheet">
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · sistema</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Configurações e Painel de Controle</h2>
+    <p class="s"><b>Configurações</b> (Win + I) é o centro do Windows 11: Sistema · Bluetooth e dispositivos · Rede e Internet · Personalização · Aplicativos · Contas · Hora e idioma · Jogos · Acessibilidade · Privacidade e segurança · <b>Windows Update</b>.</p>
+    <p class="s"><b>Painel de Controle</b> continua existindo (digite "control" no Executar): Programas e Recursos, Contas de Usuário, Opções de Energia, Firewall do Windows Defender.</p>
+    <p class="s"><b>Desinstalar programa:</b> Configurações › Aplicativos › Aplicativos instalados, ou Painel › Programas e Recursos.</p>
+    <p class="trap">"O Windows 11 extinguiu o Painel de Controle" → <b>errado</b>. A Microsoft leva as opções aos poucos para Configurações, mas o Painel ainda abre.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · sistema</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Ferramentas do sistema</h2>
+    <table class="xs">
+      <tr><td class="r">Gerenciador de Tarefas</td><td>Ctrl + Shift + Esc: processos, desempenho (CPU, memória, disco, rede), aplicativos de inicialização, <b>finalizar tarefa</b></td></tr>
+      <tr><td class="r">Limpeza de Disco</td><td>apaga arquivos temporários e libera espaço</td></tr>
+      <tr><td class="r">Desfragmentar e Otimizar</td><td>reorganiza o HD; no SSD só <b>otimiza</b></td></tr>
+      <tr><td class="r">Restauração do Sistema</td><td>volta configurações a um <b>ponto de restauração</b>, sem mexer nos arquivos pessoais</td></tr>
+      <tr><td class="r">Gerenciador de Dispositivos</td><td>hardware e <b>drivers</b></td></tr>
+      <tr><td class="r">Segurança do Windows</td><td>antivírus Microsoft Defender, firewall, proteção da conta</td></tr>
+    </table>
+    <p class="trap">Ponto de restauração <b>não é backup</b> dos seus documentos.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · sistema</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Prompt de Comando</h2>
+    <table class="xs">
+      <tr><td class="r">dir</td><td>lista arquivos e pastas</td></tr>
+      <tr><td class="r">cd · cd ..</td><td>entra numa pasta · sobe uma pasta</td></tr>
+      <tr><td class="r">md (mkdir) · rd (rmdir)</td><td>cria pasta · remove pasta</td></tr>
+      <tr><td class="r">del · copy · move · ren</td><td>apaga · copia · move · renomeia arquivo</td></tr>
+      <tr><td class="r">cls</td><td>limpa a tela</td></tr>
+      <tr><td class="r">type</td><td>mostra o conteúdo de um arquivo de texto</td></tr>
+      <tr><td class="r">ipconfig</td><td>mostra o endereço IP (/all: detalhes)</td></tr>
+      <tr><td class="r">ping</td><td>testa se um endereço responde</td></tr>
+      <tr><td class="r">tracert</td><td>mostra o caminho até o destino</td></tr>
+      <tr><td class="r">tasklist · taskkill</td><td>lista · encerra processos</td></tr>
+      <tr><td class="r">shutdown</td><td>desliga (/r reinicia)</td></tr>
+      <tr><td class="r">chkdsk · sfc /scannow</td><td>verifica o disco · repara arquivos do sistema</td></tr>
+    </table>
+    <p class="xs muted">Ajuda de qualquer comando: <b>comando /?</b>. No Windows 11 o Prompt e o PowerShell abrem dentro do <b>Terminal</b>.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · sistema</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Executar (Win + R)</h2>
+    <table class="xs">
+      <tr><td class="r">cmd</td><td>Prompt de Comando</td></tr>
+      <tr><td class="r">control</td><td>Painel de Controle</td></tr>
+      <tr><td class="r">taskmgr</td><td>Gerenciador de Tarefas</td></tr>
+      <tr><td class="r">explorer</td><td>Explorador de Arquivos</td></tr>
+      <tr><td class="r">notepad · calc · mspaint</td><td>Bloco de Notas · Calculadora · Paint</td></tr>
+      <tr><td class="r">cleanmgr</td><td>Limpeza de Disco</td></tr>
+      <tr><td class="r">devmgmt.msc</td><td>Gerenciador de Dispositivos</td></tr>
+      <tr><td class="r">services.msc</td><td>Serviços</td></tr>
+      <tr><td class="r">msconfig</td><td>Configuração do Sistema</td></tr>
+      <tr><td class="r">regedit</td><td>Editor do Registro</td></tr>
+      <tr><td class="r">winver</td><td>versão do Windows</td></tr>
+      <tr><td class="r">%temp%</td><td>pasta de arquivos temporários</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · segurança</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Contas e proteção</h2>
+    <table class="xs">
+      <tr><td class="r">Conta</td><td><b>Microsoft</b> (on-line, sincroniza) ou <b>local</b> (só no PC)</td></tr>
+      <tr><td class="r">Tipo</td><td><b>Administrador</b> (instala e muda o sistema) ou <b>Padrão</b> (uso comum)</td></tr>
+      <tr><td class="r">UAC</td><td>Controle de Conta de Usuário: pede confirmação antes de mudanças no sistema</td></tr>
+      <tr><td class="r">Windows Hello</td><td>entrar com <b>rosto</b>, <b>digital</b> ou <b>PIN</b></td></tr>
+      <tr><td class="r">BitLocker</td><td><b>criptografa</b> a unidade inteira (Pro, Enterprise, Education); no Home há a "criptografia do dispositivo"</td></tr>
+      <tr><td class="r">Histórico de Arquivos</td><td>backup das pastas do usuário em outra unidade</td></tr>
+      <tr><td class="r">Windows Update</td><td>atualizações e correções de segurança</td></tr>
+    </table>
+    <p class="tip">BitLocker = <b>B</b>loqueia o disco com <b>cripto</b>grafia.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Windows 11 · área de trabalho</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Barra, janelas e áreas virtuais</h2>
+    <ul class="s">
+      <li><b>Menu Iniciar</b>: aplicativos fixados, recomendados e "Todos".</li>
+      <li><b>Área de notificação</b> (canto direito): relógio, rede, volume.</li>
+      <li><b>Ajustar janelas</b>: Win + setas, ou Win + Z para escolher um layout.</li>
+      <li><b>Áreas de trabalho virtuais</b>: Win + Ctrl + D cria; Win + Ctrl + ← → alterna; Win + Ctrl + F4 fecha.</li>
+      <li><b>Win + M</b> minimiza tudo; <b>Win + número</b> abre o programa daquela posição na barra.</li>
+      <li><b>Área de transferência</b> (Win + V): guarda vários itens copiados, mas precisa ser ativada.</li>
+    </ul>
+    <p class="tip">Copiar guarda <b>um</b> item; com o histórico (Win + V), vários.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 3 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 4 =================== -->
+<section class="sheet">
+
+<article class="pi o">
+  <header class="strip"><span>Word 2019</span><span class="num"></span></header>
+  <div class="body">
+    <h2>As guias do Word</h2>
+    <table class="xs">
+      <tr><td class="r">Arquivo</td><td>salvar, abrir, imprimir, exportar PDF, opções</td></tr>
+      <tr><td class="r">Página Inicial</td><td>fonte, parágrafo, estilos, localizar, <b>Pincel de Formatação</b></td></tr>
+      <tr><td class="r">Inserir</td><td>tabela, imagem, forma, SmartArt, gráfico, link, <b>cabeçalho e rodapé</b>, número de página, símbolo, equação</td></tr>
+      <tr><td class="r">Design</td><td>temas, <b>marca d'água</b>, cor e bordas da página</td></tr>
+      <tr><td class="r">Layout</td><td>margens, orientação, tamanho, <b>colunas</b>, <b>quebras</b>, hifenização</td></tr>
+      <tr><td class="r">Referências</td><td><b>sumário</b>, notas de rodapé, citações, legendas, índice</td></tr>
+      <tr><td class="r">Correspondências</td><td><b>mala direta</b>, envelopes, etiquetas</td></tr>
+      <tr><td class="r">Revisão</td><td>ortografia, contar palavras, comentários, <b>controlar alterações</b>, proteger</td></tr>
+      <tr><td class="r">Exibir</td><td>modos de exibição, régua, zoom, macros</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Word 2019 · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Atalhos do Word em português</h2>
+    <div class="grid2">
+      <table class="xs">
+        <tr><td class="r">Ctrl + N</td><td><b>N</b>egrito</td></tr>
+        <tr><td class="r">Ctrl + I</td><td><b>I</b>tálico</td></tr>
+        <tr><td class="r">Ctrl + S</td><td><b>S</b>ublinhado</td></tr>
+        <tr><td class="r">Ctrl + B</td><td>salvar</td></tr>
+        <tr><td class="r">Ctrl + O</td><td>novo</td></tr>
+        <tr><td class="r">Ctrl + A</td><td><b>A</b>brir</td></tr>
+        <tr><td class="r">Ctrl + T</td><td>selecionar <b>T</b>udo</td></tr>
+        <tr><td class="r">Ctrl + P</td><td>im<b>P</b>rimir</td></tr>
+        <tr><td class="r">Ctrl + L</td><td><b>L</b>ocalizar</td></tr>
+      </table>
+      <table class="xs">
+        <tr><td class="r">Ctrl + U</td><td>s<b>U</b>bstituir</td></tr>
+        <tr><td class="r">Ctrl + E</td><td>c<b>E</b>ntralizar</td></tr>
+        <tr><td class="r">Ctrl + Q</td><td>à es<b>Q</b>uerda</td></tr>
+        <tr><td class="r">Ctrl + G</td><td>à direita</td></tr>
+        <tr><td class="r">Ctrl + J</td><td><b>J</b>ustificar</td></tr>
+        <tr><td class="r">Ctrl + K</td><td>link</td></tr>
+        <tr><td class="r">Ctrl + D</td><td>fonte (caixa)</td></tr>
+        <tr><td class="r">Ctrl + R</td><td>refazer</td></tr>
+        <tr><td class="r">Ctrl + Enter</td><td>quebra de página</td></tr>
+      </table>
+    </div>
+    <p class="s"><b>F7</b> ortografia · <b>F12</b> salvar como · <b>Shift + F3</b> alterna maiúsculas e minúsculas · <b>F4</b> repete a última ação.</p>
+    <p class="tip">Formatação segue a inicial em português (N, I, S). Salvar é o <b>B</b>, novo é o <b>O</b>, abrir é o <b>A</b>.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Word × Writer · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Os atalhos que mudam</h2>
+    <table class="xs">
+      <tr><th>Função</th><th>Word</th><th>Writer</th></tr>
+      <tr><td>Negrito</td><td class="r">Ctrl + N</td><td class="r">Ctrl + B</td></tr>
+      <tr><td>Sublinhado</td><td class="r">Ctrl + S</td><td class="r">Ctrl + U</td></tr>
+      <tr><td>Salvar</td><td class="r">Ctrl + B</td><td class="r">Ctrl + S</td></tr>
+      <tr><td>Novo</td><td class="r">Ctrl + O</td><td class="r">Ctrl + N</td></tr>
+      <tr><td>Abrir</td><td class="r">Ctrl + A</td><td class="r">Ctrl + O</td></tr>
+      <tr><td>Selecionar tudo</td><td class="r">Ctrl + T</td><td class="r">Ctrl + A</td></tr>
+      <tr><td>À direita · à esquerda</td><td class="r">G · Q</td><td class="r">R · L</td></tr>
+      <tr><td>Localizar e substituir</td><td class="r">Ctrl + U</td><td class="r">Ctrl + H</td></tr>
+      <tr><td>Refazer</td><td class="r">Ctrl + R</td><td class="r">Ctrl + Y</td></tr>
+      <tr><td>Salvar como</td><td class="r">F12</td><td class="r">Ctrl + Shift + S</td></tr>
+    </table>
+    <p class="tip">O Writer usa as iniciais em <b>inglês</b>: <b>B</b>old, <b>U</b>nderline, <b>S</b>ave, <b>N</b>ew, <b>O</b>pen, <b>A</b>ll, <b>R</b>ight, <b>L</b>eft. Iguais nos dois: I, E, J, P, Z.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>LibreOffice Writer</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Writer e o pacote LibreOffice</h2>
+    <p class="s"><b>LibreOffice</b>: software <b>livre</b> e gratuito. Writer (textos) · Calc (planilhas) · Impress (apresentações) · Draw (desenhos) · Base (banco de dados) · Math (fórmulas).</p>
+    <p class="s"><b>Menus do Writer:</b> Arquivo · Editar · Exibir · Inserir · Formatar · Estilos · Tabela · Formulário · Ferramentas · Janela · Ajuda.</p>
+    <table class="xs">
+      <tr><td class="r">F5</td><td>Navegador (pula para títulos, tabelas, imagens)</td></tr>
+      <tr><td class="r">F11</td><td>Estilos</td></tr>
+      <tr><td class="r">F7</td><td>ortografia (Ferramentas)</td></tr>
+      <tr><td class="r">PDF</td><td>Arquivo › Exportar como PDF, ou botão na barra</td></tr>
+    </table>
+    <p class="trap">O formato padrão é o <b>.odt</b> (ODF), mas o Writer <b>abre e salva .docx</b>. O Word também abre .odt.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Word × Writer</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Selecionar com o mouse</h2>
+    <table class="xs">
+      <tr><th>Cliques no texto</th><th>Word</th><th>Writer</th></tr>
+      <tr><td>2 cliques</td><td>palavra</td><td>palavra</td></tr>
+      <tr><td>3 cliques</td><td><b>parágrafo</b></td><td><b>frase</b></td></tr>
+    </table>
+    <p class="s">No Writer, <b>4 cliques</b> pegam o parágrafo. No Word, <b>Ctrl + clique</b> pega a frase.</p>
+    <p class="s"><b>Na margem esquerda do Word:</b> 1 clique seleciona a linha, 2 o parágrafo, 3 o documento todo.</p>
+    <p class="s"><b>Pincel de Formatação</b> (no Writer, "Clonar formatação"): copia só a <b>formatação</b>. Um clique aplica uma vez; no Word, <b>dois cliques</b> deixam o pincel ligado até apertar Esc.</p>
+    <p class="tip">Shift + setas amplia a seleção; com Ctrl, anda de palavra em palavra.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Word × Writer · recursos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Recursos que caem</h2>
+    <table class="xs">
+      <tr><th>Recurso</th><th>Word</th><th>Writer</th></tr>
+      <tr><td><b>Sumário</b> automático (usa os estilos de Título)</td><td>Referências</td><td>Inserir › Sumário e índice</td></tr>
+      <tr><td><b>Mala direta</b> (mesma carta para vários nomes)</td><td>Correspon­dências</td><td>Ferramentas</td></tr>
+      <tr><td><b>Controlar alterações</b></td><td>Revisão</td><td>Editar</td></tr>
+      <tr><td>Contar palavras</td><td>Revisão</td><td>Ferramentas</td></tr>
+      <tr><td>Marca d'água</td><td>Design</td><td>Formatar</td></tr>
+      <tr><td>Colunas</td><td>Layout</td><td>Formatar</td></tr>
+      <tr><td>Cabeçalho e nota de rodapé</td><td>Inserir · Referências</td><td>Inserir</td></tr>
+    </table>
+    <p class="trap">Para ter páginas em <b>retrato e paisagem</b> no mesmo arquivo, o Word usa <b>quebra de seção</b>, não quebra de página. No Writer, troca-se o estilo de página.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 4 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 5 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Planilha: o básico</h2>
+    <ul class="s">
+      <li><b>Pasta de trabalho</b> (.xlsx) → <b>planilhas</b> (abas) → <b>células</b> (coluna + linha: B3).</li>
+      <li>Excel 2019: 1.048.576 linhas e 16.384 colunas (até XFD). Arquivo novo vem com 1 planilha.</li>
+      <li>Fórmula começa com <b>=</b> (o + e o − também funcionam).</li>
+      <li><b>Caixa de Nome</b> mostra a célula ativa; a <b>barra de fórmulas</b> mostra o conteúdo.</li>
+      <li>Enter desce; Tab vai para a direita; <b>F2</b> edita a célula.</li>
+      <li><b>####</b>: a coluna está estreita para o número.</li>
+    </ul>
+    <table class="xs">
+      <tr><td class="r">A1:A5</td><td>de A1 <b>até</b> A5 (5 células)</td></tr>
+      <tr><td class="r">A1;A5</td><td>A1 <b>e</b> A5 (só 2 células)</td></tr>
+    </table>
+    <p class="tip">Dois-pontos = "até"; ponto e vírgula = "e".</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Operadores e prioridade</h2>
+    <p class="s"><b>Ordem:</b> ( ) → <b>%</b> → <b>^</b> → <b>* /</b> → <b>+ −</b> → <b>&amp;</b> → comparação (= &lt;&gt; &gt; &lt; &gt;= &lt;=). Empate: da <b>esquerda para a direita</b>.</p>
+    <table>
+      <tr><td class="r">=2+3*2</td><td>8</td></tr>
+      <tr><td class="r">=(2+3)*2</td><td>10</td></tr>
+      <tr><td class="r">=2^3*2</td><td>16</td></tr>
+      <tr><td class="r">=10/2*5</td><td>25 (primeiro a divisão)</td></tr>
+      <tr><td class="r">=200*10%</td><td>20</td></tr>
+      <tr><td class="r">=-2^2</td><td><b>4</b> no Excel (o sinal negativo vem antes da potência)</td></tr>
+      <tr><td class="r">="PM"&amp;"PE"</td><td>PMPE (&amp; junta textos)</td></tr>
+      <tr><td class="r">=5&gt;3</td><td>VERDADEIRO</td></tr>
+    </table>
+    <p class="tip">&lt;&gt; é "diferente de".</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Referências e o cifrão</h2>
+    <table class="xs">
+      <tr><td class="r">A1</td><td><b>relativa</b>: muda ao copiar</td></tr>
+      <tr><td class="r">$A$1</td><td><b>absoluta</b>: não muda</td></tr>
+      <tr><td class="r">$A1 · A$1</td><td><b>mista</b>: trava só a coluna · só a linha</td></tr>
+    </table>
+    <p class="s"><b>Exemplo:</b> em C1 está <b>=A1*$B$1</b>. Copiada para <b>D3</b> (1 coluna à direita, 2 linhas abaixo) vira <b>=B3*$B$1</b>.</p>
+    <p class="s">Alternar o $: <b>F4</b> no Excel, <b>Shift + F4</b> no Calc. <b>Recortar e colar</b> (mover) não muda as referências.</p>
+    <table class="xs">
+      <tr><td class="r">Outra planilha</td><td>Excel <b>Planilha2!A1</b> · Calc <b>Planilha2.A1</b></td></tr>
+      <tr><td class="r">Outro arquivo (Excel)</td><td>[Pasta2.xlsx]Planilha1!A1</td></tr>
+    </table>
+    <p class="tip">O <b>$</b> é um cadeado: tranca o que vem logo depois dele.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc · funções</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Funções básicas</h2>
+    <table class="xs">
+      <tr><td class="r">SOMA</td><td>soma os números</td></tr>
+      <tr><td class="r">MÉDIA</td><td>média aritmética (ignora vazias e textos)</td></tr>
+      <tr><td class="r">MÁXIMO · MÍNIMO</td><td>maior · menor valor</td></tr>
+      <tr><td class="r">MAIOR(int;k) · MENOR(int;k)</td><td>o k-ésimo maior · menor</td></tr>
+      <tr><td class="r">MED · MODO</td><td>mediana · valor que mais se repete</td></tr>
+      <tr><td class="r">CONT.NÚM</td><td>conta células com <b>números</b></td></tr>
+      <tr><td class="r">CONT.VALORES</td><td>conta células <b>não vazias</b></td></tr>
+      <tr><td class="r">CONTAR.VAZIO</td><td>conta células vazias</td></tr>
+      <tr><td class="r">CONT.SE(int;critério)</td><td>conta o que atende ao critério: =CONT.SE(A1:A9;"&gt;5")</td></tr>
+      <tr><td class="r">SOMASE(int;crit;[soma])</td><td>soma o que atende ao critério</td></tr>
+      <tr><td class="r">ARRED(n;casas)</td><td>arredonda</td></tr>
+      <tr><td class="r">HOJE() · AGORA()</td><td>data · data e hora</td></tr>
+    </table>
+    <p class="tip">No Calc em português, os nomes são os <b>mesmos</b>, com <b>;</b> separando os argumentos.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc · funções</span><span class="num"></span></header>
+  <div class="body">
+    <h2>SE e PROCV</h2>
+    <p class="s"><b>=SE(teste; se verdadeiro; se falso)</b><br>=SE(B2&gt;=7;"Aprovado";"Reprovado")</p>
+    <p class="s"><b>E</b>(…): todos os testes verdadeiros · <b>OU</b>(…): basta um.<br>=SE(E(B2&gt;=7;C2&gt;=75%);"Apto";"Inapto")</p>
+    <p class="s"><b>=PROCV(valor; tabela; nº da coluna; FALSO)</b><br>=PROCV("Silva";A2:D50;3;FALSO): procura "Silva" na <b>1ª coluna</b> e traz o que está na <b>3ª</b> coluna da mesma linha. FALSO = valor <b>exato</b>.</p>
+    <p class="s"><b>PROCH</b> faz o mesmo na horizontal (procura na 1ª linha).</p>
+    <p class="trap">PROCV só olha para a <b>direita</b> da 1ª coluna. E o <b>PROCX</b> não existe no Excel 2019 (veio no 2021 e no 365).</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel × Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Excel × Calc</h2>
+    <table class="xs">
+      <tr><th>Item</th><th>Excel</th><th>Calc</th></tr>
+      <tr><td>Arquivo padrão</td><td>.xlsx</td><td>.ods</td></tr>
+      <tr><td>Outra planilha</td><td>Plan2<b>!</b>A1</td><td>Plan2<b>.</b>A1</td></tr>
+      <tr><td>Arrastar a alça de <b>um</b> número</td><td><b>copia</b> (1, 1, 1)</td><td><b>sequência</b> (1, 2, 3)</td></tr>
+      <tr><td>Arrastar com Ctrl</td><td>sequência</td><td>copia</td></tr>
+      <tr><td>Alternar o $</td><td>F4</td><td>Shift + F4</td></tr>
+      <tr><td>Negrito · salvar</td><td>Ctrl + N · B</td><td>Ctrl + B · S</td></tr>
+      <tr><td>Congelar títulos</td><td>Exibir › Congelar Painéis</td><td>Exibir › Congelar células</td></tr>
+    </table>
+    <p class="s"><b>Iguais:</b> nomes das funções (SOMA, SE, PROCV, CONT.SE), operadores, $, Ctrl + ; (data de hoje) e Ctrl + 1 (formatar células).</p>
+    <p class="trap">Com <b>dois</b> números selecionados (1 e 3), os dois continuam a sequência: 5, 7, 9. Texto com número ("Item 1") e meses também viram sequência.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 5 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 6 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Recursos de planilha</h2>
+    <table class="xs">
+      <tr><td class="r">Filtro</td><td>Dados › Filtro (Calc: AutoFiltro): <b>oculta</b> linhas, não apaga</td></tr>
+      <tr><td class="r">Classificar</td><td>ordena de A a Z, do menor ao maior</td></tr>
+      <tr><td class="r">Formatação condicional</td><td>muda a cor conforme o valor</td></tr>
+      <tr><td class="r">Validação de dados</td><td>limita o que pode ser digitado (lista, faixa)</td></tr>
+      <tr><td class="r">Mesclar e centralizar</td><td>junta células e mantém só o valor da <b>superior esquerda</b></td></tr>
+      <tr><td class="r">Tabela dinâmica</td><td>resume muitos dados</td></tr>
+      <tr><td class="r">Gráficos</td><td>colunas, barras, linhas; <b>pizza</b> mostra uma série só</td></tr>
+    </table>
+    <table class="xs">
+      <tr><td class="r">Alt + =</td><td>AutoSoma</td></tr>
+      <tr><td class="r">F11 · Alt + F1</td><td>gráfico em nova planilha · na mesma</td></tr>
+      <tr><td class="r">Ctrl + Home</td><td>vai para A1</td></tr>
+      <tr><td class="r">Ctrl + ;</td><td>data de hoje</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Excel 2019 e Calc</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Mensagens de erro</h2>
+    <table class="xs">
+      <tr><td class="r">#DIV/0!</td><td>divisão por zero (ou por célula vazia)</td></tr>
+      <tr><td class="r">#NOME?</td><td>nome de função ou texto não reconhecido (ex.: =SOMMA)</td></tr>
+      <tr><td class="r">#REF!</td><td>referência inválida: a célula foi excluída</td></tr>
+      <tr><td class="r">#VALOR!</td><td>tipo errado: conta com texto (="PM"+1)</td></tr>
+      <tr><td class="r">#N/D</td><td>valor não encontrado (comum no PROCV)</td></tr>
+      <tr><td class="r">#NÚM!</td><td>número inválido ou grande demais</td></tr>
+      <tr><td class="r">#NULO!</td><td>intervalos que não se cruzam</td></tr>
+      <tr><td class="r">####</td><td>não é erro: a coluna é estreita</td></tr>
+      <tr><td class="r">Referência circular</td><td>a fórmula usa a própria célula (=A1+1 em A1)</td></tr>
+    </table>
+    <p class="xs muted">No Calc alguns erros aparecem como código, por exemplo <b>Err:502</b> (argumento inválido).</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>PowerPoint 2019 e Impress</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Apresentações</h2>
+    <p class="s"><b>Modos de exibição</b> (guia Exibir): Normal · Estrutura de Tópicos · Classificação de Slides · Anotações · Modo de Exibição de Leitura · Apresentação de Slides.</p>
+    <p class="s"><b>Slide Mestre</b> (Exibir): muda de uma vez o visual de <b>todos</b> os slides (fonte, logotipo, cores).</p>
+    <table class="xs">
+      <tr><td class="r">F5</td><td>apresenta <b>do primeiro</b> slide</td></tr>
+      <tr><td class="r">Shift + F5</td><td>apresenta <b>do slide atual</b></td></tr>
+      <tr><td class="r">Esc</td><td>encerra a apresentação</td></tr>
+    </table>
+    <p class="s"><b>Arquivos:</b> PowerPoint <b>.pptx</b> (.ppsx abre direto na apresentação; .potx é modelo) · Impress <b>.odp</b>.</p>
+    <p class="tip">F5 e Shift + F5 valem nos <b>dois</b> programas.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>PowerPoint 2019 e Impress</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Transição × Animação</h2>
+    <div class="grid2">
+      <div class="box"><b>Transição</b>efeito na <b>passagem</b> de um slide para o outro. Guia <b>Transições</b>.</div>
+      <div class="box"><b>Animação</b>efeito em um <b>objeto</b> dentro do slide (texto, imagem). Guia <b>Animações</b>.</div>
+    </div>
+    <p class="s">Tipos de animação: <b>entrada</b>, <b>ênfase</b>, <b>saída</b> e <b>trajetória</b>.</p>
+    <p class="s"><b>Impress:</b> painéis laterais "Transição de slides" e "Animação"; Exibir › Slide mestre; Arquivo › Exportar como PDF.</p>
+    <p class="s"><b>Ocultar slide</b> (guia Apresentação de Slides): o slide continua no arquivo, só não aparece na apresentação.</p>
+    <p class="trap">"A animação define como um slide entra na tela" → isso é a <b>transição</b>.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Internet</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Internet, intranet e extranet</h2>
+    <table>
+      <tr><td class="r">Internet</td><td>rede mundial e <b>pública</b>, baseada no TCP/IP</td></tr>
+      <tr><td class="r">Intranet</td><td>rede <b>privada</b> da organização que usa as <b>mesmas tecnologias</b> da internet (TCP/IP, HTTP, navegador); acesso só de funcionários</td></tr>
+      <tr><td class="r">Extranet</td><td>parte da intranet aberta a <b>parceiros</b> e fornecedores de fora</td></tr>
+      <tr><td class="r">VPN</td><td>"túnel" <b>criptografado</b> pela internet para entrar na rede privada de longe</td></tr>
+    </table>
+    <p class="trap">Intranet <b>não</b> precisa estar isolada da internet e <b>pode</b> ser acessada de fora (por VPN, com login). O que a define é o acesso <b>restrito</b>.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Internet</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Protocolos</h2>
+    <table class="xs">
+      <tr><td class="r">HTTP · 80</td><td>páginas web, sem criptografia</td></tr>
+      <tr><td class="r">HTTPS · 443</td><td>páginas web <b>com criptografia</b> (TLS); cadeado</td></tr>
+      <tr><td class="r">FTP · 20 e 21</td><td>transferência de arquivos</td></tr>
+      <tr><td class="r">SMTP · 25 e 587</td><td><b>envia</b> e-mail</td></tr>
+      <tr><td class="r">POP3 · 110</td><td><b>baixa</b> o e-mail para o computador</td></tr>
+      <tr><td class="r">IMAP · 143</td><td>lê o e-mail <b>no servidor</b>, sincronizado</td></tr>
+      <tr><td class="r">DNS · 53</td><td>traduz nome (pm.pe.gov.br) em endereço IP</td></tr>
+      <tr><td class="r">DHCP</td><td>dá o IP <b>automaticamente</b> a cada aparelho</td></tr>
+      <tr><td class="r">TCP · UDP</td><td>com confirmação de entrega · sem confirmação, mais rápido (vídeo, voz)</td></tr>
+      <tr><td class="r">SSH · 22</td><td>acesso remoto seguro (Telnet, 23, sem segurança)</td></tr>
+    </table>
+    <p class="tip"><b>S</b>MTP = <b>S</b>air (enviar). <b>P</b>OP = <b>P</b>uxar para o PC.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 6 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 7 =================== -->
+<section class="sheet">
+
+<article class="pi p">
+  <header class="strip"><span>Internet</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Endereços: URL e IP</h2>
+    <p class="s"><b>https://www.pm.pe.gov.br/servicos/index.html</b></p>
+    <table class="xs">
+      <tr><td class="r">https://</td><td>protocolo</td></tr>
+      <tr><td class="r">www.pm.pe.gov.br</td><td>endereço do servidor (domínio)</td></tr>
+      <tr><td class="r">.gov.br</td><td>tipo e país: .gov governo · .mil militar · .jus Judiciário · .leg Legislativo · .edu ensino · .org organização · .com comercial</td></tr>
+      <tr><td class="r">/servicos/index.html</td><td>pasta e arquivo no servidor</td></tr>
+    </table>
+    <p class="s"><b>IPv4:</b> 32 bits, quatro números de 0 a 255 (192.168.0.1). <b>IPv6:</b> 128 bits, em hexadecimal separado por dois-pontos.</p>
+    <p class="s"><b>DNS</b> traduz o nome no número IP. Os domínios .br são registrados no <b>Registro.br</b>.</p>
+    <p class="tip">A placa de rede tem ainda o endereço <b>MAC</b>, fixo, gravado de fábrica.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Redes</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Redes de computadores</h2>
+    <p class="s"><b>Pelo alcance:</b> <b>PAN</b> (pessoal, Bluetooth) &lt; <b>LAN</b> (local: casa, quartel) &lt; <b>MAN</b> (cidade) &lt; <b>WAN</b> (país, mundo; a internet).</p>
+    <table class="xs">
+      <tr><td class="r">Switch</td><td>liga os aparelhos da rede local e envia só ao destino</td></tr>
+      <tr><td class="r">Hub</td><td>repete para todos (antigo)</td></tr>
+      <tr><td class="r">Roteador</td><td>liga <b>redes diferentes</b> (a sua à internet) e escolhe o caminho</td></tr>
+      <tr><td class="r">Modem</td><td>converte o sinal da operadora</td></tr>
+      <tr><td class="r">Ponto de acesso</td><td>distribui o Wi-Fi</td></tr>
+    </table>
+    <p class="s"><b>Meios:</b> cabo de par trançado (RJ-45), fibra óptica (luz, longas distâncias), Wi-Fi e Bluetooth (sem fio).</p>
+    <p class="s"><b>Topologias:</b> estrela (a mais comum, tudo ligado a um switch), barramento, anel, malha.</p>
+    <p class="tip"><b>Switch</b> liga os computadores da mesma rede; <b>roteador</b> liga uma rede a outra.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Navegadores</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Navegadores</h2>
+    <p class="s"><b>Edge</b> (padrão do Windows 11), <b>Chrome</b>, <b>Firefox</b>, Safari, Opera.</p>
+    <ul class="s">
+      <li><b>Cookies</b>: pequenos arquivos que o site grava no navegador (login, preferências, carrinho).</li>
+      <li><b>Cache</b>: cópia de páginas e imagens para abrir mais rápido.</li>
+      <li><b>Histórico</b>, <b>favoritos</b>, <b>downloads</b>, <b>extensões</b> e bloqueio de pop-ups.</li>
+    </ul>
+    <table class="xs">
+      <tr><td class="r">Edge</td><td>InPrivate · Ctrl + Shift + N</td></tr>
+      <tr><td class="r">Chrome</td><td>janela anônima · Ctrl + Shift + N</td></tr>
+      <tr><td class="r">Firefox</td><td>janela privativa · Ctrl + Shift + <b>P</b></td></tr>
+    </table>
+    <p class="trap">A navegação privativa só deixa de guardar histórico, cookies e formulários <b>no seu computador</b>. O provedor, a empresa e os sites continuam vendo. Downloads e favoritos ficam salvos.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Navegadores · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Atalhos dos navegadores</h2>
+    <table class="xs">
+      <tr><td class="r">Ctrl + T · N</td><td>nova aba · nova janela</td></tr>
+      <tr><td class="r">Ctrl + W</td><td>fecha a aba</td></tr>
+      <tr><td class="r">Ctrl + Shift + T</td><td><b>reabre</b> a aba fechada</td></tr>
+      <tr><td class="r">Ctrl + Tab</td><td>próxima aba</td></tr>
+      <tr><td class="r">Ctrl + H · J</td><td><b>H</b>istórico · downloads</td></tr>
+      <tr><td class="r">Ctrl + D</td><td>adiciona aos favoritos</td></tr>
+      <tr><td class="r">Ctrl + Shift + Del</td><td>limpar dados de navegação</td></tr>
+      <tr><td class="r">F5 · Ctrl + F5</td><td>atualizar · atualizar sem o cache</td></tr>
+      <tr><td class="r">Ctrl + L · Alt + D · F6</td><td>vai para a barra de endereço</td></tr>
+      <tr><td class="r">Ctrl + F</td><td>localizar na página</td></tr>
+      <tr><td class="r">Ctrl + + · − · 0</td><td>zoom maior · menor · 100%</td></tr>
+      <tr><td class="r">F11</td><td>tela cheia</td></tr>
+      <tr><td class="r">Alt + ←</td><td>voltar</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>E-mail</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Correio eletrônico</h2>
+    <p class="s">Endereço: <b>usuario@dominio</b> (ex.: soldado@pm.pe.gov.br).</p>
+    <table class="xs">
+      <tr><td class="r">Para</td><td>destinatário principal</td></tr>
+      <tr><td class="r">Cc</td><td>cópia: todos veem quem recebeu</td></tr>
+      <tr><td class="r">Cco</td><td>cópia <b>oculta</b>: ninguém vê quem está em Cco</td></tr>
+      <tr><td class="r">Responder</td><td>só ao remetente, <b>sem</b> os anexos</td></tr>
+      <tr><td class="r">Responder a todos</td><td>remetente + Para + Cc (nunca os de Cco)</td></tr>
+      <tr><td class="r">Encaminhar</td><td>manda a outra pessoa, <b>com</b> os anexos</td></tr>
+    </table>
+    <p class="s"><b>Webmail</b>: usa pelo navegador (Gmail, Outlook.com). <b>Cliente de e-mail</b>: programa instalado (Outlook, Thunderbird).</p>
+    <p class="s"><b>SMTP</b> envia · <b>POP3</b> baixa e costuma tirar do servidor · <b>IMAP</b> mantém no servidor e sincroniza.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Computação em nuvem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Nuvem</h2>
+    <p class="s">Usar programas, armazenamento e servidores <b>pela internet</b>, pagando pelo uso, com acesso de qualquer lugar.</p>
+    <table class="xs">
+      <tr><td class="r">SaaS</td><td><b>software</b> pronto: Gmail, Microsoft 365, Google Docs</td></tr>
+      <tr><td class="r">PaaS</td><td><b>plataforma</b> para criar e rodar sistemas</td></tr>
+      <tr><td class="r">IaaS</td><td><b>infraestrutura</b>: servidores e discos virtuais alugados</td></tr>
+    </table>
+    <p class="s"><b>Tipos de nuvem:</b> pública, privada, híbrida e comunitária.</p>
+    <p class="s"><b>Armazenamento:</b> OneDrive (integrado ao Windows e ao Office, 5 GB grátis), Google Drive (15 GB grátis, divididos com Gmail e Fotos), Dropbox, iCloud.</p>
+    <p class="trap">Sincronizar <b>não é backup</b>: se apagar o arquivo no PC, ele some também da nuvem. E a nuvem depende de internet.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 7 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 8 =================== -->
+<section class="sheet">
+
+<article class="pi l">
+  <header class="strip"><span>Segurança da informação</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Os princípios: DICA</h2>
+    <div class="mn">
+      <i>D</i><span><b>Disponibilidade</b>: a informação está acessível quando se precisa. Garante: backup, nobreak, redundância. Ataque: <b>DDoS</b>.</span>
+      <i>I</i><span><b>Integridade</b>: a informação não foi alterada. Garante: <b>hash</b>, assinatura digital.</span>
+      <i>C</i><span><b>Confidencialidade</b>: só quem tem permissão acessa. Garante: <b>criptografia</b>, senha, controle de acesso.</span>
+      <i>A</i><span><b>Autenticidade</b>: a origem é quem diz ser. Garante: assinatura digital, certificado, biometria.</span>
+    </div>
+    <p class="s">E o <b>não repúdio</b> (irretratabilidade): o autor não pode negar que enviou.</p>
+    <p class="s"><b>Ameaça</b>: o que pode causar dano · <b>vulnerabilidade</b>: a falha explorada (sistema desatualizado, senha fraca) · <b>risco</b>: a chance de acontecer.</p>
+    <p class="trap">Derrubar site fere a <b>disponibilidade</b>; alterar dado, a <b>integridade</b>; vazar dado, a <b>confidencialidade</b>.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Segurança · malware</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Códigos maliciosos</h2>
+    <table class="xs">
+      <tr><td class="r">Vírus</td><td>infecta arquivos; precisa de um <b>hospedeiro</b> e de ser <b>executado</b> para se espalhar</td></tr>
+      <tr><td class="r">Worm</td><td>se <b>copia sozinho</b> pela rede, sem hospedeiro; deixa tudo lento</td></tr>
+      <tr><td class="r">Cavalo de Troia</td><td>parece útil, mas faz algo escondido; não se replica</td></tr>
+      <tr><td class="r">Ransomware</td><td><b>sequestra</b>: criptografa os dados e pede resgate</td></tr>
+      <tr><td class="r">Spyware</td><td>espiona. <b>Keylogger</b>: grava teclas · <b>Screenlogger</b>: grava a tela e cliques · <b>Adware</b>: propaganda</td></tr>
+      <tr><td class="r">Backdoor</td><td>"porta dos fundos" para o invasor voltar</td></tr>
+      <tr><td class="r">Bot</td><td>deixa o PC controlado de longe; vários formam uma <b>botnet</b></td></tr>
+      <tr><td class="r">Rootkit</td><td><b>esconde</b> a presença do invasor e de outros malwares</td></tr>
+    </table>
+    <p class="tip">Contra ransomware, a melhor defesa é o <b>backup</b> fora do computador.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Segurança · golpes</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Golpes e ataques</h2>
+    <table class="xs">
+      <tr><td class="r">Phishing</td><td>mensagem ou site <b>falso</b> que imita banco ou órgão para roubar dados</td></tr>
+      <tr><td class="r">Pharming</td><td>altera o <b>DNS</b>: você digita o endereço certo e cai no site falso</td></tr>
+      <tr><td class="r">Smishing · Vishing</td><td>phishing por <b>SMS</b> · por <b>voz</b> (ligação)</td></tr>
+      <tr><td class="r">Engenharia social</td><td>explora a confiança e a pressa da pessoa</td></tr>
+      <tr><td class="r">Spoofing</td><td>falsifica o remetente ou o endereço</td></tr>
+      <tr><td class="r">DoS · DDoS</td><td>sobrecarrega o serviço até cair (DDoS: de muitas máquinas)</td></tr>
+      <tr><td class="r">Força bruta</td><td>testa senhas até acertar</td></tr>
+      <tr><td class="r">Sniffing</td><td>"fareja" e captura o tráfego da rede</td></tr>
+      <tr><td class="r">Hoax</td><td>boato, corrente falsa</td></tr>
+      <tr><td class="r">Defacement</td><td>"pichação": troca o visual de um site</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Segurança · proteção</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Ferramentas de proteção</h2>
+    <table class="xs">
+      <tr><td class="r">Antivírus</td><td>detecta e remove malware (por assinatura e por comportamento); isola na <b>quarentena</b></td></tr>
+      <tr><td class="r">Firewall</td><td><b>filtra o tráfego</b> da rede por regras, bloqueando conexões; não remove vírus</td></tr>
+      <tr><td class="r">Antispam</td><td>separa e-mails indesejados</td></tr>
+      <tr><td class="r">Atualizações</td><td>corrigem falhas de segurança</td></tr>
+      <tr><td class="r">Senha forte</td><td>longa, com letras, números e símbolos; uma por serviço</td></tr>
+    </table>
+    <p class="s"><b>Autenticação</b> por algo que você <b>sabe</b> (senha, PIN), <b>tem</b> (celular, token) ou <b>é</b> (digital, rosto). Usar dois fatores diferentes = <b>2FA</b>.</p>
+    <p class="trap">"O firewall elimina vírus do computador" → <b>errado</b>: isso é o antivírus. Senha + PIN não é 2FA (os dois são "algo que sabe").</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Segurança · criptografia</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Criptografia e certificado</h2>
+    <p class="s"><b>Simétrica:</b> <b>uma</b> chave cifra e decifra (AES); rápida. <b>Assimétrica:</b> par de chaves, <b>pública</b> e <b>privada</b> (RSA).</p>
+    <table class="xs">
+      <tr><td class="r">Sigilo</td><td>cifra com a chave <b>pública do destinatário</b>; só a privada dele abre</td></tr>
+      <tr><td class="r">Assinatura digital</td><td>feita com a chave <b>privada do remetente</b>; garante autenticidade, integridade e não repúdio, <b>não</b> sigilo</td></tr>
+      <tr><td class="r">Hash</td><td>"impressão digital" do arquivo (SHA-256); mudou um bit, muda o hash: integridade</td></tr>
+      <tr><td class="r">Certificado digital</td><td>identidade eletrônica emitida por uma <b>Autoridade Certificadora</b>; no Brasil, ICP-Brasil (raiz: <b>ITI</b>). A1: arquivo no PC · A3: cartão ou token</td></tr>
+    </table>
+    <p class="trap">O <b>cadeado do HTTPS</b> mostra conexão criptografada, mas golpista também tem cadeado: não prova que o site é honesto.</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Backup</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Tipos de backup</h2>
+    <table class="xs">
+      <tr><th>Tipo</th><th>Copia</th><th>Marca?</th></tr>
+      <tr><td><b>Completo</b></td><td>tudo</td><td class="ok">sim</td></tr>
+      <tr><td><b>Incremental</b></td><td>o que mudou desde o <b>último backup</b> (de qualquer tipo)</td><td class="ok">sim</td></tr>
+      <tr><td><b>Diferencial</b></td><td>o que mudou desde o <b>último completo</b>; cresce a cada dia</td><td class="no">não</td></tr>
+      <tr><td>Cópia</td><td>tudo, sem afetar a rotina</td><td class="no">não</td></tr>
+      <tr><td>Diário</td><td>o que mudou no dia</td><td class="no">não</td></tr>
+    </table>
+    <p class="s"><b>Restaurar:</b> completo + <b>todos</b> os incrementais, ou completo + o <b>último</b> diferencial.</p>
+    <p class="tip"><b>Regra 3-2-1:</b> 3 cópias, em 2 mídias diferentes, 1 fora do local (nuvem ou outro prédio).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 8 de 9</span></div>
+</section>
+
+<!-- =================== FOLHA 9 =================== -->
+<section class="sheet">
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · atalhos</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Mesma tecla, outra função</h2>
+    <table class="xs">
+      <tr><td class="r">Ctrl + N</td><td>Word: negrito · Writer: novo · navegador: nova janela</td></tr>
+      <tr><td class="r">Ctrl + S</td><td>Word: sublinhado · Writer: salvar</td></tr>
+      <tr><td class="r">Ctrl + B</td><td>Word: salvar · Writer: negrito</td></tr>
+      <tr><td class="r">Ctrl + A</td><td>Word: abrir · Writer e Windows: selecionar tudo</td></tr>
+      <tr><td class="r">Ctrl + T</td><td>Word: selecionar tudo · navegador e Explorador: nova aba</td></tr>
+      <tr><td class="r">Ctrl + O</td><td>Word: novo · Writer: abrir</td></tr>
+      <tr><td class="r">Ctrl + U</td><td>Word: substituir · Writer: sublinhado</td></tr>
+      <tr><td class="r">Ctrl + L</td><td>Word: localizar · Writer: à esquerda · navegador: barra de endereço</td></tr>
+      <tr><td class="r">Ctrl + R</td><td>Word: refazer · Writer: à direita · navegador: atualizar</td></tr>
+      <tr><td class="r">Ctrl + H</td><td>Writer: localizar e substituir · navegador: histórico</td></tr>
+      <tr><td class="r">Ctrl + J</td><td>Word e Writer: justificar · navegador: downloads</td></tr>
+      <tr><td class="r">F5</td><td>Windows e navegador: atualizar · slides: apresentar · Writer: Navegador</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Números da informática</h2>
+    <div class="nums">
+      <div><b>8 bits</b>1 byte</div>
+      <div><b>1.024</b>bytes em 1 KB (e KB em 1 MB)</div>
+      <div><b>32 · 128 bits</b>IPv4 · IPv6</div>
+      <div><b>0 a 255</b>cada número do IPv4</div>
+      <div><b>80 · 443</b>portas do HTTP · HTTPS</div>
+      <div><b>25 · 110 · 143</b>SMTP · POP3 · IMAP</div>
+      <div><b>1.048.576</b>linhas do Excel 2019</div>
+      <div><b>16.384</b>colunas do Excel (até XFD)</div>
+      <div><b>64 bits · TPM 2.0</b>exigências do Windows 11</div>
+      <div><b>4 GB · 64 GB</b>RAM e disco mínimos do Windows 11</div>
+      <div><b>4,7 GB · 25 GB</b>DVD · Blu-ray (CD: 700 MB)</div>
+      <div><b>3-2-1</b>regra do backup</div>
+    </div>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · pegadinhas</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Pegadinhas certas</h2>
+    <ul class="s plain">
+      <li><span class="no">✘</span> "Shift + Delete manda para a Lixeira" → apaga <b>de vez</b>.</li>
+      <li><span class="no">✘</span> "Apagado do pen drive vai para a Lixeira" → <b>não vai</b>.</li>
+      <li><span class="no">✘</span> "Firewall remove vírus" → quem remove é o <b>antivírus</b>.</li>
+      <li><span class="no">✘</span> "Janela anônima esconde do provedor" → só não guarda <b>no PC</b>.</li>
+      <li><span class="no">✘</span> "Cadeado = site confiável" → só conexão <b>criptografada</b>.</li>
+      <li><span class="no">✘</span> "Intranet não usa protocolos da internet" → usa <b>TCP/IP</b>.</li>
+      <li><span class="no">✘</span> "Worm precisa de hospedeiro" → isso é o <b>vírus</b>.</li>
+      <li><span class="no">✘</span> "Diferencial copia o que mudou desde o último backup" → desde o último <b>completo</b>.</li>
+      <li><span class="no">✘</span> "Software livre é sempre grátis" → fala de <b>liberdade</b>.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão · planilha</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Calcule de cabeça</h2>
+    <p class="s">Coluna A: <b>A1 = 8</b> · <b>A2 = 2</b> · <b>A3 vazia</b> · <b>A4 = PM</b> · <b>A5 = 5</b></p>
+    <ol class="s">
+      <li>=SOMA(A1:A5)</li>
+      <li>=MÉDIA(A1:A5)</li>
+      <li>=CONT.NÚM(A1:A5)</li>
+      <li>=CONT.VALORES(A1:A5)</li>
+      <li>=CONT.SE(A1:A5;"&gt;4")</li>
+      <li>=A1+A2*A5</li>
+      <li>=A1^2/A2</li>
+      <li>=SE(A1&gt;A5;"sim";"não")</li>
+      <li>=SOMA(A1;A5)</li>
+    </ol>
+    <p class="ans">Respostas: 1) 15 · 2) 5 · 3) 3 · 4) 4 · 5) 2 · 6) 18 · 7) 32 · 8) sim · 9) 13</p>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>V ou F? Windows e Office</h2>
+    <ol class="vf">
+      <li>No Windows 11, Shift + Delete envia o arquivo para a Lixeira.</li>
+      <li>Arrastar um arquivo para um pen drive copia o arquivo.</li>
+      <li>No Word em português, Ctrl + N aplica negrito.</li>
+      <li>No Writer, Ctrl + S sublinha o texto.</li>
+      <li>=SOMA(A1;A3) soma A1, A2 e A3.</li>
+      <li>Copiada uma linha para baixo, =A1*$B$1 vira =A2*$B$1.</li>
+      <li>O PROCV procura o valor na primeira coluna da tabela.</li>
+      <li>Animação é o efeito na passagem de um slide para outro.</li>
+    </ol>
+    <p class="ans">Respostas: 1F · 2V · 3V · 4F (salva) · 5F (A1 e A3) · 6V · 7V · 8F</p>
+  </div>
+</article>
+
+<article class="pi n">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>V ou F? Internet e segurança</h2>
+    <ol class="vf">
+      <li>A intranet usa as mesmas tecnologias da internet, com acesso restrito.</li>
+      <li>Quem está em Cco é visto pelos outros destinatários.</li>
+      <li>O IMAP mantém as mensagens no servidor.</li>
+      <li>O worm se espalha pela rede sem precisar de outro arquivo.</li>
+      <li>Pharming é o golpe feito por SMS.</li>
+      <li>A assinatura digital garante o sigilo da mensagem.</li>
+      <li>O backup incremental copia o que mudou desde o último backup.</li>
+      <li>O firewall remove os arquivos infectados.</li>
+    </ol>
+    <p class="ans">Respostas: 1V · 2F · 3V · 4V · 5F (smishing) · 6F · 7V · 8F</p>
+  </div>
+</article>
+
+<div class="foot"><span>Informática · post-its PMPE 2026</span><span>folha 9 de 9</span></div>
+</section>
+
+<script>
+(function(){
+  var b=document.getElementById('modo');
+  function set(eco){document.body.classList.toggle('eco',eco);b.textContent=eco?'Trocar para modo colorido':'Trocar para modo econômico';}
+  b.addEventListener('click',function(){set(!document.body.classList.contains('eco'));});
+  if(/[?&]eco\b/.test(location.search))set(true);
+})();
+</script>
+</body>
+</html>

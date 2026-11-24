@@ -78,3 +78,48 @@ Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.j
 ```
 
 Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
+
+---
+
+# Post-its para imprimir
+
+Post-its para colar na parede, 6 por folha A4 (quadrados de 95 × 90 mm). Cada um traz o artigo, o fato histórico, a regra ou o comando, o resumo, uma pegadinha ou um macete, e as cores separam os assuntos; o último de cada conjunto é um teste de V ou F com as respostas de cabeça para baixo.
+
+| Conjunto | Post-its | Imprimir |
+|---|---|---|
+| Língua Portuguesa (interpretação, ortografia e acentuação, classes, sintaxe, pontuação, crase, concordância, regência e colocação) | 54 (9 folhas) | `postits/portugues-colorido.pdf` ou `-economico.pdf` |
+| História de Pernambuco (colonização, açúcar, holandeses, revoltas, República, cultura popular e herança afro) | 48 (8 folhas) | `postits/historia-pernambuco-colorido.pdf` ou `-economico.pdf` |
+| Raciocínio Lógico (proposições, argumentação, diagramas, contagem e probabilidade) | 42 (7 folhas) | `postits/raciocinio-logico-colorido.pdf` ou `-economico.pdf` |
+| Informática (Windows 11, Office 2019, LibreOffice 7, internet, segurança) | 54 (9 folhas) | `postits/informatica-colorido.pdf` ou `-economico.pdf` |
+| Direito Constitucional | 48 (8 folhas) | `postits/direito-constitucional-colorido.pdf` ou `-economico.pdf` |
+| Direitos Humanos: parte geral (teoria, tratados, DUDH, Pacto de San José) | 42 (7 folhas) | `postits/direitos-humanos-geral-colorido.pdf` ou `-economico.pdf` |
+| Lei de Drogas (Lei 11.343/2006) | 36 (6 folhas) | `postits/lei-de-drogas-colorido.pdf` ou `-economico.pdf` |
+| Crimes Hediondos (Lei 8.072/1990) | 24 (4 folhas) | `postits/crimes-hediondos-colorido.pdf` ou `-economico.pdf` |
+| Abuso de Autoridade (Lei 13.869/2019) | 30 (5 folhas) | `postits/abuso-de-autoridade-colorido.pdf` ou `-economico.pdf` |
+| Tortura (Lei 9.455/1997) | 24 (4 folhas) | `postits/tortura-colorido.pdf` ou `-economico.pdf` |
+| Maria da Penha (Lei 11.340/2006) | 36 (6 folhas) | `postits/maria-da-penha-colorido.pdf` ou `-economico.pdf` |
+| Racismo (Lei 7.716/1989) | 24 (4 folhas) | `postits/racismo-colorido.pdf` ou `-economico.pdf` |
+| Crimes Ambientais (Lei 9.605/1998) | 30 (5 folhas) | `postits/crimes-ambientais-colorido.pdf` ou `-economico.pdf` |
+| ECA (Lei 8.069/1990) | 36 (6 folhas) | `postits/eca-colorido.pdf` ou `-economico.pdf` |
+| Estatuto da PMPE (Lei estadual 6.783/1974) | 24 (4 folhas) | `postits/estatuto-pmpe-colorido.pdf` ou `-economico.pdf` |
+| Estatuto da Pessoa Idosa (Lei 10.741/2003) | 24 (4 folhas) | `postits/pessoa-idosa-colorido.pdf` ou `-economico.pdf` |
+| Estatuto da Juventude (Lei 12.852/2013) | 18 (3 folhas) | `postits/estatuto-juventude-colorido.pdf` ou `-economico.pdf` |
+| Súmulas e Jurisprudência (STF e STJ) | 24 (4 folhas) | `postits/sumulas-jurisprudencia-colorido.pdf` ou `-economico.pdf` |
+
+**Tudo num arquivo só:** `postits/postits-pmpe-2026-colorido.pdf` e `postits/postits-pmpe-2026-economico.pdf` juntam os 18 conjuntos (103 folhas cada) na ordem do edital, com um marcador por conjunto na barra lateral do leitor de PDF.
+
+A versão econômica tem fundo branco e gasta menos tinta. Papel A4, escala 100% ("tamanho real") e sem ajustar à página.
+
+Língua Portuguesa, História de Pernambuco, Raciocínio Lógico e Informática seguem o conteúdo programático do Edital 001/2026 (Anexo II, cargo de Soldado). Em Informática, os atalhos são os da instalação em português, nas versões que o edital pede: Windows 11, Office 2019 e LibreOffice 7.
+
+Atualizados com a Lei 15.358/2026 (marco legal do combate ao crime organizado): art. 40-A da Lei de Drogas (pena em dobro), domínio social estruturado no rol dos hediondos e os novos percentuais de progressão de regime. Também incluem o julgamento do STF sobre maconha (RE 635.659, 2024), as Leis 14.811/2024 e 14.994/2024 (feminicídio) e, no abuso de autoridade, a violência institucional (art. 15-A, Lei 14.321/2022), os artigos vetados e a Súmula Vinculante 11 (algemas). Na tortura, entra o novo art. 1º, III (tortura doméstica contra a mulher, Lei 15.410/2026). No Estatuto da Pessoa Idosa, entra a Lei 15.163/2025 (sem Lei 9.099 e maus-tratos com reclusão de 2 a 5 anos). No ECA, entram a Lei Henry Borel, a escuta especializada e a Lei 15.487/2026 (violência sexual em registros). Nos hediondos, o vicaricídio (Lei 15.384/2026). Na Maria da Penha, entram as leis de 2025 e 2026 (tornozeleira, violência vicária, afastamento ampliado, título executivo, retratação só a pedido e 12 meses para representar).
+
+## Editar e gerar de novo
+
+O texto de cada conjunto fica em `postits/<conjunto>.html` (abre no navegador, com botão de imprimir e troca de modo); o visual comum fica em `postits/postits.css`. O total de post-its vai em `--total`, no `<body>`. Depois de editar:
+
+```bash
+node postits/gerar-pdf.js
+```
+
+O script gera os PDFs de todos os conjuntos, atualiza os dois arquivos únicos (via `postits/juntar-pdfs.py`, que usa o pacote Python `pypdf`) (para gerar só um conjunto: `node postits/gerar-pdf.js crimes-hediondos`) e avisa se o texto de algum post-it passar do tamanho do quadrado, se alguma folha não tiver 6 post-its ou se o total não bater com `--total`. As fontes (Inter e Kalam, licença OFL) ficam em `postits/fonts/`.

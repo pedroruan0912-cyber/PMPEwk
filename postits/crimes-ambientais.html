@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-its Crimes Ambientais</title>
+<link rel="stylesheet" href="postits.css">
+</head>
+<body style="--total:'30'">
+
+<div class="bar">
+  <button type="button" onclick="window.print()">Imprimir</button>
+  <button type="button" class="alt" id="modo">Trocar para modo econômico</button>
+  <small><b>Na impressão:</b> papel A4, margens <b>Nenhuma</b>, escala <b>100%</b> e <b>Gráficos de fundo</b> ligado. Recorte cada quadrado e cole na parede.</small>
+</div>
+
+<!-- =================== FOLHA 1 =================== -->
+<section class="sheet">
+
+<article class="pi n">
+  <header class="strip"><span>Lei 9.605/1998</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Crimes Ambientais: o mapa</h2>
+    <table class="s">
+      <tr><td class="r">2º a 5º</td><td>Quem responde (inclusive a pessoa jurídica)</td></tr>
+      <tr><td class="r">6º a 24</td><td>Penas da pessoa física e da jurídica</td></tr>
+      <tr><td class="r">25 a 28</td><td>Apreensão e regras de processo</td></tr>
+      <tr><td class="r">29 a 37</td><td>Crimes contra a fauna</td></tr>
+      <tr><td class="r">38 a 53</td><td>Crimes contra a flora</td></tr>
+      <tr><td class="r">54 a 61</td><td>Poluição e outros</td></tr>
+      <tr><td class="r">62 a 65</td><td>Ordenamento urbano e patrimônio cultural</td></tr>
+      <tr><td class="r">66 a 69-A</td><td>Administração ambiental</td></tr>
+      <tr><td class="r">70 a 76</td><td>Infração administrativa</td></tr>
+    </table>
+    <div class="legend">
+      <span style="--c:#FFF3A3">Parte geral</span>
+      <span style="--c:#FFD9E5">Fauna</span>
+      <span style="--c:#D6F2D6">Flora</span>
+      <span style="--c:#D3E8FF">Poluição e patrimônio</span>
+      <span style="--c:#FFE0BF">Administração ambiental</span>
+      <span style="--c:#E8DDFF">Revisão</span>
+    </div>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">CF, art. 225</p>
+    <h2>Meio ambiente na Constituição</h2>
+    <ul class="s">
+      <li><b>Caput:</b> todos têm direito ao meio ambiente ecologicamente equilibrado, <b>bem de uso comum do povo</b>; o Poder Público e a coletividade devem defendê-lo para as <b>presentes e futuras gerações</b>.</li>
+      <li><b>§ 3º:</b> condutas lesivas sujeitam <b>pessoas físicas ou jurídicas</b> a sanções <b>penais e administrativas</b>, independentemente da obrigação de <b>reparar</b> o dano.</li>
+      <li>São <b>3 esferas independentes</b>: penal, administrativa e civil. A civil é <b>objetiva</b> (Lei 6.938/1981, art. 14, § 1º).</li>
+    </ul>
+    <p class="tip">Responsabilidade tríplice: a mesma conduta pode gerar crime, multa e dever de reparar.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 2º a 4º · STF, RE 548.181</p>
+    <h2>Quem responde</h2>
+    <ul class="s">
+      <li><b>Art. 2º:</b> quem concorre para o crime responde na medida da sua culpabilidade. Também o <b>diretor, administrador, gerente, auditor</b> ou preposto que, sabendo do crime de outro, <b>não o impede</b> quando podia.</li>
+      <li><b>Art. 3º:</b> a <b>pessoa jurídica</b> responde quando a infração decorre de decisão do representante ou do órgão colegiado, <b>no interesse ou benefício</b> dela. Isso não exclui a pessoa física.</li>
+      <li><b>Art. 4º:</b> desconsidera-se a pessoa jurídica sempre que ela atrapalhar o ressarcimento do dano.</li>
+    </ul>
+    <p class="trap">A PJ pode ser condenada <b>sozinha</b>: o STF afastou a "dupla imputação" obrigatória (RE 548.181).</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 7º a 13 · pessoa física</p>
+    <h2>Penas restritivas de direitos</h2>
+    <p class="s">Substituem a prisão se o crime for <b>culposo</b> ou a pena for <b>inferior a 4 anos</b>, com a mesma duração da pena substituída.</p>
+    <div class="mn">
+      <i>P</i><span><b>Prestação de serviços</b> em parques, jardins e unidades de conservação</span>
+      <i>I</i><span><b>Interdição temporária</b>: não contratar com o Poder Público nem receber incentivos: <b>5 anos</b> (doloso) ou <b>3 anos</b> (culposo)</span>
+      <i>S</i><span><b>Suspensão</b> parcial ou total de atividades</span>
+      <i>P</i><span><b>Prestação pecuniária</b>: de <b>1 a 360</b> salários mínimos</span>
+      <i>R</i><span><b>Recolhimento domiciliar</b></span>
+    </div>
+    <p class="tip mt0">"<b>P</b>edro <b>I</b>a <b>S</b>air <b>P</b>ra <b>R</b>ua."</p>
+    <p class="trap">Aqui é pena <b>inferior a</b> 4 anos; no CP, "não superior a" 4.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 21 a 24 · pessoa jurídica</p>
+    <h2>Penas da empresa</h2>
+    <ul class="s">
+      <li>Multa, restritivas de direitos e prestação de serviços.</li>
+      <li><b>Restritivas:</b> suspensão de atividades; interdição de estabelecimento, obra ou atividade; proibição de <b>contratar com o Poder Público</b> e receber subsídios por até <b>10 anos</b>.</li>
+      <li><b>Serviços:</b> custear programas ambientais, recuperar áreas degradadas, manter espaços públicos, contribuir com entidades ambientais ou culturais.</li>
+      <li><b>Art. 24:</b> empresa criada ou usada para permitir, facilitar ou ocultar crime ambiental tem <b>liquidação forçada</b>; o patrimônio vai para o Fundo Penitenciário Nacional.</li>
+    </ul>
+    <p class="tip">Liquidação forçada = a "pena de morte" da empresa.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 14 e 15</p>
+    <h2>Atenuantes e agravantes</h2>
+    <p class="s"><b>Atenuam:</b> baixo grau de instrução; arrependimento com reparação espontânea do dano; comunicação prévia do perigo; colaboração com a fiscalização.</p>
+    <p class="s"><b>Agravam</b> (seleção): <b>reincidência em crime ambiental</b>; vantagem financeira; atingir unidade de conservação ou área urbana; <b>defeso</b>; <b>domingo ou feriado</b>; <b>à noite</b>; seca ou inundação; <b>métodos cruéis</b>; fraude ou abuso de licença; espécie ameaçada; facilitação por <b>funcionário público</b>.</p>
+    <p class="trap">Só agrava a reincidência em crime <b>ambiental</b>.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Crimes Ambientais · post-its PMPE 2026</span><span>folha 1 de 5</span></div>
+</section>
+
+<!-- =================== FOLHA 2 =================== -->
+<section class="sheet">
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 16 a 20 e 26 a 28</p>
+    <h2>Regras especiais de processo</h2>
+    <table>
+      <tr><th>Instituto</th><th>Na Lei 9.605</th></tr>
+      <tr><td>Sursis da pena</td><td>pena de até <b>3 anos</b> (no CP, até 2)</td></tr>
+      <tr><td>Multa</td><td>pode ser aumentada até <b>3 vezes</b> se ineficaz</td></tr>
+      <tr><td>Transação penal</td><td>só com <b>prévia composição do dano</b>, salvo impossibilidade</td></tr>
+      <tr><td>Suspensão do processo</td><td>extinção só com <b>laudo de reparação</b> do dano; pode ser prorrogada</td></tr>
+      <tr><td>Ação penal</td><td><b>pública incondicionada</b></td></tr>
+      <tr><td>Sentença</td><td>fixa valor mínimo da reparação</td></tr>
+    </table>
+    <p class="tip mt0">No ambiental, quase todo benefício exige <b>reparar o dano</b>.</p>
+  </div>
+</article>
+
+<article class="pi y">
+  <header class="strip"><span>Parte geral · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 25</p>
+    <h2>O que fazer com o que foi apreendido</h2>
+    <ul class="s">
+      <li>Constatada a infração, apreendem-se os <b>produtos e instrumentos</b>, lavrando-se os autos.</li>
+      <li><b>Animais:</b> <span class="hl"><b>prioritariamente libertados no seu habitat</b></span>; se inviável, entregues a zoológicos, fundações ou entidades assemelhadas, aos cuidados de técnicos habilitados.</li>
+      <li><b>Perecíveis e madeira:</b> avaliados e <b>doados</b> a instituições científicas, hospitalares, penais e beneficentes.</li>
+      <li><b>Instrumentos:</b> vendidos, garantida a descaracterização por reciclagem.</li>
+    </ul>
+    <p class="trap">A prioridade é o <b>habitat</b>, não o zoológico.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Fauna</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 29</p>
+    <h2>Caça e fauna silvestre</h2>
+    <p class="s"><b>Matar, perseguir, caçar, apanhar ou utilizar</b> espécimes da fauna silvestre, nativos ou em rota migratória, sem licença ou em desacordo com ela.</p>
+    <p class="big">Detenção de 6 meses a 1 ano <span>+ multa</span></p>
+    <ul class="s">
+      <li><b>§ 1º:</b> também quem impede a procriação; destrói ninho ou abrigo; <b>vende, guarda, tem em cativeiro ou transporta</b> espécimes, ovos ou produtos sem licença.</li>
+      <li><b>§ 2º:</b> guarda doméstica de espécie <b>não ameaçada</b>: o juiz pode deixar de aplicar a pena.</li>
+      <li><b>§ 6º:</b> o art. 29 <b>não se aplica à pesca</b>.</li>
+    </ul>
+    <p class="trap">Passarinho silvestre na gaiola sem licença é crime (§ 1º, III), mas cabe perdão judicial se a espécie não for ameaçada.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Fauna</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 29, §§ 4º e 5º</p>
+    <h2>Caça: aumentos</h2>
+    <p class="s"><b>Aumenta de metade</b> se o crime é praticado:</p>
+    <ol class="s" type="I">
+      <li>contra espécie <b>rara ou ameaçada</b>, ainda que só no local;</li>
+      <li>em <b>período proibido</b> à caça;</li>
+      <li>durante a <b>noite</b>;</li>
+      <li>com <b>abuso de licença</b>;</li>
+      <li>em <b>unidade de conservação</b>;</li>
+      <li>com métodos capazes de <b>destruição em massa</b>.</li>
+    </ol>
+    <p class="big">Caça profissional: até o triplo</p>
+    <p class="trap">Na caça, à noite aumenta de <b>metade</b>; na flora, de <b>1/6 a 1/3</b> (art. 53).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Fauna</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 30, 31 e 33</p>
+    <h2>Outros crimes contra a fauna</h2>
+    <ul class="s">
+      <li><b>Art. 30:</b> exportar <b>peles e couros de anfíbios e répteis em bruto</b>, sem autorização. <b>Reclusão de 1 a 3 anos</b> + multa.</li>
+      <li><b>Art. 31:</b> <b>introduzir espécime animal</b> no país sem parecer técnico oficial favorável e licença. <b>Detenção de 3 meses a 1 ano</b> + multa.</li>
+      <li><b>Art. 33:</b> provocar, por <b>emissão de efluentes</b> ou carreamento de materiais, o perecimento da <b>fauna aquática</b> em rios, lagos, açudes, baías ou águas brasileiras. <b>Detenção de 1 a 3 anos</b>, ou multa, ou ambas.</li>
+    </ul>
+    <p class="tip">Couro de jacaré ou sapo exportado em bruto: reclusão (art. 30).</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Fauna · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 32 · Lei Sansão (Lei 14.064/2020)</p>
+    <h2>Maus-tratos a animais</h2>
+    <p class="s">Praticar <b>abuso, maus-tratos, ferir ou mutilar</b> animais silvestres, domésticos ou domesticados, nativos ou exóticos. <b>Detenção de 3 meses a 1 ano</b> + multa.</p>
+    <ul class="s">
+      <li><b>§ 1º:</b> experiência dolorosa ou cruel em animal vivo, mesmo para ensino ou ciência, quando há recursos alternativos.</li>
+      <li><b>§ 2º:</b> aumenta de <b>1/6 a 1/3</b> se o animal morre.</li>
+    </ul>
+    <p class="big">Cão ou gato: reclusão de 2 a 5 anos <span>+ multa + proibição da guarda (§ 1º-A)</span></p>
+    <p class="trap">Cão ou gato tem pena máxima de 5 anos: o delegado <b>não</b> arbitra fiança (CPP, art. 322).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Crimes Ambientais · post-its PMPE 2026</span><span>folha 2 de 5</span></div>
+</section>
+
+<!-- =================== FOLHA 3 =================== -->
+<section class="sheet">
+
+<article class="pi p">
+  <header class="strip"><span>Fauna · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 34 a 36</p>
+    <h2>Pesca proibida</h2>
+    <ul class="s">
+      <li><b>Art. 34:</b> pescar em <b>período proibido</b> (defeso) ou em lugar interditado. Também: pescar espécie preservada ou abaixo do tamanho; acima da quantidade; com petrechos proibidos; e transportar ou vender o que foi pescado assim. <b>Detenção de 1 a 3 anos</b>, ou multa, ou ambas.</li>
+      <li><b>Art. 35:</b> pescar com <b>explosivos</b> ou <b>substâncias tóxicas</b>. <b>Reclusão de 1 a 5 anos.</b></li>
+      <li><b>Art. 36:</b> pesca é todo ato de retirar, extrair, coletar ou capturar <b>peixes, crustáceos, moluscos e vegetais hidróbios</b>.</li>
+    </ul>
+    <p class="trap">Pesca proibida <b>não</b> é o art. 29 (caça): é o art. 34 ou o 35.</p>
+  </div>
+</article>
+
+<article class="pi p">
+  <header class="strip"><span>Fauna</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 37 · CF, art. 225, § 7º</p>
+    <h2>Quando abater não é crime</h2>
+    <ol class="s" type="I">
+      <li>em <b>estado de necessidade</b>, para matar a fome do agente ou da família;</li>
+      <li>para proteger <b>lavouras, pomares e rebanhos</b> de animais predadores, <b>desde que autorizado</b> pela autoridade;</li>
+    </ol>
+    <p class="s"><b>IV.</b> por ser o animal <b>nocivo</b>, assim caracterizado pelo órgão competente. (O inciso III foi vetado.)</p>
+    <p class="s"><b>CF, art. 225, § 7º</b> (EC 96/2017): práticas desportivas com animais registradas como patrimônio cultural imaterial (ex.: vaquejada) não são consideradas cruéis, se uma lei garantir o bem-estar animal.</p>
+    <p class="trap">Proteger o rebanho só exclui o crime com <b>autorização expressa</b>.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Flora</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 38, 38-A e 39</p>
+    <h2>APP e Mata Atlântica</h2>
+    <ul class="s">
+      <li><b>Art. 38:</b> destruir ou danificar floresta de <b>preservação permanente</b>, mesmo em formação, ou usá-la contra as normas de proteção.</li>
+      <li><b>Art. 38-A:</b> destruir ou danificar vegetação primária ou secundária, em estágio avançado ou médio de regeneração, da <b>Mata Atlântica</b>.</li>
+      <li><b>Art. 39:</b> <b>cortar árvores</b> em floresta de preservação permanente sem permissão.</li>
+    </ul>
+    <p class="big">Os três: detenção de 1 a 3 anos <span>ou multa, ou ambas</span></p>
+    <p class="trap">Arts. 38 e 38-A admitem forma <b>culposa</b>: pena reduzida à metade.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Flora</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 40 e 52</p>
+    <h2>Unidades de conservação</h2>
+    <p class="s"><b>Art. 40:</b> causar <b>dano direto ou indireto</b> às unidades de conservação, onde quer que estejam.</p>
+    <p class="big">Reclusão de 1 a 5 anos <span>culposo: pena reduzida à metade</span></p>
+    <ul class="s">
+      <li>Proteção integral: estações ecológicas, reservas biológicas, parques nacionais, monumentos naturais e refúgios de vida silvestre.</li>
+      <li>Dano a espécie <b>ameaçada</b> dentro de UC de proteção integral é agravante.</li>
+      <li><b>Art. 52:</b> entrar em UC levando <b>instrumentos de caça</b> ou de exploração florestal, sem licença. <b>Detenção de 6 meses a 1 ano</b> + multa.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Flora · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 41 e 42</p>
+    <h2>Incêndio e balões</h2>
+    <p class="s"><b>Art. 41:</b> provocar <b>incêndio em mata ou floresta</b>.</p>
+    <p class="big">Reclusão de 2 a 4 anos <span>+ multa · culposo: detenção de 6 meses a 1 ano + multa</span></p>
+    <p class="s"><b>Art. 42:</b> fabricar, vender, transportar ou <b>soltar balões</b> que <b>possam</b> provocar incêndios em florestas e vegetação, em áreas urbanas ou em qualquer assentamento humano. <b>Detenção de 1 a 3 anos</b>, ou multa, ou ambas.</p>
+    <p class="trap">Soltar balão é crime mesmo <b>sem incêndio</b>: basta o perigo. A Câmara aprovou em 2025 projeto que aumenta a pena do art. 41; confira se virou lei.</p>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Flora · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 45, 46 e 51</p>
+    <h2>Madeira, carvão e motosserra</h2>
+    <ul class="s">
+      <li><b>Art. 45:</b> cortar ou transformar em <b>carvão madeira de lei</b>, contra as normas. <b>Reclusão de 1 a 2 anos</b> + multa.</li>
+      <li><b>Art. 46:</b> receber ou adquirir, para fins comerciais, madeira, lenha ou carvão <b>sem exigir a licença</b> do vendedor. <b>Par. único:</b> vender, guardar ou <b>transportar</b> sem licença válida <b>para todo o tempo da viagem</b>. <b>Detenção de 6 meses a 1 ano</b> + multa.</li>
+      <li><b>Art. 51:</b> vender <b>motosserra</b> ou usá-la em floresta sem licença ou registro. <b>Detenção de 3 meses a 1 ano</b> + multa.</li>
+    </ul>
+    <p class="tip">Caminhão de madeira na barreira: a licença precisa valer a viagem toda (art. 46).</p>
+  </div>
+</article>
+
+<div class="foot"><span>Crimes Ambientais · post-its PMPE 2026</span><span>folha 3 de 5</span></div>
+</section>
+
+<!-- =================== FOLHA 4 =================== -->
+<section class="sheet">
+
+<article class="pi g">
+  <header class="strip"><span>Flora</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 44, 48, 50 e 50-A</p>
+    <h2>Desmatamento e regeneração</h2>
+    <ul class="s">
+      <li><b>Art. 50-A:</b> <b>desmatar</b>, explorar ou degradar floresta em <b>terras públicas ou devolutas</b>, sem autorização. <b>Reclusão de 2 a 4 anos</b> + multa. Não é crime se for para a <b>subsistência imediata</b> do agente ou da família; acima de <b>1.000 hectares</b>, + 1 ano por milhar.</li>
+      <li><b>Art. 50:</b> destruir florestas nativas ou plantadas ou vegetação de <b>dunas e mangues</b>. Detenção de 3 meses a 1 ano + multa.</li>
+      <li><b>Art. 48:</b> impedir ou dificultar a <b>regeneração</b> natural. Detenção de 6 meses a 1 ano + multa.</li>
+      <li><b>Art. 44:</b> extrair <b>pedra, areia, cal</b> ou minerais de floresta pública ou APP. Detenção de 6 meses a 1 ano + multa.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi g">
+  <header class="strip"><span>Flora</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 49 e 53</p>
+    <h2>Plantas ornamentais e aumentos</h2>
+    <p class="s"><b>Art. 49:</b> destruir, danificar, lesar ou maltratar <b>plantas de ornamentação</b> de logradouro público ou de propriedade privada alheia. <b>Detenção de 3 meses a 1 ano</b>, ou multa, ou ambas. <b>Culposo:</b> 1 a 6 meses, ou multa.</p>
+    <p class="s"><b>Art. 53, aumento de 1/6 a 1/3</b> nos crimes contra a flora:</p>
+    <ul class="s">
+      <li>resulta diminuição de águas, erosão do solo ou mudança do clima;</li>
+      <li>na queda das sementes ou na formação de vegetações;</li>
+      <li>contra espécie rara ou ameaçada;</li>
+      <li>em seca ou inundação; <b>à noite, em domingo ou feriado</b>.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Poluição e patrimônio</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 54</p>
+    <h2>Poluição</h2>
+    <p class="s">Causar poluição de qualquer natureza em níveis que resultem ou possam resultar em <b>danos à saúde humana</b>, <b>mortandade de animais</b> ou destruição significativa da flora.</p>
+    <p class="big">Reclusão de 1 a 4 anos <span>+ multa · culposo: detenção de 6 meses a 1 ano</span></p>
+    <p class="s"><b>§ 2º, reclusão de 1 a 5 anos</b>, se: torna a área imprópria para ocupação humana; poluição do <b>ar</b> obriga a retirada dos moradores; poluição da <b>água</b> interrompe o abastecimento; dificulta o uso das <b>praias</b>; ou decorre de lançamento de <b>resíduos</b>, óleos ou detritos.</p>
+    <p class="tip">§ 2º: área, ar, água, praia e resíduos.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Poluição e patrimônio</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 55, 56, 58, 60 e 61</p>
+    <h2>Mineração, tóxicos e licença</h2>
+    <table>
+      <tr><td class="r">55</td><td><b>Mineração</b> sem autorização (ou não recuperar a área)</td><td class="r">D 6 m a 1</td></tr>
+      <tr><td class="r">56</td><td>Produzir, transportar, guardar ou usar <b>substância tóxica</b> contra a lei (nuclear: + 1/6 a 1/3)</td><td class="r">R 1 a 4</td></tr>
+      <tr><td class="r">60</td><td>Fazer funcionar estabelecimento <b>poluidor sem licença</b></td><td class="r">D 1 a 6 m</td></tr>
+      <tr><td class="r">61</td><td>Disseminar <b>doença ou praga</b></td><td class="r">R 1 a 4</td></tr>
+    </table>
+    <p class="s"><b>Art. 58</b> (poluição dolosa): + 1/6 a 1/3 se o dano for irreversível; + 1/3 até a metade se houver lesão grave; até o <b>dobro</b> se houver morte.</p>
+    <p class="trap">O art. 60 tem a <b>menor pena</b> entre os crimes dolosos da lei: detenção de 1 a 6 meses.</p>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Poluição e patrimônio</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 62 a 64</p>
+    <h2>Patrimônio cultural e urbano</h2>
+    <ul class="s">
+      <li><b>Art. 62:</b> destruir, inutilizar ou deteriorar <b>bem especialmente protegido</b> por lei, ato administrativo ou decisão judicial, ou arquivo, museu, biblioteca ou instalação científica protegida. <b>Reclusão de 1 a 3 anos</b> + multa; culposo: detenção de 6 meses a 1 ano.</li>
+      <li><b>Art. 63:</b> alterar o aspecto ou a estrutura de <b>edificação ou local protegido</b> (valor paisagístico, histórico, cultural etc.) sem autorização. <b>Reclusão de 1 a 3 anos</b> + multa.</li>
+      <li><b>Art. 64:</b> <b>construir</b> em solo não edificável, ou no seu entorno, sem autorização. <b>Detenção de 6 meses a 1 ano</b> + multa.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi b">
+  <header class="strip"><span>Poluição e patrimônio · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Art. 65</p>
+    <h2>Pichação e grafite</h2>
+    <p class="s"><b>Pichar</b> ou por outro meio conspurcar edificação ou monumento urbano.</p>
+    <p class="big">Detenção de 3 meses a 1 ano <span>+ multa</span></p>
+    <p class="s"><b>§ 1º:</b> em <b>monumento ou coisa tombada</b> por valor artístico, arqueológico ou histórico: detenção de <b>6 meses a 1 ano</b> + multa.</p>
+    <p class="s"><b>§ 2º:</b> <b>grafite não é crime</b> se feito para valorizar o patrimônio, <b>com consentimento</b> do proprietário (ou locatário) e, em bem público, com autorização do órgão competente.</p>
+    <p class="trap">Grafite <b>sem</b> autorização do dono volta a ser pichação.</p>
+  </div>
+</article>
+
+<div class="foot"><span>Crimes Ambientais · post-its PMPE 2026</span><span>folha 4 de 5</span></div>
+</section>
+
+<!-- =================== FOLHA 5 =================== -->
+<section class="sheet">
+
+<article class="pi o">
+  <header class="strip"><span>Administração ambiental</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 66 a 69-A</p>
+    <h2>Crimes contra a administração ambiental</h2>
+    <table>
+      <tr><td class="r">66</td><td><b>Funcionário</b> faz afirmação falsa ou omite dados em licenciamento</td><td class="r">R 1 a 3</td></tr>
+      <tr><td class="r">67</td><td><b>Funcionário</b> concede licença contra as normas (culposo: 3 m a 1)</td><td class="r">D 1 a 3</td></tr>
+      <tr><td class="r">68</td><td>Deixar de cumprir obrigação de relevante interesse ambiental</td><td class="r">D 1 a 3</td></tr>
+      <tr><td class="r">69</td><td><b>Obstar ou dificultar a fiscalização</b> ambiental</td><td class="r">D 1 a 3</td></tr>
+      <tr><td class="r">69-A</td><td>Estudo, laudo ou relatório ambiental <b>falso</b> (culposo: D 1 a 3; dano: + 1/3 a 2/3)</td><td class="r">R 3 a 6</td></tr>
+    </table>
+    <p class="trap">O art. 69-A tem a <b>maior pena</b> da lei: reclusão de 3 a 6 anos.</p>
+  </div>
+</article>
+
+<article class="pi o">
+  <header class="strip"><span>Administração ambiental</span><span class="num"></span></header>
+  <div class="body">
+    <p class="k">Arts. 70 a 76</p>
+    <h2>Infração administrativa</h2>
+    <ul class="s">
+      <li>Toda ação ou omissão que viole as regras de uso, gozo, promoção, proteção e recuperação do meio ambiente.</li>
+      <li>Lavram o auto: servidores de órgãos do <b>SISNAMA</b> designados para fiscalizar e agentes das <b>Capitanias dos Portos</b>.</li>
+      <li><b>Qualquer pessoa</b> pode representar. A autoridade que souber da infração deve apurá-la de imediato, sob pena de <b>corresponsabilidade</b>.</li>
+      <li>Prazos: <b>20</b> dias para defesa, <b>30</b> para julgar, <b>20</b> para recorrer, <b>5</b> para pagar a multa.</li>
+      <li>Multa de <b>R$ 50</b> a <b>R$ 50 milhões</b>.</li>
+    </ul>
+    <p class="tip">Prazos "20-30-20-5".</p>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão · abordagem</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Qual é o crime?</h2>
+    <table>
+      <tr><td>Caminhão com madeira sem licença para a viagem toda</td><td class="r">46, par. único</td></tr>
+      <tr><td>Sabiá na gaiola sem autorização</td><td class="r">29, § 1º, III</td></tr>
+      <tr><td>Pesca com rede no defeso</td><td class="r">34</td></tr>
+      <tr><td>Pesca com bomba</td><td class="r">35</td></tr>
+      <tr><td>Soltar balão</td><td class="r">42</td></tr>
+      <tr><td>Pichar o muro de uma casa</td><td class="r">65</td></tr>
+      <tr><td>Espancar um cachorro</td><td class="r">32, § 1º-A</td></tr>
+      <tr><td>Pôr fogo na mata</td><td class="r">41</td></tr>
+      <tr><td>Impedir a entrada da fiscalização</td><td class="r">69</td></tr>
+    </table>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão · STF/STJ</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Teses e súmulas</h2>
+    <ul class="s">
+      <li><b>STF, RE 548.181:</b> a PJ pode ser condenada sem a pessoa física.</li>
+      <li><b>Competência:</b> em regra, Justiça Estadual (a Súm. 91 STJ foi cancelada). Federal se houver interesse da União ou crime <b>transnacional</b> com animais silvestres ou ameaçados (STF, Tema 648).</li>
+      <li>Insignificância só em casos <b>excepcionais</b>, sem dano relevante.</li>
+      <li><b>Súm. 613 STJ:</b> não se aplica a teoria do <b>fato consumado</b> em direito ambiental.</li>
+      <li><b>Súm. 618 STJ:</b> cabe <b>inversão do ônus da prova</b> nas ações de degradação ambiental.</li>
+      <li><b>Súm. 623 STJ:</b> obrigações ambientais são <b>propter rem</b> (acompanham o imóvel).</li>
+      <li><b>Súm. 629 STJ:</b> pode-se cumular obrigação de fazer com indenização.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Números dos crimes ambientais</h2>
+    <div class="nums">
+      <div><b>3 anos</b>limite do sursis (no CP, 2)</div>
+      <div><b>menos de 4 anos</b>substituição por pena restritiva</div>
+      <div><b>5 / 3 anos</b>interdição temporária: doloso / culposo</div>
+      <div><b>10 anos</b>PJ proibida de contratar com o Poder Público</div>
+      <div><b>1 a 360</b>salários mínimos de prestação pecuniária</div>
+      <div><b>3 vezes</b>aumento da multa ineficaz</div>
+      <div><b>3 a 6 anos</b>laudo falso (69-A): a maior pena</div>
+      <div><b>1 a 6 meses</b>poluidor sem licença (60): a menor entre os dolosos</div>
+      <div><b>2 a 5 anos</b>maus-tratos a cão ou gato</div>
+      <div><b>1.000 ha</b>desmate em terra pública: + 1 ano por milhar</div>
+      <div><b>metade · triplo</b>caça à noite · caça profissional</div>
+      <div><b>20-30-20-5</b>prazos do processo administrativo</div>
+    </div>
+  </div>
+</article>
+
+<article class="pi l">
+  <header class="strip"><span>Revisão</span><span class="num"></span></header>
+  <div class="body">
+    <h2>Teste relâmpago: V ou F?</h2>
+    <ol class="vf">
+      <li>A pessoa jurídica só pode ser condenada junto com uma pessoa física.</li>
+      <li>No crime ambiental, o sursis cabe para pena de até 3 anos.</li>
+      <li>Maus-tratos a cão ou gato: reclusão de 2 a 5 anos.</li>
+      <li>A pesca proibida é punida pelo art. 29 (caça).</li>
+      <li>O animal silvestre apreendido vai, de preferência, para o zoológico.</li>
+      <li>Grafite com autorização do proprietário não é crime.</li>
+      <li>A ação penal nos crimes ambientais depende de representação.</li>
+      <li>Soltar balão só é crime se causar incêndio.</li>
+    </ol>
+    <p class="ans">Respostas: 1F · 2V · 3V · 4F · 5F · 6V · 7F · 8F</p>
+  </div>
+</article>
+
+<div class="foot"><span>Crimes Ambientais · post-its PMPE 2026</span><span>folha 5 de 5</span></div>
+</section>
+
+<script>
+(function(){
+  var b=document.getElementById('modo');
+  function set(eco){document.body.classList.toggle('eco',eco);b.textContent=eco?'Trocar para modo colorido':'Trocar para modo econômico';}
+  b.addEventListener('click',function(){set(!document.body.classList.contains('eco'));});
+  if(/[?&]eco\b/.test(location.search))set(true);
+})();
+</script>
+</body>
+</html>
