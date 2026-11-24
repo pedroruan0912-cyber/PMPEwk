@@ -56,6 +56,7 @@ ul,ol{margin:0;padding-left:3.5mm}
 li{margin:0 0 .55mm}
 li::marker{color:var(--acc)}
 ul.plain{list-style:none;padding-left:0}
+ul.plain li{padding-left:3.6mm;text-indent:-3.6mm}
 ol[type="I"]{padding-left:6.2mm}
 b{font-weight:750}
 .hl{background:var(--hl);padding:0 .5mm;border-radius:.5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
