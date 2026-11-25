@@ -5,7 +5,7 @@
   var KEY = 'dhpmpe.v1';
   var LET = 'ABCDE';
   var $ = function (id) { return document.getElementById(id); };
-  var SYS;
+  var SYS, DC = null;
 
   // ---------- estado salvo (só neste navegador) ----------
   var state = { a: {} };
@@ -298,6 +298,7 @@
   h += '<div class="nav-group">Revisão</div>';
   chapters.slice(16).forEach(function (c) { h += navLink(c.id, pad(c.num), c.short); });
   h += navLink('simulado', '▣', 'Simulado') + navLink('flashcards', '▤', 'Flashcards') + navLink('erros', '✕', 'Caderno de erros');
+  if (document.getElementById('constitucional')) h += '<div class="nav-group">Bloco III · outra disciplina</div>' + navLink('constitucional', '§', 'Direito Constitucional');
   nav.innerHTML = h;
 
   $('tocGrid').innerHTML = chapters.map(function (c) {
@@ -306,7 +307,7 @@
 
   var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
   var viewIds = views.map(function (v) { return v.id; });
-  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema' };
+  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema', constitucional: 'Direito Constitucional' };
 
   function show(id, push) {
     if (viewIds.indexOf(id) < 0) id = 'inicio';
@@ -320,6 +321,7 @@
     if (id === 'erros') renderErrors();
     if (id === 'flashcards') renderFC();
     if (id === 'sistema') SYS.render();
+    if (id === 'constitucional' && DC) DC.render();
     closeMenu();
     window.scrollTo(0, 0);
     if (push) { try { history.pushState(null, '', '#' + id); } catch (e) {} }
@@ -370,7 +372,7 @@
         el.textContent = el.classList.contains('s') ? (s.total + ' questões · ' + s.answered + ' feitas') : (s.answered + '/' + s.total);
       });
     });
-    var errs = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; }).length;
+    var errs = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; }).length + (DC ? DC.errCount() : 0);
     var pe = document.querySelector('[data-p="erros"]');
     if (pe) pe.textContent = errs ? String(errs) : '';
   }
@@ -380,6 +382,7 @@
   $('resetYes').addEventListener('click', function () {
     state = { a: {}, vf: {} }; save(); refreshProgress(); SYS.reset(); $('resetConfirm').hidden = true;
     chapters.forEach(function (c) { if (c.renderVF) c.renderVF(); });
+    if (DC) DC.reset();
   });
 
   // ---------- caderno de erros ----------
@@ -387,11 +390,19 @@
     var box = $('errList');
     box.innerHTML = '';
     var list = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; });
-    if (!list.length) {
+    var nDC = DC ? DC.errCount() : 0;
+    if (!list.length && !nDC) {
       box.innerHTML = '<p class="empty">Nenhum erro registrado. Resolva questões nos capítulos ou faça um simulado.</p>';
       return;
     }
+    if (list.length && nDC) {
+      var hd = document.createElement('h2');
+      hd.className = 'dc-err-h';
+      hd.textContent = 'Direitos Humanos e Legislação Extravagante (' + list.length + ')';
+      box.appendChild(hd);
+    }
     list.forEach(function (q) { box.appendChild(qCard(q, { fresh: true, label: 'Cap. ' + capById[q.c].num + ' · Questão ' + q.n })); });
+    if (nDC) DC.renderErrors(box, list.length > 0);
   }
 
   // ---------- simulado ----------
@@ -500,7 +511,7 @@
       reveal(art, q, sim.ans[q.id], { mode: 'exam' });
     });
     var pct = Math.round(right / sim.list.length * 100);
-    var pmpeNote = sim.pmpe ? '<p class="score-note">Na prova, estas 10 questões somam com as 10 de Direito Constitucional no Bloco III: são exigidos ao menos 6 acertos em 20 no bloco, sem zerar a disciplina. ' + (right >= 6 ? 'Com ' + right + ' acertos aqui, você já cobriria sozinho o mínimo do bloco.' : right >= 1 ? 'Com ' + right + ' acerto(s), você não zera a disciplina, mas precisaria completar o bloco com Constitucional.' : 'Zerar a disciplina elimina: revise a teoria antes do próximo simulado.') + '</p>' : '';
+    var pmpeNote = sim.pmpe ? '<p class="score-note">Na prova, estas 10 questões somam com as 10 de Direito Constitucional no Bloco III: são exigidos ao menos 6 acertos em 20 no bloco, sem zerar a disciplina. ' + (right >= 6 ? 'Com ' + right + ' acertos aqui, você já cobriria sozinho o mínimo do bloco.' : right >= 1 ? 'Com ' + right + ' acerto(s), você não zera a disciplina, mas precisaria completar o bloco com Constitucional.' : 'Zerar a disciplina elimina: revise a teoria antes do próximo simulado.') + (document.getElementById('constitucional') ? ' Para treinar o bloco inteiro, faça o <a href="#constitucional">simulado do Bloco III completo</a>.' : '') + '</p>' : '';
     var note = pct >= 80 ? 'Nível de aprovação. Revise só os erros.' : pct >= 60 ? 'Bom caminho. Volte à teoria dos capítulos com menor aproveitamento.' : 'Volte à teoria e aos quadros de pegadinhas antes do próximo simulado.';
     var rows = Object.keys(byCap).sort(function (a, b) { return capById[a].num - capById[b].num; }).map(function (k) {
       var c = capById[k], s = byCap[k];
@@ -564,6 +575,14 @@
     $: $, QS: QS, chapters: chapters, capById: capById, pad: pad, stats: stats, qsOf: qsOf,
     state: function () { return state; }, save: save, startBoss: startBoss, startPen: startPen
   });
+
+  // ---------- Direito Constitucional (outra disciplina do Bloco III) ----------
+  if (window.initDC && document.getElementById('constitucional')) {
+    DC = window.initDC({
+      $: $, pad: pad, shuffle: shuffle, QS: QS, capById: capById, sys: SYS, save: save,
+      state: function () { return state; }, refresh: refreshProgress, qCard: qCard, reveal: reveal
+    });
+  }
 
   // ---------- início ----------
   refreshProgress();
