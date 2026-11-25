@@ -16,6 +16,13 @@ window.BANCOS_CFG = [
     lede: '140 questões de raciocínio sobre os 8 itens do edital, da colonização à Pernambuco atual, em cinco formatos, com gabarito comentado. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
     grpLabel: 'Itens do edital', grpCol: 'Item do edital', bloco: false,
     provaNote: 'Na prova, estas 10 questões somam com as 10 de Língua Portuguesa no Bloco I, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
+  },
+  {
+    key: 'inf', sec: 'informatica', nav: 'Informática', data: 'INF',
+    kicker: 'Bloco II · 10 questões na prova de Soldado', title: 'Informática',
+    lede: '130 questões de raciocínio sobre os 7 itens do edital (internet e intranet, navegadores e nuvem, segurança, backup, arquivos e hardware, Windows 11 e Prompt de Comando, Office 2019 e LibreOffice 7), em cinco formatos, com gabarito comentado. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
+    grpLabel: 'Itens do edital', grpCol: 'Item do edital', bloco: false,
+    provaNote: 'Na prova, estas 10 questões somam com as 10 de Raciocínio Lógico no Bloco II, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
   }
 ];
 
