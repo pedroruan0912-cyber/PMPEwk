@@ -4,6 +4,7 @@
 Fontes únicas (edite o .md, nunca o .js gerado):
   direito-constitucional/questoes-direito-constitucional-pmpe-2026.md  -> ebook/src/dc-data.js
   direitos-humanos-legislacao/questoes-lei-maria-da-penha.md          -> ebook/src/q-lmp.js (capítulo 9)
+  historia-pernambuco/questoes-historia-de-pernambuco.md              -> ebook/src/hpe-data.js
 
 Uso: python3 ebook/gen-bancos.py   (o build.sh chama este script quando há python3)
 """
@@ -59,6 +60,36 @@ DC_RULES = [
     (r'^Funções Essenciais', 'fe'),
     (r'.', 'di'),
 ]
+
+
+# grupos de História de Pernambuco: os 8 itens do edital; vale a primeira regra que casar
+HPE_GROUPS = [
+    ('h1', 'Ocupação e colonização'),
+    ('h2', 'O açúcar na economia'),
+    ('h3', 'Olinda e Recife'),
+    ('h4', 'Holandeses e Nassau'),
+    ('h5', 'Resistência e movimentos emancipacionistas'),
+    ('h6', 'Fim do Império e República'),
+    ('h7', 'Cultura popular'),
+    ('h8', 'Aspectos afro-brasileiros'),
+]
+HPE_RULES = [
+    (r'Xangô|Herança afro|Irmandades negras|Abolicionismo|Clube do Cupim|Maracatu e irmandades', 'h8'),
+    (r'Frevo|frevo|Maracatu|Festas|Ciclo junino|Nova Jerusalém|Culinária|Doçaria|Bolo de rolo|Matriz indígena|Movimentos culturais|Freyre', 'h7'),
+    (r'Nassau|Calabar|holandes|[Ii]nvasão|Tolerância|Reativar', 'h4'),
+    (r'Insurreição|Guararapes|Brancos, negros|Palmares|Zumbi|Quilombos|Mascates|1817|Beberibe|Confederação|Frei Caneca|Comarca|Cabanos|Praieira|Manifesto ao Mundo|Conspirações|1824|PMPE|[Pp]unição|mapa de Pernambuco|território de Pernambuco', 'h5'),
+    (r'Olinda|Recife', 'h3'),
+    (r'Contatos|Capitanias|donatário|[Cc]oloniza|Povos indígenas|Duarte Coelho', 'h1'),
+    (r'cana|[Aa]çúcar|engenho|Depois', 'h2'),
+    (r'.', 'h6'),
+]
+
+
+def group_by(rules, topic):
+    for pat, g in rules:
+        if re.search(pat, topic):
+            return g
+    return rules[-1][1]
 
 
 def dc_group(topic):
@@ -221,6 +252,23 @@ def gen_chapter_bank(src, chapter, out_name):
     print('ok: %s (%d questões no %s)' % (out.relative_to(ROOT), len(items), chapter))
 
 
+def gen_section_bank(src, prefix, groups, rules, out_name):
+    """Banco de uma seção própria do e-book (como Direito Constitucional), com grupos do edital."""
+    data = parse(ROOT / src)
+    for q in data:
+        q['g'] = group_by(rules, q['t'])
+    out = ROOT / 'ebook' / 'src' / out_name
+    out.write_text(header(src) +
+                   'window.%s_GROUPS = ' % prefix + json.dumps([{'id': g, 'n': name} for g, name in groups], ensure_ascii=False) + ';\n'
+                   'window.%s_QS = ' % prefix + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    counts = {}
+    for q in data:
+        counts[q['g']] = counts.get(q['g'], 0) + 1
+    print('ok: %s (%d questões; por item: %s)' % (out.relative_to(ROOT), len(data),
+          ', '.join('%s %d' % (g, counts.get(g, 0)) for g, _ in groups)))
+
+
 if __name__ == '__main__':
     gen_dc()
+    gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
