@@ -185,3 +185,11 @@ Tipos de tela (`tela.tipo`): `capa`, `secao`, `janela` (janela do programa com u
 **Abrir:** `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`
 
 Também disponíveis de forma interativa no e-book de Direitos Humanos (seção "Direito Constitucional"). 165 questões de alto nível cognitivo (Bloom: aplicar, analisar e avaliar), organizadas pelo conteúdo programático de Direito Constitucional do Anexo II do Edital nº 001/2026 (10 questões no Bloco III). São cinco formatos, com 33 questões cada: cenário inédito (1–33), asserção e razão (34–66), múltipla escolha complexa (67–99), certo ou errado (100–132) e melhor alternativa (133–165). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Lei Maria da Penha (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`
+
+35 questões de alto nível cognitivo sobre a Lei 11.340/2006, com as alterações até a Lei 14.994/2024 e a jurisprudência do STF e do STJ (art. 12-C, art. 24-A, art. 40-A, Tema 1.249 e Súmulas 536, 542, 588, 589 e 600). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
