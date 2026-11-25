@@ -4,6 +4,7 @@
 Fontes únicas (edite o .md, nunca o .js gerado):
   direito-constitucional/questoes-direito-constitucional-pmpe-2026.md  -> ebook/src/dc-data.js
   direitos-humanos-legislacao/questoes-lei-maria-da-penha.md          -> ebook/src/q-lmp.js (capítulo 9)
+  direitos-humanos-legislacao/questoes-crimes-hediondos.md            -> ebook/src/q-hed.js (capítulo 12)
   historia-pernambuco/questoes-historia-de-pernambuco.md              -> ebook/src/hpe-data.js
 
 Uso: python3 ebook/gen-bancos.py   (o build.sh chama este script quando há python3)
@@ -272,3 +273,4 @@ if __name__ == '__main__':
     gen_dc()
     gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
+    gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-hediondos.md', 'c12', 'q-hed.js')
