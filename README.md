@@ -209,3 +209,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `direitos-humanos-legislacao/questoes-crimes-hediondos.md`. Também estão no e-book de Direitos Humanos, no capítulo 12 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 15 questões de alto nível cognitivo sobre a Lei 8.072/1990, com o Pacote Anticrime, as Leis 14.811/2024, 14.843/2024 e 14.994/2024, o art. 112 da LEP e a jurisprudência do STF e do STJ (rol taxativo, roubo e lesão contra agentes de segurança, liberdade provisória, tráfico privilegiado, progressão, livramento e saída temporária). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Lei de Drogas (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-de-drogas.md`
+
+35 questões de alto nível cognitivo sobre a Lei 11.343/2006, com o Pacote Anticrime e a jurisprudência do STF e do STJ, inclusive o RE 635.659 (porte de maconha para consumo): usuário × traficante, uso compartilhado, tráfico privilegiado, agente disfarçado, majorantes, associação, procedimento, técnicas de investigação e bens apreendidos. São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
