@@ -212,6 +212,14 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 
 ---
 
+# Banco de questões – Crimes de Preconceito de Raça ou de Cor (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-de-preconceito.md`.
+
+15 questões de alto nível cognitivo sobre a Lei 7.716/1989, com as mudanças da Lei 14.532/2023, o art. 140, §3º, do Código Penal e a jurisprudência do STF (injúria racial × racismo × injúria religiosa, ação penal e fiança no flagrante, funcionário público, imprescritibilidade e anistia, art. 20 e seus parágrafos, racismo recreativo, caso Ellwanger, homotransfobia e perfilamento racial). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
 # Banco de questões – Lei de Drogas (Soldado PMPE 2026 · Instituto AOCP)
 
 **Abrir:** `direitos-humanos-legislacao/questoes-lei-de-drogas.md`. Também estão no e-book de Direitos Humanos, no capítulo 13 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
