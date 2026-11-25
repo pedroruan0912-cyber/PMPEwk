@@ -597,7 +597,7 @@
     state: function () { return state; }, save: save, startBoss: startBoss, startPen: startPen
   });
 
-  // ---------- outras disciplinas (Direito Constitucional, História de Pernambuco) ----------
+  // ---------- outras disciplinas (Direito Constitucional, História de Pernambuco, Informática) ----------
   if (window.initBanco) {
     BANCOS = BCFG.map(function (c) {
       return window.initBanco({

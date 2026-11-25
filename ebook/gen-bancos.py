@@ -8,6 +8,7 @@ Fontes únicas (edite o .md, nunca o .js gerado):
   direitos-humanos-legislacao/questoes-crimes-hediondos.md            -> ebook/src/q-hed.js (capítulo 12)
   direitos-humanos-legislacao/questoes-lei-de-drogas.md               -> ebook/src/q-drg.js (capítulo 13)
   historia-pernambuco/questoes-historia-de-pernambuco.md              -> ebook/src/hpe-data.js
+  informatica/questoes-informatica-pmpe-2026.md                       -> ebook/src/inf-data.js
 
 Uso: python3 ebook/gen-bancos.py   (o build.sh chama este script quando há python3)
 """
@@ -86,6 +87,28 @@ HPE_RULES = [
     (r'cana|[Aa]çúcar|engenho|Depois', 'h2'),
     (r'.', 'h6'),
 ]
+
+
+# grupos de Informática: os 7 itens do edital. Dentro de cada formato (26 questões),
+# as questões seguem a ordem dos itens: 2, 4, 5, 3, 4, 4 e 4 questões.
+INF_GROUPS = [
+    ('i1', 'Internet e intranet'),
+    ('i2', 'Navegadores, serviços e nuvem'),
+    ('i3', 'Segurança da informação'),
+    ('i4', 'Armazenamento e backup'),
+    ('i5', 'Arquivos, pastas e hardware'),
+    ('i6', 'Windows 11 e Prompt de Comando'),
+    ('i7', 'Office 2019 e LibreOffice 7'),
+]
+INF_SIZES = [2, 4, 5, 3, 4, 4, 4]
+
+
+def inf_group(q):
+    pos = (q['n'] - 1) % sum(INF_SIZES)
+    for (g, _), size in zip(INF_GROUPS, INF_SIZES):
+        if pos < size:
+            return g
+        pos -= size
 
 
 def group_by(rules, topic):
@@ -259,7 +282,7 @@ def gen_section_bank(src, prefix, groups, rules, out_name):
     """Banco de uma seção própria do e-book (como Direito Constitucional), com grupos do edital."""
     data = parse(ROOT / src)
     for q in data:
-        q['g'] = group_by(rules, q['t'])
+        q['g'] = rules(q) if callable(rules) else group_by(rules, q['t'])
     out = ROOT / 'ebook' / 'src' / out_name
     out.write_text(header(src) +
                    'window.%s_GROUPS = ' % prefix + json.dumps([{'id': g, 'n': name} for g, name in groups], ensure_ascii=False) + ';\n'
@@ -274,6 +297,7 @@ def gen_section_bank(src, prefix, groups, rules, out_name):
 if __name__ == '__main__':
     gen_dc()
     gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
+    gen_section_bank('informatica/questoes-informatica-pmpe-2026.md', 'INF', INF_GROUPS, inf_group, 'inf-data.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-de-preconceito.md', 'c10', 'q-pre.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-hediondos.md', 'c12', 'q-hed.js')
