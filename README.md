@@ -225,3 +225,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `direitos-humanos-legislacao/questoes-lei-de-drogas.md`. Também estão no e-book de Direitos Humanos, no capítulo 13 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 35 questões de alto nível cognitivo sobre a Lei 11.343/2006, com o Pacote Anticrime e a jurisprudência do STF e do STJ, inclusive o RE 635.659 (porte de maconha para consumo): usuário × traficante, uso compartilhado, tráfico privilegiado, agente disfarçado, majorantes, associação, procedimento, técnicas de investigação e bens apreendidos. São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Informática (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `informatica/questoes-informatica-pmpe-2026.md`.
+
+130 questões de alto nível cognitivo sobre os sete itens de Informática do Edital nº 001/2026 (10 questões no Bloco II): internet e intranet; navegadores, serviços de internet e nuvem; segurança da informação (malwares, golpes, criptografia, autenticação); armazenamento e backup; arquivos, pastas e hardware; Windows 11 e Prompt de Comando; Word, Excel e PowerPoint 2019 e Writer, Calc e Impress do LibreOffice 7. São cinco formatos, com 26 questões cada: cenário inédito (1–26), asserção e razão (27–52), múltipla escolha complexa (53–78), certo ou errado (79–104) e melhor alternativa (105–130). Uma tabela no início indica as questões de cada item do edital. Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
