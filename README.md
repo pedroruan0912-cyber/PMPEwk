@@ -28,7 +28,7 @@ E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; ta
 
 Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com o formato da prova (10 questões de Direitos Humanos e Legislação Extravagante no Bloco III) e o mapa dos 18 itens do conteúdo programático; em cada capítulo, um quadro "Na prova da AOCP" (o que o edital pede, como a banca cobra, pares para o "relacione as colunas" e foco) e um treino de verdadeiro ou falso (138 afirmações no total); filtro de banca nas questões com AOCP como padrão; e simulado no formato da prova (10 questões AOCP, uma por capítulo sorteado).
 
-Recursos: 846 questões comentadas (312 no estilo Instituto AOCP, 236 FCC, 248 Vunesp e 50 de raciocínio: 35 sobre a Lei Maria da Penha, no capítulo 9, e 15 sobre Crimes Hediondos, no capítulo 12), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 881 questões comentadas (312 no estilo Instituto AOCP, 236 FCC, 248 Vunesp e 85 de raciocínio: 35 sobre a Lei Maria da Penha, no capítulo 9, 15 sobre Crimes Hediondos, no capítulo 12, e 35 sobre a Lei de Drogas, no capítulo 13), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
 
@@ -42,7 +42,7 @@ Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11
 ./ebook/build.sh
 ```
 
-As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` (de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`), `ebook/src/hpe-data.js` (de `historia-pernambuco/questoes-historia-de-pernambuco.md`) `ebook/src/q-lmp.js` (de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`) e `ebook/src/q-hed.js` (de `direitos-humanos-legislacao/questoes-crimes-hediondos.md`). As seções de outras disciplinas ficam em `ebook/src/bancos.html` e são montadas por `ebook/src/banco.js`, que descreve cada uma em `BANCOS_CFG`; as questões de Maria da Penha (capítulo 9) e de Crimes Hediondos (capítulo 12) entram com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
+As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` (de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`), `ebook/src/hpe-data.js` (de `historia-pernambuco/questoes-historia-de-pernambuco.md`) `ebook/src/q-lmp.js` (de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`), `ebook/src/q-hed.js` (de `direitos-humanos-legislacao/questoes-crimes-hediondos.md`) e `ebook/src/q-drg.js` (de `direitos-humanos-legislacao/questoes-lei-de-drogas.md`). As seções de outras disciplinas ficam em `ebook/src/bancos.html` e são montadas por `ebook/src/banco.js`, que descreve cada uma em `BANCOS_CFG`; as questões de Maria da Penha (capítulo 9), Crimes Hediondos (capítulo 12) e Lei de Drogas (capítulo 13) entram com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
 
 Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
@@ -209,3 +209,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `direitos-humanos-legislacao/questoes-crimes-hediondos.md`. Também estão no e-book de Direitos Humanos, no capítulo 12 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 15 questões de alto nível cognitivo sobre a Lei 8.072/1990, com o Pacote Anticrime, as Leis 14.811/2024, 14.843/2024 e 14.994/2024, o art. 112 da LEP e a jurisprudência do STF e do STJ (rol taxativo, roubo e lesão contra agentes de segurança, liberdade provisória, tráfico privilegiado, progressão, livramento e saída temporária). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Lei de Drogas (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-de-drogas.md`. Também estão no e-book de Direitos Humanos, no capítulo 13 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+35 questões de alto nível cognitivo sobre a Lei 11.343/2006, com o Pacote Anticrime e a jurisprudência do STF e do STJ, inclusive o RE 635.659 (porte de maconha para consumo): usuário × traficante, uso compartilhado, tráfico privilegiado, agente disfarçado, majorantes, associação, procedimento, técnicas de investigação e bens apreendidos. São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
