@@ -193,3 +193,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. Também estão no e-book de Direitos Humanos, no capítulo 9 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 35 questões de alto nível cognitivo sobre a Lei 11.340/2006, com as alterações até a Lei 14.994/2024 e a jurisprudência do STF e do STJ (art. 12-C, art. 24-A, art. 40-A, Tema 1.249 e Súmulas 536, 542, 588, 589 e 600). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – História de Pernambuco (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `historia-pernambuco/questoes-historia-de-pernambuco.md`
+
+140 questões de alto nível cognitivo sobre os oito itens de História de Pernambuco do Edital nº 001/2026 (10 questões no Bloco I), da colonização à Pernambuco atual, passando pelo açúcar, Olinda e Recife, os holandeses, os movimentos de resistência e emancipacionistas, a República, a cultura popular e a herança afro-brasileira. Os fatos seguem o desenho animado de História deste repositório. São cinco formatos, com 28 questões cada: cenário inédito (1–28), asserção e razão (29–56), múltipla escolha complexa (57–84), certo ou errado (85–112) e melhor alternativa (113–140). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
