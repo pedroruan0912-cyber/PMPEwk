@@ -30,13 +30,19 @@ Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com
 
 Recursos: 796 questões comentadas (312 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
+Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
+
+**Direito Constitucional (a outra disciplina do Bloco III):** a seção "Direito Constitucional" traz as 165 questões do banco `direito-constitucional/` em três abas. **Simulados:** formato da prova (10 questões de cinco alternativas, uma por tema sorteado), **Bloco III completo** (10 de Constitucional + 10 de Direitos Humanos AOCP, com a regra de corte do edital: 6 acertos em 20 e nenhuma disciplina zerada) e simulado montado por formato, tema, quantidade e filtro. **Treino:** correção na hora, com filtro por formato, tema e situação. **Desempenho:** acerto por tema e por formato. As respostas rendem XP no Sistema, os erros entram no caderno de erros, e o gabarito comentado aparece em cada questão.
+
 ## Editar e gerar de novo
 
-Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11.js`, sendo `q7.js` a `q11.js` as do estilo AOCP, flashcards em `flash.js`, quadros AOCP e treino V/F em `aocp.js`, lógica em `99-app.js`). Depois de editar:
+Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11.js`, sendo `q7.js` a `q11.js` as do estilo AOCP, flashcards em `flash.js`, o Sistema em `sys.js`, quadros AOCP e treino V/F em `aocp.js`, lógica em `99-app.js`). Depois de editar:
 
 ```bash
 ./ebook/build.sh
 ```
+
+As questões de Direito Constitucional não são editadas no JavaScript: a fonte é `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`. O `build.sh` roda `ebook/gen-dc.py` (quando há `python3`), que gera `ebook/src/dc-data.js`; a tela fica em `ebook/src/dc.html` e a lógica em `ebook/src/dc.js`.
 
 Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
@@ -65,6 +71,8 @@ Método para a redação de Soldado PMPE (Edital 001/2026, banca Instituto AOCP)
 13. Plano de treino de 4 semanas e checklist do dia da prova
 
 Exercícios: teses, fuga ao tema, conectivos e gramática. Progresso, rascunhos e respostas ficam salvos no navegador.
+
+Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
 
 ## Editar e gerar de novo
 
@@ -169,3 +177,11 @@ node --test 'videoaulas/test/*.test.mjs'
 ```
 
 Tipos de tela (`tela.tipo`): `capa`, `secao`, `janela` (janela do programa com uma guia ou menu aberto), `planilha`, `teclas` (atalhos das duas suítes lado a lado), `compara`, `lista`, `pegadinha` e `questao`. Se um texto não couber na tela, a geração para e diz a aula e a cena. Pronúncias especiais (nomes em inglês, siglas, teclas) ficam em `videoaulas/src/pronuncia.mjs`; quando a fala escrita não serve para a voz, a cena pode trazer um terceiro texto só para o áudio.
+
+---
+
+# Banco de questões – Direito Constitucional (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`
+
+Também disponíveis de forma interativa no e-book de Direitos Humanos (seção "Direito Constitucional"). 165 questões de alto nível cognitivo (Bloom: aplicar, analisar e avaliar), organizadas pelo conteúdo programático de Direito Constitucional do Anexo II do Edital nº 001/2026 (10 questões no Bloco III). São cinco formatos, com 33 questões cada: cenário inédito (1–33), asserção e razão (34–66), múltipla escolha complexa (67–99), certo ou errado (100–132) e melhor alternativa (133–165). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.

@@ -1,0 +1,70 @@
+
+<!-- ======================= DIREITO CONSTITUCIONAL ======================= -->
+<section class="view" id="constitucional" hidden>
+<header class="ch-head">
+  <span class="ch-kicker">Bloco III · 10 questões na prova de Soldado</span>
+  <h1>Direito Constitucional</h1>
+  <p class="lede">165 questões de raciocínio sobre o conteúdo do edital, em cinco formatos, com gabarito comentado: o raciocínio passo a passo e o erro de cada alternativa. No treino, a correção aparece na hora; nos simulados, só quando você entrega.</p>
+</header>
+<div class="stats" id="dcStats"></div>
+<div class="ch-tabs" role="tablist" id="dcTabs">
+  <button class="ch-tab" role="tab" aria-selected="true" data-t="sim" type="button">Simulados</button>
+  <button class="ch-tab" role="tab" aria-selected="false" data-t="tre" type="button">Treino</button>
+  <button class="ch-tab" role="tab" aria-selected="false" data-t="des" type="button">Desempenho</button>
+</div>
+
+<div id="dcSim">
+  <div class="dc-modes">
+    <div class="panel">
+      <h3>Formato da prova</h3>
+      <p class="q-exp">10 questões de cinco alternativas, cada uma de um tema sorteado do edital, misturando cenário, asserção e razão, múltipla escolha complexa e melhor alternativa.</p>
+      <div class="q-actions"><button class="btn" id="dcProva" type="button">Iniciar 10 questões</button></div>
+    </div>
+    <div class="panel dc-bloco">
+      <h3>Bloco III completo</h3>
+      <p class="q-exp">20 questões, como no bloco da prova: 10 de Direito Constitucional e 10 de Direitos Humanos e Legislação Extravagante (estilo AOCP). No fim, você vê se passaria no corte do bloco.</p>
+      <div class="q-actions"><button class="btn" id="dcBloco" type="button">Iniciar 20 questões</button></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Montar simulado</h3>
+    <div class="field"><label>Formatos</label></div>
+    <div class="cap-checks" id="dcFmts"></div>
+    <div class="field"><label>Temas do edital</label></div>
+    <div class="cap-checks" id="dcGrps"></div>
+    <div class="form-row">
+      <button class="small-btn" id="dcAll" type="button">Marcar todos os temas</button>
+      <button class="small-btn" id="dcNone" type="button">Desmarcar todos</button>
+    </div>
+    <div class="form-row">
+      <div class="field"><label for="dcQtd">Questões</label>
+        <select id="dcQtd"><option>10</option><option selected>20</option><option>33</option><option>50</option><option value="999">Todas</option></select></div>
+      <div class="field"><label for="dcOnly">Filtro</label>
+        <select id="dcOnly"><option value="all">Todas as questões</option><option value="new">Só as não respondidas</option><option value="wrong">Só as que errei</option></select></div>
+      <button class="btn" id="dcStart" type="button">Iniciar simulado</button>
+    </div>
+    <p id="dcMsg" class="q-exp" hidden></p>
+  </div>
+  <details class="deep">
+    <summary>Como funciona cada formato</summary>
+    <div>
+      <ol class="dc-fmt-help">
+        <li><b>Cenário inédito:</b> um caso prático pede o diagnóstico, a consequência ou a decisão correta.</li>
+        <li><b>Asserção e razão:</b> julgue a asserção I, depois a II e, se as duas forem verdadeiras, se a II é a causa jurídica da I.</li>
+        <li><b>Múltipla escolha complexa:</b> julgue cada item sozinho e elimine as alternativas que contêm um item falso.</li>
+        <li><b>Certo ou errado:</b> uma assertiva densa testa o limite de uma regra ou de uma exceção.</li>
+        <li><b>Melhor alternativa:</b> mais de uma opção pode ser verdadeira em tese; só uma cumpre a restrição em negrito.</li>
+      </ol>
+    </div>
+  </details>
+</div>
+
+<div id="dcTre" hidden></div>
+<div id="dcDes" hidden></div>
+
+<div id="dcRun" hidden>
+  <div class="sim-sticky"><span id="dcCount">0/0 respondidas</span><span id="dcTime">00:00</span><span class="grow"></span><button class="small-btn" id="dcQuit" type="button">Cancelar</button><button class="btn" id="dcEnd" type="button">Entregar</button></div>
+  <div id="dcResult" hidden></div>
+  <div id="dcList"></div>
+</div>
+</section>
