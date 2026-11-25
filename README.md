@@ -201,3 +201,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `historia-pernambuco/questoes-historia-de-pernambuco.md`. Também estão no e-book de Direitos Humanos, na seção "História de Pernambuco", com treino, simulado de 10 questões e desempenho por item do edital.
 
 140 questões de alto nível cognitivo sobre os oito itens de História de Pernambuco do Edital nº 001/2026 (10 questões no Bloco I), da colonização à Pernambuco atual, passando pelo açúcar, Olinda e Recife, os holandeses, os movimentos de resistência e emancipacionistas, a República, a cultura popular e a herança afro-brasileira. Os fatos seguem o desenho animado de História deste repositório. São cinco formatos, com 28 questões cada: cenário inédito (1–28), asserção e razão (29–56), múltipla escolha complexa (57–84), certo ou errado (85–112) e melhor alternativa (113–140). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Crimes Hediondos (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-hediondos.md`
+
+15 questões de alto nível cognitivo sobre a Lei 8.072/1990, com o Pacote Anticrime, as Leis 14.811/2024, 14.843/2024 e 14.994/2024, o art. 112 da LEP e a jurisprudência do STF e do STJ (rol taxativo, roubo e lesão contra agentes de segurança, liberdade provisória, tráfico privilegiado, progressão, livramento e saída temporária). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
