@@ -212,6 +212,14 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 
 ---
 
+# Banco de questões – Lei de Tortura (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-de-tortura.md`.
+
+15 questões de alto nível cognitivo sobre a Lei 9.455/1997, com a Constituição, a Lei 8.072/1990, o art. 136 do Código Penal e a jurisprudência do STJ (espécies de tortura, tortura-castigo × maus-tratos, omissão de quem devia evitar ou apurar, resultado morte × homicídio qualificado, causas de aumento, prescrição, indulto, tortura do preso sem violência, perda do cargo e extraterritorialidade). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
 # Banco de questões – Crimes de Preconceito de Raça ou de Cor (Soldado PMPE 2026 · Instituto AOCP)
 
 **Abrir:** `direitos-humanos-legislacao/questoes-crimes-de-preconceito.md`. Também estão no e-book de Direitos Humanos, no capítulo 10 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
