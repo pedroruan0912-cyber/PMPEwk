@@ -32,7 +32,7 @@ Recursos: 831 questões comentadas (312 no estilo Instituto AOCP, 236 FCC, 248 V
 
 Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
 
-**Direito Constitucional (a outra disciplina do Bloco III):** a seção "Direito Constitucional" traz as 165 questões do banco `direito-constitucional/` em três abas. **Simulados:** formato da prova (10 questões de cinco alternativas, uma por tema sorteado), **Bloco III completo** (10 de Constitucional + 10 de Direitos Humanos AOCP, com a regra de corte do edital: 6 acertos em 20 e nenhuma disciplina zerada) e simulado montado por formato, tema, quantidade e filtro. **Treino:** correção na hora, com filtro por formato, tema e situação. **Desempenho:** acerto por tema e por formato. As respostas rendem XP no Sistema, os erros entram no caderno de erros, e o gabarito comentado aparece em cada questão.
+**Outras disciplinas:** as seções "Direito Constitucional" (165 questões, Bloco III) e "História de Pernambuco" (140 questões, Bloco I) trazem os bancos `direito-constitucional/` e `historia-pernambuco/` em três abas. **Simulados:** formato da prova (10 questões de cinco alternativas, sorteadas entre os temas ou itens do edital), **Bloco III completo**, só em Constitucional (10 de Constitucional + 10 de Direitos Humanos AOCP, com a regra de corte do edital: 6 acertos em 20 e nenhuma disciplina zerada), e simulado montado por formato, tema, quantidade e filtro. **Treino:** correção na hora, com filtro por formato, tema e situação. **Desempenho:** acerto por tema (ou item do edital) e por formato. As respostas rendem XP no Sistema, os erros entram no caderno de erros, e o gabarito comentado aparece em cada questão.
 
 ## Editar e gerar de novo
 
@@ -42,7 +42,7 @@ Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11
 ./ebook/build.sh
 ```
 
-As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` a partir de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md` e `ebook/src/q-lmp.js` a partir de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. A tela de Direito Constitucional fica em `ebook/src/dc.html` e a lógica em `ebook/src/dc.js`; as questões de Maria da Penha entram no capítulo 9 com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
+As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` (de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`), `ebook/src/hpe-data.js` (de `historia-pernambuco/questoes-historia-de-pernambuco.md`) e `ebook/src/q-lmp.js` (de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`). As seções de outras disciplinas ficam em `ebook/src/bancos.html` e são montadas por `ebook/src/banco.js`, que descreve cada uma em `BANCOS_CFG`; as questões de Maria da Penha entram no capítulo 9 com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
 
 Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
@@ -193,3 +193,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. Também estão no e-book de Direitos Humanos, no capítulo 9 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 35 questões de alto nível cognitivo sobre a Lei 11.340/2006, com as alterações até a Lei 14.994/2024 e a jurisprudência do STF e do STJ (art. 12-C, art. 24-A, art. 40-A, Tema 1.249 e Súmulas 536, 542, 588, 589 e 600). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – História de Pernambuco (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `historia-pernambuco/questoes-historia-de-pernambuco.md`. Também estão no e-book de Direitos Humanos, na seção "História de Pernambuco", com treino, simulado de 10 questões e desempenho por item do edital.
+
+140 questões de alto nível cognitivo sobre os oito itens de História de Pernambuco do Edital nº 001/2026 (10 questões no Bloco I), da colonização à Pernambuco atual, passando pelo açúcar, Olinda e Recife, os holandeses, os movimentos de resistência e emancipacionistas, a República, a cultura popular e a herança afro-brasileira. Os fatos seguem o desenho animado de História deste repositório. São cinco formatos, com 28 questões cada: cenário inédito (1–28), asserção e razão (29–56), múltipla escolha complexa (57–84), certo ou errado (85–112) e melhor alternativa (113–140). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
