@@ -78,3 +78,11 @@ Os fontes ficam em `ebook/redacao-src/` (capítulos em HTML; dados em `modelos.j
 ```
 
 Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; mantenha 4-6-6-4. Marcações: `{t}tese{/}`, `{r}repertório{/}`, `{p}proposta{/}`; conectivos são destacados automaticamente.
+
+---
+
+# Banco de questões – Direito Constitucional (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`
+
+165 questões de alto nível cognitivo (Bloom: aplicar, analisar e avaliar), organizadas pelo conteúdo programático de Direito Constitucional do Anexo II do Edital nº 001/2026 (10 questões no Bloco III). São cinco formatos, com 33 questões cada: cenário inédito (1–33), asserção e razão (34–66), múltipla escolha complexa (67–99), certo ou errado (100–132) e melhor alternativa (133–165). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
