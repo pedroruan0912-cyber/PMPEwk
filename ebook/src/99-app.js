@@ -39,13 +39,16 @@
     };
   }
   QS.forEach(function (q) {
-    if (q.e.indexOf('type="I"') >= 0) return;
+    if (q.fix || q.e.indexOf('type="I"') >= 0) return;
     var r = rng(hash(q.id + ':' + q.e.length)), idx = q.o.map(function (_, i) { return i; });
     for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
     q.o = idx.map(function (i) { return q.o[i]; });
     q.a = idx.indexOf(q.a);
   });
   function qsOf(capId) { return QS.filter(function (q) { return q.c === capId; }); }
+  // "Raciocínio": bancos de alto nível (aplicar, analisar, avaliar) com gabarito comentado
+  var RAC = 'Raciocínio';
+  function tagClass(b) { return b === RAC ? 'rac' : b.toLowerCase(); }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
   function stats(list) {
@@ -60,17 +63,18 @@
   // ---------- card de questão ----------
   function qCard(q, opts) {
     opts = opts || {};
-    var cap = capById[q.c];
+    var cap = capById[q.c], L = q.L || LET;
     var art = document.createElement('article');
     art.className = 'q';
     art.dataset.id = q.id;
     art.innerHTML =
       '<div class="q-meta"><span class="qn">' + (opts.label || ('Questão ' + q.n)) + '</span>' +
-      '<span class="tag ' + q.b.toLowerCase() + '">' + q.b + '</span>' +
+      '<span class="tag ' + tagClass(q.b) + '">' + q.b + '</span>' +
+      (q.fmt ? '<span>' + q.fmt + '</span>' : '') +
       '<span>Cap. ' + cap.num + ' · ' + cap.short + '</span></div>' +
       '<div class="q-stem">' + q.e + '</div>' +
-      '<ol class="q-opts">' + q.o.map(function (t, i) {
-        return '<li><button type="button" class="opt" data-i="' + i + '"><span class="lt">' + LET[i] + '</span><span>' + t + '</span></button></li>';
+      '<ol class="q-opts' + (q.o.length === 2 ? ' ce' : '') + '">' + q.o.map(function (t, i) {
+        return '<li><button type="button" class="opt" data-i="' + i + '"><span class="lt">' + L[i] + '</span><span>' + t + '</span></button></li>';
       }).join('') + '</ol><div class="q-fb" hidden></div>';
     var buttons = art.querySelectorAll('.opt');
     Array.prototype.forEach.call(buttons, function (b) {
@@ -104,11 +108,11 @@
       else if (i === chosen) b.classList.add('wrong');
     });
     var fb = art.querySelector('.q-fb');
-    var ok = chosen === q.a;
+    var ok = chosen === q.a, L = q.L || LET, key = L[q.a] + (q.k ? ' (' + q.k + ')' : '');
     var verdict = chosen === undefined || chosen === null
-      ? '<p class="verdict no">Em branco. Gabarito: ' + LET[q.a] + '</p>'
-      : ok ? '<p class="verdict ok">Correta! Gabarito: ' + LET[q.a] + '</p>'
-           : '<p class="verdict no">Errada. Você marcou ' + LET[chosen] + '; gabarito: ' + LET[q.a] + '</p>';
+      ? '<p class="verdict no">Em branco. Gabarito: ' + key + '</p>'
+      : ok ? '<p class="verdict ok">Correta! Gabarito: ' + key + '</p>'
+           : '<p class="verdict no">Errada. Você marcou ' + L[chosen] + '; gabarito: ' + key + '</p>';
     fb.innerHTML = verdict + '<div class="q-exp">' + q.x + '</div>' +
       (opts && opts.mode === 'exam' ? '' : '<div class="q-actions"><button type="button" class="small-btn redo">Refazer esta questão</button></div>');
     fb.hidden = false;
@@ -194,9 +198,12 @@
       if (vfBox) box.querySelector('.go-vf').addEventListener('click', function () { vfBox.scrollIntoView(); });
     }
     var nA = list.filter(function (q) { return q.b === 'AOCP'; }).length;
+    var nR = list.filter(function (q) { return q.b === RAC; }).length;
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA) + ' no estilo FCC e Vunesp, para treino extra.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA - nR) + ' no estilo FCC e Vunesp, para treino extra.' +
+      (nR ? ' Há também <b>' + nR + ' questões de raciocínio</b> (cenários, asserção e razão, itens combinados, certo ou errado e melhor alternativa), com o erro de cada alternativa explicado.' : '') + '</p>' +
+      '<div class="q-actions"><button type="button" class="btn go-q">Ir para as questões</button>' + (nR ? '<button type="button" class="btn ghost go-rac">Questões de raciocínio (' + nR + ')</button>' : '') + '</div>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';
@@ -212,6 +219,7 @@
       bar.className = 'quiz-bar';
       var s = stats(list);
       var bancas = [['AOCP', 'AOCP'], ['', 'Todas as bancas'], ['FCC', 'FCC'], ['Vunesp', 'Vunesp']];
+      if (nR) bancas.push([RAC, RAC]);
       bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar por banca">' +
         bancas.map(function (b) {
           return '<button type="button" data-b="' + b[0] + '" aria-pressed="' + (bancaPref === b[0]) + '">' + b[1] + '</button>';
@@ -276,6 +284,12 @@
       if (b) { setTab(b.dataset.t); window.scrollTo(0, 0); }
     });
     cta.querySelector('.go-q').addEventListener('click', function () { setTab('q'); window.scrollTo(0, 0); });
+    var goR = cta.querySelector('.go-rac');
+    if (goR) goR.addEventListener('click', function () {
+      bancaPref = RAC; filter = 'all';
+      try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+      setTab('q'); window.scrollTo(0, 0);
+    });
     var goA = sec.querySelector('.go-aocp');
     if (goA) goA.addEventListener('click', function () {
       bancaPref = 'AOCP';

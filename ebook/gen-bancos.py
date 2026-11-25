@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Gera ebook/src/dc-data.js a partir do banco de questões de Direito Constitucional.
+"""Gera os dados do e-book a partir dos bancos de questões em Markdown.
 
-Fonte única: direito-constitucional/questoes-direito-constitucional-pmpe-2026.md
-Uso: python3 ebook/gen-dc.py   (o build.sh chama este script quando há python3)
+Fontes únicas (edite o .md, nunca o .js gerado):
+  direito-constitucional/questoes-direito-constitucional-pmpe-2026.md  -> ebook/src/dc-data.js
+  direitos-humanos-legislacao/questoes-lei-maria-da-penha.md          -> ebook/src/q-lmp.js (capítulo 9)
+
+Uso: python3 ebook/gen-bancos.py   (o build.sh chama este script quando há python3)
 """
 import html
 import json
@@ -11,8 +14,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / 'direito-constitucional' / 'questoes-direito-constitucional-pmpe-2026.md'
-OUT = ROOT / 'ebook' / 'src' / 'dc-data.js'
 
 AR_OPTS = [
     'As asserções I e II são verdadeiras, e a II justifica corretamente a I.',
@@ -21,9 +22,10 @@ AR_OPTS = [
     'A asserção I é falsa, e a II é verdadeira.',
     'As asserções I e II são falsas.',
 ]
+FMT_SHORT = {1: 'Cenário', 2: 'Asserção', 3: 'Complexa', 4: 'Certo/Errado', 5: 'Melhor alternativa'}
 
-# grupos do conteúdo programático (ordem do edital); a primeira regra que casar vale
-GROUPS = [
+# grupos do conteúdo programático de Direito Constitucional (ordem do edital); vale a primeira regra que casar
+DC_GROUPS = [
     ('pf', 'Princípios fundamentais'),
     ('di', 'Direitos e deveres individuais e coletivos'),
     ('ds', 'Direitos sociais'),
@@ -40,7 +42,7 @@ GROUPS = [
     ('de', 'Defesa do Estado'),
     ('sp', 'Segurança pública'),
 ]
-RULES = [
+DC_RULES = [
     (r'^Princípios', 'pf'),
     (r'^Militares dos Estados', 'mi'),
     (r'^Direitos sociais', 'ds'),
@@ -48,7 +50,6 @@ RULES = [
     (r'^Nacionalidade', 'na'),
     (r'^Direitos políticos|^Partidos', 'dp'),
     (r'segurança pública', 'sp'),
-    (r'^Segurança pública', 'sp'),
     (r'^Defesa do Estado', 'de'),
     (r'^Administração Pública|^Servidores|^Devido processo administrativo', 'ap'),
     (r'^Repartição|^Organização|^Estados \(|^Municípios', 'oe'),
@@ -60,8 +61,8 @@ RULES = [
 ]
 
 
-def group_of(topic):
-    for pat, g in RULES:
+def dc_group(topic):
+    for pat, g in DC_RULES:
         if re.search(pat, topic, re.I):
             return g
     return 'di'
@@ -70,10 +71,6 @@ def group_of(topic):
 def inline(s):
     s = html.escape(s, quote=False)
     return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
-
-
-def fmt_of(n):
-    return 1 if n <= 33 else 2 if n <= 66 else 3 if n <= 99 else 4 if n <= 132 else 5
 
 
 def cut(block):
@@ -139,25 +136,30 @@ def body_html(lines):
     return ''.join(parts)
 
 
-def main():
-    text = SRC.read_text(encoding='utf-8')
+def parse(path):
+    """Lê um banco no formato padrão: Parte I com as questões, Parte II com o gabarito comentado."""
+    text = path.read_text(encoding='utf-8')
     qpart, gpart = text.split('# PARTE II · GABARITO COMENTADO')
-    qs = re.split(r'^### Questão (\d+) · (.+)$', qpart, flags=re.M)
-    data = []
-    for i in range(1, len(qs), 3):
-        n, topic, block = int(qs[i]), qs[i + 1].strip(), qs[i + 2]
-        f = fmt_of(n)
-        lines = cut(block)
-        opts = [m.group(2) for m in (OPT.match(l.strip()) for l in lines) if m]
-        stem = [l for l in lines if not OPT.match(l.strip())]
-        if f == 2:
-            opts = AR_OPTS
-        elif f == 4:
-            opts = ['Certo', 'Errado']
-        if len(opts) != (2 if f == 4 else 5):
-            sys.exit('questão %d: %d alternativas' % (n, len(opts)))
-        data.append({'n': n, 'f': f, 't': topic, 'g': group_of(topic),
-                     'e': stem_html(stem, f), 'o': [inline(o) for o in opts]})
+    data, fmt = [], 0
+    # o formato vem do último título "## Formato N" antes de cada questão
+    pieces = re.split(r'^(## Formato (\d) .*|### Questão (\d+) · (.+))$', qpart, flags=re.M)
+    i = 1
+    while i < len(pieces):
+        if pieces[i + 1]:
+            fmt = int(pieces[i + 1])
+        else:
+            n, topic, block = int(pieces[i + 2]), pieces[i + 3].strip(), pieces[i + 4]
+            lines = cut(block)
+            opts = [m.group(2) for m in (OPT.match(l.strip()) for l in lines) if m]
+            stem = [l for l in lines if not OPT.match(l.strip())]
+            if fmt == 2:
+                opts = AR_OPTS
+            elif fmt == 4:
+                opts = ['Certo', 'Errado']
+            if len(opts) != (2 if fmt == 4 else 5):
+                sys.exit('%s, questão %d: %d alternativas' % (path.name, n, len(opts)))
+            data.append({'n': n, 'f': fmt, 't': topic, 'e': stem_html(stem, fmt), 'o': [inline(o) for o in opts]})
+        i += 5
 
     gs = re.split(r'^### Questão (\d+) · (.+)$', gpart, flags=re.M)
     keys = {}
@@ -169,28 +171,56 @@ def main():
         elif head in ('Certo', 'Errado'):
             a, combo = (0 if head == 'Certo' else 1), ''
         else:
-            sys.exit('gabarito %d: cabeçalho inesperado: %s' % (n, head))
+            sys.exit('%s, gabarito %d: cabeçalho inesperado: %s' % (path.name, n, head))
         keys[n] = (a, combo, body_html(cut(block)))
 
-    if sorted(keys) != [q['n'] for q in data] or len(data) != 165:
-        sys.exit('questões e gabarito não batem')
+    if sorted(keys) != [q['n'] for q in data] or [q['n'] for q in data] != list(range(1, len(data) + 1)):
+        sys.exit('%s: questões e gabarito não batem' % path.name)
     for q in data:
         a, combo, x = keys[q['n']]
         q['a'], q['x'] = a, x
         if combo:
             q['k'] = combo
+    return data
 
-    js = ('// Gerado por ebook/gen-dc.py a partir de direito-constitucional/questoes-direito-constitucional-pmpe-2026.md.\n'
-          '// Não edite à mão: edite o .md e rode o build.\n'
-          'window.DC_GROUPS = ' + json.dumps([{'id': g, 'n': name} for g, name in GROUPS], ensure_ascii=False) + ';\n'
-          'window.DC_QS = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
-    OUT.write_text(js, encoding='utf-8')
-    counts = {}
+
+def header(src):
+    return ('// Gerado por ebook/gen-bancos.py a partir de %s.\n'
+            '// Não edite à mão: edite o .md e rode o build.\n' % src)
+
+
+def gen_dc():
+    src = 'direito-constitucional/questoes-direito-constitucional-pmpe-2026.md'
+    data = parse(ROOT / src)
     for q in data:
-        counts[q['g']] = counts.get(q['g'], 0) + 1
-    print('ok: %s (%d questões; por tema: %s)' % (OUT.relative_to(ROOT), len(data),
-          ', '.join('%s %d' % (g, counts.get(g, 0)) for g, _ in GROUPS)))
+        q['g'] = dc_group(q['t'])
+    out = ROOT / 'ebook' / 'src' / 'dc-data.js'
+    out.write_text(header(src) +
+                   'window.DC_GROUPS = ' + json.dumps([{'id': g, 'n': name} for g, name in DC_GROUPS], ensure_ascii=False) + ';\n'
+                   'window.DC_QS = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    print('ok: %s (%d questões)' % (out.relative_to(ROOT), len(data)))
+
+
+def gen_chapter_bank(src, chapter, out_name):
+    """Banco de um capítulo do e-book de DH: entra em QUESTOES com a banca "Raciocínio", sem embaralhar."""
+    data = parse(ROOT / src)
+    items = []
+    for q in data:
+        it = {'c': chapter, 'b': 'Raciocínio', 'e': q['e'], 'o': q['o'], 'a': q['a'], 'x': q['x'],
+              'fix': 1, 'fmt': FMT_SHORT[q['f']], 'src': q['n']}
+        if q['f'] == 4:
+            it['L'] = ['C', 'E']
+        if q.get('k'):
+            it['k'] = q['k']
+        items.append(it)
+    out = ROOT / 'ebook' / 'src' / out_name
+    out.write_text(header(src) +
+                   'window.QUESTOES = window.QUESTOES || [];\n'
+                   'QUESTOES.push.apply(QUESTOES, ' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ');\n',
+                   encoding='utf-8')
+    print('ok: %s (%d questões no %s)' % (out.relative_to(ROOT), len(items), chapter))
 
 
 if __name__ == '__main__':
-    main()
+    gen_dc()
+    gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')

@@ -28,7 +28,7 @@ E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; ta
 
 Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com o formato da prova (10 questões de Direitos Humanos e Legislação Extravagante no Bloco III) e o mapa dos 18 itens do conteúdo programático; em cada capítulo, um quadro "Na prova da AOCP" (o que o edital pede, como a banca cobra, pares para o "relacione as colunas" e foco) e um treino de verdadeiro ou falso (138 afirmações no total); filtro de banca nas questões com AOCP como padrão; e simulado no formato da prova (10 questões AOCP, uma por capítulo sorteado).
 
-Recursos: 796 questões comentadas (312 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 831 questões comentadas (312 no estilo Instituto AOCP, 236 FCC, 248 Vunesp e 35 de raciocínio sobre a Lei Maria da Penha, no capítulo 9), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
 
@@ -42,7 +42,7 @@ Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11
 ./ebook/build.sh
 ```
 
-As questões de Direito Constitucional não são editadas no JavaScript: a fonte é `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`. O `build.sh` roda `ebook/gen-dc.py` (quando há `python3`), que gera `ebook/src/dc-data.js`; a tela fica em `ebook/src/dc.html` e a lógica em `ebook/src/dc.js`.
+As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` a partir de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md` e `ebook/src/q-lmp.js` a partir de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. A tela de Direito Constitucional fica em `ebook/src/dc.html` e a lógica em `ebook/src/dc.js`; as questões de Maria da Penha entram no capítulo 9 com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
 
 Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
@@ -190,6 +190,6 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 
 # Banco de questões – Lei Maria da Penha (Soldado PMPE 2026 · Instituto AOCP)
 
-**Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. Também estão no e-book de Direitos Humanos, no capítulo 9 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
 
 35 questões de alto nível cognitivo sobre a Lei 11.340/2006, com as alterações até a Lei 14.994/2024 e a jurisprudência do STF e do STJ (art. 12-C, art. 24-A, art. 40-A, Tema 1.249 e Súmulas 536, 542, 588, 589 e 600). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
