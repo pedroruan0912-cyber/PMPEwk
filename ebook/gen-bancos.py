@@ -12,6 +12,7 @@ Fontes únicas (edite o .md, nunca o .js gerado):
   direitos-humanos-legislacao/questoes-lei-de-drogas.md               -> ebook/src/q-drg.js (capítulo 13)
   historia-pernambuco/questoes-historia-de-pernambuco.md              -> ebook/src/hpe-data.js
   informatica/questoes-informatica-pmpe-2026.md                       -> ebook/src/inf-data.js
+  lingua-portuguesa/questoes-reescrita-pmpe-2026.md                   -> ebook/src/lp-data.js
 
 Uso: python3 ebook/gen-bancos.py   (o build.sh chama este script quando há python3)
 """
@@ -106,12 +107,28 @@ INF_GROUPS = [
 INF_SIZES = [2, 4, 5, 3, 4, 4, 4]
 
 
-def inf_group(q):
-    pos = (q['n'] - 1) % sum(INF_SIZES)
-    for (g, _), size in zip(INF_GROUPS, INF_SIZES):
-        if pos < size:
-            return g
-        pos -= size
+def by_position(groups, sizes):
+    """Grupo pela posição da questão dentro do formato (os formatos seguem a mesma ordem de itens)."""
+    def group(q):
+        pos = (q['n'] - 1) % sum(sizes)
+        for (g, _), size in zip(groups, sizes):
+            if pos < size:
+                return g
+            pos -= size
+    return group
+
+
+inf_group = by_position(INF_GROUPS, INF_SIZES)
+
+# grupos de Língua Portuguesa (reescrita): os 5 eixos; em cada formato (44 questões): 9, 9, 9, 9 e 8.
+LP_GROUPS = [
+    ('p1', 'Conectivos e modo verbal'),
+    ('p2', 'Vozes verbais e redução de orações'),
+    ('p3', 'Pontuação'),
+    ('p4', 'Regência e crase'),
+    ('p5', 'Concordância e colocação pronominal'),
+]
+lp_group = by_position(LP_GROUPS, [9, 9, 9, 9, 8])
 
 
 def group_by(rules, topic):
@@ -301,6 +318,7 @@ if __name__ == '__main__':
     gen_dc()
     gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
     gen_section_bank('informatica/questoes-informatica-pmpe-2026.md', 'INF', INF_GROUPS, inf_group, 'inf-data.js')
+    gen_section_bank('lingua-portuguesa/questoes-reescrita-pmpe-2026.md', 'LP', LP_GROUPS, lp_group, 'lp-data.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-abuso-de-autoridade.md', 'c7', 'q-abu.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-tortura.md', 'c8', 'q-tor.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
