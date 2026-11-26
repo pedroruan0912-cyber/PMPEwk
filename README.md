@@ -257,3 +257,11 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 **Abrir:** `informatica/questoes-informatica-pmpe-2026.md`. Também estão no e-book de Direitos Humanos, na seção "Informática", com treino, simulado de 10 questões e desempenho por item do edital.
 
 130 questões de alto nível cognitivo sobre os sete itens de Informática do Edital nº 001/2026 (10 questões no Bloco II): internet e intranet; navegadores, serviços de internet e nuvem; segurança da informação (malwares, golpes, criptografia, autenticação); armazenamento e backup; arquivos, pastas e hardware; Windows 11 e Prompt de Comando; Word, Excel e PowerPoint 2019 e Writer, Calc e Impress do LibreOffice 7. São cinco formatos, com 26 questões cada: cenário inédito (1–26), asserção e razão (27–52), múltipla escolha complexa (53–78), certo ou errado (79–104) e melhor alternativa (105–130). Uma tabela no início indica as questões de cada item do edital. Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Língua Portuguesa: Reescrita de Frases e Períodos (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `lingua-portuguesa/questoes-reescrita-pmpe-2026.md`.
+
+220 questões de reescrita no padrão do Instituto AOCP, sobre os itens 4, 8, 9, 10, 12, 13, 14 e 15 do conteúdo de Língua Portuguesa do Edital nº 001/2026 (Bloco I). Cada questão parte de um período culto e complexo e exige julgar, ao mesmo tempo, a correção gramatical e o sentido. São cinco eixos (conectivos e modo verbal; vozes verbais e redução de orações; pontuação; regência e crase; concordância e colocação pronominal) e cinco formatos, com 44 questões cada: reescrita padrão (1–44), asserção e razão (45–88), múltipla escolha complexa (89–132), certo ou errado (133–176) e melhor alternativa (177–220). Na reescrita padrão, cada questão tem duas alternativas corretas na forma que mudam o sentido e duas que mantêm o sentido com erro sutil. O gabarito comentado classifica cada defeito como [ERRO GRAMATICAL], [ALTERAÇÃO DE SENTIDO] ou, no Formato 5, [DESCUMPRE A RESTRIÇÃO], e aponta o termo exato.
