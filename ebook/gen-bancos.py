@@ -3,6 +3,7 @@
 
 Fontes únicas (edite o .md, nunca o .js gerado):
   direito-constitucional/questoes-direito-constitucional-pmpe-2026.md  -> ebook/src/dc-data.js
+  direitos-humanos-legislacao/questoes-abuso-de-autoridade.md         -> ebook/src/q-abu.js (capítulo 7)
   direitos-humanos-legislacao/questoes-lei-de-tortura.md              -> ebook/src/q-tor.js (capítulo 8)
   direitos-humanos-legislacao/questoes-lei-maria-da-penha.md          -> ebook/src/q-lmp.js (capítulo 9)
   direitos-humanos-legislacao/questoes-crimes-de-preconceito.md       -> ebook/src/q-pre.js (capítulo 10)
@@ -300,6 +301,7 @@ if __name__ == '__main__':
     gen_dc()
     gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
     gen_section_bank('informatica/questoes-informatica-pmpe-2026.md', 'INF', INF_GROUPS, inf_group, 'inf-data.js')
+    gen_chapter_bank('direitos-humanos-legislacao/questoes-abuso-de-autoridade.md', 'c7', 'q-abu.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-tortura.md', 'c8', 'q-tor.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-de-preconceito.md', 'c10', 'q-pre.js')
