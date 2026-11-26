@@ -220,6 +220,14 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 
 ---
 
+# Banco de questões – Abuso de Autoridade (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-abuso-de-autoridade.md`.
+
+35 questões de alto nível cognitivo sobre a Lei 13.869/2019, com a Lei 14.321/2022, as alterações nas Leis 7.960/1989 e 9.296/1996 e no Estatuto da OAB, a Súmula Vinculante 11 e a Súmula 145 do STF (finalidade específica e crime de hermenêutica, sujeito ativo e concurso com particular, ação penal, efeitos da condenação e penas, instâncias, ingresso em domicílio, direitos do preso, investigação, artigos vetados e prisão temporária). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
 # Banco de questões – Lei de Tortura (Soldado PMPE 2026 · Instituto AOCP)
 
 **Abrir:** `direitos-humanos-legislacao/questoes-lei-de-tortura.md`. Também estão no e-book de Direitos Humanos, no capítulo 8 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
