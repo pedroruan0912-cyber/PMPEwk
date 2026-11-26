@@ -23,6 +23,13 @@ window.BANCOS_CFG = [
     lede: '130 questões de raciocínio sobre os 7 itens do edital (internet e intranet, navegadores e nuvem, segurança, backup, arquivos e hardware, Windows 11 e Prompt de Comando, Office 2019 e LibreOffice 7), em cinco formatos, com gabarito comentado. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
     grpLabel: 'Itens do edital', grpCol: 'Item do edital', bloco: false,
     provaNote: 'Na prova, estas 10 questões somam com as 10 de Raciocínio Lógico no Bloco II, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
+  },
+  {
+    key: 'lp', sec: 'portugues', nav: 'Língua Portuguesa', data: 'LP',
+    kicker: 'Bloco I · 10 questões na prova de Soldado', title: 'Língua Portuguesa: reescrita',
+    lede: '220 questões de reescrita de frases e períodos no padrão da AOCP, em cinco eixos (conectivos e modo verbal, vozes verbais, pontuação, regência e crase, concordância e colocação), com gabarito comentado que classifica cada defeito como erro gramatical ou alteração de sentido. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
+    grpLabel: 'Eixos', grpCol: 'Eixo', bloco: false,
+    provaNote: 'Na prova, estas 10 questões somam com as 10 de História de Pernambuco no Bloco I, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
   }
 ];
 

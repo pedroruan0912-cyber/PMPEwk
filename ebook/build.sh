@@ -7,11 +7,11 @@ cd "$(dirname "$0")"
 
 SRC=src
 
-# Bancos em Markdown (Constitucional, Abuso de Autoridade, Tortura, Maria da Penha, Preconceito, Crimes Ambientais, Crimes Hediondos, Drogas, História de Pernambuco e Informática): gen-bancos.py gera dc-data.js, q-abu.js, q-tor.js, q-lmp.js, q-pre.js, q-amb.js, q-hed.js, q-drg.js, hpe-data.js e inf-data.js
+# Bancos em Markdown (Constitucional, Abuso de Autoridade, Tortura, Maria da Penha, Preconceito, Crimes Ambientais, Crimes Hediondos, Drogas, História de Pernambuco, Informática e Língua Portuguesa): gen-bancos.py gera dc-data.js, q-abu.js, q-tor.js, q-lmp.js, q-pre.js, q-amb.js, q-hed.js, q-drg.js, hpe-data.js, inf-data.js e lp-data.js
 # (os arquivos gerados também ficam no repositório, para quem não tem python3)
 if command -v python3 >/dev/null 2>&1; then python3 gen-bancos.py; fi
 PARTS=(01-open.html c01-03.html c04-05.html c06.html c07-08.html c09-10.html c11-13.html c14-17.html bancos.html 90-tools.html)
-SCRIPTS=(flash.js aocp.js q1.js q2.js q3.js q4.js q5.js q6.js q7.js q8.js q9.js q10.js q11.js q-abu.js q-tor.js q-lmp.js q-pre.js q-amb.js q-hed.js q-drg.js sys.js dc-data.js hpe-data.js inf-data.js banco.js 99-app.js)
+SCRIPTS=(flash.js aocp.js q1.js q2.js q3.js q4.js q5.js q6.js q7.js q8.js q9.js q10.js q11.js q-abu.js q-tor.js q-lmp.js q-pre.js q-amb.js q-hed.js q-drg.js sys.js dc-data.js hpe-data.js inf-data.js lp-data.js banco.js 99-app.js)
 
 body() {
   for p in "${PARTS[@]}"; do cat "$SRC/$p"; done
