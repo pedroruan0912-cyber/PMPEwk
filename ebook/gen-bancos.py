@@ -6,6 +6,7 @@ Fontes únicas (edite o .md, nunca o .js gerado):
   direitos-humanos-legislacao/questoes-lei-de-tortura.md              -> ebook/src/q-tor.js (capítulo 8)
   direitos-humanos-legislacao/questoes-lei-maria-da-penha.md          -> ebook/src/q-lmp.js (capítulo 9)
   direitos-humanos-legislacao/questoes-crimes-de-preconceito.md       -> ebook/src/q-pre.js (capítulo 10)
+  direitos-humanos-legislacao/questoes-crimes-ambientais.md           -> ebook/src/q-amb.js (capítulo 11)
   direitos-humanos-legislacao/questoes-crimes-hediondos.md            -> ebook/src/q-hed.js (capítulo 12)
   direitos-humanos-legislacao/questoes-lei-de-drogas.md               -> ebook/src/q-drg.js (capítulo 13)
   historia-pernambuco/questoes-historia-de-pernambuco.md              -> ebook/src/hpe-data.js
@@ -302,5 +303,6 @@ if __name__ == '__main__':
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-tortura.md', 'c8', 'q-tor.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-de-preconceito.md', 'c10', 'q-pre.js')
+    gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-ambientais.md', 'c11', 'q-amb.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-hediondos.md', 'c12', 'q-hed.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-drogas.md', 'c13', 'q-drg.js')
