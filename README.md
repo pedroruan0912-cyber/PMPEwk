@@ -204,6 +204,14 @@ Também disponíveis de forma interativa no e-book de Direitos Humanos (seção 
 
 ---
 
+# Banco de questões – Crimes Ambientais (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-ambientais.md`.
+
+35 questões de alto nível cognitivo sobre a Lei 9.605/1998, com a Lei 14.064/2020 e a jurisprudência do STF (responsabilidade da pessoa jurídica sem dupla imputação, omissão do gerente, penas e substituição, sursis, transação e suspensão do processo, apreensão, fauna, pesca, flora, poluição, patrimônio cultural, administração ambiental e competência). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
 # Banco de questões – Crimes Hediondos (Soldado PMPE 2026 · Instituto AOCP)
 
 **Abrir:** `direitos-humanos-legislacao/questoes-crimes-hediondos.md`. Também estão no e-book de Direitos Humanos, no capítulo 12 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
