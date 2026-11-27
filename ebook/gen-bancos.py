@@ -297,11 +297,12 @@ def gen_dc():
 
 
 def gen_chapter_bank(src, chapter, out_name):
-    """Banco de um capítulo do e-book de DH: entra em QUESTOES com a banca "Raciocínio", sem embaralhar."""
+    """Banco de capítulo do e-book de DH: entra em QUESTOES com a banca "Raciocínio", sem embaralhar.
+    `chapter` é o id do capítulo ou uma função que recebe a questão e devolve o id."""
     data = parse(ROOT / src)
     items = []
     for q in data:
-        it = {'c': chapter, 'b': 'Raciocínio', 'e': q['e'], 'o': q['o'], 'a': q['a'], 'x': q['x'],
+        it = {'c': chapter(q) if callable(chapter) else chapter, 'b': 'Raciocínio', 'e': q['e'], 'o': q['o'], 'a': q['a'], 'x': q['x'],
               'fix': 1, 'fmt': FMT_SHORT[q['f']], 'src': q['n']}
         if q['f'] == 4:
             it['L'] = ['C', 'E']
@@ -313,7 +314,15 @@ def gen_chapter_bank(src, chapter, out_name):
                    'window.QUESTOES = window.QUESTOES || [];\n'
                    'QUESTOES.push.apply(QUESTOES, ' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ');\n',
                    encoding='utf-8')
-    print('ok: %s (%d questões no %s)' % (out.relative_to(ROOT), len(items), chapter))
+    counts = {}
+    for it in items:
+        counts[it['c']] = counts.get(it['c'], 0) + 1
+    print('ok: %s (%d questões: %s)' % (out.relative_to(ROOT), len(items), ', '.join('%s %d' % kv for kv in counts.items())))
+
+
+def dh_teoria_chapter(q):
+    """Itens 1 a 5 do edital: em cada formato (15 questões), 3 por item, na ordem dos capítulos 1 a 5."""
+    return 'c%d' % ((q['n'] - 1) % 15 // 3 + 1)
 
 
 def gen_section_bank(src, prefix, groups, rules, out_name):
@@ -345,3 +354,4 @@ if __name__ == '__main__':
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-ambientais.md', 'c11', 'q-amb.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-crimes-hediondos.md', 'c12', 'q-hed.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-drogas.md', 'c13', 'q-drg.js')
+    gen_chapter_bank('direitos-humanos-legislacao/questoes-direitos-humanos-teoria-e-tratados.md', dh_teoria_chapter, 'q-dht.js')
