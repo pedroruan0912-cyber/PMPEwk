@@ -25,6 +25,13 @@ window.BANCOS_CFG = [
     provaNote: 'Na prova, estas 10 questões somam com as 10 de Raciocínio Lógico no Bloco II, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
   },
   {
+    key: 'rl', sec: 'raciocinio', nav: 'Raciocínio Lógico', data: 'RL',
+    kicker: 'Bloco II · 10 questões na prova de Soldado', title: 'Raciocínio Lógico',
+    lede: '130 questões inéditas sobre os 4 itens do edital, em 6 tópicos (estruturas lógicas e quantificadores, argumentação, diagramas, contagem e casa dos pombos, permutações e combinações, probabilidade), em cinco formatos, com gabarito comentado: a demonstração passo a passo e o erro de modelagem ou de lógica que gera cada alternativa errada. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
+    grpLabel: 'Tópicos', grpCol: 'Tópico', bloco: false,
+    provaNote: 'Na prova, estas 10 questões somam com as 10 de Informática no Bloco II, que exige ao menos 6 acertos em 20 e nenhuma disciplina zerada.'
+  },
+  {
     key: 'lp', sec: 'portugues', nav: 'Língua Portuguesa', data: 'LP',
     kicker: 'Bloco I · 10 questões na prova de Soldado', title: 'Língua Portuguesa: reescrita',
     lede: '220 questões de reescrita de frases e períodos no padrão da AOCP, em cinco eixos (conectivos e modo verbal, vozes verbais, pontuação, regência e crase, concordância e colocação), com gabarito comentado que classifica cada defeito como erro gramatical ou alteração de sentido. No treino, a correção aparece na hora; nos simulados, só quando você entrega.',
