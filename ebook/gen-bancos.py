@@ -130,6 +130,24 @@ LP_GROUPS = [
 ]
 lp_group = by_position(LP_GROUPS, [9, 9, 9, 9, 8])
 
+# grupos de Raciocínio Lógico: os tópicos do caderno, em blocos contínuos de questões
+# (cada tópico traz os cinco formatos em sequência).
+RL_GROUPS = [
+    ('r1', 'Estruturas lógicas e quantificadores'),
+    ('r2', 'Argumentação, equivalência e implicação'),
+    ('r3', 'Diagramas lógicos'),
+    ('r4', 'Contagem, casa dos pombos e inclusão-exclusão'),
+    ('r5', 'Permutações, arranjos e combinações'),
+    ('r6', 'Probabilidade'),
+]
+RL_LAST = [20, 45, 60, 80, 105, 130]
+
+
+def rl_group(q):
+    for (g, _), last in zip(RL_GROUPS, RL_LAST):
+        if q['n'] <= last:
+            return g
+
 
 def group_by(rules, topic):
     for pat, g in rules:
@@ -319,6 +337,7 @@ if __name__ == '__main__':
     gen_section_bank('historia-pernambuco/questoes-historia-de-pernambuco.md', 'HPE', HPE_GROUPS, HPE_RULES, 'hpe-data.js')
     gen_section_bank('informatica/questoes-informatica-pmpe-2026.md', 'INF', INF_GROUPS, inf_group, 'inf-data.js')
     gen_section_bank('lingua-portuguesa/questoes-reescrita-pmpe-2026.md', 'LP', LP_GROUPS, lp_group, 'lp-data.js')
+    gen_section_bank('raciocinio-logico/questoes-raciocinio-logico-pmpe-2026.md', 'RL', RL_GROUPS, rl_group, 'rl-data.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-abuso-de-autoridade.md', 'c7', 'q-abu.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-de-tortura.md', 'c8', 'q-tor.js')
     gen_chapter_bank('direitos-humanos-legislacao/questoes-lei-maria-da-penha.md', 'c9', 'q-lmp.js')
