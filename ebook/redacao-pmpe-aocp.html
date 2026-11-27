@@ -261,6 +261,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
 .gauge i{position:absolute;inset:0 auto 0 0;background:var(--pen);transition:width .3s}
 .gauge::after{content:"";position:absolute;top:0;bottom:0;left:30%;border-left:2px dashed var(--red)}
 
+.aula-list{list-style:none;padding:0;margin:12px 0;display:grid;gap:10px}
+.aula-list li{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin:0;line-height:1.5}
 .week{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
 .week .acc{margin:0}
 
@@ -295,7 +297,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <header class="topbar">
     <button class="icon-btn menu-btn" id="menuBtn" aria-controls="side" aria-expanded="false">Sumário</button>
     <span class="where" id="where">Início</span>
-    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/12 lidos</span>
+    <span class="read-prog" id="readProg" title="Capítulos marcados como lidos">0/13 lidos</span>
     <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro">Tema</button>
   </header>
   <div class="content">
@@ -325,7 +327,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><div><a href="#tese">Lendo o tema e criando a tese</a>: o passo que evita a fuga ao tema.</div></li>
     <li><div><a href="#conectivos">Conectivos</a> e <a href="#gramatica">Coesão e gramática</a>: os critérios 2 e 4, com exercícios.</div></li>
     <li><div><a href="#repertorios">Repertórios</a> e <a href="#temas">Possíveis temas</a>: munição pronta para argumentar.</div></li>
-    <li><div><a href="#modelos">Redações nota 40</a>: 55 textos de 20 linhas com marcação de cada parte: um para cada tema provável e uma segunda versão para os 13 de chance alta.</div></li>
+    <li><div><a href="#aulas">Aulas AOCP</a>: os esqueletos, as expressões e os 9 temas trabalhados no curso para a PMPE 2027.</div></li>
+    <li><div><a href="#modelos">Redações nota 40</a>: 64 textos de 20 linhas com marcação de cada parte: um para cada tema provável, incluindo os das aulas, e uma segunda versão para 13 temas de chance alta.</div></li>
     <li><div><a href="#lab">Laboratório</a> e <a href="#plano">Plano de treino</a>: escreva, conte as linhas, monte sua redação e se autoavalie.</div></li>
   </ol>
   <p class="small">Seu progresso (capítulos lidos, exercícios e rascunhos) fica salvo apenas neste navegador.</p>
@@ -343,17 +346,19 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <tr><th>Item</th><th>Soldado (QPMG)</th></tr>
     <tr><td>Valor da redação</td><td><b>até 40 pontos</b></td></tr>
     <tr><td>Nota mínima</td><td><b>12 pontos</b> (abaixo disso, eliminado)</td></tr>
-    <tr><td>Tipo de texto</td><td>Dissertativo-argumentativo, em prosa</td></tr>
+    <tr><td>Tipo de texto</td><td>"Dissertação": o texto deve apresentar valores, opiniões, hipóteses e ideias (item 12.2)</td></tr>
     <tr><td>Extensão</td><td>mínimo de <b>15</b> e máximo de <b>20</b> linhas</td></tr>
-    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado</td></tr>
+    <tr><td>Texto além da linha 20 ou fora do espaço</td><td>desconsiderado (item 12.6)</td></tr>
+    <tr><td>Caneta</td><td>esferográfica de tinta <b>azul ou preta</b> (item 12.7)</td></tr>
+    <tr><td>Rascunho</td><td>facultativo e <b>não corrigido</b>: só vale a Folha da Versão Definitiva (item 12.5)</td></tr>
     <tr><td>Natureza</td><td>eliminatória e classificatória (soma com a objetiva)</td></tr>
     <tr><td>Quem é corrigido</td><td>só quem é aprovado na objetiva e fica dentro do limite de classificação previsto no edital</td></tr>
     <tr><td>Data prevista</td><td>mesmo dia da prova objetiva (previsão divulgada: 21/02/2027)</td></tr>
   </table></div>
 
-  <div class="box warn">
-    <span class="tag">Confira no edital oficial</span>
-    <p>Os números acima são os divulgados para o edital e sua retificação. Antes da prova, leia no PDF oficial do Instituto AOCP o item da <b>Prova de Redação</b>: tabela de critérios, causas de nota zero, tipo de caneta e regras da folha. Se algo mudar em retificação, vale o edital.</p>
+  <div class="box pen">
+    <span class="tag">O que diz o edital (itens 12.2 a 12.8)</span>
+    <p>A tabela acima segue o texto do edital da PMPE, reproduzido nas aulas do curso para o Instituto AOCP. O item 12.2 pede a tipologia "Dissertação", com "valores, opiniões, crenças, hipóteses, ideias". Em outras palavras, o corretor espera que você <b>se posicione</b>: descrever o problema sem defender uma tese não basta. Se sair retificação, vale o texto mais recente.</p>
   </div>
 
   <h3>A redação decide a classificação</h3>
@@ -372,15 +377,23 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><b>ponto de vista</b>: precisa ter tese clara, não só descrever o problema.</li>
   </ul>
 
-  <h3>O que pode zerar ou anular a redação</h3>
-  <p>Os editais da AOCP costumam prever nota zero nestes casos. Trate a lista como regra de segurança:</p>
+  <h3>O que zera a redação (item 12.8)</h3>
+  <p>O edital dá nota zero e <b>elimina do concurso</b> quem:</p>
   <div class="vs">
-    <div class="no"><p><b>Fugir ao tema</b>: falar de outro assunto. Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
-    <div class="no"><p><b>Não seguir o tipo de texto</b>: narração, poema, carta, texto em tópicos.</p></div>
-    <div class="no"><p><b>Identificar-se</b>: nome, assinatura, apelido, rubrica ou qualquer marca fora do espaço permitido.</p></div>
-    <div class="no"><p><b>Ficar abaixo de 15 linhas</b> ou deixar em branco.</p></div>
-    <div class="no"><p><b>Letra ilegível</b>, texto a lápis ou com caneta fora da cor exigida.</p></div>
-    <div class="no"><p><b>Copiar os textos motivadores</b>: trechos copiados não contam e podem reduzir o texto abaixo do mínimo.</p></div>
+    <div class="no"><p><b>Fugir ao tema proposto.</b> Ex.: tema "violência no trânsito" e você escreve sobre violência urbana em geral.</p></div>
+    <div class="no"><p><b>Não usar a tipologia exigida</b>: narração, poema, carta, texto em tópicos.</p></div>
+    <div class="no"><p><b>Desestruturar o texto</b> de forma acentuada ou <b>atentar contra o pudor</b>.</p></div>
+    <div class="no"><p><b>Escrever a lápis</b> ou com tinta que não seja azul ou preta.</p></div>
+    <div class="no"><p><b>Não passar para a Folha Definitiva</b>, entregar em branco, ter <b>letra ilegível</b> ou <b>espaçamento excessivo entre letras, palavras, parágrafos e margens</b>.</p></div>
+    <div class="no"><p><b>Identificar-se</b> de qualquer forma: nome, apelido, números, letras, sinais, desenhos ou códigos.</p></div>
+  </div>
+  <div class="box trap">
+    <span class="tag">Espaçamento excessivo zera</span>
+    <p>Quem mira 20 linhas pode cair na tentação de <b>espaçar letras e palavras</b> para "encher" a folha. O edital trata isso como causa de nota zero. As 20 linhas têm de vir do conteúdo, nunca da letra esticada. No capítulo 3 há ferramentas para ganhar linhas com texto.</p>
+  </div>
+  <div class="box warn">
+    <span class="tag">E o mínimo de 15 linhas?</span>
+    <p>O item 12.6 exige no mínimo 15 linhas, mas ele não está na lista de nota zero. Mesmo assim, um texto curto perde pontos em estrutura e informatividade. Também não destaque nenhuma parte da folha nem escreva nos espaços reservados à banca (item 12.7). Trechos copiados dos textos motivadores costumam ser desconsiderados.</p>
   </div>
   <div class="box trap">
     <span class="tag">Cuidado</span>
@@ -411,12 +424,12 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </div>
 
   <div class="crit-grid">
-    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento ao tema, informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão e coerência</h4><p>As ideias se ligam com conectivos corretos? O texto tem lógica, sem contradição, sem repetir palavras?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Estrutura dissertativo-argumentativa e parágrafos</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
-    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia e acentuação, concordância, regência, crase e colocação pronominal.</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 1 · 10 PONTOS</span><h4>Atendimento e desenvolvimento do tema / Informatividade e argumentação</h4><p>Você falou do tema pedido? Tem tese? Os argumentos são fortes, com repertório e explicação, ou são frases vagas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 2 · 10 PONTOS</span><h4>Coesão intra e entre parágrafos / Coerência</h4><p>Coesão "referencial e sequencial, diversificada e recorrente"; coerência com "progressão, articulação, não-contradição".</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 3 · 10 PONTOS</span><h4>Atendimento à estrutura textual proposta</h4><p>Tem introdução, desenvolvimento e conclusão? Os parágrafos têm recuo e tamanho equilibrado? Respeita 15–20 linhas?</p></div>
+    <div class="crit"><span class="pts">CRITÉRIO 4 · 10 PONTOS</span><h4>Modalidade gramatical</h4><p>Pontuação, grafia <b>(inclusive legibilidade)</b>, concordância, regência e colocação pronominal.</p></div>
   </div>
-  <p class="small">Distribuição divulgada para Soldado: 10 + 10 + 10 + 10 = 40. Confira a tabela no item da Prova de Redação do edital.</p>
+  <p class="small">Tabela 12.2 do edital: 10 + 10 + 10 + 10 = 40 pontos para Soldado (para 2º Tenente, 8 + 8 + 7 + 7 = 30). Os nomes dos critérios abaixo seguem o texto do edital.</p>
 
   <h3>Critério 1 · Tema, informatividade e argumentação</h3>
   <p>É o critério que mais separa notas. O corretor pergunta: <i>este texto informa algo e convence?</i></p>
@@ -441,6 +454,14 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <li><b>Coesão</b> é a costura: conectivos entre frases e parágrafos, pronomes e sinônimos para não repetir palavras.</li>
     <li><b>Coerência</b> é a lógica: o argumento prova a tese, a conclusão retoma o que foi dito, nada se contradiz.</li>
   </ul>
+  <p>O edital detalha o que o corretor observa:</p>
+  <ul>
+    <li><b>Referencial</b>: retomar palavras com pronomes e sinônimos ("essa problemática", "tal cenário").</li>
+    <li><b>Sequencial</b>: ligar frases e parágrafos com conectivos.</li>
+    <li><b>Diversificada</b>: variar os conectivos. Três "além disso" no mesmo texto custam pontos.</li>
+    <li><b>Progressão</b>: cada parágrafo traz informação nova, sem repetir a ideia anterior com outras palavras.</li>
+    <li><b>Não-contradição</b>: a conclusão não pode desdizer a tese.</li>
+  </ul>
   <p><b>Como garantir os 10:</b> comece todo parágrafo com conectivo, use pelo menos um conectivo dentro de cada parágrafo e troque palavras repetidas por sinônimos ou pronomes. O capítulo 6 tem a lista completa.</p>
 
   <h3>Critério 3 · Estrutura</h3>
@@ -452,7 +473,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </ul>
 
   <h3>Critério 4 · Modalidade gramatical</h3>
-  <p>Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
+  <p>A <b>legibilidade</b> faz parte deste critério: letra difícil de ler perde pontos mesmo sem erro de português, e letra ilegível zera (item 12.8). Cada desvio tira pontos. Os mais comuns em redação de concurso são: vírgula entre sujeito e verbo, crase, concordância com "haver" e "existir", "onde" usado para tudo, acentuação e "mas/mais". O capítulo 7 tem um treino específico.</p>
   <div class="box tip">
     <span class="tag">Regra de ouro</span>
     <p>Frases curtas erram menos. Se uma frase passar de duas linhas e meia, divida em duas. Você perde pouco em estilo e ganha muito em correção.</p>
@@ -547,7 +568,8 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
 
   <h3>Regras da folha</h3>
   <ul>
-    <li><b>Não pule linha</b> entre parágrafos. O recuo já marca o parágrafo, e uma linha em branco pode bagunçar a contagem.</li>
+    <li><b>Não espace letras nem palavras para chegar a 20 linhas.</b> O item 12.8 do edital dá nota zero a quem deixa "espaçamento excessivo entre letras, palavras, parágrafos e margens". Escreva com a letra de sempre e use as ferramentas acima para ganhar linhas com conteúdo.</li>
+    <li><b>Não pule linha</b> entre parágrafos. O recuo já marca o parágrafo, e uma linha em branco pode bagunçar a contagem (e conta como espaçamento excessivo).</li>
     <li><b>Respeite as margens</b>. Não escreva na margem nem além da linha.</li>
     <li><b>Separação de sílabas</b>: se a palavra não couber, separe com hífen no lugar certo (ci-da-da-ni-a) ou leve a palavra inteira para a linha de baixo.</li>
     <li><b>Erro na folha definitiva</b>: passe um traço simples sobre a palavra e escreva a correta em seguida. Nada de corretivo, parênteses ou rabiscos.</li>
@@ -819,6 +841,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
     <span class="tag">Não invente</span>
     <p>Se esquecer o número de uma lei ou um dado exato, escreva sem ele: "a legislação brasileira de trânsito", "dados recentes de pesquisas". Número inventado é erro de informação e o corretor pode perceber.</p>
   </div>
+  <div class="box pen">
+    <span class="tag">Nome completo na primeira citação</span>
+    <p>Na primeira vez que citar, escreva o nome completo: "a <b>Constituição Federal de 1988</b>, no artigo 144, ...". Isso deixa o repertório preciso e conta a favor no critério 1. Nas menções seguintes do mesmo texto, basta "a Constituição" ou "a Carta Magna", para não repetir. Não use siglas sozinhas, como "CF/88": na folha de redação, escreva por extenso.</p>
+  </div>
   <p><b>Estratégia para quem tem dificuldade:</b> decore bem <b>8 repertórios coringa</b> (marque o filtro "Coringa") e mais 2 ou 3 por tema provável. É melhor dominar poucos do que confundir muitos.</p>
 
   <input class="search" id="repSearch" type="search" placeholder="Buscar: Hobbes, Maria da Penha, trânsito..." aria-label="Buscar repertório">
@@ -844,12 +870,106 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div id="temaList"></div>
 </section>
 
-<!-- ======================= 10. MODELOS ======================= -->
-<section class="view" id="modelos" data-title="Redações nota 40" hidden>
+<!-- ======================= 10. AULAS AOCP ======================= -->
+<section class="view" id="aulas" data-title="Aulas AOCP" hidden>
   <div class="chap-head">
     <span class="eyebrow">Capítulo 10</span>
+    <h2>Aulas AOCP: o que o curso ensina</h2>
+    <p>Os pontos altos das aulas de redação do curso preparatório para a PMPE (Instituto AOCP), de outubro e novembro. O conteúdo voltado à CEBRASPE ficou de fora.</p>
+  </div>
+
+  <h3>O que a AOCP valoriza</h3>
+  <p>Segundo as aulas, a banca valoriza <b>objetividade, clareza e rigidez na estrutura lógica</b>: introdução com tese clara, dois argumentos diretos no desenvolvimento e conclusão com proposta de intervenção. Cada frase precisa cumprir uma função; floreio não soma pontos.</p>
+
+  <h3>Tamanho dos parágrafos</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Parágrafo</th><th>Faixa indicada nas aulas</th><th>Mapa deste e-book</th></tr>
+    <tr><td>Introdução</td><td>3 a 5 linhas</td><td>4</td></tr>
+    <tr><td>Desenvolvimento 1</td><td>4 a 7 linhas</td><td>6</td></tr>
+    <tr><td>Desenvolvimento 2</td><td>4 a 7 linhas</td><td>6</td></tr>
+    <tr><td>Conclusão</td><td>4 a 5 linhas</td><td>4</td></tr>
+  </table></div>
+  <p class="small">O mapa 4-6-6-4 cabe em todas as faixas das aulas e fecha exatamente as 20 linhas.</p>
+
+  <h3>O desenvolvimento em três movimentos</h3>
+  <ol class="steps">
+    <li><b>Tópico frasal</b>: afirme o argumento em uma frase.</li>
+    <li><b>Fundamentação</b>: repertório (lei, autor, obra) ou dado que prove o argumento.</li>
+    <li><b>Fechamento crítico</b>: a consequência dessa falha para a sociedade ou para a segurança pública.</li>
+  </ol>
+
+  <h3>A proposta completa</h3>
+  <div class="box pen">
+    <span class="tag">Fórmula das aulas</span>
+    <p><b>Agente + Ação + Meio/Modo + Detalhamento + Efeito.</b> O ideal é ter duas ações, uma para cada tese, e dividir os agentes quando o tema pedir.</p>
+  </div>
+  <p>Exemplo discutido em sala (feminicídio): <b>Executivo</b>, ampliar as delegacias da mulher e fortalecer as Patrulhas Maria da Penha; <b>Judiciário</b>, dar celeridade à concessão das medidas protetivas; <b>escola e mídia</b>, promover debates sobre igualdade de gênero.</p>
+
+  <h3>Os esqueletos das aulas</h3>
+  <p>Moldes usados em sala. As partes fixas estão em <b>negrito</b>; as lacunas, <span class="slot">assim</span>.</p>
+  <div class="mold"><h4>Esqueleto 1 <span class="mono">tema geral, duas causas</span></h4>
+    <p><span class="fixed">Nas últimas décadas, debate-se na esfera social brasileira acerca dos desafios que envolvem</span> <span class="slot">tema</span><span class="fixed">. Tal problemática persiste não apenas devido à</span> <span class="slot">causa 1</span><span class="fixed">, mas também em virtude da</span> <span class="slot">causa 2</span><span class="fixed">. Nesse cenário, faz-se imperiosa uma análise crítica acerca de tal conjuntura para mitigar seus impactos na coletividade.</span></p>
+    <p><span class="fixed">Em primeiro lugar, convém destacar que a raiz desse impasse está associada à</span> <span class="slot">causa 1</span><span class="fixed">. Sob essa ótica,</span> <span class="slot">conceito ou contexto</span> <span class="fixed">gera entraves estruturais. Na prática, isso se reflete na falta de</span> <span class="slot">consequência</span><span class="fixed">, o que enfraquece a garantia plena dos direitos fundamentais assegurados pela Constituição Federal de 1988.</span></p>
+    <p><span class="fixed">Ademais, sob o prisma da</span> <span class="slot">causa 2</span><span class="fixed">, percebe-se que a omissão de medidas efetivas agrava o quadro. Consequentemente, a população sofre com</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Depreende-se, portanto, a urgência de medidas saneadoras. Para isso, cabe ao</span> <span class="slot">agente</span><span class="fixed">, por meio de</span> <span class="slot">ação 1</span><span class="fixed">, bem como</span> <span class="slot">ação 2</span><span class="fixed">, com o intuito de</span> <span class="slot">efeito</span><span class="fixed">. Somente assim, o Estado consolidará uma ordem pública mais eficiente e segura.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto 2 <span class="mono">"o debate acerca de"</span></h4>
+    <p><span class="fixed">O debate acerca de</span> <span class="slot">tema</span> <span class="fixed">revela-se de fundamental importância no contexto contemporâneo da sociedade. Nesse cenário, tal problemática persiste devido a</span> <span class="slot">causa 1</span> <span class="fixed">e, somado a isso, à</span> <span class="slot">causa 2</span><span class="fixed">. Torna-se imperiosa, assim, a análise desses fatores para o enfrentamento da questão.</span></p>
+    <p><span class="fixed">Em primeira análise, destaca-se que</span> <span class="slot">causa 1</span> <span class="fixed">atua como um entrave para a superação desse desafio. Sob essa ótica,</span> <span class="slot">explicação</span><span class="fixed">. Dessa forma, enquanto essa realidade persistir,</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Ademais, convém pontuar que</span> <span class="slot">causa 2</span> <span class="fixed">agrava o panorama exposto. Isso ocorre porque</span> <span class="slot">explicação</span><span class="fixed">. Consequentemente, observa-se a perpetuação de</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Infere-se, portanto, a urgência de medidas para mitigar os impactos de</span> <span class="slot">tema</span><span class="fixed">. Para tanto, cabe ao</span> <span class="slot">agente</span> <span class="slot">ação 1</span><span class="fixed">, bem como</span> <span class="slot">ação 2</span><span class="fixed">, com o intuito de</span> <span class="slot">efeito</span><span class="fixed">.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto 3 <span class="mono">a lei garante, a realidade não cumpre</span></h4>
+    <p><span class="slot">lei, Constituição ou Estatuto</span> <span class="fixed">assegura</span> <span class="slot">direito central do tema</span><span class="fixed">. Contudo, a persistência de</span> <span class="slot">problema</span> <span class="fixed">evidencia a distância entre o texto legal e a realidade brasileira. Assim, torna-se premente analisar</span> <span class="slot">causa 1</span> <span class="fixed">e</span> <span class="slot">causa 2</span> <span class="fixed">como fatores que agravam a problemática.</span></p>
+    <p><span class="fixed">Primordialmente,</span> <span class="slot">tese 1</span><span class="fixed">. Sob essa ótica,</span> <span class="slot">repertório, ex.: "O Cidadão de Papel"</span> <span class="fixed">retrata a ineficácia prática de garantias teóricas. Nesse contexto,</span> <span class="slot">análise</span><span class="fixed">. Desse modo,</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Ademais, cabe sublinhar</span> <span class="slot">tese 2 e explicação</span><span class="fixed">. Isso eleva drasticamente</span> <span class="slot">consequência</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Portanto, o combate a essa realidade exige uma repressão qualificada. Cabe ao</span> <span class="slot">agente 1</span><span class="fixed">, em conjunto com</span> <span class="slot">agente 2</span><span class="fixed">,</span> <span class="slot">ação 1</span><span class="fixed">, aliada a</span> <span class="slot">ação 2</span><span class="fixed">. Só assim,</span> <span class="slot">repertório da introdução</span> <span class="fixed">deixará de ser uma utopia legislativa para ser, de fato, um escudo protetor.</span></p>
+  </div>
+  <div class="mold"><h4>Esqueleto da Constituição <span class="mono">aula de 21/11</span></h4>
+    <p><span class="fixed">A Constituição Federal de 1988 assegura</span> <span class="slot">direito ou princípio</span><span class="fixed">, mas condiciona o exercício de qualquer prerrogativa ao respeito aos direitos fundamentais. No Brasil, contudo,</span> <span class="slot">problema</span> <span class="fixed">evidencia falhas que comprometem a coletividade. Esse cenário decorre</span> <span class="slot">tese 1</span> <span class="fixed">e</span> <span class="slot">tese 2</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Em primeiro plano, destaca-se</span> <span class="slot">tese 1</span><span class="fixed">. Conforme</span> <span class="slot">autor, obra ou dado</span><span class="fixed">,</span> <span class="slot">aplicação ao tema</span><span class="fixed">. Como consequência,</span> <span class="slot">efeito</span><span class="fixed">, o que agrava o problema.</span></p>
+    <p><span class="fixed">Ademais,</span> <span class="slot">tese 2</span> <span class="fixed">contribui para a permanência desse quadro. A ausência de</span> <span class="slot">medida ou fiscalização</span> <span class="fixed">favorece</span> <span class="slot">desdobramento</span><span class="fixed">, gerando impactos diretos sobre</span> <span class="slot">grupo afetado</span><span class="fixed">.</span></p>
+    <p><span class="fixed">Portanto, enfrentar</span> <span class="slot">tema</span> <span class="fixed">exige medidas firmes e coordenadas. Cabe</span> <span class="slot">agente</span> <span class="slot">ação e meio</span><span class="fixed">, a fim de</span> <span class="slot">finalidade</span><span class="fixed">, garantindo maior efetividade social e respeito à lei.</span></p>
+  </div>
+  <div class="box warn">
+    <span class="tag">Use os esqueletos com cuidado</span>
+    <p>Frases genéricas como "Nas últimas décadas, debate-se..." ajudam a começar, mas não informam nada sozinhas. O critério 1 premia <b>repertório e argumento específicos do tema</b>: preencha as lacunas com lei, autor ou dado, como nas redações nota 40 deste e-book. Os esqueletos das aulas têm parágrafos de 4 a 5 linhas; para chegar ao mapa 4-6-6-4, acrescente o repertório e a explicação nos desenvolvimentos. E não repita conectivos: se a introdução já tem "portanto", troque por "assim", porque a conclusão também começa com "portanto".</p>
+  </div>
+
+  <h3>Banco de expressões das aulas</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Função</th><th>Expressões</th></tr>
+    <tr><td>Abrir a introdução</td><td>"Nas últimas décadas, debate-se na esfera social brasileira acerca de..." · "O debate acerca de... revela-se de fundamental importância..."</td></tr>
+    <tr><td>Anunciar as teses</td><td>"não apenas devido à..., mas também em virtude da..." · "decorre, sobretudo, da... e da..."</td></tr>
+    <tr><td>Abrir o D1</td><td>"Em primeiro lugar, convém destacar que..." · "Em primeira análise, destaca-se que..." · "Primordialmente," · "Em primeiro plano,"</td></tr>
+    <tr><td>Abrir o D2</td><td>"Ademais, sob o prisma de..." · "Ademais, convém pontuar que..." · "Ademais, cabe sublinhar..."</td></tr>
+    <tr><td>Explicar</td><td>"Sob essa ótica," · "Isso ocorre porque" · "Na prática, isso se reflete em..."</td></tr>
+    <tr><td>Mostrar consequência</td><td>"Consequentemente," · "Isso eleva drasticamente..." · "Como consequência,"</td></tr>
+    <tr><td>Concluir</td><td>"Depreende-se, portanto, a urgência de..." · "Infere-se, portanto,..." · "Portanto, urge mitigar tais desafios."</td></tr>
+    <tr><td>Fechar o texto</td><td>"Somente assim..." · "Só assim, ... deixará de ser uma utopia legislativa para ser, de fato, um escudo protetor."</td></tr>
+  </table></div>
+
+  <h3>Como discutir um tema em 5 passos</h3>
+  <ol class="steps">
+    <li><b>Sublinhe as palavras do tema</b> e ache o recorte. "Linha tênue entre X e Y" pede um parágrafo para cada lado; "Estado e sociedade" pede um parágrafo para cada responsável.</li>
+    <li><b>Liste as causas.</b> As duas melhores viram as teses.</li>
+    <li><b>Liste as consequências.</b> Elas alimentam o fechamento crítico de cada parágrafo.</li>
+    <li><b>Escolha os repertórios</b>: a Constituição ou uma lei específica, um autor ou obra, um dado.</li>
+    <li><b>Escreva as soluções por agente</b>: Executivo, Judiciário, escola, mídia e sociedade.</li>
+  </ol>
+  <p>Os kits dos temas das aulas, no <a href="#temas">capítulo 9</a>, trazem o resumo do que foi discutido em sala (filtro "Temas das aulas").</p>
+
+  <h3>Os temas das aulas para a PMPE 2027</h3>
+  <p>Todos têm redação nota 40 de 20 linhas, no capítulo 11.</p>
+  <ul class="aula-list" id="aulaTemas"></ul>
+</section>
+
+<!-- ======================= 11. MODELOS ======================= -->
+<section class="view" id="modelos" data-title="Redações nota 40" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Capítulo 11</span>
     <h2>Redações nota 40</h2>
-    <p>55 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo anterior e uma segunda versão, com outra tese e outros repertórios, para os 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
+    <p>64 redações de exatamente 20 linhas, no mapa 4-6-6-4: uma para cada tema do capítulo 9, incluindo os 9 temas das aulas, e uma segunda versão, com outra tese e outros repertórios, para 13 temas de chance alta. Ligue as marcações para ver onde está cada peça.</p>
   </div>
   <div class="mod-nav">
     <button class="icon-btn" id="modPrev" type="button" aria-label="Redação anterior">‹</button>
@@ -859,10 +979,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <div id="modBox"></div>
   <p class="small">As linhas foram quebradas como numa folha de prova manuscrita (cerca de 11 palavras por linha). Na sua letra, a quebra pode mudar; o que importa é manter 4-6-6-4.</p>
 </section>
-<!-- ======================= 11. LABORATÓRIO ======================= -->
+<!-- ======================= 12. LABORATÓRIO ======================= -->
 <section class="view" id="lab" data-title="Laboratório" hidden>
   <div class="chap-head">
-    <span class="eyebrow">Capítulo 11</span>
+    <span class="eyebrow">Capítulo 12</span>
     <h2>Laboratório</h2>
     <p>Ferramentas para treinar: montar a redação pelos moldes, contar as linhas, cronometrar e se autoavaliar.</p>
   </div>
@@ -953,10 +1073,10 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   </div>
 </section>
 
-<!-- ======================= 12. PLANO ======================= -->
+<!-- ======================= 13. PLANO ======================= -->
 <section class="view" id="plano" data-title="Plano de treino" hidden>
   <div class="chap-head">
-    <span class="eyebrow">Capítulo 12</span>
+    <span class="eyebrow">Capítulo 13</span>
     <h2>Plano de treino e dia da prova</h2>
     <p>Quatro semanas para sair do zero. Marque cada tarefa ao terminar; fica salvo neste navegador.</p>
   </div>
@@ -975,7 +1095,7 @@ td.wrong{color:var(--red)} td.right{color:var(--ok)}
   <ul class="checks" id="finalChecks"></ul>
   <div class="box tip">
     <span class="tag">No dia</span>
-    <p>Leve caneta esferográfica da cor exigida no edital (normalmente preta, de corpo transparente) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
+    <p>Leve caneta esferográfica de tinta azul ou preta (item 12.7 do edital) e uma reserva. Escreva primeiro no rascunho, conte as 20 linhas e só então passe a limpo. Nunca deixe de transcrever para a folha definitiva: o rascunho não é corrigido.</p>
   </div>
 </section>
   </div>
@@ -1004,16 +1124,16 @@ const MODELOS = [
       'reincidência e enfraquece a confiança da população nas instituições.'
     ],[
       'Além disso, a desigualdade social amplia a vulnerabilidade dos',
-      'jovens das periferias. {r}Conforme o Atlas da Violência, do Ipea, a',
-      'maioria das vítimas de homicídio no país é jovem e negra{/}. Nesse',
-      'contexto, a falta de escola de qualidade, emprego e lazer deixa essa',
-      'parcela da população exposta ao aliciamento do tráfico, de modo que',
-      'a criminalidade se renova a cada geração nas comunidades carentes.'
+      'jovens das periferias. {r}Conforme o Atlas da Violência, do Ipea, os jovens',
+      'negros são as principais vítimas de homicídio no país{/}. Nesse contexto,',
+      'a falta de escola de qualidade, emprego e lazer deixa essa parcela da',
+      'população exposta ao aliciamento do tráfico, de modo que a criminalidade',
+      'se renova a cada geração nas comunidades carentes.'
     ],[
-      'Portanto, é necessário enfrentar os desafios da segurança pública.',
-      'Para isso, {p}o Governo Federal e os estados devem integrar polícias,',
-      'Judiciário e escolas, por meio do Sistema Único de Segurança Pública,',
-      'a fim de reduzir a impunidade e proteger os jovens vulneráveis{/}.'
+      'Portanto, é preciso enfrentar os desafios da segurança pública. Para',
+      'isso, {p}o Governo Federal deve integrar as polícias pelo Sistema Único de',
+      'Segurança Pública e ampliar programas sociais nas periferias, a fim de',
+      'reduzir a impunidade e proteger os jovens{/}.'
     ]
   ],
   notas:[
@@ -1042,15 +1162,15 @@ const MODELOS = [
       'assunto privado, o que dificulta a denúncia e perpetua o ciclo.'
     ],[
       'Além disso, a rede de proteção às vítimas ainda é insuficiente.',
-      '{r}Embora a lei preveja medidas protetivas de urgência{/}, muitas cidades',
-      'não têm delegacias especializadas nem abrigos para acolher vítimas.',
-      'Desse modo, a mulher que depende financeiramente do agressor teme',
-      'denunciar, pois não sabe para onde ir, de modo que permanece em',
-      'risco e, em muitos casos, torna-se mais uma vítima de feminicídio.'
+      '{r}Embora a lei preveja medidas protetivas de urgência{/}, muitas cidades não',
+      'têm delegacias especializadas nem abrigos para acolhê-las. Assim, a mulher',
+      'que depende financeiramente do agressor teme denunciar, pois não sabe para',
+      'onde ir, de modo que permanece em risco e, em muitos casos, torna-se mais',
+      'uma vítima de feminicídio.'
     ],[
       'Portanto, é urgente combater a violência contra a mulher. Para',
-      'isso, {p}o Ministério da Educação deve incluir o tema nas escolas, e os',
-      'estados devem ampliar delegacias e abrigos, por meio de verbas',
+      'isso, {p}o Ministério da Educação deve incluir a igualdade de gênero nos',
+      'currículos, e os estados devem ampliar delegacias e abrigos, com verbas',
       'federais, a fim de garantir a proteção prevista na Lei Maria da Penha{/}.'
     ]
   ],
@@ -1073,11 +1193,11 @@ const MODELOS = [
       'persistem devido à falta de educação digital e ao anonimato virtual{/}.'
     ],[
       'Em primeiro lugar, grande parte da população não sabe se proteger',
-      'no ambiente virtual. {r}Embora a Lei Geral de Proteção de Dados, de 2018,',
-      'regule o uso de informações pessoais{/}, golpes como o do falso parente',
-      'exploram a confiança e a pressa das vítimas, sobretudo dos idosos.',
-      'Nesse sentido, sem orientação sobre senhas, links e dados pessoais,',
-      'o cidadão torna-se alvo fácil e perde economias de toda uma vida.'
+      'no ambiente virtual. {r}O Marco Civil da Internet prevê que a educação inclua',
+      'a capacitação para o uso seguro da rede{/}, mas essa orientação raramente',
+      'chega às famílias. Nesse sentido, golpes como o do falso parente exploram',
+      'a confiança e a pressa das vítimas, sobretudo dos idosos, que acabam',
+      'perdendo economias de toda uma vida.'
     ],[
       'Além disso, a sensação de anonimato estimula os criminosos. {r}De',
       'acordo com o sociólogo Zygmunt Bauman, as relações na modernidade',
@@ -1095,7 +1215,7 @@ const MODELOS = [
   notas:[
     'Abertura com fato concreto e atual (o Pix) que leva ao problema.',
     'Tese com duas causas claras: falta de educação digital (D1) e anonimato (D2).',
-    'O D1 usa uma lei (LGPD) e um exemplo do cotidiano; o D2 usa um sociólogo.',
+    'O D1 usa o Marco Civil da Internet, que prevê educação para o uso seguro da rede, e um exemplo do cotidiano; o D2 usa um sociólogo.',
     'A proposta responde às duas causas: educação digital e investigação especializada.'
   ]
 },
@@ -1110,19 +1230,19 @@ const MODELOS = [
       'Essa aproximação é essencial no Brasil, {t}sobretudo por fortalecer a',
       'confiança da população e por tornar a prevenção do crime mais eficaz{/}.'
     ],[
-      'Em primeiro lugar, {r}a Constituição de 1988 define, no artigo 144, a',
-      'segurança pública como "dever do Estado, direito e responsabilidade',
-      'de todos"{/}. Sob essa ótica, quando o mesmo policial atua no bairro',
-      'por longo tempo, moradores e comerciantes passam a vê-lo como aliado',
-      'e colaboram com informações, o que agiliza investigações e reduz o',
-      'espaço para o domínio de grupos criminosos sobre a comunidade.'
+      'Em primeiro lugar, a proximidade fortalece a confiança da população.',
+      '{r}A Constituição Federal de 1988 define, no artigo 144, a segurança pública',
+      'como "dever do Estado, direito e responsabilidade de todos"{/}. Sob essa',
+      'ótica, quando o mesmo policial atua no bairro por longo tempo, moradores',
+      'e comerciantes passam a vê-lo como aliado e colaboram com informações, o',
+      'que agiliza investigações e enfraquece o domínio de grupos criminosos.'
     ],[
       'Além disso, o policiamento comunitário torna a prevenção eficaz.',
-      '{r}No Japão, os "kobans", pequenos postos policiais de bairro, são',
-      'apontados como um dos fatores dos baixos índices de violência{/} do',
-      'país. Nesse contexto, o policial próximo identifica conflitos, brigas',
-      'e pontos de risco antes que se tornem crimes, de modo que muitas',
-      'ocorrências são evitadas e a sensação de segurança cresce no bairro.'
+      '{r}No Japão, os "kobans", pequenos postos policiais de bairro, são apontados',
+      'como um dos fatores dos baixos índices de violência{/} do país. Nesse',
+      'contexto, o policial próximo identifica conflitos, brigas e pontos de',
+      'risco antes que se tornem crimes, de modo que muitas ocorrências são',
+      'evitadas e a sensação de segurança cresce na comunidade.'
     ],[
       'Portanto, aproximar polícia e comunidade é indispensável. Para isso,',
       '{p}a Secretaria de Defesa Social de Pernambuco deve ampliar as bases',
@@ -1193,12 +1313,12 @@ const MODELOS = [
       'Sob essa ótica, sem apoio psicológico, muitos policiais adoecem em',
       'silêncio, o que eleva os casos de afastamento e até de suicídio.'
     ],[
-      'Além disso, a saúde mental do agente reflete no serviço prestado.',
-      'Um profissional esgotado tem mais dificuldade de controlar emoções,',
-      'decidir sob pressão e dialogar com o cidadão em uma ocorrência. Nesse',
-      'contexto, {r}a Constituição, no artigo 196, define a saúde como direito',
-      'de todos{/}, inclusive de quem veste a farda, de modo que cuidar dela é',
-      'também uma forma de garantir uma atuação policial técnica e segura.'
+      'Além disso, a saúde mental do agente repercute na qualidade do',
+      'atendimento. Um profissional esgotado tem mais dificuldade de controlar',
+      'emoções, decidir sob pressão e dialogar com o cidadão em uma ocorrência.',
+      'Nesse contexto, {r}a Constituição Federal de 1988, no artigo 196, define a saúde',
+      'como direito de todos{/}, inclusive de quem veste a farda, de modo que cuidar',
+      'dela é também uma forma de garantir uma atuação policial técnica e segura.'
     ],[
       'Portanto, a saúde mental do policial deve ser prioridade. Para isso,',
       '{p}o Governo do Estado deve garantir atendimento psicológico periódico',
@@ -1225,18 +1345,18 @@ const MODELOS = [
       'oportunidades para os jovens e pela ausência do Estado nas periferias{/}.'
     ],[
       'Em primeiro lugar, a falta de oportunidades torna o crime atraente.',
-      '{r}A Constituição determina, no artigo 227, que o jovem deve receber',
-      '"absoluta prioridade" da família, da sociedade e do Estado{/}. Contudo,',
-      'a evasão escolar e o desemprego deixam muitos adolescentes sem renda',
-      'e sem perspectiva, de modo que a promessa de dinheiro rápido feita',
+      '{r}A Constituição Federal de 1988 determina, no artigo 227, que o jovem',
+      'deve receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
+      'Contudo, a evasão escolar e o desemprego deixam muitos adolescentes sem',
+      'renda e sem perspectiva, de modo que a promessa de dinheiro rápido feita',
       'pelo tráfico parece, para eles, o único caminho possível.'
     ],[
-      'Além disso, a ausência do Estado abre espaço para o tráfico.',
-      '{r}Segundo o sociólogo Émile Durkheim, quando as normas perdem força,',
-      'instala-se a anomia{/}, o que favorece o desvio de conduta. Nesse',
-      'sentido, em bairros sem praças, cultura e serviços públicos, o',
-      'traficante passa a impor as próprias regras e a oferecer falsa',
-      'proteção, o que transforma crianças em mão de obra para o crime.'
+      'Além disso, a ausência do Estado abre espaço para o tráfico. {r}Segundo',
+      'o sociólogo Émile Durkheim, quando as normas perdem força, instala-se',
+      'a anomia{/}, condição que favorece o desvio de conduta. Nesse sentido, em',
+      'bairros sem praças, cultura e serviços públicos, o traficante passa a',
+      'impor as próprias regras e a oferecer falsa proteção, o que transforma',
+      'crianças em mão de obra para o crime.'
     ],[
       'Portanto, é preciso afastar os jovens do tráfico. Para isso, {p}os',
       'estados e os municípios devem ampliar escolas em tempo integral e',
@@ -1315,9 +1435,9 @@ const MODELOS = [
       'valoriza o trabalho de quem atua nas ruas.'
     ],[
       'Portanto, o uso de câmeras corporais deve ser ampliado. Para isso,',
-      '{p}a Secretaria de Defesa Social deve adotar protocolos claros de',
-      'uso e armazenamento das imagens, por meio de treinamento e respeito à',
-      'LGPD, a fim de garantir transparência e segurança a todos{/}.'
+      '{p}a Secretaria de Defesa Social deve adotar protocolos claros de uso e',
+      'armazenamento das imagens, com treinamento e respeito à Lei Geral de',
+      'Proteção de Dados, a fim de garantir transparência e segurança a todos{/}.'
     ]
   ],
   notas:[
@@ -1333,10 +1453,10 @@ const MODELOS = [
   tipo:'Tema de "desafios" → dois obstáculos',
   p:[
     [
-      '{r}A Lei de Execução Penal determina que a pena deve proporcionar',
-      'condições para a harmônica integração social do condenado{/}. Entretanto,',
-      'a ressocialização ainda é rara no país, {t}sobretudo devido à',
-      'superlotação dos presídios e à falta de estudo e trabalho no cárcere{/}.'
+      '{r}A Lei de Execução Penal determina que a execução da pena proporcione',
+      'condições para a harmônica integração social do condenado{/}. Entretanto, a',
+      'ressocialização ainda é rara no país, {t}sobretudo devido à superlotação dos',
+      'presídios e à falta de estudo e trabalho no cárcere{/}.'
     ],[
       'Em primeiro lugar, a superlotação transforma prisões em escolas do',
       'crime. {r}O Brasil possui uma das maiores populações carcerárias do',
@@ -1376,19 +1496,19 @@ const MODELOS = [
       '{t}a escola é essencial, pois amplia as oportunidades dos jovens e',
       'forma cidadãos que respeitam direitos e deveres{/}.'
     ],[
-      'Em primeiro lugar, a educação abre caminhos longe do crime. {r}O',
-      'Atlas da Violência mostra que a maioria das vítimas de homicídio no',
-      'país é jovem{/}, grupo em que a evasão escolar é frequente. Nesse',
-      'sentido, o jovem que conclui os estudos e se qualifica tem mais',
-      'chances de conseguir emprego, o que reduz a atração exercida pelo',
-      'tráfico e por outras atividades ilegais nas periferias.'
+      'Em primeiro lugar, a educação abre caminhos longe do crime. {r}O Atlas',
+      'da Violência mostra que quase metade das vítimas de homicídio no país',
+      'tem entre 15 e 29 anos{/}, faixa em que a evasão escolar é frequente. Nesse',
+      'sentido, o jovem que conclui os estudos e se qualifica tem mais chances',
+      'de conseguir emprego, o que reduz a atração exercida pelo tráfico e por',
+      'outras atividades ilegais nas periferias.'
     ],[
       'Além disso, a escola forma valores de convivência e respeito. {r}O',
-      'artigo 205 da Constituição afirma que a educação deve preparar a',
-      'pessoa para o exercício da cidadania{/}. Sob essa ótica, aulas que',
-      'tratam de diálogo, tolerância e respeito às leis ajudam a prevenir',
-      'conflitos, bullying e violência doméstica, de modo que a escola atua',
-      'antes que o problema chegue às delegacias.'
+      'artigo 205 da Constituição Federal de 1988 afirma que a educação deve',
+      'preparar a pessoa para o exercício da cidadania{/}. Sob essa ótica, aulas',
+      'que tratam de diálogo, tolerância e respeito às leis ajudam a prevenir',
+      'conflitos, bullying e violência doméstica, de modo que a escola atua antes',
+      'que o problema chegue às delegacias.'
     ],[
       'Portanto, investir em educação é investir em segurança. Para isso,',
       '{p}os estados devem ampliar as escolas em tempo integral e manter',
@@ -1409,9 +1529,9 @@ const MODELOS = [
   tipo:'Tema polêmico → posição contrária, fundamentada na Constituição',
   p:[
     [
-      '{r}A Constituição Federal, no artigo 228, determina que os menores de',
-      '18 anos são penalmente inimputáveis{/}. Embora a proposta de reduzir',
-      'essa idade ganhe apoio diante da violência, {t}ela não resolve o',
+      '{r}A Constituição Federal de 1988, no artigo 228, determina que os',
+      'menores de 18 anos são penalmente inimputáveis{/}. Embora a proposta de',
+      'reduzir essa idade ganhe apoio diante da violência, {t}ela não resolve o',
       'problema, pois ignora suas causas sociais e a falência das prisões{/}.'
     ],[
       'Em primeiro lugar, a medida não ataca as causas da criminalidade',
@@ -1429,9 +1549,9 @@ const MODELOS = [
       'garantir a segurança desejada pela população.'
     ],[
       'Portanto, a redução da maioridade penal não é a solução. Em vez',
-      'disso, {p}o Estado deve aplicar com rigor as medidas socioeducativas',
-      'do ECA e ampliar a educação integral, por meio de investimento',
-      'contínuo, a fim de responsabilizar o infrator e prevenir novos crimes{/}.'
+      'disso, {p}o Estado deve aplicar com rigor as medidas socioeducativas do',
+      'Estatuto da Criança e do Adolescente e ampliar a educação integral, a fim',
+      'de responsabilizar o infrator e prevenir novos crimes{/}.'
     ]
   ],
   notas:[
@@ -1486,16 +1606,16 @@ const MODELOS = [
   p:[
     [
       '{r}No romance "1984", George Orwell descreve uma sociedade vigiada o',
-      'tempo todo pelo "Grande Irmão"{/}. Com a inteligência artificial, parte',
-      'dessa ficção se aproxima da realidade, {t}sobretudo pela facilidade de',
-      'criar fraudes digitais e pela ameaça à privacidade dos cidadãos{/}.'
+      'tempo todo pelo "Grande Irmão"{/}. Com a inteligência artificial (IA), parte',
+      'dessa ficção se aproxima da realidade, {t}sobretudo pela facilidade de criar',
+      'fraudes digitais e pela ameaça à privacidade dos cidadãos{/}.'
     ],[
       'Em primeiro lugar, a IA facilita a criação de fraudes convincentes.',
-      'Vídeos e áudios falsos, os chamados "deepfakes", imitam a voz e o',
-      'rosto de pessoas reais e já são usados em golpes e extorsões. {r}Embora',
-      'a Lei 14.155, de 2021, tenha endurecido as penas das fraudes eletrônicas{/},',
-      'a vítima dificilmente percebe a farsa, e a investigação depende de',
-      'perícia especializada, o que torna a punição lenta e rara.'
+      'Vídeos e áudios falsos, os chamados "deepfakes", imitam a voz e o rosto de',
+      'pessoas reais e já são usados em golpes e extorsões. {r}Embora a Lei 14.155,',
+      'de 2021, tenha endurecido as penas das fraudes eletrônicas{/}, a punição',
+      'continua rara, pois a vítima dificilmente percebe a farsa e a investigação',
+      'depende de perícia especializada.'
     ],[
       'Além disso, a coleta massiva de dados ameaça a privacidade. Sistemas',
       'de IA dependem de grandes volumes de informações pessoais, muitas',
@@ -1542,10 +1662,10 @@ const MODELOS = [
       'crime{/}, mas muitos pais desconhecem o que os filhos fazem on-line, de',
       'modo que os casos só são descobertos quando o dano já ocorreu.'
     ],[
-      'Portanto, o uso das telas na infância precisa de limites. Para isso,',
-      '{p}as escolas devem oferecer educação digital, e as famílias devem',
-      'usar controle parental e horários definidos, por meio de orientação',
-      'das próprias escolas, a fim de garantir uma infância saudável e segura{/}.'
+      'Portanto, o uso das telas na infância precisa de limites. Para',
+      'isso, {p}as escolas devem oferecer educação digital e orientar os pais, e',
+      'as famílias devem usar controle parental e horários definidos, a fim de',
+      'garantir uma infância saudável e segura{/}.'
     ]
   ],
   notas:[
@@ -1561,24 +1681,24 @@ const MODELOS = [
   tipo:'Tema de "importância" → dois benefícios',
   p:[
     [
-      '{r}O artigo 144 da Constituição define a segurança pública como',
-      '"dever do Estado, direito e responsabilidade de todos"{/}. Para cumprir',
-      'esse dever, {t}valorizar o policial é essencial, pois melhora o serviço',
-      'prestado e protege a saúde de quem protege a sociedade{/}.'
+      '{r}O artigo 144 da Constituição Federal de 1988 define a segurança',
+      'pública como "dever do Estado, direito e responsabilidade de todos"{/}.',
+      'Para cumprir esse dever, {t}valorizar o policial é essencial, pois melhora',
+      'o serviço prestado e protege a saúde de quem protege a sociedade{/}.'
     ],[
       'Em primeiro lugar, a valorização torna o serviço mais eficiente.',
-      'Formação continuada, equipamentos modernos e salário digno permitem',
-      'que o policial atue com técnica e segurança. {r}A Lei Orgânica Nacional',
-      'das Polícias Militares, de 2023, reforçou a importância de garantir',
-      'direitos e condições de trabalho a esses profissionais{/}, de modo que',
-      'a qualidade do atendimento ao cidadão depende desse investimento.'
+      'Formação continuada, equipamentos modernos e salário digno permitem que',
+      'o policial atue com técnica e segurança. {r}A Lei Orgânica Nacional das',
+      'Polícias Militares, de 2023, reforçou a importância de garantir direitos e',
+      'condições de trabalho a esses profissionais{/}, o que mostra que a qualidade',
+      'do atendimento ao cidadão depende desse investimento.'
     ],[
-      'Além disso, valorizar o policial é cuidar de quem arrisca a vida.',
-      'Escalas exaustivas e a exposição constante à violência adoecem muitos',
-      'agentes. {r}Embora a Lei 14.531, de 2023, preveja ações de saúde mental',
-      'para esses profissionais{/}, o atendimento ainda é insuficiente. Nesse',
-      'contexto, cresce o número de afastamentos, o que reduz o efetivo nas',
-      'ruas e prejudica a segurança de toda a sociedade.'
+      'Além disso, essa valorização protege quem arrisca a vida. Escalas',
+      'exaustivas e a exposição constante à violência adoecem muitos agentes.',
+      '{r}Embora a Lei 14.531, de 2023, preveja ações de saúde mental para esses',
+      'profissionais{/}, o atendimento ainda é insuficiente. Nesse contexto, cresce',
+      'o número de afastamentos, o que reduz o efetivo nas ruas e prejudica a',
+      'segurança de toda a sociedade.'
     ],[
       'Portanto, valorizar o policial é investir em segurança. Para isso,',
       '{p}o Governo do Estado deve garantir formação, equipamentos, salário',
@@ -1642,19 +1762,19 @@ const MODELOS = [
       'central, e {t}respeitar esses direitos fortalece a atividade policial,',
       'pois garante legitimidade à corporação e protege o próprio policial{/}.'
     ],[
-      'Em primeiro lugar, a atuação legal gera confiança da população.',
-      '{r}Max Weber afirma que o Estado detém o monopólio do uso legítimo',
-      'da força{/}, ou seja, a força só é aceita quando segue a lei. Desse modo,',
-      'abordagens técnicas e proporcionais aproximam o cidadão da polícia, o',
-      'que aumenta as denúncias e a colaboração, enquanto abusos afastam a',
-      'comunidade e favorecem o domínio de criminosos sobre os bairros.'
+      'Em primeiro lugar, a atuação legal gera confiança da população. {r}Max',
+      'Weber afirma que o Estado detém o monopólio do uso legítimo da força{/}, ou',
+      'seja, ela só é aceita quando segue a lei. Desse modo, abordagens técnicas',
+      'e proporcionais aproximam o cidadão da polícia, o que aumenta as denúncias',
+      'e a colaboração, enquanto abusos afastam a comunidade e favorecem o',
+      'domínio de criminosos sobre os bairros.'
     ],[
       'Além disso, os direitos humanos também protegem quem veste a farda.',
-      '{r}A Declaração Universal dos Direitos Humanos, de 1948, garante a todo',
-      'ser humano o direito à vida e à segurança pessoal{/}, inclusive aos',
-      'policiais. Nesse sentido, condições dignas de trabalho, equipamentos',
-      'de proteção e atenção à saúde mental são direitos desses agentes, de',
-      'modo que a defesa dos direitos humanos não se opõe à polícia.'
+      '{r}A Declaração Universal de 1948 garante a todo ser humano o direito à vida',
+      'e à segurança pessoal{/}, inclusive aos policiais. Nesse sentido, condições',
+      'dignas de trabalho, equipamentos de proteção e atenção à saúde mental',
+      'são garantias desses agentes, de modo que essa defesa fortalece a própria',
+      'atividade policial.'
     ],[
       'Portanto, direitos humanos e polícia caminham juntos. Para isso,',
       '{p}as academias de polícia devem reforçar a formação em uso progressivo',
@@ -1682,17 +1802,17 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, a falta de moradia empurra famílias para o risco.',
       'Sem renda para pagar aluguel em áreas seguras, muitas pessoas ocupam',
-      'morros e margens de rios. {r}O geógrafo Milton Santos chamou de',
-      '"cidadania mutilada" a condição de quem tem direitos só no papel{/}.',
-      'Sob essa ótica, o direito à moradia, previsto na Constituição, não',
-      'chega a essas famílias, que ficam expostas a deslizamentos e enchentes.'
+      'morros e margens de rios. {r}O geógrafo Milton Santos chamou de "cidadania',
+      'mutilada" a condição de quem tem direitos só no papel{/}. Sob essa ótica, o',
+      'direito à moradia, previsto na Constituição Federal de 1988, não chega a',
+      'essas famílias, que ficam expostas a deslizamentos e enchentes.'
     ],[
       'Além disso, o poder público investe pouco em prevenção. Drenagem',
       'precária, obras de contenção inacabadas e sistemas de alerta pouco',
       'conhecidos agravam os efeitos das chuvas. {r}O artigo 225 da Constituição',
       'impõe ao poder público o dever de preservar o meio ambiente{/}, e o',
-      'desmatamento das encostas aumenta o risco, de modo que cada temporal',
-      'se transforma em uma ameaça à vida da população.'
+      'desmatamento das encostas amplia o perigo, de modo que cada temporal se',
+      'transforma em uma ameaça à vida da população.'
     ],[
       'Portanto, é preciso agir antes das chuvas. Para isso, {p}as prefeituras',
       'e o governo do estado devem fazer obras de contenção e ampliar os',
@@ -1719,18 +1839,18 @@ const MODELOS = [
       'dos idosos em relação aos familiares e pela falta de fiscalização{/}.'
     ],[
       'Em primeiro lugar, grande parte das agressões ocorre dentro de casa.',
-      'Muitos idosos dependem dos filhos ou netos para cuidados e renda e,',
-      'por isso, sofrem maus-tratos, abandono e abuso financeiro em silêncio.',
-      '{r}Hannah Arendt chamou de "banalidade do mal" a naturalização de atos',
-      'cruéis{/}, e é o que ocorre quando a família trata a violência como',
-      'assunto privado, o que dificulta a denúncia e prolonga o sofrimento.'
+      'Muitos idosos dependem dos filhos ou netos para cuidados e renda e, por',
+      'isso, sofrem maus-tratos e abuso financeiro em silêncio. {r}Com o conceito',
+      'de "banalidade do mal", Hannah Arendt mostrou que pessoas comuns podem',
+      'praticar crueldades sem refletir sobre elas{/}, e é o que ocorre quando a',
+      'agressão vira rotina familiar e ninguém a denuncia.'
     ],[
       'Além disso, a fiscalização e os canais de denúncia são falhos.',
-      'Vizinhos, médicos e bancos nem sempre sabem como agir ao perceber',
-      'sinais de abuso, e muitos idosos desconhecem o Disque 100. {r}Golpes',
-      'digitais, como o do falso parente, também exploram essa população{/},',
-      'de modo que a violência ganha novas formas e a proteção prevista em',
-      'lei não alcança quem mais precisa dela.'
+      'Vizinhos, médicos e bancos nem sempre sabem como agir ao perceber sinais',
+      'de abuso, e muitos idosos desconhecem {r}o Disque 100, canal federal de',
+      'denúncia de violações de direitos humanos{/}. Golpes digitais, como o do',
+      'falso parente, também exploram essa população, de modo que a violência',
+      'ganha novas formas e a proteção legal não alcança quem mais precisa dela.'
     ],[
       'Portanto, é necessário proteger a pessoa idosa. Para isso, {p}os',
       'municípios devem ampliar visitas da assistência social e centros de',
@@ -1740,8 +1860,8 @@ const MODELOS = [
   ],
   notas:[
     'Abre com a lei específica do tema, com o ano.',
-    'O D1 usa um conceito filosófico (banalidade do mal) para explicar o silêncio da família.',
-    'O D2 cita um canal real de denúncia (Disque 100) e liga o tema aos golpes digitais.',
+    'O D1 usa o conceito de "banalidade do mal" com o sentido correto: pessoas comuns praticando crueldades sem refletir sobre elas.',
+    'O D2 usa como repertório um canal real de denúncia (Disque 100) e liga o tema aos golpes digitais.',
     'A proposta aposta em identificação precoce, com assistência social e polícia trabalhando juntas.'
   ]
 },
@@ -1757,11 +1877,11 @@ const MODELOS = [
       'dentro dos presídios e pelo combate insuficiente ao seu dinheiro{/}.'
     ],[
       'Em primeiro lugar, os presídios se tornaram centros de comando.',
-      '{r}O Brasil possui uma das maiores populações carcerárias do mundo{/}, e',
-      'a superlotação permite que facções recrutem presos e imponham suas',
-      'regras. Nesse sentido, celulares que entram nas celas permitem que',
-      'líderes ordenem crimes de dentro da prisão, de modo que a pena não',
-      'interrompe a atividade criminosa, mas a fortalece.'
+      '{r}O Brasil possui uma das maiores populações carcerárias do mundo{/}, e a',
+      'superlotação permite que facções recrutem presos e imponham suas regras.',
+      'Nesse sentido, celulares que entram nas celas possibilitam que líderes',
+      'ordenem crimes de dentro da prisão, de modo que a pena não interrompe a',
+      'atividade criminosa, mas a fortalece.'
     ],[
       'Além disso, o dinheiro do crime circula sem controle. As facções',
       'lavam recursos do tráfico em empresas de fachada, imóveis e até',
@@ -1791,7 +1911,7 @@ const MODELOS = [
     [
       '{r}O Brasil foi o último país das Américas a abolir a escravidão, em',
       '1888{/}, e a abolição não veio acompanhada de terra, escola ou trabalho.',
-      'Por isso, o racismo persiste, {t}sobretudo pela herança desigual da',
+      'Ainda hoje, o racismo persiste, {t}sobretudo pela herança desigual da',
       'escravidão e pela impunidade dos crimes de discriminação{/}.'
     ],[
       'Em primeiro lugar, a desigualdade criada pela escravidão permanece.',
@@ -1809,9 +1929,9 @@ const MODELOS = [
       'nas redes sociais.'
     ],[
       'Portanto, combater o racismo exige ação contínua. Para isso, {p}as',
-      'escolas devem aplicar o ensino da história afro-brasileira, e as',
-      'polícias devem reforçar a formação em direitos humanos, a fim de',
-      'garantir igualdade de tratamento a todos os cidadãos{/}.'
+      'escolas devem cumprir a lei que tornou obrigatório o ensino da história',
+      'afro-brasileira, e as polícias devem reforçar a formação em direitos',
+      'humanos, a fim de garantir igualdade de tratamento a todos{/}.'
     ]
   ],
   notas:[
@@ -1828,28 +1948,28 @@ const MODELOS = [
   p:[
     [
       '{r}O Estatuto do Desarmamento, de 2003, estabeleceu regras rígidas',
-      'para a posse e o porte de armas de fogo no Brasil{/}. Ampliar o acesso',
-      'a elas, porém, {t}não garante segurança, pois torna fatais conflitos',
-      'banais e favorece o desvio de armas para o crime organizado{/}.'
+      'para a posse e o porte de armas de fogo no Brasil{/}. Ampliar o acesso a',
+      'elas, porém, {t}não garante segurança, pois torna fatais conflitos banais e',
+      'favorece seu desvio para o crime organizado{/}.'
     ],[
       'Em primeiro lugar, a arma em casa transforma brigas em tragédias.',
-      'Discussões de trânsito, desentendimentos entre vizinhos e episódios',
-      'de violência doméstica podem terminar em morte quando há uma arma ao',
-      'alcance. {r}Hobbes já afirmava que, sem o controle do Estado, os',
-      'conflitos tendem à "guerra de todos contra todos"{/}, de modo que mais',
-      'armas nas mãos da população aumentam o risco de mortes evitáveis.'
+      'Discussões de trânsito, desentendimentos entre vizinhos e episódios de',
+      'violência doméstica podem terminar em morte quando há um revólver ao',
+      'alcance. {r}Hobbes já afirmava que, sem o controle do Estado, os conflitos',
+      'tendem à "guerra de todos contra todos"{/}, de modo que mais armamento nas',
+      'mãos da população aumenta o risco de mortes evitáveis.'
     ],[
-      'Além disso, armas legais podem abastecer o crime. Armas roubadas ou',
-      'desviadas de residências e empresas acabam nas mãos de criminosos,',
-      'que as usam em assaltos e ataques. {r}Segundo o Atlas da Violência, a',
-      'maior parte dos homicídios no país é cometida com armas de fogo{/}.',
-      'Nesse sentido, quanto mais armas circulam, maior é a chance de que',
-      'parte delas sirva ao crime organizado.'
+      'Além disso, o armamento legal pode abastecer o crime. Armas roubadas',
+      'ou desviadas de residências e empresas acabam nas mãos de criminosos,',
+      'que as usam em assaltos e ataques. {r}Segundo o Atlas da Violência, a maior',
+      'parte dos homicídios no país é cometida com armas de fogo{/}. Nesse sentido,',
+      'quanto maior a circulação desse material, maior é a chance de que parte',
+      'dele sirva ao crime organizado.'
     ],[
-      'Portanto, ampliar o acesso às armas não é a solução. Em vez disso,',
-      '{p}o Governo Federal deve manter o controle rigoroso de registros e',
-      'fortalecer o rastreamento de armas, por meio da integração de dados',
-      'entre as polícias, a fim de tirar armas ilegais de circulação{/}.'
+      'Portanto, ampliar o acesso às armas não é a solução. Em vez disso, {p}o',
+      'Governo Federal deve manter o controle rigoroso de registros e fortalecer',
+      'o rastreamento, por meio da integração de dados entre as polícias, a fim',
+      'de tirar armamentos ilegais de circulação{/}.'
     ]
   ],
   notas:[
@@ -1865,17 +1985,17 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição determina, no artigo 227, que crianças e adolescentes',
-      'devem receber "absoluta prioridade" da família, da sociedade e do Estado{/}.',
-      'Na prática, a violência infantil persiste, {t}sobretudo porque ocorre',
-      'dentro de casa e porque a rede de proteção é falha{/}.'
+      '{r}A Constituição Federal de 1988 determina, no artigo 227, que crianças',
+      'e adolescentes devem receber "absoluta prioridade" da família, da sociedade',
+      'e do Estado{/}. Na prática, a violência contra esse público persiste,',
+      '{t}sobretudo porque ocorre dentro de casa e porque a rede de proteção é falha{/}.'
     ],[
-      'Em primeiro lugar, grande parte das agressões acontece no lar.',
-      'O agressor costuma ser alguém próximo, e a criança, por medo ou',
-      'dependência, não consegue contar o que sofre. {r}Como mostra Gilberto',
-      'Dimenstein em "O Cidadão de Papel", muitos direitos existem só na lei{/}.',
-      'Nesse sentido, sem alguém atento aos sinais, o abuso pode durar anos',
-      'e deixar marcas físicas e emocionais profundas.'
+      'Em primeiro lugar, grande parte das agressões acontece no lar. O',
+      'agressor costuma ser alguém próximo, e a criança, por medo ou dependência,',
+      'não consegue contar o que sofre. {r}Como mostra Gilberto Dimenstein em "O',
+      'Cidadão de Papel", muitos direitos existem só na lei{/}. Nesse sentido,',
+      'quando ninguém percebe os sinais, a prioridade garantida no papel não',
+      'chega à vítima, e o abuso pode durar anos.'
     ],[
       'Além disso, a rede de proteção não consegue atender à demanda.',
       'Conselhos tutelares sobrecarregados e professores sem preparo para',
@@ -1908,19 +2028,19 @@ const MODELOS = [
       'persiste, {t}sobretudo pela cultura que objetifica o corpo feminino e',
       'pela dificuldade de denunciar no momento do crime{/}.'
     ],[
-      'Em primeiro lugar, o assédio é naturalizado como algo normal.',
+      'Em primeiro lugar, o assédio foi naturalizado pela sociedade.',
       '"Cantadas", olhares insistentes e toques indesejados ainda são vistos',
-      'como parte da rotina das mulheres. {r}Segundo Pierre Bourdieu, a',
-      'violência simbólica é a dominação aceita como natural pelos costumes{/}.',
-      'Sob essa ótica, muitas vítimas mudam de horário, de roupa ou de trajeto',
-      'para evitar o abuso, enquanto o agressor segue sem ser incomodado.'
+      'como parte da rotina das mulheres. {r}Segundo Pierre Bourdieu, a violência',
+      'simbólica é a dominação aceita como natural pelos costumes{/}. Sob essa',
+      'ótica, muitas vítimas mudam de horário, de roupa ou de trajeto para evitar',
+      'o abuso, enquanto o agressor segue sem ser incomodado.'
     ],[
-      'Além disso, denunciar no momento do crime é difícil. Em veículos',
-      'lotados, a vítima sente medo e vergonha, e nem sempre há câmeras,',
-      'agentes ou canais rápidos para pedir ajuda. {r}A Agenda 2030 da ONU,',
-      'em seu Objetivo 5, propõe eliminar a violência contra as mulheres{/}.',
-      'Contudo, sem estrutura para registrar a ocorrência, o agressor desce',
-      'na parada seguinte e o crime fica impune.'
+      'Além disso, denunciar no momento da agressão é difícil. Em veículos',
+      'lotados, a vítima sente medo e vergonha, e nem sempre há câmeras, agentes',
+      'ou canais rápidos para pedir ajuda. {r}A Agenda 2030 da ONU, em seu Objetivo',
+      '5, propõe eliminar a violência contra as mulheres{/}. Contudo, sem estrutura',
+      'para registrar a ocorrência, o agressor desce na parada seguinte e o crime',
+      'fica impune.'
     ],[
       'Portanto, é preciso garantir a segurança das mulheres no transporte.',
       'Para isso, {p}as empresas e as polícias devem instalar câmeras nos',
@@ -1954,11 +2074,11 @@ const MODELOS = [
       'quando já perdeu emprego, laços familiares e saúde.'
     ],[
       'Além disso, o tratamento ainda é difícil de acessar. Os Centros de',
-      'Atenção Psicossocial especializados em álcool e drogas são poucos',
-      'diante da demanda, e as filas são longas. {r}A Constituição, no artigo',
-      '196, define a saúde como direito de todos e dever do Estado{/}. Nesse',
-      'contexto, quem não consegue tratamento volta às ruas e, muitas vezes,',
-      'ao ciclo de dívidas com o tráfico, que alimenta a violência.'
+      'Atenção Psicossocial especializados em álcool e drogas (CAPS AD) são poucos',
+      'diante da demanda, e as filas são longas. {r}A Constituição Federal de 1988,',
+      'no artigo 196, define a saúde como direito de todos e dever do Estado{/}.',
+      'Nesse contexto, quem não consegue atendimento volta ao consumo e, muitas',
+      'vezes, ao ciclo de dívidas com o tráfico, que alimenta a violência.'
     ],[
       'Portanto, a dependência química deve ser tratada como questão de',
       'saúde. Para isso, {p}o Ministério da Saúde deve ampliar os CAPS AD,',
@@ -1979,10 +2099,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}O artigo 37 da Constituição impõe à administração pública os',
-      'princípios da legalidade, impessoalidade, moralidade, publicidade e',
-      'eficiência{/}. A corrupção, porém, ainda desafia o país, {t}sobretudo',
-      'pela cultura de privilégios e pela impunidade{/}.'
+      '{r}O artigo 37 da Constituição Federal de 1988 impõe à administração',
+      'pública os princípios da legalidade, impessoalidade, moralidade,',
+      'publicidade e eficiência{/}. A corrupção, porém, ainda desafia o país,',
+      '{t}sobretudo pela cultura de privilégios e pela impunidade{/}.'
     ],[
       'Em primeiro lugar, a cultura de privilégios favorece desvios.',
       '{r}Em "Raízes do Brasil", Sérgio Buarque de Holanda descreve o "homem',
@@ -1992,11 +2112,11 @@ const MODELOS = [
       'para esquemas maiores dentro das instituições.'
     ],[
       'Além disso, a impunidade estimula novos casos de corrupção.',
-      'Processos longos, recursos sucessivos e penas raramente cumpridas',
-      'passam a mensagem de que o crime compensa. {r}Para Rousseau, o pacto',
-      'social existe para garantir o bem comum{/}, e a corrupção impune rompe',
-      'esse acordo, de modo que a população perde a confiança no Estado e',
-      'nos próprios agentes públicos.'
+      'Processos longos, recursos sucessivos e penas raramente cumpridas passam',
+      'a mensagem de que o crime compensa. {r}Para Rousseau, o pacto social existe',
+      'para garantir o bem comum{/}, e a corrupção impune rompe esse acordo, o',
+      'que faz a população perder a confiança no Estado e nos próprios agentes',
+      'públicos.'
     ],[
       'Portanto, a ética deve guiar o serviço público. Para isso, {p}as',
       'corregedorias e o Ministério Público devem fortalecer a fiscalização,',
@@ -2023,11 +2143,11 @@ const MODELOS = [
       'da água e pela falta de políticas permanentes para o semiárido{/}.'
     ],[
       'Em primeiro lugar, a água ainda é mal distribuída no semiárido.',
-      'Muitas comunidades rurais dependem de carros-pipa e de açudes que',
-      'secam nos meses mais quentes. {r}A transposição do Rio São Francisco',
-      'levou água a regiões de Pernambuco e de outros estados do Nordeste{/},',
-      'mas os ramais e as adutoras ainda não chegam a muitas localidades, de',
-      'modo que famílias inteiras seguem sem acesso regular à água.'
+      'Muitas comunidades rurais dependem de carros-pipa e de açudes que secam',
+      'nos meses mais quentes. {r}A transposição do Rio São Francisco levou recursos',
+      'hídricos a regiões de Pernambuco e de outros estados do Nordeste{/}, mas os',
+      'ramais e as adutoras ainda não chegam a muitas localidades, de modo que',
+      'famílias inteiras seguem sem abastecimento regular.'
     ],[
       'Além disso, o poder público age mais na emergência do que na',
       'prevenção. {r}O pernambucano Josué de Castro mostrou que a fome é',
@@ -2055,10 +2175,10 @@ const MODELOS = [
   tipo:'Tema de "desafios" → dois obstáculos',
   p:[
     [
-      '{r}O artigo 225 da Constituição garante a todos o direito ao meio',
-      'ambiente ecologicamente equilibrado{/}. Contudo, desmatamentos e',
-      'queimadas ilegais persistem no Brasil, {t}sobretudo pela fiscalização',
-      'insuficiente e pela busca por lucro imediato{/}.'
+      '{r}O artigo 225 da Constituição Federal de 1988 garante a todos',
+      'o direito ao meio ambiente ecologicamente equilibrado{/}. Contudo,',
+      'desmatamentos e queimadas ilegais persistem no Brasil, {t}sobretudo pela',
+      'fiscalização insuficiente e pela busca por lucro imediato{/}.'
     ],[
       'Em primeiro lugar, a fiscalização não acompanha o tamanho do país.',
       'Grandes áreas de mata são vigiadas por poucos agentes, e muitas multas',
@@ -2068,11 +2188,11 @@ const MODELOS = [
       'florestas e rios continuam sendo destruídos.'
     ],[
       'Além disso, o lucro imediato estimula a destruição. Madeira ilegal,',
-      'garimpo e tráfico de animais movimentam muito dinheiro e atraem o',
-      'crime organizado. {r}A Agenda 2030 da ONU, em seu Objetivo 13, pede',
-      'ação urgente contra a mudança do clima{/}. Nesse sentido, cada área',
-      'devastada agrava secas, enchentes e ondas de calor, o que mostra que',
-      'o crime ambiental ameaça também a vida nas cidades.'
+      'garimpo e tráfico de animais movimentam muito dinheiro e atraem o crime',
+      'organizado. {r}A Agenda 2030 da ONU, no Objetivo 15, pede medidas urgentes',
+      'contra o tráfico de espécies protegidas{/}. No entanto, enquanto destruir',
+      'for mais lucrativo do que arriscado, quadrilhas seguirão devastando matas',
+      'e rios, com efeitos que atingem também a vida nas cidades.'
     ],[
       'Portanto, proteger o meio ambiente é uma questão de segurança. Para',
       'isso, {p}os governos devem ampliar o policiamento ambiental e o uso de',
@@ -2082,7 +2202,7 @@ const MODELOS = [
   ],
   notas:[
     'Abre com o artigo da Constituição dedicado ao meio ambiente.',
-    'O D1 trata da fiscalização; o D2 liga o tema ao crime organizado e ao clima.',
+    'O D1 trata da fiscalização; o D2, do lucro do crime, com um objetivo da ONU contra o tráfico de espécies.',
     'O fechamento do D2 aproxima o problema do leitor urbano ("a vida nas cidades").',
     'A proposta inclui o policiamento ambiental, papel da própria PM.'
   ]
@@ -2100,9 +2220,9 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, a exclusão deixa os jovens sem perspectiva.',
       'Escolas precárias, falta de emprego e ausência de lazer reduzem as',
-      'oportunidades de quem nasce nas periferias. {r}Segundo o Atlas da',
-      'Violência, a maioria das vítimas de homicídio no país é jovem{/}, o que',
-      'mostra que a desigualdade expõe essa parcela da população tanto ao',
+      'oportunidades de quem nasce nas periferias. {r}Segundo o Atlas da Violência,',
+      'quase metade das vítimas de homicídio no país tem entre 15 e 29 anos{/}, o',
+      'que mostra que a desigualdade expõe essa parcela da população tanto ao',
       'aliciamento do crime quanto ao risco de morte precoce.'
     ],[
       'Além disso, a ausência do Estado abre espaço para o crime.',
@@ -2182,11 +2302,11 @@ const MODELOS = [
       'crianças e idosos, e cada atraso reduz as chances de um reencontro.'
     ],[
       'Além disso, os órgãos públicos ainda trabalham de forma isolada.',
-      'Polícias, hospitais, abrigos e institutos de medicina legal nem',
-      'sempre compartilham informações, e uma pessoa pode estar internada',
-      'ou sem identificação em outro município. {r}A mesma lei criou um',
-      'cadastro nacional de desaparecidos{/}, mas, sem alimentação constante,',
-      'ele perde eficácia, de modo que buscas se arrastam por anos.'
+      'Polícias, hospitais, abrigos e institutos de medicina legal (IML) nem',
+      'sempre compartilham informações, e uma pessoa pode estar internada ou sem',
+      'identificação em outro município. {r}A Lei 13.812 criou um cadastro nacional',
+      'de desaparecidos{/}, mas, sem alimentação constante, ele perde eficácia, de',
+      'modo que buscas se arrastam por anos.'
     ],[
       'Portanto, é preciso agilizar a busca por desaparecidos. Para isso,',
       '{p}o Governo Federal deve integrar o cadastro nacional a polícias,',
@@ -2226,10 +2346,10 @@ const MODELOS = [
       'Sob essa ótica, o adolescente cobrado por padrões inalcançáveis',
       'sente-se fracassado, o que agrava quadros de ansiedade e depressão.'
     ],[
-      'Portanto, prevenir o suicídio entre jovens é responsabilidade de',
-      'todos. Para isso, {p}as escolas devem contar com psicólogos e treinar',
-      'professores, além de divulgar o CVV (188), a fim de acolher quem',
-      'sofre e garantir ajuda antes que seja tarde{/}.'
+      'Portanto, prevenir o suicídio entre jovens é responsabilidade',
+      'de todos. Para isso, {p}as escolas devem contar com psicólogos e treinar',
+      'professores, além de divulgar o Centro de Valorização da Vida (CVV), a',
+      'fim de acolher quem sofre e garantir ajuda antes que seja tarde{/}.'
     ]
   ],
   notas:[
@@ -2259,10 +2379,10 @@ const MODELOS = [
     ],[
       'Além disso, muitos crimes nem chegam às estatísticas. Por medo de',
       'nova violência ou de exposição, vítimas deixam de denunciar, e muitos',
-      'registros não indicam a motivação do crime. {r}Hannah Arendt chamou',
-      'de "banalidade do mal" a naturalização de atos cruéis{/}. Nesse',
-      'sentido, sem dados confiáveis, o problema fica invisível, de modo que',
-      'faltam políticas públicas para enfrentá-lo.'
+      'registros não indicam a motivação do crime. {r}Para Norberto Bobbio, o',
+      'desafio atual dos direitos humanos não é justificá-los, mas protegê-los{/}.',
+      'Nesse sentido, não há como proteger quem nem aparece nos dados, de modo',
+      'que faltam políticas públicas para enfrentar o problema.'
     ],[
       'Portanto, é necessário combater a LGBTfobia. Para isso, {p}as polícias',
       'devem capacitar agentes para registrar a motivação dos crimes, e as',
@@ -2283,10 +2403,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição garante, no artigo 5º, que é inviolável a liberdade',
-      'de consciência e de crença{/}. Ainda assim, a intolerância religiosa',
-      'persiste no Brasil, {t}sobretudo pelo desconhecimento das outras',
-      'crenças e pela impunidade dos ataques{/}.'
+      '{r}A Constituição Federal de 1988 garante, no artigo 5º, que é',
+      'inviolável a liberdade de consciência e de crença{/}. Ainda assim, a',
+      'intolerância religiosa persiste no Brasil, {t}sobretudo pelo desconhecimento',
+      'das outras crenças e pela impunidade dos ataques{/}.'
     ],[
       'Em primeiro lugar, o desconhecimento alimenta o preconceito.',
       'Religiões de matriz africana, como o candomblé e a umbanda, são',
@@ -2321,10 +2441,10 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Lei Áurea aboliu a escravidão no Brasil em 1888{/}. Mais de um',
-      'século depois, porém, trabalhadores ainda são resgatados em condições',
-      'degradantes, {t}sobretudo pela vulnerabilidade social das vítimas e',
-      'pela busca de lucro sem fiscalização eficiente{/}.'
+      '{r}A Lei Áurea aboliu a escravidão no Brasil em 1888{/}. Mais de um século',
+      'depois, porém, trabalhadores ainda são submetidos a condições degradantes,',
+      '{t}sobretudo pela vulnerabilidade social das vítimas e pela busca de lucro',
+      'sem fiscalização eficiente{/}.'
     ],[
       'Em primeiro lugar, a pobreza torna os trabalhadores vulneráveis.',
       'Pessoas com baixa escolaridade aceitam falsas promessas de emprego e',
@@ -2359,17 +2479,17 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição proíbe qualquer trabalho a menores de 16 anos, salvo',
-      'na condição de aprendiz, a partir dos 14{/}. Ainda assim, o trabalho',
-      'infantil persiste no país, {t}sobretudo pela pobreza das famílias e',
-      'pela ideia de que "trabalhar cedo forma o caráter"{/}.'
+      '{r}A Constituição Federal de 1988 proíbe qualquer trabalho a menores',
+      'de 16 anos, salvo na condição de aprendiz, a partir dos 14{/}. Ainda assim,',
+      'o trabalho infantil persiste no país, {t}sobretudo pela pobreza das famílias',
+      'e pela ideia de que "trabalhar cedo forma o caráter"{/}.'
     ],[
       'Em primeiro lugar, a pobreza empurra crianças para o trabalho.',
-      'Em famílias de baixa renda, o dinheiro ganho por crianças nas ruas,',
-      'nas feiras ou no campo complementa o orçamento doméstico. {r}Em',
-      '"Capitães da Areia", Jorge Amado retrata meninos que sobrevivem sem',
-      'proteção nas ruas de Salvador{/}, e essa realidade se repete quando',
-      'a escola é trocada pelo trabalho, o que perpetua a pobreza.'
+      'Em famílias de baixa renda, o dinheiro ganho por crianças nas ruas, nas',
+      'feiras ou no campo complementa o orçamento doméstico. {r}Em "Capitães da',
+      'Areia", Jorge Amado retrata meninos que sobrevivem sem proteção nas ruas',
+      'de Salvador{/}, e essa realidade se repete quando a escola é trocada pela',
+      'renda imediata, o que perpetua a pobreza.'
     ],[
       'Além disso, a cultura brasileira ainda naturaliza essa exploração.',
       'Muitos adultos acreditam que trabalhar cedo afasta a criança das',
@@ -2379,9 +2499,9 @@ const MODELOS = [
       'as chances de um futuro digno.'
     ],[
       'Portanto, é preciso erradicar o trabalho infantil. Para isso, {p}o',
-      'governo deve ampliar a transferência de renda condicionada à',
-      'frequência escolar e a fiscalização do trabalho, a fim de garantir',
-      'que lugar de criança seja na escola{/}.'
+      'governo deve ampliar a transferência de renda condicionada à frequência',
+      'escolar e as inspeções dos auditores fiscais, a fim de garantir que lugar',
+      'de criança seja na escola{/}.'
     ]
   ],
   notas:[
@@ -2397,17 +2517,17 @@ const MODELOS = [
   tipo:'Tema de problema → duas causas',
   p:[
     [
-      '{r}A Constituição inclui, no artigo 6º, a moradia entre os direitos',
-      'sociais{/}. Contudo, cresce o número de pessoas em situação de rua nas',
-      'grandes cidades, {t}sobretudo pela crise de moradia e renda e pela',
-      'falta de acolhimento contínuo{/}.'
+      '{r}A Constituição Federal de 1988 inclui, no artigo 6º, a moradia entre',
+      'os direitos sociais{/}. Contudo, cresce o número de pessoas em situação de',
+      'rua nas grandes cidades, {t}sobretudo pela crise habitacional e de renda e',
+      'pela falta de acolhimento contínuo{/}.'
     ],[
-      'Em primeiro lugar, a falta de renda e moradia leva muitos às ruas.',
-      'Desemprego, aluguéis caros e o rompimento de vínculos familiares',
-      'deixam pessoas sem alternativa. {r}Como mostra Gilberto Dimenstein em',
-      '"O Cidadão de Papel", muitos direitos existem apenas na lei{/}. Sob',
-      'essa ótica, quem dorme nas calçadas é a face mais visível da',
-      'distância entre o que a lei garante e o que o Estado entrega.'
+      'Em primeiro lugar, a falta de renda e de um lar leva muitos às ruas.',
+      'Desemprego, aluguéis caros e o rompimento de vínculos familiares deixam',
+      'pessoas sem alternativa. {r}Como mostra Gilberto Dimenstein em "O Cidadão de',
+      'Papel", muitos direitos existem apenas na lei{/}. Sob essa ótica, quem dorme',
+      'nas calçadas é a face mais visível da distância entre o que a lei garante',
+      'e o que o Estado entrega.'
     ],[
       'Além disso, o acolhimento oferecido é insuficiente e temporário.',
       'Faltam vagas em abrigos, e muitos não aceitam animais, casais ou',
@@ -2440,19 +2560,19 @@ const MODELOS = [
       'depois, ela ainda atinge brasileiros, {t}sobretudo pela desigualdade',
       'de renda e pelo desperdício de alimentos{/}.'
     ],[
-      'Em primeiro lugar, a desigualdade impede o acesso à comida.',
-      'O Brasil é um dos maiores produtores de alimentos do mundo, mas',
-      'milhões de famílias não têm renda para comprá-los. {r}O país saiu do',
-      'Mapa da Fome da ONU em 2014 e voltou a ele anos depois{/}, o que mostra',
-      'que, sem emprego e políticas contínuas, a conquista não se sustenta',
-      'e a mesa vazia volta a fazer parte da rotina dos mais pobres.'
+      'Em primeiro lugar, a desigualdade impede o acesso à comida. O Brasil',
+      'é um dos maiores produtores de alimentos do mundo, mas milhões de famílias',
+      'não têm renda para comprá-los. {r}O país saiu do Mapa da Fome da ONU em',
+      '2014 e voltou a ele anos depois{/}. Isso mostra que, sem emprego e políticas',
+      'contínuas, a conquista não se sustenta, e a mesa vazia volta à rotina dos',
+      'mais pobres.'
     ],[
-      'Além disso, o desperdício agrava a insegurança alimentar. Muitos',
-      'alimentos se perdem na colheita, no transporte e nos supermercados,',
-      'enquanto pessoas passam fome a poucos metros. {r}A Constituição inclui',
-      'a alimentação entre os direitos sociais, no artigo 6º{/}. Nesse',
-      'sentido, desperdiçar comida em um país com fome é negar esse direito',
-      'a quem mais precisa dele.'
+      'Além disso, o desperdício agrava a insegurança alimentar.',
+      'Muitos alimentos se perdem na colheita, no transporte e nos',
+      'supermercados, enquanto pessoas passam fome a poucos metros. {r}A',
+      'Constituição Federal de 1988 inclui a alimentação entre os direitos',
+      'sociais, no artigo 6º{/}. Nesse sentido, desperdiçar comida em um país com',
+      'fome é negar esse direito a quem mais precisa dele.'
     ],[
       'Portanto, acabar com a fome exige ação permanente. Para isso, {p}o',
       'governo deve manter a transferência de renda e a alimentação escolar',
@@ -2480,10 +2600,10 @@ const MODELOS = [
     ],[
       'Em primeiro lugar, as barreiras impedem o exercício de direitos.',
       'Calçadas irregulares, ônibus sem elevador e a falta de intérpretes de',
-      'Libras dificultam o acesso à escola, ao trabalho e aos serviços.',
-      '{r}O artigo 5º da Constituição garante a igualdade de todos perante a',
-      'lei{/}, mas, sem acessibilidade, essa igualdade fica no papel, de modo',
-      'que muitas pessoas deixam de sair de casa.'
+      'Libras dificultam o acesso à escola, ao trabalho e aos serviços. {r}O artigo',
+      '5º da Constituição Federal de 1988 garante a igualdade de todos perante',
+      'a lei{/}, mas, sem acessibilidade, essa igualdade fica no papel, de modo que',
+      'muitas pessoas deixam de sair de casa.'
     ],[
       'Além disso, o capacitismo limita oportunidades. Muitos ainda duvidam',
       'da capacidade da pessoa com deficiência e a tratam com pena ou',
@@ -2511,24 +2631,24 @@ const MODELOS = [
   tipo:'Tema de "desafios" → dois obstáculos',
   p:[
     [
-      '{r}Desde 2015, a Constituição inclui o transporte entre os direitos',
-      'sociais{/}. Nas grandes cidades, porém, deslocar-se ainda é um desafio,',
-      '{t}sobretudo pela priorização do transporte individual e pela baixa',
+      '{r}Desde 2015, a Constituição Federal de 1988 inclui o transporte entre',
+      'os direitos sociais{/}. Nas grandes cidades, porém, deslocar-se ainda é um',
+      'desafio, {t}sobretudo pela priorização do transporte individual e pela baixa',
       'qualidade do transporte público{/}.'
     ],[
-      'Em primeiro lugar, as cidades foram planejadas para o carro.',
-      'O excesso de veículos provoca congestionamentos, poluição e acidentes.',
+      'Em primeiro lugar, as cidades foram planejadas para o carro. O',
+      'excesso de veículos provoca congestionamentos, poluição e acidentes.',
       '{r}A Política Nacional de Mobilidade Urbana, de 2012, determina que o',
-      'transporte coletivo tenha prioridade sobre o individual{/}, mas a',
-      'maior parte do espaço das vias ainda é ocupada por automóveis, de',
-      'modo que o trânsito se torna mais lento e mais perigoso.'
+      'transporte coletivo tenha prioridade sobre o individual{/}. Na prática,',
+      'contudo, os automóveis ocupam a maior parte das vias, de modo que o',
+      'trânsito se torna mais lento e mais perigoso.'
     ],[
-      'Além disso, o transporte público não atende bem à população.',
-      'Ônibus lotados, atrasos e paradas sem iluminação tornam a viagem',
-      'cansativa e insegura, sobretudo à noite. {r}O geógrafo Milton Santos',
-      'mostrou que o acesso à cidade é desigual entre ricos e pobres{/}.',
-      'Nesse sentido, o trabalhador da periferia gasta horas no trajeto e',
-      'fica mais exposto a assaltos, o que reduz sua qualidade de vida.'
+      'Além disso, o serviço coletivo não atende bem à população. Ônibus',
+      'lotados, atrasos e paradas sem iluminação tornam a viagem cansativa e',
+      'insegura, principalmente à noite. {r}O geógrafo Milton Santos mostrou que',
+      'o acesso à cidade é desigual entre ricos e pobres{/}. Nesse sentido, o',
+      'trabalhador da periferia gasta horas no trajeto e fica mais exposto a',
+      'assaltos, o que reduz sua qualidade de vida.'
     ],[
       'Portanto, a mobilidade urbana precisa ser repensada. Para isso, {p}as',
       'prefeituras devem ampliar faixas exclusivas de ônibus e ciclovias,',
@@ -2554,24 +2674,24 @@ const MODELOS = [
       'persistem, {t}sobretudo pela visão do animal como objeto e pela',
       'fiscalização insuficiente{/}.'
     ],[
-      'Em primeiro lugar, muitos ainda veem o animal como um objeto.',
-      'Cães e gatos são comprados por impulso e abandonados quando adoecem,',
-      'envelhecem ou dão trabalho. {r}A Lei Sansão, de 2020, aumentou a pena',
-      'para maus-tratos a cães e gatos para até cinco anos de reclusão{/}, mas',
-      'a mudança de mentalidade é mais lenta que a da lei, de modo que o',
-      'abandono segue comum nas ruas das cidades.'
+      'Em primeiro lugar, muitos ainda veem o animal como um objeto. Cães',
+      'e gatos são comprados por impulso e abandonados quando adoecem, envelhecem',
+      'ou dão trabalho. {r}A Lei Sansão, de 2020, elevou para até cinco anos de',
+      'reclusão a pena por maus-tratos a esses animais{/}. Contudo, a mentalidade',
+      'muda mais devagar do que a lei, de modo que o abandono segue comum nas',
+      'ruas das cidades.'
     ],[
       'Além disso, a fiscalização e as denúncias são insuficientes.',
-      'Muitos casos acontecem dentro de casas e quintais, longe dos olhos',
-      'das autoridades. {r}O artigo 225 da Constituição veda práticas que',
-      'submetam os animais a crueldade{/}. Nesse sentido, sem canais de',
-      'denúncia conhecidos e sem equipes para atender, a lei não chega a',
-      'quem precisa de proteção.'
+      'Muitos casos acontecem dentro de casas e quintais, longe dos olhos das',
+      'autoridades. {r}O artigo 225 da Constituição Federal de 1988 veda práticas',
+      'que submetam os animais a crueldade{/}. Nesse sentido, sem canais de denúncia',
+      'conhecidos e sem equipes para atender, a lei não chega a quem precisa de',
+      'proteção.'
     ],[
-      'Portanto, é preciso combater os maus-tratos a animais. Para isso,',
-      '{p}os municípios devem ampliar castração e adoção responsável, e o',
-      'policiamento ambiental deve atender às denúncias, a fim de proteger',
-      'os animais e construir uma sociedade menos violenta{/}.'
+      'Portanto, é preciso combater os maus-tratos a animais. Para isso, {p}os',
+      'municípios devem ampliar castração e adoção responsável, e o policiamento',
+      'ambiental deve atender às denúncias, a fim de proteger esses seres e',
+      'construir uma sociedade menos violenta{/}.'
     ]
   ],
   notas:[
@@ -2581,6 +2701,349 @@ const MODELOS = [
     'A conclusão retoma Kant ("uma sociedade menos violenta"), fechando o texto em círculo.'
   ]
 },
+{
+  id:'m56', aula:'03/10', curto:'Feminicídio: Estado e sociedade',
+  tema:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio',
+  tipo:'Tema com dois responsáveis → um desenvolvimento para cada um',
+  p:[
+    [
+      '{r}A Constituição Federal de 1988 determina, no artigo 226, que o',
+      'Estado crie mecanismos para coibir a violência no âmbito das relações',
+      'familiares{/}. Contudo, o feminicídio persiste no Brasil, e combatê-lo {t}exige',
+      'que o Estado garanta proteção efetiva e que a sociedade rompa o silêncio{/}.'
+    ],[
+      'Em primeiro lugar, cabe ao Estado tornar a lei uma proteção real.',
+      '{r}A Lei 14.994, de 2024, tornou o feminicídio crime autônomo, com pena',
+      'de 20 a 40 anos{/}, mas a punição chega depois da morte. Nesse sentido,',
+      'medidas protetivas sem fiscalização, poucas delegacias especializadas',
+      'e falta de abrigos deixam a vítima exposta, de modo que muitas mortes',
+      'ocorrem depois de denúncias que não foram acompanhadas.'
+    ],[
+      'Além disso, a sociedade precisa abandonar a cultura do silêncio. O',
+      'ditado "em briga de marido e mulher, ninguém mete a colher" ainda',
+      'faz vizinhos, colegas e familiares ignorarem sinais de agressão.',
+      '{r}Segundo Pierre Bourdieu, a violência simbólica é a dominação aceita',
+      'como natural pelos costumes{/}. Sob essa ótica, quem se cala diante do',
+      'abuso ajuda a manter o ciclo que termina no feminicídio.'
+    ],[
+      'Portanto, Estado e sociedade devem agir juntos. Para isso, {p}o',
+      'governo deve fiscalizar as medidas protetivas e ampliar a rede de',
+      'acolhimento, e a população deve denunciar pelo Ligue 180, a fim de',
+      'interromper a violência antes que ela se torne fatal{/}.'
+    ]
+  ],
+  notas:[
+    'O tema nomeia dois responsáveis, e o texto dá um desenvolvimento a cada um: o D1 trata do Estado; o D2, da sociedade. Falar só de um deles tangenciaria o tema.',
+    'O artigo 226 da Constituição é um repertório preciso: impõe ao próprio Estado o dever de coibir a violência familiar.',
+    'O D1 reconhece o avanço da lei (pena de 20 a 40 anos), mas mostra que punir depois da morte não basta: é preciso prevenir.',
+    'O D2 desmonta um ditado popular, e a proposta dá uma tarefa a cada responsável, com um canal real de denúncia (Ligue 180).'
+  ]
+},
+// ---------- Temas trabalhados nas aulas do curso (Instituto AOCP, PMPE 2027) ----------
+{
+  id:'m57', aula:'03/10', curto:'Tecnologia e redes sociais',
+  tema:'O papel da tecnologia e das redes sociais na prevenção e combate à violência urbana',
+  tipo:'Tema de aula · "papel" pede o potencial e os limites',
+  p:[
+    [
+      '{r}A Constituição Federal de 1988 define a segurança pública como "dever',
+      'do Estado, direito e responsabilidade de todos"{/}. Nessa tarefa coletiva, a',
+      'tecnologia e as redes sociais {t}são aliadas contra a violência urbana, desde',
+      'que riscos como a desinformação e a violação da privacidade sejam controlados{/}.'
+    ],[
+      'Em primeiro lugar, a tecnologia amplia a prevenção. Sistemas de',
+      'mapeamento da mancha criminal indicam os locais e horários de maior',
+      'incidência de delitos, o que otimiza o efetivo policial. {r}Em Pernambuco,',
+      'o Pacto pela Vida mostrou que a gestão baseada em dados contribui para',
+      'reduzir homicídios{/}. Já as redes sociais e os canais digitais de denúncia',
+      'aproximam a população da polícia, transformando cada cidadão em aliado.'
+    ],[
+      'Por outro lado, o uso inadequado dessas ferramentas gera riscos.',
+      'Nas redes, boatos sobre supostos criminosos já levaram inocentes a',
+      'linchamentos, numa lógica de "justiça com as próprias mãos". {r}A Lei Geral',
+      'de Proteção de Dados exige transparência no uso de informações pessoais{/},',
+      'cuidado indispensável quando o reconhecimento facial em massa pode errar',
+      'e reproduzir vieses contra pessoas negras.'
+    ],[
+      'Portanto, o uso da tecnologia na segurança exige responsabilidade.',
+      'Para isso, {p}o Governo do Estado deve ampliar o videomonitoramento e os',
+      'canais de denúncia, com proteção de dados e campanhas contra notícias',
+      'falsas, a fim de prevenir crimes sem violar direitos{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula (Instituto AOCP, PMPE 2027). A palavra "papel" pede os dois lados: o potencial e os limites, como foi discutido em sala.',
+    'A introdução destaca a "responsabilidade de todos" do artigo 144, o que justifica falar das redes sociais, isto é, da sociedade participando.',
+    'O D1 traz o potencial (mancha criminal, gestão por dados, redes sociais e canais de denúncia); o D2, os riscos apontados na aula: notícias falsas, "justiça com as próprias mãos", privacidade e vieses algorítmicos.',
+    'A proposta une tecnologia e proteção de direitos, sem demonizar as redes.'
+  ]
+},
+{
+  id:'m58', aula:'03/10', curto:'Violência doméstica e medidas protetivas',
+  tema:'Os desafios para o enfrentamento da violência doméstica e a garantia da efetividade das medidas protetivas',
+  tipo:'Tema de aula · dois desafios: fiscalização das medidas e acolhimento',
+  p:[
+    [
+      '{r}A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência',
+      'para afastar o agressor e proteger a vítima{/}. No entanto, a violência',
+      'doméstica persiste, {t}não pela falta de lei, mas pela fiscalização frágil',
+      'dessas medidas e pela ausência de acolhimento às mulheres{/}.'
+    ],[
+      'Em primeiro lugar, as medidas protetivas nem sempre saem do',
+      'papel. {r}Desde 2018, descumpri-las é crime, previsto no artigo 24-A da Lei',
+      'Maria da Penha{/}. Na prática, porém, poucas cidades contam com patrulhas',
+      'especializadas para visitar as vítimas e monitorar os agressores, de modo',
+      'que a ordem judicial vira apenas um documento. Assim, a vítima continua',
+      'exposta, e o ciclo de agressões pode terminar em feminicídio.'
+    ],[
+      'Além disso, falta uma rede de acolhimento que permita à mulher',
+      'recomeçar. {r}Segundo o Anuário Brasileiro de Segurança Pública, a maior',
+      'parte dos feminicídios ocorre dentro de casa e é cometida por parceiros',
+      'ou ex-parceiros{/}. Mesmo assim, muitas mulheres deixam de denunciar por',
+      'medo ou dependência financeira e, sem abrigo nem atendimento psicológico,',
+      'permanecem no lar violento, o que perpetua as agressões.'
+    ],[
+      'Portanto, as medidas protetivas precisam ser efetivas. Para isso,',
+      '{p}os estados devem ampliar as Patrulhas Maria da Penha, o monitoramento dos',
+      'agressores e os abrigos, e o Judiciário deve agilizar as medidas, a fim',
+      'de proteger a vítima a tempo{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A tese segue a ideia central discutida em sala: a violência não persiste pela falta de lei, mas pela ineficácia da rede de proteção.',
+    'O D1 cita o crime de descumprimento de medida protetiva (art. 24-A), repertório jurídico preciso e ligado à atuação policial.',
+    'O D2 usa um dado do Anuário que também aparece nos textos motivadores da aula e explica por que a vítima não sai do ciclo.',
+    'A proposta responde aos dois argumentos e tem dois agentes, como sugerido em aula: o Executivo (patrulhas, monitoramento e abrigos) e o Judiciário (celeridade).'
+  ]
+},
+{
+  id:'m59', aula:'10/10', curto:'Era digital e segurança da informação',
+  tema:'Os desafios da segurança pública na era digital: crimes cibernéticos e segurança da informação',
+  tipo:'Tema de aula · dois desafios: polícias defasadas e usuários vulneráveis',
+  p:[
+    [
+      '{r}Em 2023, o Brasil promulgou a Convenção de Budapeste, tratado',
+      'de cooperação internacional contra o crime cibernético{/}. Ainda assim,',
+      'a segurança pública enfrenta desafios na era digital, {t}sobretudo pela',
+      'defasagem tecnológica das polícias e pela vulnerabilidade dos usuários{/}.'
+    ],[
+      'Em primeiro lugar, as polícias ainda não acompanham a velocidade',
+      'do crime virtual. Golpes, extorsões e roubos de dados são praticados de',
+      'outros estados ou países, mas faltam delegacias especializadas, peritos e',
+      'equipamentos para rastrear os autores. {r}Embora a Lei 14.155, de 2021, tenha',
+      'endurecido as penas das fraudes eletrônicas{/}, a punição continua rara, de',
+      'modo que a sensação de impunidade estimula novos ataques.'
+    ],[
+      'Além disso, a falta de educação digital torna o cidadão o elo mais',
+      'frágil da segurança da informação. Criminosos usam a engenharia social,',
+      'isto é, a manipulação psicológica, para obter senhas e dados bancários',
+      'com mensagens e ligações falsas. {r}O Marco Civil da Internet prevê que o',
+      'ensino inclua a capacitação para o uso seguro da rede{/}, mas essa orientação',
+      'raramente chega à população.'
+    ],[
+      'Portanto, a segurança na era digital exige estrutura e prevenção.',
+      'Para isso, {p}a União e os estados devem criar delegacias especializadas em',
+      'crimes virtuais e fazer campanhas de orientação com bancos e escolas, a',
+      'fim de punir os criminosos e proteger os dados da população{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O D1 segue os textos motivadores: os crimes virtuais "não conhecem fronteiras físicas", e as polícias precisam se modernizar.',
+    'A introdução usa a Convenção de Budapeste, repertório atual e específico do tema.',
+    'O D2 explica o conceito de engenharia social antes de usá-lo e liga o tema à "vulnerabilidade humana" citada na proposta.',
+    'A proposta responde aos dois desafios: estrutura para investigar e educação para prevenir.'
+  ]
+},
+{
+  id:'m60', aula:'17/10', curto:'Pessoa idosa: lei e segurança pública',
+  tema:'A garantia de direitos e a proteção da pessoa idosa no Brasil: entre a previsão legal e os desafios da segurança pública',
+  tipo:'Tema de aula · esqueleto 3: a lei garante, a realidade não cumpre',
+  p:[
+    [
+      '{r}O artigo 230 da Constituição Federal de 1988 impõe à família, à',
+      'sociedade e ao Estado o dever de amparar os idosos{/}. Contudo, a violência',
+      'contra esse grupo persiste, {t}sobretudo pela subnotificação dos abusos e',
+      'pela atuação ainda limitada da segurança pública{/}.'
+    ],[
+      'Em primeira análise, a violência contra o idoso é silenciosa.',
+      '{r}Como mostra Gilberto Dimenstein em "O Cidadão de Papel", muitos direitos',
+      'existem apenas na lei{/}. Nesse contexto, grande parte das agressões ocorre',
+      'dentro de casa, praticada por filhos ou netos de quem a vítima depende,',
+      'e o abuso financeiro raramente é denunciado. Assim, o problema fica',
+      'invisível nas estatísticas.'
+    ],[
+      'Ademais, a segurança pública ainda atua pouco na proteção desse',
+      'grupo. Presente no cotidiano das comunidades, o policiamento ostensivo',
+      'poderia identificar sinais de abandono e maus-tratos, mas nem sempre',
+      'é capacitado para isso. {r}O Estatuto da Pessoa Idosa tipifica como crime',
+      'desviar bens ou rendimentos do idoso{/}. Logo, sem agentes preparados para',
+      'reconhecer esses crimes, a lei continua no papel.'
+    ],[
+      'Depreende-se, portanto, a urgência de proteger a pessoa idosa.',
+      'Para tanto, {p}cabe à Secretaria de Defesa Social capacitar policiais para',
+      'identificar abusos e, com a assistência social, divulgar o Disque 100, a',
+      'fim de garantir a efetividade da lei{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula, com o esqueleto 3: a lei assegura o direito, mas a realidade mostra a distância entre o texto legal e a prática.',
+    'Repertórios sugeridos em sala: o artigo 230 da Constituição, o Estatuto da Pessoa Idosa e "O Cidadão de Papel".',
+    'O D2 atende ao recorte "desafios da segurança pública": o policiamento poderia identificar os abusos cedo, mas precisa de capacitação, ideia que a proposta retoma.',
+    'A conclusão usa o conector da aula ("Depreende-se, portanto") e um agente local (SDS).'
+  ]
+},
+{
+  id:'m61', aula:'24/10', curto:'Juventude e mercado de trabalho',
+  tema:'Os desafios para a inserção digna e a profissionalização da juventude no mercado de trabalho brasileiro',
+  tipo:'Tema de aula · dois desafios: precarização e falta de qualificação',
+  p:[
+    [
+      '{r}O Estatuto da Juventude assegura ao jovem o direito à',
+      'profissionalização, ao trabalho e à renda{/}. Contudo, a inserção digna da',
+      'juventude no mercado enfrenta entraves, {t}como a precarização do trabalho',
+      'e a falta de qualificação, que aproxima muitos jovens do crime{/}.'
+    ],[
+      'Primeiramente, a precarização atinge especialmente a juventude.',
+      'Sem experiência, muitos só encontram vagas informais ou serviços por',
+      'aplicativos, sem carteira assinada nem direitos previdenciários. {r}O',
+      'sociólogo Ricardo Antunes chama esse processo de "uberização" do trabalho{/},',
+      'marcado por jornadas longas e ganhos instáveis, o que deixa essa parcela',
+      'da população sem proteção social e fere o Estatuto.'
+    ],[
+      'Ademais, a falta de qualificação limita as oportunidades. A evasão',
+      'escolar e o acesso restrito a cursos técnicos afastam os jovens das',
+      'funções que exigem formação. {r}Embora a Lei da Aprendizagem obrigue médias',
+      'e grandes empresas a contratar aprendizes{/}, a oferta ainda é insuficiente',
+      'diante da demanda. Assim, sem perspectiva de renda, parte da juventude',
+      'torna-se alvo do aliciamento do tráfico, alimentando a violência urbana.'
+    ],[
+      'Portanto, urge mitigar tais desafios. {p}O Ministério do Trabalho, com',
+      'o Sistema S, deve ampliar as vagas de aprendizagem e os cursos técnicos,',
+      'além de fiscalizar as condições dos serviços por aplicativos, a fim de',
+      'garantir renda digna e afastar os jovens do crime{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. É um tema de trabalho, mas a aula orientou a ligar a falta de oportunidades à criminalidade, o que aproxima o texto da segurança pública.',
+    'A introdução segue o esqueleto da aula: repertório legal (Estatuto da Juventude), apresentação do tema e duas teses.',
+    'O D1 usa um sociólogo brasileiro e o conceito de "uberização", citado no texto motivador.',
+    'O D2 cita a Lei da Aprendizagem e mostra a consequência para a segurança pública.'
+  ]
+},
+{
+  id:'m62', aula:'31/10', curto:'Aliciamento de crianças pelo crime',
+  tema:'O aliciamento de crianças e adolescentes pelo crime organizado: a linha tênue entre a vulnerabilidade social e a ineficácia do ECA',
+  tipo:'Tema de aula · "linha tênue entre X e Y": um desenvolvimento para cada lado',
+  p:[
+    [
+      '{r}A Constituição Federal de 1988, no artigo 227, e o Estatuto da',
+      'Criança e do Adolescente asseguram, em tese, a proteção integral de',
+      'crianças e adolescentes{/}. Contudo, o aliciamento desse público pelo crime',
+      'organizado expõe {t}a vulnerabilidade social e a ineficácia do Estatuto{/}.'
+    ],[
+      'Primordialmente, a vulnerabilidade social deixa crianças e',
+      'adolescentes à mercê das facções. Sem escola de qualidade, lazer e',
+      'acompanhamento familiar, muitos passam o dia nas ruas. {r}O documentário',
+      '"Falcão – Meninos do Tráfico", de MV Bill e Celso Athayde, mostra jovens',
+      'recrutados como vigias do tráfico{/}. Assim, o crime preenche o vácuo deixado',
+      'pelo Estado, oferecendo dinheiro e pertencimento.'
+    ],[
+      'Ademais, a aplicação do Estatuto ainda é falha. {r}A lei pune, no',
+      'artigo 244-B, o adulto que corrompe menor de 18 anos para a prática de',
+      'crimes{/}, mas as facções colocam adolescentes inimputáveis na linha de',
+      'frente, e os adultos que os comandam raramente são identificados. Isso',
+      'eleva drasticamente a letalidade infantojuvenil e sobrecarrega um sistema',
+      'socioeducativo que pouco consegue recuperar esses jovens.'
+    ],[
+      'Portanto, enfrentar essa realidade exige prevenção e repressão',
+      'qualificada. {p}Cabe ao Governo do Estado ampliar as escolas em tempo',
+      'integral e investigar os adultos que aliciam menores{/}. Só assim o Estatuto',
+      'deixará de ser utopia legislativa para ser um escudo protetor.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A expressão "linha tênue entre X e Y" pede um desenvolvimento para cada lado: vulnerabilidade social (D1) e ineficácia do ECA (D2).',
+    'Repertórios sugeridos em sala: artigo 227 da Constituição, ECA e o documentário "Falcão – Meninos do Tráfico".',
+    'O D2 cita o crime de corrupção de menores (art. 244-B) e explica como as facções usam a inimputabilidade, ponto destacado na aula.',
+    'A conclusão usa o fecho do esqueleto da aula: o Estatuto deixa de ser "utopia legislativa" para ser "escudo protetor".'
+  ]
+},
+{
+  id:'m63', aula:'07/11', curto:'Crime organizado e sistema prisional',
+  tema:'O avanço do crime organizado e a falência do sistema prisional brasileiro',
+  tipo:'Tema de aula · relação de causa: prisões falidas fortalecem as facções',
+  p:[
+    [
+      '{r}O Supremo Tribunal Federal reconheceu em 2015, e confirmou em',
+      '2023, o "estado de coisas inconstitucional" das prisões brasileiras{/}.',
+      'Essa falência favorece o avanço do crime organizado, {t}sobretudo pela',
+      'superlotação dominada por facções e pela falta de ressocialização{/}.'
+    ],[
+      'Primordialmente, a superlotação entrega o controle dos presídios às',
+      'facções. Sem separação por perfil, o preso de baixa periculosidade convive',
+      'com líderes criminosos e, em busca de proteção, acaba recrutado. {r}Michel',
+      'Foucault, em "Vigiar e Punir", já apontava que a prisão pode produzir',
+      'delinquência{/}. Além disso, com celulares nas celas, as cadeias tornam-se',
+      'escritórios do crime.'
+    ],[
+      'Ademais, a ausência de ressocialização mantém o ciclo criminoso.',
+      '{r}Embora a Lei de Execução Penal preveja trabalho e estudo no cárcere{/},',
+      'poucas unidades os oferecem, e o egresso encontra portas fechadas',
+      'no mercado. Sem alternativas, muitos dependem da própria facção para',
+      'sobreviver, o que eleva drasticamente a reincidência e garante novos',
+      'membros ao crime organizado.'
+    ],[
+      'Portanto, o combate a essa realidade exige repressão qualificada.',
+      '{p}Cabe aos governos estaduais separar os presos por perfil e bloquear',
+      'as comunicações nas unidades, além de ampliar o trabalho e o estudo no',
+      'cárcere{/}. Só assim as prisões deixarão de ser escritórios do crime.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. A introdução usa uma decisão do STF (ADPF 347), repertório forte e preciso para o tema.',
+    'O D1 mostra como a superlotação vira recrutamento; o D2, como a falta de ressocialização alimenta a reincidência.',
+    'Os dois desenvolvimentos ligam as duas partes do tema (crime organizado e sistema prisional), sem tratar só de uma delas.',
+    'A proposta une repressão (bloqueio de comunicações, separação) e ressocialização, como pede a "repressão qualificada" do esqueleto da aula.'
+  ]
+},
+{
+  id:'m64', aula:'21/11', curto:'Espetacularização do crime pela mídia',
+  tema:'A espetacularização do crime pela mídia brasileira e os limites éticos entre informação e entretenimento',
+  tipo:'Tema de aula · a tensão entre direito à informação e lógica do entretenimento',
+  p:[
+    [
+      '{r}A Constituição Federal de 1988 assegura a liberdade de informação,',
+      'mas também protege a intimidade, a honra e a imagem das pessoas{/}. Contudo,',
+      'a espetacularização do crime pela mídia ultrapassa esse limite, {t}sobretudo',
+      'pela busca por audiência e pela fragilidade da autorregulação{/}.'
+    ],[
+      'Em primeiro plano, destaca-se a lógica comercial. {r}Em "Sobre a',
+      'televisão", o sociólogo Pierre Bourdieu critica a pressão dos índices de',
+      'audiência, que leva a mídia a privilegiar o sensacional{/}. Nesse sentido,',
+      'programas policiais e produções de "true crime" transformam tragédias',
+      'em produto, exploram o sofrimento das famílias e expõem vítimas, o que',
+      'contribui para a banalização da violência.'
+    ],[
+      'Ademais, a fragilidade da autorregulação deixa a cobertura policial',
+      'sem limites éticos. Suspeitos são apresentados como culpados antes de',
+      'qualquer julgamento, em afronta à presunção de inocência, e detalhes de',
+      'investigações são divulgados. {r}A Lei de Abuso de Autoridade pune o agente',
+      'que constrange o preso a se exibir à curiosidade pública{/}, sinal de que a',
+      'própria polícia deve resistir à pressão por espetáculo.'
+    ],[
+      'Portanto, informar sem transformar o crime em espetáculo é',
+      'essencial. {p}Cabe aos veículos de comunicação fortalecer seus códigos de',
+      'ética e às polícias adotar protocolos de divulgação que preservem vítimas',
+      'e investigados, a fim de garantir informação responsável{/}.'
+    ]
+  ],
+  notas:[
+    'Tema trabalhado em aula. O texto desenvolve a "tensão" discutida em sala: direito à informação × lógica mercantil do entretenimento.',
+    'Repertórios da aula: a Constituição e Pierre Bourdieu. A Lei de Abuso de Autoridade aproxima o tema do trabalho policial.',
+    'O D2 desenvolve a segunda causa da tese (autorregulação frágil) e mostra as consequências apontadas na aula: julgamento antecipado e prejuízo à investigação.',
+    'A conclusão defende o equilíbrio entre transparência e responsabilidade, sem pedir censura.'
+  ]
+},
 // ---------- Segunda versão dos temas de chance alta (base = redação da versão 1) ----------
 {
   id:'m43', base:'m1', curto:'Segurança pública',
@@ -2588,9 +3051,9 @@ const MODELOS = [
   tipo:'Versão 2 · outros dois desafios: integração e prevenção',
   p:[
     [
-      '{r}O artigo 144 da Constituição define a segurança pública como "dever',
-      'do Estado, direito e responsabilidade de todos"{/}. No Brasil, porém, a',
-      'violência persiste, {t}sobretudo pela falta de integração entre as',
+      '{r}O artigo 144 da Constituição Federal de 1988 define a segurança pública',
+      'como "dever do Estado, direito e responsabilidade de todos"{/}. No Brasil,',
+      'porém, a violência persiste, {t}sobretudo pela falta de integração entre as',
       'instituições e pelo foco excessivo na repressão, em vez da prevenção{/}.'
     ],[
       'Em primeiro lugar, os órgãos de segurança ainda atuam isolados.',
@@ -2600,12 +3063,12 @@ const MODELOS = [
       'Nesse sentido, quando cada órgão trabalha sozinho, informações se',
       'perdem, investigações atrasam e o criminoso se aproveita das brechas.'
     ],[
-      'Além disso, o Estado investe mais em reagir do que em prevenir.',
-      '{r}Já em 1829, Robert Peel defendia que a eficiência da polícia se',
-      'mede pela ausência de crimes, e não pela ação visível da polícia{/}.',
-      'Sob essa ótica, sem iluminação, escolas, praças e policiamento',
-      'preventivo, o crime ocorre primeiro e a resposta vem depois, de modo',
-      'que a população vive com medo mesmo após grandes operações.'
+      'Além disso, o Estado investe mais em reagir do que em prevenir. {r}Já',
+      'em 1829, Robert Peel defendia que a eficiência da polícia se mede pela',
+      'ausência de crimes, e não pela ação visível dos agentes{/}. Sob essa ótica,',
+      'sem iluminação, escolas, praças e policiamento preventivo, o crime ocorre',
+      'primeiro e a resposta vem depois, de modo que a população vive com medo',
+      'mesmo após grandes operações.'
     ],[
       'Portanto, a segurança pública precisa de integração e prevenção.',
       'Para isso, {p}o Governo Federal deve fortalecer o Sistema Único de',
@@ -2678,10 +3141,10 @@ const MODELOS = [
     ],[
       'Além disso, a dependência financeira prende a vítima ao agressor.',
       'Sem renda própria e muitas vezes com filhos pequenos, a mulher teme',
-      'não ter como se sustentar se denunciar. {r}Dados do Anuário Brasileiro',
-      'de Segurança Pública mostram mais de mil feminicídios por ano{/}, e',
-      'muitos deles ocorrem após anos de agressões silenciadas por essa',
-      'dependência, o que mostra que autonomia também salva vidas.'
+      'não ter como se sustentar se denunciar. {r}Dados do Anuário Brasileiro de',
+      'Segurança Pública mostram mais de mil feminicídios por ano{/}, e muitos deles',
+      'ocorrem após anos de agressões silenciadas por essa dependência, o que',
+      'revela que autonomia também salva vidas.'
     ],[
       'Portanto, punir mais não basta: é preciso dar autonomia às vítimas.',
       'Para isso, {p}estados e municípios devem garantir o auxílio-aluguel',
@@ -2702,29 +3165,29 @@ const MODELOS = [
   tipo:'Versão 2 · outros obstáculos: educação e infraestrutura',
   p:[
     [
-      '{r}O movimento Maio Amarelo lembra todos os anos que a maioria dos',
-      'acidentes de trânsito poderia ser evitada{/}. Ainda assim, as mortes',
-      'nas vias persistem no Brasil, {t}sobretudo pela educação para o trânsito',
-      'insuficiente e pela precariedade da infraestrutura das vias{/}.'
+      '{r}O movimento Maio Amarelo lembra todos os anos que a maioria',
+      'dos acidentes de trânsito poderia ser evitada{/}. Ainda assim, as mortes',
+      'persistem no Brasil, {t}sobretudo pela educação para o trânsito insuficiente',
+      'e pela precariedade da infraestrutura viária{/}.'
     ],[
       'Em primeiro lugar, a educação para o trânsito é deixada de lado.',
-      '{r}O Código de Trânsito Brasileiro prevê, no artigo 76, a educação para',
-      'o trânsito nas escolas{/}, mas o tema raramente faz parte das aulas.',
-      'Nesse sentido, muitos jovens aprendem a dirigir e a pilotar motos sem',
-      'compreender os riscos, de modo que excesso de velocidade, ausência de',
-      'capacete e celular ao volante parecem atitudes sem consequências.'
+      '{r}O Código de Trânsito Brasileiro prevê, no artigo 76, esse ensino nas',
+      'escolas{/}, mas o tema raramente faz parte das aulas. Nesse sentido, muitos',
+      'jovens aprendem a dirigir e a pilotar motos sem compreender os riscos, de',
+      'modo que excesso de velocidade, ausência de capacete e celular ao volante',
+      'parecem atitudes sem consequências.'
     ],[
       'Além disso, a infraestrutura precária aumenta o risco de acidentes.',
-      'Buracos, sinalização apagada e falta de iluminação transformam',
-      'ruas e estradas em armadilhas, sobretudo para motociclistas e',
-      'pedestres. {r}A Agenda 2030 da ONU, no Objetivo 11, propõe sistemas',
-      'de transporte seguros para todos{/}. Contudo, sem manutenção das vias,',
-      'até o motorista prudente fica exposto ao perigo.'
+      'Buracos, sinalização apagada e falta de iluminação transformam ruas e',
+      'estradas em armadilhas, principalmente para motociclistas e pedestres. {r}A',
+      'Agenda 2030 da ONU, no Objetivo 11, propõe sistemas de transporte seguros',
+      'para todos{/}. Contudo, sem manutenção das vias, até o motorista prudente',
+      'fica exposto ao perigo.'
     ],[
       'Portanto, reduzir as mortes no trânsito exige educação e estrutura.',
-      'Para isso, {p}as escolas devem aplicar a educação para o trânsito, e os',
-      'governos devem recuperar e sinalizar as vias, a fim de proteger',
-      'motoristas, motociclistas e pedestres{/}.'
+      'Para isso, {p}as escolas devem incluir esse conteúdo nas aulas, e os governos',
+      'devem recuperar e sinalizar as vias, a fim de proteger motoristas,',
+      'motociclistas e pedestres{/}.'
     ]
   ],
   notas:[
@@ -2753,16 +3216,16 @@ const MODELOS = [
       'da vítima consegue se passar por banco, empresa ou parente.'
     ],[
       'Além disso, a investigação desses crimes ainda é lenta. Poucas',
-      'cidades contam com delegacias especializadas em crimes cibernéticos,',
-      'e a perícia digital exige equipamentos e técnicos qualificados.',
-      '{r}A Lei Carolina Dieckmann, de 2012, tornou crime a invasão de',
-      'dispositivos{/}, mas, sem estrutura para identificar os autores, a',
-      'punição é rara e os criminosos se sentem seguros para agir.'
+      'cidades contam com delegacias especializadas em delitos digitais, e',
+      'a perícia exige equipamentos e técnicos qualificados. {r}A Lei Carolina',
+      'Dieckmann, de 2012, tornou crime a invasão de dispositivos{/}, mas, sem',
+      'estrutura para identificar os autores, a punição é rara e os criminosos',
+      'se sentem seguros para agir.'
     ],[
       'Portanto, combater os crimes cibernéticos exige proteção e',
-      'investigação. Para isso, {p}os estados devem criar delegacias',
-      'especializadas, e a fiscalização da LGPD deve punir empresas que',
-      'vazam dados, a fim de reduzir os golpes e responsabilizar os autores{/}.'
+      'investigação. Para isso, {p}os estados devem criar delegacias especializadas,',
+      'e a Autoridade Nacional de Proteção de Dados deve punir empresas que vazam',
+      'informações, a fim de reduzir os golpes e responsabilizar os autores{/}.'
     ]
   ],
   notas:[
@@ -2828,12 +3291,12 @@ const MODELOS = [
       'transformam o mundo{/}. Nesse sentido, cada aluno que abandona a escola',
       'perde a chance de construir outro futuro.'
     ],[
-      'Além disso, a pressão do consumo torna o crime atraente. Roupas de',
-      'marca, celulares caros e festas exibidas nas redes viram símbolo de',
-      'sucesso. {r}Em "Vida para Consumo", Zygmunt Bauman afirma que, na',
-      'sociedade atual, as pessoas passam a ser avaliadas pelo que consomem{/}.',
-      'Sob essa ótica, o jovem pobre vê no tráfico um atalho para ser',
-      'reconhecido, mesmo arriscando a liberdade e a vida.'
+      'Além disso, a pressão do consumo torna a criminalidade atraente.',
+      'Roupas de marca, celulares caros e festas exibidas nas redes viram',
+      'símbolo de sucesso. {r}Em "Vida para Consumo", Zygmunt Bauman afirma que, na',
+      'sociedade atual, as pessoas passam a ser avaliadas pelo que consomem{/}. Sob',
+      'essa ótica, o jovem pobre vê no tráfico um atalho para ser reconhecido,',
+      'mesmo arriscando a liberdade e a vida.'
     ],[
       'Portanto, é preciso disputar os jovens com o tráfico. Para isso, {p}as',
       'secretarias de educação devem combater a evasão com busca ativa de',
@@ -2868,15 +3331,15 @@ const MODELOS = [
     ],[
       'Além disso, a ferramenta exige limites para não violar direitos.',
       'Sistemas de reconhecimento podem errar, sobretudo com pessoas negras,',
-      'e já houve casos de prisões injustas por identificação equivocada.',
-      '{r}A Constituição garante que ninguém será considerado culpado antes',
-      'de condenação definitiva{/}. Por isso, o alerta da máquina deve ser',
-      'apenas o início de uma verificação feita por pessoas.'
+      'e já houve casos de prisões injustas por identificação equivocada. {r}A',
+      'Constituição Federal de 1988 garante que ninguém será considerado culpado',
+      'antes de condenação definitiva{/}. Por isso, o alerta da máquina deve ser',
+      'apenas o início de uma verificação feita por agentes humanos.'
     ],[
       'Portanto, a tecnologia deve servir à segurança com responsabilidade.',
-      'Para isso, {p}a Secretaria de Defesa Social deve adotar protocolos que',
-      'exijam confirmação humana e cumpram a LGPD, a fim de prender quem deve',
-      'ser preso sem violar os direitos de inocentes{/}.'
+      'Para isso, {p}a Secretaria de Defesa Social deve adotar protocolos que exijam',
+      'confirmação humana e protejam os dados pessoais, a fim de prender os',
+      'verdadeiros culpados sem violar os direitos de inocentes{/}.'
     ]
   ],
   notas:[
@@ -2892,29 +3355,29 @@ const MODELOS = [
   tipo:'Versão 2 · outros benefícios: tempo integral e cultura do diálogo',
   p:[
     [
-      '{r}Para Darcy Ribeiro, "a crise da educação no Brasil não é uma crise;',
-      'é um projeto"{/}. Investir na escola é, portanto, decisão política, e',
-      '{t}ela previne a violência ao manter os jovens protegidos em tempo',
+      '{r}Para Darcy Ribeiro, "a crise da educação no Brasil não é uma',
+      'crise; é um projeto"{/}. Investir no ensino é, assim, uma escolha política,',
+      'e a escola {t}previne a violência ao manter os jovens protegidos em tempo',
       'integral e ao ensinar a resolver conflitos pelo diálogo{/}.'
     ],[
       'Em primeiro lugar, a escola em tempo integral protege os jovens.',
       'Quando o aluno passa o dia em atividades de estudo, esporte e cultura,',
-      'fica menos exposto à rua e ao aliciamento do tráfico. {r}O artigo 227',
-      'da Constituição exige "absoluta prioridade" para crianças e jovens{/}.',
-      'Nesse sentido, ampliar a jornada escolar é cumprir essa prioridade e',
-      'oferecer um ambiente seguro enquanto as famílias trabalham.'
+      'fica menos exposto à rua e ao aliciamento do tráfico. {r}O artigo 227 da',
+      'Constituição Federal de 1988 exige "absoluta prioridade" para crianças e',
+      'jovens{/}. Nesse sentido, ampliar a jornada escolar é cumprir essa prioridade',
+      'e oferecer um ambiente seguro enquanto as famílias trabalham.'
     ],[
       'Além disso, a escola ensina a convivência e o diálogo. {r}Para Émile',
       'Durkheim, a educação é a socialização das novas gerações, que aprendem',
-      'as regras da vida em sociedade{/}. Sob essa ótica, aulas sobre',
-      'cidadania, mediação de conflitos e respeito às diferenças formam',
-      'pessoas capazes de resolver desentendimentos sem agressão, de modo',
-      'que a violência diminui dentro e fora da escola.'
+      'as regras da vida em sociedade{/}. Sob essa ótica, aulas sobre cidadania,',
+      'mediação de conflitos e respeito às diferenças formam pessoas capazes de',
+      'resolver desentendimentos sem agressão, de modo que a violência diminui',
+      'dentro e fora da sala de aula.'
     ],[
-      'Portanto, a escola é a primeira barreira contra a violência. Para',
-      'isso, {p}os governos devem ampliar o tempo integral e incluir mediação',
-      'de conflitos no currículo, a fim de formar cidadãos que escolham o',
-      'diálogo em vez da força{/}.'
+      'Portanto, a escola deve ser a primeira barreira contra a violência.',
+      'Para isso, {p}os governos devem ampliar o tempo integral e incluir mediação',
+      'de conflitos no currículo, a fim de formar cidadãos que escolham o diálogo',
+      'em vez da força{/}.'
     ]
   ],
   notas:[
@@ -2936,11 +3399,11 @@ const MODELOS = [
       'mantém bons profissionais na carreira e fortalece a confiança social{/}.'
     ],[
       'Em primeiro lugar, a valorização evita a perda de bons agentes.',
-      'Salários defasados, escalas exaustivas e falta de perspectiva levam',
-      'muitos policiais a abandonar a carreira após anos de formação. {r}Para',
-      'Byung-Chul Han, a cobrança excessiva por desempenho gera esgotamento{/}.',
-      'Nesse sentido, sem plano de carreira e descanso adequado, o Estado',
-      'desperdiça investimento e perde experiência acumulada.'
+      'Salários defasados, escalas exaustivas e falta de perspectiva levam muitos',
+      'policiais a abandonar a carreira após anos de formação. {r}Para Byung-Chul',
+      'Han, a cobrança excessiva por desempenho gera esgotamento{/}. Nesse sentido,',
+      'sem progressão funcional e descanso adequado, o Estado desperdiça',
+      'investimento e perde experiência acumulada.'
     ],[
       'Além disso, o policial valorizado aproxima a polícia da sociedade.',
       'Bem treinado e respeitado, ele atua com mais segurança, técnica e',
@@ -2949,10 +3412,10 @@ const MODELOS = [
       'veste a farda é valorizar a própria comunidade, de modo que a',
       'confiança e a colaboração da população tendem a crescer.'
     ],[
-      'Portanto, a valorização do policial beneficia toda a sociedade.',
-      'Para isso, {p}o Governo do Estado deve garantir salário digno, plano',
-      'de carreira e formação continuada, a fim de manter bons profissionais',
-      'nas ruas e fortalecer a confiança da população{/}.'
+      'Portanto, a valorização do policial beneficia toda a sociedade. Para',
+      'isso, {p}o Governo do Estado deve garantir salário digno, plano de carreira',
+      'e formação continuada, a fim de manter profissionais experientes nas ruas',
+      'e fortalecer a confiança da população{/}.'
     ]
   ],
   notas:[
@@ -2969,9 +3432,9 @@ const MODELOS = [
   p:[
     [
       '{r}O documentário "O Dilema das Redes" mostra que aplicativos são',
-      'projetados para prender a atenção do usuário{/}. Nas apostas on-line,',
-      'esse mecanismo preocupa, {t}sobretudo pela publicidade agressiva voltada',
-      'aos jovens e pela falta de educação financeira da população{/}.'
+      'projetados para prender a atenção do usuário{/}. Nas apostas on-line, esse',
+      'risco se agrava, {t}sobretudo pela publicidade agressiva voltada aos jovens',
+      'e pela falta de educação financeira da população{/}.'
     ],[
       'Em primeiro lugar, a publicidade apresenta a aposta como diversão.',
       'Influenciadores e atletas associam o jogo a sucesso, riqueza e',
@@ -2981,14 +3444,14 @@ const MODELOS = [
       'modo que começa a jogar cedo e corre mais risco de se viciar.'
     ],[
       'Além disso, falta educação financeira à maior parte da população.',
-      'Muitos apostadores não entendem que, no longo prazo, as plataformas',
-      'sempre lucram e o jogador tende a perder. {r}A Base Nacional Comum',
-      'Curricular inclui a educação financeira entre os temas das escolas{/},',
-      'mas o conteúdo ainda é pouco trabalhado, de modo que famílias',
-      'comprometem salários e se endividam sem perceber.'
+      'Muitos apostadores não entendem que, no longo prazo, as plataformas sempre',
+      'lucram e o jogador tende a perder. {r}A Base Nacional Comum Curricular inclui',
+      'a educação financeira entre os temas das escolas{/}, mas o conteúdo ainda é',
+      'pouco trabalhado, e muitas famílias comprometem salários e se endividam',
+      'sem perceber.'
     ],[
-      'Portanto, é preciso proteger a população das apostas. Para isso, {p}o',
-      'governo deve restringir a publicidade das bets, e as escolas devem',
+      'Portanto, é preciso proteger a população das apostas. Para isso,',
+      '{p}o governo deve restringir a publicidade das "bets", e as escolas devem',
       'ensinar educação financeira desde cedo, a fim de evitar o vício e o',
       'endividamento das famílias{/}.'
     ]
@@ -3007,23 +3470,23 @@ const MODELOS = [
   p:[
     [
       '{r}Para Aristóteles, a virtude está no meio-termo entre os excessos{/}.',
-      'Na segurança pública, a inteligência artificial pede esse equilíbrio:',
-      '{t}ela pode tornar a polícia mais eficiente, mas exige regras para',
-      'não reproduzir discriminações{/}.'
+      'Na segurança pública, a inteligência artificial (IA) pede esse equilíbrio:',
+      '{t}ela pode tornar a polícia mais eficiente, mas exige regras para não',
+      'reproduzir discriminações{/}.'
     ],[
-      'Em primeiro lugar, a IA ajuda a usar melhor os dados policiais.',
-      'Sistemas que cruzam registros de ocorrências indicam horários e locais',
-      'com mais crimes, o que orienta o patrulhamento. {r}Em Pernambuco, o',
-      'Pacto pela Vida já mostrou que gestão baseada em dados e metas ajuda',
-      'a reduzir homicídios{/}. Assim, a tecnologia pode ampliar esse',
-      'modelo, de modo que o efetivo seja usado onde é mais necessário.'
+      'Em primeiro lugar, a IA ajuda a usar melhor as informações',
+      'policiais. Sistemas que cruzam registros de ocorrências indicam horários',
+      'e locais com mais crimes, o que orienta o patrulhamento. {r}Em Pernambuco, o',
+      'Pacto pela Vida já mostrou que gestão baseada em dados e metas contribui',
+      'para reduzir homicídios{/}. Assim, a tecnologia tende a ampliar esse modelo,',
+      'de modo que o efetivo seja usado onde é mais necessário.'
     ],[
       'Além disso, a IA pode repetir preconceitos se não houver controle.',
       'Algoritmos aprendem com dados do passado e, se esses dados refletem',
-      'abordagens desiguais, tendem a apontar sempre os mesmos bairros e',
-      'grupos. {r}O artigo 5º da Constituição garante que todos são iguais',
-      'perante a lei{/}. Por isso, decisões automatizadas precisam ser',
-      'auditadas para não transformar preconceito em estatística.'
+      'abordagens desiguais, tendem a apontar sempre os mesmos bairros e grupos.',
+      '{r}O artigo 5º da Constituição Federal de 1988 garante que todos são iguais',
+      'perante a lei{/}. Por isso, decisões automatizadas precisam ser auditadas',
+      'para não transformar preconceito em estatística.'
     ],[
       'Portanto, a inteligência artificial deve ser usada com equilíbrio.',
       'Para isso, {p}o Ministério da Justiça deve criar regras de uso e',
@@ -3046,22 +3509,22 @@ const MODELOS = [
     [
       '{r}Para Zygmunt Bauman, a modernidade é "líquida": relações rápidas,',
       'frágeis e cada vez mais mediadas pela tecnologia{/}. Entre crianças e',
-      'adolescentes, o uso excessivo de telas cresce, {t}sobretudo pela falta',
-      'de supervisão das famílias e pelo design viciante das plataformas{/}.'
+      'adolescentes, o uso excessivo de telas cresce, {t}sobretudo pela falta de',
+      'supervisão das famílias e pelo funcionamento viciante das plataformas{/}.'
     ],[
-      'Em primeiro lugar, muitas famílias não acompanham o uso das telas.',
-      'Com pais sobrecarregados pelo trabalho, o celular vira babá, e a',
-      'criança passa horas na internet sem limites de tempo ou de conteúdo.',
-      '{r}A Constituição, no artigo 227, atribui também à família o dever de',
-      'proteger crianças e adolescentes{/}. Nesse sentido, a falta de',
+      'Em primeiro lugar, muitas famílias não acompanham o uso das',
+      'telas. Com pais sobrecarregados pelo trabalho, o celular vira babá, e',
+      'a criança passa horas na internet sem limites de tempo ou de conteúdo.',
+      '{r}A Constituição Federal de 1988, no artigo 227, atribui também à família',
+      'o dever de proteger crianças e adolescentes{/}. Nesse sentido, a falta de',
       'supervisão deixa os filhos expostos a riscos que não sabem reconhecer.'
     ],[
       'Além disso, as plataformas são projetadas para prender a atenção.',
-      'Rolagem infinita, notificações e vídeos curtos estimulam o uso',
-      'contínuo e dificultam a autorregulação, sobretudo na infância.',
-      '{r}O documentário "O Dilema das Redes" mostra que esses recursos são',
-      'pensados para maximizar o tempo de uso{/}. Sob essa ótica, culpar só',
-      'a criança ignora uma indústria feita para viciar.'
+      'Rolagem infinita, notificações e vídeos curtos estimulam o uso contínuo e',
+      'dificultam a autorregulação, especialmente na infância. {r}O documentário "O',
+      'Dilema das Redes" mostra que esses recursos são pensados para maximizar',
+      'o tempo de uso{/}. Sob essa ótica, culpar só a criança ignora uma indústria',
+      'feita para viciar.'
     ],[
       'Portanto, a infância digital exige proteção conjunta. Para isso,',
       '{p}as famílias devem usar controle parental, as escolas devem orientar',
@@ -3090,26 +3553,29 @@ const REPS = [
 // ---------- Constituição ----------
 {n:'Constituição Federal, art. 5º', w:'Constituição', t:['cor','dh','seg'],
  i:'Todos são iguais perante a lei, garantindo-se a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade.',
- u:'A Constituição Federal, em seu artigo 5º, garante a todos o direito à vida e à segurança. Entretanto, ...'},
+ u:'A Constituição Federal de 1988, em seu artigo 5º, garante a todos o direito à vida e à segurança. Entretanto, ...'},
 {n:'Constituição Federal, art. 6º', w:'Constituição', t:['cor','des','edu'],
  i:'Lista os direitos sociais: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados.',
- u:'Embora o artigo 6º da Constituição inclua a segurança entre os direitos sociais, ...'},
+ u:'Embora o artigo 6º da Constituição Federal de 1988 inclua a segurança entre os direitos sociais, ...'},
 {n:'Constituição Federal, art. 144', w:'Constituição', t:['seg','cor'],
  i:'"A segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida para a preservação da ordem pública e da incolumidade das pessoas e do patrimônio." O § 5º atribui às polícias militares a polícia ostensiva e a preservação da ordem pública.',
- u:'O artigo 144 da Constituição define a segurança pública como "dever do Estado, direito e responsabilidade de todos", o que mostra que a sociedade também tem papel no combate ao crime.'},
+ u:'O artigo 144 da Constituição Federal de 1988 define a segurança pública como "dever do Estado, direito e responsabilidade de todos", o que mostra que a sociedade também tem papel no combate ao crime.'},
 {n:'Constituição Federal, art. 196', w:'Constituição', t:['sm','vul'],
  i:'A saúde é direito de todos e dever do Estado, garantida por políticas sociais e econômicas.',
- u:'Apesar de o artigo 196 da Constituição assegurar a saúde como direito de todos, a saúde mental ainda recebe pouca atenção.'},
+ u:'Apesar de o artigo 196 da Constituição Federal de 1988 assegurar a saúde como direito de todos, a saúde mental ainda recebe pouca atenção.'},
 {n:'Constituição Federal, art. 205', w:'Constituição', t:['edu','cor','dro'],
  i:'A educação é direito de todos e dever do Estado e da família, visando ao pleno desenvolvimento da pessoa, ao preparo para a cidadania e à qualificação para o trabalho.',
- u:'Segundo o artigo 205 da Constituição, a educação deve preparar o cidadão para o exercício da cidadania. Assim, a escola é peça-chave na prevenção da violência.'},
+ u:'Segundo o artigo 205 da Constituição Federal de 1988, a educação deve preparar o cidadão para o exercício da cidadania. Assim, a escola é peça-chave na prevenção da violência.'},
 {n:'Constituição Federal, art. 225', w:'Constituição', t:['amb'],
  i:'Todos têm direito ao meio ambiente ecologicamente equilibrado, cabendo ao poder público e à coletividade defendê-lo e preservá-lo para as presentes e futuras gerações.',
- u:'O artigo 225 da Constituição impõe ao poder público e à coletividade o dever de preservar o meio ambiente para as futuras gerações.'},
+ u:'O artigo 225 da Constituição Federal de 1988 impõe ao poder público e à coletividade o dever de preservar o meio ambiente para as futuras gerações.'},
 {n:'Constituição Federal, art. 227', w:'Constituição', t:['vul','dro','edu'],
  i:'É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à educação, à dignidade e à convivência familiar, protegendo-os de toda forma de negligência, violência e exploração.',
- u:'A Constituição determina, no artigo 227, que crianças e adolescentes têm "absoluta prioridade". Na prática, porém, ...'},
+ u:'A Constituição Federal de 1988 determina, no artigo 227, que crianças e adolescentes têm "absoluta prioridade". Na prática, porém, ...'},
 // ---------- Leis ----------
+{n:'Constituição Federal, art. 226, § 8º', w:'Constituição', t:['mul','vul'],
+ i:'"O Estado assegurará a assistência à família na pessoa de cada um dos que a integram, criando mecanismos para coibir a violência no âmbito de suas relações."',
+ u:'A Constituição Federal de 1988 determina, no artigo 226, que o Estado crie mecanismos para coibir a violência nas relações familiares. Na prática, porém, ...'},
 {n:'Lei Maria da Penha (Lei 11.340/2006)', w:'Lei', t:['mul'],
  i:'Cria mecanismos para coibir a violência doméstica e familiar contra a mulher e prevê medidas protetivas de urgência. Define cinco formas de violência: física, psicológica, sexual, patrimonial e moral. Desde 2023 (Lei 14.674), prevê também o auxílio-aluguel para vítimas afastadas do lar em situação de vulnerabilidade.',
  u:'A Lei Maria da Penha, de 2006, criou medidas protetivas de urgência para as vítimas. Contudo, ...'},
@@ -3138,7 +3604,7 @@ const REPS = [
  i:'Institui o Sisnad, prevê medidas de prevenção ao uso, de atenção e reinserção social de usuários e de repressão ao tráfico. Diferencia o usuário do traficante.',
  u:'A Lei de Drogas, de 2006, prevê não só a repressão ao tráfico, mas também a prevenção e a reinserção social dos usuários.'},
 {n:'Marco Civil da Internet (Lei 12.965/2014)', w:'Lei', t:['tec'],
- i:'Estabelece princípios, garantias, direitos e deveres para o uso da internet no Brasil, como a proteção da privacidade e a liberdade de expressão.',
+ i:'Estabelece princípios, garantias, direitos e deveres para o uso da internet no Brasil, como a proteção da privacidade e a liberdade de expressão. O art. 26 prevê que a educação, em todos os níveis, inclua a capacitação para o uso seguro, consciente e responsável da internet.',
  u:'O Marco Civil da Internet, de 2014, garante a liberdade de expressão, mas não autoriza a disseminação de crimes no ambiente virtual.'},
 {n:'Lei Geral de Proteção de Dados (Lei 13.709/2018)', w:'Lei', t:['tec'],
  i:'Regula o tratamento de dados pessoais por empresas e pelo poder público, para proteger a privacidade dos cidadãos.',
@@ -3153,7 +3619,7 @@ const REPS = [
  i:'Incluiu no Código Penal o crime de intimidação sistemática (bullying) e sua forma virtual (cyberbullying). Já a Lei 13.185/2015 havia criado o Programa de Combate à Intimidação Sistemática.',
  u:'Em 2024, a Lei 14.811 transformou o bullying e o cyberbullying em crimes, reconhecendo os danos que causam aos jovens.'},
 {n:'Estatuto da Pessoa Idosa (Lei 10.741/2003)', w:'Lei', t:['vul'],
- i:'Garante direitos às pessoas com 60 anos ou mais e prevê que nenhuma pessoa idosa será objeto de negligência, discriminação, violência, crueldade ou opressão.',
+ i:'Garante direitos às pessoas com 60 anos ou mais e prevê que nenhuma pessoa idosa será objeto de negligência, discriminação, violência, crueldade ou opressão. Tipifica crimes como desviar bens, pensão ou rendimentos da pessoa idosa (art. 102).',
  u:'O Estatuto da Pessoa Idosa proíbe qualquer forma de violência contra pessoas com 60 anos ou mais. Entretanto, ...'},
 {n:'Lei de Execução Penal (Lei 7.210/1984)', w:'Lei', t:['pri'],
  i:'O art. 1º diz que a execução penal deve efetivar a sentença e proporcionar condições para a harmônica integração social do condenado.',
@@ -3168,7 +3634,7 @@ const REPS = [
  i:'Art. 1º: "Todos os seres humanos nascem livres e iguais em dignidade e direitos." Art. 3º: todo ser humano tem direito à vida, à liberdade e à segurança pessoal.',
  u:'A Declaração Universal dos Direitos Humanos, de 1948, garante a todo ser humano o direito à vida e à segurança pessoal.'},
 {n:'Agenda 2030 da ONU (ODS)', w:'Lei', t:['cor','seg','mul','amb','tra','edu'],
- i:'17 Objetivos de Desenvolvimento Sustentável. ODS 16: paz, justiça e instituições eficazes. ODS 5: igualdade de gênero. ODS 4: educação de qualidade. ODS 13: ação contra a mudança do clima.',
+ i:'17 Objetivos de Desenvolvimento Sustentável. ODS 16: paz, justiça e instituições eficazes. ODS 5: igualdade de gênero. ODS 4: educação de qualidade. ODS 13: ação contra a mudança do clima. ODS 15: proteger as florestas e combater o tráfico de espécies.',
  u:'O Objetivo 16 da Agenda 2030 da ONU propõe promover sociedades pacíficas e instituições eficazes, meta ainda distante no Brasil.'},
 // ---------- Pensadores ----------
 {n:'Thomas Hobbes', w:'Pensador', t:['seg','cor'],
@@ -3197,7 +3663,7 @@ const REPS = [
  u:'Michel Foucault, em "Vigiar e Punir", já apontava que a prisão pode produzir mais delinquência em vez de recuperar.'},
 {n:'Hannah Arendt', w:'Pensador', t:['dh','cor'],
  i:'Criou o conceito de "banalidade do mal": pessoas comuns podem praticar atrocidades quando deixam de refletir e apenas cumprem ordens ou seguem a maioria.',
- u:'Hannah Arendt chamou de "banalidade do mal" a naturalização de atos cruéis. É o que ocorre quando a sociedade se acostuma com ...'},
+ u:'Com o conceito de "banalidade do mal", Hannah Arendt mostrou que pessoas comuns podem praticar crueldades quando deixam de refletir sobre o que fazem.'},
 {n:'Immanuel Kant', w:'Pensador', t:['dh','amb'],
  i:'Defende que o ser humano deve ser tratado sempre como fim, nunca apenas como meio, o que fundamenta a ideia de dignidade. Também afirmou que quem é cruel com os animais endurece no trato com as pessoas.',
  u:'Para Kant, o ser humano deve ser tratado como fim, e não como meio. Por isso, a dignidade deve ser respeitada mesmo na abordagem de suspeitos.'},
@@ -3207,8 +3673,8 @@ const REPS = [
 {n:'Simone de Beauvoir', w:'Pensador', t:['mul'],
  i:'Em "O Segundo Sexo" (1949): "Ninguém nasce mulher: torna-se mulher." Os papéis de gênero são construídos socialmente.',
  u:'Segundo Simone de Beauvoir, "ninguém nasce mulher: torna-se mulher", o que mostra que o machismo é uma construção social e pode ser combatido.'},
-{n:'Pierre Bourdieu', w:'Pensador', t:['mul','des','edu'],
- i:'Criou o conceito de "violência simbólica": dominação invisível, exercida por meio da cultura, da linguagem e dos costumes, que a própria vítima tende a aceitar como natural.',
+{n:'Pierre Bourdieu', w:'Pensador', t:['mul','des','edu','dh','tec'],
+ i:'Criou o conceito de "violência simbólica": dominação invisível, exercida por meio da cultura, da linguagem e dos costumes, que a própria vítima tende a aceitar como natural. Em "Sobre a televisão" (1996), critica a pressão dos índices de audiência, que leva a mídia ao sensacionalismo.',
  u:'O sociólogo Pierre Bourdieu chamou de violência simbólica a dominação naturalizada pelos costumes, como ocorre com o machismo.'},
 {n:'Byung-Chul Han', w:'Pensador', t:['sm','tec'],
  i:'Em "Sociedade do Cansaço" (2010), afirma que a cobrança excessiva por desempenho gera esgotamento, depressão e síndrome de burnout.',
@@ -3267,14 +3733,17 @@ const REPS = [
  u:'O documentário "O Dilema das Redes" mostra como os algoritmos manipulam a atenção e espalham desinformação.'},
 // ---------- Dados e fatos ----------
 {n:'Atlas da Violência (Ipea e FBSP)', w:'Dado e fato', t:['seg','dro','des','dh'],
- i:'Publicação periódica que mostra que a maioria das vítimas de homicídio no Brasil é jovem, do sexo masculino e negra.',
- u:'Segundo o Atlas da Violência, a maioria das vítimas de homicídio no país é jovem e negra.'},
+ i:'Publicação do Ipea e do Fórum Brasileiro de Segurança Pública. Mostra que a maioria das vítimas de homicídio no Brasil é negra e do sexo masculino e que quase metade tem entre 15 e 29 anos (47,8% em 2023, segundo a edição de 2025). Cuidado: os jovens não são a maioria das vítimas, e sim o grupo mais atingido.',
+ u:'Segundo o Atlas da Violência, os jovens negros são as principais vítimas de homicídio no país.'},
 {n:'Anuário Brasileiro de Segurança Pública (FBSP)', w:'Dado e fato', t:['seg','mul'],
- i:'Publicação anual do Fórum Brasileiro de Segurança Pública. Registra, por exemplo, mais de mil feminicídios por ano no país.',
+ i:'Publicação anual do Fórum Brasileiro de Segurança Pública. Registra, por exemplo, mais de mil feminicídios por ano no país, a maior parte deles dentro de casa e cometida por parceiros ou ex-parceiros.',
  u:'Dados do Anuário Brasileiro de Segurança Pública revelam que mais de mil mulheres são vítimas de feminicídio por ano no Brasil.'},
 {n:'OMS e trânsito', w:'Dado e fato', t:['tra'],
  i:'Para a Organização Mundial da Saúde, as lesões de trânsito são a principal causa de morte de crianças e jovens de 5 a 29 anos no mundo. A ONU definiu 2021–2030 como a Década de Ação pela Segurança no Trânsito, com meta de reduzir as mortes pela metade.',
  u:'Segundo a OMS, os acidentes de trânsito são a principal causa de morte de jovens de 5 a 29 anos no mundo.'},
+{n:'Ligue 180', w:'Dado e fato', t:['mul'],
+ i:'Central de Atendimento à Mulher: canal gratuito e confidencial para denunciar violência contra a mulher e receber orientação sobre a rede de proteção.',
+ u:'A população deve denunciar a violência contra a mulher pelo Ligue 180, canal gratuito e sigiloso.'},
 {n:'Maio Amarelo e Setembro Amarelo', w:'Dado e fato', t:['tra','sm'],
  i:'Maio Amarelo: movimento de conscientização sobre segurança no trânsito. Setembro Amarelo: campanha de prevenção ao suicídio.',
  u:'Campanhas como o Setembro Amarelo mostram a importância de falar sobre saúde mental, inclusive dentro das corporações policiais.'},
@@ -3315,10 +3784,10 @@ const REPS = [
 // ---------- Acréscimos: leis e fatos dos temas novos ----------
 {n:'Constituição Federal, art. 5º, VI', w:'Constituição', t:['dh'],
  i:'"É inviolável a liberdade de consciência e de crença, sendo assegurado o livre exercício dos cultos religiosos." A Lei 11.635/2007 criou o Dia Nacional de Combate à Intolerância Religiosa, em 21 de janeiro.',
- u:'A Constituição garante, no artigo 5º, a liberdade de crença. Ainda assim, terreiros e templos continuam sendo alvo de ataques.'},
+ u:'A Constituição Federal de 1988 garante, no artigo 5º, a liberdade de crença. Ainda assim, terreiros e templos continuam sendo alvo de ataques.'},
 {n:'Constituição Federal, art. 7º, XXXIII', w:'Constituição', t:['vul'],
  i:'Proíbe o trabalho noturno, perigoso ou insalubre a menores de 18 anos e qualquer trabalho a menores de 16, salvo na condição de aprendiz, a partir dos 14 anos.',
- u:'Embora a Constituição proíba qualquer trabalho a menores de 16 anos, salvo como aprendiz, muitas crianças ainda trabalham no campo e nas ruas.'},
+ u:'Embora a Constituição Federal de 1988 proíba qualquer trabalho a menores de 16 anos, salvo como aprendiz, muitas crianças ainda trabalham no campo e nas ruas.'},
 {n:'STF, ADO 26 (2019)', w:'Lei', t:['dh'],
  i:'O Supremo Tribunal Federal enquadrou a homofobia e a transfobia nos crimes de racismo da Lei 7.716/1989, até que o Congresso aprove lei específica.',
  u:'Desde 2019, por decisão do STF, a homofobia e a transfobia são punidas como racismo. Mesmo assim, a violência contra pessoas LGBTQIA+ persiste.'},
@@ -3369,7 +3838,7 @@ const REPS = [
  u:'O Brasil saiu do Mapa da Fome em 2014 e voltou a ele anos depois, o que mostra que o combate à fome depende de políticas contínuas.'},
 {n:'Constituição Federal, art. 5º, LVII', w:'Constituição', t:['dh','seg','tec'],
  i:'"Ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória": é o princípio da presunção de inocência.',
- u:'A Constituição garante que ninguém será considerado culpado antes de condenação definitiva. Por isso, um alerta de reconhecimento facial deve ser confirmado antes de qualquer prisão.'},
+ u:'A Constituição Federal de 1988 garante que ninguém será considerado culpado antes de condenação definitiva. Por isso, um alerta de reconhecimento facial deve ser confirmado antes de qualquer prisão.'},
 {n:'Código de Trânsito Brasileiro, art. 76', w:'Lei', t:['tra','edu'],
  i:'Prevê que a educação para o trânsito seja promovida da pré-escola ao ensino superior.',
  u:'O Código de Trânsito prevê, no artigo 76, a educação para o trânsito nas escolas, mas o tema raramente faz parte das aulas.'},
@@ -3378,7 +3847,44 @@ const REPS = [
  u:'Segundo a OMS, saúde é um estado de completo bem-estar físico, mental e social, o que inclui cuidar da mente de quem trabalha sob pressão.'},
 {n:'Educação financeira na BNCC', w:'Lei', t:['edu','tec','des'],
  i:'A Base Nacional Comum Curricular inclui a educação financeira entre os Temas Contemporâneos Transversais que as escolas devem trabalhar.',
- u:'A BNCC inclui a educação financeira entre os temas das escolas, mas o conteúdo ainda é pouco trabalhado, o que deixa jovens vulneráveis às apostas e às dívidas.'}
+ u:'A BNCC inclui a educação financeira entre os temas das escolas, mas o conteúdo ainda é pouco trabalhado, o que deixa jovens vulneráveis às apostas e às dívidas.'},
+// ---------- Acréscimos das aulas do curso (Instituto AOCP, PMPE 2027) ----------
+{n:'Constituição Federal, arts. 229 e 230', w:'Constituição', t:['vul'],
+ i:'Art. 229: os filhos maiores têm o dever de ajudar e amparar os pais na velhice. Art. 230: a família, a sociedade e o Estado têm o dever de amparar as pessoas idosas, assegurando sua participação na comunidade.',
+ u:'A Constituição Federal de 1988, no artigo 230, atribui à família, à sociedade e ao Estado o dever de amparar as pessoas idosas. Contudo, ...'},
+{n:'Constituição Federal, art. 5º, X, e art. 220', w:'Constituição', t:['dh','tec'],
+ i:'O art. 5º, X, protege a intimidade, a vida privada, a honra e a imagem das pessoas. O art. 220 garante a liberdade de informação, observado o disposto na própria Constituição.',
+ u:'A Constituição Federal de 1988 assegura a liberdade de informação, mas também protege a intimidade, a honra e a imagem das pessoas.'},
+{n:'Convenção de Budapeste (Decreto 11.491/2023)', w:'Lei', t:['tec'],
+ i:'Tratado do Conselho da Europa sobre o crime cibernético, de 2001. O Brasil aderiu e o promulgou em 2023, para facilitar a cooperação internacional na investigação desses crimes.',
+ u:'Em 2023, o Brasil promulgou a Convenção de Budapeste, tratado de cooperação internacional contra o crime cibernético. Ainda assim, ...'},
+{n:'STF, ADPF 347', w:'Lei', t:['pri','dh'],
+ i:'Em 2015, o Supremo Tribunal Federal reconheceu, em caráter cautelar, o "estado de coisas inconstitucional" do sistema prisional brasileiro, pela violação massiva de direitos dos presos. O julgamento de mérito, em 2023, confirmou a decisão e determinou um plano nacional para o setor.',
+ u:'O Supremo Tribunal Federal reconheceu o "estado de coisas inconstitucional" do sistema prisional, quadro que favorece o avanço das facções.'},
+{n:'Descumprimento de medida protetiva (art. 24-A da Lei Maria da Penha)', w:'Lei', t:['mul'],
+ i:'Incluído pela Lei 13.641/2018: descumprir decisão judicial que concede medidas protetivas de urgência é crime.',
+ u:'Desde 2018, descumprir medida protetiva é crime. Na prática, porém, poucas cidades fiscalizam o cumprimento dessas decisões.'},
+{n:'Corrupção de menores (art. 244-B do ECA)', w:'Lei', t:['dro','vul'],
+ i:'Pune quem corrompe ou facilita a corrupção de menor de 18 anos, praticando infração penal com ele ou induzindo-o a praticá-la.',
+ u:'O ECA pune, no artigo 244-B, o adulto que corrompe menor de 18 anos para a prática de crimes, mas os aliciadores raramente são identificados.'},
+{n:'Estatuto da Juventude (Lei 12.852/2013)', w:'Lei', t:['des','dro','edu'],
+ i:'Art. 14: o jovem tem direito à profissionalização, ao trabalho e à renda, exercido em condições de liberdade, equidade e segurança, adequadamente remunerado e com proteção social.',
+ u:'O Estatuto da Juventude assegura ao jovem o direito à profissionalização, ao trabalho e à renda. Contudo, ...'},
+{n:'Lei da Aprendizagem (Lei 10.097/2000)', w:'Lei', t:['des','edu'],
+ i:'Obriga as empresas de médio e grande porte a contratar aprendizes, jovens que trabalham e estudam ao mesmo tempo, em uma cota sobre o total de empregados.',
+ u:'Embora a Lei da Aprendizagem obrigue médias e grandes empresas a contratar aprendizes, as vagas ainda são insuficientes.'},
+{n:'Lei de Abuso de Autoridade, art. 13', w:'Lei', t:['dh','seg'],
+ i:'A Lei 13.869/2019 pune o agente que constrange o preso, mediante violência, grave ameaça ou redução de sua resistência, a se exibir ou ter o corpo exibido à curiosidade pública.',
+ u:'A Lei de Abuso de Autoridade pune o agente que constrange o preso a se exibir à curiosidade pública, o que impõe limites à exposição de detidos.'},
+{n:'Documentário "Falcão – Meninos do Tráfico" (2006)', w:'Obra', t:['dro','vul'],
+ i:'Dirigido pelo rapper MV Bill e por Celso Athayde, mostra a rotina de crianças e adolescentes usados pelo tráfico como "falcões", os vigias que avisam da chegada da polícia.',
+ u:'O documentário "Falcão – Meninos do Tráfico" mostra jovens recrutados como vigias do tráfico, retrato do vácuo deixado pelo Estado.'},
+{n:'Ricardo Antunes e a "uberização"', w:'Pensador', t:['des'],
+ i:'Sociólogo brasileiro que estuda o trabalho por plataformas digitais e chama de "uberização" a precarização marcada por renda instável, jornadas longas e ausência de direitos.',
+ u:'O sociólogo Ricardo Antunes chama de "uberização" a precarização do trabalho por aplicativos, que atinge sobretudo os jovens.'},
+{n:'Guy Debord, "A Sociedade do Espetáculo"', w:'Obra', t:['tec','dh'],
+ i:'Livro (1967) que descreve uma sociedade em que as relações passam a ser mediadas por imagens e espetáculos.',
+ u:'Guy Debord descreveu a "sociedade do espetáculo", em que tudo vira imagem para consumo, inclusive a violência.'}
 ];
 
 // Temas prováveis com kit completo. h = chance (alta/média). Os repertórios citados estão no capítulo Repertórios.
@@ -3397,6 +3903,78 @@ const TEMAS = [
  r:'Robert Peel ("a polícia é o público..."); art. 144 da CF ("responsabilidade de todos"); kobans do Japão; Janelas Quebradas.',
  p:'SDS-PE amplia bases comunitárias com policiais fixos e reuniões periódicas com moradores e escolas.',
  x:'Tema positivo: os argumentos são benefícios. Não escreva só sobre problemas.'},
+{m:'m56', aula:'03/10', t:'A responsabilidade do Estado e da sociedade na prevenção e combate ao feminicídio', c:'mul', h:'alta',
+ tese:'Combater o feminicídio exige que o Estado garanta proteção efetiva e que a sociedade rompa o silêncio diante das agressões.',
+ a1:'Estado: fiscalizar as medidas protetivas e ampliar delegacias especializadas e abrigos. Punir é tarde quando a vítima já morreu.',
+ a2:'Sociedade: abandonar o "em briga de marido e mulher, ninguém mete a colher" e denunciar os sinais de violência.',
+ r:'Art. 226, § 8º, da CF; Lei Maria da Penha; Lei 14.994/2024 (feminicídio, pena de 20 a 40 anos); Bourdieu (violência simbólica); Anuário do FBSP; Ligue 180.',
+ p:'O governo fiscaliza as medidas protetivas e amplia a rede de acolhimento; a população denuncia pelo Ligue 180 ou pelo 190.',
+ x:'Quando o tema nomeia dois responsáveis (Estado e sociedade), dedique um desenvolvimento a cada um. Falar só do Estado tangencia o tema.',
+ na:'Ideia central: o feminicídio "não persiste pela falta de lei, mas pela ineficácia na rede de proteção". Causas: sofrimento minimizado ("briga de marido e mulher"), falta de acolhimento (vítimas deixam de denunciar ou não encontram suporte), cultura patriarcal e naturalização da violência de gênero. Consequências: a "morte anunciada", o ciclo de violência, os órfãos do feminicídio e o impacto na saúde pública e na segurança. Soluções por agente: Executivo (delegacias da mulher, Patrulhas Maria da Penha), Judiciário (celeridade nas medidas protetivas), escola e mídia (debate sobre igualdade de gênero).'},
+{m:'m57', aula:'03/10', t:'O papel da tecnologia e das redes sociais na prevenção e combate à violência urbana', c:'tec', h:'alta',
+ tese:'Tecnologia e redes sociais são aliadas contra a violência urbana, desde que riscos como a desinformação e a violação da privacidade sejam controlados.',
+ a1:'Potencial: mapeamento da mancha criminal, inteligência artificial, videomonitoramento e canais digitais de denúncia otimizam o efetivo policial.',
+ a2:'Limites: notícias falsas e "justiça com as próprias mãos", vazamento de dados, reconhecimento facial em massa e vieses algorítmicos.',
+ r:'Art. 144 da CF ("responsabilidade de todos"); Pacto pela Vida (PE); LGPD; Marco Civil da Internet; O Dilema das Redes.',
+ p:'Governo do Estado amplia o videomonitoramento e os canais oficiais de denúncia, com proteção de dados e campanhas contra notícias falsas.',
+ x:'"Papel" pede os dois lados. Um texto só de elogios ou só de críticas à tecnologia tangencia o tema.',
+ na:'Potencial positivo: algoritmos e IA; software de mapeamento de mancha criminal para antecipar locais e horários de maior incidência; videomonitoramento; reconhecimento facial; engajamento da sociedade; canais de denúncia; campanhas de conscientização. Desafios, riscos e limites: vazamento de informações; fake news que expõem inocentes e levam à "justiça com as próprias mãos"; privacidade do cidadão comum diante do reconhecimento facial em massa; vieses algorítmicos (discriminação racial ou social pelo sistema).'},
+{m:'m58', aula:'03/10', t:'Os desafios para o enfrentamento da violência doméstica e a garantia da efetividade das medidas protetivas', c:'mul', h:'alta',
+ tese:'A violência doméstica persiste não pela falta de lei, mas pela fiscalização frágil das medidas protetivas e pela falta de acolhimento às vítimas.',
+ a1:'Medidas protetivas sem fiscalização: poucas patrulhas especializadas e pouco monitoramento dos agressores.',
+ a2:'Falta de acolhimento: medo, dependência financeira, falta de abrigo e de atendimento psicológico mantêm a vítima no lar violento.',
+ r:'Lei Maria da Penha (2006); art. 24-A (descumprir medida protetiva é crime, desde 2018); Anuário Brasileiro de Segurança Pública; auxílio-aluguel (Lei 14.674/2023).',
+ p:'Estados ampliam Patrulhas Maria da Penha, o monitoramento eletrônico e os abrigos; o Judiciário agiliza a concessão das medidas.',
+ x:'O recorte é a efetividade das medidas protetivas: elas precisam aparecer no D1 e na proposta.',
+ na:'Ideia central: a violência "não persiste pela falta de lei, mas pela ineficácia na rede de proteção". Causas: cultura patriarcal (a ideia distorcida de posse sobre a mulher, que não aceita o fim do relacionamento), sofrimento minimizado ("briga de marido e mulher"), falta de acolhimento e ineficiência das medidas protetivas de urgência. A AOCP valoriza objetividade, clareza e estrutura rígida: introdução com tese clara, dois argumentos diretos e conclusão com proposta.'},
+{m:'m59', aula:'10/10', t:'Os desafios da segurança pública na era digital: crimes cibernéticos e segurança da informação', c:'tec', h:'alta',
+ tese:'A segurança pública enfrenta desafios na era digital sobretudo pela defasagem tecnológica das polícias e pela vulnerabilidade dos usuários.',
+ a1:'Polícias defasadas: crimes "sem fronteiras", poucas delegacias especializadas, peritos e equipamentos; punição rara.',
+ a2:'Usuários vulneráveis: engenharia social, falta de educação digital, idosos como alvo.',
+ r:'Convenção de Budapeste (promulgada em 2023); Lei 14.155/2021; Lei Carolina Dieckmann; Marco Civil da Internet (art. 26); LGPD.',
+ p:'Governos criam delegacias e laboratórios de perícia digital e fazem campanhas de educação digital com bancos e escolas.',
+ x:'Inclua os dois lados do recorte: crimes cibernéticos (investigação) e segurança da informação (proteção de dados e do usuário).',
+ na:'Textos motivadores: a digitalização trouxe golpes, roubo de dados, extorsões e fraudes que "não conhecem fronteiras físicas", e as polícias precisam se modernizar. O combate exige capacitação técnica das forças de segurança, inteligência digital e educação digital da população, porque "a vulnerabilidade humana continua sendo o principal elo explorado pelos cibercriminosos". A aula apresentou os esqueletos estruturais 1 e 2 com este tema.'},
+{m:'m60', aula:'17/10', t:'A garantia de direitos e a proteção da pessoa idosa no Brasil: entre a previsão legal e os desafios da segurança pública', c:'vul', h:'alta',
+ tese:'A violência contra a pessoa idosa persiste, sobretudo pela subnotificação dos abusos e pela atuação ainda limitada da segurança pública, o que distancia a lei da realidade.',
+ a1:'Subnotificação: violência silenciosa, dentro de casa, por pessoas próximas; abuso financeiro raramente denunciado.',
+ a2:'Segurança pública: o policiamento poderia identificar abusos cedo e acionar a rede de proteção, mas nem sempre é capacitado para reconhecer esses crimes.',
+ r:'Arts. 229 e 230 da CF; Estatuto da Pessoa Idosa (crimes dos arts. 97, 99 e 102); "O Cidadão de Papel" (Dimenstein); Disque 100.',
+ p:'SDS capacita policiais para identificar abusos e, com a assistência social, divulga o Disque 100.',
+ x:'O recorte "desafios da segurança pública" precisa aparecer: dedique um desenvolvimento ao papel da polícia.',
+ na:'Violência multifacetada e silenciosa: física, psicológica, patrimonial (por pessoa próxima, como filho ou neto), sexual, negligência e abandono. Repertórios: art. 230 da CF (família, sociedade e Estado devem amparar a pessoa idosa e garantir sua participação na comunidade), art. 229 da CF, Estatuto da Pessoa Idosa (Lei 10.741/2003), "O Cidadão de Papel". Teses: falta de fiscalização e subnotificação dos casos; dever de denunciar do cidadão e do agente público. A aula usou o esqueleto 3: a lei assegura o direito, mas a realidade mostra a distância entre o texto legal e a prática.'},
+{m:'m61', aula:'24/10', t:'Os desafios para a inserção digna e a profissionalização da juventude no mercado de trabalho brasileiro', c:'des', h:'alta',
+ tese:'A inserção dos jovens no trabalho enfrenta a precarização e a falta de qualificação, o que aproxima muitos deles da criminalidade.',
+ a1:'Precarização: informalidade, trabalho por aplicativos ("uberização"), renda instável e falta de proteção social.',
+ a2:'Falta de qualificação: evasão escolar, poucos cursos técnicos e vagas de aprendizagem insuficientes; jovem sem renda vira alvo do tráfico.',
+ r:'Estatuto da Juventude (Lei 12.852/2013, art. 14); Lei da Aprendizagem (Lei 10.097/2000); Ricardo Antunes ("uberização"); IBGE (desemprego juvenil).',
+ p:'Ministério do Trabalho e Sistema S ampliam a aprendizagem e os cursos técnicos e fiscalizam as condições do trabalho por aplicativos.',
+ x:'Tema de trabalho, mas em prova policial ligue a falta de oportunidades à violência urbana, como orientou a aula.',
+ na:'Texto motivador: a desocupação entre jovens de 18 a 24 anos é historicamente o dobro da média do país, e a precarização, a "uberização" e a informalidade dificultam a emancipação financeira e afastam a realidade das garantias do Estatuto da Juventude. No esqueleto da aula, a segunda tese "atua como um severo fator criminógeno", e a conclusão fecha com "afastar os jovens da criminalidade e materializar o Estatuto da Juventude".'},
+{m:'m62', aula:'31/10', t:'O aliciamento de crianças e adolescentes pelo crime organizado: a linha tênue entre a vulnerabilidade social e a ineficácia do ECA', c:'dro', h:'alta',
+ tese:'O aliciamento infantojuvenil escancara uma falha grave, fruto da vulnerabilidade social e da ineficácia na aplicação do ECA.',
+ a1:'Vulnerabilidade social: sem escola de qualidade, lazer e família presente, o crime ocupa o vácuo deixado pelo Estado.',
+ a2:'Ineficácia do ECA: aliciadores adultos impunes, uso da inimputabilidade pelas facções, sistema socioeducativo falido.',
+ r:'Art. 227 da CF; art. 4º e art. 244-B do ECA (corrupção de menores); "Falcão – Meninos do Tráfico" (MV Bill e Celso Athayde, 2006); "Capitães da Areia".',
+ p:'Estado amplia escolas em tempo integral e investiga os adultos que aliciam menores ("repressão qualificada").',
+ x:'"Linha tênue entre X e Y" pede um desenvolvimento para cada lado. Não defenda a redução da maioridade penal: não é o recorte.',
+ na:'Por que o aliciamento aumenta: crianças e adolescentes passam despercebidos e são inimputáveis; falta proteção social (sociedade e família); acesso às redes sem supervisão; abandono parental; "letargia estatal" e vácuo ocupado pelo crime; instrumentalização da criança pelo crime por causa da sensação de inimputabilidade. Consequências: aumento da letalidade infantojuvenil e falência do sistema socioeducativo. Repertórios: art. 227 da CF, art. 4º do ECA, "Capitães da Areia", "Falcão – Meninos do Tráfico".'},
+{m:'m63', aula:'07/11', t:'O avanço do crime organizado e a falência do sistema prisional brasileiro', c:'pri', h:'alta',
+ tese:'A falência do sistema prisional favorece o crime organizado, sobretudo pela superlotação dominada por facções e pela ausência de ressocialização.',
+ a1:'Superlotação: presos misturados sem separação por perfil, recrutamento pelas facções, comando do crime de dentro das celas.',
+ a2:'Sem ressocialização: falta de trabalho e estudo, egresso sem oportunidade, dependência da facção e reincidência.',
+ r:'STF, ADPF 347 ("estado de coisas inconstitucional", 2015 e 2023); Lei de Execução Penal; Foucault ("Vigiar e Punir"); população carcerária.',
+ p:'Governos estaduais separam presos por perfil, bloqueiam comunicações e ampliam trabalho e estudo no cárcere.',
+ x:'Relacione as duas partes do tema. Falar só de facções ou só de presídios tangencia.',
+ na:'A aula aplicou o esqueleto 3: repertório legal na introdução ("asseguram, em tese..."), "Primordialmente" no D1, "Ademais" no D2 e conclusão com "repressão qualificada" que retoma o repertório da introdução.'},
+{m:'m64', aula:'21/11', t:'A espetacularização do crime pela mídia brasileira e os limites éticos entre informação e entretenimento', c:'dh', h:'alta',
+ tese:'A espetacularização do crime ultrapassa os limites éticos sobretudo pela busca por audiência e pela fragilidade da autorregulação dos veículos.',
+ a1:'Lógica da audiência: monetização do choque, tragédia transformada em produto, cultura "true crime".',
+ a2:'Falta de limites: exposição de vítimas, julgamento antecipado (presunção de inocência), prejuízo à investigação policial, banalização do crime.',
+ r:'Art. 5º, X e LVII, e art. 220 da CF; Pierre Bourdieu ("Sobre a televisão"); Guy Debord ("A Sociedade do Espetáculo"); Lei de Abuso de Autoridade (art. 13).',
+ p:'Veículos fortalecem seus códigos de ética e as polícias adotam protocolos de divulgação que preservem vítimas e investigados.',
+ x:'Não defenda censura: o caminho é ética e responsabilidade. Mostre a tensão entre direito à informação e lógica do entretenimento.',
+ na:'Pergunta para pensar a tese: o público é apenas vítima do sensacionalismo ou também alimenta esse mercado? Causas: busca por audiência, monetização do choque e do drama, tragédia transformada em produto, fragilidade na regulação. A tensão: direito à informação × lógica mercantil do entretenimento. Consequências: exposição indevida das vítimas, prejuízo da atividade policial, banalização do crime. Soluções: primazia da ética e dos direitos fundamentais sobre o Ibope; equilíbrio entre transparência e responsabilidade social. Repertórios: CF/88, Pierre Bourdieu, a cultura "true crime".'},
 {m:'m2', t:'Os desafios para combater a violência contra a mulher no Brasil', c:'mul', h:'alta',
  tese:'A violência persiste devido à cultura machista e à fragilidade da rede de proteção às vítimas.',
  a1:'Cultura machista: posse sobre a companheira, agressão vista como "assunto de casal".',
@@ -3404,13 +3982,13 @@ const TEMAS = [
  r:'Lei Maria da Penha; Lei 14.994/2024 (feminicídio até 40 anos); Simone de Beauvoir; Bourdieu (violência simbólica); Anuário do FBSP; ODS 5.',
  p:'MEC inclui o tema nas escolas; estados ampliam delegacias da mulher, patrulhas e abrigos, com verba federal.',
  x:'Não culpe a vítima ("ela não denuncia porque não quer"). Explique os motivos estruturais.'},
-{m:'m5', t:'Violência no trânsito e a combinação de álcool e direção', c:'tra', h:'alta',
+{m:'m5', t:'Os desafios para reduzir as mortes no trânsito brasileiro', c:'tra', h:'alta',
  tese:'As mortes no trânsito persistem devido à imprudência dos condutores e à fiscalização insuficiente.',
  a1:'Imprudência: álcool, excesso de velocidade, celular ao volante; sensação de "comigo não acontece".',
  a2:'Fiscalização: poucas blitze e radares; punição lenta.',
  r:'Lei Seca (2008); Código de Trânsito; OMS (principal causa de morte de 5 a 29 anos); Década de Ação da ONU; Maio Amarelo.',
  p:'Detran e polícias ampliam blitze educativas e fiscalização; escolas trabalham educação para o trânsito.',
- x:'Inclua motociclistas: no Nordeste, são grande parte das vítimas.'},
+ x:'Se o tema vier focado em álcool e direção, ponha a Lei Seca no D1 e as blitze com bafômetro no D2: o recorte precisa aparecer nos dois desenvolvimentos. Inclua os motociclistas, grande parte das vítimas no Nordeste.'},
 {m:'m3', t:'Caminhos para combater os crimes cibernéticos e os golpes digitais', c:'tec', h:'alta',
  tese:'Os golpes crescem devido à falta de educação digital da população e à sensação de anonimato dos criminosos.',
  a1:'Falta de educação digital: idosos e pessoas com pouco contato com tecnologia são alvos fáceis.',
@@ -3872,18 +4450,22 @@ function renderQuiz(boxId, key, items, scoreId){
 // ---------- temas ----------
 (function(){
   let cat = 'todos';
-  $('#temaFilters').innerHTML = ['todos', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${c === 'todos' ? 'Todos' : esc(TEMA_CATS[c])}</button>`).join('');
+  const label = c => c === 'todos' ? 'Todos' : c === 'aula' ? 'Temas das aulas' : TEMA_CATS[c];
+  $('#temaFilters').innerHTML = ['todos', 'aula', ...Object.keys(TEMA_CATS)].map(c => `<button type="button" data-c="${c}" aria-pressed="${c === cat}">${esc(label(c))}</button>`).join('');
   function render(){
-    const list = TEMAS.filter(t => cat === 'todos' || t.c === cat).sort((x, y) => (y.h === 'alta') - (x.h === 'alta'));
+    // temas das aulas primeiro, depois os de chance alta
+    const rank = t => (t.aula ? 2 : 0) + (t.h === 'alta' ? 1 : 0);
+    const list = TEMAS.filter(t => cat === 'todos' || (cat === 'aula' ? t.aula : t.c === cat)).sort((x, y) => rank(y) - rank(x));
     $('#temaCount').textContent = `${list.length} temas`;
     $('#temaList').innerHTML = list.map(t =>
-      `<details class="acc"><summary><span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span><span>${esc(t.t)}</span></summary><div class="acc-body">
+      `<details class="acc"><summary>${t.aula ? `<span class="chip ok">aula ${esc(t.aula)}</span>` : `<span class="chip ${t.h === 'alta' ? 'hot' : ''}">${t.h === 'alta' ? 'chance alta' : 'chance média'}</span>`}<span>${esc(t.t)}</span></summary><div class="acc-body">
         <h4>Tese</h4><p><span class="hl">${esc(t.tese)}</span></p>
         <h4>Argumento 1 · Desenvolvimento 1</h4><p>${esc(t.a1)}</p>
         <h4>Argumento 2 · Desenvolvimento 2</h4><p>${esc(t.a2)}</p>
         <h4>Repertórios</h4><p>${esc(t.r)}</p>
         <h4>Proposta (conclusão)</h4><p>${esc(t.p)}</p>
         <div class="box trap"><span class="tag">Cuidado</span><p>${esc(t.x)}</p></div>
+        ${t.na ? `<div class="box tip"><span class="tag">O que a aula destacou (${esc(t.aula)})</span><p>${esc(t.na)}</p></div>` : ''}
         ${t.m ? `<p><a href="#modelos" data-mod="${t.m}">Ver a redação-modelo deste tema →</a>${v2Of(t.m) ? ` · <a href="#modelos" data-mod="${v2Of(t.m).id}">Ver a versão 2 →</a>` : ''}</p>` : ''}
       </div></details>`
     ).join('');
@@ -3921,7 +4503,8 @@ let showModelo = () => {};
   let cur = Math.min(Math.max(+store.get('mod', 0) || 0, 0), MODELOS.length - 1), annot = store.get('annot', true);
   const sel = $('#modSel');
   const opt = (m, label) => `<option value="${MODELOS.indexOf(m)}">${esc(label)}</option>`;
-  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+  sel.innerHTML = `<optgroup label="Uma redação por tema">${MODELOS.filter(m => !m.base && !m.aula).map((m, i) => opt(m, `${i + 1}. ${m.curto}`)).join('')}</optgroup>`
+    + `<optgroup label="Temas das aulas · PMPE 2027">${MODELOS.filter(m => m.aula).map(m => opt(m, `${m.curto} · aula ${m.aula}`)).join('')}</optgroup>`
     + `<optgroup label="Versão 2 · temas de chance alta">${MODELOS.filter(m => m.base).map(m => opt(m, `${m.curto} · versão 2`)).join('')}</optgroup>`;
   function render(){
     const m = MODELOS[cur];
@@ -3948,6 +4531,14 @@ let showModelo = () => {};
   $('#modPrev').addEventListener('click', () => select(cur - 1));
   $('#modNext').addEventListener('click', () => select(cur + 1));
   select(cur);
+})();
+
+// ---------- capítulo das aulas: temas propostos ----------
+(function(){
+  const box = $('#aulaTemas'); if(!box) return;
+  const list = TEMAS.filter(t => t.aula).sort((x, y) => x.aula.split('/').reverse().join('').localeCompare(y.aula.split('/').reverse().join('')));
+  box.innerHTML = list.map(t => `<li><span class="chip ok">${esc(t.aula)}</span> <b>${esc(t.t)}</b><br><a href="#modelos" data-mod="${t.m}">Ver a redação nota 40 →</a></li>`).join('');
+  box.addEventListener('click', e => { const a = e.target.closest('[data-mod]'); if(a) showModelo(a.dataset.mod); });
 })();
 
 // ---------- contador de 20 linhas ----------
@@ -4089,7 +4680,7 @@ function count(){
     ['Semana 3 · Coesão e gramática', ['Fazer os exercícios dos capítulos 6 e 7','Escrever 2 redações sem o montador','Anotar os 5 erros que você mais repete','Reescrever o pior parágrafo da semana']],
     ['Semana 4 · Simulado', ['Copiar à mão uma redação-modelo','Escrever 3 redações em condição de prova (rascunho + definitiva)','Revisar os kits de todos os temas','Ler o checklist do dia da prova']]
   ];
-  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, com a caneta exigida','Transcrevi tudo para a folha definitiva'];
+  const F = ['Falei do recorte do tema, não só do assunto geral','Tese clara no fim da introdução','Exatamente 20 linhas, no mapa 4-6-6-4','Recuo em todos os parágrafos e nenhuma linha pulada','Nenhum nome, assinatura ou marca que identifique','Sem 1ª pessoa, gírias, perguntas ou exclamações','Revisei vírgulas, crases, acentos e concordância','Letra legível, caneta azul ou preta, sem espaçar letras e palavras para encher linhas','Transcrevi tudo para a folha definitiva'];
   let p = store.get('plan', {});
   $('#weeks').innerHTML = W.map(([t, items], wi) =>
     `<details class="acc" open><summary>${esc(t)}</summary><div class="acc-body"><ul class="checks">${items.map((it, ii) => `<li><label><input type="checkbox" id="w_${wi}_${ii}" data-k="w${wi}_${ii}"><span>${esc(it)}</span></label></li>`).join('')}</ul></div></details>`

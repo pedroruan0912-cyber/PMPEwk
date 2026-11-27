@@ -28,11 +28,13 @@ E-book em HTML para a prova de Soldado PMPE (banca do edital: Instituto AOCP; ta
 
 Adequado ao **Edital de Soldado PMPE 2026 (Instituto AOCP)**: painel na capa com o formato da prova (10 questões de Direitos Humanos e Legislação Extravagante no Bloco III) e o mapa dos 18 itens do conteúdo programático; em cada capítulo, um quadro "Na prova da AOCP" (o que o edital pede, como a banca cobra, pares para o "relacione as colunas" e foco) e um treino de verdadeiro ou falso (138 afirmações no total); filtro de banca nas questões com AOCP como padrão; e simulado no formato da prova (10 questões AOCP, uma por capítulo sorteado).
 
-Recursos: 796 questões comentadas (312 no estilo Instituto AOCP, 236 FCC e 248 Vunesp), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
+Recursos: 1056 questões comentadas (312 no estilo Instituto AOCP, 236 FCC, 248 Vunesp e 260 de raciocínio: 75 sobre teoria geral, evolução histórica, tratados, Declaração Universal e Pacto de San José, 15 em cada um dos capítulos 1 a 5, 35 sobre Abuso de Autoridade, no capítulo 7, 15 sobre a Lei de Tortura, no capítulo 8, 35 sobre a Lei Maria da Penha, no capítulo 9, 15 sobre Crimes de Preconceito, no capítulo 10, 35 sobre Crimes Ambientais, no capítulo 11, 15 sobre Crimes Hediondos, no capítulo 12, e 35 sobre a Lei de Drogas, no capítulo 13), simulado com filtro por banca, correção e desempenho por capítulo, 107 flashcards de pegadinhas, caderno de erros e progresso salvo no navegador.
 
 Sistema (jogo): cada questão, item de V/F e flashcard rende XP; há nível e rank (E a S) no topo da página, missão diária (10 questões, 5 itens de V/F e 5 flashcards) com sequência de dias, missão de penalidade opcional para recuperar a sequência perdida, um "chefe" por capítulo (mini-simulado de 10 questões, 7 acertos para vencer), títulos e uma tropa formada pelas questões erradas que depois foram acertadas. A lógica fica em `ebook/src/sys.js`.
 
-**Direito Constitucional (a outra disciplina do Bloco III):** a seção "Direito Constitucional" traz as 165 questões do banco `direito-constitucional/` em três abas. **Simulados:** formato da prova (10 questões de cinco alternativas, uma por tema sorteado), **Bloco III completo** (10 de Constitucional + 10 de Direitos Humanos AOCP, com a regra de corte do edital: 6 acertos em 20 e nenhuma disciplina zerada) e simulado montado por formato, tema, quantidade e filtro. **Treino:** correção na hora, com filtro por formato, tema e situação. **Desempenho:** acerto por tema e por formato. As respostas rendem XP no Sistema, os erros entram no caderno de erros, e o gabarito comentado aparece em cada questão.
+**Outras disciplinas:** as seções "Direito Constitucional" (165 questões, Bloco III), "História de Pernambuco" (140 questões, Bloco I), "Informática" (130 questões, Bloco II), "Raciocínio Lógico" (130 questões, Bloco II) e "Língua Portuguesa: reescrita" (220 questões, Bloco I) trazem os bancos `direito-constitucional/`, `historia-pernambuco/`, `informatica/`, `raciocinio-logico/` e `lingua-portuguesa/` em três abas. **Simulados:** formato da prova (10 questões de cinco alternativas, sorteadas entre os temas ou itens do edital), **Bloco III completo**, só em Constitucional (10 de Constitucional + 10 de Direitos Humanos AOCP, com a regra de corte do edital: 6 acertos em 20 e nenhuma disciplina zerada), e simulado montado por formato, tema, quantidade e filtro. **Treino:** correção na hora, com filtro por formato, tema e situação. **Desempenho:** acerto por tema (ou item do edital) e por formato. As respostas rendem XP no Sistema, os erros entram no caderno de erros, e o gabarito comentado aparece em cada questão.
+
+## Editar e gerar de novo
 
 Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11.js`, sendo `q7.js` a `q11.js` as do estilo AOCP, flashcards em `flash.js`, o Sistema em `sys.js`, quadros AOCP e treino V/F em `aocp.js`, lógica em `99-app.js`). Depois de editar:
 
@@ -40,7 +42,7 @@ Os fontes ficam em `ebook/src/` (capítulos em HTML, questões em `q1.js` a `q11
 ./ebook/build.sh
 ```
 
-As questões de Direito Constitucional não são editadas no JavaScript: a fonte é `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`. O `build.sh` roda `ebook/gen-dc.py` (quando há `python3`), que gera `ebook/src/dc-data.js`; a tela fica em `ebook/src/dc.html` e a lógica em `ebook/src/dc.js`.
+As questões dos bancos em Markdown não são editadas no JavaScript. O `build.sh` roda `ebook/gen-bancos.py` (quando há `python3`), que gera `ebook/src/dc-data.js` (de `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`), `ebook/src/hpe-data.js` (de `historia-pernambuco/questoes-historia-de-pernambuco.md`), `ebook/src/inf-data.js` (de `informatica/questoes-informatica-pmpe-2026.md`), `ebook/src/lp-data.js` (de `lingua-portuguesa/questoes-reescrita-pmpe-2026.md`), `ebook/src/rl-data.js` (de `raciocinio-logico/questoes-raciocinio-logico-pmpe-2026.md`), `ebook/src/q-abu.js` (de `direitos-humanos-legislacao/questoes-abuso-de-autoridade.md`), `ebook/src/q-tor.js` (de `direitos-humanos-legislacao/questoes-lei-de-tortura.md`), `ebook/src/q-lmp.js` (de `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`), `ebook/src/q-pre.js` (de `direitos-humanos-legislacao/questoes-crimes-de-preconceito.md`), `ebook/src/q-amb.js` (de `direitos-humanos-legislacao/questoes-crimes-ambientais.md`), `ebook/src/q-hed.js` (de `direitos-humanos-legislacao/questoes-crimes-hediondos.md`) e `ebook/src/q-drg.js` (de `direitos-humanos-legislacao/questoes-lei-de-drogas.md`) e `ebook/src/q-dht.js` (de `direitos-humanos-legislacao/questoes-direitos-humanos-teoria-e-tratados.md`). As seções de outras disciplinas ficam em `ebook/src/bancos.html` e são montadas por `ebook/src/banco.js`, que descreve cada uma em `BANCOS_CFG`; as questões de teoria, evolução, tratados, Declaração Universal e Pacto de San José (capítulos 1 a 5, 15 em cada), de Abuso de Autoridade (capítulo 7), Tortura (capítulo 8), Maria da Penha (capítulo 9), Crimes de Preconceito (capítulo 10), Crimes Ambientais (capítulo 11), Crimes Hediondos (capítulo 12) e Lei de Drogas (capítulo 13) entram com a banca "Raciocínio", sem embaralhar as alternativas (o gabarito comentado cita as letras).
 
 Cada questão segue o formato `{c:'c6', b:'AOCP', e:'enunciado', o:[5 alternativas], a:índice_da_correta, x:'comentário'}`, com `b` igual a `'AOCP'`, `'FCC'` ou `'Vunesp'`. As alternativas são embaralhadas de forma estável na exibição (exceto as de assertivas I, II, III).
 
@@ -61,11 +63,12 @@ Método para a redação de Soldado PMPE (Edital 001/2026, banca Instituto AOCP)
 5. Lendo o tema e criando a tese (tipos de tema, fórmula da tese, argumentos coringa)
 6. Conectivos (por parágrafo e por função, erros comuns)
 7. Coesão, coerência e gramática (os erros que mais derrubam a nota)
-8. Repertórios (95, com filtro por tema e tipo, e frase pronta de uso)
-9. Possíveis temas (42 kits com tese, argumentos, repertórios e proposta)
-10. Redações nota 40 (55 redações de 20 linhas com marcações: uma por tema e uma segunda versão dos 13 temas de chance alta)
-11. Laboratório (montador de redação, contador de 20 linhas, cronômetro, autoavaliação)
-12. Plano de treino de 4 semanas e checklist do dia da prova
+8. Repertórios (109, com filtro por tema e tipo, e frase pronta de uso)
+9. Possíveis temas (51 kits com tese, argumentos, repertórios e proposta; filtro "Temas das aulas")
+10. Aulas AOCP (pontos altos das aulas do curso para a PMPE: edital, esqueletos, expressões e os 9 temas propostos)
+11. Redações nota 40 (64 redações de 20 linhas com marcações: uma por tema, incluindo os 9 das aulas, e uma segunda versão de 13 temas de chance alta)
+12. Laboratório (montador de redação, contador de 20 linhas, cronômetro, autoavaliação)
+13. Plano de treino de 4 semanas e checklist do dia da prova
 
 Exercícios: teses, fuga ao tema, conectivos e gramática. Progresso, rascunhos e respostas ficam salvos no navegador.
 
@@ -83,8 +86,198 @@ Nas redações-modelo (`modelos.js`) cada parágrafo é uma lista de linhas; man
 
 ---
 
+# Desenho animado – História de Pernambuco (Soldado PMPE · Instituto AOCP)
+
+Toda a História de Pernambuco em 31 episódios animados (mais a abertura), na ordem dos 8 itens do conteúdo programático do Edital 001/2026: ocupação e colonização, açúcar, Olinda e Recife, holandeses e Nassau, movimentos de resistência e emancipacionistas, período republicano, cultura popular e aspectos afro-brasileiros. Na prova de Soldado são 10 questões de História de Pernambuco, no Bloco I.
+
+**Abrir:** baixe `ebook/historia-pernambuco-desenho.html` **junto com a pasta `ebook/historia-voz/`** (os dois lado a lado) e abra o HTML no navegador. Funciona offline; as fontes carregam do Google Fonts quando há internet. Sem a pasta de voz, o desenho usa a voz do próprio navegador ou segue só com a legenda.
+
+## Como funciona
+
+- Cada episódio tem cenas desenhadas em SVG, narração gravada com voz neural em português (cerca de 50 minutos no total) e legenda.
+- Barra de volume da narração, além do botão que liga e desliga a voz.
+- No fim de cada episódio aparece o quadro **Cai na prova**, com os fatos para memorizar e a **pegadinha da AOCP**.
+- Controles: tocar e pausar, episódio anterior e próximo, voz ligada ou desligada, velocidade (1×, 1,25×, 1,5× e 2×) e tela cheia. Atalhos: espaço, setas e F.
+- A lista de episódios marca os já assistidos, e o desenho continua de onde você parou.
+
+## Editar e gerar de novo
+
+Os fontes ficam em `ebook/historia-src/`: `10-art.js` (biblioteca de desenho: personagens, cenários, bandeiras), `20-cenas-1.js` a `24-cenas-5.js` (os episódios) e `99-app.js` (o player). Depois de editar:
+
+```bash
+./ebook/build-historia.sh
+```
+
+### Regravar a narração
+
+A voz é gerada com o modelo aberto [Kokoro](https://github.com/thewh1teagle/kokoro-onnx) (licença Apache 2.0), voz `pf_dora`, e fica em `ebook/historia-voz/`, um arquivo por episódio. Depois de mudar o texto de alguma fala:
+
+```bash
+pip install kokoro-onnx soundfile num2words
+```
+
+```bash
+node ebook/historia-src/voz/falas.js > falas.json
+```
+
+```bash
+python ebook/historia-src/voz/gerar_voz.py falas.json --modelos PASTA_COM_OS_MODELOS
+```
+
+O script precisa do `ffmpeg` e dos arquivos `kokoro-v1.0.onnx` e `voices-v1.0.bin` (baixados da página de releases do kokoro-onnx). Ele só regrava as falas cujo texto mudou. Se uma fala mudar e não for regravada, o player percebe (cada gravação guarda um código do texto) e usa a voz do navegador naquela fala. Pronúncias especiais (siglas, nomes estrangeiros, algarismos romanos) ficam na lista `LEXICO` do script.
+
+Cada episódio segue o formato `S({id, g: grupo, item: item do edital, year, title, art: () => SVG, beats: [{t: 'narração', say: ['ator', 'balão'], do() { ... }}], facts: [...], trap: 'pegadinha'})`. Em `do()`, use `show`, `hide`, `go`, `walk` e `booms` para animar os atores criados com `act(...)`.
+
+---
+
+# Videoaulas – Office 2019 e LibreOffice 7
+
+Série de 9 videoaulas em MP4 (1280×720, de 8 a 12 minutos cada) sobre o Microsoft Office 2019 (Word, Excel, PowerPoint) e o LibreOffice 7 (Writer, Calc, Impress): interface, recursos e atalhos, com foco no que as bancas costumam cobrar e nas diferenças entre as duas suítes. Cada aula termina com questões no estilo de prova.
+
+**Assistir:** baixe os arquivos `videoaulas/aula-NN-*.mp4` e abra em qualquer player (celular ou computador).
+
+| Aula | Arquivo | Assunto |
+|---|---|---|
+| 1 | `aula-01-visao-geral.mp4` | As duas suítes, programas equivalentes, licença, extensões de arquivo, faixa de opções × menus, comandos de arquivo |
+| 2 | `aula-02-word.mp4` | Word 2019: as guias uma a uma, fonte, parágrafo, estilos, quebras, sumário, mala direta, revisão, modos de exibição e atalhos em português |
+| 3 | `aula-03-writer.mp4` | Writer 7: os menus um a um, barra lateral, Navegador, estilos, exportar como PDF, registrar alterações e atalhos |
+| 4 | `aula-04-excel.mp4` | Excel 2019: célula e intervalo, operadores, referências relativa e absoluta, alça de preenchimento, as guias, mensagens de erro e atalhos |
+| 5 | `aula-05-calc.mp4` | Calc 7: o que é igual ao Excel, tamanho da planilha, referência a outra planilha, alça de preenchimento, menus Planilha, Dados e Formatar, e atalhos |
+| 6 | `aula-06-funcoes.mp4` | Funções de planilha: SOMA, MÉDIA, MÁXIMO, MÍNIMO, MAIOR, MENOR, MED, MODO, contagens, SE, E, OU, PROCV, arredondamentos, CONCATENAR, HOJE e AGORA, com exemplos resolvidos |
+| 7 | `aula-07-powerpoint.mp4` | PowerPoint 2019: layouts, slide mestre, transição × animação, modos de exibição, guia Apresentação de Slides, exportar e imprimir, e atalhos |
+| 8 | `aula-08-impress.mp4` | Impress 7: o que é igual ao PowerPoint, menus Slide e Apresentação de slides, slide mestre, transição e animação na barra lateral, nomes que mudam e atalhos |
+| 9 | `aula-09-atalhos.mp4` | Atalhos lado a lado: todas as teclas da série no Office em português e no LibreOffice, teclas de função, pegadinhas clássicas e revisão geral das diferenças entre as suítes |
+
+## Como são feitas
+
+- As telas são **desenhadas**, não gravadas de um computador: reproduzem em português as guias, grupos, menus e comandos do Office 2019 e do LibreOffice 7, com o item explicado em destaque e a fala escrita no rodapé.
+- A narração usa a mesma voz neural do desenho de História ([Kokoro](https://github.com/thewh1teagle/kokoro-onnx), voz `pf_dora`).
+- Todo atalho mostrado vem de uma tabela única (`videoaulas/src/atalhos.mjs`), conferida na página de atalhos da Microsoft e no arquivo de teclas do código-fonte do LibreOffice (versões 7.0 a 7.6); o cabeçalho do arquivo diz o que foi confirmado e onde. Os menus do LibreOffice desenhados nas aulas foram conferidos nos arquivos de menu do código-fonte do 7.6.
+
+## Editar e gerar de novo
+
+Cada aula é um roteiro em `videoaulas/src/aulas/` (por exemplo `01-visao-geral.mjs`): uma lista de cenas, cada uma com a fala e a tela. Depois de editar:
+
+```bash
+./videoaulas/build.sh 1
+```
+
+Sem número, gera todas as aulas. Na primeira vez o script instala `kokoro-onnx`, `soundfile` e `num2words` e baixa os modelos de voz (cerca de 350 MB, em `videoaulas/.trabalho/`, fora do Git). Precisa de Node 22, Python 3, ffmpeg e Chromium com Playwright. O Playwright tem de estar visível para o Node: instalado globalmente (`npm install -g playwright` e `npx playwright install chromium`), com o `NODE_PATH` apontando para a pasta `node_modules` global; sem isso, a geração para com a mensagem "Playwright não encontrado". Só as cenas alteradas são gravadas e desenhadas de novo.
+
+Para ver o texto que a voz vai ler (com as teclas e siglas já por extenso) sem gerar nada:
+
+```bash
+node videoaulas/build.mjs 1 --texto
+```
+
+Para rodar os testes:
+
+```bash
+node --test 'videoaulas/test/*.test.mjs'
+```
+
+Tipos de tela (`tela.tipo`): `capa`, `secao`, `janela` (janela do programa com uma guia ou menu aberto), `planilha`, `teclas` (atalhos das duas suítes lado a lado), `compara`, `lista`, `pegadinha` e `questao`. Se um texto não couber na tela, a geração para e diz a aula e a cena. Pronúncias especiais (nomes em inglês, siglas, teclas) ficam em `videoaulas/src/pronuncia.mjs`; quando a fala escrita não serve para a voz, a cena pode trazer um terceiro texto só para o áudio.
+
+---
+
 # Banco de questões – Direito Constitucional (Soldado PMPE 2026 · Instituto AOCP)
 
 **Abrir:** `direito-constitucional/questoes-direito-constitucional-pmpe-2026.md`
 
 Também disponíveis de forma interativa no e-book de Direitos Humanos (seção "Direito Constitucional"). 165 questões de alto nível cognitivo (Bloom: aplicar, analisar e avaliar), organizadas pelo conteúdo programático de Direito Constitucional do Anexo II do Edital nº 001/2026 (10 questões no Bloco III). São cinco formatos, com 33 questões cada: cenário inédito (1–33), asserção e razão (34–66), múltipla escolha complexa (67–99), certo ou errado (100–132) e melhor alternativa (133–165). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Lei Maria da Penha (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-maria-da-penha.md`. Também estão no e-book de Direitos Humanos, no capítulo 9 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+35 questões de alto nível cognitivo sobre a Lei 11.340/2006, com as alterações até a Lei 14.994/2024 e a jurisprudência do STF e do STJ (art. 12-C, art. 24-A, art. 40-A, Tema 1.249 e Súmulas 536, 542, 588, 589 e 600). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – História de Pernambuco (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `historia-pernambuco/questoes-historia-de-pernambuco.md`. Também estão no e-book de Direitos Humanos, na seção "História de Pernambuco", com treino, simulado de 10 questões e desempenho por item do edital.
+
+140 questões de alto nível cognitivo sobre os oito itens de História de Pernambuco do Edital nº 001/2026 (10 questões no Bloco I), da colonização à Pernambuco atual, passando pelo açúcar, Olinda e Recife, os holandeses, os movimentos de resistência e emancipacionistas, a República, a cultura popular e a herança afro-brasileira. Os fatos seguem o desenho animado de História deste repositório. São cinco formatos, com 28 questões cada: cenário inédito (1–28), asserção e razão (29–56), múltipla escolha complexa (57–84), certo ou errado (85–112) e melhor alternativa (113–140). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Crimes Ambientais (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-ambientais.md`. Também estão no e-book de Direitos Humanos, no capítulo 11 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+35 questões de alto nível cognitivo sobre a Lei 9.605/1998, com a Lei 14.064/2020 e a jurisprudência do STF (responsabilidade da pessoa jurídica sem dupla imputação, omissão do gerente, penas e substituição, sursis, transação e suspensão do processo, apreensão, fauna, pesca, flora, poluição, patrimônio cultural, administração ambiental e competência). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Crimes Hediondos (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-hediondos.md`. Também estão no e-book de Direitos Humanos, no capítulo 12 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+15 questões de alto nível cognitivo sobre a Lei 8.072/1990, com o Pacote Anticrime, as Leis 14.811/2024, 14.843/2024 e 14.994/2024, o art. 112 da LEP e a jurisprudência do STF e do STJ (rol taxativo, roubo e lesão contra agentes de segurança, liberdade provisória, tráfico privilegiado, progressão, livramento e saída temporária). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Abuso de Autoridade (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-abuso-de-autoridade.md`. Também estão no e-book de Direitos Humanos, no capítulo 7 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+35 questões de alto nível cognitivo sobre a Lei 13.869/2019, com a Lei 14.321/2022, as alterações nas Leis 7.960/1989 e 9.296/1996 e no Estatuto da OAB, a Súmula Vinculante 11 e a Súmula 145 do STF (finalidade específica e crime de hermenêutica, sujeito ativo e concurso com particular, ação penal, efeitos da condenação e penas, instâncias, ingresso em domicílio, direitos do preso, investigação, artigos vetados e prisão temporária). São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Lei de Tortura (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-de-tortura.md`. Também estão no e-book de Direitos Humanos, no capítulo 8 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+15 questões de alto nível cognitivo sobre a Lei 9.455/1997, com a Constituição, a Lei 8.072/1990, o art. 136 do Código Penal e a jurisprudência do STJ (espécies de tortura, tortura-castigo × maus-tratos, omissão de quem devia evitar ou apurar, resultado morte × homicídio qualificado, causas de aumento, prescrição, indulto, tortura do preso sem violência, perda do cargo e extraterritorialidade). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Crimes de Preconceito de Raça ou de Cor (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-crimes-de-preconceito.md`. Também estão no e-book de Direitos Humanos, no capítulo 10 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+15 questões de alto nível cognitivo sobre a Lei 7.716/1989, com as mudanças da Lei 14.532/2023, o art. 140, §3º, do Código Penal e a jurisprudência do STF (injúria racial × racismo × injúria religiosa, ação penal e fiança no flagrante, funcionário público, imprescritibilidade e anistia, art. 20 e seus parágrafos, racismo recreativo, caso Ellwanger, homotransfobia e perfilamento racial). São cinco formatos, com 3 questões cada: cenário inédito (1–3), asserção e razão (4–6), múltipla escolha complexa (7–9), certo ou errado (10–12) e melhor alternativa (13–15). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Lei de Drogas (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-lei-de-drogas.md`. Também estão no e-book de Direitos Humanos, no capítulo 13 (botão "Questões de raciocínio" ou filtro "Raciocínio" na aba Questões) e no simulado personalizado.
+
+35 questões de alto nível cognitivo sobre a Lei 11.343/2006, com o Pacote Anticrime e a jurisprudência do STF e do STJ, inclusive o RE 635.659 (porte de maconha para consumo): usuário × traficante, uso compartilhado, tráfico privilegiado, agente disfarçado, majorantes, associação, procedimento, técnicas de investigação e bens apreendidos. São cinco formatos, com 7 questões cada: cenário inédito (1–7), asserção e razão (8–14), múltipla escolha complexa (15–21), certo ou errado (22–28) e melhor alternativa (29–35). Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado.
+
+---
+
+# Banco de questões – Informática (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `informatica/questoes-informatica-pmpe-2026.md`. Também estão no e-book de Direitos Humanos, na seção "Informática", com treino, simulado de 10 questões e desempenho por item do edital.
+
+130 questões de alto nível cognitivo sobre os sete itens de Informática do Edital nº 001/2026 (10 questões no Bloco II): internet e intranet; navegadores, serviços de internet e nuvem; segurança da informação (malwares, golpes, criptografia, autenticação); armazenamento e backup; arquivos, pastas e hardware; Windows 11 e Prompt de Comando; Word, Excel e PowerPoint 2019 e Writer, Calc e Impress do LibreOffice 7. São cinco formatos, com 26 questões cada: cenário inédito (1–26), asserção e razão (27–52), múltipla escolha complexa (53–78), certo ou errado (79–104) e melhor alternativa (105–130). Uma tabela no início indica as questões de cada item do edital. Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.
+
+---
+
+# Banco de questões – Língua Portuguesa: Reescrita de Frases e Períodos (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `lingua-portuguesa/questoes-reescrita-pmpe-2026.md`. Também estão no e-book de Direitos Humanos, na seção "Língua Portuguesa", com treino, simulado de 10 questões e desempenho por eixo.
+
+220 questões de reescrita no padrão do Instituto AOCP, sobre os itens 4, 8, 9, 10, 12, 13, 14 e 15 do conteúdo de Língua Portuguesa do Edital nº 001/2026 (Bloco I). Cada questão parte de um período culto e complexo e exige julgar, ao mesmo tempo, a correção gramatical e o sentido. São cinco eixos (conectivos e modo verbal; vozes verbais e redução de orações; pontuação; regência e crase; concordância e colocação pronominal) e cinco formatos, com 44 questões cada: reescrita padrão (1–44), asserção e razão (45–88), múltipla escolha complexa (89–132), certo ou errado (133–176) e melhor alternativa (177–220). Na reescrita padrão, cada questão tem duas alternativas corretas na forma que mudam o sentido e duas que mantêm o sentido com erro sutil. O gabarito comentado classifica cada defeito como [ERRO GRAMATICAL], [ALTERAÇÃO DE SENTIDO] ou, no Formato 5, [DESCUMPRE A RESTRIÇÃO], e aponta o termo exato.
+
+---
+
+# Banco de questões – Raciocínio Lógico (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `raciocinio-logico/questoes-raciocinio-logico-pmpe-2026.md`. Também estão no e-book de Direitos Humanos, na seção "Raciocínio Lógico", com treino, simulado de 10 questões e desempenho por tópico (no e-book, os tópicos 4 e 5 formam um só grupo).
+
+130 questões inéditas de alto nível cognitivo sobre os quatro itens de Raciocínio Lógico do Edital nº 001/2026 (10 questões no Bloco II), em cenários policiais e organizadas em sete tópicos: estruturas lógicas, conectivos, quantificadores e falácias (1–20); argumentação, equivalências e implicação (21–45); diagramas lógicos, com o necessário e o possível (46–60); princípio da contagem, casa dos pombos e inclusão-exclusão (61–80); permutações, arranjos e combinações (81–105); e probabilidade (106–130). São cinco formatos, com 26 questões cada (cenário inédito, asserção e razão, múltipla escolha complexa, certo ou errado e melhor alternativa), que se repetem dentro de cada tópico. Nas questões de contagem e probabilidade, cada alternativa errada é o resultado exato de um erro de modelagem; nas de lógica, uma falácia, uma inversão do condicional, uma troca de quantificador ou uma confusão entre necessário e possível. As alternativas numéricas estão em ordem crescente e no mesmo formato. Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado (1 a 130), com a demonstração e o diagnóstico de cada alternativa.
+
+---
+
+# Banco de questões – Direitos Humanos: teoria geral, evolução, tratados, DUDH e Pacto de San José (Soldado PMPE 2026 · Instituto AOCP)
+
+**Abrir:** `direitos-humanos-legislacao/questoes-direitos-humanos-teoria-e-tratados.md`. Também estão no e-book de Direitos Humanos, 15 em cada um dos capítulos 1 a 5, com a banca "Raciocínio".
+
+75 questões de alto nível cognitivo sobre os itens 1 a 5 do conteúdo de Direitos Humanos e Legislação Extravagante do Edital nº 001/2026 (Bloco III): teoria geral (terminologia, características, status de Jellinek, eficácia horizontal e dimensão objetiva); evolução histórica e dimensões de direitos; incorporação e hierarquia dos tratados (art. 5º, §§ 2º a 4º, supralegalidade, rito do § 3º, promulgação, deslocamento de competência e controle de convencionalidade); Declaração Universal dos Direitos Humanos; e Pacto de San José (pena de morte, prisão civil, garantias do preso, associação de policiais, suspensão de garantias, Comissão e Corte Interamericanas). São cinco formatos, com 15 questões cada: cenário inédito (1–15), asserção e razão (16–30), múltipla escolha complexa (31–45), certo ou errado (46–60) e melhor alternativa (61–75). Uma tabela no início indica as questões de cada item do edital. Todas as questões vêm primeiro; no fim ficam o gabarito rápido e o gabarito comentado, com o raciocínio e o erro de cada alternativa.

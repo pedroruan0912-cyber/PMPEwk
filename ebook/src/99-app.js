@@ -5,7 +5,9 @@
   var KEY = 'dhpmpe.v1';
   var LET = 'ABCDE';
   var $ = function (id) { return document.getElementById(id); };
-  var SYS, DC = null;
+  var SYS, BANCOS = [];
+  // seções de outras disciplinas presentes nesta página (ver banco.js)
+  var BCFG = (window.BANCOS_CFG || []).filter(function (c) { return document.getElementById(c.sec); });
 
   // ---------- estado salvo (só neste navegador) ----------
   var state = { a: {} };
@@ -39,13 +41,16 @@
     };
   }
   QS.forEach(function (q) {
-    if (q.e.indexOf('type="I"') >= 0) return;
+    if (q.fix || q.e.indexOf('type="I"') >= 0) return;
     var r = rng(hash(q.id + ':' + q.e.length)), idx = q.o.map(function (_, i) { return i; });
     for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
     q.o = idx.map(function (i) { return q.o[i]; });
     q.a = idx.indexOf(q.a);
   });
   function qsOf(capId) { return QS.filter(function (q) { return q.c === capId; }); }
+  // "Raciocínio": bancos de alto nível (aplicar, analisar, avaliar) com gabarito comentado
+  var RAC = 'Raciocínio';
+  function tagClass(b) { return b === RAC ? 'rac' : b.toLowerCase(); }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
   function stats(list) {
@@ -60,17 +65,18 @@
   // ---------- card de questão ----------
   function qCard(q, opts) {
     opts = opts || {};
-    var cap = capById[q.c];
+    var cap = capById[q.c], L = q.L || LET;
     var art = document.createElement('article');
     art.className = 'q';
     art.dataset.id = q.id;
     art.innerHTML =
       '<div class="q-meta"><span class="qn">' + (opts.label || ('Questão ' + q.n)) + '</span>' +
-      '<span class="tag ' + q.b.toLowerCase() + '">' + q.b + '</span>' +
+      '<span class="tag ' + tagClass(q.b) + '">' + q.b + '</span>' +
+      (q.fmt ? '<span>' + q.fmt + '</span>' : '') +
       '<span>Cap. ' + cap.num + ' · ' + cap.short + '</span></div>' +
       '<div class="q-stem">' + q.e + '</div>' +
-      '<ol class="q-opts">' + q.o.map(function (t, i) {
-        return '<li><button type="button" class="opt" data-i="' + i + '"><span class="lt">' + LET[i] + '</span><span>' + t + '</span></button></li>';
+      '<ol class="q-opts' + (q.o.length === 2 ? ' ce' : '') + '">' + q.o.map(function (t, i) {
+        return '<li><button type="button" class="opt" data-i="' + i + '"><span class="lt">' + L[i] + '</span><span>' + t + '</span></button></li>';
       }).join('') + '</ol><div class="q-fb" hidden></div>';
     var buttons = art.querySelectorAll('.opt');
     Array.prototype.forEach.call(buttons, function (b) {
@@ -104,11 +110,11 @@
       else if (i === chosen) b.classList.add('wrong');
     });
     var fb = art.querySelector('.q-fb');
-    var ok = chosen === q.a;
+    var ok = chosen === q.a, L = q.L || LET, key = L[q.a] + (q.k ? ' (' + q.k + ')' : '');
     var verdict = chosen === undefined || chosen === null
-      ? '<p class="verdict no">Em branco. Gabarito: ' + LET[q.a] + '</p>'
-      : ok ? '<p class="verdict ok">Correta! Gabarito: ' + LET[q.a] + '</p>'
-           : '<p class="verdict no">Errada. Você marcou ' + LET[chosen] + '; gabarito: ' + LET[q.a] + '</p>';
+      ? '<p class="verdict no">Em branco. Gabarito: ' + key + '</p>'
+      : ok ? '<p class="verdict ok">Correta! Gabarito: ' + key + '</p>'
+           : '<p class="verdict no">Errada. Você marcou ' + L[chosen] + '; gabarito: ' + key + '</p>';
     fb.innerHTML = verdict + '<div class="q-exp">' + q.x + '</div>' +
       (opts && opts.mode === 'exam' ? '' : '<div class="q-actions"><button type="button" class="small-btn redo">Refazer esta questão</button></div>');
     fb.hidden = false;
@@ -194,9 +200,12 @@
       if (vfBox) box.querySelector('.go-vf').addEventListener('click', function () { vfBox.scrollIntoView(); });
     }
     var nA = list.filter(function (q) { return q.b === 'AOCP'; }).length;
+    var nR = list.filter(function (q) { return q.b === RAC; }).length;
     var cta = document.createElement('div');
     cta.className = 'panel';
-    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA) + ' no estilo FCC e Vunesp, para treino extra.</p><button type="button" class="btn go-q">Ir para as questões</button>';
+    cta.innerHTML = '<h3>Terminou a teoria?</h3><p style="margin:0 0 10px;font-size:.94rem">Resolva as questões deste capítulo: ' + nA + ' no estilo AOCP (banca do edital) e ' + (list.length - nA - nR) + ' no estilo FCC e Vunesp, para treino extra.' +
+      (nR ? ' Há também <b>' + nR + ' questões de raciocínio</b> (cenários, asserção e razão, itens combinados, certo ou errado e melhor alternativa), com o erro de cada alternativa explicado.' : '') + '</p>' +
+      '<div class="q-actions"><button type="button" class="btn go-q">Ir para as questões</button>' + (nR ? '<button type="button" class="btn ghost go-rac">Questões de raciocínio (' + nR + ')</button>' : '') + '</div>';
     theory.appendChild(cta);
     var foot = document.createElement('nav');
     foot.className = 'ch-foot';
@@ -212,6 +221,7 @@
       bar.className = 'quiz-bar';
       var s = stats(list);
       var bancas = [['AOCP', 'AOCP'], ['', 'Todas as bancas'], ['FCC', 'FCC'], ['Vunesp', 'Vunesp']];
+      if (nR) bancas.push([RAC, RAC]);
       bar.innerHTML = '<div class="seg" role="group" aria-label="Filtrar por banca">' +
         bancas.map(function (b) {
           return '<button type="button" data-b="' + b[0] + '" aria-pressed="' + (bancaPref === b[0]) + '">' + b[1] + '</button>';
@@ -276,6 +286,12 @@
       if (b) { setTab(b.dataset.t); window.scrollTo(0, 0); }
     });
     cta.querySelector('.go-q').addEventListener('click', function () { setTab('q'); window.scrollTo(0, 0); });
+    var goR = cta.querySelector('.go-rac');
+    if (goR) goR.addEventListener('click', function () {
+      bancaPref = RAC; filter = 'all';
+      try { localStorage.setItem('dhpmpe.banca', bancaPref); } catch (e) {}
+      setTab('q'); window.scrollTo(0, 0);
+    });
     var goA = sec.querySelector('.go-aocp');
     if (goA) goA.addEventListener('click', function () {
       bancaPref = 'AOCP';
@@ -298,7 +314,10 @@
   h += '<div class="nav-group">Revisão</div>';
   chapters.slice(16).forEach(function (c) { h += navLink(c.id, pad(c.num), c.short); });
   h += navLink('simulado', '▣', 'Simulado') + navLink('flashcards', '▤', 'Flashcards') + navLink('erros', '✕', 'Caderno de erros');
-  if (document.getElementById('constitucional')) h += '<div class="nav-group">Bloco III · outra disciplina</div>' + navLink('constitucional', '§', 'Direito Constitucional');
+  if (BCFG.length) {
+    h += '<div class="nav-group">Outras disciplinas</div>';
+    BCFG.forEach(function (c) { h += navLink(c.sec, '§', c.nav); });
+  }
   nav.innerHTML = h;
 
   $('tocGrid').innerHTML = chapters.map(function (c) {
@@ -307,7 +326,8 @@
 
   var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
   var viewIds = views.map(function (v) { return v.id; });
-  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema', constitucional: 'Direito Constitucional' };
+  var titles = { inicio: 'Início', simulado: 'Simulado', flashcards: 'Flashcards', erros: 'Caderno de erros', sistema: 'Sistema' };
+  BCFG.forEach(function (c) { titles[c.sec] = c.title; });
 
   function show(id, push) {
     if (viewIds.indexOf(id) < 0) id = 'inicio';
@@ -321,7 +341,7 @@
     if (id === 'erros') renderErrors();
     if (id === 'flashcards') renderFC();
     if (id === 'sistema') SYS.render();
-    if (id === 'constitucional' && DC) DC.render();
+    BANCOS.forEach(function (b) { if (b.id === id) b.render(); });
     closeMenu();
     window.scrollTo(0, 0);
     if (push) { try { history.pushState(null, '', '#' + id); } catch (e) {} }
@@ -372,7 +392,8 @@
         el.textContent = el.classList.contains('s') ? (s.total + ' questões · ' + s.answered + ' feitas') : (s.answered + '/' + s.total);
       });
     });
-    var errs = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; }).length + (DC ? DC.errCount() : 0);
+    var errs = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; }).length;
+    BANCOS.forEach(function (b) { errs += b.errCount(); });
     var pe = document.querySelector('[data-p="erros"]');
     if (pe) pe.textContent = errs ? String(errs) : '';
   }
@@ -382,7 +403,7 @@
   $('resetYes').addEventListener('click', function () {
     state = { a: {}, vf: {} }; save(); refreshProgress(); SYS.reset(); $('resetConfirm').hidden = true;
     chapters.forEach(function (c) { if (c.renderVF) c.renderVF(); });
-    if (DC) DC.reset();
+    BANCOS.forEach(function (b) { b.reset(); });
   });
 
   // ---------- caderno de erros ----------
@@ -390,19 +411,19 @@
     var box = $('errList');
     box.innerHTML = '';
     var list = QS.filter(function (q) { var v = state.a[q.id]; return v !== undefined && v !== q.a; });
-    var nDC = DC ? DC.errCount() : 0;
-    if (!list.length && !nDC) {
+    var nOut = BANCOS.reduce(function (n, b) { return n + b.errCount(); }, 0);
+    if (!list.length && !nOut) {
       box.innerHTML = '<p class="empty">Nenhum erro registrado. Resolva questões nos capítulos ou faça um simulado.</p>';
       return;
     }
-    if (list.length && nDC) {
+    if (list.length && nOut) {
       var hd = document.createElement('h2');
       hd.className = 'dc-err-h';
       hd.textContent = 'Direitos Humanos e Legislação Extravagante (' + list.length + ')';
       box.appendChild(hd);
     }
     list.forEach(function (q) { box.appendChild(qCard(q, { fresh: true, label: 'Cap. ' + capById[q.c].num + ' · Questão ' + q.n })); });
-    if (nDC) DC.renderErrors(box, list.length > 0);
+    BANCOS.forEach(function (b) { b.renderErrors(box, true); });
   }
 
   // ---------- simulado ----------
@@ -576,11 +597,13 @@
     state: function () { return state; }, save: save, startBoss: startBoss, startPen: startPen
   });
 
-  // ---------- Direito Constitucional (outra disciplina do Bloco III) ----------
-  if (window.initDC && document.getElementById('constitucional')) {
-    DC = window.initDC({
-      $: $, pad: pad, shuffle: shuffle, QS: QS, capById: capById, sys: SYS, save: save,
-      state: function () { return state; }, refresh: refreshProgress, qCard: qCard, reveal: reveal
+  // ---------- outras disciplinas (Direito Constitucional, História de Pernambuco, Informática, Raciocínio Lógico, Língua Portuguesa) ----------
+  if (window.initBanco) {
+    BANCOS = BCFG.map(function (c) {
+      return window.initBanco({
+        $: $, pad: pad, shuffle: shuffle, QS: QS, capById: capById, sys: SYS, save: save,
+        state: function () { return state; }, refresh: refreshProgress, qCard: qCard, reveal: reveal
+      }, c);
     });
   }
 
